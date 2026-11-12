@@ -53,7 +53,7 @@ Computation spec format (S1 writes it, S2 follows it):
 | 3 lattice fatigue | Macro vs strut dissipation; mismatch stress cases (a)–(c); Basquin applicability; one default per form | Materiality numbers (question 4); stress-knock-down scaling vs ρ̄; mismatch stress examples | Lattice fatigue S–N normalisation papers; Gibson–Ashby; bimaterial mismatch (`sonnet`) | Yes | — |
 | 4 solver lemmas (optional) | Skip Fable | `sonnet`: SymPy and hypothesis checks of C1–C5, saved as scripts; report any counterexample | — | Only if a counterexample appears and needs interpretation | Executable checks are the main route to `cross-checked` (plan §9.3) |
 
-Order: 1b, 2, 3, then 4 if budget remains. Prompt 2 may run before 1b if GMS-100 round 2 is about to start.
+Order (user, 2026-11-12): **2, 1b, 3**, then 4 if budget remains. Each answer feeds the drafting loop just before its document: Prompt 2 before GMS-100 round 2 and acceptance (the next loop step); Prompt 3 before or during W2a (GMS-220); Prompt 1b before W2b (GMS-310 Part B and C briefs).
 
 ## 5. Agent prompt templates
 
@@ -96,4 +96,4 @@ Fill in `<p>` and the paths. Every template includes these **common rules**:
 
 Session start prompt for a new session:
 
-> Read `local_docs/orchestration/fable_delegation_plan.md` and act as the orchestrator it describes. Start from §7: Prompt 1a is done and its decisions are recorded. Ask me before starting the next prompt (1b by default, or 2 if GMS-100 round 2 is about to start).
+> Read `local_docs/orchestration/fable_delegation_plan.md` and act as the orchestrator it describes. Start from §7: Prompt 1a is done and its decisions are recorded. Ask me before starting the next prompt (Prompt 2, per §4 order).
