@@ -8,6 +8,8 @@ Fable access is limited. Spend it only on judgement: which mechanism governs, wh
 
 Lesson from Prompt 1a: the Fable writer did everything itself (about 50 minutes, 286k tokens, 70 tool calls). Most of that was writing and debugging a 2-D solver, sweeps, convergence runs and citation lookups. The tight loop between reasoning and computation did catch one error (a Litz formula 35 % low), so the final Fable pass below exists to keep that check.
 
+Lesson from Prompt 2 (staged run, 2026-11-12): Fable used 362k tokens (S1 188k with 6 tool calls, about 20 min mostly thinking with no log entries; S4 174k), more than the single-pass 1a, because Prompt 2 is almost all judgement. Fable tool calls fell from 70 to 17, and computation and citation searches moved to Sonnet. What paid off: S2's `issues.md` (an unclear row, a near-tautological check, two inconsistent inputs) gave S4 its work list, and S5 found what S4 missed (a BLOCKER that is a convention choice, a misread scope for λ_ℰ, checks true by construction). Tell S2 that a check comparing an expression with itself must be flagged, not passed. S2 and S3 depend only on S1 and can run in parallel. The session's network blocks arxiv.org, exergoecology.com and api.crossref.org, so S3 works from search snippets for those.
+
 ## 2. Roles
 
 The orchestrator is the main session. It launches every agent itself, because a subagent may not be able to launch agents of its own. It also commits after each stage and reports to the user.
@@ -96,4 +98,4 @@ Fill in `<p>` and the paths. Every template includes these **common rules**:
 
 Session start prompt for a new session:
 
-> Read `local_docs/orchestration/fable_delegation_plan.md` and act as the orchestrator it describes. Start from §7: Prompt 1a is done and its decisions are recorded. Ask me before starting the next prompt (Prompt 2, per §4 order).
+> Read `local_docs/orchestration/fable_delegation_plan.md` and act as the orchestrator it describes. Start from §7: Prompts 1a and 2 are done and their decisions are recorded. Ask me before starting the next prompt (Prompt 1b, per §4 order). One prompt per session: when its decisions are recorded, hand off (update §7 and this prompt), and merge to `main`.
