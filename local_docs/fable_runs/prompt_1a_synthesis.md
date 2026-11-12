@@ -36,7 +36,9 @@ Also: printed AlSi10Mg conductivity is about 25 % IACS as built and 44 % heat-tr
 - **`al_vs_cu_busbar` scenario.** It cannot be an Al-lattice busbar. An Al thin-wall or solid Al section against solid Cu remains a valid lifecycle trade: higher dissipation, lower extraction cost. The framework is built to decide exactly that. It is also common industrial practice, so data may be easier to find (unverified).
 - **Candidate anchors:** Dowell 1966 (formula form and scope); Silvester 1967 (published curves for solid rectangular bars, about 0.5 % claimed). Neither was compared against full text.
 
-## Decisions for the user (pending)
+## Decisions for the user
+
+**Decided 2026-11-12: the user accepted the recommendation for D1, D2 and D3.** Recorded as E13 (drafting notes §A, plan §4), plan V10 and Q16, and OQ-12 and the GMS-310 brief note in `orchestrator_state.md`.
 
 | # | Decision | Options | Recommendation |
 |---|---|---|---|
