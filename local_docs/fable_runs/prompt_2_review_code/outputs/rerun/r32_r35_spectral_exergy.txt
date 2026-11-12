@@ -1,0 +1,24 @@
+R32 | psi (spectral) = 0.9311296542 - | expected 0.93113 - | tol +/-1e-05 - | |diff|=3.458e-07 | PASS
+R32 | psi vs Landsberg formula = 0.9311296542 - | expected 0.9311296542 - | tol +/-1e-05 - | |diff|=6.994e-15 | PASS
+R32 | E = 6.493939408 (dimensionless) | expected 6.493939402 (dimensionless) | tol +/-1e-05 (dimensionless) | |diff|=5.472e-09 | PASS | pi^4/15 = 6.49394; tol assumed 1e-5
+R33 | psi (high-pass) = 0.9355407623 - | expected 0.9355 - | tol +/-0.001 - | |diff|=4.076e-05 | PASS | hand estimate
+R33 | energy fraction above u_c = 0.7654834917 - | expected 0.7655 - | tol +/-0.001 - | |diff|=1.651e-05 | PASS | approx in spec; tol assumed 0.001
+R33 | ordering R27 < psi < R28: (0.9311296542090907, np.float64(0.935540762265945), 0.9483454608454609) | sanity: 0.931130 < psi < 0.948345 | tol exact |  | PASS
+R34a | psi (diluted, with sky background) = 0.7321438502 - | expected 0.734 - | tol +/-0.01 - | |diff|=1.856e-03 | PASS | hand estimate
+R34a | psi < R27: (np.float64(0.7321438502350546), 0.9311296542090907) | sanity: < 0.931130 | tol exact |  | PASS
+R34b | psi (no thermal sky background) = 0.8378440466 - | expected 0.838 - | tol +/-0.01 - | |diff|=1.560e-04 | PASS | hand estimate
+R34b | share = 0.1097277389 - | expected 0.10973 - | tol +/-0.0001 - | |diff|=2.261e-06 | PASS
+R34b | eps*sig*Ts^4 = 1361.172939 W/m2 | expected 1361.2 W/m2 | tol +/-0.1 W/m2 | |diff|=2.706e-02 | PASS | approx in spec; tol assumed 0.1
+R34b | sig*T0^4/3 = 149.3584289 W/m2 | expected 149.36 W/m2 | tol +/-0.01 W/m2 | |diff|=1.571e-03 | PASS | approx in spec; tol assumed 0.01
+R34b | share cross-check = 0.1097277389 - | expected 0.1097277389 - | tol +/-0.0001 - | |diff|=1.388e-17 | PASS
+R34b | psi(34b) - psi(34a) vs share = 0.1057001964 - | expected 0.1097277389 - | tol +/-0.02 - | |diff|=4.028e-03 | PASS
+R35 | draws kept (n > n0) = 9797 of 10000
+R35 | LHS <= first bound violations: 0 | sanity: 0 | tol exact |  | PASS
+R35 | first bound <= u n (1-x) violations: 0 | sanity: 0 | tol exact |  | PASS
+
+=== ROW SUMMARY ===
+R32: PASS
+R33: PASS
+R34a: PASS
+R34b: PASS
+R35: PASS

@@ -90,7 +90,7 @@ Fill in `<p>` and the paths. Every template includes these **common rules**:
 |---|---|---|---|---|---|---|
 | 1a | single-pass writer (`fable`, high), `86af299` | in writer pass | in writer pass (existence only, no full text) | in writer pass | `opus` high, done: `prompt_1a_review.md` (0 BLOCKER, 4 MAJOR) | done: `prompt_1a_synthesis.md`; D1–D3 decided and recorded (E13, plan V10, Q16) |
 | 1b | — | — | — | — | — | — |
-| 2 | `fable` high, `030e6d1`: 16 findings + 8 conventions, 40 rows, 71 citations | `sonnet`, `1f4daf0`: 40/40 PASS, 6 ambiguities in `issues.md` | `sonnet`: 63 verified, 1 may not say this, 7 UNSURE, 0 not found | `fable` high: `prompt_2_answer.md`, 1 BLOCKER + 7 MAJOR; 4 added checks (`s4_*`) | — | — |
+| 2 | `fable` high, `030e6d1`: 16 findings + 8 conventions, 40 rows, 71 citations | `sonnet`, `1f4daf0`: 40/40 PASS, 6 ambiguities in `issues.md` | `sonnet`: 63 verified, 1 may not say this, 7 UNSURE, 0 not found | `fable` high: `prompt_2_answer.md`, 1 BLOCKER + 7 MAJOR; 4 added checks (`s4_*`) | `opus` high, done: `prompt_2_review.md` (0 BLOCKER, 3 MAJOR, 9 MINOR; L1 re-graded to a convention) | done: `prompt_2_synthesis.md`; D1–D7 pending |
 | 3 | — | — | — | — | — | — |
 | 4 | — | — | — | — | — | — |
 

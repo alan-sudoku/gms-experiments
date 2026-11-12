@@ -1,0 +1,14 @@
+E = 6.4939394023  (pi^4/15 = 6.4939394023)
+R32 check: psi(full blackbody) = 0.93112965; Landsberg formula = 0.93112965; diff = -1.11e-16
+R33 check: psi(high-pass u>=2.266) = 0.935541; energy fraction = 0.765496
+           energy fraction above u_c, series (exact) = 0.765496
+R34a check: psi(diluted, max model) = 0.732144
+R34a alt  : psi(diluted, additive etendue mixture) = 0.732474
+R34b check: psi(diluted, no sky background) = 0.837844
+           share (1/3)x^4/eps = 0.109728; psi34b - psi34a(max) = 0.105700
+   eps = 2.0000e-05: psi(additive) = 0.731071
+   eps = 2.1627e-05: psi(additive) = 0.732474
+   eps = 2.3000e-05: psi(additive) = 0.733579
+Per-mode bound with Tb in [Ts, 1.1 Ts]: violations of hv*n*(1 - T0/Ts): 2559 of 20000; of hv*n*(1 - T0/Tb): 0
+   max relative excess over (1 - T0/Ts) bound: 2.189e-03
+5772 K blackbody at 480 nm, solar disk: 1.7740 W/m2/nm; brightness T for 2.05 W/m2/nm (UNSURE input): 5936 K

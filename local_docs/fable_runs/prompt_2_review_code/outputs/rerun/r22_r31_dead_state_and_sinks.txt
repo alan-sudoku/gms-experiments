@@ -1,0 +1,54 @@
+R22 | b(T0) = 403.2299178 kJ/mol | expected 403.23 kJ/mol | tol +/-0.001 kJ/mol | |diff|=8.217e-05 | PASS
+R22 | between b0 and d0: 403.22991782659733 | sanity: 400 < b < 420 | tol exact |  | PASS
+R23 | dS = -67.08032869 J/(mol K) | expected -67.08 J/(mol K) | tol +/-0.01 J/(mol K) | |diff|=3.287e-04 | PASS
+R23 | b(T0) Gibbs-Helmholtz = 403.2299178 kJ/mol | expected 403.2299178 kJ/mol | tol 1e-09 relative | |diff|=0.000e+00 | PASS | vs R22
+R24 | W/Tref = 2012.409861 J/K | expected 2012.41 J/K | tol +/-0.01 J/K | |diff|=1.392e-04 | PASS
+R24 | W/T0 (T0=200 K) = 3000 J/K | expected 3000 J/K | tol +/-0.01 J/K | |diff|=0.000e+00 | PASS
+R24 | ratio = 1.49075 - | expected 1.49075 - | tol +/-1e-05 - | |diff|=2.220e-16 | PASS
+R25 | correct g = 4518.614791 J/K | expected 4518.61 J/K | tol +/-0.02 J/K | |diff|=4.791e-03 | PASS
+R25 | correct s = 4712.409861 J/K | expected 4712.41 J/K | tol +/-0.02 J/K | |diff|=1.392e-04 | PASS
+R25 | correct margin g-s = -193.7950696 J/K | expected -193.8 J/K | tol +/-0.02 J/K | |diff|=4.930e-03 | PASS
+R25 | framework g = 6000 J/K | expected 6000 J/K | tol +/-0.02 J/K | |diff|=0.000e+00 | PASS
+R25 | framework s = 5700 J/K | expected 5700 J/K | tol +/-0.02 J/K | |diff|=0.000e+00 | PASS
+R25 | framework margin g-s = 300 J/K | expected 300 J/K | tol +/-0.02 J/K | |diff|=0.000e+00 | PASS
+R25 | margins opposite signs: (-193.7950695958416, 300.0) | sanity: -, + | tol exact |  | PASS
+R26 | d_bO2 = 53138.24199 J/mol | expected 53138 J/mol | tol +/-5 J/mol | |diff|=2.420e-01 | PASS
+R26 | d_bM = -26569.12099 J/mol | expected -26569 J/mol | tol +/-5 J/mol | |diff|=1.210e-01 | PASS
+R26 | bO2_std = 3974.483515 J/mol | expected 3974 J/mol | tol +/-5 J/mol | |diff|=4.835e-01 | PASS | spec: tabulated ~3.97 kJ/mol UNSURE
+R27 | eta(T0=300, Ts=6000) = 0.9333354167 - | expected 0.933335 - | tol +/-2e-06 - | |diff|=4.167e-07 | PASS
+R27 | eta(T0=298.15, Ts=5772) = 0.9311296542 - | expected 0.93113 - | tol +/-2e-06 - | |diff|=3.458e-07 | PASS
+R27 | eta(T0=200, Ts=5772) = 0.9538004343 - | expected 0.9538 - | tol +/-2e-06 - | |diff|=4.343e-07 | PASS
+R27 | eta(T0=3, Ts=5772) = 0.9993069993 - | expected 0.999307 - | tol +/-2e-06 - | |diff|=6.930e-10 | PASS
+R27 | increases as T0 falls (entries 2-4): [0.9311296542090907, 0.9538004343000049, 0.9993069993070236] | sanity: increasing | tol exact |  | PASS
+R28 | Carnot factor = 0.9483454608 - | expected 0.948345 - | tol +/-2e-06 - | |diff|=4.608e-07 | PASS
+R28 | gap formula = 0.01721580664 - | expected 0.017216 - | tol +/-2e-06 - | |diff|=1.934e-07 | PASS
+R28 | gap by subtraction = 0.01721580664 - | expected 0.017216 - | tol +/-2e-06 - | |diff|=1.934e-07 | PASS
+R28 | gap formula vs subtraction = 0.01721580664 - | expected 0.01721580664 - | tol +/-1e-09 - | |diff|=2.082e-17 | PASS
+R29 | sig*Ta^4 = 459.3003279 W/m2 | expected 459.3 W/m2 | tol +/-0.005 W/m2 | |diff|=3.279e-04 | PASS
+R29 | ultimate, Tc=0 = 153.1001093 W/m2 | expected 153.1 W/m2 | tol +/-0.005 W/m2 | |diff|=1.093e-04 | PASS
+R29 | ultimate, Tc=270 K = 8.007135717 W/m2 | expected 8.007 W/m2 | tol +/-0.005 W/m2 | |diff|=1.357e-04 | PASS
+R29 | single-emitter max (scan) = 48.44183146 W/m2 | expected 48.442 W/m2 | tol +/-0.005 W/m2 | |diff|=1.685e-04 | PASS
+R29 | scan argmax Te = 225 K | expected 225 K | tol +/-0.01 K | |diff|=2.842e-14 | PASS
+R29 | (27/256) sig Ta^4 = 48.44183146 W/m2 | expected 48.44183146 W/m2 | tol +/-0.005 W/m2 | |diff|=2.132e-14 | PASS
+R29 | bound zero at Tc=Ta: 0.0 | sanity: 0 | tol exact |  | PASS
+R29 | bound non-negative on [0,Ta]: min=0.000e+00 | sanity: >= 0 | tol exact |  | PASS
+R30 | U_fw = 16.12224 MJ | expected 16.122 MJ | tol +/-0.002 MJ | |diff|=2.400e-04 | PASS
+R30 | deep-space addition = 13.22784944 MJ | expected 13.228 MJ | tol +/-0.002 MJ | |diff|=1.506e-04 | PASS
+R30 | U with deep-space sink = 29.35008944 MJ | expected 29.35 MJ | tol +/-0.002 MJ | |diff|=8.944e-05 | PASS
+R30 | 270 K sky addition = 0.691816526 MJ | expected 0.692 MJ | tol +/-0.002 MJ | |diff|=1.835e-04 | PASS
+R30 | U with 270 K sky = 16.81405653 MJ | expected 16.814 MJ | tol +/-0.002 MJ | |diff|=5.653e-05 | PASS
+R30 | verdicts (demand > U): fw infeasible, deep not excluded, sky infeasible: (True, False, True) | sanity: (True, False, True) | tol exact |  | PASS
+R31 | framework term = -20 W/m2 | expected -20 W/m2 | tol 1e-09 relative | |diff|=3.553e-15 | PASS
+R31 | corrected term = 20 W/m2 | expected 20 W/m2 | tol 1e-09 relative | |diff|=3.553e-15 | PASS
+
+=== ROW SUMMARY ===
+R22: PASS
+R23: PASS
+R24: PASS
+R25: PASS
+R26: PASS
+R27: PASS
+R28: PASS
+R29: PASS
+R30: PASS
+R31: PASS

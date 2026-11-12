@@ -1,0 +1,15 @@
+A1 answer's corrected total vs (drawn - held, all retired): max rel diff = 1.36e-15
+A2 prompt as written vs (drawn - held, all retired): shortfall/(n b) min 0.000, equals (m+1)(1-R): 6.62e-12
+A3 answer's corrected total vs (drawn - held, last unit in service): (excess - (1-R)nb), max abs / (n b): 1.09e-13  (the in-service unit's dispersal is charged before it occurs)
+A4 'full CExC make-up + b at every dispersal' over-count minus m(1-R)nb, max abs / (n b): 1.48e-13
+B  L10 scrap burden: answer 3180.0 kJ; with V1 dispersal of unrecovered scrap (b = 400.0 kJ/mol, made up) 3446.7 kJ; omitted 266.7 kJ (894.4 J/K)
+C1 extra flux needed 44.8815 W/m2; sky temperature at which the verdict flips (grid) 219.474 K
+C2 cold source, q as magnitude: q(1-T0/Ts) = -20.0 W/m2; q signed (into converter): +20.0 W/m2 (standard exergy-of-heat formula, already correct)
+C3 fixed 0.933 equals eta(T0, 5772 K) at T0 = 290.05 K; at 300 K eta = 0.930702 (fixed value safe); at 250 K eta = 0.942251; at 200 K eta = 0.953800
+C4 relative understatement of the solar line at 200 K: 2.18 %; at 250 K: 0.98 %
+D1 'x leaves the whole system' (all N units switch): avoided 6.000e+13 J = N x average share (6.000e+13 J); per unit 201.241 J/K = lambda_avg
+D2 V7 default (marginal v) per unit in that same scenario: 67.080 J/K -> under-credits by 134.161 J/K per unit if F is avoidable
+D3 lambda = 201.241 J/K; product 1 per-unit test 150.0 < lambda: True; product 2: False; system test (all switch): True. Per-unit rule keeps x in product 2, so x does not leave the system and the lambda credited to product 1 is not earned; yet switching both passes the system test.
+E  D = 1e+06 J/K: break-even r_el = 0.472
+E  D = 4e+06 J/K: break-even r_el = 1.890
+E  D = 1e+07 J/K: break-even r_el = 4.724

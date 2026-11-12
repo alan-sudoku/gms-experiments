@@ -1,0 +1,29 @@
+S4-A | literal prompt sum vs C5 closed form, max rel diff (< 1e-12): 5.887e-16 | PASS
+S4-A | multiplier of w_ext,i vs 1+m(1-R_i), w_conv fixed, max rel diff (< 1e-12): 4.270e-16 | PASS
+S4-A | multiplier of w_ext,i with w_lost,prec fixed equals -m*R_i, max abs diff (< 1e-12): 2.665e-15 | PASS
+S4-B | H1: IN - stock - A equals m(1-R)nb, max diff / nb (< 1e-12): 1.589e-13 | PASS
+S4-B | H2: destroyed equals IN - stock (ledger closes), max rel diff: 1.719e-15 | PASS
+S4-B | H2: stock equals R*n*b, max rel diff: 3.195e-13 | PASS
+S4-B | choice B equals destroyed, max rel diff: 1.719e-15 | PASS
+S4-B | choice C (plan definition) equals choice B, max rel diff: 9.410e-16 | PASS
+S4-B | choice A short by (m+1)(1-R)nb, max diff / nb: 2.624e-13 | PASS
+S4-B | choice D over by m(1-R)nb, max diff / nb: 3.138e-13 | PASS
+S4-C | margin Sigma_g - Sigma_s at r_el = 1.0: 1883105.819 J/K
+S4-C | margin Sigma_g - Sigma_s at r_el = 2.5: -1292235.452 J/K
+S4-C | margin Sigma_g - Sigma_s at r_el = 3.0: -2350682.542 J/K
+S4-C | break-even r_el = D / R5 = 1.889561
+S4-C | flip holds for r_el = 2.5 and 3.0 (both above break-even), not for 1.0: r* = 1.8896 | PASS
+S4-D | cold-sink bound at Tc = 0 K: 153.100109 W/m2; U = 29.350089 MJ
+S4-D | cold-sink bound at Tc = 3 K: 153.099502 W/m2; U = 29.350037 MJ
+S4-D | cold-sink bound at Tc = 270 K: 8.007136 W/m2; U = 16.814057 MJ
+S4-D | bound(0 K) - bound(3 K) = 6.078e-04 W/m2
+S4-D | extra flux needed for demand 20 MJ: 44.8815 W/m2; verdict flips at sky Tc = 219.47 K
+S4-D | verdict 'not excluded' only for sky colder than the flip temperature: 219.47 K | PASS
+S4-D | U with single-emitter value 48.4418 W/m2: 20.307614 MJ; with ultimate bound: 29.350089 MJ
+S4-D | demand 25 MJ: 'infeasible' if the device value is used as the bound, 'not excluded' with the ultimate bound: (True, False) | PASS
+
+=== ROW SUMMARY ===
+S4-A: PASS
+S4-B: PASS
+S4-C: PASS
+S4-D: PASS

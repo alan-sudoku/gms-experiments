@@ -1,0 +1,8 @@
+entropy basis      : g-s = -193.795 J/K  -> g wins
+framework          : g-s = +300.000 J/K  -> g loses
+lost-work basis    : g-s = +60000.0 J    -> g loses
+lost-work / T0     : g-s = +300.000 J/K (identical to framework)
+V5 'exergy basis' T0*=200.0: T0* x entropy margin = -38759.0 J (same sign as entropy basis by construction)
+V5 'exergy basis' T0*=298.15: T0* x entropy margin = -57780.0 J (same sign as entropy basis by construction)
+sweep T0 in [150,290] K: framework sign == lost-work sign in 100.00 % of cases
+sweep: entropy-basis and lost-work-basis verdicts disagree in 5.06 % of cases
