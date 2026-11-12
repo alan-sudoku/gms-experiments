@@ -1,0 +1,50 @@
+
+f=10000 Hz  delta_Al=0.8197 mm  solid Cu 178.44  solid Al 224.65 uOhm/m   (sub-cells <= 0.35 delta)
+ fill=0.30: homogenised bar sigma_eff=fill*sAl -> 414.46 uOhm/m (R/R_Cu=2.323)
+   pitch= 5.000 mm t= 2.739 mm t/delta_Al= 3.34 pitch/delta_eff= 3.34 nsub=10 N= 1000  R'=  278.10 uOhm/m  R/R_homog=0.671 R/R_solidAl=1.238 R/R_solidCu=1.559
+   pitch= 2.500 mm t= 1.369 mm t/delta_Al= 1.67 pitch/delta_eff= 1.67 nsub= 5 N= 1000  R'=  306.84 uOhm/m  R/R_homog=0.740 R/R_solidAl=1.366 R/R_solidCu=1.720
+   pitch= 1.667 mm t= 0.913 mm t/delta_Al= 1.11 pitch/delta_eff= 1.11 nsub= 4 N= 1440  R'=  350.51 uOhm/m  R/R_homog=0.846 R/R_solidAl=1.560 R/R_solidCu=1.964
+   pitch= 1.250 mm t= 0.685 mm t/delta_Al= 0.84 pitch/delta_eff= 0.84 nsub= 3 N= 1440  R'=  374.37 uOhm/m  R/R_homog=0.903 R/R_solidAl=1.666 R/R_solidCu=2.098
+   pitch= 0.833 mm t= 0.456 mm t/delta_Al= 0.56 pitch/delta_eff= 0.56 nsub= 2 N= 1440  R'=  394.58 uOhm/m  R/R_homog=0.952 R/R_solidAl=1.756 R/R_solidCu=2.211
+   pitch= 0.625 mm t= 0.342 mm t/delta_Al= 0.42 pitch/delta_eff= 0.42 nsub= 2 N= 2560  R'=  403.11 uOhm/m  R/R_homog=0.973 R/R_solidAl=1.794 R/R_solidCu=2.259
+   pitch= 0.417 mm t= 0.228 mm t/delta_Al= 0.28 pitch/delta_eff= 0.28 nsub= 2 N= 5760  R'=  409.39 uOhm/m  R/R_homog=0.988 R/R_solidAl=1.822 R/R_solidCu=2.294
+ fill=0.60: homogenised bar sigma_eff=fill*sAl -> 290.81 uOhm/m (R/R_Cu=1.630)
+   pitch= 5.000 mm t= 3.873 mm t/delta_Al= 4.72 pitch/delta_eff= 4.72 nsub=14 N= 1960  R'=  245.54 uOhm/m  R/R_homog=0.844 R/R_solidAl=1.093 R/R_solidCu=1.376
+   pitch= 2.500 mm t= 1.936 mm t/delta_Al= 2.36 pitch/delta_eff= 2.36 nsub= 7 N= 1960  R'=  244.97 uOhm/m  R/R_homog=0.842 R/R_solidAl=1.090 R/R_solidCu=1.373
+   pitch= 1.667 mm t= 1.291 mm t/delta_Al= 1.57 pitch/delta_eff= 1.57 nsub= 5 N= 2250  R'=  254.46 uOhm/m  R/R_homog=0.875 R/R_solidAl=1.133 R/R_solidCu=1.426
+   pitch= 1.250 mm t= 0.968 mm t/delta_Al= 1.18 pitch/delta_eff= 1.18 nsub= 4 N= 2560  R'=  265.39 uOhm/m  R/R_homog=0.913 R/R_solidAl=1.181 R/R_solidCu=1.487
+   pitch= 0.833 mm t= 0.645 mm t/delta_Al= 0.79 pitch/delta_eff= 0.79 nsub= 3 N= 3240  R'=  277.44 uOhm/m  R/R_homog=0.954 R/R_solidAl=1.235 R/R_solidCu=1.555
+   pitch= 0.625 mm t= 0.484 mm t/delta_Al= 0.59 pitch/delta_eff= 0.59 nsub= 2 N= 2560  R'=  281.87 uOhm/m  R/R_homog=0.969 R/R_solidAl=1.255 R/R_solidCu=1.580
+   pitch= 0.417 mm t= 0.323 mm t/delta_Al= 0.39 pitch/delta_eff= 0.39 nsub= 2 N= 5760  R'=  286.79 uOhm/m  R/R_homog=0.986 R/R_solidAl=1.277 R/R_solidCu=1.607
+ fill=0.85: homogenised bar sigma_eff=fill*sAl -> 243.86 uOhm/m (R/R_Cu=1.367)
+   pitch= 5.000 mm t= 4.610 mm t/delta_Al= 5.62 pitch/delta_eff= 5.62 nsub=17 N= 2890  R'=  229.39 uOhm/m  R/R_homog=0.941 R/R_solidAl=1.021 R/R_solidCu=1.286
+   pitch= 2.500 mm t= 2.305 mm t/delta_Al= 2.81 pitch/delta_eff= 2.81 nsub= 9 N= 3240  R'=  229.55 uOhm/m  R/R_homog=0.941 R/R_solidAl=1.022 R/R_solidCu=1.286
+   pitch= 1.667 mm t= 1.537 mm t/delta_Al= 1.87 pitch/delta_eff= 1.87 nsub= 6 N= 3240  R'=  230.38 uOhm/m  R/R_homog=0.945 R/R_solidAl=1.025 R/R_solidCu=1.291
+   pitch= 1.250 mm t= 1.152 mm t/delta_Al= 1.41 pitch/delta_eff= 1.41 nsub= 5 N= 4000  R'=  233.40 uOhm/m  R/R_homog=0.957 R/R_solidAl=1.039 R/R_solidCu=1.308
+   pitch= 0.833 mm t= 0.768 mm t/delta_Al= 0.94 pitch/delta_eff= 0.94 nsub= 3 N= 3240  R'=  236.82 uOhm/m  R/R_homog=0.971 R/R_solidAl=1.054 R/R_solidCu=1.327
+   pitch= 0.625 mm t= 0.576 mm t/delta_Al= 0.70 pitch/delta_eff= 0.70 nsub= 3 N= 5760  R'=  239.76 uOhm/m  R/R_homog=0.983 R/R_solidAl=1.067 R/R_solidCu=1.344
+   pitch= 0.417 mm t= 0.384 mm t/delta_Al= 0.47 pitch/delta_eff= 0.47 nsub= 2 N= 5760  R'=  241.25 uOhm/m  R/R_homog=0.989 R/R_solidAl=1.074 R/R_solidCu=1.352
+
+f=100000 Hz  delta_Al=0.2592 mm  solid Cu 564.67  solid Al 709.42 uOhm/m   (sub-cells <= 0.45 delta)
+ fill=0.30: homogenised bar sigma_eff=fill*sAl -> 1294.26 uOhm/m (R/R_Cu=2.292)
+   pitch= 2.500 mm t= 1.369 mm t/delta_Al= 5.28 pitch/delta_eff= 5.28 nsub=12 N= 5760  R'=  855.25 uOhm/m  R/R_homog=0.661 R/R_solidAl=1.206 R/R_solidCu=1.515
+   pitch= 1.667 mm t= 0.913 mm t/delta_Al= 3.52 pitch/delta_eff= 3.52 nsub= 8 N= 5760  R'=  852.09 uOhm/m  R/R_homog=0.658 R/R_solidAl=1.201 R/R_solidCu=1.509
+   pitch= 1.000 mm t= 0.548 mm t/delta_Al= 2.11 pitch/delta_eff= 2.11 nsub= 5 N= 6250  R'=  884.01 uOhm/m  R/R_homog=0.683 R/R_solidAl=1.246 R/R_solidCu=1.566
+   pitch= 0.625 mm t= 0.342 mm t/delta_Al= 1.32 pitch/delta_eff= 1.32 nsub= 3 N= 5760  R'= 1021.84 uOhm/m  R/R_homog=0.790 R/R_solidAl=1.440 R/R_solidCu=1.810
+   pitch= 0.417 mm t= 0.228 mm t/delta_Al= 0.88 pitch/delta_eff= 0.88 nsub= 2 N= 5760  R'= 1143.30 uOhm/m  R/R_homog=0.883 R/R_solidAl=1.612 R/R_solidCu=2.025
+
+-- sub-cell resolution check (10 kHz, fill 0.3, pitch 2.5 and 1.25 mm)
+
+f=10000 Hz  delta_Al=0.8197 mm  solid Cu 178.44  solid Al 224.65 uOhm/m   (sub-cells <= 0.17 delta)
+ fill=0.30: homogenised bar sigma_eff=fill*sAl -> 414.46 uOhm/m (R/R_Cu=2.323)
+   pitch= 2.500 mm t= 1.369 mm t/delta_Al= 1.67 pitch/delta_eff= 1.67 nsub=10 N= 4000  R'=  309.05 uOhm/m  R/R_homog=0.746 R/R_solidAl=1.376 R/R_solidCu=1.732
+   pitch= 1.250 mm t= 0.685 mm t/delta_Al= 0.84 pitch/delta_eff= 0.84 nsub= 5 N= 4000  R'=  375.63 uOhm/m  R/R_homog=0.906 R/R_solidAl=1.672 R/R_solidCu=2.105
+
+f=10000 Hz  delta_Al=0.8197 mm  solid Cu 178.44  solid Al 224.65 uOhm/m   (sub-cells <= 0.45 delta)
+ fill=0.30: homogenised bar sigma_eff=fill*sAl -> 414.46 uOhm/m (R/R_Cu=2.323)
+   pitch= 2.500 mm t= 1.369 mm t/delta_Al= 1.67 pitch/delta_eff= 1.67 nsub= 4 N=  640  R'=  305.21 uOhm/m  R/R_homog=0.736 R/R_solidAl=1.359 R/R_solidCu=1.710
+   pitch= 1.250 mm t= 0.685 mm t/delta_Al= 0.84 pitch/delta_eff= 0.84 nsub= 2 N=  640  R'=  371.95 uOhm/m  R/R_homog=0.897 R/R_solidAl=1.656 R/R_solidCu=2.084
+
+-- strand-level proximity loss: one cell per strand (none) vs 2x2 cells, pitch 0.417 mm, fill 0.3
+   f=10000 t/delta=0.28: 1x1 407.93  2x2 409.39 uOhm/m  increase 0.0036   estimate fill*(t/delta)^2/6 = 0.0039 (x0.75 captured by 2x2 = 0.0029)
+   f=100000 t/delta=0.88: 1x1 1100.19  2x2 1143.30 uOhm/m  increase 0.0392   estimate fill*(t/delta)^2/6 = 0.0388 (x0.75 captured by 2x2 = 0.0291)

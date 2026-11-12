@@ -1,0 +1,57 @@
+== 1. monotonicity: R'(sigma) for the fixed 10x100 mm solid envelope
+   f=10000 sigma= 1.000e+05 b/delta=  0.31 R'= 10446.44 uOhm/m
+   f=10000 sigma= 1.604e+05 b/delta=  0.40 R'=  6822.50 uOhm/m
+   f=10000 sigma= 2.574e+05 b/delta=  0.50 R'=  4559.11 uOhm/m
+   f=10000 sigma= 4.129e+05 b/delta=  0.64 R'=  3098.09 uOhm/m
+   f=10000 sigma= 6.624e+05 b/delta=  0.81 R'=  2137.84 uOhm/m
+   f=10000 sigma= 1.063e+06 b/delta=  1.02 R'=  1508.05 uOhm/m
+   f=10000 sigma= 1.705e+06 b/delta=  1.30 R'=  1098.80 uOhm/m
+   f=10000 sigma= 2.735e+06 b/delta=  1.64 R'=   836.83 uOhm/m
+   f=10000 sigma= 4.388e+06 b/delta=  2.08 R'=   661.23 uOhm/m
+   f=10000 sigma= 7.039e+06 b/delta=  2.64 R'=   526.57 uOhm/m
+   f=10000 sigma= 1.129e+07 b/delta=  3.34 R'=   414.54 uOhm/m
+   f=10000 sigma= 1.812e+07 b/delta=  4.23 R'=   325.29 uOhm/m
+   f=10000 sigma= 2.906e+07 b/delta=  5.36 R'=   256.00 uOhm/m
+   f=10000 sigma= 4.663e+07 b/delta=  6.78 R'=   201.72 uOhm/m
+   f=10000 sigma= 7.480e+07 b/delta=  8.59 R'=   159.09 uOhm/m
+   f=10000 sigma= 1.200e+08 b/delta= 10.88 R'=   125.54 uOhm/m
+   f=100000 sigma= 1.000e+05 b/delta=  0.99 R'= 15748.94 uOhm/m
+   f=100000 sigma= 1.604e+05 b/delta=  1.26 R'= 11418.16 uOhm/m
+   f=100000 sigma= 2.574e+05 b/delta=  1.59 R'=  8645.40 uOhm/m
+   f=100000 sigma= 4.129e+05 b/delta=  2.02 R'=  6807.75 uOhm/m
+   f=100000 sigma= 6.624e+05 b/delta=  2.56 R'=  5425.48 uOhm/m
+   f=100000 sigma= 1.063e+06 b/delta=  3.24 R'=  4277.07 uOhm/m
+   f=100000 sigma= 1.705e+06 b/delta=  4.10 R'=  3355.61 uOhm/m
+   f=100000 sigma= 2.735e+06 b/delta=  5.20 R'=  2640.00 uOhm/m
+   f=100000 sigma= 4.388e+06 b/delta=  6.58 R'=  2080.03 uOhm/m
+   f=100000 sigma= 7.039e+06 b/delta=  8.33 R'=  1640.22 uOhm/m
+   f=100000 sigma= 1.129e+07 b/delta= 10.56 R'=  1294.29 uOhm/m
+   f=100000 sigma= 1.812e+07 b/delta= 13.37 R'=  1021.82 uOhm/m
+   f=100000 sigma= 2.906e+07 b/delta= 16.94 R'=   806.99 uOhm/m
+   f=100000 sigma= 4.663e+07 b/delta= 21.45 R'=   637.47 uOhm/m
+   f=100000 sigma= 7.480e+07 b/delta= 27.17 R'=   503.96 uOhm/m
+   f=100000 sigma= 1.200e+08 b/delta= 34.41 R'=   398.23 uOhm/m
+
+== 2. tube wall sweep, Al, 10x100 envelope, 10 kHz
+   wall=0.50 delta = 0.410 mm  area=  89.5 mm2 R'=  408.98 uOhm/m  R/R_solidAl=1.821
+   wall=0.80 delta = 0.656 mm  area= 142.5 mm2 R'=  275.70 uOhm/m  R/R_solidAl=1.228
+   wall=1.00 delta = 0.820 mm  area= 177.6 mm2 R'=  237.79 uOhm/m  R/R_solidAl=1.059
+   wall=1.20 delta = 0.984 mm  area= 212.5 mm2 R'=  218.72 uOhm/m  R/R_solidAl=0.974
+   wall=1.40 delta = 1.148 mm  area= 247.2 mm2 R'=  211.55 uOhm/m  R/R_solidAl=0.942
+   wall=1.57 delta = 1.287 mm  area= 276.5 mm2 R'=  210.44 uOhm/m  R/R_solidAl=0.937
+   wall=1.80 delta = 1.475 mm  area= 315.9 mm2 R'=  212.92 uOhm/m  R/R_solidAl=0.948
+   wall=2.20 delta = 1.803 mm  area= 383.7 mm2 R'=  219.96 uOhm/m  R/R_solidAl=0.979
+   wall=3.00 delta = 2.459 mm  area= 516.8 mm2 R'=  224.91 uOhm/m  R/R_solidAl=1.002
+   wall=4.00 delta = 3.279 mm  area= 678.3 mm2 R'=  224.60 uOhm/m  R/R_solidAl=1.000
+
+== 3. Al tubes 10 mm x W, wall 1.6 delta_Al, vs solid Cu 10x100 (solid Cu mass 8.96 kg/m)
+   f=10000 Al tube 100x10 mm wall 1.312 mm area  281.7 mm2 mass  0.76 kg/m  R'=  210.57  R/R_solidCu=1.181
+   f=10000 Al tube 115x10 mm wall 1.312 mm area  321.0 mm2 mass  0.87 kg/m  R'=  188.53  R/R_solidCu=1.057
+   f=10000 Al tube 126x10 mm wall 1.312 mm area  349.8 mm2 mass  0.94 kg/m  R'=  175.25  R/R_solidCu=0.983
+   f=10000 Al tube 135x10 mm wall 1.312 mm area  373.5 mm2 mass  1.01 kg/m  R'=  165.78  R/R_solidCu=0.930
+   f=10000 Al tube 150x10 mm wall 1.312 mm area  412.8 mm2 mass  1.11 kg/m  R'=  152.22  R/R_solidCu=0.854
+   f=100000 Al tube 100x10 mm wall 0.415 mm area   90.6 mm2 mass  0.24 kg/m  R'=  659.35  R/R_solidCu=1.169
+   f=100000 Al tube 115x10 mm wall 0.415 mm area  103.0 mm2 mass  0.28 kg/m  R'=  590.87  R/R_solidCu=1.047
+   f=100000 Al tube 126x10 mm wall 0.415 mm area  112.1 mm2 mass  0.30 kg/m  R'=  549.58  R/R_solidCu=0.974
+   f=100000 Al tube 135x10 mm wall 0.415 mm area  119.6 mm2 mass  0.32 kg/m  R'=  520.11  R/R_solidCu=0.922
+   f=100000 Al tube 150x10 mm wall 0.415 mm area  132.0 mm2 mass  0.36 kg/m  R'=  477.83  R/R_solidCu=0.847

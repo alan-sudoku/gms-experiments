@@ -1,0 +1,16 @@
+gap=   2 mm f=  10000 solid Cu                   N= 1508 R'=  231.49 uOhm/m per conductor (loss-based   231.47)  R/R_Cu=1.000  1/(sigma*delta*w)=  257.37
+gap=   2 mm f=  10000 solid Al                   N= 1368 R'=  290.03 uOhm/m per conductor (loss-based   290.00)  R/R_Cu=1.253  1/(sigma*delta*w)=  323.60
+gap=   2 mm f=  10000 Al lattice homog 0.3*sAl   N=  972 R'=  522.58 uOhm/m per conductor (loss-based   522.52)  R/R_Cu=2.257  1/(sigma*delta*w)=  590.81
+gap=   2 mm f=  10000 Al tube wall 1.399 mm      N= 1168 R'=  270.91 uOhm/m per conductor (loss-based   270.91)  R/R_Cu=1.170  1/(sigma*delta*w)=  323.60
+gap=   2 mm f= 100000 solid Cu                   N= 2268 R'=  739.48 uOhm/m per conductor (loss-based   739.43)  R/R_Cu=1.000  1/(sigma*delta*w)=  813.87
+gap=   2 mm f= 100000 solid Al                   N= 2108 R'=  928.61 uOhm/m per conductor (loss-based   928.54)  R/R_Cu=1.256  1/(sigma*delta*w)= 1023.31
+gap=   2 mm f= 100000 Al lattice homog 0.3*sAl   N= 1652 R'= 1686.55 uOhm/m per conductor (loss-based  1686.40)  R/R_Cu=2.281  1/(sigma*delta*w)= 1868.31
+gap=   2 mm f= 100000 Al tube wall 1.399 mm      N= 2944 R'=  928.65 uOhm/m per conductor (loss-based   928.60)  R/R_Cu=1.256  1/(sigma*delta*w)= 1023.31
+gap=  20 mm f=  10000 solid Cu                   N= 1508 R'=  187.75 uOhm/m per conductor (loss-based   187.66)  R/R_Cu=1.000  1/(sigma*delta*w)=  257.37
+gap=  20 mm f=  10000 solid Al                   N= 1368 R'=  236.15 uOhm/m per conductor (loss-based   236.04)  R/R_Cu=1.258  1/(sigma*delta*w)=  323.60
+gap=  20 mm f=  10000 Al lattice homog 0.3*sAl   N=  972 R'=  432.70 uOhm/m per conductor (loss-based   432.50)  R/R_Cu=2.305  1/(sigma*delta*w)=  590.81
+gap=  20 mm f=  10000 Al tube wall 1.399 mm      N= 1168 R'=  221.01 uOhm/m per conductor (loss-based   220.98)  R/R_Cu=1.177  1/(sigma*delta*w)=  323.60
+gap=  20 mm f= 100000 solid Cu                   N= 2268 R'=  594.22 uOhm/m per conductor (loss-based   593.99)  R/R_Cu=1.000  1/(sigma*delta*w)=  813.87
+gap=  20 mm f= 100000 solid Al                   N= 2108 R'=  746.87 uOhm/m per conductor (loss-based   746.56)  R/R_Cu=1.257  1/(sigma*delta*w)= 1023.31
+gap=  20 mm f= 100000 Al lattice homog 0.3*sAl   N= 1652 R'= 1362.41 uOhm/m per conductor (loss-based  1361.82)  R/R_Cu=2.293  1/(sigma*delta*w)= 1868.31
+gap=  20 mm f= 100000 Al tube wall 1.399 mm      N= 2944 R'=  746.87 uOhm/m per conductor (loss-based   746.69)  R/R_Cu=1.257  1/(sigma*delta*w)= 1023.31

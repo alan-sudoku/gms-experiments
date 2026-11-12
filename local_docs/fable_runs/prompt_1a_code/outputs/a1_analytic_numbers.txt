@@ -1,0 +1,50 @@
+== 1. skin depths [mm]
+   f=   5000 Hz  Cu 0.9220  Al 1.1592  lattice 0.300*sAl 2.1164  0.222*sAl 2.4591  0.100*sAl 3.6658
+   f=  10000 Hz  Cu 0.6519  Al 0.8197  lattice 0.300*sAl 1.4965  0.222*sAl 1.7388  0.100*sAl 2.5921
+   f= 100000 Hz  Cu 0.2062  Al 0.2592  lattice 0.300*sAl 0.4732  0.222*sAl 0.5499  0.100*sAl 0.8197
+
+== 2. Claim A's factor F(xi)
+   xi= 0.10  F=  1.0000   1+4xi^4/45=  1.0000   F/xi=10.0001
+   xi= 0.28  F=  1.0005   1+4xi^4/45=  1.0005   F/xi= 3.5734
+   xi= 0.50  F=  1.0055   1+4xi^4/45=  1.0056   F/xi= 2.0111
+   xi= 0.88  F=  1.0521   1+4xi^4/45=  1.0533   F/xi= 1.1956
+   xi= 1.00  F=  1.0856   1+4xi^4/45=  1.0889   F/xi= 1.0856
+   xi= 1.50  F=  1.3781   1+4xi^4/45=  1.4500   F/xi= 0.9187
+   xi= 2.00  F=  1.8978   1+4xi^4/45=  2.4222   F/xi= 0.9489
+   xi= 3.00  F=  3.0101   1+4xi^4/45=  8.2000   F/xi= 1.0034
+   xi= 5.00  F=  4.9994   1+4xi^4/45= 56.5556   F/xi= 0.9999
+   minimum of F/xi: 0.9172 at xi = 1.571  (thick limit F/xi -> 1)
+
+== 3. Claim A's model applied to the A3 case vs the 2-D field solution
+   f=10000: strut t_w=0.228 mm xi=0.278 F=1.0005
+      lattice: claim    88.46 uOhm/m   2-D homogenised   414.21   claim underestimates by x4.7
+      solid Cu: claim formula, xi=t/delta=15.34:   257.37;  xi=t/(2delta):   128.68;  2-D:   178.34 uOhm/m
+      R_lattice/R_Cu: claim 0.344 (one-sided) or 0.687 (two-sided);  2-D 2.323
+   f=100000: strut t_w=0.228 mm xi=0.880 F=1.0522
+      lattice: claim    93.03 uOhm/m   2-D homogenised  1293.28   claim underestimates by x13.9
+      solid Cu: claim formula, xi=t/delta=48.51:   813.87;  xi=t/(2delta):   406.94;  2-D:   564.22 uOhm/m
+      R_lattice/R_Cu: claim 0.114 (one-sided) or 0.229 (two-sided);  2-D 2.292
+
+== 4. thick-limit scaling ratios (R ~ 1/sqrt(sigma) at fixed shape)
+   sqrt(sCu/sAl) = 1.2573
+   sigma_eff=0.300*sAl: R/R_solidAl = 1.826   R/R_solidCu = 2.296   DC: R/R_solidCu = 5.27
+   sigma_eff=0.222*sAl: R/R_solidAl = 2.121   R/R_solidCu = 2.667   DC: R/R_solidCu = 7.11
+   sigma_eff=0.100*sAl: R/R_solidAl = 3.162   R/R_solidCu = 3.976   DC: R/R_solidCu = 15.81
+
+== 5. strut-level proximity loss / bar-scale loss (thin struts, pitch << delta_eff)
+   f=10000 t=0.100 mm t/delta=0.12: square fill*(t/d)^2/6 = 0.0007   round fill*(d/delta)^2/8 = 0.0006
+   f=10000 t=0.200 mm t/delta=0.24: square fill*(t/d)^2/6 = 0.0030   round fill*(d/delta)^2/8 = 0.0022
+   f=10000 t=0.228 mm t/delta=0.28: square fill*(t/d)^2/6 = 0.0039   round fill*(d/delta)^2/8 = 0.0029
+   f=10000 t=0.259 mm t/delta=0.32: square fill*(t/d)^2/6 = 0.0050   round fill*(d/delta)^2/8 = 0.0037
+   f=100000 t=0.100 mm t/delta=0.39: square fill*(t/d)^2/6 = 0.0074   round fill*(d/delta)^2/8 = 0.0056
+   f=100000 t=0.200 mm t/delta=0.77: square fill*(t/d)^2/6 = 0.0298   round fill*(d/delta)^2/8 = 0.0223
+   f=100000 t=0.228 mm t/delta=0.88: square fill*(t/d)^2/6 = 0.0387   round fill*(d/delta)^2/8 = 0.0290
+   f=100000 t=0.259 mm t/delta=1.00: square fill*(t/d)^2/6 = 0.0499   round fill*(d/delta)^2/8 = 0.0374
+
+== 6. ideal Al Litz, fill 0.3, bundle 10 x 100 mm (h = 10 mm)
+   f=10000 strand d=0.300 mm (d/delta=0.37) strands=    4244  R_dc=88.42  prox ratio=0.037  R'=  91.72 uOhm/m
+   f=10000 strand d=0.200 mm (d/delta=0.24) strands=    9549  R_dc=88.42  prox ratio=0.017  R'=  89.89 uOhm/m
+   f=10000 strand d=0.100 mm (d/delta=0.12) strands=   38197  R_dc=88.42  prox ratio=0.004  R'=  88.78 uOhm/m
+   f=100000 strand d=0.100 mm (d/delta=0.39) strands=   38197  R_dc=88.42  prox ratio=0.415  R'= 125.14 uOhm/m
+   f=100000 strand d=0.071 mm (d/delta=0.27) strands=   75773  R_dc=88.42  prox ratio=0.209  R'= 106.93 uOhm/m
+   f=100000 strand d=0.050 mm (d/delta=0.19) strands=  152789  R_dc=88.42  prox ratio=0.104  R'=  97.60 uOhm/m

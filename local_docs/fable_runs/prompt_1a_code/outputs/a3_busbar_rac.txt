@@ -1,0 +1,76 @@
+wall of equal-mass tube (area 0.3*A = 300 mm2) = 1.3992 mm
+
+== A3  f = 10000 Hz ==  delta_Cu=0.6519 mm  delta_Al=0.8197 mm
+   solid Cu lvl0                                             N=  240  R'=   177.71 uOhm/m  (loss-based    177.28)  [  0.1s]
+   solid Cu lvl1                                             N=  754  R'=   178.34 uOhm/m  (loss-based    178.17)  [  0.5s]
+   solid Cu lvl2                                             N= 1786  R'=   178.44 uOhm/m  (loss-based    178.36)  [  2.1s]
+      sigma=5.9600e+07 S/m delta=0.6519 mm  Rdc=   16.78  1/(sigma*delta*P)=  116.99  edge factor= 1.525  Rac/Rdc=  10.63
+   solid Al lvl0                                             N=  210  R'=   223.60 uOhm/m  (loss-based    223.03)  [  0.0s]
+   solid Al lvl1                                             N=  684  R'=   224.56 uOhm/m  (loss-based    224.34)  [  0.3s]
+   solid Al lvl2                                             N= 1564  R'=   224.65 uOhm/m  (loss-based    224.55)  [  1.5s]
+      sigma=3.7700e+07 S/m delta=0.8197 mm  Rdc=   26.53  1/(sigma*delta*P)=  147.09  edge factor= 1.527  Rac/Rdc=   8.47
+   Al lattice homog. sigma_eff=0.300*sAl (all strut lvl0     N=  168  R'=   413.36 uOhm/m  (loss-based    412.33)  [  0.0s]
+   Al lattice homog. sigma_eff=0.300*sAl (all strut lvl1     N=  486  R'=   414.21 uOhm/m  (loss-based    413.81)  [  0.1s]
+   Al lattice homog. sigma_eff=0.300*sAl (all strut lvl2     N= 1246  R'=   414.46 uOhm/m  (loss-based    414.30)  [  0.8s]
+      sigma=1.1310e+07 S/m delta=1.4965 mm  Rdc=   88.42  1/(sigma*delta*P)=  268.55  edge factor= 1.543  Rac/Rdc=   4.69
+   Al lattice homog. sigma_eff=0.222*sAl (isotropic lvl0     N=  140  R'=   481.25 uOhm/m  (loss-based    480.01)  [  0.0s]
+   Al lattice homog. sigma_eff=0.222*sAl (isotropic lvl1     N=  486  R'=   482.85 uOhm/m  (loss-based    482.48)  [  0.1s]
+   Al lattice homog. sigma_eff=0.222*sAl (isotropic lvl2     N= 1144  R'=   483.01 uOhm/m  (loss-based    482.86)  [  0.7s]
+      sigma=8.3778e+06 S/m delta=1.7388 mm  Rdc=  119.36  1/(sigma*delta*P)=  312.03  edge factor= 1.548  Rac/Rdc=   4.05
+   Al lattice homog. sigma_eff=0.100*sAl (rho/3, lo lvl0     N=  108  R'=   707.77 uOhm/m  (loss-based    706.61)  [  0.0s]
+   Al lattice homog. sigma_eff=0.100*sAl (rho/3, lo lvl1     N=  364  R'=   711.39 uOhm/m  (loss-based    711.08)  [  0.1s]
+   Al lattice homog. sigma_eff=0.100*sAl (rho/3, lo lvl2     N=  946  R'=   712.48 uOhm/m  (loss-based    712.37)  [  0.5s]
+      sigma=3.7700e+06 S/m delta=2.5921 mm  Rdc=  265.25  1/(sigma*delta*P)=  465.14  edge factor= 1.532  Rac/Rdc=   2.69
+   Al tube 10x100, wall 1.399 mm lvl0                        N=  246  R'=   210.91 uOhm/m  (loss-based    210.74)  [  0.0s]
+   Al tube 10x100, wall 1.399 mm lvl1                        N=  584  R'=   211.59 uOhm/m  (loss-based    211.53)  [  0.2s]
+   Al tube 10x100, wall 1.399 mm lvl2                        N= 1404  R'=   212.12 uOhm/m  (loss-based    212.10)  [  1.3s]
+      1-D estimate Dowell(wall/delta_Al=1.71)/(sigma*wall*(P-4*wall))=  139.12 uOhm/m (no edge crowding)
+   Cu tube 10x100, wall 1.399 mm lvl0                        N=  258  R'=   172.82 uOhm/m  (loss-based    172.72)  [  0.0s]
+   Cu tube 10x100, wall 1.399 mm lvl1                        N=  770  R'=   173.86 uOhm/m  (loss-based    173.83)  [  0.3s]
+   Cu tube 10x100, wall 1.399 mm lvl2                        N= 1694  R'=   174.11 uOhm/m  (loss-based    174.09)  [  1.7s]
+
+== A3  f = 100000 Hz ==  delta_Cu=0.2062 mm  delta_Al=0.2592 mm
+   solid Cu lvl0                                             N=  374  R'=   561.20 uOhm/m  (loss-based    559.98)  [  0.1s]
+   solid Cu lvl1                                             N= 1134  R'=   564.22 uOhm/m  (loss-based    563.73)  [  0.7s]
+   solid Cu lvl2                                             N= 2754  R'=   564.67 uOhm/m  (loss-based    564.45)  [  5.0s]
+      sigma=5.9600e+07 S/m delta=0.2062 mm  Rdc=   16.78  1/(sigma*delta*P)=  369.94  edge factor= 1.526  Rac/Rdc=  33.65
+   solid Al lvl0                                             N=  363  R'=   706.66 uOhm/m  (loss-based    705.13)  [  0.1s]
+   solid Al lvl1                                             N= 1054  R'=   708.94 uOhm/m  (loss-based    708.31)  [  0.6s]
+   solid Al lvl2                                             N= 2500  R'=   709.42 uOhm/m  (loss-based    709.13)  [  4.4s]
+      sigma=3.7700e+07 S/m delta=0.2592 mm  Rdc=   26.53  1/(sigma*delta*P)=  465.14  edge factor= 1.525  Rac/Rdc=  26.75
+   Al lattice homog. sigma_eff=0.300*sAl (all strut lvl0     N=  279  R'=  1289.01 uOhm/m  (loss-based   1285.98)  [  0.0s]
+   Al lattice homog. sigma_eff=0.300*sAl (all strut lvl1     N=  826  R'=  1293.28 uOhm/m  (loss-based   1292.05)  [  0.4s]
+   Al lattice homog. sigma_eff=0.300*sAl (all strut lvl2     N= 2016  R'=  1294.26 uOhm/m  (loss-based   1293.69)  [  2.7s]
+      sigma=1.1310e+07 S/m delta=0.4732 mm  Rdc=   88.42  1/(sigma*delta*P)=  849.23  edge factor= 1.524  Rac/Rdc=  14.64
+   Al lattice homog. sigma_eff=0.222*sAl (isotropic lvl0     N=  248  R'=  1495.77 uOhm/m  (loss-based   1492.10)  [  0.0s]
+   Al lattice homog. sigma_eff=0.222*sAl (isotropic lvl1     N=  754  R'=  1502.75 uOhm/m  (loss-based   1501.28)  [  0.4s]
+   Al lattice homog. sigma_eff=0.222*sAl (isotropic lvl2     N= 1900  R'=  1504.15 uOhm/m  (loss-based   1503.48)  [  2.4s]
+      sigma=8.3778e+06 S/m delta=0.5499 mm  Rdc=  119.36  1/(sigma*delta*P)=  986.72  edge factor= 1.524  Rac/Rdc=  12.60
+   Al lattice homog. sigma_eff=0.100*sAl (rho/3, lo lvl0     N=  210  R'=  2235.99 uOhm/m  (loss-based   2230.28)  [  0.0s]
+   Al lattice homog. sigma_eff=0.100*sAl (rho/3, lo lvl1     N=  684  R'=  2245.59 uOhm/m  (loss-based   2243.36)  [  0.4s]
+   Al lattice homog. sigma_eff=0.100*sAl (rho/3, lo lvl2     N= 1564  R'=  2246.54 uOhm/m  (loss-based   2245.47)  [  1.4s]
+      sigma=3.7700e+06 S/m delta=0.8197 mm  Rdc=  265.25  1/(sigma*delta*P)= 1470.91  edge factor= 1.527  Rac/Rdc=   8.47
+   Al tube 10x100, wall 1.399 mm lvl0                        N=  530  R'=   707.13 uOhm/m  (loss-based    706.22)  [  0.2s]
+   Al tube 10x100, wall 1.399 mm lvl1                        N= 1472  R'=   708.93 uOhm/m  (loss-based    708.55)  [  1.2s]
+   Al tube 10x100, wall 1.399 mm lvl2                        N= 3480  R'=   709.40 uOhm/m  (loss-based    709.23)  [  7.7s]
+      1-D estimate Dowell(wall/delta_Al=5.40)/(sigma*wall*(P-4*wall))=  477.26 uOhm/m (no edge crowding)
+   Cu tube 10x100, wall 1.399 mm lvl0                        N=  660  R'=   563.64 uOhm/m  (loss-based    562.86)  [  0.3s]
+   Cu tube 10x100, wall 1.399 mm lvl1                        N= 1728  R'=   564.26 uOhm/m  (loss-based    563.93)  [  1.9s]
+   Cu tube 10x100, wall 1.399 mm lvl2                        N= 3874  R'=   564.56 uOhm/m  (loss-based    564.40)  [ 10.7s]
+
+== summary (finest mesh), I_rms = 1000 A, T0 = 298.15 K
+  f [Hz]  case                                                                   R [uOhm/m]  R/R_Cu  P [W/m] Sdot [W/(K m)] m [kg/m] R*m [uOhm kg/m2]
+   10000  solid Cu                                                                   178.44   1.000    178.4          0.598     8.96           1598.8
+   10000  solid Al                                                                   224.65   1.259    224.7          0.753     2.70            606.6
+   10000  Al lattice homog. sigma_eff=0.300*sAl (all struts axial, tau=1)            414.46   2.323    414.5          1.390     0.81            335.7
+   10000  Al lattice homog. sigma_eff=0.222*sAl (isotropic HS upper bound)           483.01   2.707    483.0          1.620     0.81            391.2
+   10000  Al lattice homog. sigma_eff=0.100*sAl (rho/3, low-density strut foam)      712.48   3.993    712.5          2.390     0.81            577.1
+   10000  Al tube, same envelope, wall 1.399 mm (equal mass to lattice)              212.12   1.189    212.1          0.711     0.81            171.8
+   10000  Cu tube, same envelope, wall 1.399 mm                                      174.11   0.976    174.1          0.584     2.69            468.0
+  100000  solid Cu                                                                   564.67   1.000    564.7          1.894     8.96           5059.5
+  100000  solid Al                                                                   709.42   1.256    709.4          2.379     2.70           1915.4
+  100000  Al lattice homog. sigma_eff=0.300*sAl (all struts axial, tau=1)           1294.26   2.292   1294.3          4.341     0.81           1048.4
+  100000  Al lattice homog. sigma_eff=0.222*sAl (isotropic HS upper bound)          1504.15   2.664   1504.1          5.045     0.81           1218.4
+  100000  Al lattice homog. sigma_eff=0.100*sAl (rho/3, low-density strut foam)     2246.54   3.978   2246.5          7.535     0.81           1819.7
+  100000  Al tube, same envelope, wall 1.399 mm (equal mass to lattice)              709.40   1.256    709.4          2.379     0.81            574.6
+  100000  Cu tube, same envelope, wall 1.399 mm                                      564.56   1.000    564.6          1.894     2.69           1517.5

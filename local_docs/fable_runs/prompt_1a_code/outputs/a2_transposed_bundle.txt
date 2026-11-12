@@ -1,0 +1,4 @@
+f=10000 pitch=0.417 t=0.228 mm (t/delta=0.28) nsub=2 N=5760+1440: R'_transposed=   91.38 uOhm/m (via V:    91.38)  R_dc=88.42  prox ratio sim=0.034  low-freq 1-D estimate=0.029  [32s]
+f=100000 pitch=0.417 t=0.228 mm (t/delta=0.88) nsub=2 N=5760+1440: R'_transposed=  382.46 uOhm/m (via V:   382.46)  R_dc=88.42  prox ratio sim=3.326  low-freq 1-D estimate=2.884  [34s]
+f=10000 pitch=0.500 t=0.274 mm (t/delta=0.33) nsub=3 N=9000+1000: R'_transposed=   93.48 uOhm/m (via V:    93.48)  R_dc=88.42  prox ratio sim=0.057  low-freq 1-D estimate=0.042  [78s]
+f=100000 pitch=0.500 t=0.274 mm (t/delta=1.06) nsub=3 N=9000+1000: R'_transposed=  585.77 uOhm/m (via V:   585.77)  R_dc=88.42  prox ratio sim=5.625  low-freq 1-D estimate=4.153  [82s]

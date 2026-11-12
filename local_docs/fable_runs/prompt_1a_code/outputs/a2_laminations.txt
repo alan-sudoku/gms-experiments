@@ -1,0 +1,10 @@
+f=10000 Hz delta_Al=0.8197 mm
+  (a) isolated stack of 10 parallel Al strips 0.90 mm (t/delta=1.10), not interleaved: N=1710 R'=  231.45 uOhm/m
+  (a) isolated stack of 20 parallel Al strips 0.45 mm (t/delta=0.55), not interleaved: N=3540 R'=  235.45 uOhm/m
+  (b) interleaved 5 go + 5 return Al foils 1.00 mm x 100 mm, gap 0.20 mm, stack 11.8 mm: N=1710 R'_go=   56.89 uOhm/m (loss-based    56.89); Claim-A formula xi=t/delta=1.22:    62.69; corrected 1-D model:    56.91
+  (b) interleaved 20 go + 20 return Al foils 0.25 mm x 100 mm, gap 0.10 mm, stack 13.9 mm: N=7440 R'_go=   53.28 uOhm/m (loss-based    53.28); Claim-A formula xi=t/delta=0.30:    53.09; corrected 1-D model:    53.72
+f=100000 Hz delta_Al=0.2592 mm
+  (a) isolated stack of 10 parallel Al strips 0.90 mm (t/delta=3.47), not interleaved: N=3720 R'=  719.76 uOhm/m
+  (a) isolated stack of 20 parallel Al strips 0.45 mm (t/delta=1.74), not interleaved: N=4960 R'=  719.65 uOhm/m
+  (b) interleaved 5 go + 5 return Al foils 1.00 mm x 100 mm, gap 0.20 mm, stack 11.8 mm: N=4340 R'_go=  107.14 uOhm/m (loss-based   107.14); Claim-A formula xi=t/delta=3.86:   204.87; corrected 1-D model:   107.79
+  (b) interleaved 20 go + 20 return Al foils 0.25 mm x 100 mm, gap 0.10 mm, stack 13.9 mm: N=7440 R'_go=   53.96 uOhm/m (loss-based    53.96); Claim-A formula xi=t/delta=0.96:    57.00; corrected 1-D model:    54.02

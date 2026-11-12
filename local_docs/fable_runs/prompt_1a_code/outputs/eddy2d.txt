@@ -1,0 +1,13 @@
+== V1: closed-form kernel vs brute-force midpoint quadrature
+   exact +0.04495768   midpoint +0.04495768
+   exact -0.03350030   midpoint -0.03350030
+   exact +0.02635262   midpoint +0.02635262
+== V2: DC limit, solid Cu 10x100 mm at 1 Hz:  expect 16.778523489932883 uOhm/m
+   solid Cu 1 Hz                                             N=  135  R'=    16.78 uOhm/m  (loss-based     16.78)  [  0.0s]
+== V3: round Cu wire radius 2 mm (staircase mesh) vs exact Bessel solution
+   f=   10000 a/delta= 3.07 n= 20 N=  316 Rac/Rdc numeric= 1.8084 (loss  1.8084) exact= 1.8036
+   f=   10000 a/delta= 3.07 n= 40 N= 1256 Rac/Rdc numeric= 1.8032 (loss  1.8032) exact= 1.8036
+   f=   10000 a/delta= 3.07 n= 64 N= 3223 Rac/Rdc numeric= 1.8051 (loss  1.8051) exact= 1.8036
+   f=   50000 a/delta= 6.86 n= 20 N=  316 Rac/Rdc numeric= 3.6991 (loss  3.6991) exact= 3.6934
+   f=   50000 a/delta= 6.86 n= 40 N= 1256 Rac/Rdc numeric= 3.6923 (loss  3.6923) exact= 3.6934
+   f=   50000 a/delta= 6.86 n= 64 N= 3223 Rac/Rdc numeric= 3.6968 (loss  3.6968) exact= 3.6934

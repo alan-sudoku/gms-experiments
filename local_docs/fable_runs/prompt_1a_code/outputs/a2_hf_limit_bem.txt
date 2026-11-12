@@ -1,0 +1,32 @@
+== 1. edge factor kappa in the limit delta -> 0 (panel refinement study)
+10 x 100 mm
+   hmin/b=  1e-06 ratio=1.50 panels=  72  kappa=1.5608  capacity=29.7640 mm
+   hmin/b=  1e-08 ratio=1.40 panels= 112  kappa=1.5618  capacity=29.7643 mm
+   hmin/b=  1e-10 ratio=1.30 panels= 176  kappa=1.5615  capacity=29.7645 mm
+   hmin/b=  1e-12 ratio=1.25 panels= 246  kappa=1.5613  capacity=29.7646 mm
+   hmin/b=  1e-14 ratio=1.20 panels= 349  kappa=1.5611  capacity=29.7647 mm
+10 x 10 mm (square)
+   hmin/b=  1e-06 ratio=1.50 panels=  66  kappa=1.2722  capacity=5.9016 mm
+   hmin/b=  1e-08 ratio=1.40 panels= 106  kappa=1.2738  capacity=5.9016 mm
+   hmin/b=  1e-10 ratio=1.30 panels= 168  kappa=1.2738  capacity=5.9017 mm
+   hmin/b=  1e-12 ratio=1.25 panels= 236  kappa=1.2737  capacity=5.9017 mm
+   hmin/b=  1e-14 ratio=1.20 panels= 336  kappa=1.2735  capacity=5.9017 mm
+
+== 2. capacity checks
+   thin strip 100 mm x 1 um, expect c -> w/4 = 25 mm:         25.000583551357114
+   square side 10 mm, expect c = 0.59017*side = 5.9017 mm:    5.901687385882674
+
+== 3. lower bound for any parallel-connected conductor set inside the 10 x 100 mm envelope
+   c = 29.7646 mm, 2*pi*c = 187.017 mm, kappa = 1.5613, P/kappa = 140.913 mm
+   bound / solid-bar thin-skin resistance (same material) = 0.7535
+   best conceivable Al structure / solid Cu bar            >= 0.9474
+
+== 4. finite-delta volume solver vs the delta -> 0 limit (solid Cu)
+   square 10x10 f=1e+04 b/delta=    7.7 N=  169 edge factor=1.2788  (BEM limit 1.2736, deficit -0.0052)
+   square 10x10 f=1e+05 b/delta=   24.3 N=  324 edge factor=1.2482  (BEM limit 1.2736, deficit +0.0255)
+   square 10x10 f=1e+06 b/delta=   76.7 N=  576 edge factor=1.2472  (BEM limit 1.2736, deficit +0.0265)
+   square 10x10 f=1e+07 b/delta=  242.5 N=  900 edge factor=1.2525  (BEM limit 1.2736, deficit +0.0211)
+   bar 10x100 f=1e+04 b/delta=    7.7 N=  754 edge factor=1.5245  (BEM limit 1.5613, deficit +0.0368)
+   bar 10x100 f=1e+05 b/delta=   24.3 N= 1134 edge factor=1.5252  (BEM limit 1.5613, deficit +0.0361)
+   bar 10x100 f=1e+06 b/delta=   76.7 N= 1656 edge factor=1.5329  (BEM limit 1.5613, deficit +0.0284)
+   bar 10x100 f=1e+07 b/delta=  242.5 N= 2250 edge factor=1.5403  (BEM limit 1.5613, deficit +0.0210)
