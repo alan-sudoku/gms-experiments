@@ -63,6 +63,8 @@ The GMS-100 accounting is **internally repairable**. The answer and the review a
 
 ## Decisions for the user
 
+**Decided 2026-11-12: the user accepted the recommendation for D1–D7.** Recorded as E14 (D1), E15 (D2) and E16 (D4) in drafting notes §A; OQ-13, OQ-14 and OQ-15 and the GMS-100 round 2 fix items (D3, D5, D6, D7) in `orchestrator_state.md`; the scrap formula as a GMS-210 brief note.
+
 | # | Decision | Options | Recommendation |
 |---|---|---|---|
 | D1 | Dispersal of `b_ch` (Q2) | (a) charge `b` at dispersal: the corrected Σ_s,EOL, Σ_g,EOL and Σ^ret_EOL above, with "both sides retired at τ" written into the Σ_g,EOL definition (reviewer F12: it charges the in-service unit's dispersal at τ); (b) do not charge it, and state that extraction is charged once in CExC − b terms only | (a): both reviewers agree; it closes the ledger and answers an existing open item |
