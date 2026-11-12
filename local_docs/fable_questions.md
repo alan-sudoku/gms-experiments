@@ -21,7 +21,7 @@ Not worth the window: drafting the 11 documents, writing lints or test boilerpla
 
 Use one fresh conversation per prompt. Paste the prompt as written; each is self-contained.
 
-**Run order:** 1a, plus 2 in parallel if access is limited by time rather than message count (2 should land before GMS-100 round 2 is accepted); then 1b; then 3; 4 only with leftover budget.
+**Run order:** 1a (done), then 2, 1b, 3; 4 only with leftover budget. The order follows the drafting loop; see `local_docs/orchestration/fable_delegation_plan.md` §4.
 
 **Weighing 1a:** the suspicion stated in it is our own unverified reasoning, and its numbers can be checked without the model (a 2-D electromagnetic simulation of the A3 cases). The model's value there is whether any regime or fairer comparison rescues the claim, the correct restated claim, and a falsifying test we can run.
 
