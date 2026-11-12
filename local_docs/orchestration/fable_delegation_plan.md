@@ -47,7 +47,7 @@ Computation spec format (S1 writes it, S2 follows it):
 
 | Prompt | S1 Fable plan | S2 Sonnet compute | S3 citations | S4 Fable final | Notes |
 |---|---|---|---|---|---|
-| 1a AC conduction | (done in one pass: writer did all stages) | — | — | — | Answer committed (`86af299`). Opus review launched 2026-11-12; check that `prompt_1a_review.md` exists. If not, rerun S5 |
+| 1a AC conduction | (done in one pass: writer did all stages) | — | — | — | Done. Answer, review and synthesis in `local_docs/fable_runs/`; decisions D1–D3 in the synthesis await the user |
 | 1b heat sink, catalysis | B: completeness of Ṡ_gen; fair comparison at equal envelope and fan power; governing groups. C: Pt vs NiFe chemistry; required roughness factor; omitted effects | Fin efficiency and thermal resistance for the 100 W, 60 × 60 mm, 30 mm-fin case (Cu fins vs Al lattice or pin fins); pumping power; R_f needed to match Pt at 1 A/cm² | TPMS/gyroid Nu and friction correlations; AM Al heat-sink datasets and whether they are open; electrocatalysis j₀ sources (`sonnet`: needs judgement on open access) | Yes | Largest saving: the computations are simple |
 | 2 GMS-100 accounting | Almost all the work: Q1–Q7 findings, corrected expressions, conventions vs logic | The small numeric examples for each proposed correction | LCA allocation methods (cut-off, avoided burden, 50:50, circular footprint formula), Szargut-type cumulative exergy, Petela dilution (`sonnet`) | Short, or skip if checks pass | Time-sensitive: should land before GMS-100 round 2 acceptance |
 | 3 lattice fatigue | Macro vs strut dissipation; mismatch stress cases (a)–(c); Basquin applicability; one default per form | Materiality numbers (question 4); stress-knock-down scaling vs ρ̄; mismatch stress examples | Lattice fatigue S–N normalisation papers; Gibson–Ashby; bimaterial mismatch (`sonnet`) | Yes | — |
@@ -88,7 +88,7 @@ Fill in `<p>` and the paths. Every template includes these **common rules**:
 
 | Prompt | S1 | S2 | S3 | S4 | S5 | Synthesis to user |
 |---|---|---|---|---|---|---|
-| 1a | single-pass writer (`fable`, high), `86af299` | in writer pass | in writer pass (existence only, no full text) | in writer pass | `opus` high, launched 2026-11-12 | pending |
+| 1a | single-pass writer (`fable`, high), `86af299` | in writer pass | in writer pass (existence only, no full text) | in writer pass | `opus` high, done: `prompt_1a_review.md` (0 BLOCKER, 4 MAJOR) | done: `prompt_1a_synthesis.md`; user decisions D1–D3 pending |
 | 1b | — | — | — | — | — | — |
 | 2 | — | — | — | — | — | — |
 | 3 | — | — | — | — | — | — |
@@ -96,4 +96,4 @@ Fill in `<p>` and the paths. Every template includes these **common rules**:
 
 Session start prompt for a new session:
 
-> Read `local_docs/orchestration/fable_delegation_plan.md` and act as the orchestrator it describes. Start from §7: finish Prompt 1a (check for the review, then synthesise), then ask me before starting the next prompt.
+> Read `local_docs/orchestration/fable_delegation_plan.md` and act as the orchestrator it describes. Start from §7: Prompt 1a is done; read `local_docs/fable_runs/prompt_1a_synthesis.md`, record my decisions D1–D3 if I have given them, then ask me before starting the next prompt.

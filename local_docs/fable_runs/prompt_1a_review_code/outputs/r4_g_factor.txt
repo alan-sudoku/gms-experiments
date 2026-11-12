@@ -1,0 +1,8 @@
+100 x 10: n=  500  g_parallel=0.7759  g_normal=0.7762  g=1.5521
+100 x 10: n= 1000  g_parallel=0.7761  g_normal=0.7762  g=1.5523
+100 x 10: n= 2000  g_parallel=0.7762  g_normal=0.7762  g=1.5524
+   Richardson-extrapolated g = 1.5524   (writer: 1.552 for 100 x 10, 1.910 for 100 x 1)
+100 x 1: n=  500  g_parallel=0.9256  g_normal=0.9626  g=1.8882
+100 x 1: n= 1000  g_parallel=0.9534  g_normal=0.9627  g=1.9161
+100 x 1: n= 2000  g_parallel=0.9604  g_normal=0.9627  g=1.9231
+   Richardson-extrapolated g = 1.9254   (writer: 1.552 for 100 x 10, 1.910 for 100 x 1)

@@ -1,0 +1,21 @@
+== V. round Cu wire r = 2 mm, uniform staircase mesh, vs exact Bessel
+   f=10000 n=32 N=807: Rac/Rdc=1.8065 (V-based 1.8065)  exact=1.8036
+   f=10000 n=48 N=1808: Rac/Rdc=1.8029 (V-based 1.8029)  exact=1.8036
+   f=50000 n=32 N=807: Rac/Rdc=3.6999 (V-based 3.6999)  exact=3.6934
+   f=50000 n=48 N=1808: Rac/Rdc=3.6919 (V-based 3.6919)  exact=3.6934
+
+   Al tube wall (area 300 mm2) = 1.3992 mm;  Cu tube of equal mass: area 90.4 mm2, wall 0.4140 mm; mass 0.810 kg/m
+
+== f = 10000 Hz  (10 x 100 mm envelope, isolated)
+   solid Cu                   mass  8.96 kg/m  N=550/1246: R'=  177.55 /   178.36 uOhm/m (V-based fine   178.53)   writer 178.44 (-0.05 %)  [1s]
+   lattice 0.3 sAl (homog.)   mass  0.81 kg/m  N=364/946: R'=  412.50 /   414.10 uOhm/m (V-based fine   414.28)   writer 414.46 (-0.09 %)  [1s]
+   Al tube equal mass         mass  0.81 kg/m  N=402/1070: R'=  210.70 /   211.91 uOhm/m (V-based fine   211.96)   writer 212.12 (-0.10 %)  [1s]
+   Cu tube equal mass         mass  0.81 kg/m  N=292/904: R'=  265.06 /   265.28 uOhm/m (V-based fine   265.37)  [1s]
+   Cu tube wall 1.6 delta_Cu  mass  2.02 kg/m  N=414/1110: R'=  166.26 /   167.12 uOhm/m (V-based fine   167.17)  [1s]
+
+== f = 100000 Hz  (10 x 100 mm envelope, isolated)
+   solid Cu                   mass  8.96 kg/m  N=900/1786: R'=  562.11 /   564.51 uOhm/m (V-based fine   565.00)   writer 564.67 (-0.03 %)  [3s]
+   lattice 0.3 sAl (homog.)   mass  0.81 kg/m  N=684/1456: R'= 1289.07 /  1293.95 uOhm/m (V-based fine  1295.14)   writer 1294.26 (-0.02 %)  [2s]
+   Al tube equal mass         mass  0.81 kg/m  N=996/2250: R'=  706.31 /   709.67 uOhm/m (V-based fine   710.05)   writer 709.40 (+0.04 %)  [3s]
+   Cu tube equal mass         mass  0.81 kg/m  N=664/1210: R'=  539.81 /   541.01 uOhm/m (V-based fine   541.17)  [1s]
+   Cu tube wall 1.6 delta_Cu  mass  0.65 kg/m  N=486/1230: R'=  521.97 /   524.80 uOhm/m (V-based fine   524.98)  [2s]

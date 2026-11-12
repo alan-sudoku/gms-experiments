@@ -1,0 +1,79 @@
+== A. Dowell layer formula vs exact 1-D solution (m layers in series, field on one side)
+   m=1 xi=0.30: exact Rac/Rdc=  1.0007  Dowell=  1.0007
+   m=1 xi=1.00: exact Rac/Rdc=  1.0856  Dowell=  1.0856
+   m=1 xi=1.57: exact Rac/Rdc=  1.4399  Dowell=  1.4399
+   m=1 xi=3.00: exact Rac/Rdc=  3.0101  Dowell=  3.0101
+   m=2 xi=0.30: exact Rac/Rdc=  1.0034  Dowell=  1.0034
+   m=2 xi=1.00: exact Rac/Rdc=  1.4060  Dowell=  1.4060
+   m=2 xi=1.57: exact Rac/Rdc=  3.0666  Dowell=  3.0666
+   m=2 xi=3.00: exact Rac/Rdc=  9.5383  Dowell=  9.5383
+   m=4 xi=0.30: exact Rac/Rdc=  1.0142  Dowell=  1.0142
+   m=4 xi=1.00: exact Rac/Rdc=  2.6875  Dowell=  2.6875
+   m=4 xi=1.57: exact Rac/Rdc=  9.5731  Dowell=  9.5731
+   m=4 xi=3.00: exact Rac/Rdc= 35.6510  Dowell= 35.6510
+
+== B. isolated slab T = 10 mm, fill 0.3 Al: parallel-connected insulated foils vs homogenised
+   f=10000: homogenised   296.38 uOhm/m (w=100 mm, no edges); solid Cu   128.68; ratio 2.303
+      foils t= 0.050 mm n=  60 t/delta= 0.06: R=  295.67  R/R_homog-1=-0.0024  writer fill*(t/d)^2/6=0.0002  R/R_Cu=2.298
+      foils t= 0.100 mm n=  30 t/delta= 0.12: R=  293.55  R/R_homog-1=-0.0095  writer fill*(t/d)^2/6=0.0007  R/R_Cu=2.281
+      foils t= 0.231 mm n=  13 t/delta= 0.28: R=  281.70  R/R_homog-1=-0.0495  writer fill*(t/d)^2/6=0.0040  R/R_Cu=2.189
+      foils t= 0.500 mm n=   6 t/delta= 0.61: R=  236.56  R/R_homog-1=-0.2018  writer fill*(t/d)^2/6=0.0186  R/R_Cu=1.838
+      foils t= 1.000 mm n=   3 t/delta= 1.22: R=  164.41  R/R_homog-1=-0.4453  writer fill*(t/d)^2/6=0.0744  R/R_Cu=1.278
+      foils t= 1.500 mm n=   2 t/delta= 1.83: R=  150.73  R/R_homog-1=-0.4914  writer fill*(t/d)^2/6=0.1674  R/R_Cu=1.171
+   f=100000: homogenised   934.15 uOhm/m (w=100 mm, no edges); solid Cu   406.94; ratio 2.296
+      foils t= 0.050 mm n=  60 t/delta= 0.19: R=  912.16  R/R_homog-1=-0.0235  writer fill*(t/d)^2/6=0.0019  R/R_Cu=2.242
+      foils t= 0.100 mm n=  30 t/delta= 0.39: R=  850.26  R/R_homog-1=-0.0898  writer fill*(t/d)^2/6=0.0074  R/R_Cu=2.089
+      foils t= 0.231 mm n=  13 t/delta= 0.89: R=  618.23  R/R_homog-1=-0.3382  writer fill*(t/d)^2/6=0.0396  R/R_Cu=1.519
+      foils t= 0.500 mm n=   6 t/delta= 1.93: R=  488.21  R/R_homog-1=-0.4774  writer fill*(t/d)^2/6=0.1860  R/R_Cu=1.200
+      foils t= 1.000 mm n=   3 t/delta= 3.86: R=  512.15  R/R_homog-1=-0.4517  writer fill*(t/d)^2/6=0.7442  R/R_Cu=1.259
+      foils t= 1.500 mm n=   2 t/delta= 5.79: R=  511.65  R/R_homog-1=-0.4523  writer fill*(t/d)^2/6=1.6744  R/R_Cu=1.257
+
+== C. same foils, equal current per foil (ideal transposition), isolated slab
+   f=10000 t= 0.050 mm t/delta= 0.06: R/Rdc-1 exact=  0.0014  writer 1-D est=  0.0014
+   f=10000 t= 0.100 mm t/delta= 0.12: R/Rdc-1 exact=  0.0055  writer 1-D est=  0.0055
+   f=10000 t= 0.231 mm t/delta= 0.28: R/Rdc-1 exact=  0.0293  writer 1-D est=  0.0295
+   f=100000 t= 0.050 mm t/delta= 0.19: R/Rdc-1 exact=  0.1384  writer 1-D est=  0.1384
+   f=100000 t= 0.100 mm t/delta= 0.39: R/Rdc-1 exact=  0.5528  writer 1-D est=  0.5538
+   f=100000 t= 0.231 mm t/delta= 0.89: R/Rdc-1 exact=  2.8625  writer 1-D est=  2.9492
+
+== D. monotonicity of R(sigma) at fixed thickness (sweep 1e5..1.2e8 S/m)
+   isolated (field both faces)  f=10000: strictly decreasing in sigma: True
+   isolated (field both faces)  f=100000: strictly decreasing in sigma: True
+   field on one face            f=10000: strictly decreasing in sigma: True
+   field on one face            f=100000: strictly decreasing in sigma: True
+
+== E. multi-layer series winding (m layers, each carries I, field builds up on one side)
+   R per layer relative to a solid Cu layer of the SAME thickness h (equal envelope)
+   m=1 f=1e+05 h=0.5 mm xi_Cu=2.43: Al/Cu=1.200 lattice(homog 0.3sAl)/Cu=2.435  lattice(8 parallel foils/layer)/Cu=2.431  best Cu foil (t=0.65h)/Cu=0.930  best Al foil (t=0.81h)/Cu=1.169
+   m=1 f=1e+05 h=1.0 mm xi_Cu=4.85: Al/Cu=1.259 lattice(homog 0.3sAl)/Cu=2.206  lattice(8 parallel foils/layer)/Cu=2.175  best Cu foil (t=0.32h)/Cu=0.917  best Al foil (t=0.41h)/Cu=1.153
+   m=1 f=1e+04 h=2.0 mm xi_Cu=3.07: Al/Cu=1.237 lattice(homog 0.3sAl)/Cu=2.145  lattice(8 parallel foils/layer)/Cu=2.136  best Cu foil (t=0.51h)/Cu=0.914  best Al foil (t=0.64h)/Cu=1.149
+   m=1 f=1e+04 h=1.0 mm xi_Cu=1.53: Al/Cu=1.327 lattice(homog 0.3sAl)/Cu=3.810  lattice(8 parallel foils/layer)/Cu=3.809  best Cu foil (t=1.00h)/Cu=1.000  best Al foil (t=1.00h)/Cu=1.327
+   m=2 f=1e+05 h=0.5 mm xi_Cu=2.43: Al/Cu=1.042 lattice(homog 0.3sAl)/Cu=1.091  lattice(8 parallel foils/layer)/Cu=1.085  best Cu foil (t=0.40h)/Cu=0.469  best Al foil (t=0.50h)/Cu=0.590
+   m=2 f=1e+05 h=1.0 mm xi_Cu=4.85: Al/Cu=1.297 lattice(homog 0.3sAl)/Cu=2.056  lattice(8 parallel foils/layer)/Cu=2.017  best Cu foil (t=0.20h)/Cu=0.464  best Al foil (t=0.25h)/Cu=0.583
+   m=2 f=1e+04 h=2.0 mm xi_Cu=3.07: Al/Cu=1.185 lattice(homog 0.3sAl)/Cu=1.184  lattice(8 parallel foils/layer)/Cu=1.174  best Cu foil (t=0.31h)/Cu=0.441  best Al foil (t=0.39h)/Cu=0.554
+   m=2 f=1e+04 h=1.0 mm xi_Cu=1.53: Al/Cu=1.008 lattice(homog 0.3sAl)/Cu=1.958  lattice(8 parallel foils/layer)/Cu=1.956  best Cu foil (t=0.63h)/Cu=0.738  best Al foil (t=0.79h)/Cu=0.928
+   m=4 f=1e+05 h=0.5 mm xi_Cu=2.43: Al/Cu=0.986 lattice(homog 0.3sAl)/Cu=0.609  lattice(8 parallel foils/layer)/Cu=0.602  best Cu foil (t=0.27h)/Cu=0.183  best Al foil (t=0.34h)/Cu=0.230
+   m=4 f=1e+05 h=1.0 mm xi_Cu=4.85: Al/Cu=1.311 lattice(homog 0.3sAl)/Cu=2.002  lattice(8 parallel foils/layer)/Cu=1.960  best Cu foil (t=0.14h)/Cu=0.181  best Al foil (t=0.17h)/Cu=0.228
+   m=4 f=1e+04 h=2.0 mm xi_Cu=3.07: Al/Cu=1.167 lattice(homog 0.3sAl)/Cu=0.861  lattice(8 parallel foils/layer)/Cu=0.849  best Cu foil (t=0.22h)/Cu=0.169  best Al foil (t=0.27h)/Cu=0.213
+   m=4 f=1e+04 h=1.0 mm xi_Cu=1.53: Al/Cu=0.807 lattice(homog 0.3sAl)/Cu=0.793  lattice(8 parallel foils/layer)/Cu=0.790  best Cu foil (t=0.43h)/Cu=0.346  best Al foil (t=0.54h)/Cu=0.434
+   m=8 f=1e+05 h=0.5 mm xi_Cu=2.43: Al/Cu=0.970 lattice(homog 0.3sAl)/Cu=0.475  lattice(8 parallel foils/layer)/Cu=0.468  best Cu foil (t=0.19h)/Cu=0.066  best Al foil (t=0.24h)/Cu=0.084
+   m=8 f=1e+05 h=1.0 mm xi_Cu=4.85: Al/Cu=1.315 lattice(homog 0.3sAl)/Cu=1.987  lattice(8 parallel foils/layer)/Cu=1.944  best Cu foil (t=0.10h)/Cu=0.066  best Al foil (t=0.12h)/Cu=0.083
+   m=8 f=1e+04 h=2.0 mm xi_Cu=3.07: Al/Cu=1.163 lattice(homog 0.3sAl)/Cu=0.772  lattice(8 parallel foils/layer)/Cu=0.761  best Cu foil (t=0.15h)/Cu=0.061  best Al foil (t=0.19h)/Cu=0.077
+   m=8 f=1e+04 h=1.0 mm xi_Cu=1.53: Al/Cu=0.736 lattice(homog 0.3sAl)/Cu=0.383  lattice(8 parallel foils/layer)/Cu=0.379  best Cu foil (t=0.30h)/Cu=0.133  best Al foil (t=0.38h)/Cu=0.167
+
+== G. strut-level (intra-foil) loss share in the parallel-connected stack of B
+   loss of the deviation of J from each foil's mean J, divided by the loss of the mean J
+   f=10000 t/delta= 0.06: intra-foil/mean-current loss = 0.0002   writer fill*(t/delta)^2/6 = 0.0002
+   f=10000 t/delta= 0.12: intra-foil/mean-current loss = 0.0007   writer fill*(t/delta)^2/6 = 0.0007
+   f=10000 t/delta= 0.28: intra-foil/mean-current loss = 0.0040   writer fill*(t/delta)^2/6 = 0.0040
+   f=10000 t/delta= 0.61: intra-foil/mean-current loss = 0.0215   writer fill*(t/delta)^2/6 = 0.0186
+   f=100000 t/delta= 0.19: intra-foil/mean-current loss = 0.0019   writer fill*(t/delta)^2/6 = 0.0019
+   f=100000 t/delta= 0.39: intra-foil/mean-current loss = 0.0077   writer fill*(t/delta)^2/6 = 0.0074
+   f=100000 t/delta= 0.89: intra-foil/mean-current loss = 0.0601   writer fill*(t/delta)^2/6 = 0.0396
+   f=100000 t/delta= 1.93: intra-foil/mean-current loss = 0.7329   writer fill*(t/delta)^2/6 = 0.1860
+
+== F. interleaved go/return Al foil stacks (writer's a2_laminations.py case b), exact 1-D
+   f=10000 5+5 foils t=1.00 mm: exact 1-D R'_go=   57.07 uOhm/m  (equal-current model F(t/d)/(n s t w)=   62.69)
+   f=10000 20+20 foils t=0.25 mm: exact 1-D R'_go=   53.29 uOhm/m  (equal-current model F(t/d)/(n s t w)=   53.09)
+   f=100000 5+5 foils t=1.00 mm: exact 1-D R'_go=  107.79 uOhm/m  (equal-current model F(t/d)/(n s t w)=  204.87)
+   f=100000 20+20 foils t=0.25 mm: exact 1-D R'_go=   53.99 uOhm/m  (equal-current model F(t/d)/(n s t w)=   57.00)

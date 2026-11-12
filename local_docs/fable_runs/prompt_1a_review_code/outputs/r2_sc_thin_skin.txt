@@ -1,0 +1,7 @@
+square 10 x 10 mm: capacity 5.90170 mm (exact Gamma(1/4)^2/(4 pi^1.5)*10 = 5.90170); kappa 1.2732  (writer BEM 1.2736)
+rectangle 100 x 10 mm: sides 100.0000 x 10.0000 mm, prevertex angle 0.330796 rad
+   capacity c = 29.7647 mm   (writer BEM 29.7646)
+   kappa      = 1.5606      (writer BEM 1.5613)
+   bound / solid bar, same metal = (P/kappa)/(2 pi c) = 0.7538  (writer 0.7535)
+   bound for any Al structure / solid Cu bar = 0.9477  (writer 0.9474)
+thin strip 100 x 0.01 mm: capacity 25.0101 mm (expect -> 25), kappa 3.015
