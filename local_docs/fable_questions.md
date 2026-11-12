@@ -62,12 +62,12 @@ You are reviewing physics claims in an engineering framework. I want an adversar
 
 FRAMEWORK. A candidate "architected geometry" (e.g. an additively manufactured lattice of a common element) is compared with an incumbent solid material containing a scarce element x. The comparison is total entropy generation over the service life, Σ = Σ_init + Σ̇·τ + ..., in J/K, where operational terms are Σ̇ = (power dissipated)/T₀. The framework claims that geometry can replace an element when the function is "transport-governed". This prompt covers two of its claims.
 
-CLAIM B (conjugate heat transfer). Replace a copper (k ≈ 350 W/m/K) combustion-chamber or cold-plate wall with a nickel-alloy (k ≈ 12 W/m/K) gyroid. Entropy generation (sign already corrected):
+CLAIM B (conjugate heat transfer). An air-cooled electronics heat sink: replace a solid copper fin heat sink (k ≈ 390 W/m/K; e.g. skived fins) with an additively manufactured aluminium heat sink (AlSi10Mg, k roughly 120–180 W/m/K depending on heat treatment: please confirm) using a gyroid/TPMS lattice or pin-fin array with a larger wetted area. Entropy generation (sign already corrected):
   Ṡ_gen = q·A·(1/T_coolant − 1/T_hot) + V̇·ΔP/T₀.
-"Thin gyroid walls (100 µm) and wetted area A_conv = 4.5 A_proj lower the hot-wall temperature; the price is pumping exergy."
- B1. Is the entropy expression complete for this comparison (conduction through the wall, fluid-side temperature rise, mixing)? Is it right to evaluate pumping work at T₀ and heat transfer at the two wall temperatures?
- B2. Can a k = 12 W/m/K lattice match a k = 350 W/m/K wall at the same heat flux and hot-wall temperature limit? Estimate with a fin-efficiency argument for 100 µm walls. Identify the governing dimensionless groups.
- B3. Which openly published datasets or correlations (TPMS/gyroid Nusselt and friction-factor correlations) could anchor this? Give exact references I can look up; mark any you are unsure exist.
+"Larger wetted area compensates for the lower conductivity; the price is fan (pumping) exergy."
+ B1. Is the entropy expression complete for this comparison (conduction through base and fins, air temperature rise along the flow, mixing)? Is it right to evaluate pumping work at T₀ and heat transfer at the two temperatures? What single temperature should T_hot be for a heat sink with a non-uniform base?
+ B2. At equal heat load, equal envelope and equal fan power, can the Al lattice reach the same or lower thermal resistance (base-to-air) as the Cu fin sink? Use a fin-efficiency argument and state the governing dimensionless groups. Give a worked estimate for a 100 W load on a 60 mm × 60 mm base, 30 mm fin height.
+ B3. Which openly published datasets or correlations could anchor this: thermal resistance vs pressure drop or fan power for AM aluminium lattice/TPMS/pin-fin heat sinks and for copper fin sinks, and TPMS/gyroid Nusselt and friction-factor correlations? Say whether the data is in open-access papers, supplementary files or public repositories, or only in figures. Give exact references I can look up; mark any you are unsure exist.
 
 CLAIM C (electrocatalysis). Replace platinum with high-surface-area NiFe foam: j_local = J_apparent / R_f, R_f = A_real/A_proj, and
   η_act = (R T/(α F))·arcsinh(j_local/(2 j₀))   (assumes symmetric transfer coefficients),
