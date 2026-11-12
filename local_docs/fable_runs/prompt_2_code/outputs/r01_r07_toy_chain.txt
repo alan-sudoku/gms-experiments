@@ -1,0 +1,31 @@
+R1 | CExC = 1430 kJ/mol | expected 1430 kJ/mol | tol 1e-09 relative | |diff|=0.000e+00 | PASS
+R1 | loss_gen = 300 kJ/mol | expected 300 kJ/mol | tol 1e-09 relative | |diff|=0.000e+00 | PASS
+R1 | loss_smelt = 730 kJ/mol | expected 730 kJ/mol | tol 1e-09 relative | |diff|=0.000e+00 | PASS
+R1 | loss_gen+loss_smelt = 1030 kJ/mol | expected 1030 kJ/mol | tol 1e-09 relative | |diff|=0.000e+00 | PASS
+R1 | closure CExC-b = 1030 kJ/mol | expected 1030 kJ/mol | tol 1e-09 relative | |diff|=0.000e+00 | PASS
+R1 | all losses positive: (300.0, 730.0) | sanity: > 0 | tol exact |  | PASS
+R2 | entropy generated = 3454.636928 J/(K mol) | expected 3454.64 J/(K mol) | tol +/-0.01 J/(K mol) | |diff|=3.072e-03 | PASS
+R3 | delivered-basis loss_smelt = 730 kJ/mol | expected 730 kJ/mol | tol 1e-09 relative | |diff|=0.000e+00 | PASS
+R3 | r_el = 2.5 - | expected 2.5 - | tol 1e-09 relative | |diff|=0.000e+00 | PASS
+R3 | delivered loss < cumulative loss: (730.0, 1030.0) | sanity: 730 < 1030 | tol exact |  | PASS
+R4 | CExC_net = 1180 kJ/mol | expected 1180 kJ/mol | tol 1e-09 relative | |diff|=0.000e+00 | PASS
+R4 | apparent = 780 kJ/mol | expected 780 kJ/mol | tol 1e-09 relative | |diff|=0.000e+00 | PASS
+R4 | actual = 930 kJ/mol | expected 930 kJ/mol | tol 1e-09 relative | |diff|=0.000e+00 | PASS
+R4 | mismatch = 150 kJ/mol | expected 150 kJ/mol | tol 1e-09 relative | |diff|=0.000e+00 | PASS
+R4 | mismatch non-zero: 150.0 | sanity: != 0 | tol exact |  | PASS
+R5 | tau = 315576000 s | expected 315576000 s | tol 1e-09 relative | |diff|=0.000e+00 | PASS
+R5 | operational advantage = 2116894.181 J/K | expected 2116894.2 J/K | tol +/-0.5 J/K | |diff|=1.922e-02 | PASS
+R5 | positive: 2116894.180781486 | sanity: > 0 | tol exact |  | PASS
+R6 | margin local = 1883105.819 J/K | expected 1883105.8 J/K | tol +/-0.5 J/K | |diff|=1.922e-02 | PASS
+R6 | sign positive (candidate loses): 1883105.819218514 | sanity: > 0 | tol exact |  | PASS
+R7 | margin cumulative (r_el=3.0) = -2350682.542 J/K | expected -2350682.6 J/K | tol +/-1.5 J/K | |diff|=5.766e-02 | PASS
+R7 | sign negative (candidate wins), opposite to R6: (1883105.819218514, -2350682.5423444584) | sanity: R7<0, R6>0 | tol exact |  | PASS
+
+=== ROW SUMMARY ===
+R1: PASS
+R2: PASS
+R3: PASS
+R4: PASS
+R5: PASS
+R6: PASS
+R7: PASS

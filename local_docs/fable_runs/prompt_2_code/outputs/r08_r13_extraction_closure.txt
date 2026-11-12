@@ -1,0 +1,30 @@
+R8 | n_scrap = 13.33333333 mol | expected 13.3333 mol | tol +/-0.0001 mol | |diff|=3.333e-05 | PASS
+R8 | correct burden = 3180 kJ | expected 3180 kJ | tol +/-0.1 kJ | |diff|=1.819e-12 | PASS
+R8 | correct burden / Tref = 10665.77226 J/K | expected 10665.8 J/K | tol +/-0.5 J/K | |diff|=2.774e-02 | PASS
+R8 | double-counted burden = 25600 kJ | expected 25600 kJ | tol +/-0.1 kJ | |diff|=3.638e-12 | PASS
+R8 | double-counted burden / Tref = 85862.82073 J/K | expected 85862.8 J/K | tol +/-0.5 J/K | |diff|=2.073e-02 | PASS
+R8 | omitted = 0 and 0 < correct < double: (0.0, 3180.000000000002, 25600.000000000004) | sanity: 0 < 3180 < 25600 | tol exact |  | PASS
+R9 | F = 3520 kJ | expected 3520 kJ | tol 1e-09 relative | |diff|=4.547e-13 | PASS
+R9 | F/Tref = 11806.13785 J/K | expected 11806.14 J/K | tol +/-0.01 J/K | |diff|=2.150e-03 | PASS
+R10 | IN = 4800 kJ | expected 4800 kJ | tol 1e-09 relative | |diff|=0.000e+00 | PASS
+R10 | stock = 800 kJ | expected 800 kJ | tol 1e-09 relative | |diff|=0.000e+00 | PASS
+R10 | gap = 480 kJ | expected 480 kJ | tol 1e-09 relative | |diff|=4.547e-13 | PASS
+R10 | gap vs m(1-R)nb = 480 kJ | expected 480 kJ | tol 1e-09 relative | |diff|=5.684e-13 | PASS
+R11 | B = 4160 kJ | expected 4160 kJ | tol 1e-09 relative | |diff|=9.095e-13 | PASS
+R11 | B vs IN - R n b = 4160 kJ | expected 4160 kJ | tol 1e-09 relative | |diff|=9.095e-13 | PASS
+R11 | IN - 640 = 4160 kJ | expected 4160 kJ | tol 1e-09 relative | |diff|=0.000e+00 | PASS
+R11 | B/Tref = 13952.70837 J/K | expected 13952.71 J/K | tol +/-0.01 J/K | |diff|=1.632e-03 | PASS
+R12 | Dd = 4640 kJ | expected 4640 kJ | tol 1e-09 relative | |diff|=9.095e-13 | PASS
+R12 | excess = 480 kJ | expected 480 kJ | tol 1e-09 relative | |diff|=0.000e+00 | PASS
+R12 | excess vs m(1-R)nb = 480 kJ | expected 480 kJ | tol 1e-09 relative | |diff|=1.137e-13 | PASS
+R13 | max rel diff LHS vs RHS = 4.594e-16; max rel diff choice C vs choice B = 3.525e-16
+R13 | closure identity: 4.594e-16 | sanity: < 1e-12 relative | tol exact |  | PASS
+R13 | choice C equals choice B: 3.525e-16 | sanity: < 1e-12 relative | tol exact |  | PASS
+
+=== ROW SUMMARY ===
+R8: PASS
+R9: PASS
+R10: PASS
+R11: PASS
+R12: PASS
+R13: PASS

@@ -1,0 +1,22 @@
+R36 | 0.933*q = 1269.813 W/m2 | expected 1269.81 W/m2 | tol +/-0.02 W/m2 | |diff|=3.000e-03 | PASS
+R36 | eta(T0,Ts)*q = 1298.122391 W/m2 | expected 1298.12 W/m2 | tol +/-0.02 W/m2 | |diff|=2.391e-03 | PASS
+R36 | fixed < computed: (1269.813, 1298.1223910823066) | sanity: fixed < computed | tol exact |  | PASS
+R37 | avg = 60000 J/unit | expected 60000 J/unit | tol 1e-09 relative | |diff|=0.000e+00 | PASS
+R37 | avg / Tref = 201.2409861 J/K | expected 201.241 J/K | tol +/-0.001 J/K | |diff|=1.392e-05 | PASS
+R37 | marg = 20000 J/unit | expected 20000 J/unit | tol 1e-09 relative | |diff|=0.000e+00 | PASS
+R37 | marg / Tref = 67.08032869 J/K | expected 67.08 J/K | tol +/-0.001 J/K | |diff|=3.287e-04 | PASS
+R37 | avg > marg: (60000.0, 20000.0) | sanity: avg > marg | tol exact |  | PASS
+R38 | net bias = 51.24098608 J/K | expected 51.241 J/K | tol +/-0.001 J/K | |diff|=1.392e-05 | PASS
+R38 | positive (candidate's favour): 51.24098608083182 | sanity: > 0 | tol exact |  | PASS
+R39 | per unit share, product 1 = 201.2409861 J/K | expected 201.241 J/K | tol +/-0.001 J/K | |diff|=1.392e-05 | PASS
+R39 | per unit share, product 2 = 201.2409861 J/K | expected 201.241 J/K | tol +/-0.001 J/K | |diff|=1.392e-05 | PASS
+R39 | per mole share, product 1 = 34.10864171 J/K | expected 34.109 J/K | tol +/-0.001 J/K | |diff|=3.583e-04 | PASS
+R39 | per mole share, product 2 = 1705.432085 J/K | expected 1705.432 J/K | tol +/-0.001 J/K | |diff|=8.543e-05 | PASS
+R39 | closure per mole N1 s1 + N2 s2 = 6e+13 J | expected 6e+13 J | tol 1e-09 relative | |diff|=7.812e-03 | PASS
+R39 | closure per unit = 6e+13 J | expected 6e+13 J | tol 1e-09 relative | |diff|=0.000e+00 | PASS
+
+=== ROW SUMMARY ===
+R36: PASS
+R37: PASS
+R38: PASS
+R39: PASS

@@ -1,0 +1,44 @@
+R14 | max rel diff stagewise vs closed form = 5.894e-16
+R14 | closed form: 5.894e-16 | sanity: < 1e-12 relative | tol exact |  | PASS
+R14 | max rel diff multiplier of w_ext,0 vs 1+m(1-R) = 8.466e-16
+R14 | w_ext multiplier: 8.466e-16 | sanity: < 1e-12 relative | tol exact |  | PASS
+R15 | incumbent omitted = 75 kJ | expected 75 kJ | tol 1e-09 relative | |diff|=0.000e+00 | PASS
+R15 | incumbent / Tref = 251.5512326 J/K | expected 251.55 J/K | tol +/-0.01 J/K | |diff|=1.233e-03 | PASS
+R15 | candidate omitted = 3040 kJ | expected 3040 kJ | tol 1e-09 relative | |diff|=4.547e-13 | PASS
+R15 | candidate / Tref = 10196.20996 J/K | expected 10196.21 J/K | tol +/-0.01 J/K | |diff|=3.857e-05 | PASS
+R15 | net = 2965 kJ | expected 2965 kJ | tol 1e-09 relative | |diff|=4.547e-13 | PASS
+R15 | net / Tref = 9944.658729 J/K | expected 9944.66 J/K | tol +/-0.01 J/K | |diff|=1.271e-03 | PASS
+R15 | net positive (against candidate): 2964.9999999999995 | sanity: > 0 | tol exact |  | PASS
+R16 | framework = 1140 kJ/mol | expected 1140 kJ/mol | tol 1e-09 relative | |diff|=0.000e+00 | PASS
+R16 | cut-off = 1100 kJ/mol | expected 1100 kJ/mol | tol 1e-09 relative | |diff|=0.000e+00 | PASS
+R16 | avoided burden = 260 kJ/mol | expected 260 kJ/mol | tol 1e-09 relative | |diff|=5.684e-14 | PASS
+R16 | 50:50 = 680 kJ/mol | expected 680 kJ/mol | tol 1e-09 relative | |diff|=0.000e+00 | PASS
+R16 | circular footprint = 428 kJ/mol | expected 428 kJ/mol | tol 1e-09 relative | |diff|=1.137e-13 | PASS
+R16 | framework largest: 1140.0 | sanity: max of five | tol exact |  | PASS
+R17 | framework chain = 1920 kJ/mol | expected 1920 kJ/mol | tol 1e-09 relative | |diff|=2.274e-13 | PASS
+R17 | cut-off chain = 1880 kJ/mol | expected 1880 kJ/mol | tol 1e-09 relative | |diff|=2.274e-13 | PASS
+R17 | avoided-burden chain = 1040 kJ/mol | expected 1040 kJ/mol | tol 1e-09 relative | |diff|=2.274e-13 | PASS
+R17 | framework - cut-off = 40 kJ/mol | expected 40 kJ/mol | tol 1e-09 relative | |diff|=0.000e+00 | PASS | = R*E_rec = 40
+R17 | framework - avoided = 880 kJ/mol | expected 880 kJ/mol | tol 1e-09 relative | |diff|=0.000e+00 | PASS | = R*E_V = 880
+R18 | max rel diff = 3.543e-16
+R18 | mapping identity: 3.543e-16 | sanity: < 1e-12 relative | tol exact |  | PASS
+R19 | framework charge = 600 kJ | expected 600 kJ | tol 1e-09 relative | |diff|=0.000e+00 | PASS
+R19 | framework charge / Tref = 2012.409861 J/K | expected 2012.41 J/K | tol +/-0.01 J/K | |diff|=1.392e-04 | PASS
+R19 | symmetric charge = 345 kJ | expected 345 kJ | tol 1e-09 relative | |diff|=0.000e+00 | PASS
+R19 | symmetric charge / Tref = 1157.13567 J/K | expected 1157.14 J/K | tol +/-0.01 J/K | |diff|=4.330e-03 | PASS
+R19 | overcharge = 855.2741908 J/K | expected 855.27 J/K | tol +/-0.01 J/K | |diff|=4.191e-03 | PASS
+R19 | overcharge positive: 855.2741908435352 | sanity: > 0 | tol exact |  | PASS
+R20 | S_g < S_s (framework 2012.41): True | sanity: True | tol exact |  | PASS
+R20 | S_g < S_s (symmetric 1157.14): False | sanity: False | tol exact |  | PASS
+R21 | reported win, true loss count: 0 | sanity: exactly 0 | tol exact |  | PASS
+R21 | reported loss, true win count: 2122 | sanity: > 0 | tol exact |  | PASS
+
+=== ROW SUMMARY ===
+R14: PASS
+R15: PASS
+R16: PASS
+R17: PASS
+R18: PASS
+R19: PASS
+R20: PASS
+R21: PASS
