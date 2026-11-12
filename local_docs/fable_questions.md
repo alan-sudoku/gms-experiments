@@ -12,7 +12,7 @@ Picked for: real uncertainty in the project, a high cost if we are wrong, a need
 
 | # | Question | Why it is worth frontier-model time | Blocks |
 |---|---|---|---|
-| 1 | Does the Class II transport thesis survive its own physics? AC skin effect first, then conjugate heat and electrocatalysis | Could invalidate GMS-310 Part A and the `al_vs_cu_busbar` golden scenario. Nobody has reviewed it; GMS-310 is not drafted yet | W2b GMS-310, Phase 6, Phase 7 scenarios |
+| 1 | Does the Class II transport thesis survive its own physics? Split in two: 1a AC skin effect, 1b conjugate heat and electrocatalysis | Could invalidate GMS-310 Part A and the `al_vs_cu_busbar` golden scenario. Nobody has reviewed it; GMS-310 is not drafted yet | W2b GMS-310, Phase 6, Phase 7 scenarios |
 | 2 | Is the GMS-100 exergy accounting coherent, and which published allocation practice does it match? | Round 2 is the last review before acceptance. Four open questions (OQ-9, OQ-10, OQ-11, b_ch of dispersed material) and the Phase 5 anchoring requirement depend on it. Contains one suspected logic flaw in the recovery test | GMS-100 acceptance, Phase 5 exit |
 | 3 | Lattice fatigue micromechanics (plan Q2, E2, E3) | Named blocker for GMS-220 `active`; needs a structural-mechanics specialist we do not have | GMS-220 `active`, fatigue-based scenarios |
 | 4 | (optional) Red-team the breakeven solver lemmas | Executable tests (SymPy, hypothesis) are a cheaper route to `cross-checked`. Use leftover budget only | GMS-400 brief |
@@ -21,14 +21,18 @@ Not worth the window: drafting the 11 documents, writing lints or test boilerpla
 
 Use one fresh conversation per prompt. Paste the prompt as written; each is self-contained.
 
+**Run order:** 1a, plus 2 in parallel if access is limited by time rather than message count (2 should land before GMS-100 round 2 is accepted); then 1b; then 3; 4 only with leftover budget.
+
+**Weighing 1a:** the suspicion stated in it is our own unverified reasoning, and its numbers can be checked without the model (a 2-D electromagnetic simulation of the A3 cases). The model's value there is whether any regime or fairer comparison rescues the claim, the correct restated claim, and a falsifying test we can run.
+
 ---
 
-## Prompt 1: Class II transport thesis
+## Prompt 1a: Class II transport thesis, AC conduction
 
 ```text
 You are reviewing a physics claim in an engineering framework. I want an adversarial, quantitative assessment, not encouragement. Treat everything below as an unverified claim.
 
-FRAMEWORK. A candidate "architected geometry" (e.g. an additively manufactured lattice of a common element) is compared with an incumbent solid material containing a scarce element x. The comparison is total entropy generation over the service life, Σ = Σ_init + Σ̇·τ + ..., in J/K, where operational terms are Σ̇ = (power dissipated)/T₀. The framework claims that geometry can replace an element when the function is "transport-governed". Three claims are made.
+FRAMEWORK. A candidate "architected geometry" (e.g. an additively manufactured lattice of a common element) is compared with an incumbent solid material containing a scarce element x. The comparison is total entropy generation over the service life, Σ = Σ_init + Σ̇·τ + ..., in J/K, where operational terms are Σ̇ = (power dissipated)/T₀. The framework claims that geometry can replace an element when the function is "transport-governed". This prompt covers its AC conduction claim.
 
 CLAIM A (AC conduction). Joule dissipation per unit length Σ̇ = I_rms²·R_ac/T₀ with
   R_ac = R_dc · ξ · [sinh(2ξ) + sin(2ξ)] / [cosh(2ξ) − cos(2ξ)],  ξ = t_w/δ,  δ = sqrt(ρ_el/(π f μ)).
@@ -42,6 +46,21 @@ Questions for A:
  A3. Give a worked comparison: rectangular busbar envelope 10 mm × 100 mm, f = 10 kHz and 100 kHz, I_rms = 1 kA. Compute R_ac per metre for: solid Cu, solid Al, Al lattice at ρ̄ = 0.3 (state your σ_eff assumption), and a thin-walled Al section of equal mass. Show formulas and numbers so I can check them.
  A4. Name an independent open-source tool (e.g. a 2-D FEM magnetics solver) and a specific setup that would test A2 and A3, and the result that would falsify your conclusion.
  A5. Verdict: is "lattice suppresses skin effect so Al beats Cu" a valid substitution mechanism, a mechanism only at the macro-shape level, or invalid? What restated claim, if any, would be correct?
+
+OUTPUT FORMAT
+- Numbered claims (A1.1, A1.2, ...). For each: the claim, your confidence (high/medium/low), and the computation or experiment that would falsify it.
+- Citations only with author, year, title, and equation or page number. Mark any citation you are not certain exists as UNSURE. Do not invent references.
+- Finish with a one-paragraph verdict: valid / valid with restated scope / invalid, and the restated claim.
+```
+
+---
+
+## Prompt 1b: Class II transport thesis, conjugate heat and electrocatalysis
+
+```text
+You are reviewing physics claims in an engineering framework. I want an adversarial, quantitative assessment, not encouragement. Treat everything below as an unverified claim.
+
+FRAMEWORK. A candidate "architected geometry" (e.g. an additively manufactured lattice of a common element) is compared with an incumbent solid material containing a scarce element x. The comparison is total entropy generation over the service life, Σ = Σ_init + Σ̇·τ + ..., in J/K, where operational terms are Σ̇ = (power dissipated)/T₀. The framework claims that geometry can replace an element when the function is "transport-governed". This prompt covers two of its claims.
 
 CLAIM B (conjugate heat transfer). Replace a copper (k ≈ 350 W/m/K) combustion-chamber or cold-plate wall with a nickel-alloy (k ≈ 12 W/m/K) gyroid. Entropy generation (sign already corrected):
   Ṡ_gen = q·A·(1/T_coolant − 1/T_hot) + V̇·ΔP/T₀.
@@ -58,7 +77,7 @@ CLAIM C (electrocatalysis). Replace platinum with high-surface-area NiFe foam: j
  C3. What does the activation-only model omit that would change the verdict?
 
 OUTPUT FORMAT
-- Numbered claims (A1.1, A1.2, ...). For each: the claim, your confidence (high/medium/low), and the computation or experiment that would falsify it.
+- Numbered claims (B1.1, B1.2, ..., C1.1, ...). For each: the claim, your confidence (high/medium/low), and the computation or experiment that would falsify it.
 - Citations only with author, year, title, and equation or page number. Mark any citation you are not certain exists as UNSURE. Do not invent references.
 - Finish with a one-paragraph verdict per claim: valid / valid with restated scope / invalid, and the restated claim.
 ```
