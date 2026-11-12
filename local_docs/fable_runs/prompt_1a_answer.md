@@ -186,15 +186,19 @@ I solved the 0.228 mm strand bundle a second time with every strand forced to ca
 | Fill 0.3 Al, strands 0.228 mm, same cross-section | 10 kHz | 100 kHz |
 |---|---|---|
 | Strands in parallel, not transposed (the lattice case) | 409 µΩ/m | 1143 µΩ/m |
-| Equal strand currents (ideal transposition) | 91.4 µΩ/m | 382 µΩ/m (under-resolved, see below) |
+| Equal strand currents (ideal transposition) | 91.4 µΩ/m | 382 µΩ/m computed with 2 × 2 cells per strand; about 484 µΩ/m when fully resolved (see below) |
 | Solid copper, same envelope | 178 µΩ/m | 565 µΩ/m |
 | DC resistance of the bundle | 88.4 µΩ/m | 88.4 µΩ/m |
 
 At 10 kHz the identical piece of aluminium is 2.3 times worse than solid copper when connected like a lattice and 1.95 times better when transposed. Insulation alone does not do this: the non-transposed bundle in the first row already has perfect insulation between strands.
 
-At 100 kHz the 2 × 2 sub-cells capture only about 75 % of the strand-level loss, so the true value is higher than 382, probably between 380 and 480 µΩ/m. With 0.274 mm strands and 3 × 3 sub-cells the result is 586 µΩ/m, which is no better than solid copper. This shows a second point the claim misses: even with transposition, "strand thinner than δ" is not the right criterion in a thick bundle. The strand-level loss ratio is ρ̄²·T²·d²/(48 δ⁴) for round strands (my derivation, 1-D field in a bundle of thickness T), so the strand must satisfy roughly d < 7 δ²/(ρ̄·T), which is 0.16 mm here at 100 kHz, not d < δ = 0.26 mm.
+At 100 kHz the 2 × 2 sub-cells capture only 75 % of the strand-level loss, so the true value is higher than 382 µΩ/m. The formula below implies about 484 µΩ/m, still below solid copper. With 0.274 mm strands and 3 × 3 sub-cells the computed value is 586 µΩ/m and the fully resolved value implied by the formula is about 660 µΩ/m, which is worse than solid copper. This shows a second point the claim misses: even with transposition, "strand thinner than δ" is not the right criterion in a thick bundle. The ratio of strand-level loss to DC loss is
 
-- Confidence: high at 10 kHz; medium at 100 kHz (resolution).
+g·ρ̄²·T²·d²/(48 δ⁴) for round strands, g·ρ̄²·T²·t²/(36 δ⁴) for square strands (my derivation),
+
+where T is the bundle thickness and g corrects the 1-D field estimate for the real field inside a uniform-current rectangle. For the 10 × 100 mm bundle g = 1.55: the field component normal to the wide face contributes exactly as much as the parallel one (`a1_analytic_numbers.py`, section 6; g tends to 2 for a thin strip). My first estimate used g = 1 and was 35 % low; the field solution exposed this. With g = 1.55 the formula reproduces the computed strand-level loss ratio within 2 % once the sub-cell resolution is accounted for: 0.034 against 0.034 (2 × 2 cells) and 0.057 against 0.057 (3 × 3 cells) at 10 kHz, 3.33 against 3.36 and 5.63 against 5.73 at 100 kHz (`a2_transposed_bundle.py`). The strand loss equals the DC loss at d = 5.6 δ²/(ρ̄·T), which is 0.125 mm here at 100 kHz. The requirement is therefore d well below 0.125 mm, not d < δ = 0.26 mm.
+
+- Confidence: high at 10 kHz; medium at 100 kHz (the fully resolved values rest on the formula, not on a converged field solution).
 - Falsifier: the FEMM setup in A4 with each strand in its own series circuit giving R′ at 10 kHz outside 85 to 100 µΩ/m.
 
 **A2.5. Shape alone can gain only a little. A bound for any non-transposed structure.**
@@ -228,7 +232,7 @@ Capacity does not increase when metal is removed, so for anything inside the env
 | Al lattice ρ̄ = 0.3, σ_eff = 0.3 σ_Al (best case) | 414.5 | 1294 (homogenised), 1143 (explicit strands) | 0.81 | `a3_busbar_rac.py`, `a2_strand_bundle_scan.py` |
 | Al strips in parallel, 10 × 0.9 mm or 20 × 0.45 mm, insulated, not interleaved | 231 / 235 | 720 / 720 | 2.43 | `a2_laminations.py` |
 | Al tube 126 × 10 mm (26 % wider), wall 1.6 δ_Al | 175.3 | 549.6 | 0.94 / 0.30 | `a2_sigma_sweep_tubes.py` |
-| Ideal Al Litz, fill 0.3 (strand 0.2 mm at 10 kHz, 0.071 mm at 100 kHz) | 90 | 107 | 0.81 | `a1_analytic_numbers.py` |
+| Ideal Al Litz, fill 0.3 (strand 0.2 mm at 10 kHz, 0.071 mm at 100 kHz) | 91 | 117 | 0.81 | `a1_analytic_numbers.py` |
 | Interleaved go/return Al foils, 20 + 20 foils of 0.25 mm (stack 13.9 mm for both polarities) | 53.3 per polarity | 54.0 per polarity | 1.35 per polarity | `a2_laminations.py` |
 
 Reading the table:
@@ -243,7 +247,7 @@ Reading the table:
 
 **A2.7. Two mechanisms that are not macro-shape and do beat solid copper.**
 
-*Transposed insulated strands (Litz).* With ideal transposition R′ ≈ R_dc/ρ̄ × (1 + ρ̄²T²d²/(48 δ⁴)). For aluminium at fill 0.3 in this envelope: 89.9 µΩ/m at 10 kHz with 0.2 mm strands, and 106.9 µΩ/m at 100 kHz with 0.071 mm strands (about 76 000 strands). That is 2.0 and 5.3 times below solid copper (`a1_analytic_numbers.py`, section 6). The 10 kHz value is supported by the field solution in A2.4 (91.4 µΩ/m for 0.228 mm square strands). Aluminium Litz and aluminium windings as a copper substitute at high frequency are established practice (Sullivan 2008). Practical caveats that I have not quantified: achievable fill, lay length, bundle-level construction for tens of thousands of strands, and terminating aluminium Litz.
+*Transposed insulated strands (Litz).* With ideal transposition R′ ≈ [1/(ρ̄·σ·A)]·(1 + g·ρ̄²T²d²/(48 δ⁴)), g = 1.55 (A2.4). For aluminium at fill 0.3 in this envelope: 90.7 µΩ/m at 10 kHz with 0.2 mm strands, and 117.1 µΩ/m at 100 kHz with 0.071 mm strands (about 76 000 strands). That is 2.0 and 4.8 times below solid copper (`a1_analytic_numbers.py`, section 6). The 10 kHz value is supported by the field solution in A2.4 (91.4 µΩ/m for 0.228 mm square strands). Aluminium Litz and aluminium windings as a copper substitute at high frequency are established practice (Sullivan 2008). Practical caveats that I have not quantified: achievable fill, lay length, bundle-level construction for tens of thousands of strands, and terminating aluminium Litz.
 
 *Interleaved go and return foils (laminated busbar).* When go and return foils alternate, each foil sees only the field of its neighbours, the 1-D formula of A1.1 applies, and foils thinner than δ carry nearly uniform current. Forty aluminium foils of 0.25 mm give 53 to 54 µΩ/m per polarity at both frequencies, against 231 and 739 µΩ/m per conductor for a pair of solid 10 × 100 mm copper bars 2 mm apart (`a2_laminations.py`, `a3_go_return_sensitivity.py`). This is the one situation in which Claim A's formula, and its conclusion that thin aluminium beats thick copper, are correct. It requires the return conductor to be interleaved. It is a different topology from a single bar and has nothing to do with a lattice.
 
@@ -263,7 +267,7 @@ Incomplete or imprecise:
 
 1. *The scaling.* 1/sqrt(σ_eff) holds only when the bar is thicker than about 3 δ_eff. Otherwise the penalty is larger, up to 1/σ_eff. Also 1/(σ δ P) underestimates a flat bar by the edge factor κ ≈ 1.53. κ is the same for every homogeneous conductor of this shape, so it cancels in ratios but not in absolute values.
 2. *Homogenisation is slightly pessimistic near its limit.* At t/δ ≈ 0.9 the explicit bundle is 10 to 12 % below the homogenised value (A2.2). The conclusion does not change.
-3. *"Any advantage comes from macro-shape" misses two mechanisms.* Transposition and go/return interleaving are connection topology, not shape, and both let aluminium beat a solid copper bar by factors of 2 to 5 (A2.7). The suspicion mentions Litz only as the thing the lattice lacks.
+3. *"Any advantage comes from macro-shape" misses two mechanisms.* Transposition and go/return interleaving are connection topology, not shape, and both let aluminium beat solid copper: by factors of 2 to 5 for ideal Litz in the same envelope, and 4 to 14 for interleaved foils against a pair of solid copper bars (A2.7). The suspicion mentions Litz only as the thing the lattice lacks.
 4. *The macro-shape advantage is bounded and small inside a fixed envelope.* About 6 % from hollowing, at most 25 % from any reshaping (A2.5). The real lever for aluminium against copper is not a gain; it is that the penalty is only 1.26 and can be bought back with 26 % more perimeter.
 5. *"Worse than solid" is true per envelope, not per kilogram.* R′ × mass at 10 kHz is 1599 (solid Cu), 607 (solid Al), 336 (lattice, best case) and 172 (Al tube) µΩ·kg/m². The lattice beats both solid bars on this measure. It is dominated by the tube, not by the solid bar. If the framework's Σ_init term rewards low mass, this distinction matters.
 6. *Both the claim and the suspicion ignore the return conductor.* A return bar 2 mm away raises every R′ by about 30 % and leaves all ratios unchanged within 3 % (A3.5).
@@ -340,7 +344,7 @@ From `local_docs/fable_runs/prompt_1a_code/a3_busbar_rac.py` (finest mesh) unles
 - *Mesh.* Medium to fine mesh changes R′ by at most 0.25 % in every case of the table (`a3_busbar_rac.py`).
 - *Independent method.* A boundary-element solution of the thin-skin limit gives κ = 1.561 (`a2_hf_limit_bem.py`). The volume solver gives 1.525 at b/δ = 7.7 and 24, 1.533 at 77 and 1.540 at 243. The deficit shrinks slowly as the skin gets thinner (0.036, 0.028 and 0.021 at b/δ = 24, 77 and 243), which is the sign and roughly the rate expected from the rounding of the corner singularity over a distance δ. The two methods therefore agree within 2.4 %, with the difference in the expected direction.
 - *Strand bundles.* Halving or coarsening the sub-cell size changes R′ by at most 1.2 % (`a2_strand_bundle_scan.py`, resolution block).
-- My estimate of the numerical error: ±1 % for homogeneous conductors and tubes, ±2 % for explicit strand bundles with strands in parallel. The transposed-bundle value at 100 kHz is not converged (A2.4).
+- My estimate of the numerical error: ±1 % for homogeneous conductors and tubes, ±2 % for explicit strand bundles with strands in parallel. The transposed-bundle values at 100 kHz are not converged in sub-cell resolution (A2.4).
 - For comparison, the estimate without edge crowding, 1/(σ δ P), is 34 % low.
 
 ### A3.5 Model assumptions and their effect
@@ -405,7 +409,7 @@ Falsified if: the lattice's R_ac/R_dc lies more than 20 % below that of the equa
 - Confidence: high for the tube numbers, medium for the bound.
 - Falsifier: A4.1 tube case; a counter-example to the bound.
 
-**A5.3.** A second valid mechanism exists at the level of connection topology: mutually insulated strands that are transposed, or go and return foils that are interleaved. Both let aluminium beat a solid copper bar of the same envelope by factors of 2 to 5. A node-connected lattice is the opposite of both.
+**A5.3.** A second valid mechanism exists at the level of connection topology: mutually insulated strands that are transposed, or go and return foils that are interleaved. Ideal aluminium Litz beats a solid copper bar of the same envelope by factors of 2 to 5. Interleaved aluminium foils beat a pair of solid copper bars by factors of 4 to 14 in a smaller total envelope. A node-connected lattice is the opposite of both.
 - Confidence: medium-high.
 - Falsifier: A4.1 case 4; a measured aluminium Litz or laminated bus worse than the solid copper bar.
 
@@ -445,9 +449,9 @@ The logarithmic capacity of a square, Γ(1/4)²/(4π^1.5) = 0.59017 × side, is 
 
 1. No 3-D lattice was simulated. Everything numerical is uniform along the bar. Transverse struts, nodes, terminations, bends and defects are argued, not computed (A1.5, A2.2 b–d).
 2. No independent field solver was run. FEMM, Elmer and FastHenry are not installed and I installed nothing. The checks are internal: an exact round-wire solution, mesh refinement, and a second method of my own for the thin-skin limit.
-3. The transposed-bundle result at 100 kHz is under-resolved (A2.4). Only its order of magnitude is usable.
-4. The Litz numbers are a closed form for ideal transposition in a 1-D field. Real fill, lay, bundle construction and terminations are not included.
-5. The capacity lower bound (A2.5), the strut-level loss ratio (A1.4) and the Litz proximity ratio (A2.4, A2.7) are my own derivations. I did not look for them in the literature and nobody has checked them.
+3. The transposed-bundle field solution at 100 kHz is under-resolved (A2.4). The fully resolved values quoted there are extrapolated with the formula.
+4. The Litz numbers are a closed form for ideal transposition and strands much thinner than δ. It is checked against the field solution only for 0.228 mm and 0.274 mm square strands. Real fill, lay, bundle construction and terminations are not included.
+5. The capacity lower bound (A2.5), the strut-level loss ratio (A1.4) and the Litz proximity ratio with its field factor g (A2.4, A2.7) are my own derivations. I did not look for them in the literature and nobody has checked them. The first version of the Litz ratio was wrong by a factor 1.55 until the field solution showed it, which is a reason to treat the other two with the same caution.
 6. Monotonic decrease of R′ with σ was shown numerically for this one shape, not proved.
 7. Equation numbers in the cited papers were not checked against the full texts. Items marked UNSURE in the citation list are unresolved.
 8. Temperature rise, temperature-dependent conductivity and thermal feasibility of 1 kA at 100 kHz were not computed.
@@ -475,7 +479,7 @@ All scripts are in `local_docs/fable_runs/prompt_1a_code/`. Run any of them with
 | `a2_sigma_sweep_tubes.py` | 1 min | `outputs/a2_sigma_sweep_tubes.txt` |
 | `a2_hf_limit_bem.py` | 1 min | `outputs/a2_hf_limit_bem.txt` |
 | `a2_laminations.py` | 3 min | `outputs/a2_laminations.txt` |
-| `a2_strand_bundle_scan.py` | 6 min | `outputs/a2_strand_bundle_scan.txt` |
+| `a2_strand_bundle_scan.py` | 10 min | `outputs/a2_strand_bundle_scan.txt` |
 | `a2_transposed_bundle.py` | 4 min, about 2 GB memory | `outputs/a2_transposed_bundle.txt` |
 
 The two key scripts are reproduced verbatim below: the solver and the A3 table.
@@ -483,11 +487,362 @@ The two key scripts are reproduced verbatim below: the solver and the A3 table.
 ### `local_docs/fable_runs/prompt_1a_code/eddy2d.py`
 
 ```python
-@@EDDY2D@@
+"""2-D eddy-current solver for long straight conductors (shared module for Prompt 1a).
+
+What it computes
+    AC resistance per metre R' of z-invariant, non-magnetic conductors of arbitrary
+    cross-section built from rectangular cells, all connected in parallel.
+    Run directly (`python3 eddy2d.py`) it prints three validation cases (V1-V3).
+
+Which answer items it supports
+    Every numerical result in A2 and A3 (imported by the other scripts in this folder).
+
+Method (volume integral equation / filament method, cf. Silvester 1967, Weeks et al. 1979)
+    J(r)/sigma(r) + j*omega*A(r) = V'            (V' = common voltage drop per metre)
+    A(r) = -(mu0/2pi) * Integral J(r') ln|r - r'| dA'      (open boundary is exact)
+    Piecewise-constant J on rectangular cells, collocation at cell centres, the
+    ln-kernel integrated EXACTLY over every source rectangle (closed form F below).
+    Quarter symmetry (J even in x and y, or odd for go/return pairs) via image cells.
+
+Assumptions
+    Infinitely long straight conductor, sinusoidal steady state, mu = mu0, linear
+    isotropic conductivity, no displacement current, conductivities at 20 C
+    (Cu 5.96e7 S/m, Al 3.77e7 S/m as given in the prompt), return conductor at
+    infinity unless a script says otherwise.
+
+Dependencies: numpy only.  All lengths in metres.
+"""
+import math
+import time
+
+import numpy as np
+
+MU0 = 4e-7 * math.pi
+S_CU = 5.96e7
+S_AL = 3.77e7
+T0 = 298.15          # K, reference temperature used for Sigma_dot = P/T0
+RHO_CU = 8960.0      # kg/m3
+RHO_AL = 2700.0      # kg/m3
+
+
+def delta(sigma, f):
+    """Skin depth sqrt(1/(pi f mu0 sigma))."""
+    return math.sqrt(1.0 / (math.pi * f * MU0 * sigma))
+
+
+def F(x, y):
+    """Indefinite double integral of ln(sqrt(x^2+y^2)) dx dy."""
+    r2 = x * x + y * y
+    with np.errstate(divide="ignore", invalid="ignore"):
+        t1 = np.where(r2 > 0, 0.5 * x * y * np.log(np.where(r2 > 0, r2, 1.0)), 0.0)
+        t2 = np.where(x != 0, 0.5 * x * x * np.arctan(y / np.where(x != 0, x, 1.0)), 0.0)
+        t3 = np.where(y != 0, 0.5 * y * y * np.arctan(x / np.where(y != 0, y, 1.0)), 0.0)
+    return t1 - 1.5 * x * y + t2 + t3
+
+
+def rect_ln_integral(xi, yi, x0, x1, y0, y1):
+    """Integral over rectangle [x0,x1]x[y0,y1] of ln|r_i - r'|; broadcasts."""
+    u0 = x0 - xi
+    u1 = x1 - xi
+    v0 = y0 - yi
+    v1 = y1 - yi
+    return F(u1, v1) - F(u0, v1) - F(u1, v0) + F(u0, v0)
+
+
+def build_M(cells, f, sym=(1, 1), chunk=400):
+    """System matrix M with  M @ J = V' (per cell), plus cell areas and the image list.
+
+    cells: dict with arrays x0,x1,y0,y1,sigma for the quadrant x>0,y>0.
+    sym=(sx,sy): +1 -> J even under x->-x (resp. y->-y); -1 -> odd; 0 -> no image."""
+    x0, x1, y0, y1, sg = (np.asarray(cells[k], float) for k in ("x0", "x1", "y0", "y1", "sigma"))
+    n = x0.size
+    xc = 0.5 * (x0 + x1)
+    yc = 0.5 * (y0 + y1)
+    area = (x1 - x0) * (y1 - y0)
+    w = 2 * math.pi * f
+    images = [(1.0, 1, 1)]
+    sx, sy = sym
+    if sx:
+        images.append((float(sx), -1, 1))
+    if sy:
+        images.append((float(sy), 1, -1))
+    if sx and sy:
+        images.append((float(sx * sy), -1, -1))
+    G = np.empty((n, n))
+    for s in range(0, n, chunk):
+        e = min(n, s + chunk)
+        xi = xc[s:e, None]
+        yi = yc[s:e, None]
+        acc = np.zeros((e - s, n))
+        for sgn, mx, my in images:
+            ax0, ax1 = (x0, x1) if mx == 1 else (-x1, -x0)
+            ay0, ay1 = (y0, y1) if my == 1 else (-y1, -y0)
+            acc += sgn * rect_ln_integral(xi, yi, ax0[None, :], ax1[None, :], ay0[None, :], ay1[None, :])
+        G[s:e] = acc
+    M = (-1j * w * MU0 / (2 * math.pi)) * G
+    del G
+    M[np.arange(n), np.arange(n)] += 1.0 / sg
+    return M, area, sg, images, xc, yc
+
+
+def solve(cells, f, sym=(1, 1), chunk=400, rhs=None):
+    """Solve for J with all cells in parallel.
+
+    rhs: optional per-cell driving voltage per metre (default 1 V/m everywhere).
+    Returns dict with R = Re(V'/I) [ohm/m], R_loss = P/|I|^2, X, I, J, n.
+    For sym with a -1 entry (go/return pair) I and P refer to the 'go' conductor."""
+    M, area, sg, images, xc, yc = build_M(cells, f, sym, chunk)
+    n = area.size
+    J = np.linalg.solve(M, np.ones(n, complex) if rhs is None else np.asarray(rhs, complex))
+    npos = sum(1 for sgn, _, _ in images if sgn > 0)     # copies carrying 'go' current
+    I = npos * np.sum(J * area)
+    P = npos * np.sum(np.abs(J) ** 2 * area / sg)
+    Z = 1.0 / I
+    return dict(R=Z.real, X=Z.imag, R_loss=P / abs(I) ** 2, I=I, J=J, n=n,
+                xc=xc, yc=yc, area=area)
+
+
+# ---------------------------------------------------------------- meshes
+def graded(L, h0, r, hmax, ends="hi"):
+    """Cell edges on [0,L], geometrically graded (first size h0, ratio r, cap hmax)
+    towards the 'hi' end, the 'lo' end, or 'both' ends."""
+    if ends == "both":
+        half = graded(L / 2, h0, r, hmax, "hi")
+        return np.concatenate([(L / 2 - half)[::-1], (L / 2 + half)[1:]])
+    sizes = []
+    h = h0
+    tot = 0.0
+    while tot < L * (1 - 1e-12):
+        hh = min(h, hmax)
+        sizes.append(hh)
+        tot += hh
+        h *= r
+    sizes = np.array(sizes) * (L / tot)
+    dist = np.concatenate([[0.0], np.cumsum(sizes)])     # distance from the graded end
+    if ends == "hi":
+        return (L - dist)[::-1]
+    return dist
+
+
+def tensor_cells(xe, ye, sigma, mask=None):
+    """Cells of a tensor grid; mask(xc, yc) -> bool selects which cells are metal."""
+    X0, Y0 = np.meshgrid(xe[:-1], ye[:-1], indexing="ij")
+    X1, Y1 = np.meshgrid(xe[1:], ye[1:], indexing="ij")
+    c = dict(x0=X0.ravel(), x1=X1.ravel(), y0=Y0.ravel(), y1=Y1.ravel())
+    if mask is not None:
+        keep = mask(0.5 * (c["x0"] + c["x1"]), 0.5 * (c["y0"] + c["y1"]))
+        c = {k: v[keep] for k, v in c.items()}
+    c["sigma"] = np.full(c["x0"].size, float(sigma))
+    return c
+
+
+MESH_H0_DIV = (3, 6, 10)            # first cell = delta / this   (lvl 0, 1, 2)
+MESH_RATIO = (1.35, 1.22, 1.15)
+MESH_HMAX = (2e-3, 1e-3, 0.6e-3)
+
+
+def solid_bar(a, b, sigma, f, lvl=1):
+    """Quarter of a solid 2a x 2b bar. lvl 0/1/2 = coarse/medium/fine mesh."""
+    d = delta(sigma, f)
+    h0, r, hmax = d / MESH_H0_DIV[lvl], MESH_RATIO[lvl], MESH_HMAX[lvl]
+    return tensor_cells(graded(a, h0, r, hmax, "hi"), graded(b, h0, r, hmax, "hi"), sigma)
+
+
+def tube(a, b, wall, sigma, f, lvl=1):
+    """Quarter of a hollow rectangular tube, outer 2a x 2b, uniform wall."""
+    d = delta(sigma, f)
+    h0, r, hmax = min(d, wall) / MESH_H0_DIV[lvl], MESH_RATIO[lvl], MESH_HMAX[lvl]
+    xin = graded(a - wall, h0, r, hmax, "hi")
+    yin = graded(b - wall, h0, r, hmax, "hi")
+    ww = graded(wall, h0, r, hmax, "both")
+    xe = np.concatenate([xin, (a - wall) + ww[1:]])
+    ye = np.concatenate([yin, (b - wall) + ww[1:]])
+    return tensor_cells(xe, ye, sigma, mask=lambda x, y: (x > a - wall) | (y > b - wall))
+
+
+def strand_array(a, b, nx, ny, fill, sigma, nsub=1):
+    """Quarter of a bundle of (2nx) x (2ny) square strands on a square pitch filling the
+    2a x 2b envelope; metal area fraction = fill; each strand split into nsub x nsub cells.
+    Returns (cells, strand side t, pitch)."""
+    px, py = a / nx, b / ny
+    assert abs(px - py) < 1e-12
+    t = math.sqrt(fill) * px
+    cx = (np.arange(nx) + 0.5) * px
+    cy = (np.arange(ny) + 0.5) * py
+    sub = (np.arange(nsub + 1) / nsub - 0.5) * t
+    xe0 = (cx[:, None] + sub[None, :-1]).ravel()
+    xe1 = (cx[:, None] + sub[None, 1:]).ravel()
+    ye0 = (cy[:, None] + sub[None, :-1]).ravel()
+    ye1 = (cy[:, None] + sub[None, 1:]).ravel()
+    X0, Y0 = np.meshgrid(xe0, ye0, indexing="ij")
+    X1, Y1 = np.meshgrid(xe1, ye1, indexing="ij")
+    c = dict(x0=X0.ravel(), x1=X1.ravel(), y0=Y0.ravel(), y1=Y1.ravel())
+    c["sigma"] = np.full(c["x0"].size, float(sigma))
+    return c, t, px
+
+
+# ---------------------------------------------------------------- analytic helpers
+def dowell_skin(xi):
+    """Claim A's factor xi*(sinh2xi+sin2xi)/(cosh2xi-cos2xi):
+    R_ac/R_dc of a foil of thickness xi*delta with tangential H on ONE face only."""
+    return xi * (math.sinh(2 * xi) + math.sin(2 * xi)) / (math.cosh(2 * xi) - math.cos(2 * xi))
+
+
+def bessel_j01(z):
+    """J0(z), J1(z) by power series (complex z, |z| < ~15)."""
+    q = -(z * z) / 4
+    term = 1.0 + 0j
+    j0 = term
+    j1 = term
+    for k in range(1, 200):
+        term *= q / (k * k)
+        j0 += term
+        j1 += term / (k + 1)
+        if abs(term) < 1e-18 * abs(j0):
+            break
+    return j0, j1 * z / 2
+
+
+def round_wire_ratio(a, sigma, f):
+    """Exact R_ac/R_dc of an isolated round wire of radius a."""
+    k = (1 - 1j) / delta(sigma, f)
+    j0, j1 = bessel_j01(k * a)
+    return (k * a / 2 * j0 / j1).real
+
+
+def _Fx(x, y):
+    """d/dx of F(x, y) = integral of ln(sqrt(x^2+y^2)) dy."""
+    r2 = x * x + y * y
+    with np.errstate(divide="ignore", invalid="ignore"):
+        t1 = np.where(r2 > 0, 0.5 * y * np.log(np.where(r2 > 0, r2, 1.0)), 0.0)
+        t2 = np.where(x != 0, x * np.arctan(y / np.where(x != 0, x, 1.0)), 0.0)
+    return t1 - y + t2
+
+
+def uniform_current_h2_factor(W, T, n=400):
+    """Mean of |H|^2 over a W x T rectangle carrying uniform current density, divided by
+    the 1-D value I^2/(12 W^2) (field parallel to the wide face only, H = J*y).
+    Returns (parallel-component part, normal-component part); their sum is the factor
+    by which the 1-D estimate of strand proximity loss in a transposed bundle is low."""
+    a, b = W / 2, T / 2
+    m = max(8, int(n * T / W))
+    xs = (np.arange(n) + 0.5) * W / n - a
+    ys = (np.arange(m) + 0.5) * T / m - b
+    X, Y = np.meshgrid(xs, ys, indexing="ij")
+    u0, u1, v0, v1 = -a - X, a - X, -b - Y, b - Y
+    dPdx = -(_Fx(u1, v1) - _Fx(u0, v1) - _Fx(u1, v0) + _Fx(u0, v0))
+    dPdy = -(_Fx(v1, u1) - _Fx(v0, u1) - _Fx(v1, u0) + _Fx(v0, u0))
+    J = 1.0 / (W * T)
+    Hx = -(J / (2 * math.pi)) * dPdy
+    Hy = (J / (2 * math.pi)) * dPdx
+    one_d = 1.0 / (12 * W * W)
+    return float(np.mean(Hx ** 2) / one_d), float(np.mean(Hy ** 2) / one_d)
+
+
+def run(label, cells, f, **kw):
+    """solve() with a one-line printed report."""
+    t = time.time()
+    s = solve(cells, f, **kw)
+    print(f"{label:60s} N={s['n']:5d}  R'={s['R']*1e6:9.2f} uOhm/m  "
+          f"(loss-based {s['R_loss']*1e6:9.2f})  [{time.time()-t:5.1f}s]", flush=True)
+    return s
+
+
+if __name__ == "__main__":
+    a, b = 50e-3, 5e-3
+    print("== V1: closed-form kernel vs brute-force midpoint quadrature")
+    rng = np.random.default_rng(1)
+    for _ in range(3):
+        x0, y0 = rng.uniform(-1, 1, 2)
+        dx, dy = rng.uniform(0.05, 0.7, 2)
+        xi, yi = rng.uniform(-1.5, 1.5, 2)
+        m = 1500
+        xs = x0 + (np.arange(m) + 0.5) * dx / m
+        ys = y0 + (np.arange(m) + 0.5) * dy / m
+        num = np.sum(0.5 * np.log((xs[:, None] - xi) ** 2 + (ys[None, :] - yi) ** 2)) * dx * dy / m / m
+        print(f"   exact {float(rect_ln_integral(xi, yi, x0, x0+dx, y0, y0+dy)):+.8f}   midpoint {num:+.8f}")
+    print("== V2: DC limit, solid Cu 10x100 mm at 1 Hz:  expect", 1 / (S_CU * 4 * a * b) * 1e6, "uOhm/m")
+    run("   solid Cu 1 Hz", solid_bar(a, b, S_CU, 1e3, 0), 1.0)
+    print("== V3: round Cu wire radius 2 mm (staircase mesh) vs exact Bessel solution")
+    rw = 2e-3
+    for f in (1e4, 5e4):
+        for nn in (20, 40, 64):
+            e = np.linspace(0, rw, nn + 1)
+            c = tensor_cells(e, e, S_CU, mask=lambda x, y: x * x + y * y < rw * rw)
+            area = 4 * np.sum((c["x1"] - c["x0"]) * (c["y1"] - c["y0"]))
+            s = solve(c, f)
+            print(f"   f={f:8.0f} a/delta={rw/delta(S_CU,f):5.2f} n={nn:3d} N={s['n']:5d} "
+                  f"Rac/Rdc numeric={s['R']*S_CU*area:7.4f} (loss {s['R_loss']*S_CU*area:7.4f}) "
+                  f"exact={round_wire_ratio(rw, S_CU, f):7.4f}")
 ```
 
 ### `local_docs/fable_runs/prompt_1a_code/a3_busbar_rac.py`
 
 ```python
-@@A3@@
+"""A3 worked comparison: R_ac per metre of a 10 mm x 100 mm busbar envelope.
+
+What it computes
+    R' [uOhm/m] at 10 kHz and 100 kHz, dissipation and Sigma_dot = P/T0 at I_rms = 1 kA,
+    mass per metre and the product R'*mass, for
+      - solid Cu, solid Al,
+      - Al lattice at relative density 0.3 as a homogenised bar, three sigma_eff choices,
+      - hollow Al tube of the same outer envelope and the same mass as the lattice
+        (uniform wall 1.399 mm), and a Cu tube with the same wall,
+    each on three mesh levels (discretisation error = spread between levels).
+    Also prints R_dc, the 1-D estimate 1/(sigma*delta*P) and the edge factor.
+
+Which answer items it supports
+    A3 (table), A2.1, A2.6 and the verdict.
+
+Assumptions
+    See eddy2d.py (isolated bar, return at infinity, 20 C conductivities).
+    Lattice = homogeneous conductor with axial conductivity sigma_eff; the explicit
+    strand-resolved check is in a2_strand_bundle_scan.py.
+
+Run time: about 1 minute.
+"""
+import math
+
+from eddy2d import (RHO_AL, RHO_CU, S_AL, S_CU, T0, delta, dowell_skin, run, solid_bar, tube)
+
+a, b = 50e-3, 5e-3
+A = 4 * a * b
+P = 4 * (a + b)
+RHOBAR = 0.3
+I_RMS = 1000.0
+
+# wall of the tube with metal area RHOBAR*A:  A - (2a-2w)(2b-2w) = RHOBAR*A
+wall = (2 * (a + b) - math.sqrt(4 * (a + b) ** 2 - 4 * RHOBAR * A)) / 4
+print(f"wall of equal-mass tube (area {RHOBAR}*A = {RHOBAR*A*1e6:.0f} mm2) = {wall*1e3:.4f} mm")
+
+res = {}
+for f in (1e4, 1e5):
+    print(f"\n== A3  f = {f:.0f} Hz ==  delta_Cu={delta(S_CU,f)*1e3:.4f} mm  delta_Al={delta(S_AL,f)*1e3:.4f} mm")
+    cases = [("solid Cu", S_CU, RHO_CU * A),
+             ("solid Al", S_AL, RHO_AL * A),
+             ("Al lattice homog. sigma_eff=0.300*sAl (all struts axial, tau=1)", RHOBAR * S_AL, RHO_AL * A * RHOBAR),
+             ("Al lattice homog. sigma_eff=0.222*sAl (isotropic HS upper bound)", 2 * RHOBAR / (3 - RHOBAR) * S_AL, RHO_AL * A * RHOBAR),
+             ("Al lattice homog. sigma_eff=0.100*sAl (rho/3, low-density strut foam)", RHOBAR / 3 * S_AL, RHO_AL * A * RHOBAR)]
+    for name, sg, mass in cases:
+        for lvl in (0, 1, 2):
+            s = run(f"   {name[:48]} lvl{lvl}", solid_bar(a, b, sg, f, lvl), f)
+        d = delta(sg, f)
+        est = 1 / (sg * d * P)
+        print(f"      sigma={sg:.4e} S/m delta={d*1e3:.4f} mm  Rdc={1/(sg*A)*1e6:8.2f}  1/(sigma*delta*P)={est*1e6:8.2f}"
+              f"  edge factor={s['R']/est:6.3f}  Rac/Rdc={s['R']*sg*A:7.2f}")
+        res[(name, f)] = (s["R"], mass)
+    for lvl in (0, 1, 2):
+        s = run(f"   Al tube 10x100, wall {wall*1e3:.3f} mm lvl{lvl}", tube(a, b, wall, S_AL, f, lvl), f)
+    res[("Al tube, same envelope, wall 1.399 mm (equal mass to lattice)", f)] = (s["R"], RHO_AL * A * RHOBAR)
+    print(f"      1-D estimate Dowell(wall/delta_Al={wall/delta(S_AL,f):.2f})/(sigma*wall*(P-4*wall))="
+          f"{dowell_skin(wall/delta(S_AL,f))/(S_AL*wall*(P-4*wall))*1e6:8.2f} uOhm/m (no edge crowding)")
+    for lvl in (0, 1, 2):
+        s = run(f"   Cu tube 10x100, wall {wall*1e3:.3f} mm lvl{lvl}", tube(a, b, wall, S_CU, f, lvl), f)
+    res[("Cu tube, same envelope, wall 1.399 mm", f)] = (s["R"], RHO_CU * A * RHOBAR)
+
+print(f"\n== summary (finest mesh), I_rms = {I_RMS:.0f} A, T0 = {T0} K")
+print(f"{'f [Hz]':>8s}  {'case':70s} {'R [uOhm/m]':>10s} {'R/R_Cu':>7s} {'P [W/m]':>8s} {'Sdot [W/(K m)]':>14s} {'m [kg/m]':>8s} {'R*m [uOhm kg/m2]':>16s}")
+for (name, f), (r, mass) in res.items():
+    rcu = res[("solid Cu", f)][0]
+    print(f"{f:8.0f}  {name:70s} {r*1e6:10.2f} {r/rcu:7.3f} {r*I_RMS**2:8.1f} {r*I_RMS**2/T0:14.3f} {mass:8.2f} {r*1e6*mass:16.1f}")
 ```

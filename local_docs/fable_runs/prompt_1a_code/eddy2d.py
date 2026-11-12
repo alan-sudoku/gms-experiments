@@ -221,6 +221,35 @@ def round_wire_ratio(a, sigma, f):
     return (k * a / 2 * j0 / j1).real
 
 
+def _Fx(x, y):
+    """d/dx of F(x, y) = integral of ln(sqrt(x^2+y^2)) dy."""
+    r2 = x * x + y * y
+    with np.errstate(divide="ignore", invalid="ignore"):
+        t1 = np.where(r2 > 0, 0.5 * y * np.log(np.where(r2 > 0, r2, 1.0)), 0.0)
+        t2 = np.where(x != 0, x * np.arctan(y / np.where(x != 0, x, 1.0)), 0.0)
+    return t1 - y + t2
+
+
+def uniform_current_h2_factor(W, T, n=400):
+    """Mean of |H|^2 over a W x T rectangle carrying uniform current density, divided by
+    the 1-D value I^2/(12 W^2) (field parallel to the wide face only, H = J*y).
+    Returns (parallel-component part, normal-component part); their sum is the factor
+    by which the 1-D estimate of strand proximity loss in a transposed bundle is low."""
+    a, b = W / 2, T / 2
+    m = max(8, int(n * T / W))
+    xs = (np.arange(n) + 0.5) * W / n - a
+    ys = (np.arange(m) + 0.5) * T / m - b
+    X, Y = np.meshgrid(xs, ys, indexing="ij")
+    u0, u1, v0, v1 = -a - X, a - X, -b - Y, b - Y
+    dPdx = -(_Fx(u1, v1) - _Fx(u0, v1) - _Fx(u1, v0) + _Fx(u0, v0))
+    dPdy = -(_Fx(v1, u1) - _Fx(v0, u1) - _Fx(v1, u0) + _Fx(v0, u0))
+    J = 1.0 / (W * T)
+    Hx = -(J / (2 * math.pi)) * dPdy
+    Hy = (J / (2 * math.pi)) * dPdx
+    one_d = 1.0 / (12 * W * W)
+    return float(np.mean(Hx ** 2) / one_d), float(np.mean(Hy ** 2) / one_d)
+
+
 def run(label, cells, f, **kw):
     """solve() with a one-line printed report."""
     t = time.time()

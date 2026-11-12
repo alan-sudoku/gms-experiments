@@ -11,21 +11,25 @@ What it computes
     4. Thick-limit scaling ratios sqrt(sigma_Cu/sigma_Al), sqrt(1/rho_bar), ...
     5. Strut-level proximity loss as a fraction of the bar-scale loss:
        fill (t/delta)^2 / 6 for square struts, fill (d/delta)^2 / 8 for round struts.
-    6. Ideal Litz estimate in the same envelope: R_dc/fill * (1 + fill^2 h^2 d^2/(48 delta^4)).
+    6. Ideal Litz estimate in the same envelope:
+       R' = R_dc(bundle) * (1 + g * fill^2 h^2 d^2/(48 delta^4)),
+       where g = 1.55 is the ratio of the true mean-square field inside a uniform-current
+       10 x 100 mm bundle to the 1-D value (the field component normal to the wide face
+       contributes as much as the parallel one), computed here from closed-form fields.
 
 Which answer items it supports
     A1.1-A1.4, A2.1, A2.7, A3 (the 'claim-implied' column).
 
 Assumptions
-    1-D (plane) field for every closed form; low-frequency (d << delta) dipole loss for
-    items 5 and 6; ideal transposition for item 6; 20 C conductivities; mu = mu0.
+    1-D (plane) field for every closed form except the factor g in item 6;
+    low-frequency (d << delta) dipole loss for items 5 and 6; ideal transposition for item 6; 20 C conductivities; mu = mu0.
     Items 5 and 6 are this answer's own derivations (level `derived`).
 
 Run time: a few seconds.
 """
 import math
 
-from eddy2d import S_AL, S_CU, delta, dowell_skin, solid_bar, solve
+from eddy2d import S_AL, S_CU, delta, dowell_skin, solid_bar, solve, uniform_current_h2_factor
 
 a, b = 50e-3, 5e-3
 A = 4 * a * b
@@ -77,11 +81,21 @@ for f in (1e4, 1e5):
 
 print("\n== 6. ideal Al Litz, fill 0.3, bundle 10 x 100 mm (h = 10 mm)")
 h = 2 * b
+gx, gy = uniform_current_h2_factor(2 * a, 2 * b)
+g2d = gx + gy
+print(f"   2-D field factor for a uniform-current {2*a*1e3:.0f} x {2*b*1e3:.0f} mm bundle: mean|H|^2 / 1-D value = "
+      f"{gx:.3f} (parallel to wide face) + {gy:.3f} (normal to wide face) = {g2d:.3f}")
+for W_, T_ in ((100, 1), (100, 0.1)):
+    print(f"      same factor for {W_} x {T_}: {sum(uniform_current_h2_factor(W_, T_)):.3f}  (thin-strip limit is 2)")
 rdc = 1 / (FILL * S_AL * A)
 for f, ds in ((1e4, (0.3e-3, 0.2e-3, 0.1e-3)), (1e5, (0.1e-3, 0.071e-3, 0.05e-3))):
     d = delta(S_AL, f)
     for dia in ds:
-        ratio = FILL ** 2 * h ** 2 * dia ** 2 / (48 * d ** 4)
+        ratio1 = FILL ** 2 * h ** 2 * dia ** 2 / (48 * d ** 4)
+        ratio = g2d * ratio1
         n = FILL * A / (math.pi * dia ** 2 / 4)
         print(f"   f={f:.0f} strand d={dia*1e3:.3f} mm (d/delta={dia/d:.2f}) strands={n:8.0f}  R_dc={rdc*1e6:.2f}  "
-              f"prox ratio={ratio:.3f}  R'={rdc*(1+ratio)*1e6:7.2f} uOhm/m")
+              f"prox ratio 1-D={ratio1:.3f}, with 2-D factor={ratio:.3f}  R'={rdc*(1+ratio)*1e6:7.2f} uOhm/m")
+    dmax = math.sqrt(48 / g2d) * d ** 2 / (FILL * h)
+    print(f"   f={f:.0f}: strand diameter at which strand proximity loss equals DC loss: {dmax*1e3:.3f} mm "
+          f"(delta_Al = {d*1e3:.3f} mm)")

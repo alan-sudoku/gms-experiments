@@ -42,9 +42,14 @@
    f=100000 t=0.259 mm t/delta=1.00: square fill*(t/d)^2/6 = 0.0499   round fill*(d/delta)^2/8 = 0.0374
 
 == 6. ideal Al Litz, fill 0.3, bundle 10 x 100 mm (h = 10 mm)
-   f=10000 strand d=0.300 mm (d/delta=0.37) strands=    4244  R_dc=88.42  prox ratio=0.037  R'=  91.72 uOhm/m
-   f=10000 strand d=0.200 mm (d/delta=0.24) strands=    9549  R_dc=88.42  prox ratio=0.017  R'=  89.89 uOhm/m
-   f=10000 strand d=0.100 mm (d/delta=0.12) strands=   38197  R_dc=88.42  prox ratio=0.004  R'=  88.78 uOhm/m
-   f=100000 strand d=0.100 mm (d/delta=0.39) strands=   38197  R_dc=88.42  prox ratio=0.415  R'= 125.14 uOhm/m
-   f=100000 strand d=0.071 mm (d/delta=0.27) strands=   75773  R_dc=88.42  prox ratio=0.209  R'= 106.93 uOhm/m
-   f=100000 strand d=0.050 mm (d/delta=0.19) strands=  152789  R_dc=88.42  prox ratio=0.104  R'=  97.60 uOhm/m
+   2-D field factor for a uniform-current 100 x 10 mm bundle: mean|H|^2 / 1-D value = 0.776 (parallel to wide face) + 0.776 (normal to wide face) = 1.552
+      same factor for 100 x 1: 1.910  (thin-strip limit is 2)
+      same factor for 100 x 0.1: 1.970  (thin-strip limit is 2)
+   f=10000 strand d=0.300 mm (d/delta=0.37) strands=    4244  R_dc=88.42  prox ratio 1-D=0.037, with 2-D factor=0.058  R'=  93.55 uOhm/m
+   f=10000 strand d=0.200 mm (d/delta=0.24) strands=    9549  R_dc=88.42  prox ratio 1-D=0.017, with 2-D factor=0.026  R'=  90.70 uOhm/m
+   f=10000 strand d=0.100 mm (d/delta=0.12) strands=   38197  R_dc=88.42  prox ratio 1-D=0.004, with 2-D factor=0.006  R'=  88.99 uOhm/m
+   f=10000: strand diameter at which strand proximity loss equals DC loss: 1.246 mm (delta_Al = 0.820 mm)
+   f=100000 strand d=0.100 mm (d/delta=0.39) strands=   38197  R_dc=88.42  prox ratio 1-D=0.415, with 2-D factor=0.645  R'= 145.41 uOhm/m
+   f=100000 strand d=0.071 mm (d/delta=0.27) strands=   75773  R_dc=88.42  prox ratio 1-D=0.209, with 2-D factor=0.325  R'= 117.15 uOhm/m
+   f=100000 strand d=0.050 mm (d/delta=0.19) strands=  152789  R_dc=88.42  prox ratio 1-D=0.104, with 2-D factor=0.161  R'= 102.67 uOhm/m
+   f=100000: strand diameter at which strand proximity loss equals DC loss: 0.125 mm (delta_Al = 0.259 mm)

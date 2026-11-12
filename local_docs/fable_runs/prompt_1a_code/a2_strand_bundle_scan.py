@@ -19,7 +19,7 @@ Assumptions
     real 3-D lattice only remove axial metal (lower sigma_eff).
 
 Usage
-    python3 a2_strand_bundle_scan.py            # full default scan (about 6 minutes)
+    python3 a2_strand_bundle_scan.py            # full default scan (about 10 minutes)
     python3 a2_strand_bundle_scan.py quick      # 10 kHz, fill 0.3 only (about 1 minute)
 """
 import math
