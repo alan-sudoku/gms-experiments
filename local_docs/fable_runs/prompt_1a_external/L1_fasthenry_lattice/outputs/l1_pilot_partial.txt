@@ -1,0 +1,33 @@
+Lattice 8 x 4 cells, pitch 0.5 mm, strut 0.1816 mm, envelope 4.1816 x 2.1816 mm, lengths (32, 64) cells (differencing length 16 mm)
+DC: lattice R' = 17868.00 uOhm/m; analytic 1/(sigma t^2 N_lines) = 17868.04 (-0.0002 %); sigma_hom = 6.1348e+06 S/m = 0.1627 sigma_Al
+
+== T/delta_eff = 0.5
+f = 2168.81 Hz; delta_Al = 1.7601 mm; t/delta_Al = 0.103; pitch/delta_eff = 0.115
+  lat nz=32: R = 2.860090e-04 Ohm, X = 9.377200e-05 Ohm   [2.8 s, 0.07 GB]
+  lat nz=64: R = 5.720480e-04 Ohm, X = 2.432100e-04 Ohm   [12.4 s, 0.17 GB]
+  hom nz=32: R = 2.859860e-04 Ohm, X = 9.662370e-05 Ohm   [0.0 s, 0.00 GB]
+  hom nz=64: R = 5.719970e-04 Ohm, X = 2.492960e-04 Ohm   [0.0 s, 0.00 GB]
+  Al  nz=32: R = 4.727730e-05 Ohm, X = 9.651630e-05 Ohm   [0.0 s, 0.00 GB]
+  Al  nz=64: R = 9.473560e-05 Ohm, X = 2.490490e-04 Ohm   [0.0 s, 0.00 GB]
+  Cu  nz=32: R = 3.062280e-05 Ohm, X = 9.635370e-05 Ohm   [0.0 s, 0.00 GB]
+  Cu  nz=64: R = 6.152550e-05 Ohm, X = 2.486760e-04 Ohm   [0.0 s, 0.00 GB]
+  per-length lat: R' =   17877.44 uOhm/m, R/R_dc = 1.0005
+  per-length hom: R' =   17875.69 uOhm/m, R/R_dc = 1.0004
+  per-length Al : R' =    2966.14 uOhm/m, R/R_dc = 1.0201
+  per-length Cu : R' =    1931.42 uOhm/m, R/R_dc = 1.0501
+  k_lat/k_hom = 1.0001; lat/Cu = 9.256; lat/Al = 6.027
+
+== T/delta_eff = 10.0
+f = 867523 Hz; delta_Al = 0.0880 mm; t/delta_Al = 2.064; pitch/delta_eff = 2.292
+  lat nz=32: R = 1.059820e-03 Ohm, X = 3.570790e-02 Ohm   [459.5 s, 4.97 GB]
+  lat nz=64: NOT FINISHED (stopped)
+  hom nz=32: R = 1.101390e-03 Ohm, X = 3.574540e-02 Ohm   [2.0 s, 0.08 GB]
+  hom nz=64: R = 2.321710e-03 Ohm, X = 9.337710e-02 Ohm   [1.9 s, 0.08 GB]
+  Al  nz=32: R = 4.263200e-04 Ohm, X = 3.513430e-02 Ohm   [2.5 s, 0.11 GB]
+  Al  nz=64: R = 9.063260e-04 Ohm, X = 9.207040e-02 Ohm   [2.5 s, 0.11 GB]
+  Cu  nz=32: R = 3.374310e-04 Ohm, X = 3.504880e-02 Ohm   [2.7 s, 0.11 GB]
+  Cu  nz=64: R = 7.182980e-04 Ohm, X = 9.188760e-02 Ohm   [2.6 s, 0.11 GB]
+  per-length hom: R' =   76270.00 uOhm/m, R/R_dc = 4.2685
+  per-length Al : R' =   30000.38 uOhm/m, R/R_dc = 10.3180
+  per-length Cu : R' =   23804.19 uOhm/m, R/R_dc = 12.9427
+  no per-length lattice value (nz=64 not finished). Single length nz=32 only, end effects included, NOT a per-length result: R_lat/R_hom = 0.9623, R_lat/R_Cu = 3.141

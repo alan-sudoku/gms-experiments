@@ -1,0 +1,26 @@
+Tools: getdp <tools>/sim/getdp_dl/getdp-3.5.0-Linux64/bin/getdp | fasthenry <tools>/sim/FastHenry2/bin/fasthenry
+chk case                                                  value      reference      error
+G1  a/delta=0.5  h=delta/4 (3735 tri)                   1.00128         1.0013   -0.003 %  (tol 2.00 %)  PASS
+G1  a/delta=0.5  h=delta/8 (10451 tri)                  1.00129         1.0013   -0.001 %  (tol 0.50 %)  PASS
+G1  a/delta=1    h=delta/4 (3737 tri)                   1.02012        1.02049   -0.036 %  (tol 2.00 %)  PASS
+G1  a/delta=1    h=delta/8 (10419 tri)                  1.02039        1.02049   -0.010 %  (tol 0.50 %)  PASS
+G1  a/delta=2    h=delta/4 (5499 tri)                   1.26492        1.26464   +0.022 %  (tol 2.00 %)  PASS
+G1  a/delta=2    h=delta/8 (16027 tri)                  1.26474        1.26464   +0.008 %  (tol 0.50 %)  PASS
+G1  a/delta=4    h=delta/4 (9415 tri)                   2.28028         2.2738   +0.285 %  (tol 2.00 %)  PASS
+G1  a/delta=4    h=delta/8 (28897 tri)                  2.27543         2.2738   +0.072 %  (tol 0.50 %)  PASS
+G1  a/delta=8    h=delta/4 (17687 tri)                  4.27556        4.26157   +0.328 %  (tol 2.00 %)  PASS
+G1  a/delta=8    h=delta/8 (56601 tri)                  4.26517        4.26157   +0.084 %  (tol 0.50 %)  PASS
+G2  10x10 Cu 1 kHz, uOhm/m (22145 tri)                  285.917        285.644   +0.096 %  (tol 1.00 %)  PASS
+G2  10x10 Cu 10 kHz, uOhm/m (67497 tri)                 823.574        822.939   +0.077 %  (tol 1.00 %)  PASS
+G2  10x10 Cu 100 kHz, uOhm/m (214759 tri)               2543.61        2541.18   +0.096 %  (tol 1.00 %)  PASS
+F1  10x10 Cu x 1 m, DC, Ohm                         0.000167785    0.000167785   -0.000 %  (tol 0.01 %)  PASS
+F2  1x1 mm x 1 m partial L, H                        1.4813e-06    1.48129e-06   +0.001 %  (tol 0.50 %)  PASS
+F3  10x10 Cu 1 kHz, 21x21 fil r=1.25, uOhm/m            285.755        285.644   +0.039 %  (tol 1.00 %)  PASS
+F3  10x10 Cu 1 kHz, 41x41 fil r=1.12, uOhm/m            285.714        285.644   +0.025 %  (tol 1.00 %)  PASS
+F3  10x10 Cu 10 kHz, 21x21 fil r=1.25, uOhm/m           820.147        822.939   -0.339 %  (tol 1.00 %)  PASS
+F3  10x10 Cu 10 kHz, 41x41 fil r=1.12, uOhm/m           822.577        822.939   -0.044 %  (tol 1.00 %)  PASS
+F3  10x10 Cu 100 kHz, 21x21 fil r=1.25, uOhm/m           2452.8        2541.18   -3.478 %  (tol 1.00 %)  FAIL
+F3  10x10 Cu 100 kHz, 41x41 fil r=1.12, uOhm/m          2522.07        2541.18   -0.752 %  (tol 1.00 %)  PASS
+
+Summary: 20/21 pass; total wall 22 s
+  FAIL: F3 10x10 Cu 100 kHz, 21x21 fil r=1.25, uOhm/m
