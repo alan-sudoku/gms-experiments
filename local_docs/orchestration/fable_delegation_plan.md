@@ -175,4 +175,4 @@ OUTPUT FORMAT (strict, keep it short)
 
 Session start prompt for a new session:
 
-> Read `local_docs/orchestration/fable_delegation_plan.md` and act as the orchestrator it describes. Start from §7: Prompts 1a, 2 and 1b are done and their decisions are recorded. Ask me before starting the next prompt (Prompt 3, per §4 order). One prompt per session: when its decisions are recorded, hand off (update §7 and this prompt), and merge to `main`.
+> Read `local_docs/orchestration/fable_delegation_plan.md` and act as the orchestrator it describes. Start from §7: Prompts 1a, 2 and 1b are done and their decisions are recorded. Prompt 3 is in progress: Q1 and Q2 were answered by low-budget Fable runs (§5.1) and Q4 was restated; next is S1 for Q3–Q5 with those answers as input, which needs fresh Fable budget. Ask me before starting it. One prompt per session: when its decisions are recorded, hand off (update §7 and this prompt), and merge to `main`.
