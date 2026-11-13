@@ -1,0 +1,100 @@
+S4 input recheck, electrochemistry and embodied energy  (level: derived, unverified)
+
+=== (a) Pt reference overpotential at 1 A/cm2 with S3's Pt/C exchange current densities ===
+  plan P1: j0 = 0.2 A/cm2 at 298.15 K (S3: about 3x high for this temperature)
+      b = 51.39 mV ; eta at R_f = 1, 100, 200: 84.64 mV, 1.284 mV, 0.642 mV
+  Durst 2015 quoted literature, 293-298 K: j0 = 0.06 A/cm2
+      b = 51.39 mV ; eta at R_f = 1, 100, 200: 144.75 mV, 4.277 mV, 2.140 mV
+  Durst 2015 quoted literature, 293-298 K: j0 = 0.07 A/cm2
+      b = 51.39 mV ; eta at R_f = 1, 100, 200: 136.90 mV, 3.667 mV, 1.835 mV
+  Durst 2015 Table II, 313 K: j0 = 0.135 A/cm2
+      b = 53.97 mV ; eta at R_f = 1, 100, 200: 109.03 mV, 1.998 mV, 0.999 mV
+  Durst 2015 Table II, 353 K: j0 = 0.26 A/cm2
+      b = 60.86 mV ; eta at R_f = 1, 100, 200: 85.74 mV, 1.170 mV, 0.585 mV
+  plan P2 (alkaline, not seen by S3): j0 = 6.0e-4 A/cm2 at 298.15 K
+      b = 51.39 mV ; eta at R_f = 1, 100, 200: 381.20 mV, 144.752 mV, 109.675 mV
+  required roughness R_c = R_f,Pt j0,Pt / j0,c (equal transfer coefficients), Pt/C R_f = 100:
+     Pt acid 0.06        j0,c = 1e-5: R_c = 6e+05 ; j0,c = 1e-6: R_c = 6e+06
+     Pt acid 0.07        j0,c = 1e-5: R_c = 7e+05 ; j0,c = 1e-6: R_c = 7e+06
+     Pt acid 0.2 (plan)  j0,c = 1e-5: R_c = 2e+06 ; j0,c = 1e-6: R_c = 2e+07
+     Pt alkaline 6e-4    j0,c = 1e-5: R_c = 6e+03 ; j0,c = 1e-6: R_c = 6e+04
+  acid/alkaline ratio of the Pt exchange current densities used: 100 (0.06/6e-4), 117 (0.07/6e-4), 333 (0.2/6e-4)
+
+=== (b) NiFe oxygen evolution: values read by S3 in Lu and Zhao 2015 against the plan's extrapolation ===
+  measured (10 M KOH, Tafel-plot values): 0.24 V at 0.5 A/cm2, 0.27 V at 1.0 A/cm2
+     apparent slope between these two points: 99.7 mV/decade
+  measured (30 wt% KOH): 0.27 V at 0.1 A/cm2, 0.34 V at 0.3 A/cm2 ; quoted Tafel slope 32 mV/decade
+     apparent slope between these two points: 146.7 mV/decade
+     extrapolated to 1 A/cm2 from 0.3 A/cm2: 0.357 V with 32 mV/decade ; 0.417 V with the apparent slope
+  plan C05 extrapolation (S2): NiFe 0.31-0.47 V ; Ir oxide 0.40 V ; flat Pt 0.96-1.20 V (inputs not seen by S3)
+     NiFe at 0.27 V: below flat Pt by 0.69 to 0.93 V ; relative to Ir oxide 0.40 V: -0.13 V
+     NiFe at 0.31 V: below flat Pt by 0.65 to 0.89 V ; relative to Ir oxide 0.40 V: -0.09 V
+     NiFe at 0.47 V: below flat Pt by 0.49 to 0.73 V ; relative to Ir oxide 0.40 V: +0.07 V
+  roughness factor reported: 50 (double-layer capacitance) -> j_local = 0.020 A/cm2_real at 1 A/cm2
+  exchange current density assigned to the point (0.27 V, 1 A/cm2, R_f = 50):
+     prompt's symmetric arcsinh form, alpha = 0.5 (b = 51.39 mV): j0 = 1.045e-04 A/cm2_real
+     Tafel form with the measured 32 mV/decade (b = 13.90 mV):   j0 = 7.303e-11 A/cm2_real
+     ratio of the two: 1.43e+06 (the same data point; j0 is not defined without the slope)
+  gain per decade of roughness: 118.3 mV at alpha = 0.5 ; 32 mV at the measured slope
+
+=== (c) C08: source of the second-route miss, and the a_v*j0 needed to reach each Pt reference ===
+  X = J^2/(4 kappa_eff a_v j0 b). eta_min = b acosh(1+X) (sinh kinetics); Tafel semi-infinite form b ln(2X).
+  relative difference (b ln 2X)/(b acosh(1+X)) - 1 as a function of eta_min/b:
+     eta_min/b = 3.00  X =     9.07  Tafel/sinh - 1 = -0.0340
+     eta_min/b = 3.19  X =    11.16  Tafel/sinh - 1 = -0.0264
+     eta_min/b = 4.00  X =    26.31  Tafel/sinh - 1 = -0.0092
+     eta_min/b = 5.00  X =    73.21  Tafel/sinh - 1 = -0.0027
+     eta_min/b = 5.30  X =    99.17  Tafel/sinh - 1 = -0.0019
+     eta_min/b = 6.00  X =   200.72  Tafel/sinh - 1 = -0.0008
+     eta_min/b = 8.00  X =  1489.48  Tafel/sinh - 1 = -0.0001
+  foam R_f,tot=1000, j0=1 A/m2, kappa=140, eps_g=0.3: X=11.12 eta_min=0.16373 V (3.19 b) ; Tafel semi-infinite 0.15939 V ; rel -0.0265
+  foam R_f,tot=1000, j0=1 A/m2, kappa=140, eps_g=0.0: X=6.51 eta_min=0.13901 V (2.71 b) ; Tafel semi-infinite 0.13190 V ; rel -0.0512
+  foam R_f,tot=1000, j0=1 A/m2, kappa=62, eps_g=0.0: X=14.71 eta_min=0.17708 V (3.45 b) ; Tafel semi-infinite 0.17375 V ; rel -0.0188
+  S2 values for the same three cases (finite L = 16 mm, Tafel): eta_thick = 0.15962, 0.13254, 0.17389 V ; rel -2.506e-02, -4.655e-02, -1.802e-02
+  -> the miss equals the sinh-against-Tafel difference at X of order 10; the 2 % criterion needs eta_min > about 3.4 b, not 3 b.
+     smallest eta_min/b for which |Tafel/sinh - 1| <= 2 %: 3.399
+
+  a_v*j0 [A/m3] needed for eta_min = eta_ref:  a_v j0 = J^2/(4 kappa_eff b (cosh(eta_ref/b) - 1)), b at 298.15 K, alpha = 0.5
+  reference                            eta_ref[V] | kappa=62,eg=0  kappa=62,eg=0.3  kappa=140,eg=0  kappa=140,eg=0.3   (eps = 0.5)
+  flat Pt, alkaline (0.3812 V)            0.38120 |    2.667e+04      4.553e+04      1.181e+04        2.016e+04
+  Pt/C R_f=100, alkaline (0.1448 V)       0.14475 |    3.002e+06      5.126e+06      1.330e+06        2.270e+06
+  Pt/C R_f=200, alkaline (0.1097 V)       0.10967 |    6.757e+06      1.154e+07      2.992e+06        5.109e+06
+  flat Pt, acid j0=0.065                  0.14067 |    3.285e+06      5.609e+06      1.455e+06        2.484e+06
+  Pt/C R_f=100, acid j0=0.065             0.00395 |    7.513e+09      1.283e+10      3.327e+09        5.681e+09
+  for scale: a_v = 4 eps/d_pore = 2e6 m2/m3 (1 um pores, eps 0.5), 2e7 (0.1 um); j0 = 0.1 A/m2 = 1e-5 A/cm2
+     Pt/C R_f=100, alkaline (0.1448 V), kappa=62, eg=0, j0=0.1 A/m2: a_v = 3.002e+07 m2/m3 -> pore diameter 4 eps/a_v = 6.662e-08 m
+     Pt/C R_f=100, alkaline (0.1448 V), kappa=62, eg=0, j0=1.0 A/m2: a_v = 3.002e+06 m2/m3 -> pore diameter 4 eps/a_v = 6.662e-07 m
+     Pt/C R_f=100, acid j0=0.065, kappa=62, eg=0, j0=0.1 A/m2: a_v = 7.513e+10 m2/m3 -> pore diameter 4 eps/a_v = 2.662e-11 m
+     Pt/C R_f=100, acid j0=0.065, kappa=62, eg=0, j0=1.0 A/m2: a_v = 7.513e+09 m2/m3 -> pore diameter 4 eps/a_v = 2.662e-10 m
+
+=== (d) C13 break-even overpotential with the cumulative energy demand read by S3 (Nuss and Eckelman 2014, Table S38) ===
+  d_eta_be = e m''/(J tau_op), J = 1e4 A/m2, tau_op = 1.44e+08 s ; primary energy counted one-for-one with electricity
+     Pt production mix  e =  243000 MJ/kg, m'' = 0.5 g/m2: e m'' =   121.5 MJ/m2, d_eta_be = 0.0844 mV, payback at 50 mV = 2.8 d
+     Pt production mix  e =  243000 MJ/kg, m'' = 3.0 g/m2: e m'' =   729.0 MJ/m2, d_eta_be = 0.5062 mV, payback at 50 mV = 16.9 d
+     Pt production mix  e =  243000 MJ/kg, m'' = 5.0 g/m2: e m'' =  1215.0 MJ/m2, d_eta_be = 0.8438 mV, payback at 50 mV = 28.1 d
+     Pt primary (ZA)    e =  308000 MJ/kg, m'' = 0.5 g/m2: e m'' =   154.0 MJ/m2, d_eta_be = 0.1069 mV, payback at 50 mV = 3.6 d
+     Pt primary (ZA)    e =  308000 MJ/kg, m'' = 3.0 g/m2: e m'' =   924.0 MJ/m2, d_eta_be = 0.6417 mV, payback at 50 mV = 21.4 d
+     Pt primary (ZA)    e =  308000 MJ/kg, m'' = 5.0 g/m2: e m'' =  1540.0 MJ/m2, d_eta_be = 1.0694 mV, payback at 50 mV = 35.6 d
+     Pt primary (RU)    e =  327000 MJ/kg, m'' = 0.5 g/m2: e m'' =   163.5 MJ/m2, d_eta_be = 0.1135 mV, payback at 50 mV = 3.8 d
+     Pt primary (RU)    e =  327000 MJ/kg, m'' = 3.0 g/m2: e m'' =   981.0 MJ/m2, d_eta_be = 0.6813 mV, payback at 50 mV = 22.7 d
+     Pt primary (RU)    e =  327000 MJ/kg, m'' = 5.0 g/m2: e m'' =  1635.0 MJ/m2, d_eta_be = 1.1354 mV, payback at 50 mV = 37.8 d
+     Pt secondary       e =   11900 MJ/kg, m'' = 0.5 g/m2: e m'' =     6.0 MJ/m2, d_eta_be = 0.0041 mV, payback at 50 mV = 0.1 d
+     Pt secondary       e =   11900 MJ/kg, m'' = 3.0 g/m2: e m'' =    35.7 MJ/m2, d_eta_be = 0.0248 mV, payback at 50 mV = 0.8 d
+     Pt secondary       e =   11900 MJ/kg, m'' = 5.0 g/m2: e m'' =    59.5 MJ/m2, d_eta_be = 0.0413 mV, payback at 50 mV = 1.4 d
+     Ir (ZA)            e =  165000 MJ/kg, m'' = 10.0 g/m2 (assumed anode loading 1-2 mg/cm2, UNSURE): d_eta_be = 1.146 mV
+     Ir (ZA)            e =  165000 MJ/kg, m'' = 20.0 g/m2 (assumed anode loading 1-2 mg/cm2, UNSURE): d_eta_be = 2.292 mV
+     Ir (RU)            e =  175000 MJ/kg, m'' = 10.0 g/m2 (assumed anode loading 1-2 mg/cm2, UNSURE): d_eta_be = 1.215 mV
+     Ir (RU)            e =  175000 MJ/kg, m'' = 20.0 g/m2 (assumed anode loading 1-2 mg/cm2, UNSURE): d_eta_be = 2.431 mV
+
+=== (e) B20 with the same source: Cu and Al, production mix and primary ===
+  per-volume ratio (e_Al rho_Al)/(e_Cu rho_Cu), mix values: 0.727
+  per-volume ratio (e_Al rho_Al)/(e_Cu rho_Cu), primary values: 0.975
+  sink masses (B05 optima at 0.1 W): Cu 0.3451 kg, Al plate k=150 0.1192 kg
+  metal embodied energy, mix: Cu 18.53 MJ, Al 15.61 MJ, Al - Cu = -2.92 MJ
+  metal embodied energy, primary: Cu 20.47 MJ, Al 23.12 MJ, Al - Cu = +2.66 MJ
+  LPBF processing at 100 MJ/kg of part (not seen by S3, UNSURE): 11.92 MJ
+  LPBF processing at 400 MJ/kg of part (not seen by S3, UNSURE): 47.68 MJ
+  extra fan electricity over tau_life = 1.578e+08 s at eta_fan = 0.25 (B12): k=200 23.61 MJ, k=180 28.17 MJ, k=150 37.34 MJ, k=100 66.52 MJ
+     k=200: fan penalty / Cu metal energy (mix) = 1.27 ; / (Al primary + LPBF 100..400) = 0.67..0.33
+     k=150: fan penalty / Cu metal energy (mix) = 2.01 ; / (Al primary + LPBF 100..400) = 1.07..0.53
+     k=100: fan penalty / Cu metal energy (mix) = 3.59 ; / (Al primary + LPBF 100..400) = 1.90..0.94

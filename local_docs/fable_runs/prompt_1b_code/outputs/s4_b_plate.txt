@@ -1,0 +1,249 @@
+S4 plate-fin follow-up  (level: derived, unverified)
+
+=== (a) B05 (iii): PF12 / X1 ratio at the X1 optima, real fins and isothermal fins ===
+   k    P_air   design                      eta   NTU   R_X1     R_PF12   ratio   | isothermal fins: R_X1  R_PF12  ratio
+  390   0.01   t=0.30 Nf=27 s=1.996 mm   0.796 1.832  0.5348   0.5566   1.041   |   0.5002  0.5065  1.012
+  200   0.01   t=0.40 Nf=26 s=1.984 mm   0.731 1.689  0.5699   0.5993   1.052   |   0.5174  0.5239  1.013
+  180   0.01   t=0.40 Nf=26 s=1.984 mm   0.711 1.645  0.5757   0.6074   1.055   |   0.5174  0.5239  1.013
+  150   0.01   t=0.40 Nf=27 s=1.892 mm   0.668 1.742  0.5863   0.6270   1.070   |   0.5236  0.5309  1.014
+  120   0.01   t=0.40 Nf=27 s=1.892 mm   0.622 1.627  0.6018   0.6498   1.080   |   0.5236  0.5309  1.014
+  100   0.01   t=0.40 Nf=28 s=1.807 mm   0.574 1.695  0.6164   0.6773   1.099   |   0.5329  0.5404  1.014
+  390   0.03   t=0.30 Nf=32 s=1.626 mm   0.763 1.824  0.3833   0.4030   1.052   |   0.3546  0.3607  1.017
+  200   0.03   t=0.40 Nf=31 s=1.587 mm   0.689 1.726  0.4130   0.4407   1.067   |   0.3707  0.3773  1.018
+  180   0.03   t=0.40 Nf=31 s=1.587 mm   0.668 1.676  0.4177   0.4475   1.071   |   0.3707  0.3773  1.018
+  150   0.03   t=0.40 Nf=31 s=1.587 mm   0.631 1.586  0.4270   0.4608   1.079   |   0.3707  0.3773  1.018
+  120   0.03   t=0.40 Nf=32 s=1.523 mm   0.576 1.611  0.4398   0.4833   1.099   |   0.3761  0.3831  1.018
+  100   0.03   t=0.40 Nf=33 s=1.462 mm   0.530 1.646  0.4520   0.5060   1.119   |   0.3832  0.3901  1.018
+  390   0.10   t=0.30 Nf=38 s=1.314 mm   0.726 1.756  0.2679   0.2846   1.062   |   0.2438  0.2489  1.021
+  200   0.10   t=0.40 Nf=36 s=1.303 mm   0.649 1.576  0.2929   0.3154   1.077   |   0.2555  0.2610  1.021
+  180   0.10   t=0.40 Nf=37 s=1.256 mm   0.621 1.654  0.2969   0.3231   1.088   |   0.2587  0.2644  1.022
+  150   0.10   t=0.40 Nf=37 s=1.256 mm   0.582 1.555  0.3044   0.3342   1.098   |   0.2587  0.2644  1.022
+  120   0.10   t=0.40 Nf=38 s=1.211 mm   0.528 1.549  0.3149   0.3526   1.120   |   0.2628  0.2686  1.022
+  100   0.10   t=0.40 Nf=39 s=1.168 mm   0.483 1.557  0.3248   0.3709   1.142   |   0.2677  0.2736  1.022
+  390   0.30   t=0.30 Nf=44 s=1.088 mm   0.690 1.659  0.1947   0.2086   1.071   |   0.1736  0.1778  1.024
+  200   0.30   t=0.40 Nf=42 s=1.054 mm   0.606 1.547  0.2160   0.2358   1.092   |   0.1848  0.1894  1.025
+  180   0.30   t=0.40 Nf=42 s=1.054 mm   0.583 1.491  0.2194   0.2407   1.097   |   0.1848  0.1894  1.025
+  150   0.30   t=0.40 Nf=43 s=1.019 mm   0.538 1.498  0.2257   0.2517   1.115   |   0.1873  0.1920  1.025
+  120   0.30   t=0.40 Nf=44 s=0.986 mm   0.486 1.472  0.2345   0.2671   1.139   |   0.1903  0.1951  1.025
+  100   0.30   t=0.40 Nf=45 s=0.955 mm   0.443 1.460  0.2425   0.2822   1.164   |   0.1939  0.1986  1.024
+  390   1.00   t=0.30 Nf=52 s=0.871 mm   0.645 1.607  0.1386   0.1502   1.084   |   0.1210  0.1243  1.027
+  200   1.00   t=0.40 Nf=49 s=0.842 mm   0.558 1.474  0.1564   0.1733   1.108   |   0.1302  0.1338  1.028
+  180   1.00   t=0.40 Nf=50 s=0.816 mm   0.530 1.511  0.1592   0.1786   1.122   |   0.1320  0.1357  1.028
+  150   1.00   t=0.40 Nf=50 s=0.816 mm   0.492 1.405  0.1644   0.1865   1.134   |   0.1320  0.1357  1.028
+  120   1.00   t=0.40 Nf=50 s=0.816 mm   0.447 1.279  0.1719   0.1980   1.152   |   0.1320  0.1357  1.028
+  100   1.00   t=0.40 Nf=50 s=0.816 mm   0.411 1.181  0.1790   0.2092   1.168   |   0.1320  0.1357  1.028
+max |ratio_iso - 1| over the 30 optima = 0.0279 ; range of ratio_iso = 1.012 to 1.028
+range of real-fin ratio = 1.041 to 1.168
+Pearson correlation of (ratio/ratio_iso - 1) with (1 - eta_f) over the 30 optima: 0.982
+fin-coupling part ratio/ratio_iso: min 1.028 max 1.137
+
+=== (a2) Al/Cu ratio at 0.1 W when each design is optimised under PF12 instead of PF8/X1 ===
+Cu  PF12-optimum: R_PF12=0.2830 (X1 value of that design 0.2691)  PF t=0.30mm Nf=36 s=1.406mm k=390
+k=200 PF12-optimum: R_PF12=0.3139  ratio to Cu (PF12) = 1.109   [X1 optimum ratio = 1.093]  PF t=0.40mm Nf=34 s=1.406mm k=200
+k=180 PF12-optimum: R_PF12=0.3200  ratio to Cu (PF12) = 1.131   [X1 optimum ratio = 1.108]  PF t=0.40mm Nf=34 s=1.406mm k=180
+k=150 PF12-optimum: R_PF12=0.3316  ratio to Cu (PF12) = 1.172   [X1 optimum ratio = 1.136]  PF t=0.40mm Nf=35 s=1.353mm k=150
+k=120 PF12-optimum: R_PF12=0.3471  ratio to Cu (PF12) = 1.226   [X1 optimum ratio = 1.175]  PF t=0.50mm Nf=33 s=1.359mm k=120
+k=100 PF12-optimum: R_PF12=0.3614  ratio to Cu (PF12) = 1.277   [X1 optimum ratio = 1.212]  PF t=0.50mm Nf=33 s=1.359mm k=100
+
+=== (b) Al/Cu ratio at equal P_air: plan thickness limits, equal limits, free thickness ===
+
+P_air = 0.03 W
+  rule: plan (Cu t>=0.3, Al t>=0.4)
+     k=390  R_fa=0.3833  ratio to Cu=1.000  t=0.30 mm Nf=32 s=1.626 mm eta=0.763 NTU=1.824  (t at grid minimum)
+     k=200  R_fa=0.4130  ratio to Cu=1.078  t=0.40 mm Nf=31 s=1.587 mm eta=0.689 NTU=1.726  (t at grid minimum)
+     k=180  R_fa=0.4177  ratio to Cu=1.090  t=0.40 mm Nf=31 s=1.587 mm eta=0.668 NTU=1.676  (t at grid minimum)
+     k=166  R_fa=0.4216  ratio to Cu=1.100  t=0.40 mm Nf=31 s=1.587 mm eta=0.652 NTU=1.636  (t at grid minimum)
+     k=165  R_fa=0.4220  ratio to Cu=1.101  t=0.40 mm Nf=31 s=1.587 mm eta=0.651 NTU=1.633  (t at grid minimum)
+     k=160  R_fa=0.4235  ratio to Cu=1.105  t=0.40 mm Nf=31 s=1.587 mm eta=0.644 NTU=1.618  (t at grid minimum)
+     k=155  R_fa=0.4252  ratio to Cu=1.109  t=0.40 mm Nf=31 s=1.587 mm eta=0.638 NTU=1.602  (t at grid minimum)
+     k=150  R_fa=0.4270  ratio to Cu=1.114  t=0.40 mm Nf=31 s=1.587 mm eta=0.631 NTU=1.586  (t at grid minimum)
+     k=130  R_fa=0.4350  ratio to Cu=1.135  t=0.40 mm Nf=32 s=1.523 mm eta=0.593 NTU=1.657  (t at grid minimum)
+     k=120  R_fa=0.4398  ratio to Cu=1.147  t=0.40 mm Nf=32 s=1.523 mm eta=0.576 NTU=1.611  (t at grid minimum)
+     k=115  R_fa=0.4425  ratio to Cu=1.155  t=0.40 mm Nf=32 s=1.523 mm eta=0.567 NTU=1.587  (t at grid minimum)
+     k=110  R_fa=0.4454  ratio to Cu=1.162  t=0.40 mm Nf=32 s=1.523 mm eta=0.558 NTU=1.562  (t at grid minimum)
+     k=100  R_fa=0.4520  ratio to Cu=1.179  t=0.40 mm Nf=33 s=1.462 mm eta=0.530 NTU=1.646  (t at grid minimum)
+  rule: equal t>=0.4 mm
+     k=390  R_fa=0.3909  ratio to Cu=1.000  t=0.40 mm Nf=30 s=1.655 mm eta=0.811 NTU=1.819  (t at grid minimum)
+     k=200  R_fa=0.4130  ratio to Cu=1.057  t=0.40 mm Nf=31 s=1.587 mm eta=0.689 NTU=1.726  (t at grid minimum)
+     k=180  R_fa=0.4177  ratio to Cu=1.069  t=0.40 mm Nf=31 s=1.587 mm eta=0.668 NTU=1.676  (t at grid minimum)
+     k=166  R_fa=0.4216  ratio to Cu=1.079  t=0.40 mm Nf=31 s=1.587 mm eta=0.652 NTU=1.636  (t at grid minimum)
+     k=165  R_fa=0.4220  ratio to Cu=1.079  t=0.40 mm Nf=31 s=1.587 mm eta=0.651 NTU=1.633  (t at grid minimum)
+     k=160  R_fa=0.4235  ratio to Cu=1.083  t=0.40 mm Nf=31 s=1.587 mm eta=0.644 NTU=1.618  (t at grid minimum)
+     k=155  R_fa=0.4252  ratio to Cu=1.088  t=0.40 mm Nf=31 s=1.587 mm eta=0.638 NTU=1.602  (t at grid minimum)
+     k=150  R_fa=0.4270  ratio to Cu=1.092  t=0.40 mm Nf=31 s=1.587 mm eta=0.631 NTU=1.586  (t at grid minimum)
+     k=130  R_fa=0.4350  ratio to Cu=1.113  t=0.40 mm Nf=32 s=1.523 mm eta=0.593 NTU=1.657  (t at grid minimum)
+     k=120  R_fa=0.4398  ratio to Cu=1.125  t=0.40 mm Nf=32 s=1.523 mm eta=0.576 NTU=1.611  (t at grid minimum)
+     k=115  R_fa=0.4425  ratio to Cu=1.132  t=0.40 mm Nf=32 s=1.523 mm eta=0.567 NTU=1.587  (t at grid minimum)
+     k=110  R_fa=0.4454  ratio to Cu=1.139  t=0.40 mm Nf=32 s=1.523 mm eta=0.558 NTU=1.562  (t at grid minimum)
+     k=100  R_fa=0.4520  ratio to Cu=1.156  t=0.40 mm Nf=33 s=1.462 mm eta=0.530 NTU=1.646  (t at grid minimum)
+  rule: equal t>=0.3 mm
+     k=390  R_fa=0.3833  ratio to Cu=1.000  t=0.30 mm Nf=32 s=1.626 mm eta=0.763 NTU=1.824  (t at grid minimum)
+     k=200  R_fa=0.4094  ratio to Cu=1.068  t=0.30 mm Nf=33 s=1.566 mm eta=0.629 NTU=1.664  (t at grid minimum)
+     k=180  R_fa=0.4150  ratio to Cu=1.083  t=0.30 mm Nf=33 s=1.566 mm eta=0.607 NTU=1.608  (t at grid minimum)
+     k=166  R_fa=0.4194  ratio to Cu=1.094  t=0.30 mm Nf=34 s=1.509 mm eta=0.583 NTU=1.698  (t at grid minimum)
+     k=165  R_fa=0.4197  ratio to Cu=1.095  t=0.30 mm Nf=34 s=1.509 mm eta=0.581 NTU=1.695  (t at grid minimum)
+     k=160  R_fa=0.4215  ratio to Cu=1.100  t=0.30 mm Nf=34 s=1.509 mm eta=0.575 NTU=1.677  (t at grid minimum)
+     k=155  R_fa=0.4233  ratio to Cu=1.104  t=0.30 mm Nf=34 s=1.509 mm eta=0.568 NTU=1.658  (t at grid minimum)
+     k=150  R_fa=0.4253  ratio to Cu=1.110  t=0.30 mm Nf=34 s=1.509 mm eta=0.561 NTU=1.638  (t at grid minimum)
+     k=130  R_fa=0.4339  ratio to Cu=1.132  t=0.35 mm Nf=33 s=1.514 mm eta=0.564 NTU=1.616  (t interior)
+     k=120  R_fa=0.4391  ratio to Cu=1.146  t=0.35 mm Nf=33 s=1.514 mm eta=0.547 NTU=1.570  (t interior)
+     k=115  R_fa=0.4420  ratio to Cu=1.153  t=0.35 mm Nf=33 s=1.514 mm eta=0.538 NTU=1.545  (t interior)
+     k=110  R_fa=0.4450  ratio to Cu=1.161  t=0.35 mm Nf=34 s=1.458 mm eta=0.521 NTU=1.651  (t interior)
+     k=100  R_fa=0.4517  ratio to Cu=1.179  t=0.35 mm Nf=34 s=1.458 mm eta=0.501 NTU=1.591  (t interior)
+  rule: free t (0.05-2.0 mm grid)
+     k=390  R_fa=0.3809  ratio to Cu=1.000  t=0.20 mm Nf=34 s=1.612 mm eta=0.687 NTU=1.717  (t interior)
+     k=200  R_fa=0.4094  ratio to Cu=1.075  t=0.30 mm Nf=33 s=1.566 mm eta=0.629 NTU=1.664  (t interior)
+     k=180  R_fa=0.4150  ratio to Cu=1.090  t=0.30 mm Nf=33 s=1.566 mm eta=0.607 NTU=1.608  (t interior)
+     k=166  R_fa=0.4194  ratio to Cu=1.101  t=0.30 mm Nf=34 s=1.509 mm eta=0.583 NTU=1.698  (t interior)
+     k=165  R_fa=0.4197  ratio to Cu=1.102  t=0.30 mm Nf=34 s=1.509 mm eta=0.581 NTU=1.695  (t interior)
+     k=160  R_fa=0.4215  ratio to Cu=1.106  t=0.30 mm Nf=34 s=1.509 mm eta=0.575 NTU=1.677  (t interior)
+     k=155  R_fa=0.4233  ratio to Cu=1.111  t=0.30 mm Nf=34 s=1.509 mm eta=0.568 NTU=1.658  (t interior)
+     k=150  R_fa=0.4253  ratio to Cu=1.116  t=0.30 mm Nf=34 s=1.509 mm eta=0.561 NTU=1.638  (t interior)
+     k=130  R_fa=0.4339  ratio to Cu=1.139  t=0.35 mm Nf=33 s=1.514 mm eta=0.564 NTU=1.616  (t interior)
+     k=120  R_fa=0.4391  ratio to Cu=1.153  t=0.35 mm Nf=33 s=1.514 mm eta=0.547 NTU=1.570  (t interior)
+     k=115  R_fa=0.4420  ratio to Cu=1.160  t=0.35 mm Nf=33 s=1.514 mm eta=0.538 NTU=1.545  (t interior)
+     k=110  R_fa=0.4450  ratio to Cu=1.168  t=0.35 mm Nf=34 s=1.458 mm eta=0.521 NTU=1.651  (t interior)
+     k=100  R_fa=0.4517  ratio to Cu=1.186  t=0.35 mm Nf=34 s=1.458 mm eta=0.501 NTU=1.591  (t interior)
+
+P_air = 0.1 W
+  rule: plan (Cu t>=0.3, Al t>=0.4)
+     k=390  R_fa=0.2679  ratio to Cu=1.000  t=0.30 mm Nf=38 s=1.314 mm eta=0.726 NTU=1.756  (t at grid minimum)
+     k=200  R_fa=0.2929  ratio to Cu=1.093  t=0.40 mm Nf=36 s=1.303 mm eta=0.649 NTU=1.576  (t at grid minimum)
+     k=180  R_fa=0.2969  ratio to Cu=1.108  t=0.40 mm Nf=37 s=1.256 mm eta=0.621 NTU=1.654  (t at grid minimum)
+     k=166  R_fa=0.3000  ratio to Cu=1.120  t=0.40 mm Nf=37 s=1.256 mm eta=0.604 NTU=1.610  (t at grid minimum)
+     k=165  R_fa=0.3003  ratio to Cu=1.121  t=0.40 mm Nf=37 s=1.256 mm eta=0.603 NTU=1.607  (t at grid minimum)
+     k=160  R_fa=0.3016  ratio to Cu=1.126  t=0.40 mm Nf=37 s=1.256 mm eta=0.596 NTU=1.590  (t at grid minimum)
+     k=155  R_fa=0.3029  ratio to Cu=1.131  t=0.40 mm Nf=37 s=1.256 mm eta=0.589 NTU=1.573  (t at grid minimum)
+     k=150  R_fa=0.3044  ratio to Cu=1.136  t=0.40 mm Nf=37 s=1.256 mm eta=0.582 NTU=1.555  (t at grid minimum)
+     k=130  R_fa=0.3110  ratio to Cu=1.161  t=0.40 mm Nf=38 s=1.211 mm eta=0.545 NTU=1.597  (t at grid minimum)
+     k=120  R_fa=0.3149  ratio to Cu=1.175  t=0.40 mm Nf=38 s=1.211 mm eta=0.528 NTU=1.549  (t at grid minimum)
+     k=115  R_fa=0.3171  ratio to Cu=1.184  t=0.40 mm Nf=38 s=1.211 mm eta=0.519 NTU=1.524  (t at grid minimum)
+     k=110  R_fa=0.3195  ratio to Cu=1.193  t=0.40 mm Nf=38 s=1.211 mm eta=0.510 NTU=1.498  (t at grid minimum)
+     k=100  R_fa=0.3248  ratio to Cu=1.212  t=0.40 mm Nf=39 s=1.168 mm eta=0.483 NTU=1.557  (t at grid minimum)
+  rule: equal t>=0.4 mm
+     k=390  R_fa=0.2742  ratio to Cu=1.000  t=0.40 mm Nf=35 s=1.353 mm eta=0.780 NTU=1.715  (t at grid minimum)
+     k=200  R_fa=0.2929  ratio to Cu=1.068  t=0.40 mm Nf=36 s=1.303 mm eta=0.649 NTU=1.576  (t at grid minimum)
+     k=180  R_fa=0.2969  ratio to Cu=1.083  t=0.40 mm Nf=37 s=1.256 mm eta=0.621 NTU=1.654  (t at grid minimum)
+     k=166  R_fa=0.3000  ratio to Cu=1.094  t=0.40 mm Nf=37 s=1.256 mm eta=0.604 NTU=1.610  (t at grid minimum)
+     k=165  R_fa=0.3003  ratio to Cu=1.095  t=0.40 mm Nf=37 s=1.256 mm eta=0.603 NTU=1.607  (t at grid minimum)
+     k=160  R_fa=0.3016  ratio to Cu=1.100  t=0.40 mm Nf=37 s=1.256 mm eta=0.596 NTU=1.590  (t at grid minimum)
+     k=155  R_fa=0.3029  ratio to Cu=1.105  t=0.40 mm Nf=37 s=1.256 mm eta=0.589 NTU=1.573  (t at grid minimum)
+     k=150  R_fa=0.3044  ratio to Cu=1.110  t=0.40 mm Nf=37 s=1.256 mm eta=0.582 NTU=1.555  (t at grid minimum)
+     k=130  R_fa=0.3110  ratio to Cu=1.134  t=0.40 mm Nf=38 s=1.211 mm eta=0.545 NTU=1.597  (t at grid minimum)
+     k=120  R_fa=0.3149  ratio to Cu=1.149  t=0.40 mm Nf=38 s=1.211 mm eta=0.528 NTU=1.549  (t at grid minimum)
+     k=115  R_fa=0.3171  ratio to Cu=1.157  t=0.40 mm Nf=38 s=1.211 mm eta=0.519 NTU=1.524  (t at grid minimum)
+     k=110  R_fa=0.3195  ratio to Cu=1.165  t=0.40 mm Nf=38 s=1.211 mm eta=0.510 NTU=1.498  (t at grid minimum)
+     k=100  R_fa=0.3248  ratio to Cu=1.184  t=0.40 mm Nf=39 s=1.168 mm eta=0.483 NTU=1.557  (t at grid minimum)
+  rule: equal t>=0.3 mm
+     k=390  R_fa=0.2679  ratio to Cu=1.000  t=0.30 mm Nf=38 s=1.314 mm eta=0.726 NTU=1.756  (t at grid minimum)
+     k=200  R_fa=0.2895  ratio to Cu=1.081  t=0.30 mm Nf=40 s=1.231 mm eta=0.579 NTU=1.662  (t at grid minimum)
+     k=180  R_fa=0.2939  ratio to Cu=1.097  t=0.30 mm Nf=40 s=1.231 mm eta=0.556 NTU=1.600  (t at grid minimum)
+     k=166  R_fa=0.2976  ratio to Cu=1.111  t=0.30 mm Nf=40 s=1.231 mm eta=0.539 NTU=1.552  (t at grid minimum)
+     k=165  R_fa=0.2979  ratio to Cu=1.112  t=0.30 mm Nf=40 s=1.231 mm eta=0.538 NTU=1.549  (t at grid minimum)
+     k=160  R_fa=0.2993  ratio to Cu=1.117  t=0.30 mm Nf=41 s=1.192 mm eta=0.526 NTU=1.641  (t at grid minimum)
+     k=155  R_fa=0.3008  ratio to Cu=1.123  t=0.30 mm Nf=41 s=1.192 mm eta=0.519 NTU=1.621  (t at grid minimum)
+     k=150  R_fa=0.3024  ratio to Cu=1.128  t=0.30 mm Nf=41 s=1.192 mm eta=0.512 NTU=1.600  (t at grid minimum)
+     k=130  R_fa=0.3097  ratio to Cu=1.156  t=0.30 mm Nf=42 s=1.156 mm eta=0.477 NTU=1.617  (t at grid minimum)
+     k=120  R_fa=0.3139  ratio to Cu=1.172  t=0.30 mm Nf=42 s=1.156 mm eta=0.460 NTU=1.564  (t at grid minimum)
+     k=115  R_fa=0.3162  ratio to Cu=1.180  t=0.35 mm Nf=40 s=1.179 mm eta=0.487 NTU=1.548  (t interior)
+     k=110  R_fa=0.3186  ratio to Cu=1.189  t=0.35 mm Nf=40 s=1.179 mm eta=0.477 NTU=1.520  (t interior)
+     k=100  R_fa=0.3241  ratio to Cu=1.210  t=0.35 mm Nf=41 s=1.141 mm eta=0.452 NTU=1.569  (t interior)
+  rule: free t (0.05-2.0 mm grid)
+     k=390  R_fa=0.2657  ratio to Cu=1.000  t=0.20 mm Nf=42 s=1.259 mm eta=0.639 NTU=1.769  (t interior)
+     k=200  R_fa=0.2895  ratio to Cu=1.090  t=0.30 mm Nf=40 s=1.231 mm eta=0.579 NTU=1.662  (t interior)
+     k=180  R_fa=0.2939  ratio to Cu=1.106  t=0.30 mm Nf=40 s=1.231 mm eta=0.556 NTU=1.600  (t interior)
+     k=166  R_fa=0.2976  ratio to Cu=1.120  t=0.30 mm Nf=40 s=1.231 mm eta=0.539 NTU=1.552  (t interior)
+     k=165  R_fa=0.2979  ratio to Cu=1.121  t=0.30 mm Nf=40 s=1.231 mm eta=0.538 NTU=1.549  (t interior)
+     k=160  R_fa=0.2993  ratio to Cu=1.127  t=0.30 mm Nf=41 s=1.192 mm eta=0.526 NTU=1.641  (t interior)
+     k=155  R_fa=0.3008  ratio to Cu=1.132  t=0.30 mm Nf=41 s=1.192 mm eta=0.519 NTU=1.621  (t interior)
+     k=150  R_fa=0.3024  ratio to Cu=1.138  t=0.30 mm Nf=41 s=1.192 mm eta=0.512 NTU=1.600  (t interior)
+     k=130  R_fa=0.3097  ratio to Cu=1.166  t=0.30 mm Nf=42 s=1.156 mm eta=0.477 NTU=1.617  (t interior)
+     k=120  R_fa=0.3139  ratio to Cu=1.182  t=0.30 mm Nf=42 s=1.156 mm eta=0.460 NTU=1.564  (t interior)
+     k=115  R_fa=0.3162  ratio to Cu=1.190  t=0.35 mm Nf=40 s=1.179 mm eta=0.487 NTU=1.548  (t interior)
+     k=110  R_fa=0.3186  ratio to Cu=1.199  t=0.35 mm Nf=40 s=1.179 mm eta=0.477 NTU=1.520  (t interior)
+     k=100  R_fa=0.3241  ratio to Cu=1.220  t=0.35 mm Nf=41 s=1.141 mm eta=0.452 NTU=1.569  (t interior)
+
+P_air = 0.3 W
+  rule: plan (Cu t>=0.3, Al t>=0.4)
+     k=390  R_fa=0.1947  ratio to Cu=1.000  t=0.30 mm Nf=44 s=1.088 mm eta=0.690 NTU=1.659  (t at grid minimum)
+     k=200  R_fa=0.2160  ratio to Cu=1.109  t=0.40 mm Nf=42 s=1.054 mm eta=0.606 NTU=1.547  (t at grid minimum)
+     k=180  R_fa=0.2194  ratio to Cu=1.126  t=0.40 mm Nf=42 s=1.054 mm eta=0.583 NTU=1.491  (t at grid minimum)
+     k=166  R_fa=0.2220  ratio to Cu=1.140  t=0.40 mm Nf=43 s=1.019 mm eta=0.560 NTU=1.557  (t at grid minimum)
+     k=165  R_fa=0.2223  ratio to Cu=1.141  t=0.40 mm Nf=43 s=1.019 mm eta=0.559 NTU=1.553  (t at grid minimum)
+     k=160  R_fa=0.2233  ratio to Cu=1.147  t=0.40 mm Nf=43 s=1.019 mm eta=0.552 NTU=1.535  (t at grid minimum)
+     k=155  R_fa=0.2245  ratio to Cu=1.153  t=0.40 mm Nf=43 s=1.019 mm eta=0.545 NTU=1.517  (t at grid minimum)
+     k=150  R_fa=0.2257  ratio to Cu=1.159  t=0.40 mm Nf=43 s=1.019 mm eta=0.538 NTU=1.498  (t at grid minimum)
+     k=130  R_fa=0.2312  ratio to Cu=1.187  t=0.40 mm Nf=44 s=0.986 mm eta=0.502 NTU=1.520  (t at grid minimum)
+     k=120  R_fa=0.2345  ratio to Cu=1.204  t=0.40 mm Nf=44 s=0.986 mm eta=0.486 NTU=1.472  (t at grid minimum)
+     k=115  R_fa=0.2363  ratio to Cu=1.213  t=0.40 mm Nf=44 s=0.986 mm eta=0.477 NTU=1.446  (t at grid minimum)
+     k=110  R_fa=0.2383  ratio to Cu=1.224  t=0.40 mm Nf=44 s=0.986 mm eta=0.468 NTU=1.419  (t at grid minimum)
+     k=100  R_fa=0.2425  ratio to Cu=1.245  t=0.40 mm Nf=45 s=0.955 mm eta=0.443 NTU=1.460  (t at grid minimum)
+  rule: equal t>=0.4 mm
+     k=390  R_fa=0.2001  ratio to Cu=1.000  t=0.40 mm Nf=40 s=1.128 mm eta=0.749 NTU=1.608  (t at grid minimum)
+     k=200  R_fa=0.2160  ratio to Cu=1.080  t=0.40 mm Nf=42 s=1.054 mm eta=0.606 NTU=1.547  (t at grid minimum)
+     k=180  R_fa=0.2194  ratio to Cu=1.096  t=0.40 mm Nf=42 s=1.054 mm eta=0.583 NTU=1.491  (t at grid minimum)
+     k=166  R_fa=0.2220  ratio to Cu=1.110  t=0.40 mm Nf=43 s=1.019 mm eta=0.560 NTU=1.557  (t at grid minimum)
+     k=165  R_fa=0.2223  ratio to Cu=1.111  t=0.40 mm Nf=43 s=1.019 mm eta=0.559 NTU=1.553  (t at grid minimum)
+     k=160  R_fa=0.2233  ratio to Cu=1.116  t=0.40 mm Nf=43 s=1.019 mm eta=0.552 NTU=1.535  (t at grid minimum)
+     k=155  R_fa=0.2245  ratio to Cu=1.122  t=0.40 mm Nf=43 s=1.019 mm eta=0.545 NTU=1.517  (t at grid minimum)
+     k=150  R_fa=0.2257  ratio to Cu=1.128  t=0.40 mm Nf=43 s=1.019 mm eta=0.538 NTU=1.498  (t at grid minimum)
+     k=130  R_fa=0.2312  ratio to Cu=1.156  t=0.40 mm Nf=44 s=0.986 mm eta=0.502 NTU=1.520  (t at grid minimum)
+     k=120  R_fa=0.2345  ratio to Cu=1.172  t=0.40 mm Nf=44 s=0.986 mm eta=0.486 NTU=1.472  (t at grid minimum)
+     k=115  R_fa=0.2363  ratio to Cu=1.181  t=0.40 mm Nf=44 s=0.986 mm eta=0.477 NTU=1.446  (t at grid minimum)
+     k=110  R_fa=0.2383  ratio to Cu=1.191  t=0.40 mm Nf=44 s=0.986 mm eta=0.468 NTU=1.419  (t at grid minimum)
+     k=100  R_fa=0.2425  ratio to Cu=1.212  t=0.40 mm Nf=45 s=0.955 mm eta=0.443 NTU=1.460  (t at grid minimum)
+  rule: equal t>=0.3 mm
+     k=390  R_fa=0.1947  ratio to Cu=1.000  t=0.30 mm Nf=44 s=1.088 mm eta=0.690 NTU=1.659  (t at grid minimum)
+     k=200  R_fa=0.2128  ratio to Cu=1.093  t=0.30 mm Nf=47 s=0.998 mm eta=0.535 NTU=1.612  (t at grid minimum)
+     k=180  R_fa=0.2165  ratio to Cu=1.112  t=0.30 mm Nf=47 s=0.998 mm eta=0.513 NTU=1.547  (t at grid minimum)
+     k=166  R_fa=0.2195  ratio to Cu=1.127  t=0.30 mm Nf=47 s=0.998 mm eta=0.496 NTU=1.498  (t at grid minimum)
+     k=165  R_fa=0.2197  ratio to Cu=1.128  t=0.30 mm Nf=47 s=0.998 mm eta=0.494 NTU=1.494  (t at grid minimum)
+     k=160  R_fa=0.2209  ratio to Cu=1.134  t=0.30 mm Nf=48 s=0.970 mm eta=0.483 NTU=1.568  (t at grid minimum)
+     k=155  R_fa=0.2221  ratio to Cu=1.140  t=0.30 mm Nf=48 s=0.970 mm eta=0.476 NTU=1.548  (t at grid minimum)
+     k=150  R_fa=0.2233  ratio to Cu=1.147  t=0.30 mm Nf=48 s=0.970 mm eta=0.470 NTU=1.527  (t at grid minimum)
+     k=130  R_fa=0.2293  ratio to Cu=1.177  t=0.30 mm Nf=49 s=0.944 mm eta=0.436 NTU=1.525  (t at grid minimum)
+     k=120  R_fa=0.2327  ratio to Cu=1.195  t=0.30 mm Nf=49 s=0.944 mm eta=0.421 NTU=1.473  (t at grid minimum)
+     k=115  R_fa=0.2347  ratio to Cu=1.205  t=0.30 mm Nf=49 s=0.944 mm eta=0.412 NTU=1.445  (t at grid minimum)
+     k=110  R_fa=0.2367  ratio to Cu=1.215  t=0.30 mm Nf=50 s=0.918 mm eta=0.399 NTU=1.503  (t at grid minimum)
+     k=100  R_fa=0.2412  ratio to Cu=1.238  t=0.30 mm Nf=50 s=0.918 mm eta=0.382 NTU=1.440  (t at grid minimum)
+  rule: free t (0.05-2.0 mm grid)
+     k=390  R_fa=0.1925  ratio to Cu=1.000  t=0.20 mm Nf=49 s=1.046 mm eta=0.600 NTU=1.644  (t interior)
+     k=200  R_fa=0.2125  ratio to Cu=1.104  t=0.25 mm Nf=49 s=0.995 mm eta=0.496 NTU=1.532  (t interior)
+     k=180  R_fa=0.2164  ratio to Cu=1.124  t=0.25 mm Nf=50 s=0.969 mm eta=0.470 NTU=1.553  (t interior)
+     k=166  R_fa=0.2195  ratio to Cu=1.140  t=0.30 mm Nf=47 s=0.998 mm eta=0.496 NTU=1.498  (t interior)
+     k=165  R_fa=0.2197  ratio to Cu=1.141  t=0.30 mm Nf=47 s=0.998 mm eta=0.494 NTU=1.494  (t interior)
+     k=160  R_fa=0.2209  ratio to Cu=1.147  t=0.30 mm Nf=48 s=0.970 mm eta=0.483 NTU=1.568  (t interior)
+     k=155  R_fa=0.2221  ratio to Cu=1.153  t=0.30 mm Nf=48 s=0.970 mm eta=0.476 NTU=1.548  (t interior)
+     k=150  R_fa=0.2233  ratio to Cu=1.160  t=0.30 mm Nf=48 s=0.970 mm eta=0.470 NTU=1.527  (t interior)
+     k=130  R_fa=0.2293  ratio to Cu=1.191  t=0.30 mm Nf=49 s=0.944 mm eta=0.436 NTU=1.525  (t interior)
+     k=120  R_fa=0.2327  ratio to Cu=1.209  t=0.30 mm Nf=49 s=0.944 mm eta=0.421 NTU=1.473  (t interior)
+     k=115  R_fa=0.2347  ratio to Cu=1.219  t=0.30 mm Nf=49 s=0.944 mm eta=0.412 NTU=1.445  (t interior)
+     k=110  R_fa=0.2367  ratio to Cu=1.229  t=0.30 mm Nf=50 s=0.918 mm eta=0.399 NTU=1.503  (t interior)
+     k=100  R_fa=0.2412  ratio to Cu=1.253  t=0.30 mm Nf=50 s=0.918 mm eta=0.382 NTU=1.440  (t interior)
+
+=== (c) B02 with the gap limit: fins that fit at the equal-efficiency thickness (s >= 0.8 mm) ===
+Cu: t=0.40 mm, N_f=32, gap 1.523 mm, open-area ratio 0.787
+k=100  t_Al=1.560 mm  N_f(max at 0.8 mm gap)=25  used N_f=25  gap=0.875 mm  open-area ratio=0.350  fin area relative to Cu=0.774
+        at 0.1 W: R_fa=0.5086 K/W eta=0.709  (plate optimum for this k at 0.1 W: 0.3248)
+k=120  t_Al=1.300 mm  N_f(max at 0.8 mm gap)=28  used N_f=28  gap=0.874 mm  open-area ratio=0.393  fin area relative to Cu=0.871
+        at 0.1 W: R_fa=0.4746 K/W eta=0.709  (plate optimum for this k at 0.1 W: 0.3149)
+k=150  t_Al=1.040 mm  N_f(max at 0.8 mm gap)=33  used N_f=32  gap=0.862 mm  open-area ratio=0.445  fin area relative to Cu=1.000
+        at 0.1 W: R_fa=0.4448 K/W eta=0.706  (plate optimum for this k at 0.1 W: 0.3044)
+k=180  t_Al=0.867 mm  N_f(max at 0.8 mm gap)=36  used N_f=32  gap=1.041 mm  open-area ratio=0.538  fin area relative to Cu=1.000
+        at 0.1 W: R_fa=0.3608 K/W eta=0.739  (plate optimum for this k at 0.1 W: 0.2969)
+k=200  t_Al=0.780 mm  N_f(max at 0.8 mm gap)=38  used N_f=32  gap=1.130 mm  open-area ratio=0.584  fin area relative to Cu=1.000
+        at 0.1 W: R_fa=0.3345 K/W eta=0.753  (plate optimum for this k at 0.1 W: 0.2929)
+
+=== (d) PF5 length scale: f_app built on D_h and on sqrt(A) ===
+B03 design: D_h=2.8981e-03 m, sqrt(A)=6.7585e-03 m, Re_Dh=540.1, Re_sqrtA=1259.6
+f_app (D_h form)     = 0.05280126
+f_app (sqrt(A) form) = 0.05280126   relative difference 2.22e-16
+developing-flow term alone: 3.44/sqrt(Re_L) = 0.03253025 (Re_L = rho u L/mu = 11182.6); D_h form gives 0.03253025
+independent comparison (formula from memory, UNSURE): Muzychka-Yovanovich rectangular-duct value
+   fRe_sqrtA = 12/[sqrt(eps)(1+eps)(1-192 eps/pi^5 tanh(pi/(2 eps)))] = 52.3607 at eps = s/H = 0.0508
+   Shah-London polynomial converted to sqrt(A): 52.3883   relative difference -5.27e-04
+The equality of the two f_app values above is an identity (same Fanning factor, consistent conversion);
+the only non-trivial comparison is the fully developed constant in the two lines just above.
+Note: with the Fanning factor defined on wall shear, both terms are independent of the length scale,
+      so PF5 gives the same f_app on D_h and on sqrt(A) provided fRe is converted consistently.
+      The fully developed constant itself (Shah-London polynomial) is still not confirmed by S3.

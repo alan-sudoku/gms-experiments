@@ -1,0 +1,236 @@
+S4 pin and gyroid follow-up  (level: derived, unverified)
+
+=== (a1) Active friction branch at the favourable B07 winners ===
+  P=0.01 k=390  d=1.5 mm p=3.00 Re_d= 117.6  f_K=1.4234 f_J=0.5705  active: f_J
+  P=0.01 k=200  d=2.0 mm p=2.50 Re_d= 166.3  f_K=1.0639 f_J=0.5756  active: f_J
+  P=0.01 k=180  d=2.0 mm p=2.50 Re_d= 166.3  f_K=1.0639 f_J=0.5756  active: f_J
+  P=0.01 k=150  d=1.5 mm p=2.50 Re_d= 110.9  f_K=1.1668 f_J=0.6142  active: f_J
+  P=0.01 k=120  d=1.5 mm p=2.50 Re_d= 110.9  f_K=1.1668 f_J=0.6142  active: f_J
+  P=0.01 k=100  d=1.5 mm p=2.50 Re_d= 110.9  f_K=1.1668 f_J=0.6142  active: f_J
+  P=0.03 k=390  d=1.0 mm p=3.00 Re_d=  96.9  f_K=1.4770 f_J=0.5884  active: f_J
+  P=0.03 k=200  d=1.5 mm p=2.50 Re_d= 163.3  f_K=1.0683 f_J=0.5773  active: f_J
+  P=0.03 k=180  d=1.5 mm p=2.50 Re_d= 163.3  f_K=1.0683 f_J=0.5773  active: f_J
+  P=0.03 k=150  d=1.5 mm p=2.50 Re_d= 163.3  f_K=1.0683 f_J=0.5773  active: f_J
+  P=0.03 k=120  d=1.5 mm p=2.50 Re_d= 163.3  f_K=1.0683 f_J=0.5773  active: f_J
+  P=0.03 k=100  d=1.5 mm p=2.50 Re_d= 163.3  f_K=1.0683 f_J=0.5773  active: f_J
+  P=0.10 k=390  d=1.5 mm p=2.50 Re_d= 249.5  f_K=0.9745 f_J=0.5395  active: f_J
+  P=0.10 k=200  d=1.5 mm p=2.50 Re_d= 249.5  f_K=0.9745 f_J=0.5395  active: f_J
+  P=0.10 k=180  d=2.0 mm p=2.00 Re_d= 353.4  f_K=0.7830 f_J=0.5757  active: f_J
+  P=0.10 k=150  d=2.0 mm p=2.00 Re_d= 353.4  f_K=0.7830 f_J=0.5757  active: f_J
+  P=0.10 k=120  d=2.0 mm p=2.00 Re_d= 353.4  f_K=0.7830 f_J=0.5757  active: f_J
+  P=0.10 k=100  d=2.0 mm p=2.00 Re_d= 353.4  f_K=0.7830 f_J=0.5757  active: f_J
+  P=0.30 k=390  d=1.0 mm p=2.50 Re_d= 207.5  f_K=1.0136 f_J=0.5556  active: f_J
+  P=0.30 k=200  d=1.0 mm p=2.50 Re_d= 207.5  f_K=1.0136 f_J=0.5556  active: f_J
+  P=0.30 k=180  d=1.5 mm p=2.00 Re_d= 347.0  f_K=0.7869 f_J=0.5774  active: f_J
+  P=0.30 k=150  d=1.5 mm p=2.00 Re_d= 347.0  f_K=0.7869 f_J=0.5774  active: f_J
+  P=0.30 k=120  d=1.5 mm p=2.00 Re_d= 347.0  f_K=0.7869 f_J=0.5774  active: f_J
+  P=0.30 k=100  d=1.5 mm p=2.00 Re_d= 347.0  f_K=0.7869 f_J=0.5774  active: f_J
+  P=1.00 k=390  d=1.0 mm p=2.50 Re_d= 317.0  f_K=0.9271 f_J=0.5192  active: f_J
+  P=1.00 k=200  d=1.5 mm p=2.00 Re_d= 530.2  f_K=0.7025 f_J=0.5395  active: f_J
+  P=1.00 k=180  d=1.5 mm p=2.00 Re_d= 530.2  f_K=0.7025 f_J=0.5395  active: f_J
+  P=1.00 k=150  d=1.5 mm p=2.00 Re_d= 530.2  f_K=0.7025 f_J=0.5395  active: f_J
+  P=1.00 k=120  d=1.0 mm p=2.00 Re_d= 299.5  f_K=0.8193 f_J=0.5911  active: f_J
+  P=1.00 k=100  d=1.0 mm p=2.00 Re_d= 299.5  f_K=0.8193 f_J=0.5911  active: f_J
+winners with f_K active: 0 of 30
+all sweep designs (k=150, five P_air): f_K lower than f_J in 1 of 100 operating points
+
+=== (a2) Extended pin sweep, Nu_K with f_J only (monotone in pitch ratio) ===
+d [mm] = [0.5, 0.75, 1.0, 1.5, 2.0, 3.0, 4.0] ; p = [1.25, 1.5, 1.75, 2.0, 2.5, 3.0, 3.5, 4.0] ; d < 1 mm is below the plan's assumed LPBF limit (H/d > 30)
+  k=390 P=0.01  best: R_fa=0.6976 d=1.00 mm p=3.50 N=289 Re_d=69 eta=0.704 NTU=2.03  [interior] ratio to Cu plate 1.304, to plate of same k 1.304
+                 with d >= 1 mm: R_fa=0.6976 d=1.00 mm p=3.50 Re_d=69  ratio to Cu plate 1.304, to plate of same k 1.304   [B07 favourable: 0.7039]
+  k=390 P=0.03  best: R_fa=0.5112 d=1.00 mm p=3.00 N=400 Re_d=97 eta=0.668 NTU=2.35  [interior] ratio to Cu plate 1.334, to plate of same k 1.334
+                 with d >= 1 mm: R_fa=0.5112 d=1.00 mm p=3.00 Re_d=97  ratio to Cu plate 1.334, to plate of same k 1.334   [B07 favourable: 0.5112]
+  k=390 P=0.10  best: R_fa=0.3630 d=1.50 mm p=2.50 N=256 Re_d=249 eta=0.727 NTU=1.74  [interior] ratio to Cu plate 1.355, to plate of same k 1.355
+                 with d >= 1 mm: R_fa=0.3630 d=1.50 mm p=2.50 Re_d=249  ratio to Cu plate 1.355, to plate of same k 1.355   [B07 favourable: 0.3630]
+  k=390 P=0.30  best: R_fa=0.2682 d=1.00 mm p=2.50 N=576 Re_d=207 eta=0.581 NTU=2.25  [interior] ratio to Cu plate 1.377, to plate of same k 1.377
+                 with d >= 1 mm: R_fa=0.2682 d=1.00 mm p=2.50 Re_d=207  ratio to Cu plate 1.377, to plate of same k 1.377   [B07 favourable: 0.2682]
+  k=390 P=1.00  best: R_fa=0.1925 d=1.00 mm p=2.50 N=576 Re_d=317 eta=0.536 NTU=1.69  [interior] ratio to Cu plate 1.389, to plate of same k 1.389
+                 with d >= 1 mm: R_fa=0.1925 d=1.00 mm p=2.50 Re_d=317  ratio to Cu plate 1.389, to plate of same k 1.389   [B07 favourable: 0.1925]
+  k=150 P=0.01  best: R_fa=0.7520 d=1.50 mm p=2.50 N=256 Re_d=111 eta=0.617 NTU=2.26  [interior] ratio to Cu plate 1.406, to plate of same k 1.283
+                 with d >= 1 mm: R_fa=0.7520 d=1.50 mm p=2.50 Re_d=111  ratio to Cu plate 1.406, to plate of same k 1.283   [B07 favourable: 0.7520]
+  k=150 P=0.03  best: R_fa=0.5532 d=1.50 mm p=2.50 N=256 Re_d=163 eta=0.576 NTU=1.76  [interior] ratio to Cu plate 1.443, to plate of same k 1.295
+                 with d >= 1 mm: R_fa=0.5532 d=1.50 mm p=2.50 Re_d=163  ratio to Cu plate 1.443, to plate of same k 1.295   [B07 favourable: 0.5532]
+  k=150 P=0.10  best: R_fa=0.4025 d=2.00 mm p=2.00 N=225 Re_d=353 eta=0.599 NTU=1.83  [interior] ratio to Cu plate 1.502, to plate of same k 1.322
+                 with d >= 1 mm: R_fa=0.4025 d=2.00 mm p=2.00 Re_d=353  ratio to Cu plate 1.502, to plate of same k 1.322   [B07 favourable: 0.4025]
+  k=150 P=0.30  best: R_fa=0.3006 d=1.50 mm p=2.00 N=400 Re_d=347 eta=0.479 NTU=1.96  [interior] ratio to Cu plate 1.543, to plate of same k 1.332
+                 with d >= 1 mm: R_fa=0.3006 d=1.50 mm p=2.00 Re_d=347  ratio to Cu plate 1.543, to plate of same k 1.332   [B07 favourable: 0.3006]
+  k=150 P=1.00  best: R_fa=0.2202 d=1.50 mm p=2.00 N=400 Re_d=530 eta=0.437 NTU=1.46  [interior] ratio to Cu plate 1.589, to plate of same k 1.339
+                 with d >= 1 mm: R_fa=0.2202 d=1.50 mm p=2.00 Re_d=530  ratio to Cu plate 1.589, to plate of same k 1.339   [B07 favourable: 0.2202]
+smallest pin / Cu-plate ratio in the extended sweep (any d): 1.304 at k=390, P=0.01 W
+
+=== (b) Gyroid: extended sweep and chi_min ===
+a [mm] = [1.5, 2.0, 2.5, 3.0, 4.0, 5.0, 6.0, 8.0, 10.0, 12.0, 15.0, 20.0, 30.0] ; rho_bar = [0.05, 0.1, 0.15, 0.2, 0.3, 0.4, 0.5] ; t_s >= 0.3 mm kept
+
+--- all cell sizes (H/a down to 1) ---
+  k_s=100 c_f=1.0 P=0.01  chi_min(Cu plate 0.5348)=0.569  chi_min(Al plate 0.6164)=0.279  | winner at chi=0.35: R_fa=0.5877 a=30.0 mm rho=0.15 t_s=1.46 mm Re_h=1122 eta=0.40 [a max]
+  k_s=100 c_f=1.0 P=0.03  chi_min(Cu plate 0.3833)=0.553  chi_min(Al plate 0.4520)=0.270  | winner at chi=0.35: R_fa=0.4236 a=30.0 mm rho=0.15 t_s=1.46 mm Re_h=1626 eta=0.34 [a max]
+  k_s=100 c_f=1.0 P=0.10  chi_min(Cu plate 0.2679)=0.537  chi_min(Al plate 0.3248)=0.255  | winner at chi=0.35: R_fa=0.2983 a=30.0 mm rho=0.15 t_s=1.46 mm Re_h=2438 eta=0.28 [a max]
+  k_s=100 c_f=1.0 P=0.30  chi_min(Cu plate 0.1947)=0.518  chi_min(Al plate 0.2425)=0.243  | winner at chi=0.35: R_fa=0.2176 a=30.0 mm rho=0.15 t_s=1.46 mm Re_h=3524 eta=0.23 [a max]
+  k_s=100 c_f=1.0 P=1.00  chi_min(Cu plate 0.1386)=0.487  chi_min(Al plate 0.1790)=0.226  | winner at chi=0.35: R_fa=0.1542 a=30.0 mm rho=0.20 t_s=1.94 mm Re_h=4963 eta=0.22 [a max]
+  k_s=100 c_f=0.3 P=0.01  chi_min(Cu plate 0.5348)=0.467  chi_min(Al plate 0.6164)=0.313  | winner at chi=0.35: R_fa=0.5925 a=20.0 mm rho=0.20 t_s=1.29 mm Re_h=915 eta=0.57 [interior]
+  k_s=100 c_f=0.3 P=0.03  chi_min(Cu plate 0.3833)=0.509  chi_min(Al plate 0.4520)=0.319  | winner at chi=0.35: R_fa=0.4391 a=20.0 mm rho=0.30 t_s=1.94 mm Re_h=1160 eta=0.59 [interior]
+  k_s=100 c_f=0.3 P=0.10  chi_min(Cu plate 0.2679)=0.551  chi_min(Al plate 0.3248)=0.317  | winner at chi=0.35: R_fa=0.3141 a=20.0 mm rho=0.30 t_s=1.94 mm Re_h=1741 eta=0.51 [interior]
+  k_s=100 c_f=0.3 P=0.30  chi_min(Cu plate 0.1947)=0.587  chi_min(Al plate 0.2425)=0.317  | winner at chi=0.35: R_fa=0.2344 a=20.0 mm rho=0.30 t_s=1.94 mm Re_h=2520 eta=0.43 [interior]
+  k_s=100 c_f=0.3 P=1.00  chi_min(Cu plate 0.1386)=0.620  chi_min(Al plate 0.1790)=0.311  | winner at chi=0.35: R_fa=0.1721 a=15.0 mm rho=0.30 t_s=1.46 mm Re_h=2565 eta=0.33 [interior]
+  k_s=100 c_f=0.1 P=0.01  chi_min(Cu plate 0.5348)=0.566  chi_min(Al plate 0.6164)=0.349  | winner at chi=0.35: R_fa=0.6158 a=6.0 mm rho=0.20 t_s=0.39 mm Re_h=253 eta=0.54 [interior]
+  k_s=100 c_f=0.1 P=0.03  chi_min(Cu plate 0.3833)=0.617  chi_min(Al plate 0.4520)=0.360  | winner at chi=0.35: R_fa=0.4554 a=6.0 mm rho=0.30 t_s=0.58 mm Re_h=323 eta=0.56 [interior]
+  k_s=100 c_f=0.1 P=0.10  chi_min(Cu plate 0.2679)=0.693  chi_min(Al plate 0.3248)=0.360  | winner at chi=0.35: R_fa=0.3274 a=6.0 mm rho=0.30 t_s=0.58 mm Re_h=491 eta=0.48 [interior]
+  k_s=100 c_f=0.1 P=0.30  chi_min(Cu plate 0.1947)=0.779  chi_min(Al plate 0.2425)=0.367  | winner at chi=0.35: R_fa=0.2457 a=5.0 mm rho=0.30 t_s=0.49 mm Re_h=558 eta=0.39 [interior]
+  k_s=100 c_f=0.1 P=1.00  chi_min(Cu plate 0.1386)=0.872  chi_min(Al plate 0.1790)=0.363  | winner at chi=0.35: R_fa=0.1809 a=4.0 mm rho=0.30 t_s=0.39 mm Re_h=621 eta=0.30 [interior]
+  k_s=150 c_f=1.0 P=0.01  chi_min(Cu plate 0.5348)=0.466  chi_min(Al plate 0.5863)=0.289  | winner at chi=0.35: R_fa=0.5629 a=30.0 mm rho=0.10 t_s=0.97 mm Re_h=1189 eta=0.40 [a max]
+  k_s=150 c_f=1.0 P=0.03  chi_min(Cu plate 0.3833)=0.459  chi_min(Al plate 0.4270)=0.273  | winner at chi=0.35: R_fa=0.4052 a=30.0 mm rho=0.15 t_s=1.46 mm Re_h=1626 eta=0.41 [a max]
+  k_s=150 c_f=1.0 P=0.10  chi_min(Cu plate 0.2679)=0.453  chi_min(Al plate 0.3044)=0.263  | winner at chi=0.35: R_fa=0.2832 a=30.0 mm rho=0.15 t_s=1.46 mm Re_h=2438 eta=0.34 [a max]
+  k_s=150 c_f=1.0 P=0.30  chi_min(Cu plate 0.1947)=0.436  chi_min(Al plate 0.2257)=0.248  | winner at chi=0.35: R_fa=0.2057 a=30.0 mm rho=0.15 t_s=1.46 mm Re_h=3524 eta=0.29 [a max]
+  k_s=150 c_f=1.0 P=1.00  chi_min(Cu plate 0.1386)=0.413  chi_min(Al plate 0.1644)=0.234  | winner at chi=0.35: R_fa=0.1456 a=30.0 mm rho=0.15 t_s=1.46 mm Re_h=5274 eta=0.23 [a max]
+  k_s=150 c_f=0.3 P=0.01  chi_min(Cu plate 0.5348)=0.400  chi_min(Al plate 0.5863)=0.305  | winner at chi=0.35: R_fa=0.5589 a=20.0 mm rho=0.20 t_s=1.29 mm Re_h=915 eta=0.66 [interior]
+  k_s=150 c_f=0.3 P=0.03  chi_min(Cu plate 0.3833)=0.422  chi_min(Al plate 0.4270)=0.309  | winner at chi=0.35: R_fa=0.4087 a=20.0 mm rho=0.20 t_s=1.29 mm Re_h=1328 eta=0.58 [interior]
+  k_s=150 c_f=0.3 P=0.10  chi_min(Cu plate 0.2679)=0.453  chi_min(Al plate 0.3044)=0.314  | winner at chi=0.35: R_fa=0.2939 a=20.0 mm rho=0.30 t_s=1.94 mm Re_h=1741 eta=0.59 [interior]
+  k_s=150 c_f=0.3 P=0.30  chi_min(Cu plate 0.1947)=0.470  chi_min(Al plate 0.2257)=0.309  | winner at chi=0.35: R_fa=0.2163 a=20.0 mm rho=0.30 t_s=1.94 mm Re_h=2520 eta=0.52 [interior]
+  k_s=150 c_f=0.3 P=1.00  chi_min(Cu plate 0.1386)=0.493  chi_min(Al plate 0.1644)=0.304  | winner at chi=0.35: R_fa=0.1569 a=20.0 mm rho=0.30 t_s=1.94 mm Re_h=3773 eta=0.43 [interior]
+  k_s=150 c_f=0.1 P=0.01  chi_min(Cu plate 0.5348)=0.451  chi_min(Al plate 0.5863)=0.334  | winner at chi=0.35: R_fa=0.5785 a=6.0 mm rho=0.20 t_s=0.39 mm Re_h=253 eta=0.62 [interior]
+  k_s=150 c_f=0.1 P=0.03  chi_min(Cu plate 0.3833)=0.495  chi_min(Al plate 0.4270)=0.344  | winner at chi=0.35: R_fa=0.4246 a=6.0 mm rho=0.20 t_s=0.39 mm Re_h=372 eta=0.55 [interior]
+  k_s=150 c_f=0.1 P=0.10  chi_min(Cu plate 0.2679)=0.535  chi_min(Al plate 0.3044)=0.351  | winner at chi=0.35: R_fa=0.3045 a=6.0 mm rho=0.30 t_s=0.58 mm Re_h=491 eta=0.57 [interior]
+  k_s=150 c_f=0.1 P=0.30  chi_min(Cu plate 0.1947)=0.579  chi_min(Al plate 0.2257)=0.349  | winner at chi=0.35: R_fa=0.2255 a=6.0 mm rho=0.30 t_s=0.58 mm Re_h=717 eta=0.49 [interior]
+  k_s=150 c_f=0.1 P=1.00  chi_min(Cu plate 0.1386)=0.636  chi_min(Al plate 0.1644)=0.350  | winner at chi=0.35: R_fa=0.1644 a=5.0 mm rho=0.30 t_s=0.49 mm Re_h=843 eta=0.39 [interior]
+  k_s=180 c_f=1.0 P=0.01  chi_min(Cu plate 0.5348)=0.424  chi_min(Al plate 0.5757)=0.287  | winner at chi=0.35: R_fa=0.5527 a=30.0 mm rho=0.10 t_s=0.97 mm Re_h=1189 eta=0.43 [a max]
+  k_s=180 c_f=1.0 P=0.03  chi_min(Cu plate 0.3833)=0.419  chi_min(Al plate 0.4177)=0.275  | winner at chi=0.35: R_fa=0.3979 a=30.0 mm rho=0.10 t_s=0.97 mm Re_h=1723 eta=0.37 [a max]
+  k_s=180 c_f=1.0 P=0.10  chi_min(Cu plate 0.2679)=0.416  chi_min(Al plate 0.2969)=0.262  | winner at chi=0.35: R_fa=0.2773 a=30.0 mm rho=0.15 t_s=1.46 mm Re_h=2438 eta=0.37 [a max]
+  k_s=180 c_f=1.0 P=0.30  chi_min(Cu plate 0.1947)=0.398  chi_min(Al plate 0.2194)=0.250  | winner at chi=0.35: R_fa=0.2008 a=30.0 mm rho=0.15 t_s=1.46 mm Re_h=3524 eta=0.31 [a max]
+  k_s=180 c_f=1.0 P=1.00  chi_min(Cu plate 0.1386)=0.380  chi_min(Al plate 0.1592)=0.234  | winner at chi=0.35: R_fa=0.1419 a=30.0 mm rho=0.15 t_s=1.46 mm Re_h=5274 eta=0.26 [a max]
+  k_s=180 c_f=0.3 P=0.01  chi_min(Cu plate 0.5348)=0.376  chi_min(Al plate 0.5757)=0.302  | winner at chi=0.35: R_fa=0.5471 a=20.0 mm rho=0.20 t_s=1.29 mm Re_h=915 eta=0.69 [interior]
+  k_s=180 c_f=0.3 P=0.03  chi_min(Cu plate 0.3833)=0.392  chi_min(Al plate 0.4177)=0.304  | winner at chi=0.35: R_fa=0.3976 a=20.0 mm rho=0.20 t_s=1.29 mm Re_h=1328 eta=0.62 [interior]
+  k_s=180 c_f=0.3 P=0.10  chi_min(Cu plate 0.2679)=0.417  chi_min(Al plate 0.2969)=0.308  | winner at chi=0.35: R_fa=0.2843 a=20.0 mm rho=0.20 t_s=1.29 mm Re_h=1993 eta=0.54 [interior]
+  k_s=180 c_f=0.3 P=0.30  chi_min(Cu plate 0.1947)=0.431  chi_min(Al plate 0.2194)=0.306  | winner at chi=0.35: R_fa=0.2097 a=20.0 mm rho=0.30 t_s=1.94 mm Re_h=2520 eta=0.55 [interior]
+  k_s=180 c_f=0.3 P=1.00  chi_min(Cu plate 0.1386)=0.446  chi_min(Al plate 0.1592)=0.299  | winner at chi=0.35: R_fa=0.1511 a=20.0 mm rho=0.30 t_s=1.94 mm Re_h=3773 eta=0.47 [interior]
+  k_s=180 c_f=0.1 P=0.01  chi_min(Cu plate 0.5348)=0.417  chi_min(Al plate 0.5757)=0.328  | winner at chi=0.35: R_fa=0.5656 a=6.0 mm rho=0.20 t_s=0.39 mm Re_h=253 eta=0.66 [interior]
+  k_s=180 c_f=0.1 P=0.03  chi_min(Cu plate 0.3833)=0.447  chi_min(Al plate 0.4177)=0.334  | winner at chi=0.35: R_fa=0.4119 a=6.0 mm rho=0.20 t_s=0.39 mm Re_h=372 eta=0.59 [interior]
+  k_s=180 c_f=0.1 P=0.10  chi_min(Cu plate 0.2679)=0.487  chi_min(Al plate 0.2969)=0.347  | winner at chi=0.35: R_fa=0.2962 a=5.0 mm rho=0.20 t_s=0.32 mm Re_h=439 eta=0.48 [interior]
+  k_s=180 c_f=0.1 P=0.30  chi_min(Cu plate 0.1947)=0.513  chi_min(Al plate 0.2194)=0.341  | winner at chi=0.35: R_fa=0.2178 a=6.0 mm rho=0.30 t_s=0.58 mm Re_h=717 eta=0.53 [interior]
+  k_s=180 c_f=0.1 P=1.00  chi_min(Cu plate 0.1386)=0.552  chi_min(Al plate 0.1592)=0.340  | winner at chi=0.35: R_fa=0.1579 a=5.0 mm rho=0.30 t_s=0.49 mm Re_h=843 eta=0.43 [interior]
+  winners (chi = 0.35) on an edge of this sweep: 15 of 45
+
+--- restricted to H/a >= 3 (a <= 10 mm) ---
+  k_s=100 c_f=1.0 P=0.01  chi_min(Cu plate 0.5348)=no match (chi<=1)  chi_min(Al plate 0.6164)=no match (chi<=1)  | winner at chi=0.35: R_fa=0.7646 a=10.0 mm rho=0.10 t_s=0.32 mm Re_h=261 eta=0.22 [a max (H/a = 3 limit)]  [R_fa(chi=1)=0.7411, min 1/C=0.7400]
+  k_s=100 c_f=1.0 P=0.03  chi_min(Cu plate 0.3833)=no match (chi<=1)  chi_min(Al plate 0.4520)=no match (chi<=1)  | winner at chi=0.35: R_fa=0.5342 a=10.0 mm rho=0.10 t_s=0.32 mm Re_h=384 eta=0.18 [a max (H/a = 3 limit)]  [R_fa(chi=1)=0.5052, min 1/C=0.5031]
+  k_s=100 c_f=1.0 P=0.10  chi_min(Cu plate 0.2679)=no match (chi<=1)  chi_min(Al plate 0.3248)=no match (chi<=1)  | winner at chi=0.35: R_fa=0.3666 a=10.0 mm rho=0.10 t_s=0.32 mm Re_h=583 eta=0.15 [a max (H/a = 3 limit)]  [R_fa(chi=1)=0.3350, min 1/C=0.3318]
+  k_s=100 c_f=1.0 P=0.30  chi_min(Cu plate 0.1947)=no match (chi<=1)  chi_min(Al plate 0.2425)=0.585  | winner at chi=0.35: R_fa=0.2631 a=10.0 mm rho=0.10 t_s=0.32 mm Re_h=848 eta=0.13 [a max (H/a = 3 limit)]  [R_fa(chi=1)=0.2320, min 1/C=0.2279]
+  k_s=100 c_f=1.0 P=1.00  chi_min(Cu plate 0.1386)=no match (chi<=1)  chi_min(Al plate 0.1790)=0.399  | winner at chi=0.35: R_fa=0.1833 a=10.0 mm rho=0.15 t_s=0.49 mm Re_h=1205 eta=0.13 [a max (H/a = 3 limit)]  [R_fa(chi=1)=0.1560, min 1/C=0.1515]
+  k_s=100 c_f=0.3 P=0.01  chi_min(Cu plate 0.5348)=0.889  chi_min(Al plate 0.6164)=0.371  | winner at chi=0.35: R_fa=0.6241 a=10.0 mm rho=0.15 t_s=0.49 mm Re_h=376 eta=0.40 [a max (H/a = 3 limit)]
+  k_s=100 c_f=0.3 P=0.03  chi_min(Cu plate 0.3833)=0.901  chi_min(Al plate 0.4520)=0.356  | winner at chi=0.35: R_fa=0.4537 a=10.0 mm rho=0.20 t_s=0.65 mm Re_h=516 eta=0.40 [a max (H/a = 3 limit)]
+  k_s=100 c_f=0.3 P=0.10  chi_min(Cu plate 0.2679)=0.874  chi_min(Al plate 0.3248)=0.352  | winner at chi=0.35: R_fa=0.3252 a=10.0 mm rho=0.20 t_s=0.65 mm Re_h=780 eta=0.33 [a max (H/a = 3 limit)]
+  k_s=100 c_f=0.3 P=0.30  chi_min(Cu plate 0.1947)=0.873  chi_min(Al plate 0.2425)=0.345  | winner at chi=0.35: R_fa=0.2417 a=10.0 mm rho=0.30 t_s=0.97 mm Re_h=989 eta=0.35 [a max (H/a = 3 limit)]
+  k_s=100 c_f=0.3 P=1.00  chi_min(Cu plate 0.1386)=0.855  chi_min(Al plate 0.1790)=0.317  | winner at chi=0.35: R_fa=0.1743 a=10.0 mm rho=0.30 t_s=0.97 mm Re_h=1486 eta=0.29 [a max (H/a = 3 limit)]
+  k_s=100 c_f=0.1 P=0.01  chi_min(Cu plate 0.5348)=0.566  chi_min(Al plate 0.6164)=0.349  | winner at chi=0.35: R_fa=0.6158 a=6.0 mm rho=0.20 t_s=0.39 mm Re_h=253 eta=0.54 [interior]
+  k_s=100 c_f=0.1 P=0.03  chi_min(Cu plate 0.3833)=0.622  chi_min(Al plate 0.4520)=0.360  | winner at chi=0.35: R_fa=0.4554 a=6.0 mm rho=0.30 t_s=0.58 mm Re_h=323 eta=0.56 [interior]
+  k_s=100 c_f=0.1 P=0.10  chi_min(Cu plate 0.2679)=0.696  chi_min(Al plate 0.3248)=0.360  | winner at chi=0.35: R_fa=0.3274 a=6.0 mm rho=0.30 t_s=0.58 mm Re_h=491 eta=0.48 [interior]
+  k_s=100 c_f=0.1 P=0.30  chi_min(Cu plate 0.1947)=0.779  chi_min(Al plate 0.2425)=0.367  | winner at chi=0.35: R_fa=0.2457 a=5.0 mm rho=0.30 t_s=0.49 mm Re_h=558 eta=0.39 [interior]
+  k_s=100 c_f=0.1 P=1.00  chi_min(Cu plate 0.1386)=0.873  chi_min(Al plate 0.1790)=0.363  | winner at chi=0.35: R_fa=0.1809 a=4.0 mm rho=0.30 t_s=0.39 mm Re_h=621 eta=0.30 [interior]
+  k_s=150 c_f=1.0 P=0.01  chi_min(Cu plate 0.5348)=no match (chi<=1)  chi_min(Al plate 0.5863)=no match (chi<=1)  | winner at chi=0.35: R_fa=0.7529 a=10.0 mm rho=0.10 t_s=0.32 mm Re_h=261 eta=0.27 [a max (H/a = 3 limit)]  [R_fa(chi=1)=0.7404, min 1/C=0.7400]
+  k_s=150 c_f=1.0 P=0.03  chi_min(Cu plate 0.3833)=no match (chi<=1)  chi_min(Al plate 0.4270)=no match (chi<=1)  | winner at chi=0.35: R_fa=0.5214 a=10.0 mm rho=0.10 t_s=0.32 mm Re_h=384 eta=0.23 [a max (H/a = 3 limit)]  [R_fa(chi=1)=0.5040, min 1/C=0.5031]
+  k_s=150 c_f=1.0 P=0.10  chi_min(Cu plate 0.2679)=no match (chi<=1)  chi_min(Al plate 0.3044)=no match (chi<=1)  | winner at chi=0.35: R_fa=0.3543 a=10.0 mm rho=0.10 t_s=0.32 mm Re_h=583 eta=0.19 [a max (H/a = 3 limit)]  [R_fa(chi=1)=0.3334, min 1/C=0.3318]
+  k_s=150 c_f=1.0 P=0.30  chi_min(Cu plate 0.1947)=no match (chi<=1)  chi_min(Al plate 0.2257)=no match (chi<=1)  | winner at chi=0.35: R_fa=0.2522 a=10.0 mm rho=0.10 t_s=0.32 mm Re_h=848 eta=0.16 [a max (H/a = 3 limit)]  [R_fa(chi=1)=0.2302, min 1/C=0.2279]
+  k_s=150 c_f=1.0 P=1.00  chi_min(Cu plate 0.1386)=no match (chi<=1)  chi_min(Al plate 0.1644)=0.515  | winner at chi=0.35: R_fa=0.1757 a=10.0 mm rho=0.10 t_s=0.32 mm Re_h=1277 eta=0.13 [a max (H/a = 3 limit)]  [R_fa(chi=1)=0.1544, min 1/C=0.1515]
+  k_s=150 c_f=0.3 P=0.01  chi_min(Cu plate 0.5348)=0.667  chi_min(Al plate 0.5863)=0.365  | winner at chi=0.35: R_fa=0.5907 a=10.0 mm rho=0.15 t_s=0.49 mm Re_h=376 eta=0.48 [a max (H/a = 3 limit)]
+  k_s=150 c_f=0.3 P=0.03  chi_min(Cu plate 0.3833)=0.672  chi_min(Al plate 0.4270)=0.357  | winner at chi=0.35: R_fa=0.4289 a=10.0 mm rho=0.15 t_s=0.49 mm Re_h=549 eta=0.42 [a max (H/a = 3 limit)]
+  k_s=150 c_f=0.3 P=0.10  chi_min(Cu plate 0.2679)=0.659  chi_min(Al plate 0.3044)=0.342  | winner at chi=0.35: R_fa=0.3029 a=10.0 mm rho=0.20 t_s=0.65 mm Re_h=780 eta=0.40 [a max (H/a = 3 limit)]
+  k_s=150 c_f=0.3 P=0.30  chi_min(Cu plate 0.1947)=0.668  chi_min(Al plate 0.2257)=0.339  | winner at chi=0.35: R_fa=0.2237 a=10.0 mm rho=0.20 t_s=0.65 mm Re_h=1133 eta=0.34 [a max (H/a = 3 limit)]
+  k_s=150 c_f=0.3 P=1.00  chi_min(Cu plate 0.1386)=0.652  chi_min(Al plate 0.1644)=0.324  | winner at chi=0.35: R_fa=0.1615 a=10.0 mm rho=0.30 t_s=0.97 mm Re_h=1486 eta=0.35 [a max (H/a = 3 limit)]
+  k_s=150 c_f=0.1 P=0.01  chi_min(Cu plate 0.5348)=0.451  chi_min(Al plate 0.5863)=0.334  | winner at chi=0.35: R_fa=0.5785 a=6.0 mm rho=0.20 t_s=0.39 mm Re_h=253 eta=0.62 [interior]
+  k_s=150 c_f=0.1 P=0.03  chi_min(Cu plate 0.3833)=0.495  chi_min(Al plate 0.4270)=0.344  | winner at chi=0.35: R_fa=0.4246 a=6.0 mm rho=0.20 t_s=0.39 mm Re_h=372 eta=0.55 [interior]
+  k_s=150 c_f=0.1 P=0.10  chi_min(Cu plate 0.2679)=0.535  chi_min(Al plate 0.3044)=0.351  | winner at chi=0.35: R_fa=0.3045 a=6.0 mm rho=0.30 t_s=0.58 mm Re_h=491 eta=0.57 [interior]
+  k_s=150 c_f=0.1 P=0.30  chi_min(Cu plate 0.1947)=0.579  chi_min(Al plate 0.2257)=0.349  | winner at chi=0.35: R_fa=0.2255 a=6.0 mm rho=0.30 t_s=0.58 mm Re_h=717 eta=0.49 [interior]
+  k_s=150 c_f=0.1 P=1.00  chi_min(Cu plate 0.1386)=0.636  chi_min(Al plate 0.1644)=0.350  | winner at chi=0.35: R_fa=0.1644 a=5.0 mm rho=0.30 t_s=0.49 mm Re_h=843 eta=0.39 [interior]
+  k_s=180 c_f=1.0 P=0.01  chi_min(Cu plate 0.5348)=no match (chi<=1)  chi_min(Al plate 0.5757)=no match (chi<=1)  | winner at chi=0.35: R_fa=0.7493 a=10.0 mm rho=0.10 t_s=0.32 mm Re_h=261 eta=0.29 [a max (H/a = 3 limit)]  [R_fa(chi=1)=0.7402, min 1/C=0.7400]
+  k_s=180 c_f=1.0 P=0.03  chi_min(Cu plate 0.3833)=no match (chi<=1)  chi_min(Al plate 0.4177)=no match (chi<=1)  | winner at chi=0.35: R_fa=0.5171 a=10.0 mm rho=0.10 t_s=0.32 mm Re_h=384 eta=0.25 [a max (H/a = 3 limit)]  [R_fa(chi=1)=0.5037, min 1/C=0.5031]
+  k_s=180 c_f=1.0 P=0.10  chi_min(Cu plate 0.2679)=no match (chi<=1)  chi_min(Al plate 0.2969)=no match (chi<=1)  | winner at chi=0.35: R_fa=0.3498 a=10.0 mm rho=0.10 t_s=0.32 mm Re_h=583 eta=0.21 [a max (H/a = 3 limit)]  [R_fa(chi=1)=0.3329, min 1/C=0.3318]
+  k_s=180 c_f=1.0 P=0.30  chi_min(Cu plate 0.1947)=no match (chi<=1)  chi_min(Al plate 0.2194)=no match (chi<=1)  | winner at chi=0.35: R_fa=0.2480 a=10.0 mm rho=0.10 t_s=0.32 mm Re_h=848 eta=0.17 [a max (H/a = 3 limit)]  [R_fa(chi=1)=0.2296, min 1/C=0.2279]
+  k_s=180 c_f=1.0 P=1.00  chi_min(Cu plate 0.1386)=no match (chi<=1)  chi_min(Al plate 0.1592)=0.610  | winner at chi=0.35: R_fa=0.1722 a=10.0 mm rho=0.10 t_s=0.32 mm Re_h=1277 eta=0.14 [a max (H/a = 3 limit)]  [R_fa(chi=1)=0.1537, min 1/C=0.1515]
+  k_s=180 c_f=0.3 P=0.01  chi_min(Cu plate 0.5348)=0.583  chi_min(Al plate 0.5757)=0.362  | winner at chi=0.35: R_fa=0.5790 a=10.0 mm rho=0.15 t_s=0.49 mm Re_h=376 eta=0.52 [a max (H/a = 3 limit)]
+  k_s=180 c_f=0.3 P=0.03  chi_min(Cu plate 0.3833)=0.587  chi_min(Al plate 0.4177)=0.350  | winner at chi=0.35: R_fa=0.4176 a=10.0 mm rho=0.15 t_s=0.49 mm Re_h=549 eta=0.45 [a max (H/a = 3 limit)]
+  k_s=180 c_f=0.3 P=0.10  chi_min(Cu plate 0.2679)=0.576  chi_min(Al plate 0.2969)=0.338  | winner at chi=0.35: R_fa=0.2947 a=10.0 mm rho=0.20 t_s=0.65 mm Re_h=780 eta=0.44 [a max (H/a = 3 limit)]
+  k_s=180 c_f=0.3 P=0.30  chi_min(Cu plate 0.1947)=0.586  chi_min(Al plate 0.2194)=0.331  | winner at chi=0.35: R_fa=0.2164 a=10.0 mm rho=0.20 t_s=0.65 mm Re_h=1133 eta=0.37 [a max (H/a = 3 limit)]
+  k_s=180 c_f=0.3 P=1.00  chi_min(Cu plate 0.1386)=0.572  chi_min(Al plate 0.1592)=0.326  | winner at chi=0.35: R_fa=0.1565 a=10.0 mm rho=0.20 t_s=0.65 mm Re_h=1701 eta=0.31 [a max (H/a = 3 limit)]
+  k_s=180 c_f=0.1 P=0.01  chi_min(Cu plate 0.5348)=0.417  chi_min(Al plate 0.5757)=0.328  | winner at chi=0.35: R_fa=0.5656 a=6.0 mm rho=0.20 t_s=0.39 mm Re_h=253 eta=0.66 [interior]
+  k_s=180 c_f=0.1 P=0.03  chi_min(Cu plate 0.3833)=0.447  chi_min(Al plate 0.4177)=0.334  | winner at chi=0.35: R_fa=0.4119 a=6.0 mm rho=0.20 t_s=0.39 mm Re_h=372 eta=0.59 [interior]
+  k_s=180 c_f=0.1 P=0.10  chi_min(Cu plate 0.2679)=0.487  chi_min(Al plate 0.2969)=0.347  | winner at chi=0.35: R_fa=0.2962 a=5.0 mm rho=0.20 t_s=0.32 mm Re_h=439 eta=0.48 [interior]
+  k_s=180 c_f=0.1 P=0.30  chi_min(Cu plate 0.1947)=0.513  chi_min(Al plate 0.2194)=0.341  | winner at chi=0.35: R_fa=0.2178 a=6.0 mm rho=0.30 t_s=0.58 mm Re_h=717 eta=0.53 [interior]
+  k_s=180 c_f=0.1 P=1.00  chi_min(Cu plate 0.1386)=0.552  chi_min(Al plate 0.1592)=0.340  | winner at chi=0.35: R_fa=0.1579 a=5.0 mm rho=0.30 t_s=0.49 mm Re_h=843 eta=0.43 [interior]
+  winners (chi = 0.35) on an edge of this sweep: 30 of 45
+
+=== (b2) Sensitivity at the nominal case (k_s = 150, P = 0.1 W): S2 sweep against extended sweeps ===
+  c_f=1.0 S2 sweep           chi_min(Cu)=none chi_min(Al plate)=none ; best R_fa at chi=0.2: 0.3557, at chi=0.35: 0.3256
+  c_f=1.0 extended, all a    chi_min(Cu)=0.453 chi_min(Al plate)=0.263 ; best R_fa at chi=0.2: 0.3277, at chi=0.35: 0.2832
+  c_f=1.0 extended, H/a>=3   chi_min(Cu)=none chi_min(Al plate)=none ; best R_fa at chi=0.2: 0.3837, at chi=0.35: 0.3543
+  c_f=0.3 S2 sweep           chi_min(Cu)=0.500 chi_min(Al plate)=0.316 ; best R_fa at chi=0.2: 0.3517, at chi=0.35: 0.2950
+  c_f=0.3 extended, all a    chi_min(Cu)=0.453 chi_min(Al plate)=0.314 ; best R_fa at chi=0.2: 0.3517, at chi=0.35: 0.2939
+  c_f=0.3 extended, H/a>=3   chi_min(Cu)=0.659 chi_min(Al plate)=0.342 ; best R_fa at chi=0.2: 0.3517, at chi=0.35: 0.3029
+  c_f=0.1 S2 sweep           chi_min(Cu)=0.535 chi_min(Al plate)=0.351 ; best R_fa at chi=0.2: 0.3587, at chi=0.35: 0.3045
+  c_f=0.1 extended, all a    chi_min(Cu)=0.535 chi_min(Al plate)=0.351 ; best R_fa at chi=0.2: 0.3587, at chi=0.35: 0.3045
+  c_f=0.1 extended, H/a>=3   chi_min(Cu)=0.535 chi_min(Al plate)=0.351 ; best R_fa at chi=0.2: 0.3587, at chi=0.35: 0.3045
+
+=== (c) Equal volume flow V = V_Cu,opt(0.1 W), designs re-optimised at that flow ===
+V_Cu,opt = 3.85768e-03 m3/s ; Cu plate optimum R_fa = 0.2679 K/W at dP = 25.92 Pa, P_air = 0.1 W ; 1/C = 0.2216 K/W
+  Cu plate (t >= 0.3 mm)
+     smallest air power reaching R_fa <= 0.2679: P_air = 0.1000 W (x1.00 of 0.1 W), dP = 25.9 Pa, R_fa = 0.2679, eta = 0.726, NTU = 1.76  PF t=0.30mm Nf=38 s=1.314mm k=390
+     dP cap   30 Pa: best R_fa = 0.2592 (x0.968 of Cu target), dP = 29.3 Pa, P_air = 0.113 W, NTU = 1.93  PF t=0.30mm Nf=40 s=1.231mm k=390
+     dP cap   60 Pa: best R_fa = 0.2315 (x0.864 of Cu target), dP = 58.4 Pa, P_air = 0.225 W, NTU = 3.16  PF t=0.30mm Nf=52 s=0.871mm k=390
+     dP cap  120 Pa: best R_fa = 0.2284 (x0.853 of Cu target), dP = 68.7 Pa, P_air = 0.265 W, NTU = 3.52  PF t=0.30mm Nf=55 s=0.806mm k=390
+     dP cap none   : best R_fa = 0.2284 (x0.853 of Cu target), dP = 68.7 Pa, P_air = 0.265 W, NTU = 3.52  PF t=0.30mm Nf=55 s=0.806mm k=390
+  Al plate k=150 (t >= 0.4 mm)
+     smallest air power reaching R_fa <= 0.2679: P_air = 0.1684 W (x1.68 of 0.1 W), dP = 43.7 Pa, R_fa = 0.2652, eta = 0.547, NTU = 1.81  PF t=0.40mm Nf=42 s=1.054mm k=150
+     dP cap   30 Pa: best R_fa = 0.2971 (x1.109 of Cu target), dP = 28.7 Pa, P_air = 0.111 W, NTU = 1.37  PF t=0.40mm Nf=36 s=1.303mm k=150
+     dP cap   60 Pa: best R_fa = 0.2515 (x0.939 of Cu target), dP = 57.1 Pa, P_air = 0.220 W, NTU = 2.13  PF t=0.40mm Nf=46 s=0.924mm k=150
+     dP cap  120 Pa: best R_fa = 0.2403 (x0.897 of Cu target), dP = 89.8 Pa, P_air = 0.347 W, NTU = 2.55  PF t=0.55mm Nf=45 s=0.801mm k=150
+     dP cap none   : best R_fa = 0.2403 (x0.897 of Cu target), dP = 89.8 Pa, P_air = 0.347 W, NTU = 2.55  PF t=0.55mm Nf=45 s=0.801mm k=150
+  Al plate k=100 (t >= 0.4 mm)
+     smallest air power reaching R_fa <= 0.2679: P_air = 0.2205 W (x2.20 of 0.1 W), dP = 57.1 Pa, R_fa = 0.2655, eta = 0.438, NTU = 1.80  PF t=0.40mm Nf=46 s=0.924mm k=100
+     dP cap   30 Pa: best R_fa = 0.3203 (x1.195 of Cu target), dP = 28.7 Pa, P_air = 0.111 W, NTU = 1.18  PF t=0.40mm Nf=36 s=1.303mm k=100
+     dP cap   60 Pa: best R_fa = 0.2655 (x0.991 of Cu target), dP = 57.1 Pa, P_air = 0.220 W, NTU = 1.80  PF t=0.40mm Nf=46 s=0.924mm k=100
+     dP cap  120 Pa: best R_fa = 0.2501 (x0.933 of Cu target), dP = 89.8 Pa, P_air = 0.347 W, NTU = 2.18  PF t=0.55mm Nf=45 s=0.801mm k=100
+     dP cap none   : best R_fa = 0.2501 (x0.933 of Cu target), dP = 89.8 Pa, P_air = 0.347 W, NTU = 2.18  PF t=0.55mm Nf=45 s=0.801mm k=100
+  Al pin k=150 (Nu_K, f_J, d >= 1 mm)
+     smallest air power reaching R_fa <= 0.2679: P_air = 0.4637 W (x4.64 of 0.1 W), dP = 120.2 Pa, R_fa = 0.2674, eta = 0.464, NTU = 1.77  PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) k=150 fric=J nu=K
+     dP cap   30 Pa: best R_fa = 0.4933 (x1.841 of Cu target), dP = 28.1 Pa, P_air = 0.108 W, NTU = 0.60  PIN d=2.0mm p=3.00 N=100(NT=10,NL=10) k=150 fric=J nu=K
+     dP cap   60 Pa: best R_fa = 0.3616 (x1.350 of Cu target), dP = 53.8 Pa, P_air = 0.208 W, NTU = 0.95  PIN d=3.0mm p=2.00 N=100(NT=10,NL=10) k=150 fric=J nu=K
+     dP cap  120 Pa: best R_fa = 0.2866 (x1.070 of Cu target), dP = 97.5 Pa, P_air = 0.376 W, NTU = 1.48  PIN d=1.0mm p=2.50 N=576(NT=24,NL=24) k=150 fric=J nu=K
+     dP cap none   : best R_fa = 0.2217 (x0.827 of Cu target), dP = 3510.1 Pa, P_air = 13.541 W, NTU = 9.02  PIN d=1.0mm p=1.25 N=2304(NT=48,NL=48) k=150 fric=J nu=K
+  Gyroid k_s=150 c_f=0.3 chi=0.2 (H/a>=3)
+     smallest air power reaching R_fa <= 0.2679: P_air = 0.3295 W (x3.29 of 0.1 W), dP = 85.4 Pa, R_fa = 0.2647, eta = 0.593, NTU = 1.82  GY a=10mm rho=0.40 ts=1.294mm k=150 cf=0.3 chi=0.2
+     dP cap   30 Pa: best R_fa = 0.3971 (x1.482 of Cu target), dP = 25.3 Pa, P_air = 0.098 W, NTU = 0.82  GY a=10mm rho=0.10 ts=0.323mm k=150 cf=0.3 chi=0.2
+     dP cap   60 Pa: best R_fa = 0.2870 (x1.071 of Cu target), dP = 53.8 Pa, P_air = 0.207 W, NTU = 1.48  GY a=10mm rho=0.30 ts=0.970mm k=150 cf=0.3 chi=0.2
+     dP cap  120 Pa: best R_fa = 0.2483 (x0.927 of Cu target), dP = 114.2 Pa, P_air = 0.440 W, NTU = 2.23  GY a=5mm rho=0.30 ts=0.485mm k=150 cf=0.3 chi=0.2
+     dP cap none   : best R_fa = 0.2222 (x0.829 of Cu target), dP = 919.4 Pa, P_air = 3.547 W, NTU = 6.00  GY a=2mm rho=0.50 ts=0.323mm k=150 cf=0.3 chi=0.2
+  Gyroid k_s=150 c_f=1.0 chi=0.1 (H/a>=3)
+     smallest air power reaching R_fa <= 0.2679: P_air = 0.5881 W (x5.88 of 0.1 W), dP = 152.4 Pa, R_fa = 0.2672, eta = 0.349, NTU = 1.77  GY a=8mm rho=0.20 ts=0.518mm k=150 cf=1 chi=0.1
+     dP cap     30 Pa: no design
+     dP cap     60 Pa: no design
+     dP cap  120 Pa: best R_fa = 0.2996 (x1.118 of Cu target), dP = 100.1 Pa, P_air = 0.386 W, NTU = 1.35  GY a=10mm rho=0.15 ts=0.485mm k=150 cf=1 chi=0.1
+     dP cap none   : best R_fa = 0.2217 (x0.828 of Cu target), dP = 3064.7 Pa, P_air = 11.823 W, NTU = 7.79  GY a=2mm rho=0.50 ts=0.323mm k=150 cf=1 chi=0.1
+  Gyroid k_s=150 c_f=0.3 chi=0.1 (H/a>=3)
+     smallest air power reaching R_fa <= 0.2679: P_air = 0.6995 W (x6.99 of 0.1 W), dP = 181.3 Pa, R_fa = 0.2636, eta = 0.580, NTU = 1.84  GY a=5mm rho=0.40 ts=0.647mm k=150 cf=0.3 chi=0.1
+     dP cap   30 Pa: best R_fa = 0.5316 (x1.984 of Cu target), dP = 25.3 Pa, P_air = 0.098 W, NTU = 0.54  GY a=10mm rho=0.10 ts=0.323mm k=150 cf=0.3 chi=0.1
+     dP cap   60 Pa: best R_fa = 0.3690 (x1.377 of Cu target), dP = 53.8 Pa, P_air = 0.207 W, NTU = 0.92  GY a=10mm rho=0.30 ts=0.970mm k=150 cf=0.3 chi=0.1
+     dP cap  120 Pa: best R_fa = 0.2864 (x1.069 of Cu target), dP = 114.2 Pa, P_air = 0.440 W, NTU = 1.49  GY a=5mm rho=0.30 ts=0.485mm k=150 cf=0.3 chi=0.1
+     dP cap none   : best R_fa = 0.2251 (x0.840 of Cu target), dP = 919.4 Pa, P_air = 3.547 W, NTU = 4.18  GY a=2mm rho=0.50 ts=0.323mm k=150 cf=0.3 chi=0.1
+
+=== (d) Context numbers ===
+wetted area per envelope volume: Cu plate optimum (0.1 W) = 1260 m2/m3 ; Al plate optimum k=150 = 1225 m2/m3
+   sheet gyroid a = 2.5 mm: a_sf = 2 s_G/a = 2473 m2/m3
+   sheet gyroid a = 5.0 mm: a_sf = 2 s_G/a = 1237 m2/m3
+   sheet gyroid a = 10.0 mm: a_sf = 2 s_G/a = 618 m2/m3
+   pin benchmark read as square array, pitch 10 mm, volume fraction 0.20 (reading of the thesis summary, UNSURE): d = 5.05 mm, a_sf = pi d/pitch^2 = 159 m2/m3
+      area ratio gyroid(a = 2.5 mm)/pin benchmark = 15.6
+      area ratio gyroid(a = 5.0 mm)/pin benchmark = 7.8
+      area ratio gyroid(a = 10.0 mm)/pin benchmark = 3.9
+analogy factor chi = j/f_F for laminar fully developed tube flow: Nu/(16 Pr^(1/3)) = 0.257 (Nu = 3.66), 0.306 (Nu = 4.36)
+   parallel plates: Nu/(24 Pr^(1/3)) = 0.353 (Nu = 7.54), 0.385 (Nu = 8.235)
+   friction x10 and Nu x2 relative to a tube (T wall): chi = 0.051
+   friction x10 and Nu x3 relative to a tube (T wall): chi = 0.077
+   friction x10 and Nu x5 relative to a tube (T wall): chi = 0.128
+   friction x10 and Nu x10 relative to a tube (T wall): chi = 0.257
+   friction x5 and Nu x3 relative to a tube (T wall): chi = 0.154
+   friction x3 and Nu x2 relative to a tube (T wall): chi = 0.171
+   Re_h =  200: tube f_D = 0.3200 ; model f_D at c_f = 1.0, 0.3, 0.1 = 3.000, 0.900, 0.300 (x9.4, x2.8, x0.9 of tube) ; c_f equivalent to 10 x tube = 1.067
+   Re_h =  500: tube f_D = 0.1280 ; model f_D at c_f = 1.0, 0.3, 0.1 = 2.600, 0.780, 0.260 (x20.3, x6.1, x2.0 of tube) ; c_f equivalent to 10 x tube = 0.492
+   Re_h = 1000: tube f_D = 0.0640 ; model f_D at c_f = 1.0, 0.3, 0.1 = 2.466, 0.740, 0.247 (x38.5, x11.6, x3.9 of tube) ; c_f equivalent to 10 x tube = 0.259
+   Re_h = 2000: tube f_D = 0.0320 ; model f_D at c_f = 1.0, 0.3, 0.1 = 2.400, 0.720, 0.240 (x75.0, x22.5, x7.5 of tube) ; c_f equivalent to 10 x tube = 0.133
