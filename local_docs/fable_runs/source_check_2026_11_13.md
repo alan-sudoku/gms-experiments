@@ -18,8 +18,12 @@ All in `<gms_data_source>/` (outside the repo; supplied by the user). No full ta
 | `lcia/` | Clone of `ecoinvent/lcia` (GitHub): mapped characterisation-factor CSVs for v3.9.1, 3.10, 3.11, 3.12. | README: CC BY-NC 4.0. `metadata.json` in all four versions: CC BY-NC 3.0. The two disagree. |
 | `doi.org_10.1205_psep.04290.pdf` | Zhu, Feng, Shen (2005), PSEP 83(B3), 257-261. | Elsevier/IChemE. Not open. |
 | `v119n12p1071.pdf` (and the image folder `Energy distribution in HC FeMn and SiMn energy vs exergy analyses_files/` of its SciELO page) | Larssen, T.A., Tangstad, M., Kero, I.T. (2019), "Energy distribution in HC FeMn and SiMn production: energy vs exergy analyses", J. S. Afr. Inst. Min. Metall. 119(12), 1071-1076. DOI as printed: 10.17159/2411-9717/788/2020. 6 pages. | No licence statement found in the extracted text. |
+| `valero2018.pdf` | Valero, A., Valero, A., Stanek, W. (2018), "Assessing the exergy degradation of the natural capital: From Szargut's updated reference environment to the new thermoecological-cost methodology", Energy 163, 1140-1149. DOI 10.1016/j.energy.2018.08.091 (Crossref). Local copy is the accepted manuscript (23 pages, line-numbered). | Elsevier; Crossref lists only Elsevier TDM licences. Not open. |
+| `russo2021.pdf` | Russo, S., Valero, A., Valero, A., Iglesias-Émbil, M. (2021), "Exergy-Based Assessment of Polymers Production and Recycling: An Application to the Automotive Sector", Energies 14, 363. DOI 10.3390/en14020363 (as printed). 19 pages. | CC BY (stated on p. 1). |
+| `Analysis of Uganda’s Plastic Waste Challenge from an Exergy.pdf` | Balcom, P. (2022), PhD dissertation, UC Berkeley, "Analysis of Uganda's Plastic Waste Challenge from an Exergy, Thermal Phase Change, and Development Perspective ...", eScholarship item 1rd9h1d9. 157 pages. | Not checked. |
+| `BOOK-2_Topic-A-to-I-1-comprimido-2.pdf` | ECOS 2023 proceedings (36th ECOS, Las Palmas de Gran Canaria, 25-30 June 2023), topics A to I, 1862 pages, 357 papers (split on the per-paper header). | Not checked. |
 
-Tools: `pdftotext -layout`; pdfplumber word positions for tables; RapidOCR for the 1987 scan; page images rendered and read for every value or sentence marked "image-checked". Crossref (`api.crossref.org/works/...`) for records; only DOIs and title words were sent.
+Tools: `pdftotext -layout`; keyword triage by page (`pdf_triage.py`, section 7) to pick pages before reading; pdfplumber word positions for tables; RapidOCR for the 1987 scan; page images rendered and read for every value or sentence marked "image-checked". Crossref (`api.crossref.org/works/...`) for records; only DOIs and title words were sent.
 
 ## 1. Table
 
@@ -42,6 +46,7 @@ Source: Szargut (1987), IJER 11(4), 541-547 (K3b). Quotations image-checked.
 
 - **(a) Ore's own exergy: supported at definition level (primary).** p. 541: "The CExC-index expresses the sum of exergy values of natural resources delivered to the system in all the links of the chain of production processes, per unit of the product under consideration (Szargut and Morris, 1986). ... CExC of the products of every process equals the sum of CExC of the delivered semi-finished products plus the exergy of natural resources taken immediately from the environment." So resource exergy, ore included, enters CExC by definition. This replaces A's single secondary source (Sciubba 2021) for (a). It does not show what any particular tabulated CExC value contains.
 - **(b) By-product rule: not addressed.** The paper says only that "the allocation of the intermediate product between the subsequent processes can be presented in the individual single circles" (p. 543), with no rule. Status unchanged (A: substitution at least for cogeneration, from the K7 abstract).
+- **(b), update from Valero, Valero, Stanek (2018): substitution, for the thermo-ecological cost (secondary, Szargut school).** Accepted manuscript p. 11, lines 6-8, image-checked: "In some branches, by-products can appear. By-products replace the main products from other branches and, therefore, the value of TEC of a considered main product is reduced, e.g. TEC of coal decreases because by-product methane from coal mines is usefully utilized replacing natural gas." Eq. (10), image-checked: `ρ_j + Σ_i (f_ij − a_ij) ρ_i = Σ_s b_sj + Σ_k p_kj ζ_k`, with `f_ij` the by-production of product i per unit of major product j, so a by-product is credited at the TEC of the product it replaces. Scope: TEC counts non-renewable resources only (the K7 indicator), not the all-resource CExC; the paper cites Szargut's TEC papers [25-27] for the method. p. 12 also states that the balance equations can be solved as a set, or for final products "by means of a sequence method", matching the 1987 paper. So (b) is now: substitution in the Szargut-school TEC method (two sources: K7 abstract, Valero et al. 2018 text); for all-resource CExC tables still not shown.
 - **(c) Capital goods: optional, usually omitted in the sequence method (primary).** p. 542: "Usually th[e] production of machines and installations for the transformation of materials is omitted in the sequence scheme." p. 543: "If the exergy requirement for the production of machines and installations is not omitted, the name of machines and installation can be given inside a rombus ...". Scope: this concerns the sequence (process-analysis) method. The paper does not say whether the balanced-equation method behind CExC tables includes them. B's lead ("usually omitted") now has primary support for the sequence method only.
 - Also on p. 542: the transformation of fuels for transport and the winning of raw materials "are not analysed in detail, and hence the CExC connected with these processes can be only globally estimated."
 - CEENE side (K13, S4): metal ores are charged with the chemical exergy of their minerals, so CEENE also includes the ore's own exergy.
@@ -64,6 +69,7 @@ No finding changes. Citation lines and two supports only.
 | K3b | Optional: add Szargut (1987), IJER 11(4), 541-547, DOI 10.1002/er.4440110410, as the primary source for decisive check (a) and for (c) in the sequence method. |
 | Synthesis D7 (i), (iv) | No change in wording. (i) "includes the ore's exergy" now has primary support at definition level. (iv) "declare capital-goods inclusion" is supported: Szargut's own sequence method treats it as optional and usually omits it. |
 | Synthesis D7 (ii) | No change. Section 3 gives a concrete size for the reference-environment effect (Al about 10 % between Szargut 1989 and the 2005 proposal). |
+| Synthesis D7 (iii), V6, L16 | No change in wording. The condition A attached to V6 now has a stronger basis: the Szargut-school TEC credits by-products by substitution (Valero et al. 2018, Eq. 10, read). If the framework takes `CExC` or TEC values built that way, they are not on V6's no-substitution basis, and D7 (iii) ("by-product rule declared") is what catches it. |
 | L9 | Unchanged. Whether a given `CExC` table includes capital goods still depends on the source used; K12 (ecoinvent CExD) inherits ecoinvent's infrastructure, which section 11 does not state. |
 | Open data (OQ-6) | CExD: not openly available (absent from `ecoinvent/lcia`). CEENE: published only as ACS supporting information, no open licence. Element table: website all rights reserved; the 2005 preprint carries no licence. `ecoinvent/lcia` licence text is inconsistent (4.0 in README, 3.0 in `metadata.json`). |
 
@@ -71,8 +77,29 @@ No finding changes. Citation lines and two supports only.
 
 Nothing in this folder checks a Prompt 1b row. The `lcia/` CSVs hold characterisation factors per elementary flow, not inventories, so they cannot give per-kg cumulative energy demand of Cu, Al, Pt or Ir (R79). CED is implemented in ecoinvent v3.12 (report section 10) but is not in the repository either.
 
+From the second batch: Jin, Nakashima, Comodi, Frandsen (ECOS 2023, book pp. 1091-1102), "Alkaline electrolysis for green hydrogen production: techno-economic analysis of temperature influence and control", takes the KOH electrolyte conductivity from "the empirical equation investigated by experiments performed by Gilliam et al. [10]" (p. 1093; [10] = R72, IJHE 32 (2007) 359-364). It prints no conductivity values, so R72's 20 / 62 / 140 S/m stay UNSURE. It only shows R72 is used as the source of an empirical KOH conductivity correlation.
+
 ## 6. Not done
 
 - K1, K2 (books), K4 and K5 (journal papers): not in the folder; still record-level.
 - Larssen et al. (2019): read at abstract and method level only; its tables and balances not checked.
+- Second batch (section 7): only Valero et al. (2018) pp. 11-12 and the Jin et al. ECOS paper p. 1093 and its reference list were read. Everything else in section 7 is a keyword ranking, not a reading.
+
+## 7. Triage of the second batch (keyword ranking, not evidence)
+
+Method: `pdf_triage.py` (in the user's PDF tools environment, outside the repo) scores each page against ten term groups tied to open items: CExC by-product rule, capital goods, reference environment, recycling allocation, radiation exergy, Kotas chemical-exergy temperature correction, heat sinks, electrolysis, embodied energy, fatigue. A page scores one point per distinct term matched in a group. The ECOS book was split into 357 papers on the header "PROCEEDINGS OF ECOS 202x" (its outline has only 58 entries). A high score means "uses our terms", not "answers our question"; figures and equation images are not searched.
+
+| Source | Ranking result | Verdict |
+|---|---|---|
+| Valero et al. (2018) | Reference environment on 17 of 23 pages; by-products on 9 | **Read in part; evidence** for decisive check (b), section 2. Also the updated reference environment (pp. 2-8, not read). |
+| ECOS 2023, pp. 20-34, Valero, Valero-Delgado, Torres, "The Future of Thermoeconomics after the School of Zaragoza" | Reference environment, Thanatia, Szargut | Lead for K25 (Thanatia) and the reference environment. Not read. |
+| ECOS 2023, pp. 53-62, "The future of Thermoeconomics: from industrial cost minimization toward cumulati[ve ...]" | Cost allocation, by-products, CExC, ECEC | Lead for decisive check (b) and K27 (ECEC). Not read. |
+| ECOS 2023, pp. 41-52, Frangopoulos, Dimopoulos, "A contribution to the discussion on the Future of Thermoeconomics" | Cites K3; lists CExC, thermo-ecological cost | Background. Not read. |
+| ECOS 2023, pp. 178-189, TaesLab paper | By-products, waste cost allocation | Background (software). Not read. |
+| ECOS 2023, pp. 263-274, "Teaching Exergy to Engineering Students in view of the Energy Transition" | Cites Kotas (K8) and Szargut, Morris, Steward (K1) | Not a source for K8's formula; cites it only. Not read. |
+| ECOS 2023, pp. 1091-1102, Jin et al. | KOH, overpotential, exchange current | Read p. 1093; see section 5. |
+| Russo et al. (2021) | CExC, embodied exergy, Thanatia, recycling | Applied study. No open item answered. Not read. |
+| Balcom (2022) thesis | CExC on pp. 29-50 | Applied study of waste disposal options. Not read. |
+| Prompt 3 (fatigue) | Only false matches ("Lattice Boltzmann") | Nothing in this batch. |
+| Remaining ECOS papers (about 350) | Next-ranked score 6-9: fuel exergy from heating values (pp. 143-152), thermoeconomic cost allocation in a heating and cooling system (pp. 298-310), nCO2PP cycle with a Szargut-based reference environment (pp. 252-262), sugarcane fermentation exergy cost (pp. 1594-1617), SOEC hydrogen exergoeconomics (pp. 275-286). Most others score 0-5, mostly economic or process studies | Possible background for the reference environment and cost allocation; none tied to an open item on this ranking. |
 - Exergoecology Eq. 1: an image on the page, not in the `.txt`; not read.
