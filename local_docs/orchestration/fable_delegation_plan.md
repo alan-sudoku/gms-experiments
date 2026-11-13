@@ -91,12 +91,12 @@ Run each question in a new claude.ai chat: paste its block as it is, with no fil
 
 The rest of Prompt 3 goes through the normal S1–S5 pipeline later: Q3 to Q5, plus Q1 if chat 2 does not run. That S1 pass receives the web answers as input, and S5 reviews them. Every answer is a claim at level `derived`.
 
-**Fix Q4's inputs before that S1 pass.** The materiality case in `fable_questions.md` Prompt 3 Q4 (Al, ρ̄ = 0.2, macroscopic σ_a = 20 MPa) is not elastic. The values below are orchestrator arithmetic with strength constants quoted from memory, so they are UNSURE:
+**Q4's inputs: restated 2026-11-13 in `fable_questions.md`.** The original materiality case in `fable_questions.md` Prompt 3 Q4 (Al, ρ̄ = 0.2, macroscopic σ_a = 20 MPa) is not elastic. The values below are orchestrator arithmetic with strength constants quoted from memory, so they are UNSURE:
 - Lattice collapse strength: about 0.3·ρ̄^1.5·σ_y ≈ 6.7 MPa if bending-dominated, about ρ̄·σ_y/3 ≈ 17 MPa if stretch-dominated (σ_y ≈ 250 MPa for AlSi10Mg).
 - Strut stress at 20 MPa: about 224 MPa bending-dominated, about 100 MPa stretch-dominated.
 - The prompt's own formula gives Σ̇ ≈ 1.2e-3 W/K at 1 Hz, about 3.8e4 J/K per year. Dissipation therefore looks material, but the part would not survive the load.
 
-Restate the case with an elastic amplitude (about 1–2 MPa macroscopic) and ask whether it is consistent with τ_wearout. A `sonnet` S2 run can do the arithmetic.
+Q4 now asks for the largest σ_a that is elastic and survivable (about 1–2 MPa macroscopic), Σ̇ with both the ρ̄² and the octet ρ̄/9 moduli, and the entropy integrated over τ_wearout. A `sonnet` S2 run does the arithmetic.
 
 **Q2 block (chat 1).**
 
@@ -170,7 +170,7 @@ OUTPUT FORMAT (strict, keep it short)
 | 1a | single-pass writer (`fable`, high), `86af299` | in writer pass | in writer pass (existence only, no full text) | in writer pass | `opus` high, done: `prompt_1a_review.md` (0 BLOCKER, 4 MAJOR) | done: `prompt_1a_synthesis.md`; D1–D3 decided and recorded (E13, plan V10, Q16) |
 | 1b | `fable` high, `1ce8e11`: 45 claims, 33 rows, 82 citations | `sonnet`, `bea5811`: 33 rows, 3 FAIL (B05, B06, C08), about 18 identity or plausibility-only checks, issues in `issues.md` | `sonnet`, `f488c89`: 72 verified, 3 may not say this, 6 UNSURE, 1 not found; 4 inputs corrected | `fable` high, `0e7ee55` (resumed after the usage limit): B valid with restated scope, C invalid as stated; 19 claims changed; 3 `s4_*` scripts | `opus` high, `659f787`: `prompt_1b_review.md` (0 BLOCKER, 2 MAJOR, 11 MINOR) | done: `prompt_1b_synthesis.md`; D1–D6 decided and recorded (E17, E18, V11, Q17/OQ-16, OQ-4 resolved, GMS-310 brief note); Prompt 2 Gemini citation check reconciled (`prompt_2_citations_reconcile.md`, no fix-item change) |
 | 2 | `fable` high, `030e6d1`: 16 findings + 8 conventions, 40 rows, 71 citations | `sonnet`, `1f4daf0`: 40/40 PASS, 6 ambiguities in `issues.md` | `sonnet`: 63 verified, 1 may not say this, 7 UNSURE, 0 not found | `fable` high: `prompt_2_answer.md`, 1 BLOCKER + 7 MAJOR; 4 added checks (`s4_*`) | `opus` high, done: `prompt_2_review.md` (0 BLOCKER, 3 MAJOR, 9 MINOR; L1 re-graded to a convention) | done: `prompt_2_synthesis.md`; D1–D7 decided and recorded (E14–E16, OQ-13 to OQ-15, round 2 fix items); citation re-check with the newly allowed hosts (`sonnet`) done, `prompt_2_citations_recheck.md` (brief `prompt_2_citations_recheck_brief.md`); effect noted in `orchestrator_state.md` §4 (D7) |
-| 3 | Low-budget runs (§5.1): Q2 done as a `fable` high agent with no tools (`prompt_3_q2_web_answer.md`: 8 claims; about 79k tokens, 3 min); Q1 done the same way (`prompt_3_q1_web_answer.md`: 8 claims; about 73k tokens, 2 min). Q3–Q5: S1 later, with both answers as input, after Q4's inputs are fixed (§5.1) | — | — | — | — | — |
+| 3 | Low-budget runs (§5.1): Q2 done as a `fable` high agent with no tools (`prompt_3_q2_web_answer.md`: 8 claims; about 79k tokens, 3 min); Q1 done the same way (`prompt_3_q1_web_answer.md`: 8 claims; about 73k tokens, 2 min). Q3–Q5: S1 later, with both answers as input; Q4's inputs restated (§5.1) | — | — | — | — | — |
 | 4 | — | — | — | — | — | — |
 
 Session start prompt for a new session:

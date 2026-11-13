@@ -132,6 +132,8 @@ OUTPUT FORMAT
 
 ## Prompt 3: lattice fatigue micromechanics (plan Q2, E2, E3)
 
+Status (2026-11-13): Q1 and Q2 were answered by low-budget Fable runs (`local_docs/fable_runs/prompt_3_q1_web_answer.md`, `prompt_3_q2_web_answer.md`); the S1 pass for Q3–Q5 takes them as input. Q4 was restated: its first version (macroscopic σ_a = 20 MPa) exceeds the lattice collapse strength (about 7 MPa bending-dominated, 17 MPa stretch-dominated; orchestrator arithmetic, UNSURE), so its dissipation figure (about 3.8e4 J/K per year at 1 Hz) described a part that would not survive.
+
 ```text
 I need a structural-mechanics assessment of a fatigue model for additively manufactured metal lattices (e.g. gyroid or octet truss, relative density ρ̄ = 0.1–0.4) bonded to or co-printed with a different material. Treat all formulas as unverified.
 
@@ -148,7 +150,7 @@ QUESTIONS
  1. Dissipation. Are the macroscopic and strut-level forms equivalent (same total energy) for a homogenized lattice? Derive the relation, including the knock-down between macroscopic and local strut stress for bending- versus stretch-dominated lattices (state the scaling with ρ̄). Which form is correct to use with a ψ measured on solid coupons?
  2. Thermal mismatch. Give the correct mismatch stress for (a) a lattice co-printed on a solid substrate of a different alloy, (b) a bimaterial strut, (c) a lattice in a housing of another material. Include constraint (uniaxial, biaxial E/(1−ν)), compliance of the lattice, and where the peak stress sits (node, interface, first cell row). State which modulus governs and why.
  3. Fatigue life. Is Basquin with macroscopic stress amplitude acceptable for AM lattices? Summarise how the published lattice-fatigue literature normalises S–N data (e.g. by yield strength or by ρ̄), the role of as-built surface roughness and porosity, and whether a knock-down factor is standard. Give references I can check (author, year, title, figure or equation).
- 4. Materiality. For an Al-alloy lattice, ρ̄ = 0.2, envelope 1e-3 m³, macroscopic σ_a = 20 MPa, ν = 1 Hz and separately ν = 1 per day, ψ = 5e-3, T₀ = 300 K: compute Σ̇ in W/K. Compare with plausible manufacturing and material terms (order 1e3–1e5 J/K for a ~1 kg part). Is fatigue dissipation ever material to the comparison, or does fatigue matter only through τ_wearout?
+ 4. Materiality. For an AlSi10Mg lattice, ρ̄ = 0.2, envelope 1e-3 m³, ψ = 5e-3, T₀ = 300 K, at ν = 1 Hz and separately ν = 1 per day. First check that the load case is elastic and survivable: compare the macroscopic σ_a with the lattice collapse strength, and the peak strut stress with the fatigue strength, for bending- and stretch-dominated cells. Use the largest σ_a that passes both (expected order 1–2 MPa). At that σ_a, compute Σ̇ in W/K with E_eff = E_s·ρ̄² and with E_eff = ρ̄·E_s/9 (octet), and the total entropy generated over the life τ_wearout = N/ν. Compare with plausible manufacturing and material terms (order 1e3–1e5 J/K for a ~1 kg part). Is fatigue dissipation ever material to the comparison, or does fatigue matter only through τ_wearout?
  5. Recommend ONE default form for each of: dissipation, mismatch stress, life. For each, state assumptions, validity range, and the public dataset or test that would anchor it.
 
 OUTPUT FORMAT
