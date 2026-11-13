@@ -65,6 +65,8 @@ Reproducibility: all 18 scripts re-ran byte-identical. The independent re-implem
 
 ## Decisions for the user
 
+**Decided 2026-11-13: the user accepted the recommendation (a) for D1–D6.** Recorded as E17 and E18 (drafting notes §A, plan §4; E12(a) superseded), plan V11 and Q17, and in `orchestrator_state.md`: OQ-4 resolved, OQ-16 added, OQ-6 licence note, GMS-310 brief note and W2b row. D6 is noted in `prompt_2_citations_reconcile.md`.
+
 | # | Decision | Options | Recommendation |
 |---|---|---|---|
 | D1 | Part B entropy expression | (a) new correction **E17**: keep E8's form with its scope stated: T_coolant = T₀ (exhaust mixing included), pumping as W_fan,elec/T₀, T_hot the flux-weighted harmonic mean of the source surface, T_max the function constraint. REQ: Class II heat comparisons are made at equal function (equal Q and T_max), where the operating discriminator is fan work, since the thermal term cannot rank sinks. (b) leave E8 as is | (a) |

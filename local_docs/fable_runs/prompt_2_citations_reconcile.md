@@ -2,6 +2,8 @@
 
 Date: 2026-11-13. Everything here is a claim at level `derived`. Context file; never cited by the spec.
 
+**Decided (user, 2026-11-13, Prompt 1b synthesis D6):** the optional proposals in section 2 are adopted: K29 is labelled "UNSURE; clause numbers consistent with secondary quotes", and "the AWS copy of SORCE is CC BY 4.0" is added to the OQ-6 licence note (`orchestration/orchestrator_state.md` §3, §4). No round 2 fix item changes.
+
 - A = `prompt_2_citations_recheck.md` (Sonnet, in repo). B = `prompt_2_citation_gemini_check.md` (Gemini, outside repo; its bracketed handles like `8.2` cannot be checked here, so a B claim resting only on them counts as unconfirmed).
 - Sources I read myself in this pass: Crossref JSON (`api.crossref.org/works/<DOI>`); EUR-Lex full HTML of 2013/179/EU (CELEX 32013H0179, with annexes); Chalmers open full text of Ekvall and Tillman 1997 (`publications.lib.chalmers.se/records/fulltext/24272/local_24272.pdf`); open lca-net.com PDFs quoting ISO 14044; the AWS Open Data registry page for NASA SORCE. Unreachable here: iso.org, mdpi.com, pnas.org (403), www.nrel.gov (proxy 502), GitHub (`ecoinvent/lcia`, not enabled for this session).
 - "Read" below means I read the primary record or text. Rows I did not re-read say "not re-read".
