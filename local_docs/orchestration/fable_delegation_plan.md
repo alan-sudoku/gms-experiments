@@ -80,9 +80,53 @@ Fill in `<p>` and the paths. Every template includes these **common rules**:
 **S5 reviewer (`opus`, high).** The same brief as the Prompt 1a review, adapted per prompt:
 > You are an independent, adversarial reviewer. Inputs: the prompt's fenced block, `prompt_<p>_answer.md`, `prompt_<p>_plan.md`, `prompt_<p>_code/` and its outputs, `prompt_<p>_citations.md`. Do not edit them. Tasks: (1) re-run every script and compare with the saved outputs and with every number in the answer; (2) check the method of any solver or non-trivial computation, with your own independent check where it matters most (saved in `prompt_<p>_review_code/`); (3) check each derivation, especially those the answer marks as unchecked; (4) look for regimes or fair comparisons the answer missed that would change the verdict; (5) agree / disagree / unsupported for each numbered claim, and whether the verdict and any restated claim follow; (6) spot-check citations. Agreement with the answer is not validation. Say which conclusions still need an independent tool or measurement, and the single most decisive check. Write `prompt_<p>_review.md`: Summary verdict (5 lines max); Findings table (#, severity BLOCKER/MAJOR/MINOR, location, finding, evidence or script); Reproducibility table; Derivation checks; Missed regimes; Citations; What still needs external checking.
 
-### 5.1 Low-budget web run: Prompt 3, question 1 only
+### 5.1 Low-budget web run: Prompt 3, Q2 first, then Q1 if budget remains
 
-Use when little Fable budget is left (user, 2026-11-13: about 4%). Run it in the claude.ai web interface: paste the block below into a new chat as it is, with no files attached. Save the reply as it is to `local_docs/fable_runs/prompt_3_q1_web_answer.md`, including a cut-off reply. Q2 to Q5 of Prompt 3 still go through the normal S1–S5 pipeline later. That S1 pass receives this answer as input, and S5 reviews it. The answer is a claim at level `derived`.
+Use when little Fable budget is left (user, 2026-11-13: about 4%). Q2 (thermal mismatch) goes first (user, 2026-11-13). Its form (E3) is the open part of plan Q2, while E2's macroscopic default is already set. Most of Q1 is standard theory: energy equivalence between the two scales, and the ρ̄^1.5 or ρ̄ knock-down. The Opus S1 pass can draft it, and S5 checks it.
+
+Run each question in a new claude.ai chat: paste its block as it is, with no files attached. One chat per question means a cut-off loses only one answer.
+
+1. Chat 1: the Q2 block. Save the reply as it is to `local_docs/fable_runs/prompt_3_q2_web_answer.md`, including a cut-off reply.
+2. Chat 2, only if the usage meter still shows room after chat 1: the Q1 block. Save the reply to `local_docs/fable_runs/prompt_3_q1_web_answer.md`.
+
+The rest of Prompt 3 goes through the normal S1–S5 pipeline later: Q3 to Q5, plus Q1 if chat 2 does not run. That S1 pass receives the web answers as input, and S5 reviews them. Every answer is a claim at level `derived`.
+
+**Fix Q4's inputs before that S1 pass.** The materiality case in `fable_questions.md` Prompt 3 Q4 (Al, ρ̄ = 0.2, macroscopic σ_a = 20 MPa) is not elastic. The values below are orchestrator arithmetic with strength constants quoted from memory, so they are UNSURE:
+- Lattice collapse strength: about 0.3·ρ̄^1.5·σ_y ≈ 6.7 MPa if bending-dominated, about ρ̄·σ_y/3 ≈ 17 MPa if stretch-dominated (σ_y ≈ 250 MPa for AlSi10Mg).
+- Strut stress at 20 MPa: about 224 MPa bending-dominated, about 100 MPa stretch-dominated.
+- The prompt's own formula gives Σ̇ ≈ 1.2e-3 W/K at 1 Hz, about 3.8e4 J/K per year. Dissipation therefore looks material, but the part would not survive the load.
+
+Restate the case with an elastic amplitude (about 1–2 MPa macroscopic) and ask whether it is consistent with τ_wearout. A `sonnet` S2 run can do the arithmetic.
+
+**Q2 block (chat 1).**
+
+```text
+Answer one narrow structural-mechanics question. Work from first principles. Do not use web search, code execution or any other tool. Treat every formula below as unverified, and be adversarial toward it.
+
+SETTING
+Additively manufactured metal lattice (gyroid or octet truss), relative density ρ̄ = 0.1–0.4, solid modulus E_s, Poisson ratio ν_s, expansion α_s, joined to a second material (E_2, ν_2, α_2). Uniform diurnal temperature swing ΔT = 10–50 K.
+
+CURRENT MODEL (unverified)
+ Original text: Δσ ≈ E_eff·|α₁ − α₂|·ΔT, with E_eff ≈ E_s·ρ̄² (Gibson–Ashby, bending-dominated).
+ Our belief: the solid-constituent moduli govern, not E_eff; the exact form is open.
+ The stress feeds a Basquin life σ_a = σ_f'·(2N)^b, so what matters is the local peak stress amplitude in the metal.
+
+QUESTION
+ 2a. Lattice co-printed on, or bonded to, a solid substrate of another alloy (substrate much stiffer, or comparable).
+ 2b. A bimaterial strut (two alloys along or across the strut axis).
+ 2c. A lattice in a housing of another material, in contact on its outer faces only (bonded vs sliding).
+ For each: the macroscopic and the local strut mismatch stress; the constraint (uniaxial E, biaxial E/(1−ν), triaxial); the role of lattice compliance and the stiffness ratio; where the peak sits (node, interface, first cell row, free edge) and over what distance it decays; which modulus governs and why.
+ 2d. One-line verdict: one default screening formula, its validity range, and when it is non-conservative by more than a factor 2.
+
+OUTPUT FORMAT (strict, keep it short)
+- At most 8 numbered claims, most important first, so that a cut-off reply is still useful. Total reply under 1,200 words.
+- Each claim: statement; equation in plain text with SI units; confidence (high / medium / low); one test or computation that would falsify it.
+- Derivations: only the steps needed to check each claim, no general survey.
+- No literature review. If you lean on a known result, name it in one line and mark it UNSURE if you are not certain of the exact form. Do not invent references.
+- End with "Open points": at most 3 lines on what this answer could not settle.
+```
+
+**Q1 block (chat 2, optional).**
 
 ```text
 Answer one narrow structural-mechanics question. Work from first principles. Do not use web search, code execution or any other tool. Treat every formula below as unverified, and be adversarial toward it.
@@ -104,7 +148,7 @@ QUESTION
  1d. Give a one-line verdict: which form should be the default, and under what condition the two forms disagree by more than a factor of 2.
 
 OUTPUT FORMAT (strict, keep it short)
-- At most 8 numbered claims, most important first, so that a cut-off reply is still useful.
+- At most 8 numbered claims, most important first, so that a cut-off reply is still useful. Total reply under 1,200 words.
 - Each claim: statement; equation in plain text with SI units; confidence (high / medium / low); one test or computation that would falsify it.
 - Derivations: only the steps needed to check each claim, no general survey.
 - No literature review. If you lean on a known result (for example Gibson–Ashby scaling), name it in one line and mark it UNSURE if you are not certain of the exact form or exponent. Do not invent references.
@@ -126,7 +170,7 @@ OUTPUT FORMAT (strict, keep it short)
 | 1a | single-pass writer (`fable`, high), `86af299` | in writer pass | in writer pass (existence only, no full text) | in writer pass | `opus` high, done: `prompt_1a_review.md` (0 BLOCKER, 4 MAJOR) | done: `prompt_1a_synthesis.md`; D1–D3 decided and recorded (E13, plan V10, Q16) |
 | 1b | `fable` high, `1ce8e11`: 45 claims, 33 rows, 82 citations | `sonnet`, `bea5811`: 33 rows, 3 FAIL (B05, B06, C08), about 18 identity or plausibility-only checks, issues in `issues.md` | `sonnet`, `f488c89`: 72 verified, 3 may not say this, 6 UNSURE, 1 not found; 4 inputs corrected | `fable` high, `0e7ee55` (resumed after the usage limit): B valid with restated scope, C invalid as stated; 19 claims changed; 3 `s4_*` scripts | `opus` high, `659f787`: `prompt_1b_review.md` (0 BLOCKER, 2 MAJOR, 11 MINOR) | done: `prompt_1b_synthesis.md`; D1–D6 decided and recorded (E17, E18, V11, Q17/OQ-16, OQ-4 resolved, GMS-310 brief note); Prompt 2 Gemini citation check reconciled (`prompt_2_citations_reconcile.md`, no fix-item change) |
 | 2 | `fable` high, `030e6d1`: 16 findings + 8 conventions, 40 rows, 71 citations | `sonnet`, `1f4daf0`: 40/40 PASS, 6 ambiguities in `issues.md` | `sonnet`: 63 verified, 1 may not say this, 7 UNSURE, 0 not found | `fable` high: `prompt_2_answer.md`, 1 BLOCKER + 7 MAJOR; 4 added checks (`s4_*`) | `opus` high, done: `prompt_2_review.md` (0 BLOCKER, 3 MAJOR, 9 MINOR; L1 re-graded to a convention) | done: `prompt_2_synthesis.md`; D1–D7 decided and recorded (E14–E16, OQ-13 to OQ-15, round 2 fix items); citation re-check with the newly allowed hosts (`sonnet`) done, `prompt_2_citations_recheck.md` (brief `prompt_2_citations_recheck_brief.md`); effect noted in `orchestrator_state.md` §4 (D7) |
-| 3 | Q1 only: low-budget web run (§5.1), pending; save to `prompt_3_q1_web_answer.md`. Q2–Q5: — | — | — | — | — | — |
+| 3 | Low-budget web runs (§5.1), pending: Q2 first (`prompt_3_q2_web_answer.md`), then Q1 if budget remains (`prompt_3_q1_web_answer.md`). Q3–Q5 (and Q1 if not run): S1 later, after Q4's inputs are fixed (§5.1) | — | — | — | — | — |
 | 4 | — | — | — | — | — | — |
 
 Session start prompt for a new session:
