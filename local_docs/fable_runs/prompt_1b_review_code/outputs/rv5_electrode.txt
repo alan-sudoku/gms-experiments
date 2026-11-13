@@ -1,0 +1,39 @@
+RV5 porous electrode  (level: derived, unverified)
+b(alpha=0.5, 298.15 K) = 0.05139 V
+
+=== (a) utilisation, 1.6 mm foam, 30 wt% KOH kappa = 62 S/m (assumed), eps = 0.9, Tafel kinetics ===
+alpha=0.5  eps_g=0.0 kappa_eff=52.94 delta=5.882  E_FV=0.2924  E_closed=0.2924  (Newton its 6)
+alpha=0.5  eps_g=0.3 kappa_eff=31.00 delta=10.043  E_FV=0.1864  E_closed=0.1864  (Newton its 6)
+40 mV/dec  eps_g=0.0 kappa_eff=52.94 delta=17.399  E_FV=0.1120  E_closed=0.1120  (Newton its 6)
+40 mV/dec  eps_g=0.3 kappa_eff=31.00 delta=29.708  E_FV=0.0667  E_closed=0.0667  (Newton its 7)
+
+=== (b) thick electrode (L = 16 mm), sinh kinetics: eta_front against b acosh(1 + J^2/(4 kappa_eff a j0 b)) ===
+a_v=6.25e+05 j0=1 kappa=140 eps=0.9 eg=0.3: eta_FV=0.16373 V, eta_min closed=0.16373 V (rel 5.4e-07), effective roughness 414
+a_v=6.25e+05 j0=0.1 kappa=62 eps=0.9 eg=0.0: eta_FV=0.29243 V, eta_min closed=0.29242 V (rel 3.1e-05), effective roughness 338
+a_v=2e+06 j0=0.1 kappa=62 eps=0.5 eg=0.0: eta_FV=0.27807 V, eta_min closed=0.27807 V (rel 3.3e-07), effective roughness 447
+a_v=2e+07 j0=0.1 kappa=62 eps=0.5 eg=0.0: eta_FV=0.16363 V, eta_min closed=0.16363 V (rel 5.4e-07), effective roughness 4147
+a_v=2e+07 j0=1 kappa=140 eps=0.5 eg=0.3: eta_FV=0.06262 V, eta_min closed=0.06262 V (rel 8.8e-07), effective roughness 3239
+
+=== (c) a_v j0 needed for eta_min = eta(Pt/C alkaline, R_f 100) ===
+Pt/C alkaline reference (j0 6e-4 A/cm2 per real area, R_f 100, 1 A/cm2): 0.1448 V
+kappa= 62 eps=0.9 eg=0.0 kappa_eff=52.94: a_v j0 >= 1.243e+06 A/m3 ; pore size at j0=1e-5 A/cm2 (0.1 A/m2) for a_v = 4 eps/d_p: d_p = 0.29 um
+kappa=140 eps=0.9 eg=0.0 kappa_eff=119.53: a_v j0 >= 5.505e+05 A/m3 ; pore size at j0=1e-5 A/cm2 (0.1 A/m2) for a_v = 4 eps/d_p: d_p = 0.654 um
+kappa= 62 eps=0.5 eg=0.0 kappa_eff=21.92: a_v j0 >= 3.002e+06 A/m3 ; pore size at j0=1e-5 A/cm2 (0.1 A/m2) for a_v = 4 eps/d_p: d_p = 0.0666 um
+kappa= 62 eps=0.5 eg=0.3 kappa_eff=12.84: a_v j0 >= 5.126e+06 A/m3 ; pore size at j0=1e-5 A/cm2 (0.1 A/m2) for a_v = 4 eps/d_p: d_p = 0.039 um
+kappa= 20 eps=0.5 eg=0.3 kappa_eff=4.14: a_v j0 >= 1.589e+07 A/m3 ; pore size at j0=1e-5 A/cm2 (0.1 A/m2) for a_v = 4 eps/d_p: d_p = 0.0126 um
+Pt/C acid reference (j0 0.06, R_f 100): 0.00428 V -> a_v j0 >= 2.651e+09 A/m3 at kappa_eff = 52.9 S/m
+
+=== (d) arithmetic of C2.3, C2.4, C2.10 ===
+flat Pt alkali       required R_f for candidate j0 1e-5 / 1e-6: 60 / 600
+Pt/C alkali          required R_f for candidate j0 1e-5 / 1e-6: 6e+03 / 6e+04
+Pt/C acid 298 K      required R_f for candidate j0 1e-5 / 1e-6: 6e+05 / 6e+06
+Pt/C acid 298 K hi   required R_f for candidate j0 1e-5 / 1e-6: 7e+05 / 7e+06
+Pt/C acid HER at 1 A/cm2: j0=0.06 R_f=100 T=298 K: eta = 4.28 mV
+Pt/C acid HER at 1 A/cm2: j0=0.06 R_f=200 T=298 K: eta = 2.14 mV
+Pt/C acid HER at 1 A/cm2: j0=0.26 R_f=100 T=353 K: eta = 1.17 mV
+Pt/C acid HER at 1 A/cm2: j0=0.26 R_f=200 T=353 K: eta = 0.59 mV
+C2.10: NiFe 0.27 V at 1 A/cm2, R_f 50: j0 (symmetric alpha 0.5) = 1.045e-04 ; j0 (32 mV/dec Tafel) = 7.303e-11 ; ratio 1.43e+06
+
+=== (e) Lu and Zhao 2015 data as read by S5 (Europe PMC full text): electrolyte dependence ===
+10 M KOH, from the Tafel plot, 75 % iR-compensated polarisation curve: 0.24 V at 0.5 A/cm2, 0.27 V at 1 A/cm2
+30 wt% KOH: 0.27 V at 0.1 A/cm2, 0.34 V at 0.3 A/cm2, 32 mV/dec -> extrapolated to 1 A/cm2: 0.357 V (S5 extrapolation)

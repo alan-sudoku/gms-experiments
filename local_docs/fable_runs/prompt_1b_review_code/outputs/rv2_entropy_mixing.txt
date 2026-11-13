@@ -1,0 +1,18 @@
+RV2 exhaust-mixing share  (level: derived, unverified)
+
+=== (a) closed form from B16 header values ===
+Cu plate                 dT_air=22.16 K  S_mix=1.1882e-02  S_th=2.7993e-02  share=0.4244  (leading order 0.4082)
+Al plate k=150           dT_air=24.01 K  S_mix=1.2820e-02  S_th=3.1923e-02  share=0.4016  (leading order 0.3827)
+Al pin k=150             dT_air=33.82 K  S_mix=1.7699e-02  S_th=4.0700e-02  share=0.4349  (leading order 0.4107)
+Gyroid c_f 0.3 chi 0.2   dT_air=24.80 K  S_mix=1.3219e-02  S_th=3.6218e-02  share=0.3650  (leading order 0.3435)
+
+=== (b) Cu optimum (38 x 0.3 mm, 0.1 W) with the 2-D height-unmixed closure ===
+R_2D=0.27246 T_root=325.396  exhaust strips 319.01..325.25 K  mixing (stratified)=1.1916e-02, (mixed-mean)=1.1882e-02, S_th=2.8420e-02
+share stratified 0.4193 ; share if exhaust were pre-mixed 0.4181
+
+=== (c) Cu optimum share across air power (RV1 set S, 1-D) ===
+P= 0.01 W: R=0.5348 1/C=0.4492 share=0.448
+P= 0.03 W: R=0.3833 1/C=0.3214 share=0.438
+P= 0.10 W: R=0.2679 1/C=0.2216 share=0.424
+P= 0.30 W: R=0.1947 1/C=0.1577 share=0.410
+P= 1.00 W: R=0.1386 1/C=0.1108 share=0.399

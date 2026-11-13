@@ -1,0 +1,30 @@
+RV3 spreading check  (level: derived, unverified)
+
+=== (a) Fourier series against S2's closed form (t_b = 5 mm), R_base = T/Q - R0 ===
+k=390 modes=300: Fourier R_base,max=0.08246 R_base,avg=0.06324
+k=390 modes=600: Fourier R_base,max=0.08246 R_base,avg=0.06324
+        S2 closed form (circular equivalent): R_max=0.08075 R_avg=0.05942
+k=150 modes=300: Fourier R_base,max=0.20760 R_base,avg=0.15909
+k=150 modes=600: Fourier R_base,max=0.20760 R_base,avg=0.15909
+        S2 closed form (circular equivalent): R_max=0.20543 R_avg=0.15121
+k=100 modes=300: Fourier R_base,max=0.30471 R_base,avg=0.23340
+k=100 modes=600: Fourier R_base,max=0.30472 R_base,avg=0.23340
+        S2 closed form (circular equivalent): R_max=0.30355 R_avg=0.22349
+Al(150) - Cu penalty at t_b = 5 mm: Fourier max 0.1251 avg 0.0958 K/W; S2 0.1247 / 0.0918
+
+=== (b) T_hot over the source surface (uniform flux): harmonic, arithmetic, max ===
+k=390: T_harm=331.2071 T_arith=331.2119 (diff 0.0047 K) T_max=333.190 ; Q(1/T0-1/T_max) / Q(1/T0-1/T_harm) - 1 = 0.0537
+k=150: T_harm=344.3242 T_arith=344.3534 (diff 0.0292 K) T_max=349.347 ; Q(1/T0-1/T_max) / Q(1/T0-1/T_harm) - 1 = 0.0928
+
+=== (c) 3-D finite volume: check against Fourier, then Al base with Cu slug ===
+k=390 FV(60x60x10): R_max=0.08248 R_avg=0.06357 (CG its 246) ; Fourier R_max=0.08246 R_avg=0.06324
+k=150 FV(60x60x10): R_max=0.20762 R_avg=0.15993 (CG its 241) ; Fourier R_max=0.20760 R_avg=0.15909
+Al k=150 base with Cu slug 20 x 20 x 5 mm (Cu 0.018 kg), Al fins R0=0.30437: base R_max=0.13721, total peak R=0.4416 K/W
+Al k=150 base with Cu slug 30 x 30 x 5 mm (Cu 0.040 kg), Al fins R0=0.30437: base R_max=0.10494, total peak R=0.4093 K/W
+Al k=150 base with Cu slug 40 x 40 x 5 mm (Cu 0.072 kg), Al fins R0=0.30437: base R_max=0.09011, total peak R=0.3945 K/W
+
+=== (d) Peak resistance (base max + fin side), t_b = 5 mm, uniform-h fin side, no TIM ===
+all Cu (Cu fins, Cu base)    peak R = 0.3504 K/W (T_max - T_in = 35.0 K); copper mass 0.345 kg
+Cu base + Al k=150 fins      peak R = 0.3871 K/W (T_max - T_in = 38.7 K); copper mass 0.161 kg
+all Al k=150                 peak R = 0.5120 K/W (T_max - T_in = 51.2 K); copper mass 0.000 kg
+all Al k=100                 peak R = 0.6295 K/W (T_max - T_in = 63.0 K); copper mass 0.000 kg

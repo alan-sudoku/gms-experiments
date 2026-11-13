@@ -1,0 +1,25 @@
+RV4 gyroid chi thresholds  (level: derived, unverified)
+
+=== k_eff = HS, k_s = 150, P_air = 0.1 W, a <= 10 mm ===
+c_f=1.0 chi_min(Cu 0.2679)=none chi_min(Al plate 0.3044)=none ; at chi=0.35 best R=0.3543 a=10.0 mm rho=0.10 Re_h=583
+c_f=0.3 chi_min(Cu 0.2679)=0.659 chi_min(Al plate 0.3044)=0.342 ; at chi=0.35 best R=0.3029 a=10.0 mm rho=0.20 Re_h=780
+c_f=0.1 chi_min(Cu 0.2679)=0.535 chi_min(Al plate 0.3044)=0.346 ; at chi=0.35 best R=0.3034 a=6.0 mm rho=0.25 Re_h=528
+
+=== k_eff = half, k_s = 150, P_air = 0.1 W, a <= 10 mm ===
+c_f=1.0 chi_min(Cu 0.2679)=none chi_min(Al plate 0.3044)=none ; at chi=0.35 best R=0.3638 a=10.0 mm rho=0.10 Re_h=583
+c_f=0.3 chi_min(Cu 0.2679)=0.836 chi_min(Al plate 0.3044)=0.446 ; at chi=0.35 best R=0.3222 a=10.0 mm rho=0.20 Re_h=780
+c_f=0.1 chi_min(Cu 0.2679)=0.690 chi_min(Al plate 0.3044)=0.448 ; at chi=0.35 best R=0.3266 a=6.0 mm rho=0.30 Re_h=491
+
+=== k_eff = third, k_s = 150, P_air = 0.1 W, a <= 10 mm ===
+c_f=1.0 chi_min(Cu 0.2679)=none chi_min(Al plate 0.3044)=none ; at chi=0.35 best R=0.3787 a=10.0 mm rho=0.10 Re_h=583
+c_f=0.3 chi_min(Cu 0.2679)=none chi_min(Al plate 0.3044)=0.601 ; at chi=0.35 best R=0.3470 a=10.0 mm rho=0.25 Re_h=730
+c_f=0.1 chi_min(Cu 0.2679)=0.937 chi_min(Al plate 0.3044)=0.607 ; at chi=0.35 best R=0.3561 a=5.0 mm rho=0.30 Re_h=382
+
+=== (c) chi of the plate-fin optima themselves (j / f_app, channel friction only) ===
+Cu 38 x 0.3 mm         Re_Dh=419 f_app=0.0641 j=0.0204 chi=j/f_app=0.318
+Al k=150 37 x 0.4 mm   Re_Dh=398 f_app=0.0667 j=0.0214 chi=j/f_app=0.321
+
+=== (d) chi_min when the plate targets use RV1's 2-D (height-unmixed) closure (Cu 0.2725, Al k=150 0.3159) ===
+    (the 1-D mixed-air closure suits a lattice better than a plate channel, so plate targets move up)
+c_f=0.3 HS: chi_min(Cu 2-D)=0.601 chi_min(Al plate 2-D)=0.292
+c_f=0.1 HS: chi_min(Cu 2-D)=0.505 chi_min(Al plate 2-D)=0.304

@@ -1,0 +1,19 @@
+RV6 regimes  (level: derived, unverified)
+
+=== (a) same fan, designs re-optimised on the fan curve ===
+fan ( 30 Pa,  8.0 L/s): Cu R=0.3142 (Nf=34, P_air=0.059 W) ; Al k=150 R=0.3566 (x1.135, Nf=33, P_air=0.057 W) ; Al k=100 R=0.3810 (x1.213, Nf=34, P_air=0.056 W)
+fan ( 60 Pa, 12.0 L/s): Cu R=0.2292 (Nf=40, P_air=0.171 W) ; Al k=150 R=0.2659 (x1.160, Nf=38, P_air=0.166 W) ; Al k=100 R=0.2866 (x1.251, Nf=39, P_air=0.163 W)
+fan (150 Pa, 20.0 L/s): Cu R=0.1540 (Nf=48, P_air=0.690 W) ; Al k=150 R=0.1844 (x1.197, Nf=46, P_air=0.650 W) ; Al k=100 R=0.2009 (x1.305, Nf=47, P_air=0.637 W)
+
+=== (b) mass-limited: Cu sink at the Al k=150 optimum's mass (0.1192 kg), 0.1 W air power, envelope 35 mm ===
+best Cu, uniform source:       R_total=0.5420 (R_fa=0.5413, t_b=1.0 mm, t=0.3 mm, Nf=15, mass 0.1145 kg)
+best Cu, 20 x 20 mm source:    R_peak =0.8728 (R_fa=0.5413, t_b=1.0 mm, t=0.3 mm, Nf=15, mass 0.1145 kg)
+Al k=150 plate optimum (5 mm base, 30 mm fins, 0.1192 kg): uniform 0.3136 ; 20 mm source peak 0.5120
+
+=== (c) equal envelope (35 mm), Al k=150 with 10 mm base and 25 mm fins, 0.1 W ===
+Al k=150, t_b 10 mm, H 25 mm: R_fa=0.3305 (Nf=37 t=0.4 mm) ; peak with 20 mm source = 0.4866 ; vs t_b 5 mm/H 30 mm: 0.5120
+Cu reference (t_b 5 mm, H 30 mm) peak with 20 mm source: 0.3504
+
+=== (d) natural convection, vertical fins 60 mm tall, 30 mm deep, dT = 50 K ===
+s_opt=5.26 mm, t=0.3 mm, Nf=11, h=6.55 W/m2K, area 0.0396 m2 -> R >= 3.86 K/W (isothermal fins), dT at 100 W >= 386 K
+s_opt=5.26 mm, t=1.0 mm, Nf=10, h=6.55 W/m2K, area 0.0360 m2 -> R >= 4.24 K/W (isothermal fins), dT at 100 W >= 424 K
