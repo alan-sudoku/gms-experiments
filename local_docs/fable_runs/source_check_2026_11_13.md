@@ -83,7 +83,7 @@ From the second batch: Jin, Nakashima, Comodi, Frandsen (ECOS 2023, book pp. 109
 
 - K1, K2 (books), K4 and K5 (journal papers): not in the folder; still record-level.
 - Larssen et al. (2019): read at abstract and method level only; its tables and balances not checked.
-- Second batch (section 7): only Valero et al. (2018) pp. 11-12 and the Jin et al. ECOS paper p. 1093 and its reference list were read. Everything else in section 7 is a keyword ranking, not a reading.
+- Second batch (section 7): read were Valero et al. (2018) pp. 11-12, the Jin et al. ECOS paper p. 1093 and its reference list, and the two ECOS lead papers (section 8). Everything else in section 7 is a keyword ranking, not a reading.
 
 ## 7. Triage of the second batch (keyword ranking, not evidence)
 
@@ -92,8 +92,8 @@ Method: `pdf_triage.py` (in the user's PDF tools environment, outside the repo) 
 | Source | Ranking result | Verdict |
 |---|---|---|
 | Valero et al. (2018) | Reference environment on 17 of 23 pages; by-products on 9 | **Read in part; evidence** for decisive check (b), section 2. Also the updated reference environment (pp. 2-8, not read). |
-| ECOS 2023, pp. 20-34, Valero, Valero-Delgado, Torres, "The Future of Thermoeconomics after the School of Zaragoza" | Reference environment, Thanatia, Szargut | Lead for K25 (Thanatia) and the reference environment. Not read. |
-| ECOS 2023, pp. 53-62, "The future of Thermoeconomics: from industrial cost minimization toward cumulati[ve ...]" | Cost allocation, by-products, CExC, ECEC | Lead for decisive check (b) and K27 (ECEC). Not read. |
+| ECOS 2023, pp. 20-34, Valero, Valero-Delgado, Torres, "The Future of Thermoeconomics after the School of Zaragoza" | Reference environment, Thanatia, Szargut | **Read (pp. 20-29); see section 8.** Supports K25/K26 definitions and reference-environment dependence. |
+| ECOS 2023, pp. 53-62, Reini, Casisi, "The future of Thermoeconomics: from industrial cost minimization toward cumulative resources accounting and sustainability assessment" | Cost allocation, by-products, CExC, ECEC | **Read (pp. 53-62); see section 8.** Names the exergy-partition rule (V6), supports (a) and K27. |
 | ECOS 2023, pp. 41-52, Frangopoulos, Dimopoulos, "A contribution to the discussion on the Future of Thermoeconomics" | Cites K3; lists CExC, thermo-ecological cost | Background. Not read. |
 | ECOS 2023, pp. 178-189, TaesLab paper | By-products, waste cost allocation | Background (software). Not read. |
 | ECOS 2023, pp. 263-274, "Teaching Exergy to Engineering Students in view of the Energy Transition" | Cites Kotas (K8) and Szargut, Morris, Steward (K1) | Not a source for K8's formula; cites it only. Not read. |
@@ -102,4 +102,32 @@ Method: `pdf_triage.py` (in the user's PDF tools environment, outside the repo) 
 | Balcom (2022) thesis | CExC on pp. 29-50 | Applied study of waste disposal options. Not read. |
 | Prompt 3 (fatigue) | Only false matches ("Lattice Boltzmann") | Nothing in this batch. |
 | Remaining ECOS papers (about 350) | Next-ranked score 6-9: fuel exergy from heating values (pp. 143-152), thermoeconomic cost allocation in a heating and cooling system (pp. 298-310), nCO2PP cycle with a Szargut-based reference environment (pp. 252-262), sugarcane fermentation exergy cost (pp. 1594-1617), SOEC hydrogen exergoeconomics (pp. 275-286). Most others score 0-5, mostly economic or process studies | Possible background for the reference environment and cost allocation; none tied to an open item on this ranking. |
+
+## 8. Two ECOS 2023 lead papers (read)
+
+Both are position papers by senior authors of the field: definitions and positions, no new data. Page numbers are pages of the bound ECOS 2023 PDF. Quotations marked "image-checked" were compared with the page image.
+
+**Reini, M., Casisi, M., "The future of Thermoeconomics: from industrial cost minimization toward cumulative resources accounting and sustainability assessment" (pp. 53-62).**
+
+- **By-product rule of Exergy Cost Theory (ECT): exergy partition.** p. 53, image-checked: "If a process, or a component, obtains more than one Product at the same time, the total cost is allocated in proportion to the exergy content of each Product." The ECT references are Valero, Lozano, Muñoz (1986), Lozano, Valero (1993) "Theory of the exergetic cost", Energy 18, 939-960, and Valero, Serra, Uche (2006), J. Energy Resour. Technol. 128. So the two main exergy-costing schools differ on (b): Szargut's TEC uses substitution (Valero et al. 2018, section 2), ECT uses exergy partition. V6's recommended rule (exergy partition, no substitution credit) is the ECT rule.
+- **Decisive check (a), secondary.** p. 55, image-checked: "In its original formulation, CExC focused mainly on mineral resources, assuming an exergy cost equal to one for the chemical exergy of those resources, and it did not include any externalities." Same page: "A list of CExC values for a large number of finished materials and energy vectors are available in literature [16]", where [16] is Szargut (2005), Exergy Method (K2). So K2 is named as a source of CExC tables. (p. 58 then refers to waste remediation cost as "the cost considered by both the CExC and the EEA", which sits uneasily with "did not include any externalities" on p. 55; the paper does not reconcile the two.)
+- **K27 (Hau, Bakshi 2004).** p. 57, image-checked: ECEC "is identical to the CExC for what concern the contribution of mineral resources, whilst the exergy cost of the products of the biological systems are assumed to be equal to the emergy of the same products". Same page: the emergy approach uses "special allocation rules (the Emergy Algebra), ... only in part analogue to a conservative cost balance". Supports K27's cited use ("allocation questions in cumulative exergy accounting").
+- **Capital goods (c).** pp. 53, 56, 59 discuss capital only as money capital and human labour ("exergy equivalent of capital" in Extended Exergy Accounting). Nothing on whether CExC tables include machines and installations. (c) unchanged.
+
+**Valero, A., Valero-Delgado, A., Torres, C., "The Future of Thermoeconomics after the School of Zaragoza" (pp. 20-34).**
+
+- **K25, K26 definitions.** p. 24, image-checked: "we define 'replacement cost of an ore (at zero level)' as the exergy that would be necessary to replace, with current technology, the concentration of an ore found in its mine from its concentration in Thanatia [15]." p. 24, text only (outside the checked crop): thermodynamic rarity "is defined as the sum of the replacement cost plus the extraction cost". p. 24: because replacement from Thanatia is "extremely radical", rarity is also scaled to R1, R2, R3 (replacement from 10, 100, 1000 times the Thanatia concentration).
+- **Why not chemical exergy for minerals (plan C17 option c).** p. 23, text: the chemical exergy of non-fuel minerals is weak and similar between them, so "instead of valuing minerals by their exergy content, through, for instance, the well-known Reference Environment by Szargut [14], we have to value them by the amount of exergy needed to process them from cradle to market". Also p. 23: for metals extracted together ("metal companions"), "allocating costs between products and waste is necessary"; no rule given.
+- **Reference-environment dependence (K6, K14, D7 (ii)).** p. 29, image-checked: "the exergy calculation has the shortcoming that it depends on the reference environment applied, which in turn is an arbitrary selection of the user and not a physical behaviour of the system under analysis."
+- **Waste and recycling (context for Q2 dispersal and D6).** p. 27, text: waste is "the external irreversibility that generates entropy outside the system", "harmful because it still has exergy and we have to consume it to get rid of it"; production ("primary") and end-of-use ("secondary") waste are distinguished. p. 28, text: a "pinch point of recoverability always appears where total recycling is unattainable". Qualitative only; no formula for charging dispersed exergy.
+
+**Effect (proposals for the user; no finding changes).**
+
+| Item | Proposal |
+|---|---|
+| V6 | Optional: name the recommended rule's origin, ECT (Lozano, Valero 1993; stated by Reini, Casisi 2023, p. 53), and state that Szargut's TEC uses substitution instead (Valero et al. 2018, Eq. 10). This makes the V6 choice a choice between two named schools. |
+| Decisive check (a) | Now three supports: Szargut 1987 (primary, definition), Reini, Casisi 2023 (secondary), CEENE SI (CEENE side). |
+| K2 | Named as a source of CExC tables by Reini, Casisi 2023 (p. 55). Book itself still not read. |
+| K25, K26 | Replacement-cost and rarity definitions seen in a paper by the same authors (secondary to K25/K26). |
+| K27 | Cited use supported (ECEC = CExC for minerals, emergy for biological products, own allocation rules). |
 - Exergoecology Eq. 1: an image on the page, not in the `.txt`; not read.
