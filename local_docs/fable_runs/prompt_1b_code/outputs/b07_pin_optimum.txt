@@ -1,0 +1,420 @@
+Rows B07  (level: derived, unverified)
+Inputs used: k=[390, 200, 180, 150, 120, 100], P_air=[0.01, 0.03, 0.1, 0.3, 1.0], d_mm=[1.0, 1.5, 2.0, 3.0], p=[1.5, 1.75, 2.0, 2.5, 3.0]
+
+=== P_air = 0.01 W ===
+k=390 favourable  P_air=0.01 W
+   WINNER    R_fa=0.7039 K/W V=1.4953e-03 dP=6.688 Re=117.6 eta=0.797 NTU=1.673 dT=57.18 mass=0.2416 kg  PIN d=1.5mm p=3.00 N=169(NT=13,NL=13) k=390 fric=min nu=K 
+   runner-up R_fa=0.7049 K/W V=1.4273e-03 dP=7.006 Re=166.3 eta=0.848 NTU=1.896 dT=59.91 mass=0.2829 kg  PIN d=2.0mm p=2.50 N=144(NT=12,NL=12) k=390 fric=min nu=K 
+   runner-up R_fa=0.7157 K/W V=1.2691e-03 dP=7.880 Re=110.9 eta=0.796 NTU=2.836 dT=67.37 mass=0.2829 kg  PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) k=390 fric=min nu=K 
+   winner boundary: p on sweep edge
+ISSUE: B07 boundary optimum (favourable) k=390 P=0.01 W: p on sweep edge (PIN d=1.5mm p=3.00 N=169(NT=13,NL=13) k=390 fric=min nu=K)
+   ratio to Cu plate-fin optimum = 1.316 ; to Al plate-fin optimum (same k) = 1.316
+   other combinations (winner each):
+     fav(NuK,min fric)  R_fa=0.7039 Re_d=118 dP=6.69 V=1.495e-03 PIN d=1.5mm p=3.00 N=169(NT=13,NL=13) 
+     NuK,fK             R_fa=0.8190 Re_d=246 dP=8.53 V=1.172e-03 PIN d=3.0mm p=2.00 N=100(NT=10,NL=10) 
+     NuK,fJ             R_fa=0.7039 Re_d=118 dP=6.69 V=1.495e-03 PIN d=1.5mm p=3.00 N=169(NT=13,NL=13) 
+     NuZ,fK             R_fa=0.9071 Re_d=133 dP=8.74 V=1.144e-03 PIN d=2.0mm p=2.50 N=144(NT=12,NL=12) 
+     NuZ,fJ             R_fa=0.7296 Re_d=66 dP=7.96 V=1.256e-03 PIN d=1.0mm p=3.00 N=400(NT=20,NL=20) 
+   spread over the four pure combinations (max/min R_fa) = 1.289
+k=200 favourable  P_air=0.01 W
+   WINNER    R_fa=0.7334 K/W V=1.4273e-03 dP=7.006 Re=166.3 eta=0.747 NTU=1.698 dT=59.91 mass=0.0843 kg  PIN d=2.0mm p=2.50 N=144(NT=12,NL=12) k=200 fric=min nu=K 
+   runner-up R_fa=0.7372 K/W V=1.2691e-03 dP=7.880 Re=110.9 eta=0.676 NTU=2.452 dT=67.37 mass=0.0843 kg  PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) k=200 fric=min nu=K 
+   runner-up R_fa=0.7433 K/W V=1.2559e-03 dP=7.963 Re=65.8 eta=0.569 NTU=2.476 dT=68.08 mass=0.0732 kg  PIN d=1.0mm p=3.00 N=400(NT=20,NL=20) k=200 fric=min nu=K 
+   winner boundary: interior of sweep
+   ratio to Cu plate-fin optimum = 1.371 ; to Al plate-fin optimum (same k) = 1.287
+   other combinations (winner each):
+     fav(NuK,min fric)  R_fa=0.7334 Re_d=166 dP=7.01 V=1.427e-03 PIN d=2.0mm p=2.50 N=144(NT=12,NL=12) 
+     NuK,fK             R_fa=0.8370 Re_d=246 dP=8.53 V=1.172e-03 PIN d=3.0mm p=2.00 N=100(NT=10,NL=10) 
+     NuK,fJ             R_fa=0.7334 Re_d=166 dP=7.01 V=1.427e-03 PIN d=2.0mm p=2.50 N=144(NT=12,NL=12) 
+     NuZ,fK             R_fa=0.9310 Re_d=88 dP=9.94 V=1.006e-03 PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) 
+     NuZ,fJ             R_fa=0.7599 Re_d=66 dP=7.96 V=1.256e-03 PIN d=1.0mm p=3.00 N=400(NT=20,NL=20) 
+   spread over the four pure combinations (max/min R_fa) = 1.269
+k=180 favourable  P_air=0.01 W
+   WINNER    R_fa=0.7397 K/W V=1.4273e-03 dP=7.006 Re=166.3 eta=0.728 NTU=1.660 dT=59.91 mass=0.0843 kg  PIN d=2.0mm p=2.50 N=144(NT=12,NL=12) k=180 fric=min nu=K 
+   runner-up R_fa=0.7422 K/W V=1.2691e-03 dP=7.880 Re=110.9 eta=0.655 NTU=2.384 dT=67.37 mass=0.0843 kg  PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) k=180 fric=min nu=K 
+   runner-up R_fa=0.7494 K/W V=1.2559e-03 dP=7.963 Re=65.8 eta=0.547 NTU=2.391 dT=68.08 mass=0.0732 kg  PIN d=1.0mm p=3.00 N=400(NT=20,NL=20) k=180 fric=min nu=K 
+   winner boundary: interior of sweep
+   ratio to Cu plate-fin optimum = 1.383 ; to Al plate-fin optimum (same k) = 1.285
+   other combinations (winner each):
+     fav(NuK,min fric)  R_fa=0.7397 Re_d=166 dP=7.01 V=1.427e-03 PIN d=2.0mm p=2.50 N=144(NT=12,NL=12) 
+     NuK,fK             R_fa=0.8411 Re_d=246 dP=8.53 V=1.172e-03 PIN d=3.0mm p=2.00 N=100(NT=10,NL=10) 
+     NuK,fJ             R_fa=0.7397 Re_d=166 dP=7.01 V=1.427e-03 PIN d=2.0mm p=2.50 N=144(NT=12,NL=12) 
+     NuZ,fK             R_fa=0.9363 Re_d=88 dP=9.94 V=1.006e-03 PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) 
+     NuZ,fJ             R_fa=0.7667 Re_d=66 dP=7.96 V=1.256e-03 PIN d=1.0mm p=3.00 N=400(NT=20,NL=20) 
+   spread over the four pure combinations (max/min R_fa) = 1.266
+k=150 favourable  P_air=0.01 W
+   WINNER    R_fa=0.7520 K/W V=1.2691e-03 dP=7.880 Re=110.9 eta=0.617 NTU=2.262 dT=67.37 mass=0.0843 kg  PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) k=150 fric=min nu=K 
+   runner-up R_fa=0.7521 K/W V=1.4273e-03 dP=7.006 Re=166.3 eta=0.693 NTU=1.592 dT=59.91 mass=0.0843 kg  PIN d=2.0mm p=2.50 N=144(NT=12,NL=12) k=150 fric=min nu=K 
+   runner-up R_fa=0.7614 K/W V=1.2559e-03 dP=7.963 Re=65.8 eta=0.508 NTU=2.246 dT=68.08 mass=0.0732 kg  PIN d=1.0mm p=3.00 N=400(NT=20,NL=20) k=150 fric=min nu=K 
+   winner boundary: interior of sweep
+   ratio to Cu plate-fin optimum = 1.406 ; to Al plate-fin optimum (same k) = 1.283
+   other combinations (winner each):
+     fav(NuK,min fric)  R_fa=0.7520 Re_d=111 dP=7.88 V=1.269e-03 PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) 
+     NuK,fK             R_fa=0.8492 Re_d=246 dP=8.53 V=1.172e-03 PIN d=3.0mm p=2.00 N=100(NT=10,NL=10) 
+     NuK,fJ             R_fa=0.7520 Re_d=111 dP=7.88 V=1.269e-03 PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) 
+     NuZ,fK             R_fa=0.9469 Re_d=88 dP=9.94 V=1.006e-03 PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) 
+     NuZ,fJ             R_fa=0.7802 Re_d=66 dP=7.96 V=1.256e-03 PIN d=1.0mm p=3.00 N=400(NT=20,NL=20) 
+   spread over the four pure combinations (max/min R_fa) = 1.259
+k=120 favourable  P_air=0.01 W
+   WINNER    R_fa=0.7667 K/W V=1.2691e-03 dP=7.880 Re=110.9 eta=0.570 NTU=2.110 dT=67.37 mass=0.0843 kg  PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) k=120 fric=min nu=K 
+   runner-up R_fa=0.7703 K/W V=1.4273e-03 dP=7.006 Re=166.3 eta=0.648 NTU=1.504 dT=59.91 mass=0.0843 kg  PIN d=2.0mm p=2.50 N=144(NT=12,NL=12) k=120 fric=min nu=K 
+   runner-up R_fa=0.7789 K/W V=1.2559e-03 dP=7.963 Re=65.8 eta=0.462 NTU=2.073 dT=68.08 mass=0.0732 kg  PIN d=1.0mm p=3.00 N=400(NT=20,NL=20) k=120 fric=min nu=K 
+   winner boundary: interior of sweep
+   ratio to Cu plate-fin optimum = 1.434 ; to Al plate-fin optimum (same k) = 1.274
+   other combinations (winner each):
+     fav(NuK,min fric)  R_fa=0.7667 Re_d=111 dP=7.88 V=1.269e-03 PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) 
+     NuK,fK             R_fa=0.8613 Re_d=246 dP=8.53 V=1.172e-03 PIN d=3.0mm p=2.00 N=100(NT=10,NL=10) 
+     NuK,fJ             R_fa=0.7667 Re_d=111 dP=7.88 V=1.269e-03 PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) 
+     NuZ,fK             R_fa=0.9612 Re_d=135 dP=10.34 V=9.668e-04 PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) 
+     NuZ,fJ             R_fa=0.7997 Re_d=66 dP=7.96 V=1.256e-03 PIN d=1.0mm p=3.00 N=400(NT=20,NL=20) 
+   spread over the four pure combinations (max/min R_fa) = 1.254
+k=100 favourable  P_air=0.01 W
+   WINNER    R_fa=0.7809 K/W V=1.2691e-03 dP=7.880 Re=110.9 eta=0.531 NTU=1.986 dT=67.37 mass=0.0843 kg  PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) k=100 fric=min nu=K 
+   runner-up R_fa=0.7878 K/W V=1.4273e-03 dP=7.006 Re=166.3 eta=0.610 NTU=1.429 dT=59.91 mass=0.0843 kg  PIN d=2.0mm p=2.50 N=144(NT=12,NL=12) k=100 fric=min nu=K 
+   runner-up R_fa=0.7942 K/W V=1.3261e-03 dP=7.541 Re=278.1 eta=0.706 NTU=1.671 dT=64.48 mass=0.1047 kg  PIN d=3.0mm p=2.00 N=100(NT=10,NL=10) k=100 fric=min nu=K 
+   winner boundary: interior of sweep
+   ratio to Cu plate-fin optimum = 1.460 ; to Al plate-fin optimum (same k) = 1.267
+   other combinations (winner each):
+     fav(NuK,min fric)  R_fa=0.7809 Re_d=111 dP=7.88 V=1.269e-03 PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) 
+     NuK,fK             R_fa=0.8733 Re_d=246 dP=8.53 V=1.172e-03 PIN d=3.0mm p=2.00 N=100(NT=10,NL=10) 
+     NuK,fJ             R_fa=0.7809 Re_d=111 dP=7.88 V=1.269e-03 PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) 
+     NuZ,fK             R_fa=0.9713 Re_d=135 dP=10.34 V=9.668e-04 PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) 
+     NuZ,fJ             R_fa=0.8184 Re_d=66 dP=7.96 V=1.256e-03 PIN d=1.0mm p=3.00 N=400(NT=20,NL=20) 
+   spread over the four pure combinations (max/min R_fa) = 1.244
+
+=== P_air = 0.03 W ===
+k=390 favourable  P_air=0.03 W
+   WINNER    R_fa=0.5112 K/W V=1.8490e-03 dP=16.225 Re=96.9 eta=0.668 NTU=2.349 dT=46.24 mass=0.2457 kg  PIN d=1.0mm p=3.00 N=400(NT=20,NL=20) k=390 fric=min nu=K 
+   runner-up R_fa=0.5113 K/W V=1.8685e-03 dP=16.056 Re=163.3 eta=0.764 NTU=2.254 dT=45.76 mass=0.2829 kg  PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) k=390 fric=min nu=K 
+   runner-up R_fa=0.5206 K/W V=2.1015e-03 dP=14.276 Re=244.8 eta=0.822 NTU=1.521 dT=40.69 mass=0.2829 kg  PIN d=2.0mm p=2.50 N=144(NT=12,NL=12) k=390 fric=min nu=K 
+   winner boundary: d on sweep edge; p on sweep edge
+ISSUE: B07 boundary optimum (favourable) k=390 P=0.03 W: d on sweep edge; p on sweep edge (PIN d=1.0mm p=3.00 N=400(NT=20,NL=20) k=390 fric=min nu=K)
+   ratio to Cu plate-fin optimum = 1.334 ; to Al plate-fin optimum (same k) = 1.334
+   other combinations (winner each):
+     fav(NuK,min fric)  R_fa=0.5112 Re_d=97 dP=16.22 V=1.849e-03 PIN d=1.0mm p=3.00 N=400(NT=20,NL=20) 
+     NuK,fK             R_fa=0.5868 Re_d=368 dP=17.10 V=1.755e-03 PIN d=3.0mm p=2.00 N=100(NT=10,NL=10) 
+     NuK,fJ             R_fa=0.5112 Re_d=97 dP=16.22 V=1.849e-03 PIN d=1.0mm p=3.00 N=400(NT=20,NL=20) 
+     NuZ,fK             R_fa=0.6495 Re_d=131 dP=20.04 V=1.497e-03 PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) 
+     NuZ,fJ             R_fa=0.5293 Re_d=97 dP=16.22 V=1.849e-03 PIN d=1.0mm p=3.00 N=400(NT=20,NL=20) 
+   spread over the four pure combinations (max/min R_fa) = 1.270
+k=200 favourable  P_air=0.03 W
+   WINNER    R_fa=0.5365 K/W V=1.8685e-03 dP=16.056 Re=163.3 eta=0.637 NTU=1.917 dT=45.76 mass=0.0843 kg  PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) k=200 fric=min nu=K 
+   runner-up R_fa=0.5425 K/W V=1.8490e-03 dP=16.225 Re=96.9 eta=0.528 NTU=1.913 dT=46.24 mass=0.0732 kg  PIN d=1.0mm p=3.00 N=400(NT=20,NL=20) k=200 fric=min nu=K 
+   runner-up R_fa=0.5509 K/W V=2.1015e-03 dP=14.276 Re=244.8 eta=0.711 NTU=1.341 dT=40.69 mass=0.0843 kg  PIN d=2.0mm p=2.50 N=144(NT=12,NL=12) k=200 fric=min nu=K 
+   winner boundary: interior of sweep
+   ratio to Cu plate-fin optimum = 1.400 ; to Al plate-fin optimum (same k) = 1.299
+   other combinations (winner each):
+     fav(NuK,min fric)  R_fa=0.5365 Re_d=163 dP=16.06 V=1.868e-03 PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) 
+     NuK,fK             R_fa=0.6069 Re_d=368 dP=17.10 V=1.755e-03 PIN d=3.0mm p=2.00 N=100(NT=10,NL=10) 
+     NuK,fJ             R_fa=0.5365 Re_d=163 dP=16.06 V=1.868e-03 PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) 
+     NuZ,fK             R_fa=0.6684 Re_d=203 dP=20.68 V=1.451e-03 PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) 
+     NuZ,fJ             R_fa=0.5648 Re_d=97 dP=16.22 V=1.849e-03 PIN d=1.0mm p=3.00 N=400(NT=20,NL=20) 
+   spread over the four pure combinations (max/min R_fa) = 1.246
+k=180 favourable  P_air=0.03 W
+   WINNER    R_fa=0.5422 K/W V=1.8685e-03 dP=16.056 Re=163.3 eta=0.615 NTU=1.858 dT=45.76 mass=0.0843 kg  PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) k=180 fric=min nu=K 
+   runner-up R_fa=0.5493 K/W V=1.8490e-03 dP=16.225 Re=96.9 eta=0.506 NTU=1.844 dT=46.24 mass=0.0732 kg  PIN d=1.0mm p=3.00 N=400(NT=20,NL=20) k=180 fric=min nu=K 
+   runner-up R_fa=0.5575 K/W V=2.1015e-03 dP=14.276 Re=244.8 eta=0.691 NTU=1.308 dT=40.69 mass=0.0843 kg  PIN d=2.0mm p=2.50 N=144(NT=12,NL=12) k=180 fric=min nu=K 
+   winner boundary: interior of sweep
+   ratio to Cu plate-fin optimum = 1.415 ; to Al plate-fin optimum (same k) = 1.298
+   other combinations (winner each):
+     fav(NuK,min fric)  R_fa=0.5422 Re_d=163 dP=16.06 V=1.868e-03 PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) 
+     NuK,fK             R_fa=0.6114 Re_d=368 dP=17.10 V=1.755e-03 PIN d=3.0mm p=2.00 N=100(NT=10,NL=10) 
+     NuK,fJ             R_fa=0.5422 Re_d=163 dP=16.06 V=1.868e-03 PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) 
+     NuZ,fK             R_fa=0.6725 Re_d=203 dP=20.68 V=1.451e-03 PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) 
+     NuZ,fJ             R_fa=0.5724 Re_d=97 dP=16.22 V=1.849e-03 PIN d=1.0mm p=3.00 N=400(NT=20,NL=20) 
+   spread over the four pure combinations (max/min R_fa) = 1.240
+k=150 favourable  P_air=0.03 W
+   WINNER    R_fa=0.5532 K/W V=1.8685e-03 dP=16.056 Re=163.3 eta=0.576 NTU=1.756 dT=45.76 mass=0.0843 kg  PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) k=150 fric=min nu=K 
+   runner-up R_fa=0.5625 K/W V=1.8490e-03 dP=16.225 Re=96.9 eta=0.468 NTU=1.727 dT=46.24 mass=0.0732 kg  PIN d=1.0mm p=3.00 N=400(NT=20,NL=20) k=150 fric=min nu=K 
+   runner-up R_fa=0.5673 K/W V=1.6544e-03 dP=18.133 Re=231.3 eta=0.643 NTU=2.419 dT=51.68 mass=0.1047 kg  PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) k=150 fric=min nu=K 
+   winner boundary: interior of sweep
+   ratio to Cu plate-fin optimum = 1.443 ; to Al plate-fin optimum (same k) = 1.295
+   other combinations (winner each):
+     fav(NuK,min fric)  R_fa=0.5532 Re_d=163 dP=16.06 V=1.868e-03 PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) 
+     NuK,fK             R_fa=0.6203 Re_d=368 dP=17.10 V=1.755e-03 PIN d=3.0mm p=2.00 N=100(NT=10,NL=10) 
+     NuK,fJ             R_fa=0.5532 Re_d=163 dP=16.06 V=1.868e-03 PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) 
+     NuZ,fK             R_fa=0.6807 Re_d=203 dP=20.68 V=1.451e-03 PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) 
+     NuZ,fJ             R_fa=0.5873 Re_d=97 dP=16.22 V=1.849e-03 PIN d=1.0mm p=3.00 N=400(NT=20,NL=20) 
+   spread over the four pure combinations (max/min R_fa) = 1.231
+k=120 favourable  P_air=0.03 W
+   WINNER    R_fa=0.5691 K/W V=1.8685e-03 dP=16.056 Re=163.3 eta=0.529 NTU=1.630 dT=45.76 mass=0.0843 kg  PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) k=120 fric=min nu=K 
+   runner-up R_fa=0.5770 K/W V=1.6544e-03 dP=18.133 Re=231.3 eta=0.596 NTU=2.260 dT=51.68 mass=0.1047 kg  PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) k=120 fric=min nu=K 
+   runner-up R_fa=0.5810 K/W V=1.8490e-03 dP=16.225 Re=96.9 eta=0.424 NTU=1.589 dT=46.24 mass=0.0732 kg  PIN d=1.0mm p=3.00 N=400(NT=20,NL=20) k=120 fric=min nu=K 
+   winner boundary: interior of sweep
+   ratio to Cu plate-fin optimum = 1.485 ; to Al plate-fin optimum (same k) = 1.294
+   other combinations (winner each):
+     fav(NuK,min fric)  R_fa=0.5691 Re_d=163 dP=16.06 V=1.868e-03 PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) 
+     NuK,fK             R_fa=0.6333 Re_d=368 dP=17.10 V=1.755e-03 PIN d=3.0mm p=2.00 N=100(NT=10,NL=10) 
+     NuK,fJ             R_fa=0.5691 Re_d=163 dP=16.06 V=1.868e-03 PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) 
+     NuZ,fK             R_fa=0.6929 Re_d=203 dP=20.68 V=1.451e-03 PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) 
+     NuZ,fJ             R_fa=0.6040 Re_d=92 dP=18.95 V=1.583e-03 PIN d=1.0mm p=2.50 N=576(NT=24,NL=24) 
+   spread over the four pure combinations (max/min R_fa) = 1.218
+k=100 favourable  P_air=0.03 W
+   WINNER    R_fa=0.5842 K/W V=1.8685e-03 dP=16.056 Re=163.3 eta=0.491 NTU=1.529 dT=45.76 mass=0.0843 kg  PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) k=100 fric=min nu=K 
+   runner-up R_fa=0.5867 K/W V=1.6544e-03 dP=18.133 Re=231.3 eta=0.557 NTU=2.128 dT=51.68 mass=0.1047 kg  PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) k=100 fric=min nu=K 
+   runner-up R_fa=0.5966 K/W V=1.5833e-03 dP=18.948 Re=92.2 eta=0.388 NTU=2.356 dT=54.00 mass=0.0843 kg  PIN d=1.0mm p=2.50 N=576(NT=24,NL=24) k=100 fric=min nu=K 
+   winner boundary: interior of sweep
+   ratio to Cu plate-fin optimum = 1.524 ; to Al plate-fin optimum (same k) = 1.292
+   other combinations (winner each):
+     fav(NuK,min fric)  R_fa=0.5842 Re_d=163 dP=16.06 V=1.868e-03 PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) 
+     NuK,fK             R_fa=0.6461 Re_d=368 dP=17.10 V=1.755e-03 PIN d=3.0mm p=2.00 N=100(NT=10,NL=10) 
+     NuK,fJ             R_fa=0.5842 Re_d=163 dP=16.06 V=1.868e-03 PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) 
+     NuZ,fK             R_fa=0.7049 Re_d=203 dP=20.68 V=1.451e-03 PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) 
+     NuZ,fJ             R_fa=0.6162 Re_d=92 dP=18.95 V=1.583e-03 PIN d=1.0mm p=2.50 N=576(NT=24,NL=24) 
+   spread over the four pure combinations (max/min R_fa) = 1.207
+
+=== P_air = 0.1 W ===
+k=390 favourable  P_air=0.1 W
+   WINNER    R_fa=0.3630 K/W V=2.8550e-03 dP=35.026 Re=249.5 eta=0.727 NTU=1.743 dT=29.95 mass=0.2829 kg  PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) k=390 fric=min nu=K 
+   runner-up R_fa=0.3633 K/W V=2.8252e-03 dP=35.395 Re=148.1 eta=0.625 NTU=1.791 dT=30.26 mass=0.2457 kg  PIN d=1.0mm p=3.00 N=400(NT=20,NL=20) k=390 fric=min nu=K 
+   runner-up R_fa=0.3738 K/W V=2.4192e-03 dP=41.335 Re=140.9 eta=0.622 NTU=2.908 dT=35.34 mass=0.2829 kg  PIN d=1.0mm p=2.50 N=576(NT=24,NL=24) k=390 fric=min nu=K 
+   winner boundary: interior of sweep
+   ratio to Cu plate-fin optimum = 1.355 ; to Al plate-fin optimum (same k) = 1.355
+   other combinations (winner each):
+     fav(NuK,min fric)  R_fa=0.3630 Re_d=249 dP=35.03 V=2.855e-03 PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) 
+     NuK,fK             R_fa=0.4125 Re_d=316 dP=44.28 V=2.258e-03 PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) 
+     NuK,fJ             R_fa=0.3630 Re_d=249 dP=35.03 V=2.855e-03 PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) 
+     NuZ,fK             R_fa=0.4550 Re_d=580 dP=42.17 V=2.371e-03 PIN d=3.0mm p=1.75 N=121(NT=11,NL=11) 
+     NuZ,fJ             R_fa=0.3856 Re_d=148 dP=35.40 V=2.825e-03 PIN d=1.0mm p=3.00 N=400(NT=20,NL=20) 
+   spread over the four pure combinations (max/min R_fa) = 1.253
+k=200 favourable  P_air=0.1 W
+   WINNER    R_fa=0.3907 K/W V=2.8550e-03 dP=35.026 Re=249.5 eta=0.592 NTU=1.455 dT=29.95 mass=0.0843 kg  PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) k=200 fric=min nu=K 
+   runner-up R_fa=0.3912 K/W V=2.5279e-03 dP=39.559 Re=353.4 eta=0.659 NTU=2.000 dT=33.82 mass=0.1047 kg  PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) k=200 fric=min nu=K 
+   runner-up R_fa=0.3926 K/W V=2.4192e-03 dP=41.335 Re=140.9 eta=0.481 NTU=2.306 dT=35.34 mass=0.0843 kg  PIN d=1.0mm p=2.50 N=576(NT=24,NL=24) k=200 fric=min nu=K 
+   winner boundary: interior of sweep
+   ratio to Cu plate-fin optimum = 1.458 ; to Al plate-fin optimum (same k) = 1.334
+   other combinations (winner each):
+     fav(NuK,min fric)  R_fa=0.3907 Re_d=249 dP=35.03 V=2.855e-03 PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) 
+     NuK,fK             R_fa=0.4286 Re_d=316 dP=44.28 V=2.258e-03 PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) 
+     NuK,fJ             R_fa=0.3907 Re_d=249 dP=35.03 V=2.855e-03 PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) 
+     NuZ,fK             R_fa=0.4733 Re_d=580 dP=42.17 V=2.371e-03 PIN d=3.0mm p=1.75 N=121(NT=11,NL=11) 
+     NuZ,fJ             R_fa=0.4101 Re_d=141 dP=41.34 V=2.419e-03 PIN d=1.0mm p=2.50 N=576(NT=24,NL=24) 
+   spread over the four pure combinations (max/min R_fa) = 1.211
+k=180 favourable  P_air=0.1 W
+   WINNER    R_fa=0.3950 K/W V=2.5279e-03 dP=39.559 Re=353.4 eta=0.637 NTU=1.940 dT=33.82 mass=0.1047 kg  PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) k=180 fric=min nu=K 
+   runner-up R_fa=0.3966 K/W V=2.8550e-03 dP=35.026 Re=249.5 eta=0.570 NTU=1.407 dT=29.95 mass=0.0843 kg  PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) k=180 fric=min nu=K 
+   runner-up R_fa=0.3968 K/W V=2.4192e-03 dP=41.335 Re=140.9 eta=0.460 NTU=2.214 dT=35.34 mass=0.0843 kg  PIN d=1.0mm p=2.50 N=576(NT=24,NL=24) k=180 fric=min nu=K 
+   winner boundary: interior of sweep
+   ratio to Cu plate-fin optimum = 1.474 ; to Al plate-fin optimum (same k) = 1.331
+   other combinations (winner each):
+     fav(NuK,min fric)  R_fa=0.3950 Re_d=353 dP=39.56 V=2.528e-03 PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) 
+     NuK,fK             R_fa=0.4323 Re_d=316 dP=44.28 V=2.258e-03 PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) 
+     NuK,fJ             R_fa=0.3950 Re_d=353 dP=39.56 V=2.528e-03 PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) 
+     NuZ,fK             R_fa=0.4774 Re_d=580 dP=42.17 V=2.371e-03 PIN d=3.0mm p=1.75 N=121(NT=11,NL=11) 
+     NuZ,fJ             R_fa=0.4153 Re_d=141 dP=41.34 V=2.419e-03 PIN d=1.0mm p=2.50 N=576(NT=24,NL=24) 
+   spread over the four pure combinations (max/min R_fa) = 1.208
+k=150 favourable  P_air=0.1 W
+   WINNER    R_fa=0.4025 K/W V=2.5279e-03 dP=39.559 Re=353.4 eta=0.599 NTU=1.835 dT=33.82 mass=0.1047 kg  PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) k=150 fric=min nu=K 
+   runner-up R_fa=0.4050 K/W V=2.4192e-03 dP=41.335 Re=140.9 eta=0.424 NTU=2.061 dT=35.34 mass=0.0843 kg  PIN d=1.0mm p=2.50 N=576(NT=24,NL=24) k=150 fric=min nu=K 
+   runner-up R_fa=0.4081 K/W V=2.8550e-03 dP=35.026 Re=249.5 eta=0.531 NTU=1.324 dT=29.95 mass=0.0843 kg  PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) k=150 fric=min nu=K 
+   winner boundary: interior of sweep
+   ratio to Cu plate-fin optimum = 1.502 ; to Al plate-fin optimum (same k) = 1.322
+   other combinations (winner each):
+     fav(NuK,min fric)  R_fa=0.4025 Re_d=353 dP=39.56 V=2.528e-03 PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) 
+     NuK,fK             R_fa=0.4396 Re_d=316 dP=44.28 V=2.258e-03 PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) 
+     NuK,fJ             R_fa=0.4025 Re_d=353 dP=39.56 V=2.528e-03 PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) 
+     NuZ,fK             R_fa=0.4854 Re_d=580 dP=42.17 V=2.371e-03 PIN d=3.0mm p=1.75 N=121(NT=11,NL=11) 
+     NuZ,fJ             R_fa=0.4253 Re_d=141 dP=41.34 V=2.419e-03 PIN d=1.0mm p=2.50 N=576(NT=24,NL=24) 
+   spread over the four pure combinations (max/min R_fa) = 1.206
+k=120 favourable  P_air=0.1 W
+   WINNER    R_fa=0.4135 K/W V=2.5279e-03 dP=39.559 Re=353.4 eta=0.551 NTU=1.704 dT=33.82 mass=0.1047 kg  PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) k=120 fric=min nu=K 
+   runner-up R_fa=0.4169 K/W V=2.4192e-03 dP=41.335 Re=140.9 eta=0.382 NTU=1.883 dT=35.34 mass=0.0843 kg  PIN d=1.0mm p=2.50 N=576(NT=24,NL=24) k=120 fric=min nu=K 
+   runner-up R_fa=0.4203 K/W V=2.2476e-03 dP=44.492 Re=235.7 eta=0.473 NTU=2.356 dT=38.04 mass=0.1047 kg  PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) k=120 fric=min nu=K 
+   winner boundary: interior of sweep
+   ratio to Cu plate-fin optimum = 1.543 ; to Al plate-fin optimum (same k) = 1.313
+   other combinations (winner each):
+     fav(NuK,min fric)  R_fa=0.4135 Re_d=353 dP=39.56 V=2.528e-03 PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) 
+     NuK,fK             R_fa=0.4503 Re_d=316 dP=44.28 V=2.258e-03 PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) 
+     NuK,fJ             R_fa=0.4135 Re_d=353 dP=39.56 V=2.528e-03 PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) 
+     NuZ,fK             R_fa=0.4973 Re_d=580 dP=42.17 V=2.371e-03 PIN d=3.0mm p=1.75 N=121(NT=11,NL=11) 
+     NuZ,fJ             R_fa=0.4397 Re_d=141 dP=41.34 V=2.419e-03 PIN d=1.0mm p=2.50 N=576(NT=24,NL=24) 
+   spread over the four pure combinations (max/min R_fa) = 1.203
+k=100 favourable  P_air=0.1 W
+   WINNER    R_fa=0.4240 K/W V=2.5279e-03 dP=39.559 Re=353.4 eta=0.513 NTU=1.598 dT=33.82 mass=0.1047 kg  PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) k=100 fric=min nu=K 
+   runner-up R_fa=0.4281 K/W V=2.4192e-03 dP=41.335 Re=140.9 eta=0.351 NTU=1.747 dT=35.34 mass=0.0843 kg  PIN d=1.0mm p=2.50 N=576(NT=24,NL=24) k=100 fric=min nu=K 
+   runner-up R_fa=0.4283 K/W V=2.2476e-03 dP=44.492 Re=235.7 eta=0.437 NTU=2.192 dT=38.04 mass=0.1047 kg  PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) k=100 fric=min nu=K 
+   winner boundary: interior of sweep
+   ratio to Cu plate-fin optimum = 1.582 ; to Al plate-fin optimum (same k) = 1.305
+   other combinations (winner each):
+     fav(NuK,min fric)  R_fa=0.4240 Re_d=353 dP=39.56 V=2.528e-03 PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) 
+     NuK,fK             R_fa=0.4607 Re_d=316 dP=44.28 V=2.258e-03 PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) 
+     NuK,fJ             R_fa=0.4240 Re_d=353 dP=39.56 V=2.528e-03 PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) 
+     NuZ,fK             R_fa=0.5082 Re_d=207 dP=50.70 V=1.972e-03 PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) 
+     NuZ,fJ             R_fa=0.4532 Re_d=141 dP=41.34 V=2.419e-03 PIN d=1.0mm p=2.50 N=576(NT=24,NL=24) 
+   spread over the four pure combinations (max/min R_fa) = 1.199
+
+=== P_air = 0.3 W ===
+k=390 favourable  P_air=0.3 W
+   WINNER    R_fa=0.2682 K/W V=3.5619e-03 dP=84.225 Re=207.5 eta=0.581 NTU=2.253 dT=24.01 mass=0.2829 kg  PIN d=1.0mm p=2.50 N=576(NT=24,NL=24) k=390 fric=min nu=K 
+   runner-up R_fa=0.2724 K/W V=3.7218e-03 dP=80.606 Re=520.3 eta=0.749 NTU=1.854 dT=22.97 mass=0.3513 kg  PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) k=390 fric=min nu=K 
+   runner-up R_fa=0.2726 K/W V=4.2034e-03 dP=71.370 Re=367.3 eta=0.690 NTU=1.371 dT=20.34 mass=0.2829 kg  PIN d=1.5mm p=2.50 N=256(NT=16,NL=16) k=390 fric=min nu=K 
+   winner boundary: d on sweep edge
+ISSUE: B07 boundary optimum (favourable) k=390 P=0.3 W: d on sweep edge (PIN d=1.0mm p=2.50 N=576(NT=24,NL=24) k=390 fric=min nu=K)
+   ratio to Cu plate-fin optimum = 1.377 ; to Al plate-fin optimum (same k) = 1.377
+   other combinations (winner each):
+     fav(NuK,min fric)  R_fa=0.2682 Re_d=207 dP=84.22 V=3.562e-03 PIN d=1.0mm p=2.50 N=576(NT=24,NL=24) 
+     NuK,fK             R_fa=0.2944 Re_d=472 dP=88.84 V=3.377e-03 PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) 
+     NuK,fJ             R_fa=0.2682 Re_d=207 dP=84.22 V=3.562e-03 PIN d=1.0mm p=2.50 N=576(NT=24,NL=24) 
+     NuZ,fK             R_fa=0.3284 Re_d=310 dP=101.56 V=2.954e-03 PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) 
+     NuZ,fJ             R_fa=0.2845 Re_d=207 dP=84.22 V=3.562e-03 PIN d=1.0mm p=2.50 N=576(NT=24,NL=24) 
+   spread over the four pure combinations (max/min R_fa) = 1.224
+k=200 favourable  P_air=0.3 W
+   WINNER    R_fa=0.2898 K/W V=3.5619e-03 dP=84.225 Re=207.5 eta=0.442 NTU=1.763 dT=24.01 mass=0.0843 kg  PIN d=1.0mm p=2.50 N=576(NT=24,NL=24) k=200 fric=min nu=K 
+   runner-up R_fa=0.2911 K/W V=3.3092e-03 dP=90.656 Re=347.0 eta=0.539 NTU=2.187 dT=25.84 mass=0.1047 kg  PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) k=200 fric=min nu=K 
+   runner-up R_fa=0.2911 K/W V=3.7218e-03 dP=80.606 Re=520.3 eta=0.619 NTU=1.557 dT=22.97 mass=0.1047 kg  PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) k=200 fric=min nu=K 
+   winner boundary: d on sweep edge
+ISSUE: B07 boundary optimum (favourable) k=200 P=0.3 W: d on sweep edge (PIN d=1.0mm p=2.50 N=576(NT=24,NL=24) k=200 fric=min nu=K)
+   ratio to Cu plate-fin optimum = 1.488 ; to Al plate-fin optimum (same k) = 1.342
+   other combinations (winner each):
+     fav(NuK,min fric)  R_fa=0.2898 Re_d=207 dP=84.22 V=3.562e-03 PIN d=1.0mm p=2.50 N=576(NT=24,NL=24) 
+     NuK,fK             R_fa=0.3127 Re_d=472 dP=88.84 V=3.377e-03 PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) 
+     NuK,fJ             R_fa=0.2898 Re_d=207 dP=84.22 V=3.562e-03 PIN d=1.0mm p=2.50 N=576(NT=24,NL=24) 
+     NuZ,fK             R_fa=0.3469 Re_d=310 dP=101.56 V=2.954e-03 PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) 
+     NuZ,fJ             R_fa=0.3106 Re_d=207 dP=84.22 V=3.562e-03 PIN d=1.0mm p=2.50 N=576(NT=24,NL=24) 
+   spread over the four pure combinations (max/min R_fa) = 1.197
+k=180 favourable  P_air=0.3 W
+   WINNER    R_fa=0.2943 K/W V=3.3092e-03 dP=90.656 Re=347.0 eta=0.517 NTU=2.104 dT=25.84 mass=0.1047 kg  PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) k=180 fric=min nu=K 
+   runner-up R_fa=0.2943 K/W V=3.5619e-03 dP=84.225 Re=207.5 eta=0.422 NTU=1.691 dT=24.01 mass=0.0843 kg  PIN d=1.0mm p=2.50 N=576(NT=24,NL=24) k=180 fric=min nu=K 
+   runner-up R_fa=0.2951 K/W V=3.7218e-03 dP=80.606 Re=520.3 eta=0.596 NTU=1.507 dT=22.97 mass=0.1047 kg  PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) k=180 fric=min nu=K 
+   winner boundary: interior of sweep
+   ratio to Cu plate-fin optimum = 1.511 ; to Al plate-fin optimum (same k) = 1.341
+   other combinations (winner each):
+     fav(NuK,min fric)  R_fa=0.2943 Re_d=347 dP=90.66 V=3.309e-03 PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) 
+     NuK,fK             R_fa=0.3167 Re_d=472 dP=88.84 V=3.377e-03 PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) 
+     NuK,fJ             R_fa=0.2943 Re_d=347 dP=90.66 V=3.309e-03 PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) 
+     NuZ,fK             R_fa=0.3510 Re_d=310 dP=101.56 V=2.954e-03 PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) 
+     NuZ,fJ             R_fa=0.3159 Re_d=520 dP=80.61 V=3.722e-03 PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) 
+   spread over the four pure combinations (max/min R_fa) = 1.193
+k=150 favourable  P_air=0.3 W
+   WINNER    R_fa=0.3006 K/W V=3.3092e-03 dP=90.656 Re=347.0 eta=0.479 NTU=1.964 dT=25.84 mass=0.1047 kg  PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) k=150 fric=min nu=K 
+   runner-up R_fa=0.3031 K/W V=3.7218e-03 dP=80.606 Re=520.3 eta=0.558 NTU=1.419 dT=22.97 mass=0.1047 kg  PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) k=150 fric=min nu=K 
+   runner-up R_fa=0.3031 K/W V=3.5619e-03 dP=84.225 Re=207.5 eta=0.388 NTU=1.571 dT=24.01 mass=0.0843 kg  PIN d=1.0mm p=2.50 N=576(NT=24,NL=24) k=150 fric=min nu=K 
+   winner boundary: interior of sweep
+   ratio to Cu plate-fin optimum = 1.543 ; to Al plate-fin optimum (same k) = 1.332
+   other combinations (winner each):
+     fav(NuK,min fric)  R_fa=0.3006 Re_d=347 dP=90.66 V=3.309e-03 PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) 
+     NuK,fK             R_fa=0.3246 Re_d=472 dP=88.84 V=3.377e-03 PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) 
+     NuK,fJ             R_fa=0.3006 Re_d=347 dP=90.66 V=3.309e-03 PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) 
+     NuZ,fK             R_fa=0.3591 Re_d=310 dP=101.56 V=2.954e-03 PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) 
+     NuZ,fJ             R_fa=0.3247 Re_d=520 dP=80.61 V=3.722e-03 PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) 
+   spread over the four pure combinations (max/min R_fa) = 1.195
+k=120 favourable  P_air=0.3 W
+   WINNER    R_fa=0.3097 K/W V=3.3092e-03 dP=90.656 Re=347.0 eta=0.434 NTU=1.798 dT=25.84 mass=0.1047 kg  PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) k=120 fric=min nu=K 
+   runner-up R_fa=0.3144 K/W V=3.7218e-03 dP=80.606 Re=520.3 eta=0.510 NTU=1.312 dT=22.97 mass=0.1047 kg  PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) k=120 fric=min nu=K 
+   runner-up R_fa=0.3153 K/W V=3.5619e-03 dP=84.225 Re=207.5 eta=0.349 NTU=1.433 dT=24.01 mass=0.0843 kg  PIN d=1.0mm p=2.50 N=576(NT=24,NL=24) k=120 fric=min nu=K 
+   winner boundary: interior of sweep
+   ratio to Cu plate-fin optimum = 1.590 ; to Al plate-fin optimum (same k) = 1.321
+   other combinations (winner each):
+     fav(NuK,min fric)  R_fa=0.3097 Re_d=347 dP=90.66 V=3.309e-03 PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) 
+     NuK,fK             R_fa=0.3351 Re_d=472 dP=103.65 V=2.894e-03 PIN d=2.0mm p=1.75 N=289(NT=17,NL=17) 
+     NuK,fJ             R_fa=0.3097 Re_d=347 dP=90.66 V=3.309e-03 PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) 
+     NuZ,fK             R_fa=0.3709 Re_d=310 dP=101.56 V=2.954e-03 PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) 
+     NuZ,fJ             R_fa=0.3374 Re_d=520 dP=80.61 V=3.722e-03 PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) 
+   spread over the four pure combinations (max/min R_fa) = 1.198
+k=100 favourable  P_air=0.3 W
+   WINNER    R_fa=0.3184 K/W V=3.3092e-03 dP=90.656 Re=347.0 eta=0.400 NTU=1.669 dT=25.84 mass=0.1047 kg  PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) k=100 fric=min nu=K 
+   runner-up R_fa=0.3246 K/W V=3.0999e-03 dP=96.779 Re=505.6 eta=0.460 NTU=1.896 dT=27.58 mass=0.1208 kg  PIN d=2.0mm p=1.75 N=289(NT=17,NL=17) k=100 fric=min nu=K 
+   runner-up R_fa=0.3251 K/W V=3.7218e-03 dP=80.606 Re=520.3 eta=0.473 NTU=1.226 dT=22.97 mass=0.1047 kg  PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) k=100 fric=min nu=K 
+   winner boundary: interior of sweep
+   ratio to Cu plate-fin optimum = 1.635 ; to Al plate-fin optimum (same k) = 1.313
+   other combinations (winner each):
+     fav(NuK,min fric)  R_fa=0.3184 Re_d=347 dP=90.66 V=3.309e-03 PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) 
+     NuK,fK             R_fa=0.3423 Re_d=472 dP=103.65 V=2.894e-03 PIN d=2.0mm p=1.75 N=289(NT=17,NL=17) 
+     NuK,fJ             R_fa=0.3184 Re_d=347 dP=90.66 V=3.309e-03 PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) 
+     NuZ,fK             R_fa=0.3822 Re_d=310 dP=101.56 V=2.954e-03 PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) 
+     NuZ,fJ             R_fa=0.3469 Re_d=506 dP=96.78 V=3.100e-03 PIN d=2.0mm p=1.75 N=289(NT=17,NL=17) 
+   spread over the four pure combinations (max/min R_fa) = 1.200
+
+=== P_air = 1 W ===
+k=390 favourable  P_air=1 W
+   WINNER    R_fa=0.1925 K/W V=5.4424e-03 dP=183.741 Re=317.0 eta=0.536 NTU=1.694 dT=15.71 mass=0.2829 kg  PIN d=1.0mm p=2.50 N=576(NT=24,NL=24) k=390 fric=min nu=K 
+   runner-up R_fa=0.1939 K/W V=5.0563e-03 dP=197.772 Re=530.2 eta=0.636 NTU=2.058 dT=16.91 mass=0.3513 kg  PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) k=390 fric=min nu=K 
+   runner-up R_fa=0.1978 K/W V=5.6868e-03 dP=175.847 Re=795.1 eta=0.710 NTU=1.428 dT=15.04 mass=0.3513 kg  PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) k=390 fric=min nu=K 
+   winner boundary: d on sweep edge
+ISSUE: B07 boundary optimum (favourable) k=390 P=1 W: d on sweep edge (PIN d=1.0mm p=2.50 N=576(NT=24,NL=24) k=390 fric=min nu=K)
+   ratio to Cu plate-fin optimum = 1.389 ; to Al plate-fin optimum (same k) = 1.389
+   other combinations (winner each):
+     fav(NuK,min fric)  R_fa=0.1925 Re_d=317 dP=183.74 V=5.442e-03 PIN d=1.0mm p=2.50 N=576(NT=24,NL=24) 
+     NuK,fK             R_fa=0.2094 Re_d=739 dP=220.72 V=4.531e-03 PIN d=2.0mm p=1.75 N=289(NT=17,NL=17) 
+     NuK,fJ             R_fa=0.1925 Re_d=317 dP=183.74 V=5.442e-03 PIN d=1.0mm p=2.50 N=576(NT=24,NL=24) 
+     NuZ,fK             R_fa=0.2237 Re_d=739 dP=220.72 V=4.531e-03 PIN d=2.0mm p=1.75 N=289(NT=17,NL=17) 
+     NuZ,fJ             R_fa=0.2039 Re_d=530 dP=197.77 V=5.056e-03 PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) 
+   spread over the four pure combinations (max/min R_fa) = 1.162
+k=200 favourable  P_air=1 W
+   WINNER    R_fa=0.2100 K/W V=5.0563e-03 dP=197.772 Re=530.2 eta=0.495 NTU=1.636 dT=16.91 mass=0.1047 kg  PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) k=200 fric=min nu=K 
+   runner-up R_fa=0.2148 K/W V=4.7365e-03 dP=211.128 Re=772.6 eta=0.560 NTU=1.836 dT=18.05 mass=0.1208 kg  PIN d=2.0mm p=1.75 N=289(NT=17,NL=17) k=200 fric=min nu=K 
+   runner-up R_fa=0.2151 K/W V=5.4424e-03 dP=183.741 Re=317.0 eta=0.402 NTU=1.310 dT=15.71 mass=0.0843 kg  PIN d=1.0mm p=2.50 N=576(NT=24,NL=24) k=200 fric=min nu=K 
+   winner boundary: interior of sweep
+   ratio to Cu plate-fin optimum = 1.516 ; to Al plate-fin optimum (same k) = 1.343
+   other combinations (winner each):
+     fav(NuK,min fric)  R_fa=0.2100 Re_d=530 dP=197.77 V=5.056e-03 PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) 
+     NuK,fK             R_fa=0.2222 Re_d=739 dP=220.72 V=4.531e-03 PIN d=2.0mm p=1.75 N=289(NT=17,NL=17) 
+     NuK,fJ             R_fa=0.2100 Re_d=530 dP=197.77 V=5.056e-03 PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) 
+     NuZ,fK             R_fa=0.2391 Re_d=739 dP=220.72 V=4.531e-03 PIN d=2.0mm p=1.75 N=289(NT=17,NL=17) 
+     NuZ,fJ             R_fa=0.2223 Re_d=530 dP=197.77 V=5.056e-03 PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) 
+   spread over the four pure combinations (max/min R_fa) = 1.139
+k=180 favourable  P_air=1 W
+   WINNER    R_fa=0.2135 K/W V=5.0563e-03 dP=197.772 Re=530.2 eta=0.473 NTU=1.571 dT=16.91 mass=0.1047 kg  PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) k=180 fric=min nu=K 
+   runner-up R_fa=0.2176 K/W V=4.7365e-03 dP=211.128 Re=772.6 eta=0.538 NTU=1.769 dT=18.05 mass=0.1208 kg  PIN d=2.0mm p=1.75 N=289(NT=17,NL=17) k=180 fric=min nu=K 
+   runner-up R_fa=0.2188 K/W V=4.2846e-03 dP=233.394 Re=299.5 eta=0.373 NTU=2.431 dT=19.96 mass=0.1047 kg  PIN d=1.0mm p=2.00 N=900(NT=30,NL=30) k=180 fric=min nu=K 
+   winner boundary: interior of sweep
+   ratio to Cu plate-fin optimum = 1.541 ; to Al plate-fin optimum (same k) = 1.341
+   other combinations (winner each):
+     fav(NuK,min fric)  R_fa=0.2135 Re_d=530 dP=197.77 V=5.056e-03 PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) 
+     NuK,fK             R_fa=0.2251 Re_d=739 dP=220.72 V=4.531e-03 PIN d=2.0mm p=1.75 N=289(NT=17,NL=17) 
+     NuK,fJ             R_fa=0.2135 Re_d=530 dP=197.77 V=5.056e-03 PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) 
+     NuZ,fK             R_fa=0.2425 Re_d=739 dP=220.72 V=4.531e-03 PIN d=2.0mm p=1.75 N=289(NT=17,NL=17) 
+     NuZ,fJ             R_fa=0.2263 Re_d=530 dP=197.77 V=5.056e-03 PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) 
+   spread over the four pure combinations (max/min R_fa) = 1.136
+k=150 favourable  P_air=1 W
+   WINNER    R_fa=0.2202 K/W V=5.0563e-03 dP=197.772 Re=530.2 eta=0.437 NTU=1.461 dT=16.91 mass=0.1047 kg  PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) k=150 fric=min nu=K 
+   runner-up R_fa=0.2232 K/W V=4.2846e-03 dP=233.394 Re=299.5 eta=0.341 NTU=2.245 dT=19.96 mass=0.1047 kg  PIN d=1.0mm p=2.00 N=900(NT=30,NL=30) k=150 fric=min nu=K 
+   runner-up R_fa=0.2233 K/W V=4.7365e-03 dP=211.128 Re=772.6 eta=0.500 NTU=1.653 dT=18.05 mass=0.1208 kg  PIN d=2.0mm p=1.75 N=289(NT=17,NL=17) k=150 fric=min nu=K 
+   winner boundary: interior of sweep
+   ratio to Cu plate-fin optimum = 1.589 ; to Al plate-fin optimum (same k) = 1.339
+   other combinations (winner each):
+     fav(NuK,min fric)  R_fa=0.2202 Re_d=530 dP=197.77 V=5.056e-03 PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) 
+     NuK,fK             R_fa=0.2307 Re_d=739 dP=220.72 V=4.531e-03 PIN d=2.0mm p=1.75 N=289(NT=17,NL=17) 
+     NuK,fJ             R_fa=0.2202 Re_d=530 dP=197.77 V=5.056e-03 PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) 
+     NuZ,fK             R_fa=0.2492 Re_d=739 dP=220.72 V=4.531e-03 PIN d=2.0mm p=1.75 N=289(NT=17,NL=17) 
+     NuZ,fJ             R_fa=0.2339 Re_d=530 dP=197.77 V=5.056e-03 PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) 
+   spread over the four pure combinations (max/min R_fa) = 1.132
+k=120 favourable  P_air=1 W
+   WINNER    R_fa=0.2296 K/W V=4.2846e-03 dP=233.394 Re=299.5 eta=0.306 NTU=2.035 dT=19.96 mass=0.1047 kg  PIN d=1.0mm p=2.00 N=900(NT=30,NL=30) k=120 fric=min nu=K 
+   runner-up R_fa=0.2296 K/W V=5.0563e-03 dP=197.772 Re=530.2 eta=0.394 NTU=1.334 dT=16.91 mass=0.1047 kg  PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) k=120 fric=min nu=K 
+   runner-up R_fa=0.2313 K/W V=4.7365e-03 dP=211.128 Re=772.6 eta=0.454 NTU=1.516 dT=18.05 mass=0.1208 kg  PIN d=2.0mm p=1.75 N=289(NT=17,NL=17) k=120 fric=min nu=K 
+   winner boundary: d on sweep edge
+ISSUE: B07 boundary optimum (favourable) k=120 P=1 W: d on sweep edge (PIN d=1.0mm p=2.00 N=900(NT=30,NL=30) k=120 fric=min nu=K)
+   ratio to Cu plate-fin optimum = 1.657 ; to Al plate-fin optimum (same k) = 1.335
+   other combinations (winner each):
+     fav(NuK,min fric)  R_fa=0.2296 Re_d=300 dP=233.39 V=4.285e-03 PIN d=1.0mm p=2.00 N=900(NT=30,NL=30) 
+     NuK,fK             R_fa=0.2387 Re_d=739 dP=220.72 V=4.531e-03 PIN d=2.0mm p=1.75 N=289(NT=17,NL=17) 
+     NuK,fJ             R_fa=0.2296 Re_d=300 dP=233.39 V=4.285e-03 PIN d=1.0mm p=2.00 N=900(NT=30,NL=30) 
+     NuZ,fK             R_fa=0.2587 Re_d=739 dP=220.72 V=4.531e-03 PIN d=2.0mm p=1.75 N=289(NT=17,NL=17) 
+     NuZ,fJ             R_fa=0.2446 Re_d=530 dP=197.77 V=5.056e-03 PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) 
+   spread over the four pure combinations (max/min R_fa) = 1.127
+k=100 favourable  P_air=1 W
+   WINNER    R_fa=0.2356 K/W V=4.2846e-03 dP=233.394 Re=299.5 eta=0.280 NTU=1.878 dT=19.96 mass=0.1047 kg  PIN d=1.0mm p=2.00 N=900(NT=30,NL=30) k=100 fric=min nu=K 
+   runner-up R_fa=0.2383 K/W V=5.0563e-03 dP=197.772 Re=530.2 eta=0.362 NTU=1.237 dT=16.91 mass=0.1047 kg  PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) k=100 fric=min nu=K 
+   runner-up R_fa=0.2390 K/W V=4.7365e-03 dP=211.128 Re=772.6 eta=0.418 NTU=1.408 dT=18.05 mass=0.1208 kg  PIN d=2.0mm p=1.75 N=289(NT=17,NL=17) k=100 fric=min nu=K 
+   winner boundary: d on sweep edge
+ISSUE: B07 boundary optimum (favourable) k=100 P=1 W: d on sweep edge (PIN d=1.0mm p=2.00 N=900(NT=30,NL=30) k=100 fric=min nu=K)
+   ratio to Cu plate-fin optimum = 1.700 ; to Al plate-fin optimum (same k) = 1.316
+   other combinations (winner each):
+     fav(NuK,min fric)  R_fa=0.2356 Re_d=300 dP=233.39 V=4.285e-03 PIN d=1.0mm p=2.00 N=900(NT=30,NL=30) 
+     NuK,fK             R_fa=0.2463 Re_d=739 dP=220.72 V=4.531e-03 PIN d=2.0mm p=1.75 N=289(NT=17,NL=17) 
+     NuK,fJ             R_fa=0.2356 Re_d=300 dP=233.39 V=4.285e-03 PIN d=1.0mm p=2.00 N=900(NT=30,NL=30) 
+     NuZ,fK             R_fa=0.2678 Re_d=739 dP=220.72 V=4.531e-03 PIN d=2.0mm p=1.75 N=289(NT=17,NL=17) 
+     NuZ,fJ             R_fa=0.2546 Re_d=530 dP=197.77 V=5.056e-03 PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) 
+   spread over the four pure combinations (max/min R_fa) = 1.137
+
+=== Summary of favourable R_fa (rows k, columns P_air) ===
+    k         0.01        0.03         0.1         0.3           1
+  390       0.7039      0.5112      0.3630      0.2682      0.1925
+  200       0.7334      0.5365      0.3907      0.2898      0.2100
+  180       0.7397      0.5422      0.3950      0.2943      0.2135
+  150       0.7520      0.5532      0.4025      0.3006      0.2202
+  120       0.7667      0.5691      0.4135      0.3097      0.2296
+  100       0.7809      0.5842      0.4240      0.3184      0.2356
+RANGE-OK    R_fa k=150 favourable 0.1 W = 0.402501 (hand range 0.33 to 0.5)
+RANGE-OK    ratio to Cu plate-fin, k=150, 0.1 W = 1.5022 (hand range 1.2 to 1.8)

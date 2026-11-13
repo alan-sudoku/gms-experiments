@@ -1,0 +1,64 @@
+Rows B12  (level: derived, unverified)
+Inputs used: target_R_fa=0.2679410742391941, eta_fan=0.25, tau_life=157800000.0, T0=298.15, P_bracket=0.01-30 W
+
+Al plate k=100: R_fa(0.1 W)=0.3248 (ratio to Cu 1.2122), own n=-0.2688
+  P_req = 0.2054 W (ok [upper bound lowered to 23.566 W: no design with Re<2300 and a V root inside [1e-6, 0.2] m3/s above it]); dW_elec = 0.4215 W; dS = 1.414e-03 W/K; dE = 66.52 MJ
+  second estimate from n: 0.2046 W; factor between estimates 1.004
+PASS  B12 Al plate k=100: bisection and B10 estimate agree within factor 1.5  | factor 1.004
+   WIN R_fa=0.2680 V=4.0982e-03 dP=50.116 Re=395.8 eta=0.456 NTU=1.508 mass=0.1307 PF t=0.40mm Nf=43 s=1.019mm k=100 
+   ru2 R_fa=0.2681 V=4.2279e-03 dP=48.578 Re=417.8 eta=0.462 NTU=1.404 mass=0.1288 PF t=0.40mm Nf=42 s=1.054mm k=100 
+   ru3 R_fa=0.2685 V=3.9723e-03 dP=51.704 Re=375.1 eta=0.450 NTU=1.618 mass=0.1326 PF t=0.40mm Nf=44 s=0.986mm k=100 
+   winner boundary: t at sweep minimum
+ISSUE: B12 Al plate k=100 at P_req=0.205 W: winner on boundary: t at sweep minimum (PF t=0.40mm Nf=43 s=1.019mm k=100)
+
+Al plate k=150: R_fa(0.1 W)=0.3044 (ratio to Cu 1.1360), own n=-0.2762
+  P_req = 0.1592 W (ok [upper bound lowered to 23.566 W: no design with Re<2300 and a V root inside [1e-6, 0.2] m3/s above it]); dW_elec = 0.2366 W; dS = 7.937e-04 W/K; dE = 37.34 MJ
+  second estimate from n: 0.1586 W; factor between estimates 1.003
+PASS  B12 Al plate k=150: bisection and B10 estimate agree within factor 1.5  | factor 1.003
+   WIN R_fa=0.2679 V=4.0033e-03 dP=39.756 Re=414.9 eta=0.560 NTU=1.596 mass=0.1250 PF t=0.40mm Nf=40 s=1.128mm k=150 
+   ru2 R_fa=0.2680 V=4.1321e-03 dP=38.518 Re=439.0 eta=0.567 NTU=1.479 mass=0.1230 PF t=0.40mm Nf=39 s=1.168mm k=150 
+   ru3 R_fa=0.2685 V=3.8786e-03 dP=41.035 Re=392.4 eta=0.554 NTU=1.720 mass=0.1269 PF t=0.40mm Nf=41 s=1.090mm k=150 
+   winner boundary: t at sweep minimum
+ISSUE: B12 Al plate k=150 at P_req=0.159 W: winner on boundary: t at sweep minimum (PF t=0.40mm Nf=40 s=1.128mm k=150)
+
+Al plate k=180: R_fa(0.1 W)=0.2969 (ratio to Cu 1.1079), own n=-0.2792
+  P_req = 0.1446 W (ok [upper bound lowered to 23.566 W: no design with Re<2300 and a V root inside [1e-6, 0.2] m3/s above it]); dW_elec = 0.1785 W; dS = 5.987e-04 W/K; dE = 28.17 MJ
+  second estimate from n: 0.1443 W; factor between estimates 1.002
+PASS  B12 Al plate k=180: bisection and B10 estimate agree within factor 1.5  | factor 1.002
+   WIN R_fa=0.2679 V=3.9548e-03 dP=36.571 Re=420.1 eta=0.606 NTU=1.645 mass=0.1230 PF t=0.40mm Nf=39 s=1.168mm k=180 
+   ru2 R_fa=0.2679 V=4.0828e-03 dP=35.424 Re=444.9 eta=0.613 NTU=1.521 mass=0.1211 PF t=0.40mm Nf=38 s=1.211mm k=180 
+   ru3 R_fa=0.2687 V=3.8307e-03 dP=37.755 Re=397.0 eta=0.599 NTU=1.777 mass=0.1250 PF t=0.40mm Nf=40 s=1.128mm k=180 
+   winner boundary: t at sweep minimum
+ISSUE: B12 Al plate k=180 at P_req=0.145 W: winner on boundary: t at sweep minimum (PF t=0.40mm Nf=39 s=1.168mm k=180)
+
+Al plate k=200: R_fa(0.1 W)=0.2929 (ratio to Cu 1.0932), own n=-0.2809
+  P_req = 0.1374 W (ok [upper bound lowered to 23.566 W: no design with Re<2300 and a V root inside [1e-6, 0.2] m3/s above it]); dW_elec = 0.1496 W; dS = 5.019e-04 W/K; dE = 23.61 MJ
+  second estimate from n: 0.1373 W; factor between estimates 1.001
+PASS  B12 Al plate k=200: bisection and B10 estimate agree within factor 1.5  | factor 1.001
+   WIN R_fa=0.2679 V=3.9884e-03 dP=34.453 Re=434.6 eta=0.635 NTU=1.610 mass=0.1211 PF t=0.40mm Nf=38 s=1.211mm k=200 
+   ru2 R_fa=0.2683 V=4.1179e-03 dP=33.369 Re=460.5 eta=0.641 NTU=1.487 mass=0.1192 PF t=0.40mm Nf=37 s=1.256mm k=200 
+   ru3 R_fa=0.2683 V=3.8629e-03 dP=35.572 Re=410.4 eta=0.628 NTU=1.742 mass=0.1230 PF t=0.40mm Nf=39 s=1.168mm k=200 
+   winner boundary: t at sweep minimum
+ISSUE: B12 Al plate k=200 at P_req=0.137 W: winner on boundary: t at sweep minimum (PF t=0.40mm Nf=38 s=1.211mm k=200)
+
+Al pin k=150 fav: R_fa(0.1 W)=0.4025 (ratio to Cu 1.5022), own n=-0.2663
+  P_req = 0.4600 W (ok); dW_elec = 1.4402 W; dS = 4.830e-03 W/K; dE = 227.26 MJ
+  second estimate from n: 0.4608 W; factor between estimates 1.002
+PASS  B12 Al pin k=150 fav: bisection and B10 estimate agree within factor 1.5  | factor 1.002
+   WIN R_fa=0.2680 V=3.8468e-03 dP=119.590 Re=403.4 eta=0.464 NTU=1.769 mass=0.1047 PIN d=1.5mm p=2.00 N=400(NT=20,NL=20) k=150 fric=min nu=K 
+   ru2 R_fa=0.2730 V=4.1406e-03 dP=111.106 Re=241.2 eta=0.374 NTU=1.413 mass=0.0843 PIN d=1.0mm p=2.50 N=576(NT=24,NL=24) k=150 fric=min nu=K 
+   ru3 R_fa=0.2735 V=4.3265e-03 dP=106.332 Re=604.9 eta=0.542 NTU=1.282 mass=0.1047 PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) k=150 fric=min nu=K 
+   winner boundary: interior
+
+Gyroid ks=150 cf=0.3 chi=0.2: R_fa(0.1 W)=0.3517 (ratio to Cu 1.3125), own n=-0.2773
+  P_req = 0.2651 W (ok); dW_elec = 0.6604 W; dS = 2.215e-03 W/K; dE = 104.21 MJ
+  second estimate from n: 0.2666 W; factor between estimates 1.006
+PASS  B12 Gyroid ks=150 cf=0.3 chi=0.2: bisection and B10 estimate agree within factor 1.5  | factor 1.006
+   WIN R_fa=0.2679 V=4.4743e-03 dP=59.249 Re=1214.1 eta=0.567 NTU=1.249 mass=0.1346 GY a=12mm rho=0.30 ts=1.164mm k=150 cf=0.3 chi=0.2 homogenisation doubtful (H/a=2.50<3)
+   ru2 R_fa=0.2680 V=4.1929e-03 dP=63.225 Re=948.1 eta=0.540 NTU=1.431 mass=0.1346 GY a=10mm rho=0.30 ts=0.970mm k=150 cf=0.3 chi=0.2 
+   ru3 R_fa=0.2705 V=4.8387e-03 dP=54.787 Re=1641.2 eta=0.601 NTU=1.059 mass=0.1346 GY a=15mm rho=0.30 ts=1.456mm k=150 cf=0.3 chi=0.2 homogenisation doubtful (H/a=2.00<3)
+   winner boundary: rho on sweep edge
+ISSUE: B12 Gyroid ks=150 cf=0.3 chi=0.2 at P_req=0.265 W: winner on boundary: rho on sweep edge (GY a=12mm rho=0.30 ts=1.164mm k=150 cf=0.3 chi=0.2)
+RANGE-OK    Al plate k=150 P_req = 0.159158 (hand range 0.15 to 0.35)
+RANGE-OK    Al plate k=150 dW_elec = 0.236632 (hand range 0.2 to 1)
+RANGE-OK    Al plate k=150 dE [MJ] = 37.3406 (hand range 30 to 160)

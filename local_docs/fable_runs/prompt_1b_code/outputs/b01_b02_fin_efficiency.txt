@@ -1,0 +1,40 @@
+Rows B01, B02  (level: derived, unverified)
+Inputs used: H=0.03, t=0.0004, h=[40, 75, 150], k=[390, 200, 180, 150, 120, 100]
+
+=== B01 table: eta_analytic / eta_FD ===
+k\h                     40                    75                   150
+ 390   0.87009 / 0.87009     0.78550 / 0.78549     0.65802 / 0.65802  
+ 200   0.77917 / 0.77917     0.66316 / 0.66316     0.51740 / 0.51739  
+ 180   0.76159 / 0.76159     0.64159 / 0.64159     0.49536 / 0.49535  
+ 150   0.72925 / 0.72925     0.60343 / 0.60343     0.45805 / 0.45804  
+ 120   0.68671 / 0.68671     0.55602 / 0.55602     0.41436 / 0.41435  
+ 100   0.65000 / 0.65000     0.51740 / 0.51739     0.38066 / 0.38065  
+PASS  B01 max |eta - eta_FD| <= 0.005  | max diff 6.065e-06
+RANGE-OK    eta(h=75,k=390)=0.7855 hand 0.79 +-0.03
+RANGE-OK    eta(h=75,k=200)=0.6632 hand 0.66 +-0.03
+RANGE-OK    eta(h=75,k=180)=0.6416 hand 0.64 +-0.03
+RANGE-OK    eta(h=75,k=150)=0.6034 hand 0.60 +-0.03
+RANGE-OK    eta(h=75,k=120)=0.5560 hand 0.56 +-0.03
+RANGE-OK    eta(h=75,k=100)=0.5174 hand 0.52 +-0.03
+PASS  B01 limit k=1e6: eta within 1e-3 of 1  | eta=0.999888
+PASS  B01 limit k=1: eta within 1% of 1/(mH)  | eta=0.054433, 1/(mH)=0.054433
+INFO  FD at k=1 (not part of check)  | eta_FD=0.054391
+
+=== B02 Al thickness matching the Cu fin ===
+Inputs used: t_Cu=0.0004, N_f=32, W=0.06, sigma_Cu=0.7867
+k_Al= 100  t_Al=1.5600 mm  sigma_Al=0.1680  channel gap s=0.3252 mm  eta_Al(h=75)=0.785495378505 eta_Cu=0.785495378505 diff=0.00e+00
+k_Al= 120  t_Al=1.3000 mm  sigma_Al=0.3067  channel gap s=0.5935 mm  eta_Al(h=75)=0.785495378505 eta_Cu=0.785495378505 diff=0.00e+00
+k_Al= 150  t_Al=1.0400 mm  sigma_Al=0.4453  channel gap s=0.8619 mm  eta_Al(h=75)=0.785495378505 eta_Cu=0.785495378505 diff=0.00e+00
+k_Al= 180  t_Al=0.8667 mm  sigma_Al=0.5378  channel gap s=1.0409 mm  eta_Al(h=75)=0.785495378505 eta_Cu=0.785495378505 diff=0.00e+00
+k_Al= 200  t_Al=0.7800 mm  sigma_Al=0.5840  channel gap s=1.1303 mm  eta_Al(h=75)=0.785495378505 eta_Cu=0.785495378505 diff=0.00e+00
+INFO  B02 equal-eta check is an identity (eta depends on k*t only); printed, not counted
+RANGE-OK    t_Al min = 0.78 (hand range 0.78 to 1.56)
+RANGE-OK    t_Al max = 1.56 (hand range 0.78 to 1.56)
+RANGE-MISS  sigma_Al (k=100) = 0.168 (hand range 0.17 to 0.58)
+ISSUE: hand-range miss sigma_Al (k=100) = 0.168, range 0.17 to 0.58
+RANGE-MISS  sigma_Al (k=200) = 0.584 (hand range 0.17 to 0.58)
+ISSUE: hand-range miss sigma_Al (k=200) = 0.584, range 0.17 to 0.58
+RANGE-OK    sigma_Cu = 0.786667 (hand range 0.78 to 0.8)
+ISSUE: B02 inconsistency with 3.1 manufacturing limits: N_f=32 with t_Al=1.560 mm (k=100) gives channel gap 0.325 mm < 0.8 mm limit
+ISSUE: B02 inconsistency with 3.1 manufacturing limits: N_f=32 with t_Al=1.300 mm (k=120) gives channel gap 0.594 mm < 0.8 mm limit
+ISSUE: B02 / B01 check 'substitute t_Al into the B01 function and get equal eta' is true by construction (m depends on k*t only); flagged per instructions

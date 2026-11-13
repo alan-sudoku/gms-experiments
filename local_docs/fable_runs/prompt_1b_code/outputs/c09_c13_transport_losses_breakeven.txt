@@ -1,0 +1,69 @@
+Rows C09-C13  (level: derived, unverified)
+
+=== C09 diffusion-limited current ===
+Inputs used: D=5.27e-09, c=[1000, 6900], delta_N_um=[10, 50, 100], t_OH=0.73
+  c= 1000 mol/m3 delta_N= 10 um: j_lim=5.085e+04 A/m2 = 5.085 A/cm2 ; with migration (1/(1-0.73)): 18.833 A/cm2
+  c= 1000 mol/m3 delta_N= 50 um: j_lim=1.017e+04 A/m2 = 1.017 A/cm2 ; with migration (1/(1-0.73)): 3.767 A/cm2
+  c= 1000 mol/m3 delta_N=100 um: j_lim=5085 A/m2 = 0.508 A/cm2 ; with migration (1/(1-0.73)): 1.883 A/cm2
+  c= 6900 mol/m3 delta_N= 10 um: j_lim=3.508e+05 A/m2 = 35.085 A/cm2 ; with migration (1/(1-0.73)): 129.944 A/cm2
+  c= 6900 mol/m3 delta_N= 50 um: j_lim=7.017e+04 A/m2 = 7.017 A/cm2 ; with migration (1/(1-0.73)): 25.989 A/cm2
+  c= 6900 mol/m3 delta_N=100 um: j_lim=3.508e+04 A/m2 = 3.508 A/cm2 ; with migration (1/(1-0.73)): 12.994 A/cm2
+RANGE-OK    1 M, 50 um [A/cm2] (statement: about 1) = 1.01696 (hand range 0.9 to 1.1)
+RANGE-OK    1 M range [A/cm2] = 0.508478 (hand range 0.5 to 5)
+RANGE-MISS  1 M range max [A/cm2] = 5.08478 (hand range 0.5 to 5)
+ISSUE: hand-range miss 1 M range max [A/cm2] = 5.08478, range 0.5 to 5
+RANGE-OK    6.9 M range min [A/cm2] = 3.5085 (hand range 3.5 to 35)
+RANGE-MISS  6.9 M range max [A/cm2] = 35.085 (hand range 3.5 to 35)
+ISSUE: hand-range miss 6.9 M range max [A/cm2] = 35.085, range 3.5 to 35
+INFO  C09  | hand range 0.5-5 for 1 M spans delta_N = 100..10 um: j(100 um)=0.51, j(10 um)=5.08 A/cm2 (exact end points of the range)
+
+=== C10 bubble coverage ===
+  J=1000 A/m2: Theta=0.1827 (in (0,1))  d_eta: 10.37 mV (b=0.05139), 3.50 mV (b=0.01737)
+PASS  C10 Theta in (0,1) at J=1000  | Theta=0.1827
+  J=10000 A/m2: Theta=0.3645 (in (0,1))  d_eta: 23.30 mV (b=0.05139), 7.88 mV (b=0.01737)
+PASS  C10 Theta in (0,1) at J=10000  | Theta=0.3645
+  J=20000 A/m2: Theta=0.4488 (in (0,1))  d_eta: 30.61 mV (b=0.05139), 10.35 mV (b=0.01737)
+PASS  C10 Theta in (0,1) at J=20000  | Theta=0.4488
+RANGE-OK    Theta at 1e4 A/m2 = 0.364525 (hand range 0.34 to 0.38)
+RANGE-OK    d_eta (b=0.05139) mV = 23.2972 (hand range 21 to 25)
+RANGE-OK    d_eta (b=0.01737) mV = 7.87527 (hand range 7 to 9)
+RANGE-OK    Theta at 1e4 vs outside range 0.2-0.6 = 0.364525 (hand range 0.2 to 0.6)
+INFO  C10 note  | Theta(2e4 A/m2)=0.449; formula is for flat electrodes in stagnant electrolyte, applied to foam as an extrapolation
+
+=== C11 ohmic losses (no check) ===
+  acid membrane: ASR=0.10 ohm cm2 -> 0.100 V, ASR=0.15 ohm cm2 -> 0.150 V, ASR=0.20 ohm cm2 -> 0.200 V
+  alkaline diaphragm + gap: ASR=0.15 ohm cm2 -> 0.150 V, ASR=0.25 ohm cm2 -> 0.250 V, ASR=0.30 ohm cm2 -> 0.300 V
+INFO  C11  | one multiplication; no check available (spec says so)
+
+=== C12 activation entropy rate per m2 ===
+  T0=298.15 K, T_cell=353.15 K, T0/T_cell=0.84426
+  eta=0.001 V: J eta = 10.0 W/m2; J eta/T0 = 0.0335 W/K/m2; J eta/T_cell = 0.0283 W/K/m2; ratio 0.84426; fraction of reversible power J*1.229 V = 0.0008
+  eta=0.050 V: J eta = 500.0 W/m2; J eta/T0 = 1.6770 W/K/m2; J eta/T_cell = 1.4158 W/K/m2; ratio 0.84426; fraction of reversible power J*1.229 V = 0.0407
+  eta=0.100 V: J eta = 1000.0 W/m2; J eta/T0 = 3.3540 W/K/m2; J eta/T_cell = 2.8317 W/K/m2; ratio 0.84426; fraction of reversible power J*1.229 V = 0.0814
+  eta=0.145 V: J eta = 1450.0 W/m2; J eta/T0 = 4.8633 W/K/m2; J eta/T_cell = 4.1059 W/K/m2; ratio 0.84426; fraction of reversible power J*1.229 V = 0.1180
+  eta=0.300 V: J eta = 3000.0 W/m2; J eta/T0 = 10.0620 W/K/m2; J eta/T_cell = 8.4950 W/K/m2; ratio 0.84426; fraction of reversible power J*1.229 V = 0.2441
+RANGE-OK    eta=0.1 V: J eta [W/m2] = 1000 (hand range 999.9 to 1000.1)
+RANGE-OK    eta=0.1 V: J eta/T0 [W/K/m2] = 3.35402 (hand range 3.34 to 3.36)
+INFO  C12 ratio identity  | ratio equals T0/T_cell = 0.84426 by construction; not counted
+ISSUE: C12 check (ratio = T0/T_cell) is an identity: the ratio of two expressions with the same numerator; flagged per instructions, not counted
+
+=== C13 break-even overpotential difference for removing Pt ===
+Inputs used: J=10000.0, tau_op=144000000.0, e_Pt_MJ_per_kg=[100000.0, 240000.0, 300000.0], m_g_per_m2=[0.5, 3.0, 5.0], d_eta=[0.01, 0.05, 0.1]
+  e_Pt=1.0e+05 MJ/kg, m=0.5 g/m2: e*m=50 MJ/m2; d_eta_be=0.03472 mV; payback 0.01 V -> 5.79 d, 0.05 V -> 1.16 d, 0.1 V -> 0.58 d
+  e_Pt=1.0e+05 MJ/kg, m=3.0 g/m2: e*m=300 MJ/m2; d_eta_be=0.2083 mV; payback 0.01 V -> 34.72 d, 0.05 V -> 6.94 d, 0.1 V -> 3.47 d
+  e_Pt=1.0e+05 MJ/kg, m=5.0 g/m2: e*m=500 MJ/m2; d_eta_be=0.3472 mV; payback 0.01 V -> 57.87 d, 0.05 V -> 11.57 d, 0.1 V -> 5.79 d
+  e_Pt=2.4e+05 MJ/kg, m=0.5 g/m2: e*m=120 MJ/m2; d_eta_be=0.08333 mV; payback 0.01 V -> 13.89 d, 0.05 V -> 2.78 d, 0.1 V -> 1.39 d
+  e_Pt=2.4e+05 MJ/kg, m=3.0 g/m2: e*m=720 MJ/m2; d_eta_be=0.5 mV; payback 0.01 V -> 83.33 d, 0.05 V -> 16.67 d, 0.1 V -> 8.33 d
+  e_Pt=2.4e+05 MJ/kg, m=5.0 g/m2: e*m=1200 MJ/m2; d_eta_be=0.8333 mV; payback 0.01 V -> 138.89 d, 0.05 V -> 27.78 d, 0.1 V -> 13.89 d
+  e_Pt=3.0e+05 MJ/kg, m=0.5 g/m2: e*m=150 MJ/m2; d_eta_be=0.1042 mV; payback 0.01 V -> 17.36 d, 0.05 V -> 3.47 d, 0.1 V -> 1.74 d
+  e_Pt=3.0e+05 MJ/kg, m=3.0 g/m2: e*m=900 MJ/m2; d_eta_be=0.625 mV; payback 0.01 V -> 104.17 d, 0.05 V -> 20.83 d, 0.1 V -> 10.42 d
+  e_Pt=3.0e+05 MJ/kg, m=5.0 g/m2: e*m=1500 MJ/m2; d_eta_be=1.042 mV; payback 0.01 V -> 173.61 d, 0.05 V -> 34.72 d, 0.1 V -> 17.36 d
+RANGE-OK    middle d_eta_be [mV] = 0.5 (hand range 0.4 to 0.6)
+RANGE-OK    min d_eta_be [mV] = 0.0347222 (hand range 0.03 to 1)
+INFO  C13 range note  | max d_eta_be over the grid = 1.042 mV (hand range 0.03-1.0 mV)
+RANGE-MISS  max d_eta_be [mV] = 1.04167 (hand range 0.03 to 1)
+ISSUE: hand-range miss max d_eta_be [mV] = 1.04167, range 0.03 to 1
+RANGE-OK    payback at 0.1 V, middle [days] = 8.33333 (hand range 7.5 to 8.5)
+  hydrogen energy per m2 over tau_op = 1.804e+06 MJ/m2; e*m/that = 3.990e-04
+PASS  C13 magnitude cross-check: e*m ~ 4e-4 of H2 energy (units/magnitude only; shares J, tau)  | ratio 3.990e-04, H2 energy 1.8e+06 MJ/m2
+ISSUE: C13 magnitude cross-check shares inputs J and tau_op with the main formula (spec says it checks units and magnitude only); flagged, not independent

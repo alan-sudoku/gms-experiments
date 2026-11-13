@@ -1,0 +1,81 @@
+Rows B16  (level: derived, unverified)
+Inputs used: P_air=0.1, eta_fan=0.25, T0=298.15, grid=400x400 fin, 400 base, case=U (uniform source)
+
+=== Cu plate  [PF t=0.30mm Nf=38 s=1.314mm k=390] ===
+  R_fa=0.26794 T_root=324.944 T_out=320.315 T_hot=325.300 NTU=1.7558 C=4.5117 m=36.878 h=79.56
+  S_base     3.36907e-04 W/K  share of S_th 0.0120  share of total 0.0115
+  S_fin      3.74991e-03 W/K  share of S_th 0.1340  share of total 0.1278
+  S_film     1.20248e-02 W/K  share of S_th 0.4296  share of total 0.4099
+  S_mix      1.18817e-02 W/K  share of S_th 0.4244  share of total 0.4050
+  S_pump     3.35402e-04 W/K  share of S_th 0.0120  share of total 0.0114
+  S_fanloss  1.00620e-03 W/K  share of S_th 0.0359  share of total 0.0343
+  S_th=2.79933e-02  S_dev=3.07408e-01  (S_th+S_dev = 3.354016e-01 vs Q/T0 = 3.354016e-01 : identity)
+  sum(base+fin+film+mix) = 2.799326e-02 vs S_th = 2.799332e-02 (algebraic consequence of (ii); printed, not counted)
+  Prompt expression E(Tc)=Q(1/Tc-1/T_hot)+P_air/T0:  Tc=T0: 2.83287e-02   Tc=mean: 1.63085e-02   Tc=T_lm: 1.64470e-02   (T_lm=309.100 K)
+  E(T0)-E(T_lm) = 1.18817e-02 vs S_mix = 1.18817e-02 (identity: both equal Q(1/T0-1/T_lm); not counted)
+  E(T_lm) vs S_th + S_pump: 1.64470e-02 vs 1.64470e-02; mean-temperature reading differs from T_lm reading by -0.84 %
+PASS  Cu plate (i) Q_num = Q within 0.2 %  | Q_num=99.99989, rel diff -1.112e-06
+PASS  Cu plate (ii) S_film+S_fin = C ln(Tout/Tin) - Q/T_root within 0.5 %  | quadrature 1.577468e-02, stream 1.577474e-02, rel diff -3.770e-06
+PASS  Cu plate (iii) S_mix within 10 % of Q dT/(2 T0^2) (dT=22.16 K)  | S_mix=1.18817e-02, series 1.24670e-02, rel diff -4.695e-02
+
+=== Al plate k=150  [PF t=0.40mm Nf=37 s=1.256mm k=150] ===
+  R_fa=0.30437 T_root=328.587 T_out=322.158 T_hot=329.513 NTU=1.5548 C=4.1653 m=52.545 h=82.83
+  S_base     8.55172e-04 W/K  share of S_th 0.0268  share of total 0.0257
+  S_fin      6.19959e-03 W/K  share of S_th 0.1942  share of total 0.1864
+  S_film     1.20487e-02 W/K  share of S_th 0.3774  share of total 0.3622
+  S_mix      1.28199e-02 W/K  share of S_th 0.4016  share of total 0.3854
+  S_pump     3.35402e-04 W/K  share of S_th 0.0105  share of total 0.0101
+  S_fanloss  1.00620e-03 W/K  share of S_th 0.0315  share of total 0.0302
+  S_th=3.19234e-02  S_dev=3.03478e-01  (S_th+S_dev = 3.354016e-01 vs Q/T0 = 3.354016e-01 : identity)
+  sum(base+fin+film+mix) = 3.192339e-02 vs S_th = 3.192345e-02 (algebraic consequence of (ii); printed, not counted)
+  Prompt expression E(Tc)=Q(1/Tc-1/T_hot)+P_air/T0:  Tc=T0: 3.22589e-02   Tc=mean: 1.92778e-02   Tc=T_lm: 1.94390e-02   (T_lm=309.999 K)
+  E(T0)-E(T_lm) = 1.28199e-02 vs S_mix = 1.28199e-02 (identity: both equal Q(1/T0-1/T_lm); not counted)
+  E(T_lm) vs S_th + S_pump: 1.94390e-02 vs 1.94390e-02; mean-temperature reading differs from T_lm reading by -0.83 %
+PASS  Al plate k=150 (i) Q_num = Q within 0.2 %  | Q_num=99.99987, rel diff -1.254e-06
+PASS  Al plate k=150 (ii) S_film+S_fin = C ln(Tout/Tin) - Q/T_root within 0.5 %  | quadrature 1.824833e-02, stream 1.824839e-02, rel diff -3.368e-06
+PASS  Al plate k=150 (iii) S_mix within 10 % of Q dT/(2 T0^2) (dT=24.01 K)  | S_mix=1.28199e-02, series 1.35036e-02, rel diff -5.064e-02
+
+=== Al pin k=150 fav  [PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) k=150 fric=min nu=K] ===
+  R_fa=0.40250 T_root=338.400 T_out=331.975 T_hot=339.326 NTU=1.8349 C=2.9564 m=50.571 h=191.81
+  S_base     8.06359e-04 W/K  share of S_th 0.0198  share of total 0.0192
+  S_fin      6.71470e-03 W/K  share of S_th 0.1650  share of total 0.1597
+  S_film     1.54798e-02 W/K  share of S_th 0.3803  share of total 0.3682
+  S_mix      1.76988e-02 W/K  share of S_th 0.4349  share of total 0.4210
+  S_pump     3.35402e-04 W/K  share of S_th 0.0082  share of total 0.0080
+  S_fanloss  1.00620e-03 W/K  share of S_th 0.0247  share of total 0.0239
+  S_th=4.06998e-02  S_dev=2.94702e-01  (S_th+S_dev = 3.354016e-01 vs Q/T0 = 3.354016e-01 : identity)
+  sum(base+fin+film+mix) = 4.069970e-02 vs S_th = 4.069980e-02 (algebraic consequence of (ii); printed, not counted)
+  Prompt expression E(Tc)=Q(1/Tc-1/T_hot)+P_air/T0:  Tc=T0: 4.10352e-02   Tc=mean: 2.30310e-02   Tc=T_lm: 2.33364e-02   (T_lm=314.760 K)
+  E(T0)-E(T_lm) = 1.76988e-02 vs S_mix = 1.76988e-02 (identity: both equal Q(1/T0-1/T_lm); not counted)
+  E(T_lm) vs S_th + S_pump: 2.33364e-02 vs 2.33364e-02; mean-temperature reading differs from T_lm reading by -1.31 %
+PASS  Al pin k=150 fav (i) Q_num = Q within 0.2 %  | Q_num=99.99986, rel diff -1.415e-06
+PASS  Al pin k=150 fav (ii) S_film+S_fin = C ln(Tout/Tin) - Q/T_root within 0.5 %  | quadrature 2.219453e-02, stream 2.219463e-02, rel diff -4.455e-06
+INFO  Al pin k=150 fav (iii) skipped, dT>=30 K
+
+=== Gyroid ks=150 cf=0.3 chi=0.2  [GY a=10mm rho=0.20 ts=0.647mm k=150 cf=0.3 chi=0.2] ===
+  R_fa=0.35167 T_root=333.317 T_out=322.946 T_hot=334.243 NTU=1.2211 C=4.0329 m=61.842 h=132.55
+  S_base     8.31106e-04 W/K  share of S_th 0.0229  share of total 0.0221
+  S_fin      8.05378e-03 W/K  share of S_th 0.2224  share of total 0.2144
+  S_film     1.41141e-02 W/K  share of S_th 0.3897  share of total 0.3758
+  S_mix      1.32190e-02 W/K  share of S_th 0.3650  share of total 0.3519
+  S_pump     3.35402e-04 W/K  share of S_th 0.0093  share of total 0.0089
+  S_fanloss  1.00620e-03 W/K  share of S_th 0.0278  share of total 0.0268
+  S_th=3.62180e-02  S_dev=2.99184e-01  (S_th+S_dev = 3.354016e-01 vs Q/T0 = 3.354016e-01 : identity)
+  sum(base+fin+film+mix) = 3.621797e-02 vs S_th = 3.621802e-02 (algebraic consequence of (ii); printed, not counted)
+  Prompt expression E(Tc)=Q(1/Tc-1/T_hot)+P_air/T0:  Tc=T0: 3.65534e-02   Tc=mean: 2.31632e-02   Tc=T_lm: 2.33344e-02   (T_lm=310.383 K)
+  E(T0)-E(T_lm) = 1.32190e-02 vs S_mix = 1.32190e-02 (identity: both equal Q(1/T0-1/T_lm); not counted)
+  E(T_lm) vs S_th + S_pump: 2.33344e-02 vs 2.33344e-02; mean-temperature reading differs from T_lm reading by -0.73 %
+PASS  Gyroid ks=150 cf=0.3 chi=0.2 (i) Q_num = Q within 0.2 %  | Q_num=99.99988, rel diff -1.215e-06
+PASS  Gyroid ks=150 cf=0.3 chi=0.2 (ii) S_film+S_fin = C ln(Tout/Tin) - Q/T_root within 0.5 %  | quadrature 2.216784e-02, stream 2.216790e-02, rel diff -2.545e-06
+PASS  Gyroid ks=150 cf=0.3 chi=0.2 (iii) S_mix within 10 % of Q dT/(2 T0^2) (dT=24.80 K)  | S_mix=1.32190e-02, series 1.39471e-02, rel diff -5.220e-02
+
+=== Hand ranges, Cu design ===
+RANGE-OK    S_th = 0.0279933 (hand range 0.026 to 0.031)
+RANGE-OK    S_mix share of S_th = 0.424447 (hand range 0.25 to 0.45)
+RANGE-OK    S_pump x1e4 = 3.35402 (hand range 3.3 to 3.5)
+RANGE-OK    S_pump share of S_th = 0.0119815 (hand range 0.005 to 0.015)
+RANGE-OK    S_pump+S_fanloss x1e3 = 1.34161 (hand range 1.25 to 1.35)
+RANGE-OK    (S_pump+S_fanloss)/S_th = 0.047926 (hand range 0.03 to 0.07)
+PASS  E(T_lm) below E(T0) by the mixing share: 1.64470e-02 vs 2.83287e-02 (diff 1.18817e-02 = S_mix 1.18817e-02)
+ISSUE: B16 'E(T_lm) below E(T0) by the mixing share' is an identity (difference = Q(1/T0-1/T_lm) = S_mix by algebra); the PASS line is not independent evidence
+ISSUE: B16 note: all four designs use the uniform case U with T_hot = T_root + Q R_base,1D, whereas B17 uses case S; the two cases are not mixed in any one number

@@ -1,0 +1,238 @@
+Rows B05  (level: derived, unverified)
+Inputs used: k=[390, 200, 180, 150, 120, 100], P_air=[0.01, 0.03, 0.1, 0.3, 1.0], Cu_t=[0.3, 0.4, 0.5, 0.6, 0.8, 1.0], Al_t=[0.4, 0.5, 0.6, 0.8, 1.0, 1.2, 1.5, 2.0], s_min_mm=0.8, Re_limit=2300
+
+=== P_air = 0.01 W ===
+k=390  P_air=0.01 W
+   WINNER    R_fa=0.5348 K/W V=1.9036e-03 dP=5.253 Re=287.9 eta=0.796 NTU=1.832 dT=44.92 mass=0.2919 kg  PF t=0.30mm Nf=27 s=1.996mm k=390 
+   runner-up R_fa=0.5361 K/W V=1.9742e-03 dP=5.065 Re=309.7 eta=0.802 NTU=1.650 dT=43.31 mass=0.2871 kg  PF t=0.30mm Nf=26 s=2.088mm k=390 
+   runner-up R_fa=0.5361 K/W V=1.8361e-03 dP=5.446 Re=268.1 eta=0.790 NTU=2.030 dT=46.57 mass=0.2968 kg  PF t=0.30mm Nf=28 s=1.911mm k=390 
+   winner boundary: t at sweep minimum
+   s=1.996 mm, s_BS=1.972 mm, s/s_BS=1.012 (in 0.6-1.6);  PF12 R_fa,T/R_fa=1.041 (in 0.85-1.15)
+ISSUE: B05 (ii) boundary optimum k=390 P=0.01 W: t at sweep minimum (PF t=0.30mm Nf=27 s=1.996mm k=390)
+k=200  P_air=0.01 W
+   WINNER    R_fa=0.5699 K/W V=1.8403e-03 dP=5.434 Re=289.6 eta=0.731 NTU=1.689 dT=46.46 mass=0.0980 kg  PF t=0.40mm Nf=26 s=1.984mm k=200 
+   runner-up R_fa=0.5705 K/W V=1.7682e-03 dP=5.656 Re=268.3 eta=0.723 NTU=1.881 dT=48.36 mass=0.1000 kg  PF t=0.40mm Nf=27 s=1.892mm k=200 
+   runner-up R_fa=0.5725 K/W V=1.9158e-03 dP=5.220 Re=313.1 eta=0.738 NTU=1.512 dT=44.63 mass=0.0961 kg  PF t=0.40mm Nf=25 s=2.083mm k=200 
+   winner boundary: t at sweep minimum
+   s=1.984 mm, s_BS=1.955 mm, s/s_BS=1.015 (in 0.6-1.6);  PF12 R_fa,T/R_fa=1.052 (in 0.85-1.15)
+ISSUE: B05 (ii) boundary optimum k=200 P=0.01 W: t at sweep minimum (PF t=0.40mm Nf=26 s=1.984mm k=200)
+k=180  P_air=0.01 W
+   WINNER    R_fa=0.5757 K/W V=1.8403e-03 dP=5.434 Re=289.6 eta=0.711 NTU=1.645 dT=46.46 mass=0.0980 kg  PF t=0.40mm Nf=26 s=1.984mm k=180 
+   runner-up R_fa=0.5758 K/W V=1.7682e-03 dP=5.656 Re=268.3 eta=0.703 NTU=1.831 dT=48.36 mass=0.1000 kg  PF t=0.40mm Nf=27 s=1.892mm k=180 
+   runner-up R_fa=0.5788 K/W V=1.9158e-03 dP=5.220 Re=313.1 eta=0.719 NTU=1.474 dT=44.63 mass=0.0961 kg  PF t=0.40mm Nf=25 s=2.083mm k=180 
+   winner boundary: t at sweep minimum
+   s=1.984 mm, s_BS=1.955 mm, s/s_BS=1.015 (in 0.6-1.6);  PF12 R_fa,T/R_fa=1.055 (in 0.85-1.15)
+ISSUE: B05 (ii) boundary optimum k=180 P=0.01 W: t at sweep minimum (PF t=0.40mm Nf=26 s=1.984mm k=180)
+k=150  P_air=0.01 W
+   WINNER    R_fa=0.5863 K/W V=1.7682e-03 dP=5.656 Re=268.3 eta=0.668 NTU=1.742 dT=48.36 mass=0.1000 kg  PF t=0.40mm Nf=27 s=1.892mm k=150 
+   runner-up R_fa=0.5872 K/W V=1.8403e-03 dP=5.434 Re=289.6 eta=0.676 NTU=1.566 dT=46.46 mass=0.0980 kg  PF t=0.40mm Nf=26 s=1.984mm k=150 
+   runner-up R_fa=0.5884 K/W V=1.6993e-03 dP=5.885 Re=249.0 eta=0.659 NTU=1.933 dT=50.32 mass=0.1019 kg  PF t=0.40mm Nf=28 s=1.807mm k=150 
+   winner boundary: t at sweep minimum
+   s=1.892 mm, s_BS=1.936 mm, s/s_BS=0.978 (in 0.6-1.6);  PF12 R_fa,T/R_fa=1.070 (in 0.85-1.15)
+ISSUE: B05 (ii) boundary optimum k=150 P=0.01 W: t at sweep minimum (PF t=0.40mm Nf=27 s=1.892mm k=150)
+k=120  P_air=0.01 W
+   WINNER    R_fa=0.6018 K/W V=1.7682e-03 dP=5.656 Re=268.3 eta=0.622 NTU=1.627 dT=48.36 mass=0.1000 kg  PF t=0.40mm Nf=27 s=1.892mm k=120 
+   runner-up R_fa=0.6025 K/W V=1.6993e-03 dP=5.885 Re=249.0 eta=0.613 NTU=1.803 dT=50.32 mass=0.1019 kg  PF t=0.40mm Nf=28 s=1.807mm k=120 
+   runner-up R_fa=0.6041 K/W V=1.8403e-03 dP=5.434 Re=289.6 eta=0.630 NTU=1.466 dT=46.46 mass=0.0980 kg  PF t=0.40mm Nf=26 s=1.984mm k=120 
+   winner boundary: t at sweep minimum
+   s=1.892 mm, s_BS=1.936 mm, s/s_BS=0.978 (in 0.6-1.6);  PF12 R_fa,T/R_fa=1.080 (in 0.85-1.15)
+ISSUE: B05 (ii) boundary optimum k=120 P=0.01 W: t at sweep minimum (PF t=0.40mm Nf=27 s=1.892mm k=120)
+k=100  P_air=0.01 W
+   WINNER    R_fa=0.6164 K/W V=1.6993e-03 dP=5.885 Re=249.0 eta=0.574 NTU=1.695 dT=50.32 mass=0.1019 kg  PF t=0.40mm Nf=28 s=1.807mm k=100 
+   runner-up R_fa=0.6170 K/W V=1.7682e-03 dP=5.656 Re=268.3 eta=0.583 NTU=1.531 dT=48.36 mass=0.1000 kg  PF t=0.40mm Nf=27 s=1.892mm k=100 
+   runner-up R_fa=0.6187 K/W V=1.6335e-03 dP=6.122 Re=231.4 eta=0.566 NTU=1.871 dT=52.35 mass=0.1038 kg  PF t=0.40mm Nf=29 s=1.729mm k=100 
+   winner boundary: t at sweep minimum
+   s=1.807 mm, s_BS=1.917 mm, s/s_BS=0.943 (in 0.6-1.6);  PF12 R_fa,T/R_fa=1.099 (in 0.85-1.15)
+ISSUE: B05 (ii) boundary optimum k=100 P=0.01 W: t at sweep minimum (PF t=0.40mm Nf=28 s=1.807mm k=100)
+
+=== P_air = 0.03 W ===
+k=390  P_air=0.03 W
+   WINNER    R_fa=0.3833 K/W V=2.6601e-03 dP=11.278 Re=341.4 eta=0.763 NTU=1.824 dT=32.14 mass=0.3161 kg  PF t=0.30mm Nf=32 s=1.626mm k=390 
+   runner-up R_fa=0.3836 K/W V=2.7472e-03 dP=10.920 Re=363.6 eta=0.769 NTU=1.668 dT=31.12 mass=0.3113 kg  PF t=0.30mm Nf=31 s=1.690mm k=390 
+   runner-up R_fa=0.3843 K/W V=2.5762e-03 dP=11.645 Re=320.9 eta=0.758 NTU=1.992 dT=33.19 mass=0.3209 kg  PF t=0.30mm Nf=33 s=1.566mm k=390 
+   winner boundary: t at sweep minimum
+   s=1.626 mm, s_BS=1.629 mm, s/s_BS=0.998 (in 0.6-1.6);  PF12 R_fa,T/R_fa=1.052 (in 0.85-1.15)
+ISSUE: B05 (ii) boundary optimum k=390 P=0.03 W: t at sweep minimum (PF t=0.30mm Nf=32 s=1.626mm k=390)
+k=200  P_air=0.03 W
+   WINNER    R_fa=0.4130 K/W V=2.5182e-03 dP=11.913 Re=334.4 eta=0.689 NTU=1.726 dT=33.95 mass=0.1077 kg  PF t=0.40mm Nf=31 s=1.587mm k=200 
+   runner-up R_fa=0.4135 K/W V=2.6109e-03 dP=11.490 Re=357.9 eta=0.696 NTU=1.570 dT=32.75 mass=0.1057 kg  PF t=0.40mm Nf=30 s=1.655mm k=200 
+   runner-up R_fa=0.4143 K/W V=2.4291e-03 dP=12.350 Re=312.8 eta=0.682 NTU=1.895 dT=35.20 mass=0.1096 kg  PF t=0.40mm Nf=32 s=1.523mm k=200 
+   winner boundary: t at sweep minimum
+   s=1.587 mm, s_BS=1.607 mm, s/s_BS=0.987 (in 0.6-1.6);  PF12 R_fa,T/R_fa=1.067 (in 0.85-1.15)
+ISSUE: B05 (ii) boundary optimum k=200 P=0.03 W: t at sweep minimum (PF t=0.40mm Nf=31 s=1.587mm k=200)
+k=180  P_air=0.03 W
+   WINNER    R_fa=0.4177 K/W V=2.5182e-03 dP=11.913 Re=334.4 eta=0.668 NTU=1.676 dT=33.95 mass=0.1077 kg  PF t=0.40mm Nf=31 s=1.587mm k=180 
+   runner-up R_fa=0.4186 K/W V=2.4291e-03 dP=12.350 Re=312.8 eta=0.661 NTU=1.839 dT=35.20 mass=0.1096 kg  PF t=0.40mm Nf=32 s=1.523mm k=180 
+   runner-up R_fa=0.4186 K/W V=2.6109e-03 dP=11.490 Re=357.9 eta=0.676 NTU=1.525 dT=32.75 mass=0.1057 kg  PF t=0.40mm Nf=30 s=1.655mm k=180 
+   winner boundary: t at sweep minimum
+   s=1.587 mm, s_BS=1.607 mm, s/s_BS=0.987 (in 0.6-1.6);  PF12 R_fa,T/R_fa=1.071 (in 0.85-1.15)
+ISSUE: B05 (ii) boundary optimum k=180 P=0.03 W: t at sweep minimum (PF t=0.40mm Nf=31 s=1.587mm k=180)
+k=150  P_air=0.03 W
+   WINNER    R_fa=0.4270 K/W V=2.5182e-03 dP=11.913 Re=334.4 eta=0.631 NTU=1.586 dT=33.95 mass=0.1077 kg  PF t=0.40mm Nf=31 s=1.587mm k=150 
+   runner-up R_fa=0.4271 K/W V=2.4291e-03 dP=12.350 Re=312.8 eta=0.624 NTU=1.738 dT=35.20 mass=0.1096 kg  PF t=0.40mm Nf=32 s=1.523mm k=150 
+   runner-up R_fa=0.4286 K/W V=2.6109e-03 dP=11.490 Re=357.9 eta=0.639 NTU=1.445 dT=32.75 mass=0.1057 kg  PF t=0.40mm Nf=30 s=1.655mm k=150 
+   winner boundary: t at sweep minimum
+   s=1.587 mm, s_BS=1.607 mm, s/s_BS=0.987 (in 0.6-1.6);  PF12 R_fa,T/R_fa=1.079 (in 0.85-1.15)
+ISSUE: B05 (ii) boundary optimum k=150 P=0.03 W: t at sweep minimum (PF t=0.40mm Nf=31 s=1.587mm k=150)
+k=120  P_air=0.03 W
+   WINNER    R_fa=0.4398 K/W V=2.4291e-03 dP=12.350 Re=312.8 eta=0.576 NTU=1.611 dT=35.20 mass=0.1096 kg  PF t=0.40mm Nf=32 s=1.523mm k=120 
+   runner-up R_fa=0.4406 K/W V=2.3434e-03 dP=12.802 Re=292.9 eta=0.569 NTU=1.761 dT=36.49 mass=0.1115 kg  PF t=0.40mm Nf=33 s=1.462mm k=120 
+   runner-up R_fa=0.4406 K/W V=2.5182e-03 dP=11.913 Re=334.4 eta=0.584 NTU=1.472 dT=33.95 mass=0.1077 kg  PF t=0.40mm Nf=31 s=1.587mm k=120 
+   winner boundary: t at sweep minimum
+   s=1.523 mm, s_BS=1.592 mm, s/s_BS=0.956 (in 0.6-1.6);  PF12 R_fa,T/R_fa=1.099 (in 0.85-1.15)
+ISSUE: B05 (ii) boundary optimum k=120 P=0.03 W: t at sweep minimum (PF t=0.40mm Nf=32 s=1.523mm k=120)
+k=100  P_air=0.03 W
+   WINNER    R_fa=0.4520 K/W V=2.3434e-03 dP=12.802 Re=292.9 eta=0.530 NTU=1.646 dT=36.49 mass=0.1115 kg  PF t=0.40mm Nf=33 s=1.462mm k=100 
+   runner-up R_fa=0.4521 K/W V=2.4291e-03 dP=12.350 Re=312.8 eta=0.538 NTU=1.508 dT=35.20 mass=0.1096 kg  PF t=0.40mm Nf=32 s=1.523mm k=100 
+   runner-up R_fa=0.4535 K/W V=2.2610e-03 dP=13.268 Re=274.5 eta=0.523 NTU=1.795 dT=37.82 mass=0.1134 kg  PF t=0.40mm Nf=34 s=1.406mm k=100 
+   winner boundary: t at sweep minimum
+   s=1.462 mm, s_BS=1.578 mm, s/s_BS=0.927 (in 0.6-1.6);  PF12 R_fa,T/R_fa=1.119 (in 0.85-1.15)
+ISSUE: B05 (ii) boundary optimum k=100 P=0.03 W: t at sweep minimum (PF t=0.40mm Nf=33 s=1.462mm k=100)
+
+=== P_air = 0.1 W ===
+k=390  P_air=0.1 W
+   WINNER    R_fa=0.2679 K/W V=3.8577e-03 dP=25.922 Re=419.0 eta=0.726 NTU=1.756 dT=22.16 mass=0.3451 kg  PF t=0.30mm Nf=38 s=1.314mm k=390 
+   runner-up R_fa=0.2681 K/W V=3.9695e-03 dP=25.192 Re=442.4 eta=0.731 NTU=1.626 dT=21.54 mass=0.3403 kg  PF t=0.30mm Nf=37 s=1.358mm k=390 
+   runner-up R_fa=0.2685 K/W V=3.7494e-03 dP=26.671 Re=397.0 eta=0.720 NTU=1.894 dT=22.80 mass=0.3500 kg  PF t=0.30mm Nf=39 s=1.271mm k=390 
+   winner boundary: t at sweep minimum
+   s=1.314 mm, s_BS=1.323 mm, s/s_BS=0.993 (in 0.6-1.6);  PF12 R_fa,T/R_fa=1.062 (in 0.85-1.15)
+ISSUE: B05 (ii) boundary optimum k=390 P=0.1 W: t at sweep minimum (PF t=0.30mm Nf=38 s=1.314mm k=390)
+k=200  P_air=0.1 W
+   WINNER    R_fa=0.2929 K/W V=3.6800e-03 dP=27.174 Re=422.6 eta=0.649 NTU=1.576 dT=23.23 mass=0.1173 kg  PF t=0.40mm Nf=36 s=1.303mm k=200 
+   runner-up R_fa=0.2930 K/W V=3.5615e-03 dP=28.078 Re=398.3 eta=0.643 NTU=1.711 dT=24.01 mass=0.1192 kg  PF t=0.40mm Nf=37 s=1.256mm k=200 
+   runner-up R_fa=0.2937 K/W V=3.8024e-03 dP=26.299 Re=448.8 eta=0.656 NTU=1.451 dT=22.49 mass=0.1153 kg  PF t=0.40mm Nf=35 s=1.353mm k=200 
+   winner boundary: t at sweep minimum
+   s=1.303 mm, s_BS=1.308 mm, s/s_BS=0.996 (in 0.6-1.6);  PF12 R_fa,T/R_fa=1.077 (in 0.85-1.15)
+ISSUE: B05 (ii) boundary optimum k=200 P=0.1 W: t at sweep minimum (PF t=0.40mm Nf=36 s=1.303mm k=200)
+k=180  P_air=0.1 W
+   WINNER    R_fa=0.2969 K/W V=3.5615e-03 dP=28.078 Re=398.3 eta=0.621 NTU=1.654 dT=24.01 mass=0.1192 kg  PF t=0.40mm Nf=37 s=1.256mm k=180 
+   runner-up R_fa=0.2970 K/W V=3.6800e-03 dP=27.174 Re=422.6 eta=0.628 NTU=1.525 dT=23.23 mass=0.1173 kg  PF t=0.40mm Nf=36 s=1.303mm k=180 
+   runner-up R_fa=0.2976 K/W V=3.4469e-03 dP=29.011 Re=375.6 eta=0.614 NTU=1.792 dT=24.81 mass=0.1211 kg  PF t=0.40mm Nf=38 s=1.211mm k=180 
+   winner boundary: t at sweep minimum
+   s=1.256 mm, s_BS=1.297 mm, s/s_BS=0.968 (in 0.6-1.6);  PF12 R_fa,T/R_fa=1.088 (in 0.85-1.15)
+ISSUE: B05 (ii) boundary optimum k=180 P=0.1 W: t at sweep minimum (PF t=0.40mm Nf=37 s=1.256mm k=180)
+k=150  P_air=0.1 W
+   WINNER    R_fa=0.3044 K/W V=3.5615e-03 dP=28.078 Re=398.3 eta=0.582 NTU=1.555 dT=24.01 mass=0.1192 kg  PF t=0.40mm Nf=37 s=1.256mm k=150 
+   runner-up R_fa=0.3046 K/W V=3.4469e-03 dP=29.011 Re=375.6 eta=0.576 NTU=1.683 dT=24.81 mass=0.1211 kg  PF t=0.40mm Nf=38 s=1.211mm k=150 
+   runner-up R_fa=0.3050 K/W V=3.6800e-03 dP=27.174 Re=422.6 eta=0.589 NTU=1.435 dT=23.23 mass=0.1173 kg  PF t=0.40mm Nf=36 s=1.303mm k=150 
+   winner boundary: t at sweep minimum
+   s=1.256 mm, s_BS=1.297 mm, s/s_BS=0.968 (in 0.6-1.6);  PF12 R_fa,T/R_fa=1.098 (in 0.85-1.15)
+ISSUE: B05 (ii) boundary optimum k=150 P=0.1 W: t at sweep minimum (PF t=0.40mm Nf=37 s=1.256mm k=150)
+k=120  P_air=0.1 W
+   WINNER    R_fa=0.3149 K/W V=3.4469e-03 dP=29.011 Re=375.6 eta=0.528 NTU=1.549 dT=24.81 mass=0.1211 kg  PF t=0.40mm Nf=38 s=1.211mm k=120 
+   runner-up R_fa=0.3154 K/W V=3.5615e-03 dP=28.078 Re=398.3 eta=0.535 NTU=1.433 dT=24.01 mass=0.1192 kg  PF t=0.40mm Nf=37 s=1.256mm k=120 
+   runner-up R_fa=0.3154 K/W V=3.3361e-03 dP=29.975 Re=354.4 eta=0.521 NTU=1.674 dT=25.63 mass=0.1230 kg  PF t=0.40mm Nf=39 s=1.168mm k=120 
+   winner boundary: t at sweep minimum
+   s=1.211 mm, s_BS=1.286 mm, s/s_BS=0.941 (in 0.6-1.6);  PF12 R_fa,T/R_fa=1.120 (in 0.85-1.15)
+ISSUE: B05 (ii) boundary optimum k=120 P=0.1 W: t at sweep minimum (PF t=0.40mm Nf=38 s=1.211mm k=120)
+k=100  P_air=0.1 W
+   WINNER    R_fa=0.3248 K/W V=3.3361e-03 dP=29.975 Re=354.4 eta=0.483 NTU=1.557 dT=25.63 mass=0.1230 kg  PF t=0.40mm Nf=39 s=1.168mm k=100 
+   runner-up R_fa=0.3249 K/W V=3.4469e-03 dP=29.011 Re=375.6 eta=0.490 NTU=1.442 dT=24.81 mass=0.1211 kg  PF t=0.40mm Nf=38 s=1.211mm k=100 
+   runner-up R_fa=0.3255 K/W V=3.2289e-03 dP=30.970 Re=334.7 eta=0.477 NTU=1.679 dT=26.48 mass=0.1250 kg  PF t=0.40mm Nf=40 s=1.128mm k=100 
+   winner boundary: t at sweep minimum
+   s=1.168 mm, s_BS=1.276 mm, s/s_BS=0.916 (in 0.6-1.6);  PF12 R_fa,T/R_fa=1.142 (in 0.85-1.15)
+ISSUE: B05 (ii) boundary optimum k=100 P=0.1 W: t at sweep minimum (PF t=0.40mm Nf=39 s=1.168mm k=100)
+
+=== P_air = 0.3 W ===
+k=390  P_air=0.3 W
+   WINNER    R_fa=0.1947 K/W V=5.4228e-03 dP=55.322 Re=510.4 eta=0.690 NTU=1.659 dT=15.77 mass=0.3742 kg  PF t=0.30mm Nf=44 s=1.088mm k=390 
+   runner-up R_fa=0.1949 K/W V=5.2843e-03 dP=56.772 Re=486.6 eta=0.685 NTU=1.773 dT=16.18 mass=0.3790 kg  PF t=0.30mm Nf=45 s=1.057mm k=390 
+   runner-up R_fa=0.1950 K/W V=5.5650e-03 dP=53.908 Re=535.7 eta=0.695 NTU=1.551 dT=15.36 mass=0.3693 kg  PF t=0.30mm Nf=43 s=1.121mm k=390 
+   winner boundary: t at sweep minimum
+   s=1.088 mm, s_BS=1.095 mm, s/s_BS=0.994 (in 0.6-1.6);  PF12 R_fa,T/R_fa=1.071 (in 0.85-1.15)
+ISSUE: B05 (ii) boundary optimum k=390 P=0.3 W: t at sweep minimum (PF t=0.30mm Nf=44 s=1.088mm k=390)
+k=200  P_air=0.3 W
+   WINNER    R_fa=0.2160 K/W V=5.0301e-03 dP=59.641 Re=497.1 eta=0.606 NTU=1.547 dT=17.00 mass=0.1288 kg  PF t=0.40mm Nf=42 s=1.054mm k=200 
+   runner-up R_fa=0.2162 K/W V=4.8797e-03 dP=61.480 Re=471.3 eta=0.600 NTU=1.663 dT=17.52 mass=0.1307 kg  PF t=0.40mm Nf=43 s=1.019mm k=200 
+   runner-up R_fa=0.2163 K/W V=5.1849e-03 dP=57.861 Re=524.6 eta=0.612 NTU=1.437 dT=16.49 mass=0.1269 kg  PF t=0.40mm Nf=41 s=1.090mm k=200 
+   winner boundary: t at sweep minimum
+   s=1.054 mm, s_BS=1.074 mm, s/s_BS=0.981 (in 0.6-1.6);  PF12 R_fa,T/R_fa=1.092 (in 0.85-1.15)
+ISSUE: B05 (ii) boundary optimum k=200 P=0.3 W: t at sweep minimum (PF t=0.40mm Nf=42 s=1.054mm k=200)
+k=180  P_air=0.3 W
+   WINNER    R_fa=0.2194 K/W V=5.0301e-03 dP=59.641 Re=497.1 eta=0.583 NTU=1.491 dT=17.00 mass=0.1288 kg  PF t=0.40mm Nf=42 s=1.054mm k=180 
+   runner-up R_fa=0.2194 K/W V=4.8797e-03 dP=61.480 Re=471.3 eta=0.577 NTU=1.603 dT=17.52 mass=0.1307 kg  PF t=0.40mm Nf=43 s=1.019mm k=180 
+   runner-up R_fa=0.2199 K/W V=5.1849e-03 dP=57.861 Re=524.6 eta=0.590 NTU=1.386 dT=16.49 mass=0.1269 kg  PF t=0.40mm Nf=41 s=1.090mm k=180 
+   winner boundary: t at sweep minimum
+   s=1.054 mm, s_BS=1.074 mm, s/s_BS=0.981 (in 0.6-1.6);  PF12 R_fa,T/R_fa=1.097 (in 0.85-1.15)
+ISSUE: B05 (ii) boundary optimum k=180 P=0.3 W: t at sweep minimum (PF t=0.40mm Nf=42 s=1.054mm k=180)
+k=150  P_air=0.3 W
+   WINNER    R_fa=0.2257 K/W V=4.8797e-03 dP=61.480 Re=471.3 eta=0.538 NTU=1.498 dT=17.52 mass=0.1307 kg  PF t=0.40mm Nf=43 s=1.019mm k=150 
+   runner-up R_fa=0.2258 K/W V=4.7335e-03 dP=63.379 Re=447.0 eta=0.532 NTU=1.609 dT=18.06 mass=0.1326 kg  PF t=0.40mm Nf=44 s=0.986mm k=150 
+   runner-up R_fa=0.2260 K/W V=5.0301e-03 dP=59.641 Re=497.1 eta=0.545 NTU=1.395 dT=17.00 mass=0.1288 kg  PF t=0.40mm Nf=42 s=1.054mm k=150 
+   winner boundary: t at sweep minimum
+   s=1.019 mm, s_BS=1.066 mm, s/s_BS=0.956 (in 0.6-1.6);  PF12 R_fa,T/R_fa=1.115 (in 0.85-1.15)
+ISSUE: B05 (ii) boundary optimum k=150 P=0.3 W: t at sweep minimum (PF t=0.40mm Nf=43 s=1.019mm k=150)
+k=120  P_air=0.3 W
+   WINNER    R_fa=0.2345 K/W V=4.7335e-03 dP=63.379 Re=447.0 eta=0.486 NTU=1.472 dT=18.06 mass=0.1326 kg  PF t=0.40mm Nf=44 s=0.986mm k=120 
+   runner-up R_fa=0.2347 K/W V=4.5914e-03 dP=65.340 Re=424.2 eta=0.480 NTU=1.578 dT=18.62 mass=0.1346 kg  PF t=0.40mm Nf=45 s=0.955mm k=120 
+   runner-up R_fa=0.2348 K/W V=4.8797e-03 dP=61.480 Re=471.3 eta=0.492 NTU=1.372 dT=17.52 mass=0.1307 kg  PF t=0.40mm Nf=43 s=1.019mm k=120 
+   winner boundary: t at sweep minimum
+   s=0.986 mm, s_BS=1.058 mm, s/s_BS=0.932 (in 0.6-1.6);  PF12 R_fa,T/R_fa=1.139 (in 0.85-1.15)
+ISSUE: B05 (ii) boundary optimum k=120 P=0.3 W: t at sweep minimum (PF t=0.40mm Nf=44 s=0.986mm k=120)
+k=100  P_air=0.3 W
+   WINNER    R_fa=0.2425 K/W V=4.5914e-03 dP=65.340 Re=424.2 eta=0.443 NTU=1.460 dT=18.62 mass=0.1346 kg  PF t=0.40mm Nf=45 s=0.955mm k=100 
+   runner-up R_fa=0.2427 K/W V=4.7335e-03 dP=63.379 Re=447.0 eta=0.449 NTU=1.363 dT=18.06 mass=0.1326 kg  PF t=0.40mm Nf=44 s=0.986mm k=100 
+   runner-up R_fa=0.2428 K/W V=4.4533e-03 dP=67.365 Re=402.7 eta=0.437 NTU=1.564 dT=19.20 mass=0.1365 kg  PF t=0.40mm Nf=46 s=0.924mm k=100 
+   winner boundary: t at sweep minimum
+   s=0.955 mm, s_BS=1.050 mm, s/s_BS=0.909 (in 0.6-1.6);  PF12 R_fa,T/R_fa=1.164 (OUT)
+ISSUE: B05 (iii) PF12 ratio 1.164 outside 0.85-1.15 at k=100, P=0.3 W
+ISSUE: B05 (ii) boundary optimum k=100 P=0.3 W: t at sweep minimum (PF t=0.40mm Nf=45 s=0.955mm k=100)
+
+=== P_air = 1 W ===
+k=390  P_air=1 W
+   WINNER    R_fa=0.1386 K/W V=7.7176e-03 dP=129.574 Re=616.8 eta=0.645 NTU=1.607 dT=11.08 mass=0.4129 kg  PF t=0.30mm Nf=52 s=0.871mm k=390 
+   runner-up R_fa=0.1387 K/W V=7.9018e-03 dP=126.553 Re=643.7 eta=0.650 NTU=1.516 dT=10.82 mass=0.4080 kg  PF t=0.30mm Nf=51 s=0.894mm k=390 
+   runner-up R_fa=0.1387 K/W V=7.5376e-03 dP=132.668 Re=591.3 eta=0.640 NTU=1.704 dT=11.34 mass=0.4177 kg  PF t=0.30mm Nf=53 s=0.848mm k=390 
+   winner boundary: t at sweep minimum
+   s=0.871 mm, s_BS=0.885 mm, s/s_BS=0.984 (in 0.6-1.6);  PF12 R_fa,T/R_fa=1.084 (in 0.85-1.15)
+ISSUE: B05 (ii) boundary optimum k=390 P=1 W: t at sweep minimum (PF t=0.30mm Nf=52 s=0.871mm k=390)
+k=200  P_air=1 W
+   WINNER    R_fa=0.1564 K/W V=7.0904e-03 dP=141.036 Re=602.7 eta=0.558 NTU=1.474 dT=12.06 mass=0.1423 kg  PF t=0.40mm Nf=49 s=0.842mm k=200 
+   runner-up R_fa=0.1565 K/W V=6.8912e-03 dP=145.113 Re=574.2 eta=0.553 NTU=1.574 dT=12.41 mass=0.1442 kg  PF t=0.40mm Nf=50 s=0.816mm k=200 
+   runner-up R_fa=0.1566 K/W V=7.2944e-03 dP=137.091 Re=632.6 eta=0.564 NTU=1.380 dT=11.72 mass=0.1403 kg  PF t=0.40mm Nf=48 s=0.868mm k=200 
+   winner boundary: t at sweep minimum
+   s=0.842 mm, s_BS=0.866 mm, s/s_BS=0.972 (in 0.6-1.6);  PF12 R_fa,T/R_fa=1.108 (in 0.85-1.15)
+ISSUE: B05 (ii) boundary optimum k=200 P=1 W: t at sweep minimum (PF t=0.40mm Nf=49 s=0.842mm k=200)
+k=180  P_air=1 W
+   WINNER    R_fa=0.1592 K/W V=6.8912e-03 dP=145.113 Re=574.2 eta=0.530 NTU=1.511 dT=12.41 mass=0.1442 kg  PF t=0.40mm Nf=50 s=0.816mm k=180 
+   runner-up R_fa=0.1592 K/W V=7.0904e-03 dP=141.036 Re=602.7 eta=0.536 NTU=1.416 dT=12.06 mass=0.1423 kg  PF t=0.40mm Nf=49 s=0.842mm k=180 
+   runner-up R_fa=0.1595 K/W V=7.2944e-03 dP=137.091 Re=632.6 eta=0.542 NTU=1.327 dT=11.72 mass=0.1403 kg  PF t=0.40mm Nf=48 s=0.868mm k=180 
+   winner boundary: t at sweep minimum; s at 0.8 mm limit (next N_f violates)
+   s=0.816 mm, s_BS=0.860 mm, s/s_BS=0.949 (in 0.6-1.6);  PF12 R_fa,T/R_fa=1.122 (in 0.85-1.15)
+ISSUE: B05 (ii) boundary optimum k=180 P=1 W: t at sweep minimum; s at 0.8 mm limit (next N_f violates) (PF t=0.40mm Nf=50 s=0.816mm k=180)
+k=150  P_air=1 W
+   WINNER    R_fa=0.1644 K/W V=6.8912e-03 dP=145.113 Re=574.2 eta=0.492 NTU=1.405 dT=12.41 mass=0.1442 kg  PF t=0.40mm Nf=50 s=0.816mm k=150 
+   runner-up R_fa=0.1647 K/W V=7.0904e-03 dP=141.036 Re=602.7 eta=0.498 NTU=1.318 dT=12.06 mass=0.1423 kg  PF t=0.40mm Nf=49 s=0.842mm k=150 
+   runner-up R_fa=0.1653 K/W V=7.2944e-03 dP=137.091 Re=632.6 eta=0.503 NTU=1.235 dT=11.72 mass=0.1403 kg  PF t=0.40mm Nf=48 s=0.868mm k=150 
+   winner boundary: t at sweep minimum; s at 0.8 mm limit (next N_f violates)
+   s=0.816 mm, s_BS=0.860 mm, s/s_BS=0.949 (in 0.6-1.6);  PF12 R_fa,T/R_fa=1.134 (in 0.85-1.15)
+ISSUE: B05 (ii) boundary optimum k=150 P=1 W: t at sweep minimum; s at 0.8 mm limit (next N_f violates) (PF t=0.40mm Nf=50 s=0.816mm k=150)
+k=120  P_air=1 W
+   WINNER    R_fa=0.1719 K/W V=6.8912e-03 dP=145.113 Re=574.2 eta=0.447 NTU=1.279 dT=12.41 mass=0.1442 kg  PF t=0.40mm Nf=50 s=0.816mm k=120 
+   runner-up R_fa=0.1725 K/W V=7.0904e-03 dP=141.036 Re=602.7 eta=0.452 NTU=1.200 dT=12.06 mass=0.1423 kg  PF t=0.40mm Nf=49 s=0.842mm k=120 
+   runner-up R_fa=0.1735 K/W V=7.2944e-03 dP=137.091 Re=632.6 eta=0.458 NTU=1.126 dT=11.72 mass=0.1403 kg  PF t=0.40mm Nf=48 s=0.868mm k=120 
+   winner boundary: t at sweep minimum; s at 0.8 mm limit (next N_f violates)
+   s=0.816 mm, s_BS=0.860 mm, s/s_BS=0.949 (in 0.6-1.6);  PF12 R_fa,T/R_fa=1.152 (OUT)
+ISSUE: B05 (iii) PF12 ratio 1.152 outside 0.85-1.15 at k=120, P=1 W
+ISSUE: B05 (ii) boundary optimum k=120 P=1 W: t at sweep minimum; s at 0.8 mm limit (next N_f violates) (PF t=0.40mm Nf=50 s=0.816mm k=120)
+k=100  P_air=1 W
+   WINNER    R_fa=0.1790 K/W V=6.8912e-03 dP=145.113 Re=574.2 eta=0.411 NTU=1.181 dT=12.41 mass=0.1442 kg  PF t=0.40mm Nf=50 s=0.816mm k=100 
+   runner-up R_fa=0.1800 K/W V=7.0904e-03 dP=141.036 Re=602.7 eta=0.417 NTU=1.109 dT=12.06 mass=0.1423 kg  PF t=0.40mm Nf=49 s=0.842mm k=100 
+   runner-up R_fa=0.1812 K/W V=7.2944e-03 dP=137.091 Re=632.6 eta=0.422 NTU=1.041 dT=11.72 mass=0.1403 kg  PF t=0.40mm Nf=48 s=0.868mm k=100 
+   winner boundary: t at sweep minimum; s at 0.8 mm limit (next N_f violates)
+   s=0.816 mm, s_BS=0.860 mm, s/s_BS=0.949 (in 0.6-1.6);  PF12 R_fa,T/R_fa=1.168 (OUT)
+ISSUE: B05 (iii) PF12 ratio 1.168 outside 0.85-1.15 at k=100, P=1 W
+ISSUE: B05 (ii) boundary optimum k=100 P=1 W: t at sweep minimum; s at 0.8 mm limit (next N_f violates) (PF t=0.40mm Nf=50 s=0.816mm k=100)
+
+=== Summary: ratio to Cu optimum ===
+    k         0.01        0.03         0.1         0.3           1
+  390       1.0000      1.0000      1.0000      1.0000      1.0000
+  200       1.0658      1.0776      1.0932      1.1091      1.1288
+  180       1.0766      1.0899      1.1079      1.1265      1.1490
+  150       1.0963      1.1141      1.1360      1.1588      1.1866
+  120       1.1253      1.1474      1.1754      1.2040      1.2407
+  100       1.1526      1.1794      1.2122      1.2454      1.2922
+Cu R_fa        0.5348      0.3833      0.2679      0.1947      0.1386
+RANGE-OK    Cu R_fa at 0.1 W = 0.267941 (hand range 0.24 to 0.3)
+RANGE-OK    Al k=150 / Cu at 0.1 W = 1.13596 (hand range 1.05 to 1.25)
+RANGE-OK    Al k=200 / Cu at 0.1 W = 1.09323 (hand range 1.03 to 1.15)

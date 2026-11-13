@@ -1,0 +1,71 @@
+Rows B14, B15, B17  (level: derived, unverified)
+Inputs used: A_s=0.0004, A_p=0.0036, t_b=[0.005, 0.01], k=[390, 200, 180, 150, 120, 100], R0=own plate-fin optimum at 0.1 W
+
+=== B14 table ===
+t_b = 0.005 m
+      k   R0=R_fa   R_sp,max   R_sp,avg  dmax(Al-Cu)  davg(Al-Cu)
+    390    0.2679    0.08075    0.05942      0.00000      0.00000
+    200    0.2929    0.15538    0.11435      0.07462      0.05493
+    180    0.2969    0.17214    0.12670      0.09139      0.06728
+    150    0.3044    0.20543    0.15121      0.12468      0.09179
+    120    0.3149    0.25480    0.18757      0.17405      0.12816
+    100    0.3248    0.30355    0.22349      0.22280      0.16407
+t_b = 0.01 m
+      k   R0=R_fa   R_sp,max   R_sp,avg  dmax(Al-Cu)  davg(Al-Cu)
+    390    0.2679    0.06100    0.04611      0.00000      0.00000
+    200    0.2929    0.11861    0.08967      0.05761      0.04356
+    180    0.2969    0.13171    0.09957      0.07071      0.05346
+    150    0.3044    0.15787    0.11935      0.09687      0.07325
+    120    0.3149    0.19701    0.14896      0.13601      0.10285
+    100    0.3248    0.23605    0.17849      0.17505      0.13238
+RANGE-OK    Cu R_sp,max (t_b=5 mm) = 0.0807549 (hand range 0.06 to 0.1)
+RANGE-OK    Al k=150 R_sp,max (t_b=5 mm) = 0.205433 (hand range 0.16 to 0.24)
+RANGE-OK    penalty Al(150)-Cu R_sp,max (t_b=5 mm) = 0.124678 (hand range 0.08 to 0.16)
+RANGE-MISS  Cu R_sp,avg (t_b=5 mm) = 0.0594187 (hand range 0.06 to 0.1)
+ISSUE: hand-range miss Cu R_sp,avg (t_b=5 mm) = 0.0594187, range 0.06 to 0.1
+
+=== B14 exact limits ===
+PASS  B14 (i) A_s = A_p gives t_b/(k A_p) within 1e-9 (R_sp,max)  | model 9.2592592593e-03 exact 9.2592592593e-03
+PASS  B14 (i) A_s = A_p gives t_b/(k A_p) within 1e-9 (R_sp,avg)  | model 9.2592592593e-03 exact 9.2592592593e-03
+ISSUE: B14 (i) is true by construction: at eps=1 the (1-eps) factor removes the Phi term, so the model reduces algebraically to tau/(pi k b_p)
+PASS  B14 (ii) eps=1e-4, tau=5, R0=0.05: R_sp,max*pi*k*a_s = 1 within 0.5 %  | value 1.000400
+PASS  B14 (ii) R_sp,avg*k*a_s = 0.2702 within 6 % (R0=0.05)  | value 0.282212 (4.45 % from 8/(3 pi^2)=0.270190)
+PASS  B14 (ii) eps=1e-4, tau=5, R0=0.3: R_sp,max*pi*k*a_s = 1 within 0.5 %  | value 1.000400
+PASS  B14 (ii) R_sp,avg*k*a_s = 0.2702 within 6 % (R0=0.3)  | value 0.282212 (4.45 % from 8/(3 pi^2)=0.270190)
+PASS  B14 (ii) eps=1e-4, tau=5, R0=5: R_sp,max*pi*k*a_s = 1 within 0.5 %  | value 1.000400
+PASS  B14 (ii) R_sp,avg*k*a_s = 0.2702 within 6 % (R0=5)  | value 0.282212 (4.45 % from 8/(3 pi^2)=0.270190)
+
+=== B15 resistance budget at 0.1 W ===
+R_TIM case U = 0.00463 K/W, case S = 0.04167 K/W
+RANGE-OK    R_TIM U = 0.00462963 (hand range 0.0045 to 0.0055)
+RANGE-OK    R_TIM S = 0.0416667 (hand range 0.04 to 0.044)
+Cu plate                       [PF t=0.30mm Nf=38 s=1.314mm k=390]
+   case U: base(1D)=0.00356 fin side(R_fa)=0.26794 total=0.27150 (+TIM 0.00463 = 0.27613)  T_max-T_in=27.15 K (with TIM 27.61 K)
+   case S: base(R_sp,max)=0.08075 fin side(R_fa)=0.26794 total=0.34870 (+TIM 0.04167 = 0.39036)  T_max-T_in=34.87 K (with TIM 39.04 K)
+PASS  B15 Cu plate case U: T_max - T_in < 100 K (with TIM)  | 27.61 K
+PASS  B15 Cu plate case S: T_max - T_in < 100 K (with TIM)  | 39.04 K
+Al plate k=150                 [PF t=0.40mm Nf=37 s=1.256mm k=150]
+   case U: base(1D)=0.00926 fin side(R_fa)=0.30437 total=0.31363 (+TIM 0.00463 = 0.31826)  T_max-T_in=31.36 K (with TIM 31.83 K)
+   case S: base(R_sp,max)=0.20543 fin side(R_fa)=0.30437 total=0.50980 (+TIM 0.04167 = 0.55147)  T_max-T_in=50.98 K (with TIM 55.15 K)
+PASS  B15 Al plate k=150 case U: T_max - T_in < 100 K (with TIM)  | 31.83 K
+PASS  B15 Al plate k=150 case S: T_max - T_in < 100 K (with TIM)  | 55.15 K
+Al pin k=150 fav               [PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) k=150 fric=min nu=K]
+   case U: base(1D)=0.00926 fin side(R_fa)=0.40250 total=0.41176 (+TIM 0.00463 = 0.41639)  T_max-T_in=41.18 K (with TIM 41.64 K)
+   case S: base(R_sp,max)=0.20735 fin side(R_fa)=0.40250 total=0.60985 (+TIM 0.04167 = 0.65152)  T_max-T_in=60.99 K (with TIM 65.15 K)
+PASS  B15 Al pin k=150 fav case U: T_max - T_in < 100 K (with TIM)  | 41.64 K
+PASS  B15 Al pin k=150 fav case S: T_max - T_in < 100 K (with TIM)  | 65.15 K
+Gyroid ks=150 cf=0.3 chi=0.2   [GY a=10mm rho=0.20 ts=0.647mm k=150 cf=0.3 chi=0.2]
+   case U: base(1D)=0.00926 fin side(R_fa)=0.35167 total=0.36093 (+TIM 0.00463 = 0.36556)  T_max-T_in=36.09 K (with TIM 36.56 K)
+   case S: base(R_sp,max)=0.20648 fin side(R_fa)=0.35167 total=0.55815 (+TIM 0.04167 = 0.59982)  T_max-T_in=55.82 K (with TIM 59.98 K)
+PASS  B15 Gyroid ks=150 cf=0.3 chi=0.2 case U: T_max - T_in < 100 K (with TIM)  | 36.56 K
+PASS  B15 Gyroid ks=150 cf=0.3 chi=0.2 case S: T_max - T_in < 100 K (with TIM)  | 59.98 K
+
+=== B17 T_hot candidates (case S, B14 outputs, t_b = 5 mm) ===
+Cu plate         T_avg=330.886 K T_max=333.020 K (T_max-T_avg=2.134 K) gap bound=0.0138 K; entropy-term error Q(1/Tavg-1/Tmax)=1.9363e-03 W/K, ratio to Q(1/T0-1/Tavg)=0.0584
+RANGE-OK    Cu plate T_max-T_avg = 2.13362 (hand range 1 to 7)
+RANGE-OK    Cu plate gap bound = 0.013758 (hand range 0 to 0.15)
+RANGE-OK    Cu plate relative error = 0.0583522 (hand range 0.03 to 0.12)
+Al plate k=150   T_avg=343.708 K T_max=349.130 K (T_max-T_avg=5.422 K) gap bound=0.0855 K; entropy-term error Q(1/Tavg-1/Tmax)=4.5186e-03 W/K, ratio to Q(1/T0-1/Tavg)=0.1016
+RANGE-OK    Al plate k=150 T_max-T_avg = 5.42222 (hand range 1 to 7)
+RANGE-OK    Al plate k=150 gap bound = 0.085539 (hand range 0 to 0.15)
+RANGE-OK    Al plate k=150 relative error = 0.101639 (hand range 0.03 to 0.12)

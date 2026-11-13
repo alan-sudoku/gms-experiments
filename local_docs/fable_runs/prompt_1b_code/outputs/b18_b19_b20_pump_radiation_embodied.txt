@@ -1,0 +1,59 @@
+Rows B18, B19, B20  (level: derived, unverified)
+Inputs used: design=PF t=0.30mm Nf=38 s=1.314mm k=390, V=0.003857680385769636, dP=25.92231341466395, T_out=320.3147309980119
+
+=== B18 pumping term ===
+T_rho = p0/(rho R_air) = 303.933 K (not 300 K / not T0 = 298.15 K)
+(a) ideal-gas mdot R ln(p_in/p_out) = 3.28978270e-04 W/K ; V dP/T_rho = 3.29020350e-04 W/K ; rel diff = 1.2789e-04 ; dP/(2 p0) = 1.2792e-04
+PASS  B18 (a) relative difference = dP/(2 p0) within 10 % of that number  | rel 1.2789e-04 vs 1.2792e-04 (ratio 0.9998)
+(b) V dP/T0 = 3.354016e-04 ; V dP/T_lm = 3.235200e-04 (T_lm=309.100 K) ; difference = 3.673 %
+PASS  B18 (b) difference below 10 %  | 3.673 %
+(c) eta_fan=0.10: V dP/(eta T0) = 3.354016e-03 W/K  (10.00 x the air-power term)
+(c) eta_fan=0.25: V dP/(eta T0) = 1.341607e-03 W/K  (4.00 x the air-power term)
+(c) eta_fan=0.40: V dP/(eta T0) = 8.385041e-04 W/K  (2.50 x the air-power term)
+INFO  T_rho note  | T_rho = 303.93 K, i.e. 3.93 K above 300 K (tabulated rho and R_air not exactly consistent)
+ISSUE: B18 (a) is a Taylor expansion of ln(1+x) with x = dP/p0 against the same quantity; it holds for any dP, V and does not test the design or the physics (mathematical identity to second order)
+ISSUE: B18 (c) is arithmetic (division by eta_fan); no check is possible or claimed. T_rho = 303.93 K as predicted by the spec (about 304 K).
+
+=== B19 radiation ===
+Cu        T_root=324.944 K eps=0.05 A_ext=0.0072 m2: Q_rad=0.06628 W; linearised 0.06615 W; rel diff -0.1846 %
+PASS  B19 Cu linearised within 2 %  | -0.1846 %
+Al k=150  T_root=328.587 K eps=0.80 A_ext=0.0072 m2: Q_rad=1.22647 W; linearised 1.22358 W; rel diff -0.2353 %
+PASS  B19 Al k=150 linearised within 2 %  | -0.2353 %
+RANGE-OK    Q_rad Cu = 0.0662763 (hand range 0 to 0.2)
+RANGE-OK    Q_rad Al = 1.22647 (hand range 0.8 to 1.8)
+  scale: Cu with eps=0.05 -> 0.06628 W
+  scale: Cu with eps=0.80 -> 1.06042 W
+  scale: Al k=150 with eps=0.05 -> 0.07665 W
+  scale: Al k=150 with eps=0.80 -> 1.22647 W
+INFO  B19 note  | T_root = T_in + Q R_fa is used as the radiating temperature for the whole envelope (as specified); the base is hotter than T_root only by Q R_base,1D
+
+=== B20 mass and embodied energy ===
+Cu plate (skived)        mass=0.3451 kg  [PF t=0.30mm Nf=38 s=1.314mm k=390]
+    E_emb = 30 MJ/kg -> 10.35 MJ, 54 MJ/kg -> 18.64 MJ, 70 MJ/kg -> 24.16 MJ
+Al plate k=150 (LPBF)    mass=0.1192 kg  [PF t=0.40mm Nf=37 s=1.256mm k=150]
+    E_emb(primary Al) = 131 MJ/kg -> 15.61 MJ, 200 MJ/kg -> 23.84 MJ
+    E_LPBF = 100 MJ/kg -> 11.92 MJ, 400 MJ/kg -> 47.68 MJ
+    E_emb + E_LPBF range = 27.53 to 71.51 MJ
+Al pin k=150 (LPBF)      mass=0.1047 kg  [PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) k=150 fric=min nu=K]
+    E_emb(primary Al) = 131 MJ/kg -> 13.71 MJ, 200 MJ/kg -> 20.94 MJ
+    E_LPBF = 100 MJ/kg -> 10.47 MJ, 400 MJ/kg -> 41.87 MJ
+    E_emb + E_LPBF range = 24.18 to 62.81 MJ
+Gyroid ks=150 (LPBF)     mass=0.1057 kg  [GY a=10mm rho=0.20 ts=0.647mm k=150 cf=0.3 chi=0.2]
+    E_emb(primary Al) = 131 MJ/kg -> 13.85 MJ, 200 MJ/kg -> 21.15 MJ
+    E_LPBF = 100 MJ/kg -> 10.57 MJ, 400 MJ/kg -> 42.29 MJ
+    E_emb + E_LPBF range = 24.42 to 63.44 MJ
+CED per volume ratio (e_Al rho_Al)/(e_Cu rho_Cu):
+   e_Al=131,e_Cu=30: 1.301, e_Al=131,e_Cu=54: 0.723, e_Al=131,e_Cu=70: 0.558
+   e_Al=200,e_Cu=30: 1.987, e_Al=200,e_Cu=54: 1.104, e_Al=200,e_Cu=70: 0.851
+RANGE-OK    CED ratio min = 0.557669 (hand range 0.5 to 2)
+RANGE-OK    CED ratio max = 1.98661 (hand range 0.5 to 2)
+RANGE-OK    Cu sink mass = 0.345139 (hand range 0.3 to 0.45)
+RANGE-OK    Al plate sink mass = 0.119189 (hand range 0.1 to 0.2)
+RANGE-OK    Cu E_emb min [MJ] = 10.3542 (hand range 10 to 40)
+RANGE-OK    Cu E_emb max [MJ] = 24.1597 (hand range 10 to 40)
+RANGE-OK    Al plate E_emb(primary) min [MJ] = 15.6137 (hand range 10 to 40)
+RANGE-OK    Al plate E_emb(primary) max [MJ] = 23.8378 (hand range 10 to 40)
+Comparison with B12: Al plate k=150 extra fan energy over 5 years dE = 37.34 MJ (electrical)
+   E_emb Al plate (primary) 15.61 MJ vs Cu plate E_emb(54) 18.64 MJ vs dE 37.34 MJ
+   E_emb Al plate (primary) 23.84 MJ vs Cu plate E_emb(54) 18.64 MJ vs dE 37.34 MJ
+INFO  B20  | no independent check exists; values are reported only. Electricity vs primary energy not converted (dE is electrical).

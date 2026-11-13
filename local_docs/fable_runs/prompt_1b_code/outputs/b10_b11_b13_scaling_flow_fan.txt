@@ -1,0 +1,68 @@
+Rows B10, B11, B13  (level: derived, unverified)
+Inputs used: P_air=[0.01, 0.03, 0.1, 0.3, 1.0], fan=dP=60*(1-V/0.012) Pa, eta_fan=0.25
+
+=== B10 exponent n ===
+Cu plate                         R_fa=0.5348 0.3833 0.2679 0.1947 0.1386  n=-0.2934
+RANGE-OK    n(Cu plate)=-0.2934 in -0.40..-0.15
+    local slopes between neighbouring P_air: -0.303, -0.297, -0.290, -0.283
+Al plate k=200                   R_fa=0.5699 0.4130 0.2929 0.2160 0.1564  n=-0.2809
+RANGE-OK    n(Al plate k=200)=-0.2809 in -0.40..-0.15
+    local slopes between neighbouring P_air: -0.293, -0.285, -0.277, -0.268
+Al plate k=180                   R_fa=0.5757 0.4177 0.2969 0.2194 0.1592  n=-0.2792
+RANGE-OK    n(Al plate k=180)=-0.2792 in -0.40..-0.15
+    local slopes between neighbouring P_air: -0.292, -0.284, -0.275, -0.266
+Al plate k=150                   R_fa=0.5863 0.4270 0.3044 0.2257 0.1644  n=-0.2762
+RANGE-OK    n(Al plate k=150)=-0.2762 in -0.40..-0.15
+    local slopes between neighbouring P_air: -0.289, -0.281, -0.272, -0.263
+Al plate k=100                   R_fa=0.6164 0.4520 0.3248 0.2425 0.1790  n=-0.2688
+RANGE-OK    n(Al plate k=100)=-0.2688 in -0.40..-0.15
+    local slopes between neighbouring P_air: -0.282, -0.275, -0.266, -0.252
+Al pin k=150 fav                 R_fa=0.7520 0.5532 0.4025 0.3006 0.2202  n=-0.2663
+RANGE-OK    n(Al pin k=150 fav)=-0.2663 in -0.40..-0.15
+    local slopes between neighbouring P_air: -0.280, -0.264, -0.266, -0.258
+Gyroid ks=150 cf=0.3 chi=0.2     R_fa=0.6722 0.4901 0.3517 0.2590 0.1873  n=-0.2773
+RANGE-OK    n(Gyroid ks=150 cf=0.3 chi=0.2)=-0.2773 in -0.40..-0.15
+    local slopes between neighbouring P_air: -0.288, -0.276, -0.278, -0.269
+Pin k=390 fav                    R_fa=0.7039 0.5112 0.3630 0.2682 0.1925  n=-0.2813
+RANGE-OK    n(Pin k=390 fav)=-0.2813 in -0.40..-0.15
+    local slopes between neighbouring P_air: -0.291, -0.284, -0.275, -0.276
+Pin k=100 fav                    R_fa=0.7809 0.5842 0.4240 0.3184 0.2356  n=-0.2609
+RANGE-OK    n(Pin k=100 fav)=-0.2609 in -0.40..-0.15
+    local slopes between neighbouring P_air: -0.264, -0.266, -0.261, -0.250
+Gyroid ks=100 cf=0.3 chi=0.2     R_fa=0.7107 0.5249 0.3758 0.2798 0.2050  n=-0.2705
+RANGE-OK    n(Gyroid ks=100 cf=0.3 chi=0.2)=-0.2705 in -0.40..-0.15
+    local slopes between neighbouring P_air: -0.276, -0.278, -0.268, -0.258
+Gyroid ks=180 cf=0.3 chi=0.2     R_fa=0.6588 0.4778 0.3401 0.2511 0.1805  n=-0.2807
+RANGE-OK    n(Gyroid ks=180 cf=0.3 chi=0.2)=-0.2807 in -0.40..-0.15
+    local slopes between neighbouring P_air: -0.292, -0.282, -0.276, -0.274
+
+=== B11 equal volume flow V = V_Cu,opt (0.1 W) ===
+V_Cu,opt = 3.85768e-03 m3/s; Cu plate-fin optimum: PF t=0.30mm Nf=38 s=1.314mm k=390
+Cu plate                         design: PF t=0.30mm Nf=38 s=1.314mm k=390
+     at V_Cu: R_fa=0.2679 (x1.000 of Cu plate)  dP=25.922 Pa  P_air=0.1000 W (x1.00 of 0.1 W)  dT=22.165  1/C=0.2216  NTU=1.756  [R_fa at 0.1 W: 0.2679]
+Al plate k=150                   design: PF t=0.40mm Nf=37 s=1.256mm k=150
+     at V_Cu: R_fa=0.2905 (x1.084 of Cu plate)  dP=30.865 Pa  P_air=0.1191 W (x1.19 of 0.1 W)  dT=22.165  1/C=0.2216  NTU=1.439  [R_fa at 0.1 W: 0.3044]
+Al pin k=150 fav                 design: PIN d=2.0mm p=2.00 N=225(NT=15,NL=15) k=150 fric=min nu=K
+     at V_Cu: R_fa=0.2956 (x1.103 of Cu plate)  dP=86.103 Pa  P_air=0.3322 W (x3.32 of 0.1 W)  dT=22.165  1/C=0.2216  NTU=1.385  [R_fa at 0.1 W: 0.4025]
+Gyroid ks=150 cf=0.3 chi=0.2     design: GY a=10mm rho=0.20 ts=0.647mm k=150 cf=0.3 chi=0.2
+     at V_Cu: R_fa=0.3222 (x1.202 of Cu plate)  dP=36.031 Pa  P_air=0.1390 W (x1.39 of 0.1 W)  dT=22.165  1/C=0.2216  NTU=1.165  [R_fa at 0.1 W: 0.3517]
+Gyroid ks=150 cf=1.0 chi=0.1     design: GY a=15mm rho=0.20 ts=0.970mm k=150 cf=1 chi=0.1
+     at V_Cu: R_fa=0.3073 (x1.147 of Cu plate)  dP=78.428 Pa  P_air=0.3025 W (x3.03 of 0.1 W)  dT=22.165  1/C=0.2216  NTU=1.277  [R_fa at 0.1 W: 0.4174]
+PASS  B11 energy balance: dT_air identical for all  | spread 0.000e+00 K
+PASS  B11 R_fa >= 1/C for all
+ISSUE: B11 both checks (dT_air identical; R_fa >= 1/C) are true by construction: dT=Q/(rho V cp) and R_fa = 1/(C(1-exp(-NTU))) > 1/C for any NTU>0; flagged per instructions
+    Al pin k=150 fav: does not beat Cu plate at equal V (R ratio 1.103) while using 3.32 x the air power
+    Gyroid ks=150 cf=0.3 chi=0.2: does not beat Cu plate at equal V (R ratio 1.202) while using 1.39 x the air power
+    Gyroid ks=150 cf=1.0 chi=0.1: does not beat Cu plate at equal V (R ratio 1.147) while using 3.03 x the air power
+ISSUE: B11 hand expectation 'pin and gyroid R_fa approach or beat plate fins at equal V' missed: R ratios to Cu plate = 1.103, 1.202, 1.147 (pin, gyroid 0.3/0.2, gyroid 1.0/0.1); they use 3.3x, 1.4x, 3.0x the air power
+
+=== B13 same fan (dP = 60(1 - V/0.012)) ===
+Cu plate                         V=4.9739e-03 m3/s dP=35.131 Pa P_air=0.1747 W R_fa=0.2299  (fan-curve residual 1.16e-07 Pa)  
+Al plate k=150                   V=4.5242e-03 m3/s dP=37.379 Pa P_air=0.1691 W R_fa=0.2666  (fan-curve residual 1.34e-08 Pa)  
+Al pin k=150 fav                 V=2.7517e-03 m3/s dP=46.242 Pa P_air=0.1272 W R_fa=0.3773  (fan-curve residual 3.77e-07 Pa)  
+Gyroid ks=150 cf=0.3 chi=0.2     V=4.0564e-03 m3/s dP=39.718 Pa P_air=0.1611 W R_fa=0.3099  (fan-curve residual 2.61e-07 Pa)  
+Gyroid ks=150 cf=1.0 chi=0.1     V=2.9161e-03 m3/s dP=45.420 Pa P_air=0.1324 W R_fa=0.3857  (fan-curve residual 3.16e-07 Pa)  
+PASS  B13 P_air at operating point <= 0.18 W  | max 0.17474 W
+ISSUE: B13 check 'P_air <= dP_max*V_max/4 = 0.18 W' is true by construction for any (V, dP) on a linear fan curve (spec says so itself); flagged per instructions
+Ranking at fan operating point (first four, best first): ['Cu plate', 'Al plate k=150', 'Gyroid ks=150 cf=0.3 chi=0.2', 'Al pin k=150 fav']
+Ranking at equal 0.1 W optimum                        : ['Cu plate', 'Al plate k=150', 'Gyroid ks=150 cf=0.3 chi=0.2', 'Al pin k=150 fav']

@@ -1,0 +1,8 @@
+Rows B08  (level: derived, unverified)
+Inputs used: t=0.0004, N_f=32, k=390.0, V=0.0041947301843147135, h=70.43042996085329
+a_sf=1033.333 1/m, phi=0.78667, k_eff=83.200 W/m/K, m=29.5760 (plate m=30.0492), eta=0.80025 (plate 0.79538)
+R_fa porous=0.277855  R_fa plate=0.278648  NTU 1.32280 vs 1.31499
+PASS  B08 eta within 2 %  | rel diff 6.1263e-03
+PASS  B08 R_fa within 3 %  | rel diff -2.8460e-03
+INFO  m ratio  | m_porous/m_plate = 0.984251, sqrt(31/32) = 0.984251
+ISSUE: B08 is a low-power check: the porous inputs are algebraic rearrangements of the plate inputs, so m differs only by sqrt(N_ch/N_f); the area terms are identical. It tests the GY6/X1 wiring, not the gyroid physics (spec states this). Also, the check re-implements GY6/X1 inline from the spec rather than calling GY.eval (which cannot take bypassed inputs), so the GY.eval class used in B09-B13 is not itself exercised by B08.

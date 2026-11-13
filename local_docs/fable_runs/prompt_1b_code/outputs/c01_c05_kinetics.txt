@@ -1,0 +1,87 @@
+Rows C01-C05  (level: derived, unverified)
+
+=== C01 Tafel slopes ===
+   T [K]  alpha       b [mV]     b10 [mV]
+  298.15    0.5     51.38516    118.31869
+  298.15    1.0     25.69258     59.15935
+  298.15    1.5     17.12839     39.43956
+  298.15    2.0     12.84629     29.57967
+  353.15    0.5     60.86422    140.14505
+  353.15    1.0     30.43211     70.07252
+  353.15    1.5     20.28807     46.71502
+  353.15    2.0     15.21606     35.03626
+PASS  C01 b agrees with k_B T/(alpha e) (independent CODATA 2018 constants) within 1e-6 rel  | max rel diff 5.234e-08
+PASS  C01 b10(298.15 K, alpha=1) = 59.16 mV within 0.02 mV  | 59.15935 mV
+PASS  C01 hand: b = 51.39 mV at alpha=0.5, 298.15 K (to 0.01 mV)  | 51.38516 mV
+
+=== C02 Pt reference overpotential at J = 1 A/cm2 ===
+Inputs used: alpha=0.5, T=298.15, J=1.0, P1_j0=0.2, P2_j0=0.0006, Rf=[1, 100, 200]
+  P1 Rf=  1: eta=0.084643 V (J/(2 Rf j0)=2.5); neither limit applies (J/(2 Rf j0)=2.5)
+  P1 Rf=100: eta=0.001284 V (J/(2 Rf j0)=0.025); linear form 0.001285 V (rel diff 1.041e-04) PASS
+  P1 Rf=200: eta=0.000642 V (J/(2 Rf j0)=0.0125); linear form 0.000642 V (rel diff 2.604e-05) PASS
+  P2 Rf=  1: eta=0.381205 V (J/(2 Rf j0)=833.3); Tafel form 0.38120 V (rel diff -4.853e-08) PASS
+  P2 Rf=100: eta=0.144752 V (J/(2 Rf j0)=8.333); neither limit applies (J/(2 Rf j0)=8.33)
+  P2 Rf=200: eta=0.109675 V (J/(2 Rf j0)=4.167); neither limit applies (J/(2 Rf j0)=4.17)
+RANGE-OK    eta P2 Rf=1 = 0.381205 V vs hand 0.381 (1%)
+RANGE-OK    eta P2 Rf=100 = 0.144752 V vs hand 0.145 (1%)
+RANGE-OK    eta P1 Rf=1 = 0.0846432 V vs hand 0.085 (1%)
+RANGE-OK    eta P1 Rf=100 = 0.0012845 V vs hand 0.00128 (1%)
+ISSUE: C02 note: the P1/P2 limit checks compare the asinh form with its own Tafel/linear asymptotes; this is a valid limit check but depends on the same b
+
+=== C03 roughness needed to match Pt (equal alpha) ===
+  P1 Rf_Pt=  1  R_c (J=1) for j0c=1e-7..1e-3: 2e+06  2e+05  2e+04  2000  200
+  P1 Rf_Pt=100  R_c (J=1) for j0c=1e-7..1e-3: 2e+08  2e+07  2e+06  2e+05  2e+04
+  P1 Rf_Pt=200  R_c (J=1) for j0c=1e-7..1e-3: 4e+08  4e+07  4e+06  4e+05  4e+04
+  P2 Rf_Pt=  1  R_c (J=1) for j0c=1e-7..1e-3: 6000  600  60  6  0.6
+  P2 Rf_Pt=100  R_c (J=1) for j0c=1e-7..1e-3: 6e+05  6e+04  6000  600  60
+  P2 Rf_Pt=200  R_c (J=1) for j0c=1e-7..1e-3: 1.2e+06  1.2e+05  1.2e+04  1200  120
+PASS  C03 R_c = Rf_Pt j0Pt/j0c within 1e-6 rel (all scenarios, j0c, J)  | max rel diff 6.661e-16
+PASS  C03 R_c identical for J = 0.1, 1, 2 (1e-6)  | cases failing: 0
+RANGE-OK    P2 flat, j0c=1e-5: R_c=60 hand 60
+RANGE-OK    P2 Rf=100, j0c=1e-6: R_c=60000 hand 6e+04
+RANGE-OK    P1 Rf=100, j0c=1e-5: R_c=2e+06 hand 2e+06
+ISSUE: C03 3 of 90 (scenario, j0c, J) combinations give R_c < 1 (candidate with that j0c needs no roughening; R_c<1 is not a physical roughness factor), e.g. [('P2', 1, 0.001, 0.1, 0.6), ('P2', 1, 0.001, 1.0, 0.6000000000000001), ('P2', 1, 0.001, 2.0, 0.6000000000000001)]
+ISSUE: C03 check is an algebraic identity of D7 (sinh/asinh inverse pair) when alphas are equal; the spec itself notes the check uses neither function, so it does verify the code, but not the physics
+
+=== C04 unequal Tafel slopes ===
+  Rf_Pt=  1 a_c=0.5 j0c=1e-06: R_c=600 eta_ref/b_c=7.42; Tafel R_c=600 (rel -3.60e-07); d_eta/decade=118.317 mV vs b10=118.319 mV (J/(2Rc j0c)=833)
+  Rf_Pt=  1 a_c=0.5 j0c=1e-05: R_c=60 eta_ref/b_c=7.42; Tafel R_c=60 (rel -3.60e-07); d_eta/decade=118.317 mV vs b10=118.319 mV (J/(2Rc j0c)=833)
+  Rf_Pt=  1 a_c=1.0 j0c=1e-06: R_c=0.36 eta_ref/b_c=14.84; Tafel R_c=0.36 (rel -1.30e-13); d_eta/decade=59.159 mV vs b10=59.159 mV (J/(2Rc j0c)=1.39e+06)
+ISSUE: C04 R_c = 0.36 < 1 (alpha_c=1.0, j0c=1e-06, Pt Rf=1): not a physical roughness factor
+  Rf_Pt=  1 a_c=1.0 j0c=1e-05: R_c=0.036 eta_ref/b_c=14.84; Tafel R_c=0.036 (rel -1.30e-13); d_eta/decade=59.159 mV vs b10=59.159 mV (J/(2Rc j0c)=1.39e+06)
+ISSUE: C04 R_c = 0.036 < 1 (alpha_c=1.0, j0c=1e-05, Pt Rf=1): not a physical roughness factor
+  Rf_Pt=  1 a_c=1.5 j0c=1e-06: R_c=0.000216 eta_ref/b_c=22.26; Tafel R_c=0.000216 (rel 0.00e+00); d_eta/decade=39.440 mV vs b10=39.440 mV (J/(2Rc j0c)=2.31e+09)
+ISSUE: C04 R_c = 0.000216 < 1 (alpha_c=1.5, j0c=1e-06, Pt Rf=1): not a physical roughness factor
+  Rf_Pt=  1 a_c=1.5 j0c=1e-05: R_c=2.16e-05 eta_ref/b_c=22.26; Tafel R_c=2.16e-05 (rel 0.00e+00); d_eta/decade=39.440 mV vs b10=39.440 mV (J/(2Rc j0c)=2.31e+09)
+ISSUE: C04 R_c = 2.16e-05 < 1 (alpha_c=1.5, j0c=1e-05, Pt Rf=1): not a physical roughness factor
+  Rf_Pt=100 a_c=0.5 j0c=1e-06: R_c=6e+04 eta_ref/b_c=2.82; Tafel R_c=5.979e+04 (rel -3.57e-03); d_eta/decade=105.777 mV vs b10=118.319 mV (J/(2Rc j0c)=8.33)
+  Rf_Pt=100 a_c=0.5 j0c=1e-05: R_c=6000 eta_ref/b_c=2.82; Tafel R_c=5979 (rel -3.57e-03); d_eta/decade=105.777 mV vs b10=118.319 mV (J/(2Rc j0c)=8.33)
+  Rf_Pt=100 a_c=1.0 j0c=1e-06: R_c=3574 eta_ref/b_c=5.63; Tafel R_c=3574 (rel -1.28e-05); d_eta/decade=59.127 mV vs b10=59.159 mV (J/(2Rc j0c)=140)
+  Rf_Pt=100 a_c=1.0 j0c=1e-05: R_c=357.4 eta_ref/b_c=5.63; Tafel R_c=357.4 (rel -1.28e-05); d_eta/decade=59.127 mV vs b10=59.159 mV (J/(2Rc j0c)=140)
+  Rf_Pt=100 a_c=1.5 j0c=1e-06: R_c=213.7 eta_ref/b_c=8.45; Tafel R_c=213.7 (rel -4.57e-08); d_eta/decade=39.439 mV vs b10=39.440 mV (J/(2Rc j0c)=2.34e+03)
+  Rf_Pt=100 a_c=1.5 j0c=1e-05: R_c=21.37 eta_ref/b_c=8.45; Tafel R_c=21.37 (rel -4.57e-08); d_eta/decade=39.439 mV vs b10=39.440 mV (J/(2Rc j0c)=2.34e+03)
+PASS  C04 reduces to C03 at alpha_c = 0.5; Tafel R_c within 2 %; d_eta/decade = b10 within 2 % (when applicable)  | 0 failures
+
+=== C05 OER at 1 A/cm2 by Tafel extrapolation ===
+  NiFe eta_ref=0.25 V, b10=0.030 V -> eta(1 A/cm2)=0.310 V
+  NiFe eta_ref=0.25 V, b10=0.040 V -> eta(1 A/cm2)=0.330 V
+  NiFe eta_ref=0.25 V, b10=0.060 V -> eta(1 A/cm2)=0.370 V
+  NiFe eta_ref=0.30 V, b10=0.030 V -> eta(1 A/cm2)=0.360 V
+  NiFe eta_ref=0.30 V, b10=0.040 V -> eta(1 A/cm2)=0.380 V
+  NiFe eta_ref=0.30 V, b10=0.060 V -> eta(1 A/cm2)=0.420 V
+  NiFe eta_ref=0.35 V, b10=0.030 V -> eta(1 A/cm2)=0.410 V
+  NiFe eta_ref=0.35 V, b10=0.040 V -> eta(1 A/cm2)=0.430 V
+  NiFe eta_ref=0.35 V, b10=0.060 V -> eta(1 A/cm2)=0.470 V
+  Ir oxide eta=0.400 V
+  Pt j0=1e-10 A/cm2 -> eta=1.200 V
+  Pt j0=1e-09 A/cm2 -> eta=1.080 V
+  Pt j0=1e-08 A/cm2 -> eta=0.960 V
+RANGE-OK    NiFe min = 0.31 (hand range 0.31 to 0.47)
+RANGE-OK    NiFe max = 0.47 (hand range 0.31 to 0.47)
+RANGE-OK    Ir oxide = 0.4 (hand range 0.399 to 0.401)
+RANGE-OK    Pt min = 0.96 (hand range 0.96 to 1.2)
+RANGE-OK    Pt max = 1.2 (hand range 0.96 to 1.2)
+RANGE-OK    NiFe min vs reported 0.27-0.45 V = 0.31 (hand range 0.27 to 0.45)
+RANGE-MISS  NiFe max vs reported 0.27-0.45 V = 0.47 (hand range 0.27 to 0.45)
+ISSUE: hand-range miss NiFe max vs reported 0.27-0.45 V = 0.47, range 0.27 to 0.45
+INFO  C05  | pure extrapolation over two decades; not a prediction

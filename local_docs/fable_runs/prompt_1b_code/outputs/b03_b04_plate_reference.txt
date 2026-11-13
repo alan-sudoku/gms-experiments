@@ -1,0 +1,86 @@
+Rows B03, B04  (level: derived, unverified)
+Inputs used: t=0.0004, N_f=32, k=390.0, P_air=0.1, H=0.03, L=0.06, W=0.06
+
+=== B03 reference design ===
+  s [m]                  0.00152258
+  V [m3/s]               0.00419473
+  u [m/s]                2.96238
+  Re                     540.133
+  dP [Pa]                23.8394
+  Nu                     8.15483
+  h [W/m2/K]             70.4304
+  eta_f                  0.79538
+  NTU                    1.31499
+  dT_air [K]             20.3838
+  R_fa [K/W]             0.278648
+  1/C [K/W]              0.203838
+  mass [kg]              0.367718
+  V*dP [W]               0.1
+  R_fa,T (PF12) [K/W]    0.287856
+PASS  B03 bisection: V*dP = 0.1 W within 1e-8 rel  | P_air=0.09999999963
+PASS  B03 (i) PF12 ratio R_fa,T/R_fa in 0.85-1.15  | ratio=1.0330
+PASS  B03 (ii) dP with H=1000 m, L=10 m, s=1.5 mm, u=1 within 1.5% of 12*mu*u*L/s^2  | dP=985.10677 exact=984.53333 rel diff=5.824e-04
+PASS  B03 (iii) Nu with L=100 m = 7.55 +-0.02  | Nu=7.55004 (exact fully developed 7.541)
+PASS  B03 (iv) Re < 2300  | Re=540.1
+RANGE-OK    s [mm] = 1.52258 (hand range 1.51 to 1.54)
+RANGE-OK    V [1e-3 m3/s] = 4.19473 (hand range 3.5 to 5)
+RANGE-OK    dP [Pa] = 23.8394 (hand range 18 to 32)
+RANGE-OK    h = 70.4304 (hand range 60 to 90)
+RANGE-OK    eta_f = 0.79538 (hand range 0.75 to 0.83)
+RANGE-OK    NTU = 1.31499 (hand range 1.1 to 1.7)
+RANGE-OK    dT_air = 20.3838 (hand range 17 to 25)
+RANGE-OK    R_fa = 0.278648 (hand range 0.24 to 0.31)
+INFO  PF8 Nu note  | PF8 is a mean on the log-mean temperature difference; R_fa in X1 additionally uses eps-NTU with C; both applied as written
+
+=== B04 material swap, geometry fixed (t=0.4 mm, N_f=32) ===
+
+P_air = 0.01 W
+      k       R_fa    ratio    eta_f        1/C 1/C share         V        dP
+    390    0.60421   1.0000   0.8032    0.58837     0.974 1.4533e-03    6.8811
+    200    0.61538   1.0185   0.6859    0.58837     0.956 1.4533e-03    6.8811
+    180    0.61813   1.0230   0.6649    0.58837     0.952 1.4533e-03    6.8811
+    150    0.62379   1.0324   0.6274    0.58837     0.943 1.4533e-03    6.8811
+    120    0.63255   1.0469   0.5803    0.58837     0.930 1.4533e-03    6.8811
+    100    0.64150   1.0617   0.5415    0.58837     0.917 1.4533e-03    6.8811
+
+P_air = 0.03 W
+      k       R_fa    ratio    eta_f        1/C 1/C share         V        dP
+    390    0.39530   1.0000   0.8004    0.35200     0.890 2.4291e-03   12.3502
+    200    0.41426   1.0480   0.6823    0.35200     0.850 2.4291e-03   12.3502
+    180    0.41857   1.0589   0.6611    0.35200     0.841 2.4291e-03   12.3502
+    150    0.42714   1.0805   0.6235    0.35200     0.824 2.4291e-03   12.3502
+    120    0.43978   1.1125   0.5763    0.35200     0.800 2.4291e-03   12.3502
+    100    0.45212   1.1437   0.5376    0.35200     0.779 2.4291e-03   12.3502
+
+P_air = 0.1 W
+      k       R_fa    ratio    eta_f        1/C 1/C share         V        dP
+    390    0.27865   1.0000   0.7954    0.20384     0.732 4.1947e-03   23.8394
+RANGE-OK    1/C share for Cu at 0.1 W = 0.731524 (hand range 0.6 to 0.8)
+    200    0.30205   1.0840   0.6758    0.20384     0.675 4.1947e-03   23.8394
+    180    0.30719   1.1024   0.6545    0.20384     0.664 4.1947e-03   23.8394
+RANGE-OK    ratio k=180 at 0.1 W = 1.10244 (hand range 1.08 to 1.14)
+    150    0.31725   1.1385   0.6167    0.20384     0.643 4.1947e-03   23.8394
+RANGE-OK    ratio k=150 at 0.1 W = 1.13852 (hand range 1.11 to 1.18)
+    120    0.33177   1.1906   0.5694    0.20384     0.614 4.1947e-03   23.8394
+    100    0.34566   1.2405   0.5307    0.20384     0.590 4.1947e-03   23.8394
+RANGE-OK    ratio k=100 at 0.1 W = 1.2405 (hand range 1.17 to 1.3)
+
+P_air = 0.3 W
+      k       R_fa    ratio    eta_f        1/C 1/C share         V        dP
+    390    0.22115   1.0000   0.7883    0.12590     0.569 6.7915e-03   44.1726
+    200    0.24612   1.1129   0.6668    0.12590     0.512 6.7915e-03   44.1726
+    180    0.25152   1.1374   0.6453    0.12590     0.501 6.7915e-03   44.1726
+    150    0.26203   1.1849   0.6072    0.12590     0.480 6.7915e-03   44.1726
+    120    0.27710   1.2530   0.5598    0.12590     0.454 6.7915e-03   44.1726
+    100    0.29139   1.3176   0.5211    0.12590     0.432 6.7915e-03   44.1726
+
+P_air = 1 W
+      k       R_fa    ratio    eta_f        1/C 1/C share         V        dP
+    390    0.18238   1.0000   0.7769    0.07557     0.414 1.1314e-02   88.3868
+    200    0.20782   1.1395   0.6524    0.07557     0.364 1.1314e-02   88.3868
+    180    0.21328   1.1694   0.6306    0.07557     0.354 1.1314e-02   88.3868
+    150    0.22385   1.2274   0.5922    0.07557     0.338 1.1314e-02   88.3868
+    120    0.23892   1.3101   0.5448    0.07557     0.316 1.1314e-02   88.3868
+    100    0.25315   1.3880   0.5063    0.07557     0.299 1.1314e-02   88.3868
+PASS  B04 V and dP identical for all k at each P_air  | bitwise comparison
+ISSUE: B04 check 'V and dP identical for all k' is true by construction: the hydraulics function does not take k (the spec itself says it checks the code path); flagged per instructions
