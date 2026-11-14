@@ -1,0 +1,84 @@
+3 | Über die Streuung von Strahlung durch freie Elektronen nach der neuen relativistischen Qua | Klein, Nishina | Zeitschrift für Physik 52 11-12 853-868 1929 10.1007/bf01366453
+3 | Die Streuung von Strahlung durch gebundene und freie Elektronen nach der Diracschen relati | Waller | Zeitschrift f�r Physik 61 11-12 837-851 1930 10.1007/bf01340210
+--
+7 | Sur les fonctions convexes et les inégalités entre les valeurs moyennes | Jensen | Acta Mathematica 30 0 175-193 1906 10.1007/bf02418571
+7 | ANALYSE MATHÉMATIQUE. – Mémoire sur les valeurs moyennes des fonctions |  | Oeuvres complètes None None 186-186 2009 10.1017/cbo9780511702396.029
+--
+11 | ENDF/B-VI Release 8 (Last release of ENDF/B-VI) The U.S. Evaluated Nuclear Data Library fo |  | ? None None None 2001 10.61092/iaea.8yrj-d0ym
+11 | POINT2025: ENDF/B-VIII.1 Temperature Dependent Cross Section Library | ?, Cullen | ? None None None 2025 10.61092/iaea.rpqa-17hw
+--
+12 | JENDL-2 (Rev. 1) Japanese Evaluated Nuclear Data Library Version 2, Rev. 1 | Pronyaev, Lemmel | ? None None None 1986 10.61092/iaea.c4hw-h1e1
+12 | JENDL-3.3 The Japanese Evaluated Nuclear Data Library | Lemmel, McLaughlin | ? None None None 2002 10.61092/iaea.p1kf-f27k
+--
+15 | Effects of eddy currents in transformer windings | Dowell | Proceedings of the Institution of Electrical Engineers 113 8 1387 1966 10.1049/piee.1966.0236
+15 | Multipolar development of vector potential for parallel wires. Application to the study of | Keradec, Laveuve, Roudet | IEEE Transactions on Magnetics 27 5 4242-4245 1991 10.1109/20.105038
+--
+16 | Metal-sheathed paper-insulated plain annealed copper conductors for electricity supply inc |  | ? None None None None 10.3403/30305640
+16 | XX. Experiments on contact electricity between non-conductors | Thomson | Proceedings of the Royal Society of London 25 171-178 169-171 1877 10.1098/rspl.1876.0039
+--
+20 | Die Wärmeübertragung durch Strahlung | Schmidt | Einführung in die Technische Thermodynamik None None 384-397 1956 10.1007/978-3-662-25921-4_18
+20 | Die Wärmeübertragung durch Strahlung | Schmidt | Einführung in die technische Thermodynamik None None 313-325 1944 10.1007/978-3-662-36780-3_15
+--
+23 | The Physiological Principle of Minimum Work | Murray | Proceedings of the National Academy of Sciences 12 3 207-214 1926 10.1073/pnas.12.3.207
+23 | THE PHYSIOLOGICAL PRINCIPLE OF MINIMUM WORK | Murray | Journal of General Physiology 14 4 445-445 1931 10.1085/jgp.14.4.445
+--
+24 | A Variational Approach to the Theory of the Effective Magnetic Permeability of Multiphase  | Hashin, Shtrikman | Journal of Applied Physics 33 10 3125-3131 1962 10.1063/1.1728579
+24 | 11 Hashin–Shtrikman variational method |  | Homogenization Methods None None 85-98 2023 10.1515/9783110793529-011
+--
+25 | Theoretical Analysis of Current Distribution in Porous Electrodes | Newman, Tobias | Journal of The Electrochemical Society 109 12 1183 1962 10.1149/1.2425269
+25 | A Theoretical Comparison of Flow‐Through and Flow‐By Porous Electrodes at the Limiting Cur | Risch, Newman | Journal of The Electrochemical Society 131 11 2551-2556 1984 10.1149/1.2115357
+--
+26 | On porous electrodes in electrolyte solutions | de Levie | Electrochimica Acta 8 10 751-780 1963 10.1016/0013-4686(63)80042-0
+26 | On porous electrodes in electrolyte solutions—IV | de Levie | Electrochimica Acta 9 9 1231-1245 1964 10.1016/0013-4686(64)85015-5
+--
+27 | Work function, electronegativity, and electrochemical behaviour of metals | Trasatti | Journal of Electroanalytical Chemistry and Interfacial Electrochemistry 33 2 351-378 1971 10.1016/s0022-0728(71)80123-7
+27 | Work function, electronegativity, and electrochemical behaviour of metals | Trasatti | Journal of Electroanalytical Chemistry and Interfacial Electrochemistry 39 1 163-184 1972 10.1016/s0022-0728(72)80485-6
+--
+28 | Hydrogen Oxidation and Evolution Reaction Kinetics on Platinum: Acid vs Alkaline Electroly | Sheng, Gasteiger, Shao-Horn | Journal of The Electrochemical Society 157 11 B1529 2010 10.1149/1.3483106
+28 | Platinum Surface Water Orientation Dictates Hydrogen Evolution Reaction Kinetics in Alkali |  | ? None None None None 10.1021/jacs.3c12934.s001
+--
+29 | Benchmarking Heterogeneous Electrocatalysts for the Oxygen Evolution Reaction | McCrory, Jung, Peters, Jaramillo | Journal of the American Chemical Society 135 45 16977-16987 2013 10.1021/ja407115p
+29 | Benchmarking of Heterogeneous CO<sub>2</sub> Reduction Reaction Electrocatalysts | Ferrer, McCrory, Peters, Jaramillo | ECS Meeting Abstracts MA2015-01 30 1755-1755 2015 10.1149/ma2015-01/30/1755
+--
+30 | A review of specific conductivities of potassium hydroxide solutions for various concentra | GILLIAM, GRAYDON, KIRK, THORPE | International Journal of Hydrogen Energy 32 3 359-364 2007 10.1016/j.ijhydene.2006.10.062
+30 | ChemInform Abstract: THE ELECTROCHEMICAL FORMATION OF GOLD(I) HYDROXIDE ON GOLD IN AQUEOUS | KIRK, FOULKES, GRAYDON | Chemischer Informationsdienst 11 34 None 1980 10.1002/chin.198034029
+--
+35 | ChemInform Abstract: Hard Magnetic Materials: A Perspective | Coey | ChemInform 44 25 None 2013 10.1002/chin.201325187
+35 | Hard Magnetic Materials: A Perspective | Coey | IEEE Transactions on Magnetics 47 12 4671-4681 2011 10.1109/tmag.2011.2166975
+--
+37 | Magnetic anisotropy — How much is enough for a permanent magnet? | Skomski, Coey | Scripta Materialia 112 None 3-8 2016 10.1016/j.scriptamat.2015.09.021
+37 | Anisotropy and coercivity | Skomski, Coey | Permanent Magnetism None None 124-206 2019 10.1201/9780203743829-3
+--
+38 | Giant energy product in nanostructured two-phase magnets | Skomski, Coey | Physical Review B 48 21 15812-15816 1993 10.1103/physrevb.48.15812
+38 | Exchange coupling and energy product in random two-phase aligned magnets | Skomski, Coey | IEEE Transactions on Magnetics 30 2 607-609 1994 10.1109/20.312350
+--
+39 | The exchange-spring magnet: a new material principle for permanent magnets | Kneller, Hawig | IEEE Transactions on Magnetics 27 4 3588-3600 1991 10.1109/20.102931
+39 | Der Austauschfeder-Magnet: Ein neues Materialprinzip für Permanentmagnete | Kneller, Hawig | Epitaktische Schichten: Neue Strukturen und Phasenübergänge. Der Austauschfeder-Magnet: Ein neues Materialprinzip für Permanentmagnete None None 39-69 1995 10.1007/978-3-663-14435-9_3
+--
+40 | A mechanism of magnetic hysteresis in heterogeneous alloys | Stoner, Wohlfarth | IEEE Transactions on Magnetics 27 4 3475-3518 1991 10.1109/tmag.1991.1183750
+40 | A mechanism of magnetic hysteresis in heterogeneous alloys | Stoner, Wohlfarth | Philosophical Transactions of the Royal Society of London. Series A, Mathematical and Physical Sciences 240 826 599-642 1948 10.1098/rsta.1948.0007
+--
+41 | Permanent magnetism of dense-packed nanostructures | Skomski, Liu, Shield, Hadjipanayis, Sellmyer | Journal of Applied Physics 107 9 None 2010 10.1063/1.3337657
+41 | Graded permanent magnets | Skomski, Hadjipanayis, Sellmyer | Journal of Applied Physics 105 7 None 2009 10.1063/1.3068622
+--
+42 | Measurement of the quantum capacitance of graphene | Xia, Chen, Li, Tao | Nature Nanotechnology 4 8 505-509 2009 10.1038/nnano.2009.177
+42 | Quantum capacitance measurement of high-quality graphene with resonant impurities and arti | Wang | ? None None None None 10.14711/thesis-b1334513
+--
+44 | Theory of Ragone plots | Christen, Carlen | Journal of Power Sources 91 2 210-216 2000 10.1016/s0378-7753(00)00474-2
+44 | Optimizing energy storage devices using Ragone plots | Christen, Ohler | Journal of Power Sources 110 1 107-116 2002 10.1016/s0378-7753(02)00228-8
+--
+45 | Pseudocapacitive oxide materials for high-rate electrochemical energy storage | Augustyn, Simon, Dunn | Energy &amp; Environmental Science 7 5 1597 2014 10.1039/c3ee44164d
+45 | High-rate electrochemical energy storage through Li+ intercalation pseudocapacitance | Augustyn, Come, Lowe, Kim, Taberna | Nature Materials 12 6 518-522 2013 10.1038/nmat3601
+--
+46 | New figure of merit for transparent conductors | Haacke | Journal of Applied Physics 47 9 4086-4089 1976 10.1063/1.323240
+46 | Evaluating Optically Transparent Conductors at RF and Microwave Frequencies: A New Figure  | Silva, Valenta | IEEE Microwave and Wireless Components Letters 31 4 349-352 2021 10.1109/lmwc.2021.3057669
+--
+47 | Past achievements and future challenges in the development of optically transparent electr | Ellmer | Nature Photonics 6 12 809-817 2012 10.1038/nphoton.2012.282
+47 | Microcredit in the past, present and future: challenges and opportunities |  | Microcredit and International Development None None 193-196 2011 10.4324/9780203153253-15
+--
+32 | Life Cycle Assessment of Metals: A Scientific Synthesis | Nuss, Eckelman | PLoS ONE 9 7 e101298 2014 10.1371/journal.pone.0101298
+32 | Comparative life cycle assessment of silver nanoparticle synthesis routes | Pourzahedi, Eckelman | Environmental Science: Nano 2 4 361-369 2015 10.1039/c5en00075k
+--
+10 | Neutron scattering lengths and cross sections | Sears | Neutron News 3 3 26-37 1992 10.1080/10448639208218770
+10 | Appendix. Neutron Scattering Lengths and Cross Sections | Sears | Methods in Experimental Physics None None 521-550 1986 10.1016/s0076-695x(08)60561-x
+--
