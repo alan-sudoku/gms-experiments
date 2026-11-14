@@ -37,3 +37,12 @@ No counterexample to the intended content of C1–C5, by the implementer's hypot
 - **D3, plan change V14:** §6.3 step 1 condition corrected; §9.3 root-count and two-clock oracle tests use an exact root count (quartic in √dt or rational/mpmath), not a dense grid alone; §9.3 adds the differential exact-reference test; property-test strategies must reach the 3-root window and non-degenerate boxes (coverage asserted).
 - **D4, tooling:** add `hypothesis`, `sympy` (and `numpy` if Phase 2 needs it) to the `dev` list in `pyproject.toml`, and `.hypothesis/` to `.gitignore`; property tests set the hypothesis home to a temporary directory.
 - **D5, levels:** record no level change; list the hand-proof review of C1 and C4 as an open item for GMS-400 acceptance.
+
+## Decisions recorded (user, 2026-11-14)
+
+D1–D5 accepted as proposed. The user added **D6**: our pure-Python checks need another solver to cross-check them (SciPy, numpy). Recorded:
+
+- D1, D2, D5, D6 → `orchestrator_state.md` §4, GMS-400 brief items (f)–(k).
+- D3, D6 → plan V14: §6.3 step 1 condition, new steps 5–6 (ties, classification), §9.3 independent-solver oracle, exact root count, differential test, Bounds wording, hypothesis home; §9.6 `cross-checked` example; Q14 strictness.
+- D4, D6 → `pyproject.toml` `dev` list (numpy, scipy, sympy, hypothesis), `.gitignore` `.hypothesis/`, CLAUDE.md set-up line; SciPy 1.18.1 installed in `.venv`.
+- D6 applied now: a `sonnet` cross-check of C1, C3, C4 and C5 with SciPy and numpy as an independent oracle, own evaluator, no shared code (`prompt_4_xcheck_brief.md`, `prompt_4_xcheck.md`).
