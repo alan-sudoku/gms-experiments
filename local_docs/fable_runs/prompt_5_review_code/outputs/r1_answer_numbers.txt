@@ -1,0 +1,4 @@
+numeric tokens checked (outside the citation table): 578; not found in outputs/data: 3
+  line  313  2009         | - Limits: cell voltages and atomic masses are MEMORY; the handbook value for Li/SOCl₂ was not read (computed 1 473 Wh/kg). The attribution o
+  line  422  2009         | 6. The location of 21 µF/cm² in Xia et al. 2009, and the origin of 550 F/g (G3.10).
+  line  519  2009         | 26. G3.10: the 21 µF/cm² and 550 F/g attribution to Xia et al. 2009 stays UNSURE.

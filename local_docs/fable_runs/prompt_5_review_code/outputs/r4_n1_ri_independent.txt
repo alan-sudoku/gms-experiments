@@ -1,0 +1,16 @@
+entry         lin-lin      log-log    trap ln E      N1 (S2)   own/S2-1   ref (S3)
+Li-6           425.95       424.05       424.69       425.95 +6.44e-09           
+B-10           1733.1       1725.1       1727.8       1733.1 -2.13e-06           
+Cd-113         386.66       384.41        386.2       386.65 +4.74e-06        390
+nat Ag         764.99        758.4       764.93       764.99 -4.57e-06           
+nat Cd         65.115       64.641       65.057       65.115 +5.82e-06           
+nat In         3101.4       3074.4       3101.4       3101.4 +1.28e-06       3167
+nat Gd          394.1       390.97       393.99        394.1 -3.75e-06        390
+nat Hf         1969.4       1953.4       1969.4       1969.5 -1.50e-06       1992
+
+B-10: own RI (lin-lin) / (0.4499*sigma0 Sears 3835 b) = 1.0045; with log-log quadrature 0.9999
+B-10 RI 0.5 eV - 10 keV only: 1721.7 b, ratio 1.0050 (1/v region)
+
+In-115 1.457 eV window 1.2-1.75 eV: 32 pointwise points; SLBW fit s0 = 30664 b, E0 = 1.4566 eV, Gamma = 0.1076 eV; rms rel. residual 1.89e-01
+  RI over window: lin-lin on the file's points 2829.9 b; fitted SLBW, fine grid 2779.5 b; difference +1.82%
+  (the fit is to the same points, so it measures under-resolution of the file's grid against a smooth shape, not ENDF accuracy)

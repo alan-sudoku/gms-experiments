@@ -1,0 +1,85 @@
+builder f0_build_xcom_csv                rc=0
+builder n0_build_atomic_weights_csv      rc=0
+builder n0_build_crust_csv               rc=0
+builder n0_build_sears_csv               rc=0
+  data/a1_iec60228_class2.csv                   identical
+  data/a3_embodied_energy.csv                   identical
+  data/c4_air_300K.csv                          identical
+  data/crust_abundance_secondary.csv            identical
+  data/d2_koh_conductivity.csv                  identical
+  data/d3_cumulative_energy_demand.csv          identical
+  data/m1_intrinsic_magnetic.csv                identical
+  data/n5_water_diffusion.csv                   identical
+  data/nist_atomic_weights.csv                  identical
+  data/nist_comtab_concrete.csv                 identical
+  data/nist_comtab_water.csv                    identical
+  data/nist_eltab_z06.csv                       identical
+  data/nist_eltab_z13.csv                       identical
+  data/nist_eltab_z26.csv                       identical
+  data/nist_eltab_z29.csv                       identical
+  data/nist_eltab_z50.csv                       identical
+  data/nist_eltab_z74.csv                       identical
+  data/nist_eltab_z82.csv                       identical
+  data/nist_tab1_za.csv                         identical
+  data/p1_water_60C.csv                         identical
+  data/sears_1992_table1.csv                    identical
+  data/t1_ito_film.csv                          identical
+  data/usgs_mcs2026_world_production.csv        identical
+  data/xcom_z006.csv                            identical
+  data/xcom_z013.csv                            identical
+  data/xcom_z026.csv                            identical
+  data/xcom_z029.csv                            identical
+  data/xcom_z050.csv                            identical
+  data/xcom_z056.csv                            identical
+  data/xcom_z064.csv                            identical
+  data/xcom_z074.csv                            identical
+  data/xcom_z082.csv                            identical
+  data/xcom_z083.csv                            identical
+
+script                         rc  secs  lines(new/old)  differing  
+a1_conductor_area_mass          0     0     32/32        0
+a2_kelvin_optimum               0     0     26/26        0
+a3_break_even_embodied          0     1     25/25        0
+a4_duty_crossover               0     0     54/54        0
+b1_b2_skin_dowell               0     0     35/35        0
+b3_ac_ratio_strip               0     0     24/24        0
+c1_fin_efficiency               0     1     24/24        0
+c2_c3_optimum_fin               0     0     37/37        0
+c4_pumping_price                0     0     35/35        0
+d1_overpotential                0     1     35/35        0
+d2_porous_electrode             0     1     29/29        0
+d3_break_even_overpotential     0     0     25/25        0
+e1_voxel_conduction             0   111     32/32        0
+f1_mass_attenuation             0     0     43/43        0
+f2_ratio_crossings              0     1     58/58        0
+f3_thickness_ratio              0     0     25/25        0
+f4_photoelectric_exponents      0     0     38/38        0
+f5_nonuniform_shield            0     2     33/33        0
+f6_buildup_mc                   0    87    157/157      10
+    -  done C 0.5 MeV (elapsed 30 s)
+    -  done C 1.0 MeV (elapsed 66 s)
+    -  done W 0.5 MeV (elapsed 70 s)
+    -  done W 1.0 MeV (elapsed 77 s)
+    +  done C 0.5 MeV (elapsed 32 s)
+    +  done C 1.0 MeV (elapsed 69 s)
+    +  done W 0.5 MeV (elapsed 73 s)
+    +  done W 1.0 MeV (elapsed 80 s)
+f7_kedge_window                 0     0     47/47        0
+h1_h2_redox_dl_energy           0     0     31/31        0
+h3_ragone_crossover             0     0     14/14        0
+m1_m2_ceiling_hardness          0     0     34/34        0
+m3_shape_anisotropy             0     0     17/17        0
+m4_exchange_spring              0     0     12/12        0
+m5_magnet_circuit               0     0     16/16        0
+n1_thermal_ri                   0     0     80/80        0
+n2_one_over_v_test              0     0     45/45        0
+n3_self_shielding               0     1     62/62        0
+n4_moderation                   0     0     26/26        0
+n5_water_vs_cd                  0     0     22/22        0
+n6_abundance_production         0     0     40/40        0
+p1_heat_pipe                    0     0     23/23        0
+t1_transparent_conductor        0     0     33/33        0
+j1_gate_matrix                  0     0    372/372       0
+s4_checks                       0     0    118/118       0
+
+outputs/n1_values.csv identical
