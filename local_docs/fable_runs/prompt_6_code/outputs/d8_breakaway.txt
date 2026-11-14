@@ -1,0 +1,20 @@
+======================================================================
+D8: breakaway metal loss relative to the parabolic law  (level: derived)
+======================================================================
+ tau/t_b     kappa=   1     kappa=  10     kappa= 100
+     0.5       1.000000       1.000000       1.000000
+     0.9       1.000000       1.000000       1.000000
+       1       1.000000       1.000000       1.000000
+     1.1       1.001136       1.430194       5.720776
+       2       1.060660       4.242641      36.062446
+      10       1.739253      14.546477     142.618722
+     100       5.050000      49.600000     495.100000
+
+formula vs independent construction (h_b + r_b (tau - t_b)): max rel diff 4.44e-16 -> PASS (tolerance exact)
+ratio = 1 for tau/t_b <= 1: PASS.  The sweep brackets the onset: points below (0.5, 0.9), at (1.0) and above (1.1) t_b are all present.  At tau/t_b = 1.1 the ratio is 1.0011 (kappa 1), 1.4302 (kappa 10), 5.7208 (kappa 100), i.e. > 1 for every kappa, so the departure from 1 is visible on the grid.
+  (the ratio for tau <= t_b is 1 by definition: that part is an IDENTITY; the first-segment 'construct' branch divides hpar by itself.)
+
+Hand values (exact tolerance, stated to 3 digits):
+  kappa = 1, tau/t_b = 2: 1.0607 vs hand 1.06 -> dev 0.06% PASS (3 significant digits)
+  kappa = 1, tau/t_b = 10: 1.7393 vs hand 1.74 -> dev 0.04% PASS (3 significant digits)
+  kappa = 10, tau/t_b = 10: 14.5465 vs hand 14.5 -> dev 0.32% PASS (3 significant digits)

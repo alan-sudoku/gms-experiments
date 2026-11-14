@@ -1,0 +1,6 @@
+C1 baseline: sigma_a0 = 108.7032 MPa (planner expects about 108.7; accept 105 to 112)
+m = 9.8039
+nu=0.01 Hz  tau0 = 1584.4044 yr
+nu=0.1 Hz  tau0 = 158.4404 yr
+nu=1 Hz  tau0 = 15.8440 yr
+nu=10 Hz  tau0 = 1.5844 yr

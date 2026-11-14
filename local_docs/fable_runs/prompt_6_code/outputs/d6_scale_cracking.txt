@@ -1,0 +1,22 @@
+======================================================================
+D6: scale cracking strain vs cyclic strain amplitude  (level: derived)
+======================================================================
+INPUT sigma_a0 = 108.7 MPa (planner value, NOT from C1 run); eps_a = sigma_a0/E = 1.4890e-03
+FINAL PASS: re-run D6 if C1 gives a different sigma_a0.
+
+eps_c [1e-3] (K_Ic rows, flaw size columns); '*' = eps_c < eps_a (scale cracks under eps_a)
+  K_Ic c=   0.01um c=    0.1um c=      1um c=     10um c=    100um
+   0.5   6.6282     2.0960     0.6628*    0.2096*    0.0663* 
+     1  13.2563     4.1920     1.3256*    0.4192*    0.1326* 
+     2  26.5127     8.3840     2.6513     0.8384*    0.2651* 
+     4  53.0253    16.7681     5.3025     1.6768     0.5303* 
+
+hand check eps_c(c = 1 um, K_Ic = 1) = 1.3256e-3 (hand 1.33e-3): PASS
+hand check eps_a = 1.4890e-3 (hand 1.49e-3): PASS
+
+Crossover flaw size c_x [um]: closed form vs bisection on ln c in [1e-9, 1e-3] m
+  K_Ic = 0.5: closed    0.1981 um, bisection    0.1981 um, rel diff 2.95e-12; bracket end values +1.947e-02, -1.468e-03 (sign change: yes), hand 0.2 -> dev 0.93%
+  K_Ic =   1: closed    0.7926 um, bisection    0.7926 um, rel diff 1.63e-12; bracket end values +4.043e-02, -1.447e-03 (sign change: yes), hand 0.79 -> dev 0.32%
+  K_Ic =   2: closed    3.1703 um, bisection    3.1703 um, rel diff 6.21e-12; bracket end values +8.235e-02, -1.405e-03 (sign change: yes)
+  K_Ic =   4: closed   12.6810 um, bisection   12.6810 um, rel diff 1.37e-12; bracket end values +1.662e-01, -1.321e-03 (sign change: yes), hand 12.7 -> dev 0.15%
+  (bisection works on eps_c(c) directly, independent of the closed-form inversion; its bracket genuinely contained each root. Hand values +-2 %.)

@@ -1,0 +1,51 @@
+E3: shares of entropy production for the worked strut (all UNSURE inputs; level derived)
+inputs: d0=0.3 mm, l=3 mm, nu=1 Hz, r=10 um/yr, psi=0.002 (M21), E=73 GPa, T0=298.15 K, rho_m=2780, M=26.98 g/mol, e_emb=200 MJ/kg
+L04 b_ch not in data/SOURCES.md: planner UNSURE values used.
+
+main b_ch=795.7 kJ/mol
+  sigma_a0 = 108.703 MPa (C1), V = 2.1206e-10 m3, A = 2.8274e-06 m2, tau0 = 15.844 yr
+  Sdot_fat  = 1.1513e-10 W/K
+  Sdot_corr = 2.4638e-10 W/K
+  Sdot_emb  = 7.9090e-10 W/K
+  shares fat, corr, emb = 0.0999, 0.2138, 0.6863 (sum 1.000000)
+
+alt  b_ch=888.2 kJ/mol
+  sigma_a0 = 108.703 MPa (C1), V = 2.1206e-10 m3, A = 2.8274e-06 m2, tau0 = 15.844 yr
+  Sdot_fat  = 1.1513e-10 W/K
+  Sdot_corr = 2.7502e-10 W/K
+  Sdot_emb  = 7.9090e-10 W/K
+  shares fat, corr, emb = 0.0975, 0.2329, 0.6697 (sum 1.000000)
+
+E3 plausibility vs planner hand values (+-3 %, UNSURE; plausibility only):
+  Sdot_fat  calc 1.1513e-10 hand 1.1500e-10 dev +0.11 % within 3 %
+  Sdot_corr calc 2.4638e-10 hand 2.5000e-10 dev -1.45 % within 3 %
+  Sdot_emb  calc 7.9090e-10 hand 7.9000e-10 dev +0.11 % within 3 %
+  w_fat     calc 9.9902e-02 hand 1.0000e-01 dev -0.10 % within 3 %
+  w_corr    calc 2.1380e-01 hand 2.1000e-01 dev +1.81 % within 3 %
+  w_emb     calc 6.8630e-01 hand 6.9000e-01 dev -0.54 % within 3 %
+  alt b_ch: Sdot_corr 2.7502e-10 vs hand 2.75e-10 dev +0.01 %
+  sensitivity of w_emb to e_emb 150 / 220 MJ/kg (main b_ch): 0.6213 / 0.7064
+  independence: single-pass arithmetic; no independent check exists (identity-class: hand values restate the same formulas).
+
+======================================================================
+A10: life-average factor 1 + beta/(gamma+1) for psi = psi0 (1 + beta (t/tau)^gamma)
+w_fat grid: 0.01, 0.1, 0.5 and E3 value 0.0999 (main b_ch; alt b_ch gives 0.0975)
+closed form vs Simpson of (1 + beta s^gamma) on [0,1] (independent route)
+  beta=0.5  gamma=1   factor=1.250000 simpson=1.250000 (n=128, rel 0.0e+00)  total effect: w=0.0100: 1.00250  w=0.1000: 1.02500  w=0.5000: 1.12500  w=0.0999: 1.02498
+  beta=0.5  gamma=3   factor=1.125000 simpson=1.125000 (n=128, rel 0.0e+00)  total effect: w=0.0100: 1.00125  w=0.1000: 1.01250  w=0.5000: 1.06250  w=0.0999: 1.01249
+  beta=0.5  gamma=10  factor=1.045455 simpson=1.045455 (n=256, rel 4.5e-10)  total effect: w=0.0100: 1.00045  w=0.1000: 1.00455  w=0.5000: 1.02273  w=0.0999: 1.00454
+  beta=1    gamma=1   factor=1.500000 simpson=1.500000 (n=128, rel 0.0e+00)  total effect: w=0.0100: 1.00500  w=0.1000: 1.05000  w=0.5000: 1.25000  w=0.0999: 1.04995
+  beta=1    gamma=3   factor=1.250000 simpson=1.250000 (n=128, rel 0.0e+00)  total effect: w=0.0100: 1.00250  w=0.1000: 1.02500  w=0.5000: 1.12500  w=0.0999: 1.02498
+  beta=1    gamma=10  factor=1.090909 simpson=1.090909 (n=512, rel 5.3e-11)  total effect: w=0.0100: 1.00091  w=0.1000: 1.00909  w=0.5000: 1.04545  w=0.0999: 1.00908
+  beta=5    gamma=1   factor=3.500000 simpson=3.500000 (n=128, rel 0.0e+00)  total effect: w=0.0100: 1.02500  w=0.1000: 1.25000  w=0.5000: 2.25000  w=0.0999: 1.24975
+  beta=5    gamma=3   factor=2.250000 simpson=2.250000 (n=128, rel 0.0e+00)  total effect: w=0.0100: 1.01250  w=0.1000: 1.12500  w=0.5000: 1.62500  w=0.0999: 1.12488
+  beta=5    gamma=10  factor=1.454545 simpson=1.454545 (n=512, rel 2.0e-10)  total effect: w=0.0100: 1.00455  w=0.1000: 1.04545  w=0.5000: 1.22727  w=0.0999: 1.04541
+  beta=10   gamma=1   factor=6.000000 simpson=6.000000 (n=128, rel 0.0e+00)  total effect: w=0.0100: 1.05000  w=0.1000: 1.50000  w=0.5000: 3.50000  w=0.0999: 1.49951
+  beta=10   gamma=3   factor=3.500000 simpson=3.500000 (n=128, rel 0.0e+00)  total effect: w=0.0100: 1.02500  w=0.1000: 1.25000  w=0.5000: 2.25000  w=0.0999: 1.24975
+  beta=10   gamma=10  factor=1.909091 simpson=1.909091 (n=512, rel 3.0e-10)  total effect: w=0.0100: 1.00909  w=0.1000: 1.09091  w=0.5000: 1.45455  w=0.0999: 1.09082
+max rel diff closed vs Simpson = 4.45e-10 -> PASS
+hand value beta=5, gamma=1, w_fat=0.1: 1.2500 vs 1.25 -> PASS (exact arithmetic; no anchor; plausibility only)
+IDENTITY: the hand value 1.25 restates the formula (flagged). The Simpson check is independent in method.
+Largest total effect on grid (beta=10, gamma=1, w_fat=0.5): 3.500; with E3 share: 1.4995
+
+Status E3: PASS plausibility only (all inputs UNSURE).  Status A10: PASS plausibility only.

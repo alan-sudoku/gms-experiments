@@ -1,0 +1,60 @@
+sigma1=108.7032 MPa, m=9.80392
+=== B4 ===
+s=0.05 phi=   9: tau1/tau_blk=     1.613 (>= (1+s)^m=    1.613: True) tmin/tau_blk=    1.613 tauMiner/tau_blk=    1.613 tau_blk/tau1=0.6198
+s=0.05 phi=  33: tau1/tau_blk=     1.613 (>= (1+s)^m=    1.613: True) tmin/tau_blk=    1.613 tauMiner/tau_blk=    1.613 tau_blk/tau1=0.6198
+s=0.05 phi= 129: tau1/tau_blk=     1.613 (>= (1+s)^m=    1.613: True) tmin/tau_blk=    1.613 tauMiner/tau_blk=    1.613 tau_blk/tau1=0.6198
+s=0.05 phi=1025: tau1/tau_blk=     1.613 (>= (1+s)^m=    1.613: True) tmin/tau_blk=    1.613 tauMiner/tau_blk=    1.613 tau_blk/tau1=0.6198
+s=0.10 phi=   9: tau1/tau_blk=     2.546 (>= (1+s)^m=    2.546: True) tmin/tau_blk=    2.546 tauMiner/tau_blk=    2.546 tau_blk/tau1=0.3928
+s=0.10 phi=  33: tau1/tau_blk=     2.546 (>= (1+s)^m=    2.546: True) tmin/tau_blk=    2.546 tauMiner/tau_blk=    2.546 tau_blk/tau1=0.3928
+s=0.10 phi= 129: tau1/tau_blk=     2.546 (>= (1+s)^m=    2.546: True) tmin/tau_blk=    2.546 tauMiner/tau_blk=    2.546 tau_blk/tau1=0.3928
+s=0.10 phi=1025: tau1/tau_blk=     2.546 (>= (1+s)^m=    2.546: True) tmin/tau_blk=    2.546 tauMiner/tau_blk=    2.546 tau_blk/tau1=0.3928
+s=0.20 phi=   9: tau1/tau_blk=     5.974 (>= (1+s)^m=    5.974: True) tmin/tau_blk=    5.974 tauMiner/tau_blk=    5.974 tau_blk/tau1=0.1674
+s=0.20 phi=  33: tau1/tau_blk=     5.974 (>= (1+s)^m=    5.974: True) tmin/tau_blk=    5.974 tauMiner/tau_blk=    5.974 tau_blk/tau1=0.1674
+s=0.20 phi= 129: tau1/tau_blk=     5.974 (>= (1+s)^m=    5.974: True) tmin/tau_blk=    5.974 tauMiner/tau_blk=    5.974 tau_blk/tau1=0.1674
+s=0.20 phi=1025: tau1/tau_blk=     5.974 (>= (1+s)^m=    5.974: True) tmin/tau_blk=    5.974 tauMiner/tau_blk=    5.974 tau_blk/tau1=0.1674
+s=0.50 phi=   9: tau1/tau_blk=    53.267 (>= (1+s)^m=   53.258: True) tmin/tau_blk=   53.267 tauMiner/tau_blk=   52.736 tau_blk/tau1=0.01877
+s=0.50 phi=  33: tau1/tau_blk=    53.294 (>= (1+s)^m=   53.258: True) tmin/tau_blk=   53.294 tauMiner/tau_blk=   51.396 tau_blk/tau1=0.01876
+s=0.50 phi= 129: tau1/tau_blk=    53.401 (>= (1+s)^m=   53.258: True) tmin/tau_blk=   53.401 tauMiner/tau_blk=   46.666 tau_blk/tau1=0.01873
+s=0.50 phi=1025: tau1/tau_blk=    54.404 (>= (1+s)^m=   53.258: True) tmin/tau_blk=   47.444 tauMiner/tau_blk=   25.343 tau_blk/tau1=0.01838
+s=1.00 phi=   9: tau1/tau_blk=   901.870 (>= (1+s)^m=  893.870: True) tmin/tau_blk=  100.208 tauMiner/tau_blk=   90.187 tau_blk/tau1=0.001109
+s=1.00 phi=  33: tau1/tau_blk=   925.870 (>= (1+s)^m=  893.870: True) tmin/tau_blk=   28.057 tauMiner/tau_blk=   27.231 tau_blk/tau1=0.00108
+s=1.00 phi= 129: tau1/tau_blk=  1021.870 (>= (1+s)^m=  893.870: True) tmin/tau_blk=    7.921 tauMiner/tau_blk=    7.861 tau_blk/tau1=0.0009786
+s=1.00 phi=1025: tau1/tau_blk=  1917.870 (>= (1+s)^m=  893.870: True) tmin/tau_blk=    1.871 tauMiner/tau_blk=    1.869 tau_blk/tau1=0.0005214
+B4 hand (1+s)^m s=0.05: hand 1.61 calc 1.613 rel=0.0021 PASS
+B4 hand (1+s)^m s=0.1: hand 2.55 calc 2.546 rel=0.0017 PASS
+B4 hand (1+s)^m s=0.2: hand 5.97 calc 5.974 rel=0.0007 PASS
+B4 hand (1+s)^m s=0.5: hand 53.3 calc 53.258 rel=0.0008 PASS
+B4 hand (1+s)^m s=1.0: hand 894 calc 893.870 rel=0.0001 PASS
+B4 identity flag: tau1/tau_blk >= (1+s)^m is an algebraic identity (tau1/tau_blk = (1+s)^m + (phi-1) s^m); the ratios are closed-form arithmetic, no independent check inside B4 (B5 is the independent check).
+
+=== B5 ===
+aligned     phi=  9 s=0.05: n_cyc=1 (<=phi:True) residue=0 max amp/(s1+s2)=1.00000 [aligned: within 0.1% PASS] | Da/B4=1.0000 Db/Da=1.0000 env_share=1.000 (dominant; in [0.7,1.05]: PASS) | dD(a) 256->512,512->1024=0.0e+00,0.0e+00 PASS dD(b)=0.0e+00,0.0e+00 | Db>=Da PASS
+aligned     phi=  9 s=0.10: n_cyc=5 (<=phi:True) residue=0 max amp/(s1+s2)=1.00000 [aligned: within 0.1% PASS] | Da/B4=1.0000 Db/Da=1.0000 env_share=1.000 (dominant; in [0.7,1.05]: PASS) | dD(a) 256->512,512->1024=0.0e+00,0.0e+00 PASS dD(b)=4.7e-12,5.8e-13 | Db>=Da PASS
+aligned     phi=  9 s=0.20: n_cyc=9 (<=phi:True) residue=0 max amp/(s1+s2)=1.00000 [aligned: within 0.1% PASS] | Da/B4=1.0000 Db/Da=1.0000 env_share=1.000 (dominant; in [0.7,1.05]: PASS) | dD(a) 256->512,512->1024=4.2e-14,1.0e-13 PASS dD(b)=2.9e-10,7.4e-10 | Db>=Da PASS
+aligned     phi=  9 s=0.50: n_cyc=9 (<=phi:True) residue=0 max amp/(s1+s2)=1.00000 [aligned: within 0.1% PASS] | Da/B4=0.9998 Db/Da=1.0017 env_share=1.000 (dominant; in [0.7,1.05]: PASS) | dD(a) 256->512,512->1024=5.1e-10,1.9e-09 PASS dD(b)=5.0e-08,1.6e-07 | Db>=Da PASS
+aligned     phi=  9 s=1.00: n_cyc=9 (<=phi:True) residue=0 max amp/(s1+s2)=1.00000 [aligned: within 0.1% PASS] | Da/B4=0.9938 Db/Da=1.0231 env_share=0.991 (dominant; in [0.7,1.05]: PASS) | dD(a) 256->512,512->1024=8.4e-07,0.0e+00 PASS dD(b)=4.3e-06,0.0e+00 | Db>=Da PASS
+aligned     phi= 33 s=0.05: n_cyc=33 (<=phi:True) residue=0 max amp/(s1+s2)=1.00000 [aligned: within 0.1% PASS] | Da/B4=1.0000 Db/Da=1.0000 env_share=1.000 (dominant; in [0.7,1.05]: PASS) | dD(a) 256->512,512->1024=0.0e+00,0.0e+00 PASS dD(b)=8.4e-11,6.3e-13 | Db>=Da PASS
+aligned     phi= 33 s=0.10: n_cyc=33 (<=phi:True) residue=0 max amp/(s1+s2)=1.00000 [aligned: within 0.1% PASS] | Da/B4=1.0000 Db/Da=1.0000 env_share=1.000 (dominant; in [0.7,1.05]: PASS) | dD(a) 256->512,512->1024=6.2e-14,1.5e-14 PASS dD(b)=3.2e-09,6.9e-10 | Db>=Da PASS
+aligned     phi= 33 s=0.20: n_cyc=33 (<=phi:True) residue=0 max amp/(s1+s2)=1.00000 [aligned: within 0.1% PASS] | Da/B4=1.0000 Db/Da=1.0005 env_share=1.000 (dominant; in [0.7,1.05]: PASS) | dD(a) 256->512,512->1024=2.9e-11,1.5e-11 PASS dD(b)=4.5e-08,2.7e-08 | Db>=Da PASS
+aligned     phi= 33 s=0.50: n_cyc=33 (<=phi:True) residue=0 max amp/(s1+s2)=1.00000 [aligned: within 0.1% PASS] | Da/B4=0.9997 Db/Da=1.0226 env_share=0.999 (dominant; in [0.7,1.05]: PASS) | dD(a) 256->512,512->1024=8.9e-08,1.9e-08 PASS dD(b)=3.5e-06,8.1e-07 | Db>=Da PASS
+aligned     phi= 33 s=1.00: n_cyc=33 (<=phi:True) residue=0 max amp/(s1+s2)=1.00000 [aligned: within 0.1% PASS] | Da/B4=0.9910 Db/Da=1.1856 env_share=0.965 (dominant; in [0.7,1.05]: PASS) | dD(a) 256->512,512->1024=3.1e-06,1.5e-06 PASS dD(b)=2.5e-05,7.8e-06 | Db>=Da PASS
+aligned     phi=129 s=0.05: n_cyc=129 (<=phi:True) residue=0 max amp/(s1+s2)=1.00000 [aligned: within 0.1% PASS] | Da/B4=1.0000 Db/Da=1.0000 env_share=1.000 (dominant; in [0.7,1.05]: PASS) | dD(a) 256->512,512->1024=7.7e-16,1.3e-16 PASS dD(b)=5.3e-10,1.3e-10 | Db>=Da PASS
+aligned     phi=129 s=0.10: n_cyc=129 (<=phi:True) residue=0 max amp/(s1+s2)=1.00000 [aligned: within 0.1% PASS] | Da/B4=1.0000 Db/Da=1.0001 env_share=1.000 (dominant; in [0.7,1.05]: PASS) | dD(a) 256->512,512->1024=6.5e-13,1.8e-13 PASS dD(b)=1.5e-08,3.9e-09 | Db>=Da PASS
+aligned     phi=129 s=0.20: n_cyc=129 (<=phi:True) residue=0 max amp/(s1+s2)=1.00000 [aligned: within 0.1% PASS] | Da/B4=1.0000 Db/Da=1.0032 env_share=1.000 (dominant; in [0.7,1.05]: PASS) | dD(a) 256->512,512->1024=5.7e-10,8.1e-11 PASS dD(b)=3.5e-07,9.1e-08 | Db>=Da PASS
+aligned     phi=129 s=0.50: n_cyc=129 (<=phi:True) residue=0 max amp/(s1+s2)=1.00000 [aligned: within 0.1% PASS] | Da/B4=0.9996 Db/Da=1.1130 env_share=0.997 (dominant; in [0.7,1.05]: PASS) | dD(a) 256->512,512->1024=7.4e-07,6.4e-08 PASS dD(b)=1.2e-05,3.2e-06 | Db>=Da PASS
+aligned     phi=129 s=1.00: n_cyc=129 (<=phi:True) residue=0 max amp/(s1+s2)=1.00000 [aligned: within 0.1% PASS] | Da/B4=0.9908 Db/Da=1.7760 env_share=0.875 (dominant; in [0.7,1.05]: PASS) | dD(a) 256->512,512->1024=6.2e-06,9.6e-06 PASS dD(b)=5.9e-06,2.1e-05 | Db>=Da PASS
+non-aligned phi= 10 s=0.05: n_cyc=3 (<=phi:True) residue=0 max amp/(s1+s2)=0.99023 | Da/B4=0.9082 Db/Da=1.0000 env_share=1.000 (dominant; in [0.7,1.05]: PASS) | dD(a) 256->512,512->1024=8.4e-07,9.9e-06 PASS dD(b)=8.4e-07,9.9e-06 | Db>=Da PASS
+non-aligned phi= 10 s=0.10: n_cyc=9 (<=phi:True) residue=0 max amp/(s1+s2)=0.98982 | Da/B4=0.9046 Db/Da=1.0000 env_share=1.000 (dominant; in [0.7,1.05]: PASS) | dD(a) 256->512,512->1024=3.6e-16,8.4e-06 PASS dD(b)=1.0e-10,8.4e-06 | Db>=Da PASS
+non-aligned phi= 10 s=0.20: n_cyc=10 (<=phi:True) residue=0 max amp/(s1+s2)=0.99023 | Da/B4=0.9082 Db/Da=1.0000 env_share=1.000 (dominant; in [0.7,1.05]: PASS) | dD(a) 256->512,512->1024=8.0e-13,1.2e-13 PASS dD(b)=3.0e-09,6.1e-10 | Db>=Da PASS
+non-aligned phi= 10 s=0.50: n_cyc=10 (<=phi:True) residue=0 max amp/(s1+s2)=0.99195 | Da/B4=0.9237 Db/Da=1.0029 env_share=1.000 (dominant; in [0.7,1.05]: PASS) | dD(a) 256->512,512->1024=2.5e-07,6.3e-05 PASS dD(b)=7.0e-07,6.3e-05 | Db>=Da PASS
+non-aligned phi= 10 s=1.00: n_cyc=10 (<=phi:True) residue=0 max amp/(s1+s2)=0.99390 | Da/B4=0.9360 Db/Da=1.0331 env_share=0.990 (dominant; in [0.7,1.05]: PASS) | dD(a) 256->512,512->1024=1.8e-04,4.7e-06 PASS dD(b)=1.7e-04,5.4e-06 | Db>=Da PASS
+non-aligned phi= 32 s=0.05: n_cyc=32 (<=phi:True) residue=0 max amp/(s1+s2)=0.99887 | Da/B4=0.9890 Db/Da=1.0000 env_share=1.000 (dominant; in [0.7,1.05]: PASS) | dD(a) 256->512,512->1024=0.0e+00,7.2e-06 PASS dD(b)=3.8e-11,7.2e-06 | Db>=Da PASS
+non-aligned phi= 32 s=0.10: n_cyc=32 (<=phi:True) residue=0 max amp/(s1+s2)=0.99892 | Da/B4=0.9894 Db/Da=1.0000 env_share=1.000 (dominant; in [0.7,1.05]: PASS) | dD(a) 256->512,512->1024=3.6e-05,6.2e-15 PASS dD(b)=3.6e-05,3.1e-10 | Db>=Da PASS
+non-aligned phi= 32 s=0.20: n_cyc=32 (<=phi:True) residue=0 max amp/(s1+s2)=0.99900 | Da/B4=0.9902 Db/Da=1.0005 env_share=1.000 (dominant; in [0.7,1.05]: PASS) | dD(a) 256->512,512->1024=3.0e-05,1.6e-05 PASS dD(b)=3.0e-05,1.6e-05 | Db>=Da PASS
+non-aligned phi= 32 s=0.50: n_cyc=32 (<=phi:True) residue=0 max amp/(s1+s2)=0.99920 | Da/B4=0.9919 Db/Da=1.0219 env_share=0.999 (dominant; in [0.7,1.05]: PASS) | dD(a) 256->512,512->1024=9.7e-08,1.0e-08 PASS dD(b)=3.2e-06,3.6e-07 | Db>=Da PASS
+non-aligned phi= 32 s=1.00: n_cyc=32 (<=phi:True) residue=0 max amp/(s1+s2)=0.99940 | Da/B4=0.9854 Db/Da=1.1800 env_share=0.966 (dominant; in [0.7,1.05]: PASS) | dD(a) 256->512,512->1024=3.1e-06,1.7e-06 PASS dD(b)=2.5e-05,7.5e-06 | Db>=Da PASS
+non-aligned phi=128 s=0.05: n_cyc=128 (<=phi:True) residue=0 max amp/(s1+s2)=0.99993 | Da/B4=0.9993 Db/Da=1.0000 env_share=1.000 (dominant; in [0.7,1.05]: PASS) | dD(a) 256->512,512->1024=7.7e-16,2.6e-16 PASS dD(b)=5.3e-10,1.3e-10 | Db>=Da PASS
+non-aligned phi=128 s=0.10: n_cyc=128 (<=phi:True) residue=0 max amp/(s1+s2)=0.99993 | Da/B4=0.9993 Db/Da=1.0001 env_share=1.000 (dominant; in [0.7,1.05]: PASS) | dD(a) 256->512,512->1024=6.4e-13,1.8e-13 PASS dD(b)=1.5e-08,3.9e-09 | Db>=Da PASS
+non-aligned phi=128 s=0.20: n_cyc=128 (<=phi:True) residue=0 max amp/(s1+s2)=0.99994 | Da/B4=0.9994 Db/Da=1.0032 env_share=1.000 (dominant; in [0.7,1.05]: PASS) | dD(a) 256->512,512->1024=5.6e-10,8.0e-11 PASS dD(b)=3.5e-07,9.1e-08 | Db>=Da PASS
+non-aligned phi=128 s=0.50: n_cyc=128 (<=phi:True) residue=0 max amp/(s1+s2)=0.99995 | Da/B4=0.9991 Db/Da=1.1121 env_share=0.997 (dominant; in [0.7,1.05]: PASS) | dD(a) 256->512,512->1024=7.3e-07,6.5e-08 PASS dD(b)=1.2e-05,3.2e-06 | Db>=Da PASS
+non-aligned phi=128 s=1.00: n_cyc=128 (<=phi:True) residue=0 max amp/(s1+s2)=0.99996 | Da/B4=0.9905 Db/Da=1.7707 env_share=0.876 (dominant; in [0.7,1.05]: PASS) | dD(a) 256->512,512->1024=6.5e-06,9.4e-06 PASS dD(b)=6.3e-06,2.1e-05 | Db>=Da PASS

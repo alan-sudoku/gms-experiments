@@ -1,0 +1,53 @@
+======================================================================
+D1: Tedmon paralinear solution and bounds  (level: derived)
+======================================================================
+grid: 161 points, theta 0.0001 .. 10000, 51 points use the asymptotic form y = 1 - exp(-theta-1) (theta > 30)
+max relative residual |theta(y)-theta|/theta (bisection points) = 2.714e-02 at theta = 28.2
+  (y is converged to 1e-12 in y, but 1-y ~ exp(-theta) is below that for theta > ~20, so the theta-residual is large there; m = y + theta is unaffected at 1e-12)
+bound test L <= m <= U at every grid point: violations of U = 0, of L = 0 -> PASS  (real test: independent bounds)
+min m/L = 1.000100, max U/m = 1.369155
+U/m coarse grid maximum at index 90 (theta = 3.162), value 1.369155; interior = True
+  golden-section on ln theta: theta* = 3.322231, max U/m = 1.369277
+  spec check: max in [1.35, 1.39] -> PASS; theta in [2.5, 4.5] -> PASS; hand value 1.369 within 1 %: PASS
+  (golden-section position is only good to ~1e-8 in ln theta: flat maximum, function error eps ~ 1e-16)
+m/L coarse grid maximum at index 86 (theta = 1.995), value 1.473011; interior = True
+  golden left of kink: theta = 2.000000, 1.473765; right of kink: theta = 2.000000, 1.473765
+  at theta = 2: y = 0.947531, m = 2.947531, L = 2, m/L = 1.473765
+  spec check: m/L(2) hand 1.474 within 1 %: PASS; y(2) hand 0.9475 within 1 %: PASS
+  note: U/L <= 2 with equality at theta = 2 (kink): U(2)/L(2) = 2.000000
+limit theta -> 0:  (m - sqrt(2 theta))/(theta/3) at theta = 1e-4: 1.002361  (expect 1)
+limit theta -> inf: m - theta at theta = 1e4: 1.000000000000  (expect 1; this value is y itself and uses the asymptotic form, so it is by construction IDENTITY-like for theta > 30)
+D1 hand values: y(1) = 0.8414 (0.8414), y(3.5) = 0.9888 (0.9888)
+
+======================================================================
+D2: RK4 of dy/dtheta = (1-y)/y, independent of D1  (level: derived)
+======================================================================
+       eps    steps  y at theta = 0.1  1  2  3.5  10  100   max rel change
+       0.1     1138  0.383183  0.841406  0.947531  0.988765  0.999983  1.000000
+      0.05     2266  0.383183  0.841406  0.947531  0.988765  0.999983  1.000000   9.514e-08
+     0.025     4523  0.383183  0.841406  0.947531  0.988765  0.999983  1.000000   5.817e-09
+    0.0125     9035  0.383183  0.841406  0.947531  0.988765  0.999983  1.000000   3.602e-10
+   0.00625    18060  0.383183  0.841406  0.947531  0.988765  0.999983  1.000000   2.242e-11
+  0.003125    36110  0.383183  0.841406  0.947531  0.988765  0.999983  1.000000   1.398e-12
+ 0.0015625    72212  0.383183  0.841406  0.947531  0.988765  0.999983  1.000000   9.237e-14
+0.00078125   144414  0.383183  0.841406  0.947531  0.988765  0.999983  1.000000   3.553e-14
+0.00039063   288817  0.383183  0.841406  0.947531  0.988765  0.999983  1.000000   7.105e-14
+step-halving criterion (< 0.1 % change): first met at eps = 0.05; final value used is the finest run (eps = 0.000390625)
+comparison with D1 (bisection root):
+  theta =   0.100: RK4 y = 0.38318317, D1 y = 0.38318317, rel diff = 6.05e-13
+  theta =   1.000: RK4 y = 0.84140566, D1 y = 0.84140566, rel diff = 2.27e-13
+  theta =   2.000: RK4 y = 0.94753090, D1 y = 0.94753090, rel diff = 1.82e-13
+  theta =   3.500: RK4 y = 0.98876550, D1 y = 0.98876550, rel diff = 4.43e-13
+  theta =  10.000: RK4 y = 0.99998330, D1 y = 0.99998330, rel diff = 3.94e-13
+  theta = 100.000: RK4 y = 1.00000000, D1 y = 1.00000000, rel diff = 1.42e-13
+max rel diff 6.05e-13 -> PASS (tolerance 0.1 %)
+  hand value y(1.0) = 0.8414: RK4 0.8414, rel dev 6.73e-06
+  hand value y(2.0) = 0.9475: RK4 0.9475, rel dev 3.26e-05
+  hand value y(3.5) = 0.9888: RK4 0.9888, rel dev 3.49e-05
+
+Dimensional example (delta_lim = kp'/kl, t(theta=2) = 2 kp'/kl^2)
+  paper-convention kp' = 0.4994 um^2/h (paper Fig. 1 typical: 0.50), kl = 0.0241 um/h (paper Fig. 1 typical: 0.02)
+  limiting thickness kp'/(2 kl) = 10.36 um (paper text: 6.9 um from all 1200 C data; not reproduced: UNSURE, see issues)
+  L05 (Opila-Hann conversion, UNSURE): kp' = 6.9360e-17 m^2/s, kl = 6.6919e-12 m/s -> delta_lim = 10.365 um, t(theta=2) = 3.0977e+06 s = 35.9 d
+  fallback (parametric): kp' = 1.0000e-17 m^2/s, kl = 1.0000e-12 m/s -> delta_lim = 10.000 um, t(theta=2) = 2.0000e+07 s = 231.5 d
+  fallback expected: delta_lim = 10 um, t(theta=2) = 2e7 s -> PASS  (these two are arithmetic identities of the formulas, flagged IDENTITY)

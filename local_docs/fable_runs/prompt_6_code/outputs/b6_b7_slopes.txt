@@ -1,0 +1,32 @@
+=== B6 ===
+m=3: 2^(1/m)=1.25992 10^(1/m)=2.15443
+m=5: 2^(1/m)=1.14870 10^(1/m)=1.58489
+m=9.804: 2^(1/m)=1.07326 10^(1/m)=1.26473
+m=12: 2^(1/m)=1.05946 10^(1/m)=1.21153
+m=19.608: 2^(1/m)=1.03598 10^(1/m)=1.12460
+B6 hand 2^(1/m) m=3: 1.26 calc 1.2599 rounds to 1.26 PASS
+B6 hand 2^(1/m) m=5: 1.149 calc 1.1487 rounds to 1.149 PASS
+B6 hand 2^(1/m) m=9.804: 1.073 calc 1.0733 rounds to 1.073 PASS
+B6 hand 2^(1/m) m=12: 1.059 calc 1.0595 rounds to 1.059 PASS
+B6 hand 2^(1/m) m=19.608: 1.036 calc 1.0360 rounds to 1.036 PASS
+B6 hand 10^(1/9.804): 1.265 calc 1.2647 rounds to 1.265 PASS
+B6 identity: hand values are the same expression 2^(1/m); only a rounding check.
+
+=== B7 ===
+m= 5 s/s_e=0.95: extension=1.292 Haibach=1.587 cut-off=inf
+m= 5 s/s_e=0.9: extension=1.694 Haibach=2.581 cut-off=inf
+m= 5 s/s_e=0.8: extension=3.052 Haibach=7.451 cut-off=inf
+m= 5 s/s_e=0.7: extension=5.95 Haibach=24.78 cut-off=inf
+m= 5 s/s_e=0.5: extension=32 Haibach=512 cut-off=inf
+m=12 s/s_e=0.95: extension=1.851 Haibach=3.254 cut-off=inf
+m=12 s/s_e=0.9: extension=3.541 Haibach=11.28 cut-off=inf
+m=12 s/s_e=0.8: extension=14.55 Haibach=169.4 cut-off=inf
+m=12 s/s_e=0.7: extension=72.25 Haibach=3654 cut-off=inf
+m=12 s/s_e=0.5: extension=4096 Haibach=8.389e+06 cut-off=inf
+B7 hand m=12 0.9 ext: hand 3.54 calc 3.5407 rel=0.0002 PASS
+B7 hand m=12 0.8 ext: hand 14.6 calc 14.552 rel=0.0033 PASS
+B7 hand m=12 0.5 ext: hand 4096 calc 4096 rel=0.0000 PASS
+B7 hand Haibach 0.9: hand 11.3 calc 11.283 rel=0.0015 PASS
+B7 hand Haibach 0.8: hand 169 calc 169.41 rel=0.0024 PASS
+B7 hand Haibach 0.5: hand 8400000.0 calc 8.3886e+06 rel=0.0014 PASS
+B7 identity: hand values are the same expressions; no independent check.

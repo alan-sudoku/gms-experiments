@@ -1,0 +1,79 @@
+C10  sigma_a0 = 108.7032 MPa
+Baseline (k5,k8)=(0.9,0.4): sigma_env(1e5)=233.228, sigma_env(1e8)=51.239, b_env=-0.21939 (exp -0.219), N_env=3.2445e+06 (exp 3.2e6), F_env=154.11 (accept 130..180) -> PASS
+   crossover (bisection) sigma=283.985 MPa, N=4.0759e+04 (exp near 284 MPa, N ~4.1e4); bracketed on [100,400] (ends ln F = 5.475, -1.797); closed-form-power-law check 283.985
+   hand-value check of 284: -0.01 %
+
+F_env at sigma_a0 for k5=0.9:
+   k8=0.25 F_env=351.18 expected 351 diff +0.05% PASS
+   k8=0.30 F_env=268.48 expected 269 diff -0.19% PASS
+   k8=0.50 F_env=84.51 expected 84 diff +0.61% PASS
+   k8=0.60 F_env=43.24 expected 43 diff +0.55% PASS
+   k8=0.80 F_env=8.21 expected 8.2 diff +0.07% PASS
+
+Full grid: F_env(sigma_a0), crossover sigma [MPa] (bisection), closed-form power-law crossover, N at crossover; sweep = 61 log points in [100,400]
+   k5=0.8 k8=0.25 F_env=  459.176  sweep-bracketed=True  crossover=296.65 (N=2.657e+04)  closed=296.65  bracketed on [100,400] (ends ln F = 6.639, -1.825)
+   k5=0.8 k8=0.30 F_env=  354.652  sweep-bracketed=True  crossover=304.20 (N=2.077e+04)  closed=304.20  bracketed on [100,400] (ends ln F = 6.347, -1.562)
+   k5=0.8 k8=0.40 F_env=  205.722  sweep-bracketed=True  crossover=325.12 (N=1.082e+04)  closed=325.12  bracketed on [100,400] (ends ln F = 5.732, -1.008)
+   k5=0.8 k8=0.50 F_env=  112.211  sweep-bracketed=True  crossover=362.09 (N=3.764e+03)  closed=362.09  bracketed on [100,400] (ends ln F = 5.048, -0.391)
+   k5=0.8 k8=0.60 F_env=   55.854  sweep-bracketed=False crossover=447.60 (N=4.710e+02)  closed=447.60  bracketed on extended [10,4000] (ends ln F = 10.805, -6.225)
+   k5=0.8 k8=0.80 F_env=    8.915  sweep-bracketed=False crossover=none  closed=n/a  NO SIGN CHANGE on [100,400] nor on extended [10,4000] (ends ln F = 2.19, 2.19)
+   k5=0.8 k8=1.00 F_env=    0.474  sweep-bracketed=True  crossover=128.10 (N=1.000e+08)  closed=128.10  bracketed on [100,400] (ends ln F = -1.125, 5.174)
+   k5=0.9 k8=0.25 F_env=  351.182  sweep-bracketed=True  crossover=274.60 (N=5.666e+04)  closed=274.60  bracketed on [100,400] (ends ln F = 6.389, -2.379)
+   k5=0.9 k8=0.30 F_env=  268.478  sweep-bracketed=True  crossover=277.26 (N=5.156e+04)  closed=277.26  bracketed on [100,400] (ends ln F = 6.091, -2.189)
+   k5=0.9 k8=0.40 F_env=  154.106  sweep-bracketed=True  crossover=283.98 (N=4.076e+04)  closed=283.98  bracketed on [100,400] (ends ln F = 5.475, -1.797)
+   k5=0.9 k8=0.50 F_env=   84.509  sweep-bracketed=True  crossover=294.03 (N=2.899e+04)  closed=294.03  bracketed on [100,400] (ends ln F = 4.809, -1.372)
+   k5=0.9 k8=0.60 F_env=   43.236  sweep-bracketed=True  crossover=311.21 (N=1.661e+04)  closed=311.21  bracketed on [100,400] (ends ln F = 4.066, -0.899)
+   k5=0.9 k8=0.80 F_env=    8.206  sweep-bracketed=False crossover=486.70 (N=2.072e+02)  closed=486.70  bracketed on extended [10,4000] (ends ln F = 5.455, -2.958)
+   k5=0.9 k8=1.00 F_env=    0.754  sweep-bracketed=True  crossover=128.10 (N=1.000e+08)  closed=128.10  bracketed on [100,400] (ends ln F = -0.427, 1.963)
+   k5=1.0 k8=0.25 F_env=  283.454  sweep-bracketed=True  crossover=259.14 (N=1.000e+05)  closed=259.14  bracketed on [100,400] (ends ln F = 6.190, -2.822)  [k5=1: crossover at N=1e5 by construction, not a check]
+   k5=1.0 k8=0.30 F_env=  215.481  sweep-bracketed=True  crossover=259.14 (N=1.000e+05)  closed=259.14  bracketed on [100,400] (ends ln F = 5.889, -2.685)  [k5=1: crossover at N=1e5 by construction, not a check]
+   k5=1.0 k8=0.40 F_env=  123.322  sweep-bracketed=True  crossover=259.14 (N=1.000e+05)  closed=259.14  bracketed on [100,400] (ends ln F = 5.277, -2.406)  [k5=1: crossover at N=1e5 by construction, not a check]
+   k5=1.0 k8=0.50 F_env=   68.288  sweep-bracketed=True  crossover=259.14 (N=1.000e+05)  closed=259.14  bracketed on [100,400] (ends ln F = 4.629, -2.110)  [k5=1: crossover at N=1e5 by construction, not a check]
+   k5=1.0 k8=0.60 F_env=   35.862  sweep-bracketed=True  crossover=259.14 (N=1.000e+05)  closed=259.14  bracketed on [100,400] (ends ln F = 3.924, -1.789)  [k5=1: crossover at N=1e5 by construction, not a check]
+   k5=1.0 k8=0.80 F_env=    7.757  sweep-bracketed=True  crossover=259.14 (N=1.000e+05)  closed=259.14  bracketed on [100,400] (ends ln F = 2.245, -1.024)  [k5=1: crossover at N=1e5 by construction, not a check]
+   k5=1.0 k8=1.00 F_env=    1.000  sweep-bracketed=False crossover=none  closed=n/a  null case: F_env = 1 identically, no crossover defined  [null case F=1 identically; no crossover]
+   null case k5=k8=1: F_env(sigma_a0) = 1.000000000000 -> PASS
+   (null case is an IDENTITY: with k5=k8=1 the env curve is the air curve by construction.)
+
+C11
+Wall 0.3 mm, n_s=2, r=10 um/yr (tc=15 yr), baseline (0.9,0.4):
+   nu=0.01  tau0_env=10.281 yr q_env=4.5580 rho=0.68542 F_sec,env=2.3370 expected 2.340 diff -0.13% PASS
+   nu=0.1   tau0_env=1.0281 yr q_env=4.5580 rho=0.06854 F_sec,env=1.1521 expected 1.150 diff +0.18% PASS
+   nu=1     tau0_env=0.10281 yr q_env=4.5580 rho=0.00685 F_sec,env=1.0156 expected 1.016 diff -0.04% PASS
+   nu=10    tau0_env=0.010281 yr q_env=4.5580 rho=0.00069 F_sec,env=1.0016 expected 1.002 diff -0.04% PASS
+   nu at F=1.05: 0.3096 Hz (end values F-1.05 at 0.01 Hz: +1.2870, at 10 Hz: -0.0484) -> between 0.1 and 1 Hz: PASS
+Strut 0.3 mm, r=10 um/yr (tc=15 yr, p=2):
+   nu=0.01  tau0_env=10.281 yr q_env=9.1160 rho=0.68542 F_sec,env=3.3127
+   nu=0.1   tau0_env=1.0281 yr q_env=9.1160 rho=0.06854 F_sec,env=1.2923
+   nu=1     tau0_env=0.10281 yr q_env=9.1160 rho=0.00685 F_sec,env=1.0310
+   nu=10    tau0_env=0.010281 yr q_env=9.1160 rho=0.00069 F_sec,env=1.0031
+   nu at F=1.05: 0.6169 Hz (end values +2.2627, -0.0469)
+
+Full C3 grid (r, h0/d0, n_s): F_sec,env at nu = 0.01, 0.1, 1, 10 Hz; nu at F=1.05
+   wall  n_s=1 size=0.3 mm r=1   F = 1.0770, 1.0078, 1.0008, 1.0001  nu(1.05)=0.01548 Hz
+   wall  n_s=1 size=0.3 mm r=3   F = 1.2256, 1.0233, 1.0023, 1.0002  nu(1.05)=0.04644 Hz
+   wall  n_s=1 size=0.3 mm r=10  F = 1.7073, 1.0770, 1.0078, 1.0008  nu(1.05)=0.1548 Hz
+   wall  n_s=1 size=1.0 mm r=1   F = 1.0233, 1.0023, 1.0002, 1.0000  nu(1.05)=no sign change (F at 0.01 Hz 1.023, 10 Hz 1.000): all <1.05 in range
+   wall  n_s=1 size=1.0 mm r=3   F = 1.0694, 1.0070, 1.0007, 1.0001  nu(1.05)=0.01393 Hz
+   wall  n_s=1 size=1.0 mm r=10  F = 1.2256, 1.0233, 1.0023, 1.0002  nu(1.05)=0.04644 Hz
+   wall  n_s=1 size=3.0 mm r=1   F = 1.0078, 1.0008, 1.0001, 1.0000  nu(1.05)=no sign change (F at 0.01 Hz 1.008, 10 Hz 1.000): all <1.05 in range
+   wall  n_s=1 size=3.0 mm r=3   F = 1.0233, 1.0023, 1.0002, 1.0000  nu(1.05)=no sign change (F at 0.01 Hz 1.023, 10 Hz 1.000): all <1.05 in range
+   wall  n_s=1 size=3.0 mm r=10  F = 1.0770, 1.0078, 1.0008, 1.0001  nu(1.05)=0.01548 Hz
+   wall  n_s=2 size=0.3 mm r=1   F = 1.1521, 1.0156, 1.0016, 1.0002  nu(1.05)=0.03096 Hz
+   wall  n_s=2 size=0.3 mm r=3   F = 1.4380, 1.0465, 1.0047, 1.0005  nu(1.05)=0.09287 Hz
+   wall  n_s=2 size=0.3 mm r=10  F = 2.3370, 1.1521, 1.0156, 1.0016  nu(1.05)=0.3096 Hz
+   wall  n_s=2 size=1.0 mm r=1   F = 1.0465, 1.0047, 1.0005, 1.0000  nu(1.05)=no sign change (F at 0.01 Hz 1.046, 10 Hz 1.000): all <1.05 in range
+   wall  n_s=2 size=1.0 mm r=3   F = 1.1372, 1.0140, 1.0014, 1.0001  nu(1.05)=0.02786 Hz
+   wall  n_s=2 size=1.0 mm r=10  F = 1.4380, 1.0465, 1.0047, 1.0005  nu(1.05)=0.09287 Hz
+   wall  n_s=2 size=3.0 mm r=1   F = 1.0156, 1.0016, 1.0002, 1.0000  nu(1.05)=no sign change (F at 0.01 Hz 1.016, 10 Hz 1.000): all <1.05 in range
+   wall  n_s=2 size=3.0 mm r=3   F = 1.0465, 1.0047, 1.0005, 1.0000  nu(1.05)=no sign change (F at 0.01 Hz 1.046, 10 Hz 1.000): all <1.05 in range
+   wall  n_s=2 size=3.0 mm r=10  F = 1.1521, 1.0156, 1.0016, 1.0002  nu(1.05)=0.03096 Hz
+   strut n_s=1 size=0.3 mm r=1   F = 1.2923, 1.0310, 1.0031, 1.0003  nu(1.05)=0.06169 Hz
+   strut n_s=1 size=0.3 mm r=3   F = 1.8049, 1.0916, 1.0093, 1.0009  nu(1.05)=0.1851 Hz
+   strut n_s=1 size=0.3 mm r=10  F = 3.3127, 1.2923, 1.0310, 1.0031  nu(1.05)=0.6169 Hz
+   strut n_s=1 size=1.0 mm r=1   F = 1.0916, 1.0093, 1.0009, 1.0001  nu(1.05)=0.01851 Hz
+   strut n_s=1 size=1.0 mm r=3   F = 1.2645, 1.0279, 1.0028, 1.0003  nu(1.05)=0.05553 Hz
+   strut n_s=1 size=1.0 mm r=10  F = 1.8049, 1.0916, 1.0093, 1.0009  nu(1.05)=0.1851 Hz
+   strut n_s=1 size=3.0 mm r=1   F = 1.0310, 1.0031, 1.0003, 1.0000  nu(1.05)=no sign change (F at 0.01 Hz 1.031, 10 Hz 1.000): all <1.05 in range
+   strut n_s=1 size=3.0 mm r=3   F = 1.0916, 1.0093, 1.0009, 1.0001  nu(1.05)=0.01851 Hz
+   strut n_s=1 size=3.0 mm r=10  F = 1.2923, 1.0310, 1.0031, 1.0003  nu(1.05)=0.06169 Hz

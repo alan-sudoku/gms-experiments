@@ -1,0 +1,15 @@
+C1  sigma_a0 = sigma_f' (2 N0)^b = 108.703245 MPa   <<<  (expected ~108.7, accept 105..112, tol 0.5%)
+    deviation from 108.7: 0.003 %  -> PASS
+    m = -1/b = 9.80392 (expected 9.804) -> PASS
+    nu=0.01  Hz tau0 = 1584.4044 yr (expected 1584) PASS
+    nu=0.1   Hz tau0 = 158.4404 yr (expected 158.4) PASS
+    nu=1     Hz tau0 = 15.8440 yr (expected 15.84) PASS
+    nu=10    Hz tau0 = 1.5844 yr (expected 1.584) PASS
+C1 overall: PASS
+    note: expected values are the planner's own arithmetic from the same formula (M02-M04); the check is an arithmetic re-computation, not independent evidence.
+
+C2  S_max = 15.7661 ksi, S_eq = 23.2434 ksi, S_eq-15.8 = 7.4434, log10 N = 7.6391
+    N = 4.3557e+07 cycles; N/N0 = 0.0871 (planner expects ~4e7, ~0.09)
+    plausibility window [0.03, 30]: inside
+    implied shift in rho = N/N0 -> rho_(L07) = 0.0871 x rho_(baseline); life factor F would be scaled by the same 0.0871
+    C2 verdict: report only (no tolerance). L07 coefficients are NOT verified from the source (UNSURE).

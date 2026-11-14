@@ -1,0 +1,6 @@
+N1/N2=0.001: a=0.06310 min grid u=0.05239 interior=True; golden u=0.05238249 f=0.22217603; analytic u*=0.05238249 f*=0.22217603 |du|=9.7e-10 PASS; hand (f=0.222, u=0.052) PASS
+N1/N2=0.01: a=0.15849 min grid u=0.11203 interior=True; golden u=0.11202856 f=0.40517612; analytic u*=0.11202856 f*=0.40517612 |du|=1.8e-09 PASS; hand (f=0.405, u=0.112) PASS
+N1/N2=0.1: a=0.39811 min grid u=0.21651 interior=True; golden u=0.21648603 f=0.67269772; analytic u*=0.21648602 f*=0.67269772 |du|=7.8e-09 PASS; hand (f=0.673, u=0.217) PASS
+N1/N2=10: a=2.51189 max grid u=0.54379 interior=True; golden u=0.54378831 f=1.32730228; analytic u*=0.54378831 f*=1.32730228 |du|=6.7e-09 PASS; hand (f=1.327, u=0.544) PASS
+N1/N2=100: a=6.30957 max grid u=0.70686 interior=True; golden u=0.70685245 f=1.59482388; analytic u*=0.70685244 f*=1.59482388 |du|=4.7e-09 PASS; hand (f=1.595, u=0.707) PASS
+N1/N2=1000: a=15.84893 max grid u=0.83018 interior=True; golden u=0.83020646 f=1.77782397; analytic u*=0.83020646 f*=1.77782397 |du|=4.3e-09 PASS; hand (f=1.778, u=0.83) PASS

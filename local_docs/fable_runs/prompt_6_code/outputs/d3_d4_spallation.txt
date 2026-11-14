@@ -1,0 +1,39 @@
+======================================================================
+D3: periodic complete spallation  (level: derived)
+======================================================================
+grid points: 100001 (100 per interval, up to N = 1000)
+parabolic <= m at every grid point: PASS   m <= U at every grid point: PASS   (real test, tolerance 1e-9)
+  min (m - parabolic)/parabolic = -2.278e-16, min (U - m)/U = 3.042e-02
+     N    m/parabolic    sqrt(N)          U/m  1+1/sqrt(N)
+     1    1.000000000   1.000000  2.000000000  2.000000000
+     2    1.414213562   1.414214  1.707106781  1.707106781
+     5    2.236067977   2.236068  1.447213595  1.447213595
+    10    3.162277660   3.162278  1.316227766  1.316227766
+   100   10.000000000  10.000000  1.100000000  1.100000000
+  1000   31.622776602  31.622777  1.031622777  1.031622777
+max relative deviation from sqrt(N), 1+1/sqrt(N): 2.22e-16 -> PASS (tolerance 1e-9)
+IDENTITY CHECK: the values sqrt(N) and 1 + 1/sqrt(N) at t = N dt follow from the formula for m by algebra (m = N C, parabolic = sqrt(N) C, U = (sqrt(N)+N) C); the numbers above test arithmetic, not physics.  The inequality over all grid points is the real test of the two bounds.
+
+======================================================================
+D4: fractional spallation ensemble  (level: derived)
+======================================================================
+
+F_A = 0.001: n0 = 1000 patches
+  slope ratio (LSQ) / sqrt(2 kp F_A/dt) = 1.00000 -> PASS (tolerance 2 %)
+  t =   1 n0 dt: m_ens/parabolic =   1.3333   sqrt(t/(n0 dt)) =  1.0000
+  t =  10 n0 dt: m_ens/parabolic =   3.2677   sqrt(t/(n0 dt)) =  3.1623
+  t = 100 n0 dt: m_ens/parabolic =  10.0333   sqrt(t/(n0 dt)) = 10.0000
+
+F_A = 0.01: n0 = 100 patches
+  slope ratio (LSQ) / sqrt(2 kp F_A/dt) = 1.00000 -> PASS (tolerance 2 %)
+  t =   1 n0 dt: m_ens/parabolic =   1.3329   sqrt(t/(n0 dt)) =  1.0000
+  t =  10 n0 dt: m_ens/parabolic =   3.2676   sqrt(t/(n0 dt)) =  3.1623
+  t = 100 n0 dt: m_ens/parabolic =  10.0333   sqrt(t/(n0 dt)) = 10.0000
+
+F_A = 0.1: n0 = 10 patches
+  slope ratio (LSQ) / sqrt(2 kp F_A/dt) = 0.99992 -> PASS (tolerance 2 %)
+  t =   1 n0 dt: m_ens/parabolic =   1.3210   sqrt(t/(n0 dt)) =  1.0000
+  t =  10 n0 dt: m_ens/parabolic =   3.2638   sqrt(t/(n0 dt)) =  3.1623
+  t = 100 n0 dt: m_ens/parabolic =  10.0321   sqrt(t/(n0 dt)) = 10.0000
+
+IDENTITY/CONSISTENCY NOTE: for t >> n0 dt each patch advances by sqrt(2 kp n0 dt) per n0 intervals by construction, so the slope ratio follows from the patch formula; this is an asymptote consistency check, as the spec says, not an independent proof.

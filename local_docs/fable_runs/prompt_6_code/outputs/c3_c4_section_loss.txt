@@ -1,0 +1,125 @@
+C3: recession-through times (yr)
+  wall n_s=1 h0=0.3 mm: t_c(r=1,3,10) = 300, 100, 30
+  wall n_s=1 h0=1.0 mm: t_c(r=1,3,10) = 1000, 333.3, 100
+  wall n_s=1 h0=3.0 mm: t_c(r=1,3,10) = 3000, 1000, 300
+  wall n_s=2 h0=0.3 mm: t_c(r=1,3,10) = 150, 50, 15
+  wall n_s=2 h0=1.0 mm: t_c(r=1,3,10) = 500, 166.7, 50
+  wall n_s=2 h0=3.0 mm: t_c(r=1,3,10) = 1500, 500, 150
+  strut d0=0.3 mm: t_c(r=1,3,10) = 150, 50, 15
+  strut d0=1.0 mm: t_c(r=1,3,10) = 500, 166.7, 50
+  strut d0=3.0 mm: t_c(r=1,3,10) = 1500, 500, 150
+  planner n_s=2 values reproduced within 0.5%: PASS
+
+C3: rho = tau0/t_c at 1 Hz for wall n_s=2
+  min 0.01056, max 1.05627 (expected 0.0106 .. 1.056) -> PASS
+
+C3: mass-loss rate r*rho_m and ISO 9223 class (M08)
+  r=1 um/yr: 2.780 g/(m2 yr) -> class C4
+  r=3 um/yr: 8.340 g/(m2 yr) -> class C5
+  r=10 um/yr: 27.800 g/(m2 yr) -> class CX
+  1..10 um/yr = 2.78 .. 27.80 g/(m2 yr) (expected 2.8 .. 27.8)
+  class limits M08 are UNSURE (memory; ISO 9223 table not read)
+
+C4: coupled life, closed form; q = p*m, m = 9.8039
+  columns: geometry, nu, r, t_c[yr], rho, tau_c[yr], F_cur, F_min
+  wall  n_s=1 h0/d0=0.3 nu=0.1  r=1  tc=      300 rho=  0.52813 tau_c=   53.565 F_cur=  2.9579 F_min=  2.9579
+  wall  n_s=1 h0/d0=0.3 nu=0.1  r=3  tc=      100 rho=  1.58440 tau_c=    26.45 F_cur=  5.9901 F_min=  3.7807
+  wall  n_s=1 h0/d0=0.3 nu=0.1  r=10 tc=       30 rho=  5.28135 tau_c=    10.65 F_cur= 14.8767 F_min=  2.8168
+  wall  n_s=1 h0/d0=0.3 nu=1    r=1  tc=      300 rho=  0.05281 tau_c=   12.733 F_cur=  1.2443 F_min=  1.2443
+  wall  n_s=1 h0/d0=0.3 nu=1    r=3  tc=      100 rho=  0.15844 tau_c=   9.4438 F_cur=  1.6777 F_min=  1.6777
+  wall  n_s=1 h0/d0=0.3 nu=1    r=10 tc=       30 rho=  0.52813 tau_c=   5.3565 F_cur=  2.9579 F_min=  2.9579
+  wall  n_s=1 h0/d0=0.3 nu=10   r=1  tc=      300 rho=  0.00528 tau_c=   1.5447 F_cur=  1.0257 F_min=  1.0257
+  wall  n_s=1 h0/d0=0.3 nu=10   r=3  tc=      100 rho=  0.01584 tau_c=   1.4723 F_cur=  1.0762 F_min=  1.0762
+  wall  n_s=1 h0/d0=0.3 nu=10   r=10 tc=       30 rho=  0.05281 tau_c=   1.2733 F_cur=  1.2443 F_min=  1.2443
+  wall  n_s=1 h0/d0=1.0 nu=0.1  r=1  tc=     1000 rho=  0.15844 tau_c=   94.438 F_cur=  1.6777 F_min=  1.6777
+  wall  n_s=1 h0/d0=1.0 nu=0.1  r=3  tc=    333.3 rho=  0.47532 tau_c=   56.833 F_cur=  2.7878 F_min=  2.7878
+  wall  n_s=1 h0/d0=1.0 nu=0.1  r=10 tc=      100 rho=  1.58440 tau_c=    26.45 F_cur=  5.9901 F_min=  3.7807
+  wall  n_s=1 h0/d0=1.0 nu=1    r=1  tc=     1000 rho=  0.01584 tau_c=   14.723 F_cur=  1.0762 F_min=  1.0762
+  wall  n_s=1 h0/d0=1.0 nu=1    r=3  tc=    333.3 rho=  0.04753 tau_c=   12.976 F_cur=  1.2210 F_min=  1.2210
+  wall  n_s=1 h0/d0=1.0 nu=1    r=10 tc=      100 rho=  0.15844 tau_c=   9.4438 F_cur=  1.6777 F_min=  1.6777
+  wall  n_s=1 h0/d0=1.0 nu=10   r=1  tc=     1000 rho=  0.00158 tau_c=   1.5722 F_cur=  1.0078 F_min=  1.0078
+  wall  n_s=1 h0/d0=1.0 nu=10   r=3  tc=    333.3 rho=  0.00475 tau_c=   1.5485 F_cur=  1.0232 F_min=  1.0232
+  wall  n_s=1 h0/d0=1.0 nu=10   r=10 tc=      100 rho=  0.01584 tau_c=   1.4723 F_cur=  1.0762 F_min=  1.0762
+  wall  n_s=1 h0/d0=3.0 nu=0.1  r=1  tc=     3000 rho=  0.05281 tau_c=   127.33 F_cur=  1.2443 F_min=  1.2443
+  wall  n_s=1 h0/d0=3.0 nu=0.1  r=3  tc=     1000 rho=  0.15844 tau_c=   94.438 F_cur=  1.6777 F_min=  1.6777
+  wall  n_s=1 h0/d0=3.0 nu=0.1  r=10 tc=      300 rho=  0.52813 tau_c=   53.565 F_cur=  2.9579 F_min=  2.9579
+  wall  n_s=1 h0/d0=3.0 nu=1    r=1  tc=     3000 rho=  0.00528 tau_c=   15.447 F_cur=  1.0257 F_min=  1.0257
+  wall  n_s=1 h0/d0=3.0 nu=1    r=3  tc=     1000 rho=  0.01584 tau_c=   14.723 F_cur=  1.0762 F_min=  1.0762
+  wall  n_s=1 h0/d0=3.0 nu=1    r=10 tc=      300 rho=  0.05281 tau_c=   12.733 F_cur=  1.2443 F_min=  1.2443
+  wall  n_s=1 h0/d0=3.0 nu=10   r=1  tc=     3000 rho=  0.00053 tau_c=   1.5803 F_cur=  1.0026 F_min=  1.0026
+  wall  n_s=1 h0/d0=3.0 nu=10   r=3  tc=     1000 rho=  0.00158 tau_c=   1.5722 F_cur=  1.0078 F_min=  1.0078
+  wall  n_s=1 h0/d0=3.0 nu=10   r=10 tc=      300 rho=  0.00528 tau_c=   1.5447 F_cur=  1.0257 F_min=  1.0257
+  wall  n_s=2 h0/d0=0.3 nu=0.1  r=1  tc=      150 rho=  1.05627 tau_c=   34.907 F_cur=  4.5390 F_min=  4.2972
+  wall  n_s=2 h0/d0=0.3 nu=0.1  r=3  tc=       50 rho=  3.16881 tau_c=   15.878 F_cur=  9.9787 F_min=  3.1490
+  wall  n_s=2 h0/d0=0.3 nu=0.1  r=10 tc=       15 rho= 10.56270 tau_c=   6.0469 F_cur= 26.2021 F_min=  2.4806
+  wall  n_s=2 h0/d0=0.3 nu=1    r=1  tc=      150 rho=  0.10563 tau_c=   10.794 F_cur=  1.4678 F_min=  1.4678
+  wall  n_s=2 h0/d0=0.3 nu=1    r=3  tc=       50 rho=  0.31688 tau_c=   7.0219 F_cur=  2.2564 F_min=  2.2564
+  wall  n_s=2 h0/d0=0.3 nu=1    r=10 tc=       15 rho=  1.05627 tau_c=   3.4907 F_cur=  4.5390 F_min=  4.2972
+  wall  n_s=2 h0/d0=0.3 nu=10   r=1  tc=      150 rho=  0.01056 tau_c=   1.5074 F_cur=  1.0511 F_min=  1.0511
+  wall  n_s=2 h0/d0=0.3 nu=10   r=3  tc=       50 rho=  0.03169 tau_c=   1.3781 F_cur=  1.1497 F_min=  1.1497
+  wall  n_s=2 h0/d0=0.3 nu=10   r=10 tc=       15 rho=  0.10563 tau_c=   1.0794 F_cur=  1.4678 F_min=  1.4678
+  wall  n_s=2 h0/d0=1.0 nu=0.1  r=1  tc=      500 rho=  0.31688 tau_c=   70.219 F_cur=  2.2564 F_min=  2.2564
+  wall  n_s=2 h0/d0=1.0 nu=0.1  r=3  tc=    166.7 rho=  0.95064 tau_c=   37.403 F_cur=  4.2360 F_min=  4.2360
+  wall  n_s=2 h0/d0=1.0 nu=0.1  r=10 tc=       50 rho=  3.16881 tau_c=   15.878 F_cur=  9.9787 F_min=  3.1490
+  wall  n_s=2 h0/d0=1.0 nu=1    r=1  tc=      500 rho=  0.03169 tau_c=   13.781 F_cur=  1.1497 F_min=  1.1497
+  wall  n_s=2 h0/d0=1.0 nu=1    r=3  tc=    166.7 rho=  0.09506 tau_c=   11.123 F_cur=  1.4244 F_min=  1.4244
+  wall  n_s=2 h0/d0=1.0 nu=1    r=10 tc=       50 rho=  0.31688 tau_c=   7.0219 F_cur=  2.2564 F_min=  2.2564
+  wall  n_s=2 h0/d0=1.0 nu=10   r=1  tc=      500 rho=  0.00317 tau_c=   1.5603 F_cur=  1.0155 F_min=  1.0155
+  wall  n_s=2 h0/d0=1.0 nu=10   r=3  tc=    166.7 rho=  0.00951 tau_c=   1.5147 F_cur=  1.0460 F_min=  1.0460
+  wall  n_s=2 h0/d0=1.0 nu=10   r=10 tc=       50 rho=  0.03169 tau_c=   1.3781 F_cur=  1.1497 F_min=  1.1497
+  wall  n_s=2 h0/d0=3.0 nu=0.1  r=1  tc=     1500 rho=  0.10563 tau_c=   107.94 F_cur=  1.4678 F_min=  1.4678
+  wall  n_s=2 h0/d0=3.0 nu=0.1  r=3  tc=      500 rho=  0.31688 tau_c=   70.219 F_cur=  2.2564 F_min=  2.2564
+  wall  n_s=2 h0/d0=3.0 nu=0.1  r=10 tc=      150 rho=  1.05627 tau_c=   34.907 F_cur=  4.5390 F_min=  4.2972
+  wall  n_s=2 h0/d0=3.0 nu=1    r=1  tc=     1500 rho=  0.01056 tau_c=   15.074 F_cur=  1.0511 F_min=  1.0511
+  wall  n_s=2 h0/d0=3.0 nu=1    r=3  tc=      500 rho=  0.03169 tau_c=   13.781 F_cur=  1.1497 F_min=  1.1497
+  wall  n_s=2 h0/d0=3.0 nu=1    r=10 tc=      150 rho=  0.10563 tau_c=   10.794 F_cur=  1.4678 F_min=  1.4678
+  wall  n_s=2 h0/d0=3.0 nu=10   r=1  tc=     1500 rho=  0.00106 tau_c=   1.5763 F_cur=  1.0052 F_min=  1.0052
+  wall  n_s=2 h0/d0=3.0 nu=10   r=3  tc=      500 rho=  0.00317 tau_c=   1.5603 F_cur=  1.0155 F_min=  1.0155
+  wall  n_s=2 h0/d0=3.0 nu=10   r=10 tc=      150 rho=  0.01056 tau_c=   1.5074 F_cur=  1.0511 F_min=  1.0511
+  strut n_s=1 h0/d0=0.3 nu=0.1  r=1  tc=      150 rho=  1.05627 tau_c=   22.526 F_cur=  7.0336 F_min=  6.6589
+  strut n_s=1 h0/d0=0.3 nu=0.1  r=3  tc=       50 rho=  3.16881 tau_c=   9.8741 F_cur= 16.0460 F_min=  5.0637
+  strut n_s=1 h0/d0=0.3 nu=0.1  r=10 tc=       15 rho= 10.56270 tau_c=   3.7093 F_cur= 42.7141 F_min=  4.0439
+  strut n_s=1 h0/d0=0.3 nu=1    r=1  tc=      150 rho=  0.10563 tau_c=   8.5117 F_cur=  1.8614 F_min=  1.8614
+  strut n_s=1 h0/d0=0.3 nu=1    r=3  tc=       50 rho=  0.31688 tau_c=   4.9285 F_cur=  3.2147 F_min=  3.2147
+  strut n_s=1 h0/d0=0.3 nu=1    r=10 tc=       15 rho=  1.05627 tau_c=   2.2526 F_cur=  7.0336 F_min=  6.6589
+  strut n_s=1 h0/d0=0.3 nu=10   r=1  tc=      150 rho=  0.01056 tau_c=   1.4395 F_cur=  1.1006 F_min=  1.1006
+  strut n_s=1 h0/d0=0.3 nu=10   r=3  tc=       50 rho=  0.03169 tau_c=   1.2301 F_cur=  1.2880 F_min=  1.2880
+  strut n_s=1 h0/d0=0.3 nu=10   r=10 tc=       15 rho=  0.10563 tau_c=  0.85117 F_cur=  1.8614 F_min=  1.8614
+  strut n_s=1 h0/d0=1.0 nu=0.1  r=1  tc=      500 rho=  0.31688 tau_c=   49.285 F_cur=  3.2147 F_min=  3.2147
+  strut n_s=1 h0/d0=1.0 nu=0.1  r=3  tc=    166.7 rho=  0.95064 tau_c=   24.266 F_cur=  6.5293 F_min=  6.5293
+  strut n_s=1 h0/d0=1.0 nu=0.1  r=10 tc=       50 rho=  3.16881 tau_c=   9.8741 F_cur= 16.0460 F_min=  5.0637
+  strut n_s=1 h0/d0=1.0 nu=1    r=1  tc=      500 rho=  0.03169 tau_c=   12.301 F_cur=  1.2880 F_min=  1.2880
+  strut n_s=1 h0/d0=1.0 nu=1    r=3  tc=    166.7 rho=  0.09506 tau_c=    8.877 F_cur=  1.7848 F_min=  1.7848
+  strut n_s=1 h0/d0=1.0 nu=1    r=10 tc=       50 rho=  0.31688 tau_c=   4.9285 F_cur=  3.2147 F_min=  3.2147
+  strut n_s=1 h0/d0=1.0 nu=10   r=1  tc=      500 rho=  0.00317 tau_c=   1.5371 F_cur=  1.0308 F_min=  1.0308
+  strut n_s=1 h0/d0=1.0 nu=10   r=3  tc=    166.7 rho=  0.00951 tau_c=   1.4525 F_cur=  1.0908 F_min=  1.0908
+  strut n_s=1 h0/d0=1.0 nu=10   r=10 tc=       50 rho=  0.03169 tau_c=   1.2301 F_cur=  1.2880 F_min=  1.2880
+  strut n_s=1 h0/d0=3.0 nu=0.1  r=1  tc=     1500 rho=  0.10563 tau_c=   85.117 F_cur=  1.8614 F_min=  1.8614
+  strut n_s=1 h0/d0=3.0 nu=0.1  r=3  tc=      500 rho=  0.31688 tau_c=   49.285 F_cur=  3.2147 F_min=  3.2147
+  strut n_s=1 h0/d0=3.0 nu=0.1  r=10 tc=      150 rho=  1.05627 tau_c=   22.526 F_cur=  7.0336 F_min=  6.6589
+  strut n_s=1 h0/d0=3.0 nu=1    r=1  tc=     1500 rho=  0.01056 tau_c=   14.395 F_cur=  1.1006 F_min=  1.1006
+  strut n_s=1 h0/d0=3.0 nu=1    r=3  tc=      500 rho=  0.03169 tau_c=   12.301 F_cur=  1.2880 F_min=  1.2880
+  strut n_s=1 h0/d0=3.0 nu=1    r=10 tc=      150 rho=  0.10563 tau_c=   8.5117 F_cur=  1.8614 F_min=  1.8614
+  strut n_s=1 h0/d0=3.0 nu=10   r=1  tc=     1500 rho=  0.00106 tau_c=   1.5682 F_cur=  1.0103 F_min=  1.0103
+  strut n_s=1 h0/d0=3.0 nu=10   r=3  tc=      500 rho=  0.00317 tau_c=   1.5371 F_cur=  1.0308 F_min=  1.0308
+  strut n_s=1 h0/d0=3.0 nu=10   r=10 tc=      150 rho=  0.01056 tau_c=   1.4395 F_cur=  1.1006 F_min=  1.1006
+
+C4 hand-value comparison (2 %% tolerance)
+  ('wall', 2, 0.3, 1, 1)     F_cur=1.4678 expected 1.470 diff -0.15%  PASS
+  ('wall', 2, 0.3, 1, 3)     F_cur=2.2564 expected 2.260 diff -0.16%  PASS
+  ('wall', 2, 0.3, 1, 10)    F_cur=4.5390 expected 4.540 diff -0.02%  PASS
+  ('wall', 2, 1.0, 1, 1)     F_cur=1.1497 expected 1.150 diff -0.03%  PASS
+  ('wall', 2, 1.0, 1, 3)     F_cur=1.4244 expected 1.420 diff +0.31%  PASS
+  ('wall', 2, 1.0, 1, 10)    F_cur=2.2564 expected 2.260 diff -0.16%  PASS
+  ('wall', 2, 3.0, 1, 1)     F_cur=1.0511 expected 1.050 diff +0.10%  PASS
+  ('wall', 2, 3.0, 1, 3)     F_cur=1.1497 expected 1.150 diff -0.03%  PASS
+  ('wall', 2, 3.0, 1, 10)    F_cur=1.4678 expected 1.470 diff -0.15%  PASS
+  ('wall', 1, 3.0, 1, 1)     F_cur=1.0257 expected 1.026 diff -0.03%  PASS
+  ('wall', 1, 3.0, 1, 10)    F_cur=1.2443 expected 1.240 diff +0.35%  PASS
+  strut 0.3 mm r=10 1Hz tau_c [yr] 2.2526 expected 2.25 diff +0.12%  PASS
+  strut 0.3 mm r=10 1Hz F_cur      7.0336 expected 7.00 diff +0.48%  PASS
+  strut 0.3 mm r=10 1Hz F_min      6.6589 expected 6.70 diff -0.61%  PASS
+  (t_c strut = 15.000 yr, rho = 1.0563)
+
+C4 sanity: tau_c < t_c and tau_c <= tau0 everywhere on grid: True
+C4 independent numerical verification of the closed form: see C5 (c5_rk4_verify.py).

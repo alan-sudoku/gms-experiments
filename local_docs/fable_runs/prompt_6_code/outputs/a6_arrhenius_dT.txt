@@ -1,0 +1,45 @@
+eps=0.05 Q= 50 kJ/mol T= 300 K: closed=   0.7320 K bisect=   0.7320 K rel=2.4e-13 first-order=0.7302
+eps=0.05 Q= 50 kJ/mol T= 600 K: closed=   2.9351 K bisect=   2.9351 K rel=2.7e-14 first-order=2.9208
+eps=0.05 Q= 50 kJ/mol T= 900 K: closed=   6.6201 K bisect=   6.6201 K rel=8.9e-14 first-order=6.5718
+eps=0.05 Q= 50 kJ/mol T=1200 K: closed=  11.7980 K bisect=  11.7980 K rel=6.7e-14 first-order=11.6831
+eps=0.05 Q= 50 kJ/mol T=1500 K: closed=  18.4798 K bisect=  18.4798 K rel=1.1e-13 first-order=18.2549
+eps=0.05 Q=100 kJ/mol T= 300 K: closed=   0.3655 K bisect=   0.3655 K rel=2.3e-13 first-order=0.3651
+eps=0.05 Q=100 kJ/mol T= 600 K: closed=   1.4640 K bisect=   1.4640 K rel=2.4e-13 first-order=1.4604
+eps=0.05 Q=100 kJ/mol T= 900 K: closed=   3.2979 K bisect=   3.2979 K rel=6.7e-15 first-order=3.2859
+eps=0.05 Q=100 kJ/mol T=1200 K: closed=   5.8701 K bisect=   5.8701 K rel=2.7e-14 first-order=5.8416
+eps=0.05 Q=100 kJ/mol T=1500 K: closed=   9.1833 K bisect=   9.1833 K rel=3.5e-13 first-order=9.1274
+eps=0.05 Q=200 kJ/mol T= 300 K: closed=   0.1827 K bisect=   0.1827 K rel=1.1e-13 first-order=0.1825
+eps=0.05 Q=200 kJ/mol T= 600 K: closed=   0.7311 K bisect=   0.7311 K rel=2.3e-13 first-order=0.7302
+eps=0.05 Q=200 kJ/mol T= 900 K: closed=   1.6459 K bisect=   1.6459 K rel=5.8e-14 first-order=1.6429
+eps=0.05 Q=200 kJ/mol T=1200 K: closed=   2.9279 K bisect=   2.9279 K rel=2.4e-13 first-order=2.9208
+eps=0.05 Q=200 kJ/mol T=1500 K: closed=   4.5776 K bisect=   4.5776 K rel=3.7e-13 first-order=4.5637
+eps=0.05 Q=300 kJ/mol T= 300 K: closed=   0.1217 K bisect=   0.1217 K rel=4.2e-13 first-order=0.1217
+eps=0.05 Q=300 kJ/mol T= 600 K: closed=   0.4872 K bisect=   0.4872 K rel=3.6e-13 first-order=0.4868
+eps=0.05 Q=300 kJ/mol T= 900 K: closed=   1.0966 K bisect=   1.0966 K rel=2.8e-13 first-order=1.0953
+eps=0.05 Q=300 kJ/mol T=1200 K: closed=   1.9504 K bisect=   1.9504 K rel=1.1e-13 first-order=1.9472
+eps=0.05 Q=300 kJ/mol T=1500 K: closed=   3.0487 K bisect=   3.0487 K rel=9.4e-14 first-order=3.0425
+eps=0.1 Q= 50 kJ/mol T= 300 K: closed=   1.4332 K bisect=   1.4332 K rel=9.3e-14 first-order=1.4264
+eps=0.1 Q= 50 kJ/mol T= 600 K: closed=   5.7604 K bisect=   5.7604 K rel=1.9e-13 first-order=5.7057
+eps=0.1 Q= 50 kJ/mol T= 900 K: closed=  13.0235 K bisect=  13.0235 K rel=7.4e-14 first-order=12.8377
+eps=0.1 Q= 50 kJ/mol T=1200 K: closed=  23.2651 K bisect=  23.2651 K rel=2.8e-13 first-order=22.8226
+eps=0.1 Q= 50 kJ/mol T=1500 K: closed=  36.5288 K bisect=  36.5288 K rel=2.5e-13 first-order=35.6604
+eps=0.1 Q=100 kJ/mol T= 300 K: closed=   0.7149 K bisect=   0.7149 K rel=1.2e-13 first-order=0.7132
+eps=0.1 Q=100 kJ/mol T= 600 K: closed=   2.8665 K bisect=   2.8665 K rel=9.3e-14 first-order=2.8528
+eps=0.1 Q=100 kJ/mol T= 900 K: closed=   6.4650 K bisect=   6.4650 K rel=6.0e-14 first-order=6.4189
+eps=0.1 Q=100 kJ/mol T=1200 K: closed=  11.5209 K bisect=  11.5209 K rel=1.9e-13 first-order=11.4113
+eps=0.1 Q=100 kJ/mol T=1500 K: closed=  18.0447 K bisect=  18.0447 K rel=3.3e-13 first-order=17.8302
+eps=0.1 Q=200 kJ/mol T= 300 K: closed=   0.3570 K bisect=   0.3570 K rel=1.9e-14 first-order=0.3566
+eps=0.1 Q=200 kJ/mol T= 600 K: closed=   1.4298 K bisect=   1.4298 K rel=1.2e-13 first-order=1.4264
+eps=0.1 Q=200 kJ/mol T= 900 K: closed=   3.2209 K bisect=   3.2209 K rel=5.0e-14 first-order=3.2094
+eps=0.1 Q=200 kJ/mol T=1200 K: closed=   5.7329 K bisect=   5.7329 K rel=9.3e-14 first-order=5.7057
+eps=0.1 Q=200 kJ/mol T=1500 K: closed=   8.9684 K bisect=   8.9684 K rel=3.3e-13 first-order=8.9151
+eps=0.1 Q=300 kJ/mol T= 300 K: closed=   0.2379 K bisect=   0.2379 K rel=3.4e-13 first-order=0.2377
+eps=0.1 Q=300 kJ/mol T= 600 K: closed=   0.9525 K bisect=   0.9525 K rel=3.0e-13 first-order=0.9509
+eps=0.1 Q=300 kJ/mol T= 900 K: closed=   2.1447 K bisect=   2.1447 K rel=2.3e-13 first-order=2.1396
+eps=0.1 Q=300 kJ/mol T=1200 K: closed=   3.8159 K bisect=   3.8159 K rel=4.0e-13 first-order=3.8038
+eps=0.1 Q=300 kJ/mol T=1500 K: closed=   5.9670 K bisect=   5.9670 K rel=1.3e-13 first-order=5.9434
+A6 max rel diff closed vs bisection = 4.19e-13 PASS
+A6 hand eps=0.05 Q=50 T=300: hand 0.73 calc=0.732 rel=0.003 PASS
+A6 hand eps=0.05 Q=200 T=1200: hand 2.9 calc=2.928 rel=0.010 PASS
+A6 hand eps=0.05 Q=300 T=1500: hand 3.0 calc=3.049 rel=0.016 PASS
+A6 hand eps=0.05 Q=50 T=1500: hand (18.0, 19.0) calc=18.480 PASS

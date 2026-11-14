@@ -1,0 +1,14 @@
+Dimensional illustration: h0=0.3 mm, n_s=2, k_p=1e-16 m2/s: t_c = h0^2/(2 k_p n_s^2) = 1.1250e+08 s = 3.5649 yr (expected 1.125e8 s = 3.56 yr)
+
+q=9.804   rho=0.01  closed: tau/t_c=0.00587152 (bracket ends -1.000, 4.511e+109; 48 it)  Simpson-route: 0.00587152 (n=128, rel chg 1.6e-09)  rel.diff 8.47e-11 [PASS]  D_simpson at closed root = 1.00000000  F_min=1.7031
+q=9.804   rho=0.1   closed: tau/t_c=0.02830220 (bracket ends -1.000, 4.511e+108; 46 it)  Simpson-route: 0.02830220 (n=256, rel chg 1.5e-09)  rel.diff 5.62e-11 [PASS]  D_simpson at closed root = 1.00000000  F_min=3.5333
+q=9.804   rho=1     closed: tau/t_c=0.08576569 (bracket ends -1.000, 4.511e+107; 44 it)  Simpson-route: 0.08576569 (n=512, rel chg 8.9e-10)  rel.diff 2.32e-11 [PASS]  D_simpson at closed root = 1.00000000  F_min=11.6597
+q=9.804   rho=10    closed: tau/t_c=0.17859948 (bracket ends -1.000, 4.511e+106; 43 it)  Simpson-route: 0.17859948 (n=512, rel chg 6.2e-09)  rel.diff 1.07e-10 [PASS]  D_simpson at closed root = 1.00000000  F_min=5.5991
+  small-tau check D -> tau/tau0: D_closed(u=1e-6 rho)/(u/rho)... ratio 1.006563 (expect ~1)
+q=19.608  rho=0.01  closed: tau/t_c=0.00407028 (bracket ends -1.000, 8.476e+229; 48 it)  Simpson-route: 0.00407028 (n=128, rel chg 6.5e-09)  rel.diff 2.91e-10 [PASS]  D_simpson at closed root = 1.00000000  F_min=2.4568
+q=19.608  rho=0.1   closed: tau/t_c=0.01538787 (bracket ends -1.000, 8.476e+228; 46 it)  Simpson-route: 0.01538787 (n=256, rel chg 3.8e-09)  rel.diff 1.24e-10 [PASS]  D_simpson at closed root = 1.00000000  F_min=6.4986
+q=19.608  rho=1     closed: tau/t_c=0.03919652 (bracket ends -1.000, 8.476e+227; 45 it)  Simpson-route: 0.03919652 (n=512, rel chg 1.5e-09)  rel.diff 3.26e-11 [PASS]  D_simpson at closed root = 1.00000000  F_min=25.5125
+q=19.608  rho=10    closed: tau/t_c=0.07565362 (bracket ends -1.000, 8.476e+226; 44 it)  Simpson-route: 0.07565362 (n=512, rel chg 6.6e-09)  rel.diff 1.05e-10 [PASS]  D_simpson at closed root = 1.00000000  F_min=13.2181
+  small-tau check D -> tau/tau0: D_closed(u=1e-6 rho)/(u/rho)... ratio 1.013174 (expect ~1)
+
+Hand value check q=9.804 rho=1: tau/t_c = 0.08577 (planner ~0.086, +-5% -> PASS), F_min = 11.660 (accept 10.5..13 -> PASS)

@@ -1,0 +1,52 @@
+======================================================================
+D5: critical scale thickness delta_c [um] and time to reach it  (level: derived)
+======================================================================
+
+eps_mech = 0
+ Gc J/m2 dT=  200K dT=  500K dT= 1000K
+       1     1.0070     0.1611     0.0403
+       5     5.0349     0.8056     0.2014
+      20    20.1396     3.2223     0.8056
+     100   100.6982    16.1117     4.0279
+
+eps_mech = 0.0015
+ Gc J/m2 dT=  200K dT=  500K dT= 1000K
+       1     0.2347     0.0789     0.0273
+       5     1.1734     0.3947     0.1366
+      20     4.6937     1.5789     0.5463
+     100    23.4683     7.8947     2.7317
+
+t_sp = delta_c^2/(2 kp') [h], eps_mech = 0 (rows: Gc, dT; columns: kp')
+    Gc     dT kp'=1e-18 kp'=1e-17 kp'=1e-16
+     1    200       140.8       14.08       1.408
+     1    500       3.605      0.3605     0.03605
+     1   1000      0.2253     0.02253    0.002253
+     5    200        3521       352.1       35.21
+     5    500       90.13       9.013      0.9013
+     5   1000       5.633      0.5633     0.05633
+    20    200   5.633e+04        5633       563.3
+    20    500        1442       144.2       14.42
+    20   1000       90.13       9.013      0.9013
+   100    200   1.408e+06   1.408e+05   1.408e+04
+   100    500   3.605e+04        3605       360.5
+   100   1000        2253       225.3       22.53
+
+Hand values (tolerance 2 %):
+  Gc = 5, dT = 1000, eps_mech = 0.0: 0.2014 um vs hand 0.2 -> rel dev 0.70% PASS
+  Gc = 5, dT = 500, eps_mech = 0.0: 0.8056 um vs hand 0.81 -> rel dev 0.55% PASS
+  Gc = 100, dT = 500, eps_mech = 0.0: 16.1117 um vs hand 16.0 -> rel dev 0.70% PASS
+  (hand values restate the same formula: IDENTITY-class check, arithmetic only)
+
+Plausibility (1 to 10 um for alumina scales, UNSURE): 9 of 24 grid cases lie in [1, 10] um; range of grid 0.0273 to 101 um. Plausibility only, not a test.
+
+======================================================================
+D7: oxide notch reaching the crack threshold  (level: derived)
+======================================================================
+dK_th = 5 MPa sqrt(m), Y = 1.12
+dsigma MPa    a_tr um t_i(kp'=1e-18) [s] t_i(kp'=1e-17) [s] t_i(kp'=1e-16) [s]
+       200    158.597         1.2576e+10         1.2576e+09         1.2576e+08
+       400     39.649         7.8603e+08         7.8603e+07         7.8603e+06
+       800      9.912         4.9127e+07         4.9127e+06         4.9127e+05
+
+hand check dsigma = 400 MPa, kp' = 1e-16: a_tr = 39.65 um (hand 39.7), t_i = 7.860e+06 s = 91.0 d (hand 7.9e6 s, 91 d): PASS (tolerance 2 %)
+log-log slope of t_i versus dsigma = -4.000000 (expect -4). IDENTITY check: follows from the formula by algebra (a_tr ~ dsigma^-2, t_i ~ a_tr^2), not an independent test.
