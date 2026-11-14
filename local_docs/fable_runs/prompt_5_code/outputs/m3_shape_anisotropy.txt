@@ -1,0 +1,17 @@
+full grid 2000x2000: max=0.083333 mu0Ms^2 at p=0.66683, H'/Ms=0.16658  (1/12=0.083333)
+  CHECK grid max = 1/12 within 0.1%: PASS 1.000000
+grid p<=0.5: max=0.062500 at p=0.50000 (1/16=0.062500)
+  CHECK grid p<=0.5 = 1/16 within 0.1%: PASS 1.000000
+analytic (minimize_scalar on p in [0.5,1], branch H'=Hc): p*=0.66666667, f=0.0833333333; 1/12=0.0833333333
+  CHECK analytic optimum p=2/3: PASS 
+  CHECK analytic value 1/12: PASS 
+bracket status: the p grid spans (0,1) and contains the optimum p=2/3 in its interior; minimize_scalar bracket [0.5,1] contains it; the unconstrained branch (p<=0.5) has its max at the bracket edge p=0.5 (monotonic p^2/4), grid-limited.
+note: the grid maximum is compared with the analytic optimum of the SAME function: consistency of the numerics, not evidence for the model (the model is the planner's derivation).
+Absolute values (mu0 Ms^2/12 = (mu0Ms)^2/(12 mu0)); mu0Ms from LOOKUP file:
+  Fe: mu0Ms=2.15 T  BH_max(shape)= 306.5 kJ/m3 ; single-needle mu0 Hc = mu0Ms/2 = 1.075 T
+  Fe65Co35: mu0Ms=2.45 T  BH_max(shape)= 398.1 kJ/m3 ; single-needle mu0 Hc = mu0Ms/2 = 1.225 T
+  CHECK Fe65Co35 within 390-400 kJ/m3 (spec UNSURE range): PASS 398.1
+  CHECK Fe approx 307 kJ/m3 within 1%: PASS 306.5
+  CHECK Fe single needle mu0Hc ~1.08 T within 1%: PASS 1.075
+Skomski et al. 2010 statement: NOT READ (unverified whether it agrees).
+FAILS: []

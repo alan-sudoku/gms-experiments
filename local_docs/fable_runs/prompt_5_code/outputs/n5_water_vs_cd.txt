@@ -1,0 +1,22 @@
+N5 LOOKUP: L, D for H2O <- data/n5_water_diffusion.csv (LLNL/NCSP Table 2-2; plan UNSURE range for L 2.7-2.9 cm: inside)
+  sigma_H, sigma_Cd <- outputs/n1_values.csv (Sears 1992, NIST NCNR); A_r <- data/nist_atomic_weights.csv; rho_water 0.998, rho_Cd 8.65 g/cm3
+
+Water Sigma_a: N_H = 6.6723e+22 /cm3; N_H*sigma_H(2200) = 0.02219 /cm (plan ~0.0222); with O 0.02220; x sqrt(pi)/2 = 0.01967 /cm (plan ~0.0197)
+  table-derived Sigma_a = D/L^2 = 0.01970 /cm
+  [PASS] first-principles Sigma_a vs table D/L^2 within 5%: 0.01967 vs 0.01970 (-0.13%)
+  L = sqrt(D/Sigma_a) with first-principles Sigma_a = 2.8518 cm (table 2.85)
+
+Water: x = L ln(1e3) = 19.687 cm, areal mass = 19.648 g/cm2
+Cd (sigma_a Sears = 2520 b): Sigma_a = 116.77 /cm; x = 0.05915 cm = 0.5915 mm, areal mass = 0.5117 g/cm2
+   ratio areal mass water/Cd = 38.40 (plan ~40); ratio thickness water/Cd = 332.8 (plan ~300)
+  [PASS] areal-mass ratio within factor 1.5 of 40 (Sears): 38.40
+  [PASS] thickness ratio within factor 1.5 of 300 (Sears): 332.8
+Cd (sigma_a ENDF/B-VII.1 = 2448.6 b): Sigma_a = 113.47 /cm; x = 0.06088 cm = 0.6088 mm, areal mass = 0.5266 g/cm2
+   ratio areal mass water/Cd = 37.31 (plan ~40); ratio thickness water/Cd = 323.4 (plan ~300)
+  [PASS] areal-mass ratio within factor 1.5 of 40 (ENDF/B-VII.1): 37.31
+  [PASS] thickness ratio within factor 1.5 of 300 (ENDF/B-VII.1): 323.4
+
+Caveats: (1) the Cd sheet uses the 2200 m/s cross section, not a Maxwellian average (Cd-113 is not 1/v; non-1/v factor ~1.3 in the literature, UNSURE) and a beam, not an isotropic flux;
+(2) water attenuation exp(-x/L) is the diffusion asymptote of a thermal flux, not narrow-beam attenuation; the row is order-of-magnitude only;
+(3) the check Sigma_a first-principles vs D/L^2 is a consistency test of the table, not an identity.
+FAILED CHECKS: none

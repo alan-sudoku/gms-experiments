@@ -1,0 +1,34 @@
+LOOKUP source: Granados-Miralles et al., arXiv:2310.02106, Table 1, https://arxiv.org/pdf/2310.02106, accessed 2026-11-14 (secondary; see data header)
+== M1 ==
+  Fe: mu0Ms=2.15 T (UNSURE expected 2.15-2.15: inside) ceiling=919.6 kJ/m3
+  Fe65Co35: mu0Ms=2.45 T (UNSURE expected 2.43-2.45: inside) ceiling=1194.2 kJ/m3
+  Nd2Fe14B: mu0Ms=1.61 T (UNSURE expected 1.61-1.61: inside) ceiling=515.7 kJ/m3
+  SmCo5: mu0Ms=1.07 T (UNSURE expected 1.05-1.14: inside) ceiling=227.8 kJ/m3
+  Sm2Co17: mu0Ms=1.25 T (UNSURE expected 1.25-1.25: inside) ceiling=310.8 kJ/m3
+  BaFe12O19: mu0Ms=0.48 T (UNSURE expected 0.48-0.48: inside) ceiling=45.8 kJ/m3
+  SrFe12O19: mu0Ms=0.48 T (UNSURE expected 0.48-0.48: inside) ceiling=45.8 kJ/m3
+  CHECK Nd2Fe14B ceiling vs published 512 kJ/m3 within 2%: PASS 515.7
+  CHECK BaM ceiling vs published 45 kJ/m3 within 2%: PASS 45.8
+  realised NdFeB (400-474): upper 474 kJ/m3, ceiling 515.7, ratio 0.919
+  CHECK realised NdFeB (400-474) below ceiling: PASS 
+  realised ferrite (30-40) vs BaM: upper 40 kJ/m3, ceiling 45.8, ratio 0.873
+  CHECK realised ferrite (30-40) vs BaM below ceiling: PASS 
+  realised Alnico5 (40-44) vs AlNiCo5 Bs: upper 44 kJ/m3, ceiling 389.9, ratio 0.113
+  CHECK realised Alnico5 (40-44) vs AlNiCo5 Bs below ceiling: PASS 
+  realised Alnico9 (72-84) vs AlNiCo5 Bs [no Alnico9 Ms read]: upper 84 kJ/m3, ceiling 389.9, ratio 0.215
+  CHECK realised Alnico9 (72-84) vs AlNiCo5 Bs [no Alnico9 Ms read] below ceiling: PASS 
+== M2 ==
+  Nd2Fe14B: K1=4.9 MJ/m3 kappa_h=1.541 published(UNSURE, planner) 1.54 dev +0.1%
+  CHECK kappa_h Nd2Fe14B within 3% of planner's published value: PASS 1.541
+  SmCo5: K1=17.2 MJ/m3 kappa_h=4.345 published(UNSURE, planner) 4.35 dev -0.1%
+  CHECK kappa_h SmCo5 within 3% of planner's published value: PASS 4.345
+  BaFe12O19: K1=0.33 MJ/m3 kappa_h=1.342 published(UNSURE, planner) 1.35 dev -0.6%
+  CHECK kappa_h BaFe12O19 within 3% of planner's published value: PASS 1.342
+  Fe: K1=0.048 MJ/m3 kappa_h=0.114 published(UNSURE, planner) 0.12 dev -4.8%
+  CHECK kappa_h Fe within 3% of planner's published value: FAIL 0.114
+  Sm2Co17: K1=4.2 MJ/m3 kappa_h=1.838
+  Fe65Co35: K1=0.018 MJ/m3 kappa_h=0.061
+  Co (NOT A LOOKUP: planner endpoint K1=0.41 MJ/m3, mu0Ms=1.82 T MEMORY UNSURE): kappa_h=0.394; planner published range 0.41-0.45
+  Co (NOT A LOOKUP: planner endpoint K1=0.53 MJ/m3, mu0Ms=1.82 T MEMORY UNSURE): kappa_h=0.448; planner published range 0.41-0.45
+  Check on Co is circular (planner endpoints vs planner range): not scored.
+FAILS: ["kappa_h Fe within 3% of planner's published value"]

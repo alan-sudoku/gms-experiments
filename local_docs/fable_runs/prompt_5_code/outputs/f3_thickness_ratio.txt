@@ -1,0 +1,25 @@
+F3 inputs: rho_W=19.3 g/cm3 (MEMORY); graphite 1.70 and 2.26 g/cm3 (MEMORY); lattice rel density 0.1, 0.3, 0.5; energy range 0.03-20 MeV
+LOOKUP: data/xcom_z006.csv and data/xcom_z074.csv (NIST XCOM, total with coherent, access 2026-11-14)
+mass ratio minimum (F2 repeat): 0.96544 at 1.5 MeV, bracket [1.489, 1.509] interior=True
+
+Thickness-ratio minimum over 0.03-20 MeV (minimize_scalar on bracket), and value at 0.1 and 1 MeV:
+  rho_C=1.700 g/cm3 (solid): min thickness ratio 10.96 at 1.5 MeV; at 0.1 MeV 332.7; at 1 MeV 11.81
+  [PASS] minimum thickness ratio ~11.0 for rho_C=1.70 (+-5% of the plan's expected value): 10.96 (-0.4%)
+  [PASS] never below 7 (rho_C=1.70): 10.96
+  [PASS] [identity] energy of minimum equals F2 mass-ratio minimum energy (constant factor, true by construction): 1.5 vs 1.5 MeV
+  [PASS] minimum >= 3 (thickness-basis part of G3.2 not falsified): 10.96
+  rho_C=0.170 g/cm3 (lattice rel=0.1 of 1.70): min thickness ratio 109.6 at 1.5 MeV; at 0.1 MeV 3327; at 1 MeV 118.1
+  rho_C=0.510 g/cm3 (lattice rel=0.3 of 1.70): min thickness ratio 36.54 at 1.5 MeV; at 0.1 MeV 1109; at 1 MeV 39.37
+  rho_C=0.850 g/cm3 (lattice rel=0.5 of 1.70): min thickness ratio 21.92 at 1.5 MeV; at 0.1 MeV 665.4; at 1 MeV 23.62
+  rho_C=2.260 g/cm3 (solid): min thickness ratio 8.245 at 1.5 MeV; at 0.1 MeV 250.3; at 1 MeV 8.883
+  [PASS] minimum thickness ratio ~8.5 for rho_C=2.26 (+-5% of the plan's expected value): 8.245 (-3.0%)
+  [PASS] never below 7 (rho_C=2.26): 8.245
+  [PASS] [identity] energy of minimum equals F2 mass-ratio minimum energy (constant factor, true by construction): 1.5 vs 1.5 MeV
+  [PASS] minimum >= 3 (thickness-basis part of G3.2 not falsified): 8.245
+  rho_C=0.226 g/cm3 (lattice rel=0.1 of 2.26): min thickness ratio 82.45 at 1.5 MeV; at 0.1 MeV 2503; at 1 MeV 88.83
+  rho_C=0.678 g/cm3 (lattice rel=0.3 of 2.26): min thickness ratio 27.48 at 1.5 MeV; at 0.1 MeV 834.2; at 1 MeV 29.61
+  rho_C=1.130 g/cm3 (lattice rel=0.5 of 2.26): min thickness ratio 16.49 at 1.5 MeV; at 0.1 MeV 500.5; at 1 MeV 17.77
+
+Lattice entries: minimum thickness ratio rises as 1/rel (denser tungsten, lighter carbon): all values >= the solid case: True
+Note: with the 2.26 reference the minimum is 8.245; with the 1.70 reference it is 10.96 (plan: ~8.5 and ~11)
+FAILED CHECKS: none

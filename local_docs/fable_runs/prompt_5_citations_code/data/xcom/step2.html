@@ -1,0 +1,68 @@
+<HTML>
+<HEAD>
+<title>XCOM: Element Options</title>
+<HEAD>
+<!-- Google Analtyics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9SLN1VEEJ2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9SLN1VEEJ2');
+</script>
+<!-- End of Google Analytics 4 -->
+<SCRIPT async type="text/javascript" id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=DOC&subagency=NIST&pua=UA-37115410-46&yt=false&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c"></script>
+<script src="/js/clickjack.js" type="text/javascript"></script><body BGColor="#FFFFFF" Text="#000000">
+<form method="POST" action="/cgi-bin/Xcom/xcom3_1">
+<h2>Fill out the form to select the data to be displayed:</h2>
+<p>
+<a href="/PhysRefData/Xcom/Text/chap4.html">Help</a><p>
+<table cellpadding=4 border=1>
+<tr><td valign=top BGColor="#FFFFCC">
+<b>Select by:</b> (only elements 1 - 100)<p>
+Atomic Number: <input type="text" name="ZNum" size=3 maxlength=3>
+<br><b><i>or</i></b><br>
+Symbol: <input type="text" name="ZSym" size=2 maxlength=2>
+</td>
+<td valign=top BGColor="#FFFFCC">
+<b>Options for output units:</b>
+<p><input type="radio" name="OutOpt" value="PIC" CHECKED>
+All quantities in <i>cm<sup>2</sup>/g</i><br>
+<input type="radio" name="OutOpt" value="CSBA">
+All quantities in <i>barns/atom</i><br>
+<input type="radio" name="OutOpt" value="ACCG">
+Partial interaction coefficients in <i>barns/atom</i>
+<br>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+and total attenuation coefficients in <i>cm<sup>2</sup>/g</i>
+</td></tr>
+<tr><td BGColor="#FFFFCC">
+<b>Graph options:</b>
+<p><input type="checkbox" name="Graph6" checked> Total Attenuation with Coherent Scattering<br>
+<input type="checkbox" name="Graph7"> Total Attenuation without Coherent Scattering<br>
+<input type="checkbox" name="Graph1"> Coherent Scattering<br>
+<input type="checkbox" name="Graph2"> Incoherent Scattering<br>
+<input type="checkbox" name="Graph3"> Photoelectric Absorption<br>
+<input type="checkbox" name="Graph4"> Pair Production in Nuclear Field<br>
+<input type="checkbox" name="Graph5"> Pair Production in Electron Field<br>
+<p><input type="checkbox" name="Graph0"> None<br>
+</td>
+<td valign=top BGColor="#FFFFCC">
+<b>Additional energies in MeV: (optional)</b> (up to 100 allowed)
+<p>Note: Energies must be between 0.001&#160;-&#160;100000&#160;MeV (1&#160;keV&#160;-&#160;100&#160;GeV) (only <b>4</b> significant figures will be used).<br>
+One energy per line. Blank lines will be ignored.
+<input type=hidden name=NumAdd value=1>
+<p><textarea name="Energies" rows=5 cols=15></textarea>
+<input type=checkbox name=Output checked> <b>Include the standard grid</b>
+<p>
+<b>Energy Range:</b><p>
+Minimum: <input type="text" name="WindowXmin" value="0.001" size="8" maxlength="8"> MeV 
+<p>Maximum: <input type="text" name="WindowXmax" value="100000" size="8" maxlength="8"> MeV 
+<input type="hidden" name="ResizeFlag" value="on">
+</td>
+</tr>
+</table>
+<p><input type="submit" value="Submit Information"><input type="reset" value="Reset">
+</form>
+<hr>
+Return to <a href="/PhysRefData/Xcom/html/xcom1.html">previous</a> document.
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a5a65387193a679c',t:'MTc5NDY2MjU1OQ=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a5a65387193a679c',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>

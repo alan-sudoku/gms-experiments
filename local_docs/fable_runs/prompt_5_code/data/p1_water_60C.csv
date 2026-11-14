@@ -1,0 +1,7 @@
+# source: Cengel Y.A. and Cimbala J.M., Fluid Mechanics: Fundamentals and Applications, 3rd ed., McGraw-Hill 2014, Table A-3 "Properties of saturated water" (p. 942), row 60 C.
+# URL: https://www.me.psu.edu/cimbala/me405/Links/Table_A_3_CC_Saturated_Water.pdf (raw copy: data/raw/cengel_A3_saturated_water.pdf)
+# edition: 3rd ed. 2014 ; access date: 2026-11-14
+# NOTE: SUBSTITUTE for the spec's Incropera Table A.6 (not readable). Same quantity (saturated water at 60 C = 333.15 K), different book.
+# Units: rho_l kg/m3; hfg J/kg (table gives 2359 kJ/kg); mu_l Pa s (table: 0.467e-3 kg/m s); sigma_l N/m
+rho_l,sigma_l,hfg,mu_l
+983.3,0.0662,2359000,0.467e-3

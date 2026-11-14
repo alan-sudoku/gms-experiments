@@ -1,0 +1,37 @@
+INPUTS: k_Cu=400, rho_Cu=8960, rho_Al=2700, rho_AlSi10Mg=2670 (MEMORY); h in {10,50,1000}, A_p in {1e-6,1e-5,1e-4} m2; k in {400, 237, 200, 130}
+36 cases: beta_opt range 1.41922..1.41922; C range 0.50425..0.50425; optimum at bracket edge in 0 cases
+stationarity root tanh(b)=3b sech^2(b) (brentq on [1,2]): 1.419223; C = b/(4 tanh^3 b) = 0.504250
+CHECK beta_opt (all cases within 0.001 of 1.4192): 0.00002 vs 0.0 tol=+-0.001 -> PASS
+CHECK C (all cases within 0.002 of 0.504): 0.00025 vs 0.0 tol=+-0.002 -> PASS
+equal duty q'/theta_b = 20.0 W/(m K) at h=50: A_p,Cu = 4.0340e-03 m2
+  k_g=  200: numerical mass ratio 0.60268; formula (rho_g/k_g)/(rho_s/k_s) = 0.60268
+CHECK mass ratio k_g=200 numeric vs formula: 0.60268 vs 0.6026785714285715 tol=0.5% -> PASS
+CHECK mass ratio at k_g=200 vs spec 0.60: 0.60268 vs 0.6 tol=2.0% -> PASS
+  k_g=  237: numerical mass ratio 0.50859; formula (rho_g/k_g)/(rho_s/k_s) = 0.50859
+CHECK mass ratio k_g=237 numeric vs formula: 0.50859 vs 0.5085895117540687 tol=0.5% -> PASS
+  k_g=  130: numerical mass ratio 0.92720; formula (rho_g/k_g)/(rho_s/k_s) = 0.92720
+CHECK mass ratio k_g=130 numeric vs formula: 0.92720 vs 0.9271978021978023 tol=0.5% -> PASS
+mass-ratio sweep k_g in [80,240] (21 points, numerical): ratio-1 from +0.507 to -0.498; brackets the crossover: True
+numerical crossover k_g = 120.536 W/(m K); formula rho_g k_s/rho_s = 120.536; with rho=2670 (AlSi10Mg): 119.196; spec ~120 +-2
+CHECK crossover (numeric) vs formula: 120.53571 vs 120.53571428571429 tol=+-2.0 -> PASS
+CHECK crossover vs spec ~120: 120.53571 vs 120.0 tol=+-2.0 -> PASS
+
+C3: embodied index
+source LOOKUP: ICE v2.0 (Hammond and Jones 2011) and Nuss and Eckelman 2014 SI Table S38, see data/a3_embodied_energy.csv, access 2026-11-14
+k_g=200: sweep e_g/e_s in [0.2,10] brackets break-even: True; break-even 1.6593; reciprocal of C2 mass ratio (formula) 1.6593
+CHECK break-even vs reciprocal of C2 numeric mass ratio (k_g=200): 1.65926 vs 1.6592592592592574 tol=2.0% -> PASS
+CHECK break-even vs spec 1.66: 1.65926 vs 1.66 tol=2.0% -> PASS
+k_g=130: sweep e_g/e_s in [0.2,10] brackets break-even: True; break-even 1.0785; reciprocal of C2 mass ratio (formula) 1.0785
+CHECK break-even vs reciprocal of C2 numeric mass ratio (k_g=130): 1.07852 vs 1.0785185185185175 tol=2.0% -> PASS
+CHECK break-even vs spec 1.08: 1.07852 vs 1.08 tol=2.0% -> PASS
+index with MEMORY e_Al=200, e_Cu=55 MJ/kg, k_g=200: 2.1916 (spec ~2.2)
+CHECK index vs 2.2: 2.19156 vs 2.2 tol=2.0% -> PASS
+  note: the 'index ~ 2.2' and break-even rows restate the same formula as the code (IDENTITY-like); the independent element is the numerical C2 mass ratio.
+LOOKUP evaluation (k_g=200 and 130; incumbent Cu with its own e):
+  ICE virgin/virgin                e_Al= 218.0 e_Cu= 57.0  index k_g=200: 2.305  k_g=130: 3.546  (Al fin better in embodied terms if < 1)
+  ICE recycled Al/virgin Cu        e_Al=  29.0 e_Cu= 57.0  index k_g=200: 0.307  k_g=130: 0.472  (Al fin better in embodied terms if < 1)
+  ICE recycled/recycled            e_Al=  29.0 e_Cu= 16.5  index k_g=200: 1.059  k_g=130: 1.630  (Al fin better in embodied terms if < 1)
+  Nuss primary/primary             e_Al= 194.0 e_Cu= 59.3  index k_g=200: 1.972  k_g=130: 3.033  (Al fin better in embodied terms if < 1)
+  Nuss old-scrap Al/primary Cu     e_Al=  23.8 e_Cu= 59.3  index k_g=200: 0.242  k_g=130: 0.372  (Al fin better in embodied terms if < 1)
+  Nuss secondary/secondary         e_Al=  23.8 e_Cu= 28.1  index k_g=200: 0.510  k_g=130: 0.785  (Al fin better in embodied terms if < 1)
+OVERALL PASS

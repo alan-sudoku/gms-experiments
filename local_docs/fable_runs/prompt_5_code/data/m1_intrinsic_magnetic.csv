@@ -1,0 +1,16 @@
+# source: Granados-Miralles C., Saura-Muzquiz M., Andersen H.L., "Permanent magnets based on hard ferrite ceramics", arXiv:2310.02106, Table 1 (intrinsic parameters at room temperature; the paper says "Data extracted from [34] unless otherwise stated").
+# URL: https://arxiv.org/pdf/2310.02106 (raw copy: data/raw/arxiv_2310_02106_ferrite.pdf, text in data/raw/ferrite.txt)
+# edition: arXiv version as served on access date; access date: 2026-11-14
+# NOTE: this is NOT the table named in the spec (Coey 2011 IEEE Trans Magn; Coey 2010 ch.11; Skomski and Coey 2016 Table 1). Those were not readable (paywalled). This is a secondary open review whose reference [34] was not identified. Column Bs is the paper's "Bs (T)", taken here as mu0*Ms (UNSURE: same quantity).
+# Co is not in this table: no lookup for Co.
+# AlNiCo5 K1 marked * (shape anisotropy) in the source.
+material,mu0Ms_T,Tc_K,K1_MJ_m3
+Fe65Co35,2.45,1210,0.018
+Fe,2.15,1044,0.048
+AlNiCo5,1.40,1210,0.68
+CoFe2O4,0.5,793,0.27
+BaFe12O19,0.48,740,0.33
+SrFe12O19,0.48,746,0.35
+Nd2Fe14B,1.61,588,4.9
+SmCo5,1.07,1020,17.2
+Sm2Co17,1.25,1190,4.2

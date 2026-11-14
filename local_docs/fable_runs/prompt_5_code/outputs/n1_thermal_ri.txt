@@ -1,0 +1,80 @@
+N1: LOOKUP sources
+  thermal sigma_a (2200 m/s): Sears V.F. 1992 Neutron News 3(3) Table 1, NIST NCNR web copy, data/sears_1992_table1.csv, access 2026-11-14
+  RI and ENDF thermal: ENDF/B-VII.1 pointwise (NNDC Sigma), files in data/raw/endf_sigma/, access 2026-11-14; RI = int_{0.5 eV}^{20 MeV} sigma_abs dE/E,
+      sigma_abs = MT102+103+105+107. Natural elements: abundance-weighted with Sears abundances.
+
+--- Table N1 (barn) ---
+entry      Sears 2200  ENDF 0.0253 ENDF/Sears RI abs 20MeV RI abs 100keV RI (n,g) only   planner UNSURE range vs Sears
+H (1H)         0.3326      0.33213     0.999      0.14982       0.1496      0.14982   inside
+Li-6              940       938.79     0.999       425.95       423.27     0.017435   inside
+B-10             3835       3844.1     1.002       1733.1       1729.9      0.22443   inside
+nat B             767       768.82     1.002       346.64       345.98       0.0471   inside
+C (nat)        0.0035    0.0038613     1.103     0.092441    0.0017697    0.0019766   inside
+Al              0.231      0.23377     1.012      0.31332      0.12818       0.1316   inside
+nat Fe           2.56       2.5719     1.005       1.5021       1.3302       1.3481   n/a
+nat Ag           63.3       63.203     0.998       764.99       764.32       764.98   inside
+Cd-113          20600        20014     0.972       386.65       386.09       386.64   inside
+nat Cd           2520       2448.6     0.972       65.114       64.737       65.099   inside
+nat In          193.8       194.86     1.005       3101.4       3100.6       3101.4   inside
+nat Sm           5922       5709.1     0.964       1425.4       1424.8       1425.3   inside
+nat Eu           4530       4587.5     1.013       2320.6       2318.6       2320.6   inside
+Gd-155          61100        60794     0.995       1540.6       1539.1       1540.6   inside
+Gd-157       2.59e+05   2.5355e+05     0.979       761.16       760.42       761.16   OUTSIDE [253000, 255000]
+nat Gd          49700        48810     0.982        394.1       393.52        394.1   inside
+nat Dy            994       945.62     0.951       1403.9       1403.4       1403.9   inside
+nat Hf          104.1       105.34     1.012       1969.4         1969       1969.4   inside
+
+Abundance sums used for natural elements (should be ~1 when every isotope was found): {'B': 1.0, 'Fe': 1.0, 'Ag': 1.0, 'Cd': 1.0, 'In': 1.0, 'Sm': 1.0, 'Eu': 1.0, 'Gd': 1.0, 'Dy': 1.0, 'Hf': 1.0}
+
+Thermal ENDF vs Sears (info; ENDF/B-VII.1 vs Sears 1992 are different evaluations, 5% informational band):
+   H (1H)   ENDF/Sears = 0.999 
+   Li-6     ENDF/Sears = 0.999 
+   B-10     ENDF/Sears = 1.002 
+   nat B    ENDF/Sears = 1.002 
+   C (nat)  ENDF/Sears = 1.103   <-- differs by more than 5%
+   Al       ENDF/Sears = 1.012 
+   nat Fe   ENDF/Sears = 1.005 
+   nat Ag   ENDF/Sears = 0.998 
+   Cd-113   ENDF/Sears = 0.972 
+   nat Cd   ENDF/Sears = 0.972 
+   nat In   ENDF/Sears = 1.005 
+   nat Sm   ENDF/Sears = 0.964 
+   nat Eu   ENDF/Sears = 1.013 
+   Gd-155   ENDF/Sears = 0.995 
+   Gd-157   ENDF/Sears = 0.979 
+   nat Gd   ENDF/Sears = 0.982 
+   nat Dy   ENDF/Sears = 0.951 
+   nat Hf   ENDF/Sears = 1.012 
+
+--- Isotopic checks (natural from isotopes, 3% tolerance) ---
+  [PASS] nat B = 0.199*s(B-10) + small, vs Sears natural B (3%): 763.17 vs 767 (-0.50%)
+  [PASS] nat Cd ~ 0.1222*s(Cd-113) vs Sears natural Cd (3%): 2517.3 vs 2520 (-0.11%)
+  [PASS] nat Gd ~ 0.148*s(Gd-155)+0.1565*s(Gd-157) vs Sears natural Gd (3%): 49576 vs 49700 (-0.25%)
+  same checks with the ENDF thermal values: nat B -0.50%, nat Cd -0.12%, nat Gd -0.27%
+  [note] these isotopic checks compare Sears isotopes with Sears natural values (one source, partly built from the same data); not fully independent.
+
+--- Ratios of thermal sigma_a (Sears) to C and to Al ---
+   H (1H)   /C = 95.03   /Al = 1.44
+   Li-6     /C = 2.686e+05   /Al = 4069
+   B-10     /C = 1.096e+06   /Al = 1.66e+04
+   nat B    /C = 2.191e+05   /Al = 3320
+   C (nat)  /C = 1   /Al = 0.01515
+   Al       /C = 66   /Al = 1
+   nat Fe   /C = 731.4   /Al = 11.08
+   nat Ag   /C = 1.809e+04   /Al = 274
+   Cd-113   /C = 5.886e+06   /Al = 8.918e+04
+   nat Cd   /C = 7.2e+05   /Al = 1.091e+04
+   nat In   /C = 5.537e+04   /Al = 839
+   nat Sm   /C = 1.692e+06   /Al = 2.564e+04
+   nat Eu   /C = 1.294e+06   /Al = 1.961e+04
+   Gd-155   /C = 1.746e+07   /Al = 2.645e+05
+   Gd-157   /C = 7.4e+07   /Al = 1.121e+06
+   nat Gd   /C = 1.42e+07   /Al = 2.152e+05
+   nat Dy   /C = 2.84e+05   /Al = 4303
+   nat Hf   /C = 2.974e+04   /Al = 450.6
+  G3.7 MEMORY check: sigma(B-10)/sigma(C) = 1.1e+06 (claimed ~1e6); sigma(nat Cd)/sigma(Al) = 1.09e+04 (claimed ~1e4)
+  [PASS] B-10/C is about 1e6 (within a factor 2): 1.1e+06
+  [PASS] nat Cd/Al is about 1e4 (within a factor 2): 1.09e+04
+
+Wrote outputs/n1_values.csv
+FAILED CHECKS: none

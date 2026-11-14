@@ -1,0 +1,8 @@
+# LOOKUP data for row D2: specific conductivity of 30 wt% KOH at 80 C (353.15 K).
+# Source: Gilliam R.J., Graydon J.W., Kirk D.W., Thorpe S.J., 2007, "A review of specific conductivities of potassium hydroxide solutions for various concentrations and temperatures", Int. J. Hydrogen Energy 32(3), 359-364, doi 10.1016/j.ijhydene.2006.10.062. Correlation valid 0-12 M, 0-100 C.
+# The paper itself was NOT readable (paywalled, ScienceDirect abstract only). The correlation was taken from web-search summaries of two citing works (Julich "Critical Analysis of Published Physical Property Data for ..." and the ACS J. Phys. Chem. C SI, Table S1 listing C = 0.005332 and E = 0.001043; the source pages themselves returned HTTP 403 or non-PDF HTML):
+#   kappa [S/cm] = -2.041 M - 0.0028 M^2 + 0.005332 M T + 207.2 M / T + 0.001043 M^3 - 3e-7 M^2 T^2,  M in mol/L, T in K.
+# The 207.2 M/T term was described by the search summary as "partly garbled"; consistency check run in d2: at M = 0.01, T = 298.15 K the form gives 2.43-2.44 mS/cm, the value quoted by the ACS SI for this equation (vs 2.28 mS/cm measured by Vanysek) -> form confirmed only to that one number. STATUS: PARTIALLY CONFIRMED (secondary sources only).
+# access date: 2026-11-14
+# Molarity of 30 wt% KOH: M = 0.30*rho/56.105 g/mol*1000; rho(30 wt%, 20 C) = 1.288 g/cm3 (MEMORY, UNSURE) -> M = 6.89; density at 80 C is lower (~1.25, MEMORY UNSURE) -> M ~ 6.7. Both are used in d2 as a sensitivity.
+# planner UNSURE expected range for bulk conductivity: 120-150 S/m.

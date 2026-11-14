@@ -1,0 +1,15 @@
+# source: Hubbell J.H., Seltzer S.M., Tables of X-Ray Mass Attenuation Coefficients and Mass Energy-Absorption Coefficients, NIST, Table 1 (material constants for elemental media: Z/A, I, density)
+# url: https://physics.nist.gov/PhysRefData/XrayMassCoef/tab1.html
+# version: NIST web edition (UNSURE: v1.4)
+# access date: 2026-11-14
+Z,symbol,Z_over_A,I_eV,density_g_cm3
+6,C,0.49954,78.0,1.700E+00
+13,Al,0.48181,166.0,2.699E+00
+26,Fe,0.46556,286.0,7.874E+00
+29,Cu,0.45636,322.0,8.960E+00
+50,Sn,0.42120,488.0,7.310E+00
+56,Ba,0.40779,491.0,3.500E+00
+64,Gd,0.40699,591.0,7.900E+00
+74,W,0.40250,727.0,1.930E+01
+82,Pb,0.39575,823.0,1.135E+01
+83,Bi,0.39717,823.0,9.747E+00

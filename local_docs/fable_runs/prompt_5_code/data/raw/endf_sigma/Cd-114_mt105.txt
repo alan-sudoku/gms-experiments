@@ -1,0 +1,12 @@
+# source: NNDC Sigma, evalid 15124, MF3 MT105; url https://www.nndc.bnl.gov/sigma/temp/endf-6-53834.txt; access 2026-11-14
+48-Cd-114t) ENDF/B-VII.1
+1.037E7,0.0
+1.2E7,1.0E-17
+1.3E7,1.1E-12
+1.4E7,1.8E-9
+1.5E7,6.0E-8
+1.6E7,1.3E-6
+1.7E7,1.1E-5
+1.8E7,3.3E-5
+1.9E7,8.8E-5
+2.0E7,1.7E-4

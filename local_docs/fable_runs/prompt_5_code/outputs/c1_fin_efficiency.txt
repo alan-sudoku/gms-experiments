@@ -1,0 +1,24 @@
+INPUTS: k_Cu=400; k_Al in {237 pure, 200 wrought 6063, 130 as-built AlSi10Mg (UNSURE 100-180)} W/(m K) (MEMORY). No lookup.
+baseline h=50, L=30 mm, t=1 mm: eta_Cu=0.9312
+CHECK eta_Cu: 0.93119 vs 0.931 tol=0.5% -> PASS
+CHECK eta_Al(200): 0.87284 vs 0.873 tol=0.5% -> PASS
+CHECK ratio Al(200)/Cu: 0.93734 vs 0.937 tol=0.5% -> PASS
+  k_Al=237: eta_Al=0.8901, ratio=0.9559 (penalty 4.4%)
+  k_Al=130: eta_Al=0.8192, ratio=0.8797 (penalty 12.0%)
+independent solve_bvp vs closed form at baseline and 30 random sweep points:
+  solve_bvp did not converge at 0 of 33 points (excluded from the max)
+  max |eta_bvp/eta_closed - 1| = 6.19e-10
+CHECK bvp vs closed form <0.5% -> PASS
+sweep: 25^3 = 15625 points; mL_Cu range 0.0144 .. 35.4
+  k_Al=237: ratio min 0.7697, max 1.0000; thick-limit sqrt(k_g/k_s)=0.7697; points with penalty<=5%: 41.2%; points with mL_Cu>20: 0.4%, ratio there 0.7697..0.7697
+CHECK thick limit k_Al=237 (min ratio in sweep at mL_Cu max): 0.76974 vs 0.7697402159170327 tol=0.5% -> PASS
+  brackets the <=5%-penalty region: True; brackets the thick limit (some mL>20): True; ratio->1 as mL->0: min mL 0.014, ratio at that point 1.0000
+  k_Al=200: ratio min 0.7071, max 0.9999; thick-limit sqrt(k_g/k_s)=0.7071; points with penalty<=5%: 36.0%; points with mL_Cu>20: 0.4%, ratio there 0.7071..0.7071
+CHECK thick limit k_Al=200 (min ratio in sweep at mL_Cu max): 0.70711 vs 0.7071067811865476 tol=0.5% -> PASS
+  brackets the <=5%-penalty region: True; brackets the thick limit (some mL>20): True; ratio->1 as mL->0: min mL 0.014, ratio at that point 0.9999
+  k_Al=130: ratio min 0.5701, max 0.9999; thick-limit sqrt(k_g/k_s)=0.5701; points with penalty<=5%: 27.0%; points with mL_Cu>20: 0.4%, ratio there 0.5701..0.5701
+CHECK thick limit k_Al=130 (min ratio in sweep at mL_Cu max): 0.57009 vs 0.570087712549569 tol=0.5% -> PASS
+  brackets the <=5%-penalty region: True; brackets the thick limit (some mL>20): True; ratio->1 as mL->0: min mL 0.014, ratio at that point 0.9999
+note: mL_Cu min in the sweep is 0.04-ish only if h,L,t extremes align; ratio->1 limit approached, not reached within 0.5% unless mL<0.1
+IDENTITY CHECKS: 'thick limit' compares tanh(mL)/(mL) ratio with sqrt(k_g/k_s): a limit of the same formula (asymptotic check), kept as value check; bvp is the independent route.
+OVERALL PASS

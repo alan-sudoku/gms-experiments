@@ -1,0 +1,16 @@
+formula (BH sweep, kJ/m3 -> cm3): {10: 509.3, 32: 159.15, 100: 50.93, 350: 14.55, 450: 11.32}
+  CHECK 14.6 cm3 at 350 kJ/m3 within 5%: PASS 14.55
+  CHECK 159 cm3 at 32 kJ/m3 within 5%: PASS 159.2
+  NdFeB: Br=1.35 T BHmax=345.3 kJ/m3  formula V_m=14.749 cm3  optimiser V_m=14.749 cm3  Bm/Br=0.5000  Hm=-511.6 kA/m  HcJ(UNSURE)=900-900 kA/m  mass=110.6 g
+  CHECK NdFeB optimiser vs formula within 5%: PASS -9.44e-15
+  CHECK NdFeB operates at Bm=Br/2 (1%): PASS 
+  CHECK NdFeB |Hm| below lowest HcJ (UNSURE): PASS 
+  ferrite: Br=0.41 T BHmax=31.8 kJ/m3  formula V_m=159.905 cm3  optimiser V_m=159.905 cm3  Bm/Br=0.5000  Hm=-155.4 kA/m  HcJ(UNSURE)=250-400 kA/m  mass=783.5 g
+  CHECK ferrite optimiser vs formula within 5%: PASS -4.11e-15
+  CHECK ferrite operates at Bm=Br/2 (1%): PASS 
+  CHECK ferrite |Hm| below lowest HcJ (UNSURE): PASS 
+  volume ratio ferrite/NdFeB=10.84 (expected ~11); mass ratio=7.08 (expected ~7)
+  CHECK volume ratio ~11 within 10%: PASS 
+  CHECK mass ratio ~7 within 10%: PASS 
+note: formula at BHmax vs optimiser is non-identity only through the optimum location; V_m formula and constraint solve share the same equations.
+FAILS: []

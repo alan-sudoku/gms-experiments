@@ -1,0 +1,47 @@
+F7 LOOKUP: data/xcom_z050.csv (Sn), z074 (W), z082 (Pb), z083 (Bi), z064 (Gd), z056 (Ba); XCOM web, access 2026-11-14; mu/rho total with coherent, cm2/g
+K-edge energies in the XCOM files (keV): {'Sn': [29.2], 'W': [69.53], 'Pb': [88.0], 'Bi': [90.53], 'Gd': [50.24], 'Ba': [37.44]} ; MEMORY: Sn 29.2, W 69.5, Pb 88.0
+
+E =  40 keV: Sn=19.43  W=10.67  Pb=14.36  Bi=14.95  Gd=6.92  Ba=24.57
+  ranking (high to low): Ba > Sn > Bi > Pb > W > Gd
+  Sn/W/Pb ranking: Sn > Pb > W
+  [PASS] XCOM vs Table 3 transcription Sn 40 keV (same NIST data, not independent): 19.43 vs 19.42
+  [PASS] XCOM vs Table 3 transcription W 40 keV (same NIST data, not independent): 10.67 vs 10.67
+  [PASS] XCOM vs Table 3 transcription Pb 40 keV (same NIST data, not independent): 14.36 vs 14.36
+
+E =  60 keV: Sn=6.565  W=3.713  Pb=5.02  Bi=5.233  Gd=11.75  Ba=8.511
+  ranking (high to low): Gd > Ba > Sn > Bi > Pb > W
+  Sn/W/Pb ranking: Sn > Pb > W
+  vs UNSURE range Sn: 6.565 in [6, 7] -> inside
+  vs UNSURE range Pb: 5.02 in [4.8, 5.2] -> inside
+  vs UNSURE range W: 3.713 in [3.6, 3.8] -> inside
+  [PASS] XCOM vs Table 3 transcription Sn 60 keV (same NIST data, not independent): 6.565 vs 6.564
+  [PASS] XCOM vs Table 3 transcription W 60 keV (same NIST data, not independent): 3.713 vs 3.713
+  [PASS] XCOM vs Table 3 transcription Pb 60 keV (same NIST data, not independent): 5.02 vs 5.021
+
+E =  80 keV: Sn=3.029  W=7.809  Pb=2.419  Bi=2.522  Gd=5.573  Ba=3.963
+  ranking (high to low): W > Gd > Ba > Sn > Bi > Pb
+  Sn/W/Pb ranking: W > Sn > Pb
+  vs UNSURE range W: 7.809 in [7.6, 8] -> inside
+  vs UNSURE range Sn: 3.029 in [2.9, 3.2] -> inside
+  vs UNSURE range Pb: 2.419 in [2.3, 2.5] -> inside
+  [PASS] XCOM vs Table 3 transcription Sn 80 keV (same NIST data, not independent): 3.029 vs 3.029
+  [PASS] XCOM vs Table 3 transcription W 80 keV (same NIST data, not independent): 7.809 vs 7.81
+  [PASS] XCOM vs Table 3 transcription Pb 80 keV (same NIST data, not independent): 2.419 vs 2.419
+
+E = 100 keV: Sn=1.677  W=4.437  Pb=5.549  Bi=5.737  Gd=3.109  Ba=2.195
+  ranking (high to low): Bi > Pb > W > Gd > Ba > Sn
+  Sn/W/Pb ranking: Pb > W > Sn
+  vs UNSURE range Pb: 5.549 in [5.4, 5.7] -> inside
+  vs UNSURE range W: 4.437 in [4.3, 4.6] -> inside
+  vs UNSURE range Sn: 1.677 in [1.6, 1.8] -> inside
+  [PASS] XCOM vs Table 3 transcription Sn 100 keV (same NIST data, not independent): 1.677 vs 1.676
+  [PASS] XCOM vs Table 3 transcription W 100 keV (same NIST data, not independent): 4.437 vs 4.438
+  [PASS] XCOM vs Table 3 transcription Pb 100 keV (same NIST data, not independent): 5.549 vs 5.549
+
+G3.5 statement: Sn > Pb > W near 60 keV, W > Sn > Pb near 80 keV, Pb > W > Sn at 100 keV
+  [PASS] 60 keV Sn > Pb > W: Sn > Pb > W
+  [PASS] 80 keV W > Sn > Pb: W > Sn > Pb
+  [PASS] 100 keV Pb > W > Sn: Pb > W > Sn
+leader (of all six) at each energy: {40: 'Ba', 60: 'Gd', 80: 'W', 100: 'Bi'}
+  [PASS] no single element leads (Sn,W,Pb) at all four energies (else G3.5 false): {40: 'Sn', 60: 'Sn', 80: 'W', 100: 'Pb'}
+FAILED CHECKS: none

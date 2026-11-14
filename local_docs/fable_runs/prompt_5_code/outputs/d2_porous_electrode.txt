@@ -1,0 +1,29 @@
+INPUTS: T=353.15 K, R=8.314462, F=96485.332
+LOOKUP SOURCE: Gilliam, Graydon, Kirk, Thorpe 2007, Int. J. Hydrogen Energy 32, 359-364; correlation as quoted by citing works (secondary), accessed 2026-11-14; see data/d2_koh_conductivity.csv
+consistency check of the quoted form: M=0.01, 298.15 K -> 2.434 mS/cm (ACS SI quotes the equation giving 2.43 mS/cm): agrees
+  30 wt% KOH, M=6.7: sigma(353.15 K) = 138.1 S/m ; planner UNSURE range 120-150 S/m: inside
+  30 wt% KOH, M=6.89: sigma(353.15 K) = 138.6 S/m ; planner UNSURE range 120-150 S/m: inside
+  (value at 80 C of 30 wt% is 'by correlation'; M at 80 C depends on density; see data file)
+  sigma_eff = sigma*eps^1.5: eps=0.5: 49.0 S/m
+  sigma_eff = sigma*eps^1.5: eps=0.7: 81.2 S/m
+  sigma_eff = sigma*eps^1.5: eps=0.9: 118.3 S/m
+central: sigma_eff = 81.2 S/m (M=6.89, eps=0.7)
+sweep: 25^3 points; L/lambda range 2.01e-06 .. 190.9; brackets L/lam << 1 and >> 1: True
+eta_u range 0.0052 .. 1.000000; thin limit j0,eff -> j0 a L, thick limit -> sqrt(a j0 sigma R T/F)
+  max |j0eff/(j0 a L) - 1| for L/lam<0.01: 3.33e-05; thick: max |j0eff/sqrt(a j0 sigma RT/F) - 1| for L/lam>5: 9.00e-05
+  (thin and thick limits are the same closed form evaluated in two regimes: IDENTITY-like)
+slope dln(j0,eff)/dln(j0) vs j0 at L=3e-3 m, a=1e7 m2/m3 (central sigma_eff):
+   j0=    0.001  L/lam=    0.191  slope=0.9866
+   j0=     0.01  L/lam=    0.604  slope=0.8959
+   j0=      0.1  L/lam=     1.91  slope=0.5847
+   j0=        1  L/lam=     6.04  slope=0.5001
+   j0=       10  L/lam=     19.1  slope=0.5000
+   j0=      100  L/lam=     60.4  slope=0.5000
+  thick-limit slope (L/lam>5): 0.50000..0.50027
+CHECK thick-limit slope 0.500 +-0.01 -> PASS
+  FD route thick-limit slope: 0.50000..0.50027
+CHECK FD thick slope 0.500 +-0.01 -> PASS
+FD vs closed form j0,eff on 40 random sweep points: max rel. deviation 1.78e-07
+CHECK FD vs closed form within 1% -> PASS
+metal-foam a = 5e3-1e4 m2/m3 (MEMORY UNSURE) is at or below the lower edge of the swept a range [1e4,1e8]; with a=5e3, j0=1e-3..1e2: L/lam from 0.004 to 1.35
+OVERALL PASS

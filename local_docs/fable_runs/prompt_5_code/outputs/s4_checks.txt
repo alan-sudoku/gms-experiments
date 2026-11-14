@@ -1,0 +1,118 @@
+S4 checks, Prompt 5. Level: derived (unverified).
+
+== A. Pt and Ir cumulative energy demand (Nuss and Eckelman 2014, SI S1 Table S38) ==
+  Pt  TOTAL (supply weighted)          CED  243000 MJ/kg (95%: 178000-326000)
+  Pt  primary South Africa (63%)       CED  308000 MJ/kg (95%: 219000-414000)
+  Pt  primary Russia (14%)             CED  327000 MJ/kg (95%: 245000-430000)
+  Pt  secondary                        CED   11900 MJ/kg (95%: 8290-16900)
+  Ir  TOTAL (supply weighted)          CED  169000 MJ/kg (95%: 128000-219000)
+  Ir  primary South Africa             CED  165000 MJ/kg (95%: 118000-220000)
+  Ir  primary Russia                   CED  175000 MJ/kg (95%: 130000-224000)
+  supply-weighted mix 0.63*ZA + 0.14*RU + 0.23*secondary = 242557 MJ/kg; table 'Pt TOTAL' = 243000 (dev -0.18%)
+  => S2 read the 'Pt TOTAL' row (mix with 23% secondary); S3 read the two primary-route rows. Same table, different rows.
+  primary-only weighted (0.63*ZA + 0.14*RU)/0.77 = 311455 MJ/kg
+  break-even overpotential d_eta_be = e_x*m''/(j*tau), central duty j = 5e+03 A/m2, tau = 2.88e+08 s
+  source of the central duty and of the 0.8438 mV value: outputs/d3_break_even_overpotential.txt [text found: central case with LOOKUP e = 0.8438 mV]
+    Pt TOTAL (mix)               e =  243000 MJ/kg, m'' = 0.5 mg/cm2: d_eta_be = 0.844 mV; loading for 30 mV: 17.8 mg/cm2; factor on e_x for 30 mV: 36
+    Pt primary ZA                e =  308000 MJ/kg, m'' = 0.5 mg/cm2: d_eta_be = 1.069 mV; loading for 30 mV: 14.0 mg/cm2; factor on e_x for 30 mV: 28
+    Pt primary RU                e =  327000 MJ/kg, m'' = 0.5 mg/cm2: d_eta_be = 1.135 mV; loading for 30 mV: 13.2 mg/cm2; factor on e_x for 30 mV: 26
+    Pt primary RU, 97.5% bound   e =  430000 MJ/kg, m'' = 0.5 mg/cm2: d_eta_be = 1.493 mV; loading for 30 mV: 10.0 mg/cm2; factor on e_x for 30 mV: 20
+    Pt secondary                 e =   11900 MJ/kg, m'' = 0.5 mg/cm2: d_eta_be = 0.041 mV; loading for 30 mV: 363.0 mg/cm2; factor on e_x for 30 mV: 726
+  Ir (anode catalyst of an acidic cell); loadings 0.5, 1, 2 mg/cm2 are MEMORY UNSURE:
+    Ir TOTAL (supply weighted)    e =  169000 MJ/kg: d_eta_be = 0.59, 1.17, 2.35 mV
+    Ir primary South Africa       e =  165000 MJ/kg: d_eta_be = 0.57, 1.15, 2.29 mV
+    Ir primary Russia             e =  175000 MJ/kg: d_eta_be = 0.61, 1.22, 2.43 mV
+    Ir primary RU 97.5% bound 224000 MJ/kg at 2 mg/cm2: 3.11 mV
+  Tafel price of kappa = 10 for comparison: 118.3 mV (alpha 0.5), 59.2 mV (alpha 1), 29.6 mV (alpha 2), 298.15 K: outputs/d1_overpotential.txt [text found: b(alpha=0.5, 298.15 K) = 118.3 mV/dec | b(alpha=2.0, 298.15 K) = 29.6 mV/dec]
+
+== B. Row D1: overpotential above which the Tafel form is within eps of Butler-Volmer ==
+  j = j0*[exp(a_a f eta) - exp(-a_c f eta)], f = F/RT. Tafel eta_T = ln(j/j0)/(a_a f).
+  eta - eta_T = -ln(1 - exp(-(a_a + a_c) f eta))/(a_a f) ~ exp(-(a_a + a_c) f eta)/(a_a f)
+    T = 298.15 K, alpha_a = 0.5, alpha_c = 0.5: error at 100 mV = 1.059 mV; error < 2 mV for eta > 83.9 mV
+    T = 298.15 K, alpha_a = 1.0, alpha_c = 0.5: error at 100 mV = 0.075 mV; error < 2 mV for eta > 44.4 mV
+    T = 298.15 K, alpha_a = 1.5, alpha_c = 0.5: error at 100 mV = 0.007 mV; error < 2 mV for eta > 28.3 mV
+    T = 298.15 K, alpha_a = 2.0, alpha_c = 0.5: error at 100 mV = 0.001 mV; error < 2 mV for eta > 19.9 mV
+    T = 353.15 K, alpha_a = 0.5, alpha_c = 0.5: error at 100 mV = 2.320 mV; error < 2 mV for eta > 104.4 mV
+    T = 353.15 K, alpha_a = 1.0, alpha_c = 0.5: error at 100 mV = 0.221 mV; error < 2 mV for eta > 55.9 mV
+    T = 353.15 K, alpha_a = 1.5, alpha_c = 0.5: error at 100 mV = 0.028 mV; error < 2 mV for eta > 36.0 mV
+    T = 353.15 K, alpha_a = 2.0, alpha_c = 0.5: error at 100 mV = 0.004 mV; error < 2 mV for eta > 25.5 mV
+  S2 worst case with both overpotentials above 100 mV: 2.35 mV at 353.15 K, alpha 0.5: outputs/d1_overpotential.txt [text found: deviation 2.35 mV]
+  (S2 coded alpha_c = 1 - alpha_a; the rows with alpha_c = 0.5 for alpha_a > 0.5 above are this script's, with a physical alpha_c > 0.)
+
+== C. Row A4: when does 'D > 1 wherever Al loses' hold? ==
+  D at the equal-volume crossover = (1 - x)/(kappa - 1), x = e_g rho_g/(e_s rho_s), kappa = sigma_Cu/sigma_Al = 1.63842
+  D > 1  <=>  x < 2 - kappa = 0.3616 ; a crossover exists <=> x < 1
+    MEMORY 200/55                          x = 1.096: no crossover (Al loses at every duty)
+    ICE primary 218/57                     x = 1.152: no crossover (Al loses at every duty)
+    Nuss primary 194/59.3                  x = 0.986: crossover at D = 0.022
+    Nuss mix 131/53.7                      x = 0.735: crossover at D = 0.415
+    ICE recycled Al 29.0 / virgin Cu 57    x = 0.153: crossover at D = 1.326
+    ICE recycled/recycled 29.0/16.5        x = 0.530: crossover at D = 0.737
+    Nuss old scrap 23.8 / primary 59.3     x = 0.121: crossover at D = 1.377
+    Nuss secondary/secondary 23.8/28.1     x = 0.255: crossover at D = 1.167
+  source of the S2 values: outputs/a4_duty_crossover.txt [text found: D>1 iff x < 0.362]
+
+== D. W/C mass-attenuation ratio: crossings of 1 (log-log interpolation of the XCOM grid, 0.1-20 MeV) ==
+  ratio = 1 at E = 1.155, 2.019 MeV
+  ratio = 2 at E = 0.403, 7.579 MeV
+  lowest tabulated ratio 0.9654 at 1.5 MeV (grid point); S2: outputs/f2_ratio_crossings.txt [text found: crossings ['0.403', '7.579']  min at 1.5 MeV, ratio 0.9654]
+  (ratio of two log-log linear pieces is itself log-log linear, so this linear root equals S2's brentq root.)
+
+== E. Thermal-neutron kappa on three bases (gate case 4) ==
+    Cd metal       sigma_a = 2520     b/atom; Sigma_a/rho = 13.5 cm2/g; Sigma_a = 116.8 /cm (rho 8.650 g/cm3, NIST Table 1 (S3 row 16))
+    nat B4C        sigma_a = 767      b/atom; Sigma_a/rho = 33.43 cm2/g; Sigma_a = 84.25 /cm (rho 2.520 g/cm3, MEMORY UNSURE)
+    Al             sigma_a = 0.231    b/atom; Sigma_a/rho = 0.005156 cm2/g; Sigma_a = 0.01392 /cm (rho 2.699 g/cm3, NIST Table 1 (S3 row 3))
+    graphite 1.70  sigma_a = 0.0035   b/atom; Sigma_a/rho = 0.0001755 cm2/g; Sigma_a = 0.0002983 /cm (rho 1.700 g/cm3, MEMORY UNSURE)
+  (B4C: boron atoms only, w_B = 0.78267; carbon in B4C neglected)
+    kappa Cd metal  / Al           : per absorbing atom 1.09e+04, per mass 2.62e+03, per volume (= per thickness) 8.39e+03
+    kappa Cd metal  / graphite 1.70: per absorbing atom 7.2e+05, per mass 7.69e+04, per volume (= per thickness) 3.91e+05
+    kappa nat B4C   / Al           : per absorbing atom 3.32e+03, per mass 6.48e+03, per volume (= per thickness) 6.05e+03
+    kappa nat B4C   / graphite 1.70: per absorbing atom 2.19e+05, per mass 1.91e+05, per volume (= per thickness) 2.82e+05
+  smallest kappa over the four pairs and three bases: 2.62e+03
+  source of sigma: outputs/n1_thermal_ri.txt [text found: nat B    /C = 2.191e+05   /Al = 3320]
+
+== F. Gate cases 14 and 16: margins and prices ==
+  case 14 (slot-limited winding, Al for Cu at equal area): loss ratio 1.6384; Al meets a temperature-rise limit only if the incumbent's rise is below 0.610 of the limit (rise taken proportional to loss)
+  case 16 (fin, h = 50 W/m2K, L = 30 mm, t = 1 mm, k 400 vs 200 W/mK): outputs/c1_fin_efficiency.txt [text found: ratio Al(200)/Cu: 0.93734]
+    same geometry: fin heat flow falls to 0.9373, i.e. price in function 1.0668 (needs a requirement margin >= 1.0668)
+    compensation by fin thickness (equal k*t gives equal m and equal efficiency): t_g/t_s = 2.00; fin volume x2.00; fin mass x0.603
+    thick-fin bound kappa^(1/2) = 1.4142 (not reached: mL_Cu = 0.474 here)
+    same-geometry mass ratio rho_Al/rho_Cu = 0.301
+
+== G. Revised gate (answer section 8) applied to the 18 cases of Note J1 ==
+Rules: step 1 scope (N) -> step 2 thresholds (regime only) -> step 3 envelope statement and margin (else incomplete, U)
+       -> step 4 price pi against slack -> step 5 Class II. 'free' = slack inf for that quantity. Slack >= 1 always.
+Inputs are the constants printed by j1_gate_matrix.txt (S2); nothing new is computed except section E and F values.
+source check: outputs/j1_gate_matrix.txt [text found: MATCH count: 13 of 18]
+  1 | photon 100 keV, mass cap 3x (C for W)              | Class I                                       | step 4 | plan expected I   | same | pi = W/C mass ratio, F1
+  2 | photon 1 MeV, mass cap 3x, thickness free          | Class II                                      | step 5 | plan expected II  | same | pi = broad-beam x_C/x_W, F6 (1.040 narrow beam)
+  3 | photon 1 MeV, thickness cap 3x                     | Class I                                       | step 4 | plan expected I   | same | pi = thickness ratio at rho_C 2.26 (11.81 at 1.70), F3
+  4 | thermal-neutron thin sheet (Al or C for Cd or B)   | out of scope U (envelope or margin not stated) | step 3 | plan expected I   | differs | pi >= 2.62e+03 on every basis (section E); no envelope statement in the case
+  5 | bulk neutron shield, fast source, thickness free   | Class II                                      | step 5 | plan expected II  | same | pi = thickness ratio water/Cd, N5; mass not capped by the case
+  6 | black absorber, tau >= 3 for both                  | Class II                                      | step 5 | plan expected II  | same | saturated: pi = 1 <= any slack
+  7 | storage, 1 h, mass cap 2x (double layer for Li-ion) | Class I                                       | step 4 | plan expected I   | same | pi practical (H3 MEMORY UNSURE); ceiling basis 2.76 at 2.7 V, 1.26 at 4.0 V
+  8 | storage, 5 s pulses, 1e6 cycles (g not named)      | out of scope U (g and s not named)            | step 1 | plan expected II  | differs | case names neither g nor s: step 1 cannot be stated
+  9 | primary cell against double-layer capacitor        | Class I                                       | step 2 | plan expected I   | same | threshold: as-made state
+ 10 | magnet, volume cap 2x (ferrite for NdFeB)          | Class I                                       | step 4 | plan expected I   | same | M5
+ 11 | magnet, volume free                                | Class II                                      | step 5 | plan expected II  | same | M5; mass not capped by the case
+ 12 | magnet, T_op above Curie point of g                | Class I                                       | step 2 | plan expected I   | same | case premise
+ 13 | DC busbar, cross-section free (Al for Cu)          | Class II                                      | step 5 | plan expected II  | same | A1
+ 14 | slot-limited winding, 'carry I within T limit'     | out of scope U (envelope or margin not stated) | step 3 | plan expected II  | differs | area slack 1 stated; requirement margin not supplied
+ 15 | slot-limited winding, 'loss <= incumbent loss'     | Class I                                       | step 4 | plan expected I   | same | A1
+ 16 | air-cooled heat sink, short fins (Al for Cu)       | out of scope U (envelope or margin not stated) | step 3 | plan expected II  | differs | no envelope statement, no margin; section F prices
+ 17 | oxygen evolution in acid (Ni-Fe for Ir oxide)      | out of scope U (threshold datum missing)      | step 2 | plan expected I   | differs | datum not supplied by any row
+ 18 | flow manifold, viscous loss                        | out of scope N (not a substitution question)  | step 1 | plan expected out | same | no solid coefficient in the governing equation
+classified as the plan expected: 13 of 18; returned as incomplete (U): 5; opposite class: 0
+
+Completed scenarios (added inputs are ILLUSTRATIVE, not results; they show which input decides):
+   4a thin sheet, thickness cap 3x                                                            pi = 2618     slack = 3     -> Class I
+   4b thin sheet, nothing capped                                                              pi = 2618     slack = inf   -> Class II
+   8  g = double layer, s = Li-ion, nothing capped (life goes to the replacement term of Sigma) pi = 0.347    slack = inf   -> Class II
+   8' same, least favourable H3 corner                                                        pi = 1.042    slack = 1     -> Class I
+   14a incumbent at its temperature limit (margin 1)                                          pi = 1.638    slack = 1     -> Class I
+   14b incumbent at half its allowed rise (margin 2)                                          pi = 1.638    slack = 2     -> Class II
+   16a geometry fixed, no thermal margin (margin 1)                                           pi = 1.067    slack = 1     -> Class I
+   16b geometry fixed, 10% thermal margin                                                     pi = 1.067    slack = 1.1   -> Class II
+   16c fin mass capped at the incumbent's, thickness free                                     pi = 0.6027   slack = 1     -> Class II
+   16d fin thickness capped at 1.5x                                                           pi = 2        slack = 1.5   -> Class I
+   17 with 'g dissolves in the electrolyte' supplied (MEMORY UNSURE, not looked up): threshold fails -> Class I at step 2

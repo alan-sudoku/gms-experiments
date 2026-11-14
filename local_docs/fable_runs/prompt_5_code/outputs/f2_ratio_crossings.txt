@@ -1,0 +1,58 @@
+F2: ratio of total mass attenuation (with coherent) mu/rho(W)/mu/rho(X), 0.03-20 MeV, target ratio 2
+LOOKUP sources: XCOM web (Method=Elem; Z=6,13,26,74), NISTIR 5632 Table 4 (water, ordinary concrete); access 2026-11-14;
+  files data/xcom_z006.csv, z013, z026, z074, data/nist_comtab_water.csv, data/nist_comtab_concrete.csv. W K-edge rows in file: [np.float64(0.06953)] MeV (K edge)
+
+== W/C ==
+  ratio at 0.03 MeV = 88.72, at 20 MeV = 3.742, at 10 MeV = 2.423
+  crossings of ratio=2 (brentq on interpolated pieces): 0.403 MeV, 7.5791 MeV
+  minimum (minimize_scalar bounded on bracket [1.489, 1.509] MeV): ratio 0.96544 at E = 1.5 MeV; bracket interior: True
+  sweep brackets both crossings and the minimum: YES
+
+== W/Fe ==
+  ratio at 0.03 MeV = 2.78, at 20 MeV = 1.828, at 10 MeV = 1.586
+  crossings of ratio=2 (brentq on interpolated pieces): 0.40955 MeV
+  minimum (minimize_scalar bounded on bracket [1.489, 1.509] MeV): ratio 1.024 at E = 1.5 MeV; bracket interior: True
+  sweep brackets both crossings and the minimum: NO (ratio at an end of the range is not > 2, or no region < 2)
+
+== W/Al ==
+  ratio at 0.03 MeV = 20.15, at 20 MeV = 2.718, at 10 MeV = 2.048
+  crossings of ratio=2 (brentq on interpolated pieces): 0.41395 MeV, 9.5234 MeV
+  minimum (minimize_scalar bounded on bracket [1.489, 1.509] MeV): ratio 0.9988 at E = 1.5 MeV; bracket interior: True
+  sweep brackets both crossings and the minimum: YES
+
+== W/water ==
+  ratio at 0.03 MeV = 60.52, at 20 MeV = 3.25, at 10 MeV = 2.139
+  crossings of ratio=2 (brentq on interpolated pieces): 0.37348 MeV, 9.0617 MeV
+  minimum (minimize_scalar bounded on bracket [1.489, 1.509] MeV): ratio 0.86896 at E = 1.5 MeV; bracket interior: True
+  sweep brackets both crossings and the minimum: YES
+
+== W/concrete ==
+  ratio at 0.03 MeV = 23.67, at 20 MeV = 2.903, at 10 MeV = 2.084
+  crossings of ratio=2 (brentq on interpolated pieces): 0.39541 MeV, 9.3062 MeV
+  minimum (minimize_scalar bounded on bracket [1.489, 1.509] MeV): ratio 0.94554 at E = 1.5 MeV; bracket interior: True
+  sweep brackets both crossings and the minimum: YES
+
+W/C checks against plan:
+  expected crossings ~0.4 and ~6 MeV (+-10% in energy); minimum 1.5-2 MeV; min value UNSURE 0.98-1.05; ratio at 10 MeV UNSURE 2.2-2.6
+  found: lower crossings [0.40299861829483824], upper crossings [7.579128178907674], minimum 1.5 MeV
+  [PASS] lower crossing 0.4 MeV +-10%: 0.403 MeV (+0.7%)
+  [FAIL] upper crossing 6 MeV +-10%: 7.579 MeV (+26.3%)
+  [PASS] minimum energy in 1.5-2 MeV: 1.5 MeV
+  [FAIL] minimum value in 0.98-1.05: 0.96544
+  [PASS] ratio at 10 MeV in 2.2-2.6: 2.423
+  monotonic check on 30 tabulated energies 0.1-20 MeV: lowest tabulated ratio 0.96544 at 1.5 MeV
+  [PASS] ratio falls monotonically 0.1 MeV to the minimum: violations: []
+  [PASS] ratio rises monotonically above the minimum to 20 MeV: violations: []
+  tabulated W/C ratio around the minimum: ['1 MeV: 1.0402', '1.022 MeV: 1.0319', '1.25 MeV: 0.97996', '1.5 MeV: 0.96544', '2 MeV: 0.99775', '2.044 MeV: 1.003']
+  NOTE: the interpolated minimum sits on a table vertex (1.5 MeV); between vertices the log-log curve is a ratio of two power laws, so the true minimum may lie between table points. The location is only as good as the grid.
+  extra (outside spec range): W/Fe extended to 100 MeV: crossings of 2 at ['0.4096', '55.65'] ratio at 100 MeV 2.032
+
+Summary W/X: crossings of 2 (MeV), min energy (MeV), min ratio
+  W/C        crossings ['0.403', '7.579']  min at 1.5 MeV, ratio 0.9654
+  W/Fe       crossings ['0.4096']  min at 1.5 MeV, ratio 1.024
+  W/Al       crossings ['0.4139', '9.523']  min at 1.5 MeV, ratio 0.9988
+  W/water    crossings ['0.3735', '9.062']  min at 1.5 MeV, ratio 0.869
+  W/concrete crossings ['0.3954', '9.306']  min at 1.5 MeV, ratio 0.9455
+
+Sweep notes: ['W/Fe: sweep 0.03-20 MeV does not bracket both crossings of 2']
+FAILED CHECKS: ['upper crossing 6 MeV +-10%', 'minimum value in 0.98-1.05']

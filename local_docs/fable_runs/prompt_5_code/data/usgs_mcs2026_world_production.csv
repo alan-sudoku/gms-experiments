@@ -1,0 +1,28 @@
+# source: U.S. Geological Survey, Mineral Commodity Summaries 2026 (February 2026), commodity chapters, 'World Mine Production and Reserves' (or Refinery/Smelter) tables; transcribed by hand from the PDFs saved in data/raw/usgs_mcs2026/
+# url: https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-<commodity>.pdf (boron, cadmium, silver, indium, lithium, graphite, aluminum, iron-ore, iron-steel, copper, nickel, cobalt, tungsten, lead, tin, bismuth, zirconium-hafnium, rare-earths, platinum-group)
+# edition: MCS 2026 (data year 2025, 'e' = estimated); access date 2026-11-14
+# note: world_2025e converted to metric tons per year of the named content in column t_per_yr; 'not reported' means the chapter states no world total for that element.
+element,commodity_basis,world_2025e_as_printed,unit_printed,t_per_yr,note
+B,boron (all forms),XX,thousand t,,USGS: world total cannot be calculated (forms not comparable); Turkey refined borates 1500 kt; Chile ulexite 300 kt; Bolivia 380 kt
+C,natural graphite mine,1800000,t,1800000,natural graphite only (excludes synthetic graphite and carbon in fuels/steel)
+Al,primary aluminum smelter,74000,thousand t,74000000,
+Fe,pig iron,1300,million t,1300000000,raw steel 1900 Mt; usable iron ore 2600000 kt (iron content 1600000 kt)
+Cu,copper mine (content),23000,thousand t,23000000,refinery 29000 kt
+Ni,nickel mine (content),3900000,t,3900000,
+Co,cobalt mine (content),310000,t,310000,
+W,tungsten mine (content),85000,t,85000,
+Pb,lead mine (content),4500,thousand t,4500000,
+Sn,tin mine (content),290000,t,290000,
+Bi,bismuth refinery,16000,t,16000,
+Li,lithium mine (content),290000,t,290000,
+Ag,silver mine (content),26000,t,26000,
+Cd,cadmium refinery,23000,t,23000,byproduct of zinc refining
+In,indium refinery,1100,t,1100,byproduct of zinc; refinery capacity 1700 t
+Pt,platinum mine,170000,kg,170,palladium 190000 kg
+Ir,platinum-group (iridium),not reported,,,iridium appears only in US price/trade tables in the PGM chapter
+Hf,zirconium-hafnium,not reported,,,'World primary hafnium production data and quantitative estimates of hafnium reserves were not available' (USGS); zirconium mineral concentrates 1200 kt gross weight
+Gd,rare earths,not reported,,,only world total REO 390000 t (2025e); no element split
+Dy,rare earths,not reported,,,as Gd
+Eu,rare earths,not reported,,,as Gd
+Sm,rare earths,not reported,,,as Gd
+Nd,rare earths,not reported,,,as Gd; REO total 390000 t

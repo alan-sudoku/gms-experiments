@@ -1,0 +1,40 @@
+N6 sources: abundance = planner values (NOT A LOOKUP, UNSURE) + secondary column C1 (Wikipedia reproduction of CRC; access 2026-11-14, not accepted as lookup);
+            production = USGS MCS 2026 (Feb 2026), world totals 2025e, data/usgs_mcs2026_world_production.csv
+
+el   planner mg/kg   secondary C1      ratio     world t/yr   production note
+B               10             10      1.000   not reported   USGS: world total cannot be calculated (forms not comparable); Turkey refined borates 1500
+Cd            0.15           0.15      1.000          23000   byproduct of zinc refining
+Gd             6.2            6.2      1.000   not reported   only world total REO 390000 t (2025e); no element split
+Hf               3              3      1.000   not reported   'World primary hafnium production data and quantitative estimates of hafnium reserves were
+Ag           0.075          0.075      1.000          26000   silver mine (content)
+In            0.25           0.25      1.000           1100   byproduct of zinc; refinery capacity 1700 t
+Dy             5.2            5.2      1.000   not reported   as Gd
+Eu               -              2          -   not reported   as Gd
+Sm               -           7.05          -   not reported   as Gd
+Li              20             20      1.000         290000   lithium mine (content)
+C                -            200          -        1800000   natural graphite only (excludes synthetic graphite and carbon in fuels/steel)
+Al           82300          82300      1.000       74000000   primary aluminum smelter
+Fe           56300          56300      1.000     1300000000   raw steel 1900 Mt; usable iron ore 2600000 kt (iron content 1600000 kt)
+Cu              60             60      1.000       23000000   refinery 29000 kt
+Ni               -             84          -        3900000   nickel mine (content)
+Co              25             25      1.000         310000   cobalt mine (content)
+W             1.25           1.25      1.000          85000   tungsten mine (content)
+Pb              14             14      1.000        4500000   lead mine (content)
+Sn             2.3            2.3      1.000         290000   tin mine (content)
+Bi               -         0.0085          -          16000   bismuth refinery
+Pt           0.005          0.005      1.000            170   palladium 190000 kg
+Ir           0.001          0.001      1.000   not reported   iridium appears only in US price/trade tables in the PGM chapter
+Nd            41.5           41.5      1.000   not reported   as Gd; REO total 390000 t
+
+Planner values vs secondary C1 (info; the planner's values are consistent with this column wherever both exist):
+   (no differences > 1% for the 18 elements with both values)
+  [PASS] B more abundant than Cd, Ag, In, Hf, Gd (planner values): B/Cd = 66.7, B/Ag = 133, B/In = 40, B/Hf = 3.33, B/Gd = 1.61
+  [PASS] B more abundant than Cd, Ag, In, Hf, Gd (secondary C1): B/Cd = 66.7, B/Ag = 133, B/In = 40, B/Hf = 3.33, B/Gd = 1.61
+
+Abundance ordering (secondary C1, descending): Al > Fe > C > Ni > Cu > Nd > Co > Li > Pb > B > Sm > Gd > Dy > Hf > Sn > Eu > W > In > Cd > Ag > Bi > Pt > Ir
+
+Extra: production rank among elements with a world total (t/yr, descending):
+   Fe 1.3e+09, Al 7.4e+07, Cu 2.3e+07, Pb 4.5e+06, Ni 3.9e+06, C 1.8e+06, Co 3.1e+05, Sn 2.9e+05, Li 2.9e+05, W 8.5e+04, Ag 2.6e+04, Cd 2.3e+04, Bi 1.6e+04, In 1.1e+03, Pt 170
+   Scarce-input note (G3.9): world production of Ag 26000 t, In 1100 t, Cd 23000 t; Hf and individual rare earths (Gd, Dy, Eu, Sm) have no USGS world figure (REO total 390000 t); boron has no world total either (borate deposits, Turkey alone 1.5 Mt refined borates).
+   Boron is a non-scarce input only in the sense of crustal abundance (10 mg/kg); the USGS data show borates concentrated in few countries (Turkey, Chile, Bolivia, China, Peru, Argentina). Enriched B-10 is not covered by USGS data.
+FAILED CHECKS: none

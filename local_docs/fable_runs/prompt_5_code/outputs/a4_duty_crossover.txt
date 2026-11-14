@@ -1,0 +1,54 @@
+INPUTS: sigma_Cu 5.80e7, sigma_Al 3.54e7 S/m; rho_Cu 8960, rho_Al 2700 (MEMORY). Lookup sources: ICE v2.0 summary tables (Hammond and Jones 2011), Nuss and Eckelman 2014 SI Table S38, access 2026-11-14
+
+CASE MEMORY primary/primary 200/55: e*rho Al=5.400e+11, Cu=4.928e+11 J/m3
+  no crossover expected (e_g rho_g >= e_s rho_s); Delta Sigma > 0 on whole grid: True -> PASS; (sweep cannot bracket a crossover: none exists)
+
+CASE MEMORY secondary Al 20 / primary Cu 55: e*rho Al=5.400e+10, Cu=4.928e+11 J/m3
+  analytic (J^2 tau)* = 3.9865e+19 A2 s/m4 ; max rel. deviation of brentq crossover over J grid = 5.48e-14
+  at J=1 A/mm2: tau* = 3.986e+07 s (1.26 full-load years); sweep brackets the crossover (tau in [1e5,1e9]) at 34 of 41 J values; at the others the crossover tau lies outside the tau range
+  CHECK crossover vs analytic +-5%: PASS
+  CHECK (J^2 tau)* vs spec 4.0e19 +-5%: 3.986e+19 -> PASS
+  D = (J/J*)^2 at crossover = 1.395 (analytic (1-x)/(sigma_s/sigma_g-1) with x=0.110); Al loses for D > 1.395
+  CHECK 'D must exceed 1 wherever Al loses' -> PASS
+
+CASE ICE primary/primary 218/57: e*rho Al=5.886e+11, Cu=5.107e+11 J/m3
+  no crossover expected (e_g rho_g >= e_s rho_s); Delta Sigma > 0 on whole grid: True -> PASS; (sweep cannot bracket a crossover: none exists)
+
+CASE ICE secondary Al 29.0 / primary Cu 57: e*rho Al=7.830e+10, Cu=5.107e+11 J/m3
+  analytic (J^2 tau)* = 3.9285e+19 A2 s/m4 ; max rel. deviation of brentq crossover over J grid = 4.67e-14
+  at J=1 A/mm2: tau* = 3.929e+07 s (1.24 full-load years); sweep brackets the crossover (tau in [1e5,1e9]) at 35 of 41 J values; at the others the crossover tau lies outside the tau range
+  CHECK crossover vs analytic +-5%: PASS
+  D = (J/J*)^2 at crossover = 1.326 (analytic (1-x)/(sigma_s/sigma_g-1) with x=0.153); Al loses for D > 1.326
+  CHECK 'D must exceed 1 wherever Al loses' -> PASS
+
+CASE ICE secondary/secondary 29.0/16.5: e*rho Al=7.830e+10, Cu=1.478e+11 J/m3
+  analytic (J^2 tau)* = 6.3177e+18 A2 s/m4 ; max rel. deviation of brentq crossover over J grid = 5.46e-14
+  at J=1 A/mm2: tau* = 6.318e+06 s (0.20 full-load years); sweep brackets the crossover (tau in [1e5,1e9]) at 39 of 41 J values; at the others the crossover tau lies outside the tau range
+  CHECK crossover vs analytic +-5%: PASS
+  D = (J/J*)^2 at crossover = 0.737 (analytic (1-x)/(sigma_s/sigma_g-1) with x=0.530); Al loses for D > 0.737
+  CHECK 'D must exceed 1 wherever Al loses' -> FAIL (Al loses for D between 0.74 and 1 as well)
+
+CASE Nuss primary/primary 194/59.3: e*rho Al=5.238e+11, Cu=5.313e+11 J/m3
+  analytic (J^2 tau)* = 6.8392e+17 A2 s/m4 ; max rel. deviation of brentq crossover over J grid = 5.55e-14
+  at J=1 A/mm2: tau* = 6.839e+05 s (0.02 full-load years); sweep brackets the crossover (tau in [1e5,1e9]) at 29 of 41 J values; at the others the crossover tau lies outside the tau range
+  CHECK crossover vs analytic +-5%: PASS
+  D = (J/J*)^2 at crossover = 0.022 (analytic (1-x)/(sigma_s/sigma_g-1) with x=0.986); Al loses for D > 0.022
+  CHECK 'D must exceed 1 wherever Al loses' -> FAIL (Al loses for D between 0.02 and 1 as well)
+
+CASE Nuss old-scrap Al 23.8 / primary Cu 59.3: e*rho Al=6.426e+10, Cu=5.313e+11 J/m3
+  analytic (J^2 tau)* = 4.2433e+19 A2 s/m4 ; max rel. deviation of brentq crossover over J grid = 5.91e-14
+  at J=1 A/mm2: tau* = 4.243e+07 s (1.34 full-load years); sweep brackets the crossover (tau in [1e5,1e9]) at 34 of 41 J values; at the others the crossover tau lies outside the tau range
+  CHECK crossover vs analytic +-5%: PASS
+  D = (J/J*)^2 at crossover = 1.377 (analytic (1-x)/(sigma_s/sigma_g-1) with x=0.121); Al loses for D > 1.377
+  CHECK 'D must exceed 1 wherever Al loses' -> PASS
+
+CASE Nuss secondary/secondary 23.8/28.1: e*rho Al=6.426e+10, Cu=2.518e+11 J/m3
+  analytic (J^2 tau)* = 1.7036e+19 A2 s/m4 ; max rel. deviation of brentq crossover over J grid = 4.11e-14
+  at J=1 A/mm2: tau* = 1.704e+07 s (0.54 full-load years); sweep brackets the crossover (tau in [1e5,1e9]) at 38 of 41 J values; at the others the crossover tau lies outside the tau range
+  CHECK crossover vs analytic +-5%: PASS
+  D = (J/J*)^2 at crossover = 1.167 (analytic (1-x)/(sigma_s/sigma_g-1) with x=0.255); Al loses for D > 1.167
+  CHECK 'D must exceed 1 wherever Al loses' -> PASS
+
+NOTE: the sweep is deterministic arithmetic of the closed-form crossover, so brentq vs analytic is a numerical-root check, not independent physics.
+D-check: D at crossover = (1-x)/(sigma_s/sigma_g-1), x = e_g rho_g/(e_s rho_s); D>1 iff x < 0.362 (sigma_Cu/sigma_Al = 1.638) -- the plan's claim holds only for x < 0.362.
+OVERALL PARTIAL/FAIL (2 checks failed)

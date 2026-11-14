@@ -1,0 +1,7 @@
+# source: NONE READ. Spec names Ellmer 2012 Nature Photonics 6, 809-817 (https://www.nature.com/articles/nphoton.2012.282), paywalled; only title/abstract page seen, no numbers. 
+# These values are the planner's UNSURE range endpoints from the spec (row T1): NOT A LOOKUP.
+# access date of the publisher page: 2026-11-14
+case,rho_ohm_m,t_nm,T_visible
+best,1.0e-6,200,0.90
+mid,1.5e-6,150,0.875
+worst,2.0e-6,100,0.85

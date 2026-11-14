@@ -1,0 +1,74 @@
+== A. Revised gate (answer section 8), own encoding of the 18 Note J1 cases ==
+
+reading A (literal; route passes step 4 only if all its prices <= 1)
+   1 photon 100 keV, mass cap 3x (C for W)         -> I   (step 4)  plan expected I    S4 I   
+   2 photon 1 MeV, mass cap 3x, thickness free     -> II  (step 5)  plan expected II   S4 II  
+   3 photon 1 MeV, thickness cap 3x                -> I   (step 4)  plan expected I    S4 I   
+   4 thermal neutron, thin sheet (Al or C for Cd or B) -> U   (step 4)  plan expected I    S4 U   
+   5 bulk neutron shield, thickness free           -> II  (step 5)  plan expected II   S4 II  
+   6 black absorber, tau >= 3 both                 -> II  (step 4)  plan expected II   S4 II  
+   7 storage 1 h, mass cap 2x (DL for Li-ion)      -> I   (step 4)  plan expected I    S4 I   
+   8 storage 5 s pulses, 1e6 cycles (g, s not named) -> U   (step 1)  plan expected II   S4 U   
+   9 primary cell vs DL capacitor                  -> I   (step 2)  plan expected I    S4 I   
+  10 magnet, volume cap 2x (ferrite for NdFeB)     -> I   (step 4)  plan expected I    S4 I   
+  11 magnet, volume free, field below H_cJ         -> II  (step 5)  plan expected II   S4 II  
+  12 magnet, T_op above Curie of g                 -> I   (step 2)  plan expected I    S4 I   
+  13 DC busbar, cross-section free                 -> II  (step 5)  plan expected II   S4 II  
+  14 slot winding, 'within T limit'                -> U   (step 4)  plan expected II   S4 U   
+  15 slot winding, 'loss <= incumbent loss'        -> I   (step 4)  plan expected I    S4 I   
+  16 air-cooled sink, short fins (Al for Cu)       -> U   (step 4)  plan expected II   S4 U   
+  17 OER in acid (Ni-Fe for Ir oxide)              -> U   (step 2)  plan expected I    S4 U   
+  18 flow manifold, viscous loss                   -> N   (step 1)  plan expected N    S4 N   
+  tally: {'expected': 13, 'U': 5, 'opposite': 0, 'differs_from_S4': 0}
+
+reading B ('some route with pi <= 1' read per quantity; case 4 'thin' = thickness cap 3x; case 10 field threshold activated without datum)
+   1 photon 100 keV, mass cap 3x (C for W)         -> I   (step 4)  plan expected I    S4 I   
+   2 photon 1 MeV, mass cap 3x, thickness free     -> II  (step 5)  plan expected II   S4 II  
+   3 photon 1 MeV, thickness cap 3x                -> I   (step 4)  plan expected I    S4 I   
+   4 thermal neutron, thin sheet (Al or C for Cd or B) -> I   (step 4)  plan expected I    S4 U   <-- differs from S4
+   5 bulk neutron shield, thickness free           -> II  (step 5)  plan expected II   S4 II  
+   6 black absorber, tau >= 3 both                 -> II  (step 4)  plan expected II   S4 II  
+   7 storage 1 h, mass cap 2x (DL for Li-ion)      -> I   (step 4)  plan expected I    S4 I   
+   8 storage 5 s pulses, 1e6 cycles (g, s not named) -> U   (step 1)  plan expected II   S4 U   
+   9 primary cell vs DL capacitor                  -> I   (step 2)  plan expected I    S4 I   
+  10 magnet, volume cap 2x (ferrite for NdFeB)     -> U   (step 2)  plan expected I    S4 I   <-- differs from S4
+  11 magnet, volume free, field below H_cJ         -> II  (step 5)  plan expected II   S4 II  
+  12 magnet, T_op above Curie of g                 -> I   (step 2)  plan expected I    S4 I   
+  13 DC busbar, cross-section free                 -> II  (step 4)  plan expected II   S4 II  
+  14 slot winding, 'within T limit'                -> U   (step 4)  plan expected II   S4 U   
+  15 slot winding, 'loss <= incumbent loss'        -> I   (step 4)  plan expected I    S4 I   
+  16 air-cooled sink, short fins (Al for Cu)       -> II  (step 4)  plan expected II   S4 U   <-- differs from S4
+  17 OER in acid (Ni-Fe for Ir oxide)              -> U   (step 2)  plan expected I    S4 U   
+  18 flow manifold, viscous loss                   -> N   (step 1)  plan expected N    S4 N   
+  tally: {'expected': 14, 'U': 4, 'opposite': 0, 'differs_from_S4': 3}
+
+== B. Mixed compensation routes: the gate's step 4 tests one route at a time ==
+  incumbent Cu fin: h = 50 W/m2K, L = 30 mm, t = 1 mm: q'/theta_b = 2.7936 W/(m K)
+  Al(200) single routes at equal function: thickness only pi_t = 2.0000 (height fixed); height only pi_L = 1.0921 (thickness fixed); same geometry pi_F = 1.0668
+  scenario: thickness cap 1.50x, height cap 1.05x, no requirement margin (slack_F = 1)
+  gate, answer step 4: thickness route 2.000 > 1.50, height route 1.092 > 1.05, same-geometry route 1.067 > 1 -> every route fails -> Class I
+  combined design t = 1.50x, L = 1.05x: q'_g/q'_s = 1.0178 (>= 1 means feasible); fin volume 1.575x; fin mass 0.475x of Cu (rho 2700/8960)
+  => a constrained comparison finds a feasible g that the gate classified Class I. G4.3 ('same result as a constrained Sigma comparison') fails for the gate as worded.
+  caps strictly below both single-route prices: 25113 of 39204 (t, L) cap pairs admit a combined feasible design (64%)
+
+== C. Dependence on the Sigma_init currency (answer G2.3, G2.6) ==
+  break-even e_Al/e_Cu = 2.0254
+  ICE virgin 218/57.0                      e-ratio 3.825  Sigma ratio 1.374  Al loses  relative change of the e-ratio that flips it: -47%  
+  Nuss primary 194/59.3                    e-ratio 3.272  Sigma ratio 1.271  Al loses  relative change of the e-ratio that flips it: -38%  
+  Nuss mix 131/53.7                        e-ratio 2.439  Sigma ratio 1.097  Al loses  relative change of the e-ratio that flips it: -17%  
+  ICE recycled Al / virgin Cu 29.0/57.0    e-ratio 0.509  Sigma ratio 0.501  Al wins  relative change of the e-ratio that flips it: +298%  [asymmetric supply route: Al recycled, Cu primary]
+  Nuss old scrap / primary 23.8/59.3       e-ratio 0.401  Sigma ratio 0.445  Al wins  relative change of the e-ratio that flips it: +405%  [asymmetric supply route: Al recycled, Cu primary]
+  ICE recycled/recycled 29.0/16.5          e-ratio 1.758  Sigma ratio 0.932  Al wins  relative change of the e-ratio that flips it: +15%  
+  Nuss secondary/secondary 23.8/28.1       e-ratio 0.847  Sigma ratio 0.647  Al wins  relative change of the e-ratio that flips it: +139%  
+  symmetric-route Sigma ratios with secondary metal: 0.932 (ICE), 0.647 (Nuss); asymmetric pairs used in R1: 0.501, 0.445
+  G2.6 Pt TOTAL     d_eta_be = 0.844 mV; factor on e_x to reach 30 mV: 35.6
+  G2.6 Pt ZA        d_eta_be = 1.069 mV; factor on e_x to reach 30 mV: 28.1
+  G2.6 Pt RU        d_eta_be = 1.135 mV; factor on e_x to reach 30 mV: 26.4
+  G2.6 Pt RU 97.5%  d_eta_be = 1.493 mV; factor on e_x to reach 30 mV: 20.1
+  The gate of section 8 takes no Sigma_init input (inputs a-f), so its class does not depend on the currency;
+  only the hand-off (who wins in Class II) does.
+
+== D. G2.7 heat pipe under the fairness rule (numbers from outputs/p1_heat_pipe.txt) ==
+  answer compares pipe with solid Cu: 282x, 268x, 120x
+  fair comparison (incumbent may use the same pipe geometry): k_eff(k_wall)/k_eff(Cu wall): 200 -> 0.947, 16 -> 0.425
+  i.e. a series-resistance dilution (regime R2, penalty phi*(kappa-1)), not a separate door; water/Al exclusion leaves steel (0.425).

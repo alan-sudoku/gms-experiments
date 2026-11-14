@@ -1,0 +1,62 @@
+N3 LOOKUP: sigma_a <- outputs/n1_values.csv (Sears 1992 Table 1 via NIST NCNR; ENDF/B-VII.1 via NNDC Sigma); molar masses <- data/nist_atomic_weights.csv (NIST/IUPAC, midpoint of interval where given)
+  A_r: B 10.8135  C 12.0106  Fe 55.845  Cd 112.414  Gd 157.25
+  MEMORY densities (g/cm3): Cd 8.65, B4C 2.52, Gd 7.90, steel 7.8
+
+--- Sweep tau = 1e-3 .. 1e2 (E3 via scipy.special.expn) ---
+  tau        P          f=P/(2 tau)
+  0.001    0.001992   0.996085
+  0.01     0.019447   0.972344
+  0.1      0.167417   0.837085
+  0.3      0.399916   0.666527
+  1        0.780616   0.390308
+  3        0.982139   0.163690
+  10       0.999993   0.050000
+  100      1.000000   0.005000
+  [PASS] f monotonic decreasing over the sweep: f(1e-3)=0.996085 f(1e2)=0.005000
+  [PASS] limit P -> 2 tau at tau=1e-3 within 0.5% (Cauchy chord 4V/S = 2t): P/(2 tau) = 0.996085
+  [PASS] black limit P -> 1 at tau=100 (1e-9): 1-P = 0.00e+00
+  [PASS] scipy expn(3,2.5) vs direct quadrature of int_0^1 u exp(-x/u) du (1e-10): 0.016295369377 vs 0.016295369377
+  tau at which a slab absorbs 90% of an isotropic flux: 1.5985 (f=0.2815)
+  black criterion check: P(tau=3) = 0.9821
+
+--- Monte Carlo (cosine-law, 1000000 samples, seed 20261114) vs 1-2E3 ---
+  21 tau values (1e-3..1e2): max |z| = 1.03, 0 outside 3 sigma (chance ~0.06)
+   tau=0.001  MC 0.001995 +- 3.0e-06  analytic 0.001992
+   tau=1      MC 0.780640 +- 1.1e-04  analytic 0.780616
+   tau=10     MC 0.999993 +- 1.1e-08  analytic 0.999993
+  [PASS] MC vs 1-2E3 within 3 sigma at all tau (<=1 chance excursion): 0/21
+
+=== sigma_a source: Sears 1992 (primary) ===
+  B4C boron mass fraction w_B = 0.78267
+  material                    Sigma_a    planner  vs UNSURE (+-5% band shown)
+  Cd metal                     116.8 /cm      117   -0.2%  [sigma_a = 2520 b]
+  natural B4C (B only)         84.25 /cm       84   +0.3%  [sigma_a = 767 b]
+  Gd metal                      1504 /cm     1480   +1.6%  [sigma_a = 49700 b]
+  steel 1 wt% B (B only)       3.332 /cm      3.3   +1.0%  [sigma_a = 767 b]
+  thickness at f = 0.9 and f = 0.5 (brentq on f(tau)-f0, bracket [1e-3,1e2] contains both: f(1e-3)=0.9961 > f0 > f(1e2)=0.0050):
+   Cd metal                 tau(f=0.9)=0.0511 -> t = 0.004376 mm; tau(f=0.5)=0.6364 -> t = 0.0545 mm
+   natural B4C (B only)     tau(f=0.9)=0.0511 -> t = 0.006066 mm; tau(f=0.5)=0.6364 -> t = 0.07554 mm
+   Gd metal                 tau(f=0.9)=0.0511 -> t = 0.0003399 mm; tau(f=0.5)=0.6364 -> t = 0.004233 mm
+   steel 1 wt% B (B only)   tau(f=0.9)=0.0511 -> t = 0.1534 mm; tau(f=0.5)=0.6364 -> t = 1.91 mm
+   f for 1 mm Cd: tau = 11.677, P = 1.00000, f = 0.04282
+
+=== sigma_a source: ENDF/B-VII.1 at 0.0253 eV (comparison) ===
+  B4C boron mass fraction w_B = 0.78267
+  material                    Sigma_a    planner  vs UNSURE (+-5% band shown)
+  Cd metal                     113.5 /cm      117   -3.0%  [sigma_a = 2448.7 b]
+  natural B4C (B only)         84.45 /cm       84   +0.5%  [sigma_a = 768.82 b]
+  Gd metal                      1477 /cm     1480   -0.2%  [sigma_a = 48810 b]
+  steel 1 wt% B (B only)        3.34 /cm      3.3   +1.2%  [sigma_a = 768.82 b]
+  thickness at f = 0.9 and f = 0.5 (brentq on f(tau)-f0, bracket [1e-3,1e2] contains both: f(1e-3)=0.9961 > f0 > f(1e2)=0.0050):
+   Cd metal                 tau(f=0.9)=0.0511 -> t = 0.004504 mm; tau(f=0.5)=0.6364 -> t = 0.05609 mm
+   natural B4C (B only)     tau(f=0.9)=0.0511 -> t = 0.006052 mm; tau(f=0.5)=0.6364 -> t = 0.07536 mm
+   Gd metal                 tau(f=0.9)=0.0511 -> t = 0.0003461 mm; tau(f=0.5)=0.6364 -> t = 0.00431 mm
+   steel 1 wt% B (B only)   tau(f=0.9)=0.0511 -> t = 0.153 mm; tau(f=0.5)=0.6364 -> t = 1.906 mm
+   f for 1 mm Cd: tau = 11.347, P = 1.00000, f = 0.04407
+
+Universal values: tau(f=0.9) = 0.05110, tau(f=0.5) = 0.63644 (independent of material)
+  [PASS] planner Sigma_a: Cd ~117, B4C ~84, borated steel ~3.3 (each within 5% of the UNSURE value, Sears sigma): see table above
+  Gd metal Sigma_a: planner ~1480; Sears-based value 1503.6 is +1.6% from it
+
+Black absorbers (tau >= 3 : P >= 0.982): 1 mm Cd tau = 11.7, 1 mm B4C tau = 8.4, 1 mm Gd tau = 150.4, 1 mm borated steel tau = 0.33
+FAILED CHECKS: none

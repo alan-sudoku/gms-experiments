@@ -1,0 +1,23 @@
+LOOKUP (Cengel and Cimbala 2014, Table A-3, 60 C; substitute for Incropera Table A.6): rho_l=983.3 sigma_l=0.0662 hfg=2.359e+06 mu_l=0.000467
+planner UNSURE expected: rho 983, sigma 0.066, hfg 2.36e6, mu 4.7e-4 -> all four inside (983.3; 0.0662; 2.359e6; 4.67e-4)
+merit number = 3.2882e+11 W/m2 (expected ~3.3e11)
+  CHECK merit ~3.3e11 within 5%: PASS 
+geometry: ID=5.4 mm vapour dia=4.40 mm A_w=7.697 mm2 A_x=28.27 mm2 A_e=565.5 mm2
+Q_max (K=5e-11, r=30 um, L_eff=0.15) = 56.2 W (expected 10-100)
+  CHECK Q_max in 10-100 W: PASS 
+sweep Q_max: min 0.0506 W (K=1e-12,r=200um,L=0.5) max 2.02e+04 W (K=1e-9,r=5um,L=0.05); fraction of grid within 10-100 W: 0.32
+sweep status: Q_max is a monotone power-law in K, 1/r, 1/L (no crossover); the sweep brackets 10-100 W (grid spans below and above) but nothing else.
+wall share (k_wick=40) and k_eff:
+  k_wall=400: R_wall/end=1.3263e-03 K/W R_wick/end=2.2105e-02 K/W wall share=5.7%  k_eff=1.13e+05 W/mK (283x Cu 400); dT at Q0=2.64 K
+  k_wall=200: R_wall/end=2.6526e-03 K/W R_wick/end=2.2105e-02 K/W wall share=10.7%  k_eff=1.07e+05 W/mK (268x Cu 400); dT at Q0=2.78 K
+  CHECK wall share < 20% for k_wall=200: PASS 10.7%
+  CHECK k_eff >= 10x 400 W/mK: PASS 1.07e+05
+  k_wall=16: R_wall/end=3.3157e-02 K/W R_wick/end=2.2105e-02 K/W wall share=60.0%  k_eff=4.8e+04 W/mK (120x Cu 400); dT at Q0=6.22 K
+note: k_eff = L_eff/(A_x*R_total) does not depend on Q or on K, r_eff; the K/r/L sweep therefore does not change wall share or k_eff (L_eff enters k_eff only linearly).
+note: wall share vs k_wall is mostly set by the wick resistance (k_wick 40, UNSURE); a hotter-wick (k_wick->200) would raise the wall share.
+  sensitivity k_wick=10: wall share (k_wall=200) = 2.9%
+  sensitivity k_wick=40: wall share (k_wall=200) = 10.7%
+  sensitivity k_wick=100: wall share (k_wall=200) = 23.1%
+  sensitivity k_wick=200: wall share (k_wall=200) = 37.5%
+Reay worked example: NOT performed (book not readable).
+FAILS: []

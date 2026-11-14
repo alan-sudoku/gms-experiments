@@ -1,0 +1,7 @@
+# source: LLNL/NCSP, 'Hand Calculation Methods for Nuclear Criticality Safety', Table 2-2 'Values of Fast and Thermal Properties for Selected Moderators' (PDF page 28 of the file; H2O row: L_f 5.2 cm, D_f 1.13 cm, tau ~27 cm2, L_th 2.85 cm, D_th 0.16 cm)
+# url: https://ncsp.llnl.gov/sites/ncsp/files/2023-07/hand_calculation_methods_for_nuclear_criticality_safety_0.pdf (raw copy data/raw/llnl_hand_calc.pdf)
+# edition: file path dated 2023-07; access date 2026-11-14
+# note: NOT Lamarsh and Baratta 2001 (the plan's named source, book not reachable). The table lists no Sigma_a column; Sigma_a = D/L^2 is derived. Table values themselves are textbook-origin (UNSURE which).
+quantity,value,unit
+L_th_H2O,2.85,cm
+D_th_H2O,0.16,cm
