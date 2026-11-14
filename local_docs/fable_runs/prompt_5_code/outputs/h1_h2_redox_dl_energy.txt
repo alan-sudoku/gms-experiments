@@ -1,7 +1,7 @@
 == H1 ==  inputs: n, V (MEMORY), reactant formula, N_at atoms per reactant formula
   4Li+2SOCl2: n=4 V=3.65 M=265.68 g/mol N_at=12  E=1473 Wh/kg (5.302 MJ/kg)  1.217 eV/atom
   Zn+2MnO2: n=2 V=1.5 M=239.25 g/mol N_at=7  E=336 Wh/kg (1.210 MJ/kg)  0.429 eV/atom
-  LiCoO2+3C (0.5 Li): n=0.5 V=3.7 M=133.90 g/mol N_at=6  E=370 Wh/kg (1.333 MJ/kg)  0.308 eV/atom
+  LiCoO2+3C (0.5 Li): n=0.5 V=3.7 M=133.90 g/mol N_at=7  E=370 Wh/kg (1.333 MJ/kg)  0.264 eV/atom
   LiFePO4+6C: n=1 V=3.3 M=229.82 g/mol N_at=13  E=385 Wh/kg (1.385 MJ/kg)  0.254 eV/atom
   Pb+PbO2+2H2SO4: n=2 V=2.05 M=642.54 g/mol N_at=18  E=171 Wh/kg (0.616 MJ/kg)  0.228 eV/atom
   Li/SOCl2 theoretical 1472.8 Wh/kg; reference 1470 (spec: Linden and Reddy Table 1.2, UNSURE) -- NOT A LOOKUP, book not readable;
@@ -9,8 +9,8 @@
   CHECK H1 Li/SOCl2 within 2% of 1470 (reference unverified): PASS dev +0.19%
   CHECK H1 per-atom 1.22 (SOCl2) within 2%: PASS 1.217
   CHECK H1 per-atom 0.43 (Zn/MnO2) within 2%: PASS 0.429
-  UNSURE 0.26 eV expected: LiFePO4 gives 0.254, LiCoO2+3C gives 0.308 (atom basis ambiguous, see issues)
-  CHECK H1 per-atom 0.26 within 2% for LiCoO2 cell: FAIL 0.308
+  UNSURE 0.26 eV expected: LiFePO4 gives 0.254, LiCoO2+3C gives 0.264 (atom basis ambiguous, see issues)
+  CHECK H1 per-atom 0.26 within 2% for LiCoO2 cell: PASS 0.264
   CHECK H1 per-atom 0.26 within 2% for LiFePO4 cell: FAIL 0.254
 
 == H2 ==
@@ -28,4 +28,4 @@
   CHECK H2 ceiling, 2.7 V within 1%... (expected values are 2-sig-fig, tolerance 1% applied to rounded values): PASS 0.06257
   ceiling, 4.0 V: 0.13733 eV/atom (expected 0.14); ratio to H1 Li/SOCl2 per atom 9x, to LiFePO4 1.8x
   CHECK H2 ceiling, 4.0 V within 1%... (expected values are 2-sig-fig, tolerance 1% applied to rounded values): FAIL 0.13733
-FAILS: ['H1 per-atom 0.26 within 2% for LiCoO2 cell', 'H1 per-atom 0.26 within 2% for LiFePO4 cell', 'H2 100 F/g, 1.0 V within 1%... (expected values are 2-sig-fig, tolerance 1% applied to rounded values)', 'H2 100 F/g, 2.7 V within 1%... (expected values are 2-sig-fig, tolerance 1% applied to rounded values)', 'H2 ceiling, 4.0 V within 1%... (expected values are 2-sig-fig, tolerance 1% applied to rounded values)']
+FAILS: ['H1 per-atom 0.26 within 2% for LiFePO4 cell', 'H2 100 F/g, 1.0 V within 1%... (expected values are 2-sig-fig, tolerance 1% applied to rounded values)', 'H2 100 F/g, 2.7 V within 1%... (expected values are 2-sig-fig, tolerance 1% applied to rounded values)', 'H2 ceiling, 4.0 V within 1%... (expected values are 2-sig-fig, tolerance 1% applied to rounded values)']

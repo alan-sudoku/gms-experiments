@@ -42,3 +42,13 @@ Minor findings that matter downstream: an H1 bug (LiCoO₂ + 3C coded as 6 atoms
 - **D4, plan change V15.** Phase 6 "gate rejects the Class I fixtures" becomes: gate fixtures with declared envelopes, plus the out-of-sample test (S5's decisive check) as an open item for GMS-300 acceptance; the external checks above listed as open items, none blocking 0.1.
 - **D5, currency questions.** Add to Prompt 7's block (or a new OQ): primary vs delivered energy for operating electricity (S5 finding 7), and whether a CExC currency prices scarcity at all (G2.6). Prompt 7 is next-but-one in the order.
 - **D6, housekeeping.** Fix `h1_h2_redox_dl_energy.py` (LiCoO₂ + 3C: 7 atoms) with an assert as its regression check, and re-run its output; the answer's G3.10 table and §9 item 20 then read 0.264 for that cell (S5: the range and the gaps are unchanged). Add a `.gitignore` entry for the untracked raw downloads in `prompt_5_code/data/raw/` (textbook scans, papers, standards previews; about 35 MB).
+
+## Decisions recorded (user, 2026-11-15)
+
+D1–D6 accepted as proposed. Recorded:
+
+- D1 → `drafting_notes_0.1.md` §A, E24 (GMS-300).
+- D2, D3 → `orchestrator_state.md` §4, Prompt 5 bullet: GMS-300 brief items (a)–(i), with step 4 as joint feasibility, no default envelope, the gate stated as a feasibility pre-check, the shared-medium case sent to the Σ comparison, per-problem penalty limits, in-sample fixtures; GMS-310 Part A (κ^½ at each metal's own optimum) and Part C (Tafel validity thresholds; E18's scarcity sentence waits for OQ-22).
+- D4 → `plan_v2.md` V15 and the Phase 6 row of §8 (gate fixtures in-sample; out-of-sample test and the external checks as open items for GMS-300 acceptance).
+- D5 → `orchestrator_state.md` §3: S5 finding 7 added to OQ-15 (it is the same mixed-basis question, so it is not repeated in Prompt 7); new OQ-22 (does Σ_init price scarcity; check before the GMS-310 Part C brief). Prompt 7's block is unchanged.
+- D6 → `h1_h2_redox_dl_energy.py` fixed (LiCoO₂ + 3C has 7 atoms; an assert checks every cell's atom count against its formula) and re-run: 0.264 eV/atom, the H1 check for that cell now passes. Erratum lines in `prompt_5_answer.md` (G3.10 table, §9 item 20). `.gitignore` covers the untracked raw downloads in `prompt_5_code/data/raw/`.
