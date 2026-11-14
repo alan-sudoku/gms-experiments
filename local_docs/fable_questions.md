@@ -16,12 +16,15 @@ Picked for: real uncertainty in the project, a high cost if we are wrong, a need
 | 2 | Is the GMS-100 exergy accounting coherent, and which published allocation practice does it match? | Round 2 is the last review before acceptance. Four open questions (OQ-9, OQ-10, OQ-11, b_ch of dispersed material) and the Phase 5 anchoring requirement depend on it. Contains one suspected logic flaw in the recovery test | GMS-100 acceptance, Phase 5 exit |
 | 3 | Lattice fatigue micromechanics (plan Q2, E2, E3) | Named blocker for GMS-220 `active`; needs a structural-mechanics specialist we do not have | GMS-220 `active`, fatigue-based scenarios |
 | 4 | (optional) Red-team the breakeven solver lemmas | Executable tests (SymPy, hypothesis) are a cheaper route to `cross-checked`. Use leftover budget only | GMS-400 brief |
+| 5 | Is the Class I / Class II demarcation sound and decidable? | The framework's central claim, and the gate decides which scenarios reach the solver. Prompts 1a and 1b found no Class II case where geometry beats the incumbent under the fairness rule (E19). Class I examples look regime-dependent (photon attenuation in the Compton regime; shape anisotropy in magnets). GMS-300 is not drafted | W2b GMS-300 brief, GMS-500, every scenario |
+| 6 | How do several degradation mechanisms combine (OQ-20)? | Rates are summed and τ_wearout is the minimum over fatigue load cases with no Miner summation (GMS-220); interacting mechanisms (corrosion fatigue, scale cracking, section loss) may make both non-conservative, and the error direction differs per side | GMS-400 and GMS-500 briefs, OQ-20 owner |
+| 7 | (narrow) Which entropy currency across environments (OQ-13)? | E15 uses one evaluation T₀; the alternative divides each loss by its own T₀. They disagree in about 5 % of random cases; a choice of currency that computation cannot settle | GMS-100 revision if OQ-13 flips, any off-Earth scenario |
 
 Not worth the window: drafting the 11 documents, writing lints or test boilerplate (the `AI_value_work.md` items 1, 4 and 5). Our own pipeline already does these, and `spec_lint` exists.
 
 Use one fresh conversation per prompt. Paste the prompt as written; each is self-contained.
 
-**Run order:** 1a (done), then 2, 1b, 3; 4 only with leftover budget. The order follows the drafting loop; see `local_docs/orchestration/fable_delegation_plan.md` §4.
+**Run order:** 1a (done), then 2, 1b, 3; 4 only with leftover budget. The order follows the drafting loop; see `local_docs/orchestration/fable_delegation_plan.md` §4. Prompts 5–7 added 2026-11-14 (user); proposed order 5, 6, 7, each before the brief it feeds (5 before GMS-300, 6 before GMS-400 and GMS-500; 7 is a low-budget run, §5.1 style).
 
 **Weighing 1a:** the suspicion stated in it is our own unverified reasoning, and its numbers can be checked without the model (a 2-D electromagnetic simulation of the A3 cases). The model's value there is whether any regime or fairer comparison rescues the claim, the correct restated claim, and a falsifying test we can run.
 
@@ -180,4 +183,101 @@ Claims:
  C5. Interval screening: if f is evaluated at a "pessimistic" corner (each coefficient at the bound worst for geometry) and an "optimistic" corner, then winning set(pessimistic) ⊆ winning set(any input in the box) ⊆ winning set(optimistic). Is f monotone in every coefficient (a, K_g, K_s, d₀, R_g, τ_w, λ) pointwise in τ, including across segment boundaries where m changes with τ_w?
 
 For each claim: proof sketch or counterexample, and any edge case (K_g = 0, a = 0, τ < τ_w, ties at τ = j·τ_w) where it fails.
+```
+
+---
+
+## Prompt 5: Class I / Class II demarcation (GMS-300 gate)
+
+Written 2026-11-14. Feeds the GMS-300 brief (W2b). The "findings so far" paragraph summarises Prompts 1a and 1b (`fable_runs/prompt_1a_synthesis.md`, `prompt_1b_synthesis.md`) and E19; it is our own unverified analysis and is stated as such in the prompt.
+
+```text
+You are reviewing the central demarcation claim of an engineering framework. I want an adversarial, quantitative assessment, not encouragement. Treat everything below as an unverified claim.
+
+FRAMEWORK. A candidate "architected geometry" g (e.g. an additively manufactured lattice of common elements) is compared with an incumbent solid material s that contains a scarce element x. The comparison is total entropy generation over the service life, in J/K: Σ = Σ_init + Σ̇·τ + replacement and degradation terms + Σ_EOL, with operational terms Σ̇ = (power dissipated)/T₀. Comparisons are made at equal function. Fairness rule: any design feature that does not depend on removing x (cross-section shape, connection topology, transposition, wall thickness) is available to the incumbent too.
+
+GATE (unverified). Before any comparison a function is classified.
+ Class I, "intrinsic invariants": geometry cannot substitute; x is retained. Examples given:
+  (1) resonant neutron capture cross-section σ_n(E) (B-10, Cd, Gd versus C or Al);
+  (2) photon attenuation by the core-electron photoeffect, μ/ρ ∝ Z⁴/E³: "attenuating 100 keV photons with low-Z carbon metamaterials needs 25–30× the mass of tungsten";
+  (3) primary-cell energy density set by valence redox (1–4 eV/atom) versus double-layer capacitance (about 0.002 eV/atom);
+  (4) spontaneous exchange coupling J_ex (magnetism), listed without detail.
+ Class II, "transport extremals": geometry can substitute. Examples given: thermal resistance (Fourier), viscous dissipation (Navier–Stokes), AC skin-depth crowding (Maxwell), local overpotential and current density (electrocatalysis).
+ Findings so far (our own analyses, unverified): in three Class II cases (AC busbar, Al lattice versus Cu; air-cooled heat sink, additively manufactured Al lattice versus Cu fins; NiFe foam versus Pt or Ir-oxide catalysts) the geometric candidate did not beat the incumbent at equal function once the incumbent could use the same geometry. Where geometry helped, the benefit was open to either material, or was paid for in operating work (fan power), or the chemistry was not like-for-like.
+
+QUESTIONS
+ G1. Is "transport-governed" a sound criterion for substitutability? State a test that can be decided from the governing equations and constitutive coefficients, for example: is the performance limit set by an intrinsic coefficient that enters the figure of merit with no geometric compensation, or by boundary shape? For each Class II domain, say when geometry can compensate a lower coefficient (k, σ_el, j₀) and at what price (mass, volume, pumping work, ohmic or mass-transport loss), with the scaling law of that price.
+ G2. Under the fairness rule, does Class II substitution ever pay? Give the regimes, if any, where geometry lets a less scarce element match a scarcer one while the incumbent is free to use the same geometry, with an order-of-magnitude example for each. If there are none, say so, and state what remains of Class II (for example geometry as a way to use less of x rather than to replace it).
+ G3. Check each Class I example.
+  (2) Give the mass attenuation ratio W versus C at 100 keV, 500 keV, 1 MeV and 5 MeV, and say where Class I membership fails.
+  (1) Can geometry (moderation, self-shielding, spectral shaping) change how much resonant absorber is needed, and which element is actually the scarce one in typical absorber choices?
+  (3) Is EDLC versus intercalation a geometry question at all?
+  (4) Coercivity and energy product depend partly on microstructure and shape anisotropy (e.g. Alnico, nanocomposite exchange-spring magnets). Which part of the magnetic function is invariant and which is geometric?
+ G4. Should the gate classify a (function, operating regime) pair instead of a function? Propose the gate as a decision procedure of at most 5 steps, each checkable from inputs a scenario can supply, with three outcomes: Class I (retain x), Class II (compare), out of scope.
+ G5. Verdict: valid / valid with restated scope / invalid, and the restated demarcation in at most 3 sentences.
+
+OUTPUT FORMAT
+- Numbered claims (G1.1, G1.2, ...). For each: the claim; equation in plain text with SI units where relevant; confidence (high/medium/low); the computation or experiment that would falsify it.
+- Citations only with author, year, title, and equation, table or page number. For attenuation data name the table you rely on and mark values quoted from memory UNSURE. Do not invent references.
+- Finish with the verdict paragraph and the proposed gate procedure.
+```
+
+---
+
+## Prompt 6: combining degradation mechanisms (OQ-20)
+
+Written 2026-11-14. Feeds the GMS-400 and GMS-500 briefs and the choice of owner for OQ-20. The model summarised in the prompt is GMS-220 (rates summed over load cases; τ_wearout the minimum over load cases, no Miner summation) and GMS-230 (parabolic and linear terms; paralinear sum as an upper bound; feature loss by recession not modelled).
+
+```text
+Assess how several degradation mechanisms should be combined in a lifecycle comparison model. Treat all formulas below as unverified, and be adversarial toward them.
+
+SETTING. One unit of a part is in service from age 0. There are two sides: a candidate geometry g and an incumbent material s; each has its own unit. The lifetime cost of each side, in entropy generation (J/K), contains irreversibility rates and a wearout life (after which the unit is replaced by a new one and every clock restarts). Mechanisms are modelled separately:
+ - Oxidation (parabolic): metal recession h = sqrt(2·k_p·t_age); each mole of metal consumed costs b_degrad/T₀, giving Σ_ox = K_ox·sqrt(t_age), K_ox in J/K/s^0.5. Scales on separate parts of the surface: coefficients K summed. Paralinear case (scale grows and is lost at a constant rate): the parabolic and linear terms are summed as an upper bound.
+ - Active corrosion (linear): h = r_corr·t_age; constant rate Σ̇_corr.
+ - Cyclic loading: hysteresis dissipation Σ̇_fat = Σ_l ν_l·V·ψ·σ_a,l²/(2·E·T₀), summed over load cases l (valid for distinct frequencies or uncorrelated loads). Life per load case from Basquin, σ_a = σ_f'·(2N)^b, τ_l = N_l/ν_l. Wearout life τ_wearout = min over load cases; no damage summation.
+ - Transport: steady operational dissipation Σ̇_op = P_loss/T₀ (Joule, pumping, heat transfer).
+ Current combination rule: Σ̇ = Σ̇_corr + Σ̇_fat + Σ̇_op (rates add); oxidation coefficients add; τ_wearout from fatigue only. A feature consumed by recession is called a wearout mechanism but is not modelled. Reaction heat already counted in b_degrad is not counted again as heat-transfer dissipation.
+
+QUESTIONS
+ M1. Additivity of rates. For which pairs is Σ̇_total = Σ_i Σ̇_i exact, a bound (state the direction), or wrong? Consider: (a) operational dissipation that rises as a scale thickens or a section thins (time-dependent electrical or contact resistance, fouling); (b) hysteresis that rises with fatigue damage; (c) scale cracking or spallation under cyclic strain (breakaway, parabolic turning linear); (d) temperature coupling (dissipation heats the part; k_p and r_corr are Arrhenius). Give the coupled form where it matters and a criterion for when the sum is adequate.
+ M2. Wearout under several mechanisms. Is the minimum over load cases acceptable, or is linear damage summation (Palmgren–Miner) needed, and how far off can each be? Then interacting mechanisms: corrosion fatigue, oxidation-assisted crack initiation, section loss raising the stress amplitude (σ_a ∝ 1/(h₀ − h(t)) for a wall of thickness h₀), an environment that removes the fatigue limit. Give a screening rule for τ_wearout and quantify how non-conservative "minimum of separate mechanisms" can be (factor on life) in one worked example with stated inputs (e.g. an aluminium alloy in humid or saline air, σ_a near the endurance level, r_corr = 1–10 µm/year, wall or strut thickness 0.3–3 mm).
+ M3. Direction of error per side. The verdict compares g with s, so an error that is conservative for one side is non-conservative for the comparison when it hits the other. For each simplification above, say which side it favours, and whether a construction with an upper bound for g and a lower bound for s is available.
+ M4. Recommend ONE default combination rule for rates and ONE for wearout life for a first edition: validity range, the cases it must reject or flag, and the public dataset or test that would anchor it (for example corrosion-fatigue S–N data in environment versus air; paralinear oxidation data).
+
+OUTPUT FORMAT
+- Numbered claims (M1.1, M1.2, ...). For each: statement; equation in plain text with SI units; confidence (high/medium/low); the test or computation that would falsify it.
+- Worked numbers with all inputs stated, so they can be recomputed.
+- Citations with author, year, title and equation or figure number; mark UNSURE where not certain. Do not invent references.
+- End with "Open points": at most 5 lines.
+```
+
+---
+
+## Prompt 7 (narrow): entropy currency across environments (OQ-13)
+
+Written 2026-11-14. Low-budget run (`fable_delegation_plan.md` §5.1 style: one `fable` agent with no tools, block passed verbatim). Background: E15 (GMS-100) adopted currency (A); OQ-13 keeps (B) open; the 5 % disagreement is from `fable_runs/prompt_2_review_code/rv02_dead_state_currency.py`.
+
+```text
+Answer one narrow thermodynamics question. Work from first principles. Do not use web search, code execution or any other tool. Treat every formula below as unverified, and be adversarial toward it.
+
+SETTING
+A lifecycle comparison ranks two designs by total irreversibility over the service life, reported in J/K. Losses occur in environments with different dead-state temperatures: upstream extraction and manufacturing on Earth (cumulative exergy consumption tabulated at a standard reference environment, T_ref = 298.15 K), and operation elsewhere (for example a spacecraft whose effective environment temperature T₀ is between 150 and 290 K, or a cold climate).
+
+TWO CANDIDATE CURRENCIES (both unverified)
+ (A) Lost-work currency: Σ = Σ_k W_lost,k / T₀,eval, with one evaluation temperature for the whole comparison; upstream losses are lost work at the reference environment of their data source.
+ (B) Entropy currency: Σ = Σ_k W_lost,k / T₀,k = Σ_k S_gen,k, each loss divided by the dead-state temperature of the environment where it occurred (Gouy–Stodola applied per environment).
+ A random-case comparison found that (A) and (B) rank the two designs differently in about 5 % of cases with T₀ between 150 and 290 K.
+
+QUESTION
+ 1. Which quantity, if either, is the meaningful thing to minimise when the purpose is to compare the resource cost of two designs? Distinguish entropy generation from lost work, which depends on the reservoir the work is referred to. In what sense is entropy from different environments commensurable, and lost work not (or the reverse)?
+ 2. Can cumulative exergy consumption tabulated at T_ref be turned into entropy generation by dividing by T_ref, and is adding that to operational S_gen at another T₀ consistent?
+ 3. For each currency, give an example (two designs, stated numbers) where it ranks them in a way that is clearly wrong for a resource comparison, and say why.
+ 4. One-line verdict: which currency for a first edition, its validity range, and when the two differ by enough to flip a verdict.
+
+OUTPUT FORMAT (strict, keep it short)
+- At most 8 numbered claims, most important first, so that a cut-off reply is still useful. Total reply under 1,200 words.
+- Each claim: statement; equation in plain text with SI units; confidence (high / medium / low); one test or computation that would falsify it.
+- Derivations: only the steps needed to check each claim, no general survey.
+- No literature review. If you lean on a known result (Gouy–Stodola, Szargut's cumulative exergy), name it in one line and mark it UNSURE if you are not certain of the exact form. Do not invent references.
+- End with "Open points": at most 3 lines on what this answer could not settle.
 ```
