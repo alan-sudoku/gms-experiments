@@ -1,0 +1,7 @@
+(1) abar = 0 exactly (rational sqrt(tw)), Ks > 0: tau > T0 points tested: 12000 ; f >= 0 found: 0
+    closest approach to 0: max f/(Ks sqrt(tau)) = -9.8733e-22 (must be < 0)
+(2) implementer's part-5 margin |a| 2^-52 tau versus |f| at the tested tau (3000 draws, same strategy shape):
+    median ratio = 1.06e-16, 99th pct = 24.1, max = 5.85e+03; draws with margin >= |f| (assertion vacuous): 263
+(3) tiny |abar| = 1e-1..1e-12 / tw, exact rationals: cases {'loses': 1478, 'wins': 1522} ; verdict violations at targeted tau > T (1+1e-30): 0
+    R = 0, abar > 0: lower bound attained exactly at the tie j tw <= T in 188 cases; f == 0 exactly there (tie at tau = T, not a win, not a loss-violation) in 13 cases
+(4) abar = -1e-263, Ks = 1, c = 1 at 60 digits: textbook root y = 0.0 ; stable root y = 1.0 (true y ~ c/Ks = 1)

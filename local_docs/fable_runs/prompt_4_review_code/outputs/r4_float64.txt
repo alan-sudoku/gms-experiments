@@ -1,0 +1,18 @@
+(1) tau = fl(j*tw), 200000 draws (implementer's seed and call order):
+    float floor != j: 10825 ; exact floor of the doubles != j: 100295 ; float floor != exact floor of the doubles: 89470
+    |tau - j*tw| (exact) in the disagreeing cases: max 0.5 ulp(tau)
+    first disagreement: tw=0.0367344509464381 j=960439 tau=35281.199332546064 float m=960439 exact m=960438 exact dt=tw-1.12e-12; with R=7, Kg=2: f_float - f_exact = 7.0 (R_g = 7)
+    implementer's cited example tw=0.0367344509464381, j=960439: float m = 960439 , exact m = 960438 -> it is a float-vs-exact disagreement case, not one of the 'float floor != j' cases
+(2) float64 evaluator error when float m equals exact m (38570 cases; 1430 draws had float m != exact m):
+    rounding-dominated cases: max err/(eps*S) = 1.34 ; dt-dominated cases: max err/(Kg ulp(tau)/sqrt(dt+ulp(tau))) = 0.865
+    max err / (4 eps S + 2 Kg ulp(tau)/sqrt(dt+ulp(tau))) over all = 0.432 (<= 1 means the model bounds every case)
+(3) implementer's c2 part-3 rows (Kg = 3, R = 5, a = Ks = d0 = 0):
+    tw=1e+09 m=10000000: float dt = 0.0, exact dt of the doubles = 0, 3 sqrt(exact dt) = 0, |f_float - f_exact| = 5.65e-06, ulp(f)/2 = 6.1e-05
+    tw=1000 m=1000000: float dt = 0.0, exact dt of the doubles = 0, 3 sqrt(exact dt) = 0, |f_float - f_exact| = 8.5e-09, ulp(f)/2 = 7.45e-09
+    tw=0.1 m=3: float dt = 0.0, exact dt of the doubles = 2.78e-17, 3 sqrt(exact dt) = 1.58e-08, |f_float - f_exact| = 1.58e-08, ulp(f)/2 = 1.78e-15
+(4) tau = nextafter(1e10, inf), tw = 1e9: float dt = 1.9073486328125e-06, exact dt = 1.9073486328125e-06, equal: True; Kg sqrt(dt) = 0.001381 Kg is the exact value for this input (no rounding); df/dtau = Kg/(2 sqrt dt) = 362 Kg per second, so ONE ulp of tau (1.91e-06 s) moves f by 0.00138 Kg
+(5a) Kg = 1, Ks = 1 + 2^-52: float rho - 1 = 2.22e-16, exact rho - 1 = 1.4803e-16 (relative error 0.5); x* = t_m/(rho-1) is then > 1e15 t_m, far outside (0, tw) for m >= 1, so harmless
+     Ks == Kg exactly: t_m/(rho-1) -> ZeroDivisionError; test 'm >= 1 and Ks^2 > Kg^2 (m+1)^3' instead of forming x*
+(5b) Kg = 0: Python float Ks/Kg raises ZeroDivisionError (numpy gives inf) -> branch on Kg = 0
+(5c) intended abar = 0, a written as -R/tw - Kg/sqrt(tw), abar evaluated in float (10000 draws): sign(+,-,0) = 2405 2400 5195 ; smallest (Ks/abar)^2 for spurious abar > 0 = 2.18e+22 s (horizon ~1e10 s)
+(5d) m = 0, Ks = Kg = 1, a = 7e-146, d' = 0: float f == 0 at 999 of 999 points (exact f = a dt > 0: a loss, float says tie)

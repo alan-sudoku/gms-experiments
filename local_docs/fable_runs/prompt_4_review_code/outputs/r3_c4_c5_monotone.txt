@@ -1,0 +1,9 @@
+(1) C4 tie scan: G(s) = Kg[m sqrt s + sqrt(tau - m s)] + m R evaluated at 82200 points (150 tau, all s = tau/k for 68 k, +-1e-30 neighbours, random s incl. s > tau)
+    increases of G with s (violations of 'non-increasing in tw'): floor convention 0 ; ceil-1 convention 0
+(2) C5 on fully non-degenerate product boxes: {'boxes': 120, 'evals': 364800, 'order_viol': 0, 'incl_viol': 0, 'x wins': 109859, 'x ties f==0': 0, 'pess wins': 312, 'opt wins, pess not': 1003, 'tau_cross_segment': 2134}
+(3) coupled coefficients (tw, Kg, a functions of hidden p, non-monotone), per-coefficient bounding box:
+    inclusion checks: 19200 ; violations: 0
+    corners taken in p (p=0, p=1) instead of per coefficient BREAKS inclusion, e.g. tau=744.499: max(f(p=0), f(p=1)) = -5.241281 < 0 but max over interior p = 0.42387634 >= 0
+      (tw in [2.88234, 213.493], Kg in [0.0241215, 0.207005] via |sin(9.207 p)|, a in [-0.000779, 0.000371] via (2p-1)^2, R=0.04269, Ks=0.04173, d0=-25.98238637)
+(4) lambda double count: tau = 1/4, Kg = 1, tw = 1, d0_hi (net of lambda) = -0.3, lam_lo = 0.5:
+    f at the true worst input = 0.2 (loses); f at a pessimistic corner that subtracts lam again = -0.3 (claims a win) -> win set(pess) is not a subset of win set(any)

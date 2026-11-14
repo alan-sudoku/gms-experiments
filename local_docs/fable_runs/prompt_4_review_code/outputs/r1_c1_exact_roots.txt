@@ -1,0 +1,9 @@
+(A) implementer's 3-root example (tw=1, m=1): exact quartic count = 3 ; grid count = 3
+(B,C) cases: 1928  classes: {'generic': 1500, 'window_edge_m1': 40, 'window_edge_m10': 36, 'window_edge_m100': 40, 'window_edge_m1000': 14, 'window_edge_m1000000': 18, 'window_edge_m2': 35, 'window_edge_m3': 29, 'window_mid_m1': 38, 'window_mid_m10': 32, 'window_mid_m100': 38, 'window_mid_m1000': 16, 'window_mid_m1000000': 16, 'window_mid_m2': 39, 'window_mid_m3': 37}
+    exact root-count histogram (distinct roots in dt in [0,tw)): {'0': 930, '1': 478, '2': 79, '3': 358, 'identically0': 83}
+    violations of '<= 3' or of '3 only if 1<=m<rho-1, Ks>Kg>0': 0 []
+    3-root cases: 358 ; with m >= 1000: 45
+    largest-m 3-root example (tw=1): m=1000000 a=448790.9104004197 Kg=0.017289059667726973 Ks=897581998.2029458 d'=448791087802.5257
+    grid (implementer's method) under-counts the exact count in 103 of 1928 cases
+    under-counts by class: {'window_edge': 94, 'generic': 9}
+    first under-count: ('window_edge_m1', 1, 0.08940429833314323, 0.008405256760452588, 0.2234843060844167, 0.1332468294857786, 3, 1)
