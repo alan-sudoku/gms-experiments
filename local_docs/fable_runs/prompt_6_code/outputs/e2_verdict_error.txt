@@ -1,0 +1,22 @@
+E2: verdict error for thin g (strut 0.3 mm, p=2) and thick s (wall 3 mm, n_s=1, p=1), r=10 um/yr, nu=1 Hz
+  g: t_c = 15.000 yr, rho = 1.05627, q = 19.6078, tau_c = 2.2526 yr, x_e = 0.15017, F_cur = 7.0336, F_min = 6.6589
+  s: t_c = 300.000 yr, rho = 0.05281, q = 9.8039, tau_c = 12.7331 yr, x_e = 0.04244, F_cur = 1.2443, F_min = 1.2443
+  hand: F_g = 7.0 (tau_c 2.25 yr, F_min 6.7), F_s = 1.24
+  F_g      calc 7.0336 hand 7 dev +0.48 % -> PASS
+  F_s      calc 1.2443 hand 1.24 dev +0.35 % -> PASS
+  tau_c_g  calc 2.2526 hand 2.25 dev +0.12 % -> PASS
+  F_min_g  calc 6.6589 hand 6.7 dev -0.61 % -> PASS
+
+E3 embodied share (main b_ch 795.7 kJ/mol, UNSURE) = 0.6863 ; alt b_ch: 0.6697
+
+verdict error  [w F_g + (1-w)] / [w F_s + (1-w)]
+  w_emb = 0.1                      error = 1.5651  hand 1.56 dev +0.33 % -> PASS  [E1 route 1.5651, diff 0.0e+00: IDENTITY]
+  w_emb = 0.5                      error = 3.5795  hand 3.6 dev -0.57 % -> PASS  [E1 route 3.5795, diff 0.0e+00: IDENTITY]
+  w_emb = 0.687 (planner literal)  error = 4.4056  [E1 route 4.4056, diff 0.0e+00: IDENTITY]
+  w_emb = E3 share 0.6863          error = 4.4026  [E1 route 4.4026, diff 0.0e+00: IDENTITY]
+  w_emb = 1.0                      error = 5.6526  hand 5.7 dev -0.83 % -> PASS  [E1 route 5.6526, diff 0.0e+00: IDENTITY]
+
+verdict error at w_emb = 1: F_g/F_s = 5.6526 (hand 5.7; computed -0.83 % off)
+verdict error is monotone increasing in w_emb on the grid: yes
+
+Status E2: PASS (hand values within 3 %; identity cross-check with E1 flagged)

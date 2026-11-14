@@ -1,0 +1,37 @@
+E5: coupling numbers and first-order error estimates
+
+g: p = 2, q = 19.6078, t_c = 15.0 yr, rho = 1.05627, tau_c = 2.2526 yr
+  x_e = tau_c/t_c = 0.15017  (hand 0.150, +0.12 %)
+  rate error:  first-order p x_e/2 = 0.15017 ; exact M_lin - 1 = 0.17671 (Simpson 0.17671, rel diff 1.8e-12) ; first/exact = 0.850
+               hand: 0.15 vs 0.177 -> devs +0.12 % / -0.16 %
+  life error:  first-order q rho/2 = 10.3556 ; exact F_cur - 1 = 6.0336 ; first/exact = 1.716
+               hand: 10.4 vs 6 -> devs -0.43 % / +0.56 %
+  NOTE: rho = 1.056 is near/above 1: the first-order life estimate q rho/2 is INVALID (overestimates by 72 %).
+
+s: p = 1, q = 9.8039, t_c = 300.0 yr, rho = 0.05281, tau_c = 12.7331 yr
+  x_e = tau_c/t_c = 0.04244  (hand 0.042, +1.06 %)
+  rate error:  first-order p x_e/2 = 0.02122 ; exact M_lin - 1 = 0.02184 (Simpson 0.02184, rel diff 1.5e-15) ; first/exact = 0.972
+               hand: 0.0212 vs 0.0218 -> devs +0.10 % / +0.19 %
+  life error:  first-order q rho/2 = 0.2589 ; exact F_cur - 1 = 0.2443 ; first/exact = 1.060
+               hand: 0.259 vs 0.244 -> devs -0.04 % / +0.13 %
+
+Cross-check of M_lin against saved A1 output (45 rows): max rel diff 4.6e-09
+  (this compares my restated closed form with A1's closed form: independent code, same formula; A1's own Simpson route is the independent check)
+
+Thermal number, Q = 50 kJ/mol, T = 300 K
+  dT = 1 K: first-order Q dT/(R T^2) = 0.06682 ; exact multiplier - 1 = 0.06886 ; ratio 0.970
+  dT = 5 K: first-order Q dT/(R T^2) = 0.33409 ; exact multiplier - 1 = 0.38904 ; ratio 0.859
+  A6 saved dT for eps = 0.05 (50 kJ/mol, 300 K) = 0.7320 K ; multiplier at that dT = 1.050002 (should be 1.05; rounding of the 4-digit saved value)
+  inversion consistent with A6 within 1e-4: True (independent: A6 bisection vs forward evaluation here)
+
+Weighted sum with E3 shares (g only; main b_ch, UNSURE): w_fat = 0.0999, w_corr = 0.2138, w_emb = 0.6863
+  first-order: w_corr*rate + w_emb*life = 0.2138*0.1502 + 0.6863*10.3556 = 7.1392
+      with thermal dT=1 K on the corrosion rate: 7.1556 (corrosion term 0.0485)
+      with thermal dT=5 K on the corrosion rate: 7.2213 (corrosion term 0.1143)
+  exact      : w_corr*rate + w_emb*life = 0.2138*0.1767 + 0.6863*6.0336 = 4.1787
+      with thermal dT=1 K on the corrosion rate: 4.1960 (corrosion term 0.0551)
+      with thermal dT=5 K on the corrosion rate: 4.2765 (corrosion term 0.1357)
+  first-order weighted sum overestimates the exact by 70.8 % (dominated by the life term; first-order life invalid at rho = 1.06)
+  AMBIGUITY: spec does not define the weighted sum; the share-to-error mapping above is the implementer's reading.
+
+Status E5: PASS (hand values within rounding; first-order life estimate for g flagged invalid near rho = 1; weighted sum is ambiguous)

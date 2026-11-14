@@ -1,0 +1,8 @@
+C5 RK4 first passage of D=1 vs C4 closed form (units of t_c)
+  rho=0.01  q=9.804   RK4 tau/t_c=0.00953826 closed=0.00953826 rel.diff=1.51e-14  final step=1.250e-05 after 1 halvings (last change 1.25e-14) PASS
+  rho=0.1   q=9.804   RK4 tau/t_c=0.06921504 closed=0.06921504 rel.diff=9.99e-16  final step=1.250e-04 after 1 halvings (last change 1.64e-14) PASS
+  rho=1     q=9.804   RK4 tau/t_c=0.22840089 closed=0.22840089 rel.diff=9.63e-12  final step=1.250e-03 after 1 halvings (last change 1.44e-10) PASS
+  rho=10    q=9.804   RK4 tau/t_c=0.39943933 closed=0.39943933 rel.diff=1.21e-11  final step=1.250e-03 after 1 halvings (last change 1.79e-10) PASS
+  rho=1     q=19.608  RK4 tau/t_c=0.14779474 closed=0.14779474 rel.diff=7.81e-11  final step=1.250e-03 after 1 halvings (last change 1.17e-09) PASS
+  rho=1     q=4.5585  RK4 tau/t_c=0.34708049 closed=0.34708049 rel.diff=1.39e-12  final step=1.250e-03 after 1 halvings (last change 2.07e-11) PASS
+C5 overall: PASS

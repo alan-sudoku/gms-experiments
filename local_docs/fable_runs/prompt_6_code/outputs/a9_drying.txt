@@ -1,0 +1,22 @@
+th= 5.0 C RH_amb=0.85 RH_crit=0.6: bracket f=(0.250,-0.468) dT=5.1056 K, Arrhenius multiplier(Q=50 kJ/mol)=1.4765
+th= 5.0 C RH_amb=0.85 RH_crit=0.8: bracket f=(0.050,-0.668) dT=0.8738 K, Arrhenius multiplier(Q=50 kJ/mol)=1.0701
+th= 5.0 C RH_amb=0.95 RH_crit=0.6: bracket f=(0.350,-0.453) dT=6.7806 K, Arrhenius multiplier(Q=50 kJ/mol)=1.6728
+th= 5.0 C RH_amb=0.95 RH_crit=0.8: bracket f=(0.150,-0.653) dT=2.4930 K, Arrhenius multiplier(Q=50 kJ/mol)=1.2117
+th= 5.0 C RH_amb=1.00 RH_crit=0.6: bracket f=(0.400,-0.445) dT=7.5605 K, Arrhenius multiplier(Q=50 kJ/mol)=1.7720
+th= 5.0 C RH_amb=1.00 RH_crit=0.8: bracket f=(0.200,-0.645) dT=3.2469 K, Arrhenius multiplier(Q=50 kJ/mol)=1.2833
+th=20.0 C RH_amb=0.85 RH_crit=0.6: bracket f=(0.250,-0.440) dT=5.7489 K, Arrhenius multiplier(Q=50 kJ/mol)=1.4837
+th=20.0 C RH_amb=0.85 RH_crit=0.8: bracket f=(0.050,-0.640) dT=0.9829 K, Arrhenius multiplier(Q=50 kJ/mol)=1.0710
+th=20.0 C RH_amb=0.95 RH_crit=0.6: bracket f=(0.350,-0.421) dT=7.6381 K, Arrhenius multiplier(Q=50 kJ/mol)=1.6836
+th=20.0 C RH_amb=0.95 RH_crit=0.8: bracket f=(0.150,-0.621) dT=2.8054 K, Arrhenius multiplier(Q=50 kJ/mol)=1.2146
+th=20.0 C RH_amb=1.00 RH_crit=0.6: bracket f=(0.400,-0.411) dT=8.5183 K, Arrhenius multiplier(Q=50 kJ/mol)=1.7847
+th=20.0 C RH_amb=1.00 RH_crit=0.8: bracket f=(0.200,-0.611) dT=3.6544 K, Arrhenius multiplier(Q=50 kJ/mol)=1.2873
+th=35.0 C RH_amb=0.85 RH_crit=0.6: bracket f=(0.250,-0.410) dT=6.4313 K, Arrhenius multiplier(Q=50 kJ/mol)=1.4903
+th=35.0 C RH_amb=0.85 RH_crit=0.8: bracket f=(0.050,-0.610) dT=1.0984 K, Arrhenius multiplier(Q=50 kJ/mol)=1.0718
+th=35.0 C RH_amb=0.95 RH_crit=0.6: bracket f=(0.350,-0.388) dT=8.5482 K, Arrhenius multiplier(Q=50 kJ/mol)=1.6934
+th=35.0 C RH_amb=0.95 RH_crit=0.8: bracket f=(0.150,-0.588) dT=3.1364 K, Arrhenius multiplier(Q=50 kJ/mol)=1.2173
+th=35.0 C RH_amb=1.00 RH_crit=0.6: bracket f=(0.400,-0.377) dT=9.5351 K, Arrhenius multiplier(Q=50 kJ/mol)=1.7963
+th=35.0 C RH_amb=1.00 RH_crit=0.8: bracket f=(0.200,-0.577) dT=4.0863 K, Arrhenius multiplier(Q=50 kJ/mol)=1.2910
+A9 hand 20C 0.95->0.80: range [2.6,3.0] (+-5%) calc=2.805 PASS
+A9 hand 20C 1.00->0.80: range [3.4,3.8] (+-5%) calc=3.654 PASS
+A9 hand 20C 1.00->0.60: range [8.3,8.3] (+-5%) calc=8.518 PASS
+A9 hand Arrhenius multiplier at 2.8 K (20 C): about 1.2; calc 1.2142 PASS

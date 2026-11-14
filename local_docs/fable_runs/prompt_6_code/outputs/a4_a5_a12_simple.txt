@@ -1,0 +1,52 @@
+=== A4 ===
+(i) constant voltage x_e=0.1: 0.9000  (formula is 1-x_e itself; no independent check possible: identity)
+(i) constant voltage x_e=0.5: 0.5000  (formula is 1-x_e itself; no independent check possible: identity)
+D=   1 mm h=   10 um k=5: widening=0.9057 | Al2O3/Al PBR=1.28: narrowing=1.0285 | Cr2O3/Cr PBR=2.07: narrowing=1.1142 | NiO/Ni PBR=1.65: narrowing=1.0676
+D=   1 mm h=   10 um k=4: widening=0.9238 | Al2O3/Al PBR=1.28: narrowing=1.0227 | Cr2O3/Cr PBR=2.07: narrowing=1.0904 | NiO/Ni PBR=1.65: narrowing=1.0537
+D=   1 mm h=  100 um k=5: widening=0.4019 | Al2O3/Al PBR=1.28: narrowing=1.3340 | Cr2O3/Cr PBR=2.07: narrowing=3.3334 | NiO/Ni PBR=1.65: narrowing=2.0063
+D=   1 mm h=  100 um k=4: widening=0.4823 | Al2O3/Al PBR=1.28: narrowing=1.2593 | Cr2O3/Cr PBR=2.07: narrowing=2.6201 | NiO/Ni PBR=1.65: narrowing=1.7455
+D=  10 mm h=   10 um k=5: widening=0.9901 | Al2O3/Al PBR=1.28: narrowing=1.0028 | Cr2O3/Cr PBR=2.07: narrowing=1.0108 | NiO/Ni PBR=1.65: narrowing=1.0065
+D=  10 mm h=   10 um k=4: widening=0.9920 | Al2O3/Al PBR=1.28: narrowing=1.0022 | Cr2O3/Cr PBR=2.07: narrowing=1.0086 | NiO/Ni PBR=1.65: narrowing=1.0052
+D=  10 mm h=  100 um k=5: widening=0.9057 | Al2O3/Al PBR=1.28: narrowing=1.0285 | Cr2O3/Cr PBR=2.07: narrowing=1.1142 | NiO/Ni PBR=1.65: narrowing=1.0676
+D=  10 mm h=  100 um k=4: widening=0.9238 | Al2O3/Al PBR=1.28: narrowing=1.0227 | Cr2O3/Cr PBR=2.07: narrowing=1.0904 | NiO/Ni PBR=1.65: narrowing=1.0537
+A4 hand widening D=1 h=100 k=5: hand=0.402 calc=0.4019 rel=0.0003 PASS
+A4 hand narrowing PBR 2.07: hand=3.33 calc=3.3334 rel=0.0010 PASS
+A4 hand narrowing PBR 1.28: hand=1.33 calc=1.3340 rel=0.0030 PASS
+A4 hand widening D=10 h=100 k=5: hand=0.906 calc=0.9057 rel=0.0003 PASS
+A4 signs: (i),(ii) < 1 and (iii) > 1 over the grid: PASS
+
+=== A5 ===
+U=  100 R_f=1e-04: end=1.0100 life-avg lin=1.0050 par=1.0067
+U=  100 R_f=2e-04: end=1.0200 life-avg lin=1.0100 par=1.0133
+U=  100 R_f=5e-04: end=1.0500 life-avg lin=1.0250 par=1.0333
+U= 1000 R_f=1e-04: end=1.1000 life-avg lin=1.0500 par=1.0667
+U= 1000 R_f=2e-04: end=1.2000 life-avg lin=1.1000 par=1.1333
+U= 1000 R_f=5e-04: end=1.5000 life-avg lin=1.2500 par=1.3333
+U= 5000 R_f=1e-04: end=1.5000 life-avg lin=1.2500 par=1.3333
+U= 5000 R_f=2e-04: end=2.0000 life-avg lin=1.5000 par=1.6667
+U= 5000 R_f=5e-04: end=3.5000 life-avg lin=2.2500 par=2.6667
+oxide layers R_f = delta/k_ox:
+delta=  1 um k_ox= 2: R_f=5.00e-07 U=100:1.0001 U=1000:1.0005 U=5000:1.0025
+delta=  1 um k_ox=10: R_f=1.00e-07 U=100:1.0000 U=1000:1.0001 U=5000:1.0005
+delta=  1 um k_ox=30: R_f=3.33e-08 U=100:1.0000 U=1000:1.0000 U=5000:1.0002
+delta= 10 um k_ox= 2: R_f=5.00e-06 U=100:1.0005 U=1000:1.0050 U=5000:1.0250
+delta= 10 um k_ox=10: R_f=1.00e-06 U=100:1.0001 U=1000:1.0010 U=5000:1.0050
+delta= 10 um k_ox=30: R_f=3.33e-07 U=100:1.0000 U=1000:1.0003 U=5000:1.0017
+delta=100 um k_ox= 2: R_f=5.00e-05 U=100:1.0050 U=1000:1.0500 U=5000:1.2500
+delta=100 um k_ox=10: R_f=1.00e-05 U=100:1.0010 U=1000:1.0100 U=5000:1.0500
+delta=100 um k_ox=30: R_f=3.33e-06 U=100:1.0003 U=1000:1.0033 U=5000:1.0167
+A5 hand U=1000,R_f=2e-4: hand 1.20 calc=1.2000 PASS
+A5 hand oxide 100um k=2: R_f=5.0e-05 (hand 5e-5), multiplier=1.0500 (hand 1.05) PASS
+A5 life-average factors by quadrature: linear growth int t dt = 0.50000000 (stated 1/2); parabolic int sqrt(t) dt = 0.66666666 (stated 2/3; Simpson n=131072, conv=True; sqrt singularity slows Simpson) rel diff to 2/3 = 2.6e-09
+A5 note: plausibility only per spec; 1 + R_f*U is the formula itself, hand values re-evaluate it (identity).
+
+=== A12 ===
+r=   1 um/yr: q''=0.00274 W/m2 h_c=  5: dT=5.472e-04 K
+r=   1 um/yr: q''=0.00274 W/m2 h_c= 10: dT=2.736e-04 K
+r=   1 um/yr: q''=0.00274 W/m2 h_c=100: dT=2.736e-05 K
+r=  10 um/yr: q''=0.02736 W/m2 h_c=  5: dT=5.472e-03 K
+r=  10 um/yr: q''=0.02736 W/m2 h_c= 10: dT=2.736e-03 K
+r=  10 um/yr: q''=0.02736 W/m2 h_c=100: dT=2.736e-04 K
+A12 hand q''(10 um/yr)=0.027: calc=0.02736 rel=0.013 PASS
+A12 hand dT(10 um/yr, h_c=10)=2.7e-3: calc=2.736e-03 rel=0.013 PASS
+A12 all cases below 0.01 K: PASS (max 5.472e-03 K)

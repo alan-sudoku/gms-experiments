@@ -1,0 +1,121 @@
+=== A1: M_lin closed form vs Simpson (p x x_e) ===
+p=-1 x_e= 0.01 closed=0.99500000 simpson=0.99500000 n=128 rel_diff=1.45e-15 PASS
+p=-1 x_e= 0.02 closed=0.99000000 simpson=0.99000000 n=128 rel_diff=1.91e-15 PASS
+p=-1 x_e= 0.05 closed=0.97500000 simpson=0.97500000 n=128 rel_diff=4.55e-16 PASS
+p=-1 x_e= 0.10 closed=0.95000000 simpson=0.95000000 n=128 rel_diff=1.17e-16 PASS
+p=-1 x_e= 0.20 closed=0.90000000 simpson=0.90000000 n=128 rel_diff=3.70e-16 PASS
+p=-1 x_e= 0.30 closed=0.85000000 simpson=0.85000000 n=128 rel_diff=2.61e-16 PASS
+p=-1 x_e= 0.50 closed=0.75000000 simpson=0.75000000 n=128 rel_diff=0.00e+00 PASS
+p=-1 x_e= 0.70 closed=0.65000000 simpson=0.65000000 n=128 rel_diff=0.00e+00 PASS
+p=-1 x_e= 0.90 closed=0.55000000 simpson=0.55000000 n=128 rel_diff=0.00e+00 PASS
+p= 1 x_e= 0.01 closed=1.00503359 simpson=1.00503359 n=128 rel_diff=2.21e-16 PASS
+p= 1 x_e= 0.02 closed=1.01013537 simpson=1.01013537 n=128 rel_diff=2.20e-16 PASS
+p= 1 x_e= 0.05 closed=1.02586589 simpson=1.02586589 n=128 rel_diff=3.25e-15 PASS
+p= 1 x_e= 0.10 closed=1.05360516 simpson=1.05360516 n=128 rel_diff=6.17e-14 PASS
+p= 1 x_e= 0.20 closed=1.11571776 simpson=1.11571776 n=128 rel_diff=1.28e-12 PASS
+p= 1 x_e= 0.30 closed=1.18891648 simpson=1.18891648 n=128 rel_diff=8.92e-12 PASS
+p= 1 x_e= 0.50 closed=1.38629436 simpson=1.38629436 n=128 rel_diff=1.68e-10 PASS
+p= 1 x_e= 0.70 closed=1.71996115 simpson=1.71996115 n=256 rel_diff=1.89e-10 PASS
+p= 1 x_e= 0.90 closed=2.55842788 simpson=2.55842788 n=1024 rel_diff=8.64e-11 PASS
+p= 2 x_e= 0.01 closed=1.01010101 simpson=1.01010101 n=128 rel_diff=6.37e-15 PASS
+p= 2 x_e= 0.02 closed=1.02040816 simpson=1.02040816 n=128 rel_diff=6.53e-16 PASS
+p= 2 x_e= 0.05 closed=1.05263158 simpson=1.05263158 n=128 rel_diff=1.84e-14 PASS
+p= 2 x_e= 0.10 closed=1.11111111 simpson=1.11111111 n=128 rel_diff=3.10e-13 PASS
+p= 2 x_e= 0.20 closed=1.25000000 simpson=1.25000000 n=128 rel_diff=6.52e-12 PASS
+p= 2 x_e= 0.30 closed=1.42857143 simpson=1.42857143 n=128 rel_diff=4.65e-11 PASS
+p= 2 x_e= 0.50 closed=2.00000000 simpson=2.00000000 n=256 rel_diff=6.01e-11 PASS
+p= 2 x_e= 0.70 closed=3.33333333 simpson=3.33333333 n=512 rel_diff=8.20e-11 PASS
+p= 2 x_e= 0.90 closed=10.00000000 simpson=10.00000000 n=2048 rel_diff=5.52e-11 PASS
+p= 4 x_e= 0.01 closed=1.02033840 simpson=1.02033840 n=128 rel_diff=1.31e-15 PASS
+p= 4 x_e= 0.02 closed=1.04137448 simpson=1.04137448 n=128 rel_diff=1.92e-15 PASS
+p= 4 x_e= 0.05 closed=1.10900520 simpson=1.10900520 n=128 rel_diff=1.20e-13 PASS
+p= 4 x_e= 0.10 closed=1.23914037 simpson=1.23914037 n=128 rel_diff=2.19e-12 PASS
+p= 4 x_e= 0.20 closed=1.58854167 simpson=1.58854167 n=128 rel_diff=4.71e-11 PASS
+p= 4 x_e= 0.30 closed=2.12827988 simpson=2.12827988 n=128 rel_diff=3.51e-10 PASS
+p= 4 x_e= 0.50 closed=4.66666667 simpson=4.66666667 n=256 rel_diff=5.28e-10 PASS
+p= 4 x_e= 0.70 closed=17.16049383 simpson=17.16049383 n=1024 rel_diff=5.54e-11 PASS
+p= 4 x_e= 0.90 closed=370.00000000 simpson=370.00000002 n=4096 rel_diff=4.67e-11 PASS
+p= 5 x_e= 0.01 closed=1.02550889 simpson=1.02550889 n=128 rel_diff=1.73e-15 PASS
+p= 5 x_e= 0.02 closed=1.05207231 simpson=1.05207231 n=128 rel_diff=5.70e-15 PASS
+p= 5 x_e= 0.05 closed=1.13868832 simpson=1.13868832 n=128 rel_diff=2.41e-13 PASS
+p= 5 x_e= 0.10 closed=1.31039476 simpson=1.31039476 n=128 rel_diff=4.39e-12 PASS
+p= 5 x_e= 0.20 closed=1.80175781 simpson=1.80175781 n=128 rel_diff=9.57e-11 PASS
+p= 5 x_e= 0.30 closed=2.63744273 simpson=2.63744273 n=256 rel_diff=4.55e-11 PASS
+p= 5 x_e= 0.50 closed=7.50000000 simpson=7.50000000 n=512 rel_diff=7.22e-11 PASS
+p= 5 x_e= 0.70 closed=43.73456790 simpson=43.73456791 n=1024 rel_diff=1.27e-10 PASS
+p= 5 x_e= 0.90 closed=2777.50000000 simpson=2777.50000030 n=4096 rel_diff=1.09e-10 PASS
+A1 max rel diff closed vs quadrature = 5.28e-10  PASS; non-converged Simpson cases: []
+A1 hand p=1 x_e=0.1: hand=1.0536 calc=1.05361 rel=4.89e-06 PASS
+A1 hand p=1 x_e=0.5: hand=1.3863 calc=1.38629 rel=4.07e-06 PASS
+A1 hand p=1 x_e=0.9: hand=2.5584 calc=2.55843 rel=1.09e-05 PASS
+A1 hand p=2 x_e=0.01: |M-1/(1-x)|=6.4e-15  p=-1: |M-(1-x/2)|=1.4e-15 PASS
+A1 hand p=2 x_e=0.02: |M-1/(1-x)|=1.1e-15  p=-1: |M-(1-x/2)|=2.0e-15 PASS
+A1 hand p=2 x_e=0.05: |M-1/(1-x)|=1.1e-15  p=-1: |M-(1-x/2)|=3.3e-16 PASS
+A1 hand p=2 x_e=0.1: |M-1/(1-x)|=4.4e-16  p=-1: |M-(1-x/2)|=2.2e-16 PASS
+A1 hand p=2 x_e=0.2: |M-1/(1-x)|=0.0e+00  p=-1: |M-(1-x/2)|=3.3e-16 PASS
+A1 hand p=2 x_e=0.3: |M-1/(1-x)|=2.2e-16  p=-1: |M-(1-x/2)|=1.1e-16 PASS
+A1 hand p=2 x_e=0.5: |M-1/(1-x)|=0.0e+00  p=-1: |M-(1-x/2)|=0.0e+00 PASS
+A1 hand p=2 x_e=0.7: |M-1/(1-x)|=0.0e+00  p=-1: |M-(1-x/2)|=0.0e+00 PASS
+A1 hand p=2 x_e=0.9: |M-1/(1-x)|=0.0e+00  p=-1: |M-(1-x/2)|=1.1e-16 PASS
+A1 note: p=2 and p=-1 'hand' values are the algebraic simplification of the same closed form; they check the algebra, the quadrature comparison is the independent check.
+
+=== A2: M_par (p x a) ===
+p=1 a= 0.01 simpson=1.00671707 n=128 conv=True closed_p1=1.00671707 rel_diff=9.48e-15 PASS extra_closed=1.00671707 rd=1.6e-13
+p=1 a= 0.02 simpson=1.01353659 n=128 conv=True closed_p1=1.01353659 rel_diff=9.42e-15 PASS extra_closed=1.01353659 rd=9.5e-14
+p=1 a= 0.05 simpson=1.03463551 n=128 conv=True closed_p1=1.03463551 rel_diff=1.36e-13 PASS extra_closed=1.03463551 rd=1.7e-13
+p=1 a= 0.10 simpson=1.07210313 n=128 conv=True closed_p1=1.07210313 rel_diff=1.21e-12 PASS extra_closed=1.07210313 rd=1.2e-12
+p=1 a= 0.20 simpson=1.15717757 n=128 conv=True closed_p1=1.15717757 rel_diff=1.24e-11 PASS extra_closed=1.15717757 rd=1.2e-11
+p=1 a= 0.30 simpson=1.25944320 n=128 conv=True closed_p1=1.25944320 rel_diff=5.62e-11 PASS extra_closed=1.25944320 rd=5.6e-11
+p=1 a= 0.50 simpson=1.54517745 n=128 conv=True closed_p1=1.54517744 rel_diff=6.03e-10 PASS extra_closed=1.54517744 rd=6.0e-10
+p=1 a= 0.70 simpson=2.05703186 n=256 conv=True closed_p1=2.05703185 rel_diff=4.53e-10 PASS extra_closed=2.05703185 rd=4.5e-10
+p=1 a= 0.90 simpson=3.46317307 n=1024 conv=True closed_p1=3.46317307 rel_diff=1.42e-10 PASS extra_closed=3.46317307 rd=1.4e-10
+p=2 a= 0.01 simpson=1.01348495 n=128 conv=True extra_closed=1.01348495 rd=1.3e-12
+p=2 a= 0.02 simpson=1.02727974 n=128 conv=True extra_closed=1.02727974 rd=7.7e-14
+p=2 a= 0.05 simpson=1.07062765 n=128 conv=True extra_closed=1.07062765 rd=5.9e-13
+p=2 a= 0.10 simpson=1.15011909 n=128 conv=True extra_closed=1.15011909 rd=4.9e-12
+p=2 a= 0.20 simpson=1.34282243 n=128 conv=True extra_closed=1.34282243 rd=5.0e-11
+p=2 a= 0.30 simpson=1.59769966 n=128 conv=True extra_closed=1.59769966 rd=2.3e-10
+p=2 a= 0.50 simpson=2.45482256 n=256 conv=True extra_closed=2.45482256 rd=1.7e-10
+p=2 a= 0.70 simpson=4.60963481 n=512 conv=True extra_closed=4.60963481 rd=1.6e-10
+p=2 a= 0.90 simpson=16.53682693 n=2048 conv=True extra_closed=16.53682693 rd=7.2e-11
+p=4 a= 0.01 simpson=1.02717478 n=128 conv=True extra_closed=1.02717478 rd=8.6e-13
+p=4 a= 0.02 simpson=1.05539925 n=128 conv=True extra_closed=1.05539925 rd=2.1e-13
+p=4 a= 0.05 simpson=1.14691160 n=128 conv=True extra_closed=1.14691160 rd=2.7e-12
+p=4 a= 0.10 simpson=1.32601738 n=128 conv=True extra_closed=1.32601738 rd=2.4e-11
+p=4 a= 0.20 simpson=1.82291667 n=128 conv=True extra_closed=1.82291667 rd=2.6e-10
+p=4 a= 0.30 simpson=2.62390671 n=256 conv=True extra_closed=2.62390671 rd=7.9e-11
+p=4 a= 0.50 simpson=6.66666667 n=512 conv=True extra_closed=6.66666667 rd=6.9e-11
+p=4 a= 0.70 simpson=28.39506173 n=1024 conv=True extra_closed=28.39506173 rd=8.1e-11
+p=4 a= 0.90 simpson=700.00000004 n=4096 conv=True extra_closed=700.00000000 rd=5.2e-11
+A2 max rel diff p=1 closed vs quadrature = 6.03e-10; extra general closed vs quadrature = 6.03e-10 PASS
+A2 hand p=1 a=0.1: hand=1.0721 calc=1.07210 rel=2.92e-06 PASS
+A2 hand p=1 a=0.5: hand=1.5452 calc=1.54518 rel=1.46e-05 PASS
+A2 hand p=1 a=0.9: hand=3.463 calc=3.46317 rel=5.00e-05 PASS
+
+=== A3: x_e at which M-1 = eps ===
+lin p=1 eps=0.02: bracket [1e-6,0.99] f=(-2.000e-02,3.632e+00) x_e=0.038958 first-order=0.04000 ratio root/first-order=0.9739
+lin p=1 eps=0.05: bracket [1e-6,0.99] f=(-5.000e-02,3.602e+00) x_e=0.093702 first-order=0.10000 ratio root/first-order=0.9370
+lin p=1 eps=0.1: bracket [1e-6,0.99] f=(-1.000e-01,3.552e+00) x_e=0.176134 first-order=0.20000 ratio root/first-order=0.8807
+lin p=2 eps=0.02: bracket [1e-6,0.99] f=(-2.000e-02,9.898e+01) x_e=0.019608 first-order=0.02000 ratio root/first-order=0.9804 exact eps/(1+eps)=0.019608 rel=4.0e-13 PASS
+lin p=2 eps=0.05: bracket [1e-6,0.99] f=(-5.000e-02,9.895e+01) x_e=0.047619 first-order=0.05000 ratio root/first-order=0.9524 exact eps/(1+eps)=0.047619 rel=7.9e-15 PASS
+lin p=2 eps=0.1: bracket [1e-6,0.99] f=(-1.000e-01,9.890e+01) x_e=0.090909 first-order=0.10000 ratio root/first-order=0.9091 exact eps/(1+eps)=0.090909 rel=2.5e-13 PASS
+lin p=4 eps=0.02: bracket [1e-6,0.99] f=(-2.000e-02,3.367e+05) x_e=0.009836 first-order=0.01000 ratio root/first-order=0.9836
+lin p=4 eps=0.05: bracket [1e-6,0.99] f=(-5.000e-02,3.367e+05) x_e=0.024004 first-order=0.02500 ratio root/first-order=0.9602
+lin p=4 eps=0.1: bracket [1e-6,0.99] f=(-1.000e-01,3.367e+05) x_e=0.046182 first-order=0.05000 ratio root/first-order=0.9236
+par p=1 eps=0.02: bracket [1e-6,0.99] f=(-2.000e-02,6.357e+00) x_e=0.029339 first-order=0.03000 ratio root/first-order=0.9780
+par p=1 eps=0.05: bracket [1e-6,0.99] f=(-5.000e-02,6.327e+00) x_e=0.070992 first-order=0.07500 ratio root/first-order=0.9466
+par p=1 eps=0.1: bracket [1e-6,0.99] f=(-1.000e-01,6.277e+00) x_e=0.134732 first-order=0.15000 ratio root/first-order=0.8982
+par p=2 eps=0.02: bracket [1e-6,0.99] f=(-2.000e-02,1.916e+02) x_e=0.014751 first-order=0.01500 ratio root/first-order=0.9834
+par p=2 eps=0.05: bracket [1e-6,0.99] f=(-5.000e-02,1.916e+02) x_e=0.035985 first-order=0.03750 ratio root/first-order=0.9596
+par p=2 eps=0.1: bracket [1e-6,0.99] f=(-1.000e-01,1.915e+02) x_e=0.069187 first-order=0.07500 ratio root/first-order=0.9225
+par p=4 eps=0.02: bracket [1e-6,0.99] f=(-2.000e-02,6.700e+05) x_e=0.007396 first-order=0.00750 ratio root/first-order=0.9862
+par p=4 eps=0.05: bracket [1e-6,0.99] f=(-5.000e-02,6.700e+05) x_e=0.018116 first-order=0.01875 ratio root/first-order=0.9662
+par p=4 eps=0.1: bracket [1e-6,0.99] f=(-1.000e-01,6.700e+05) x_e=0.035059 first-order=0.03750 ratio root/first-order=0.9349
+A3 hand lin p=1 eps=0.02: hand=0.039 calc=0.03896 rel=0.001 PASS
+A3 hand lin p=1 eps=0.05: hand=0.094 calc=0.09370 rel=0.003 PASS
+A3 hand lin p=1 eps=0.1: hand=0.176 calc=0.17613 rel=0.001 PASS
+A3 hand par p=1 eps=0.02: hand=0.029 calc=0.02934 rel=0.012 PASS
+A3 hand par p=1 eps=0.05: hand=0.071 calc=0.07099 rel=0.000 PASS
+A3 hand par p=1 eps=0.1: hand=0.135 calc=0.13473 rel=0.002 PASS
+
+TOTAL FAIL COUNT (A1-A3 checks): 0

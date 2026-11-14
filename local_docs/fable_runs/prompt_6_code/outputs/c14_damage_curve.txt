@@ -1,0 +1,25 @@
+C14  null case q=0 (identity of event logic; second term vanishes by construction)
+   rho=0.01  tau/tau0 = 1.00000000 (expected 1 within 0.1%) PASS
+   rho=0.1   tau/tau0 = 1.00000000 (expected 1 within 0.1%) PASS
+   rho=1     UNDECIDED: with q=0, tau = tau0 = rho*t_c >= t_c, beyond the integration limit t_c(1-1e-12); u reaches 1 only at t = 1 t_c
+   rho=10    UNDECIDED: with q=0, tau = tau0 = rho*t_c >= t_c, beyond the integration limit t_c(1-1e-12); u reaches 1 only at t = 10 t_c
+
+C14  q=9.804, damage-curve approach vs Miner closed form (C4)
+   rho=0.01  tau_DCA/t_c=0.00962509 tau_c/t_c=0.00953826 ratio=1.00910  (in [1,2.5]: True); halvings=1, final change 5.3e-10 <0.1%: True
+      step history: h=1.00e-05 -> 0.00962509; h=5.00e-06 -> 0.00962509
+   rho=0.1   tau_DCA/t_c=0.07295278 tau_c/t_c=0.06921504 ratio=1.05400  (in [1,2.5]: True); halvings=1, final change 3.5e-09 <0.1%: True
+      step history: h=1.00e-04 -> 0.07295278; h=5.00e-05 -> 0.07295278
+   rho=1     tau_DCA/t_c=0.24687670 tau_c/t_c=0.22840089 ratio=1.08089  (in [1,2.5]: True); halvings=1, final change 5.3e-09 <0.1%: True
+      step history: h=1.00e-03 -> 0.24687670; h=5.00e-04 -> 0.24687670
+   rho=10    tau_DCA/t_c=0.41923802 tau_c/t_c=0.39943933 ratio=1.04957  (in [1,2.5]: True); halvings=1, final change 3.4e-11 <0.1%: True
+      step history: h=1.00e-03 -> 0.41923802; h=5.00e-04 -> 0.41923802
+
+Convergence stress: rho=1, q=9.804, steps h = 1e-3 / 2^k:
+   h=1.000e-03 tau=0.2468767011
+   h=5.000e-04 tau=0.2468767024
+   h=2.500e-04 tau=0.2468767027
+   h=1.250e-04 tau=0.2468767028
+   h=6.250e-05 tau=0.2468767028
+   h=3.125e-05 tau=0.2468767029
+   h=1.563e-05 tau=0.2468767029
+   h=7.813e-06 tau=0.2468767029

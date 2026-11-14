@@ -1,0 +1,98 @@
+=== A7 ===
+dT0=1 alpha=0.0: x_run=1-alpha*dT0=1.0000
+   x=0: G=0.0000 closed=1.00000 iter=1.00000 (n=0) PASS
+   x=0.2: G=0.0000 closed=1.25000 iter=1.25000 (n=1) PASS
+   x=0.5: G=0.0000 closed=2.00000 iter=2.00000 (n=1) PASS
+   x=0.8: G=0.0000 closed=5.00000 iter=5.00000 (n=1) PASS
+dT0=1 alpha=0.0039: x_run=1-alpha*dT0=0.9961
+   x=0: G=0.0039 closed=1.00392 iter=1.00392 (n=4) PASS
+   x=0.2: G=0.0049 closed=1.25612 iter=1.25612 (n=5) PASS
+   x=0.5: G=0.0078 closed=2.01572 iter=2.01572 (n=5) PASS
+   x=0.8: G=0.0195 closed=5.09944 iter=5.09944 (n=7) PASS
+dT0=1 alpha=0.004: x_run=1-alpha*dT0=0.9960
+   x=0: G=0.0040 closed=1.00402 iter=1.00402 (n=4) PASS
+   x=0.2: G=0.0050 closed=1.25628 iter=1.25628 (n=5) PASS
+   x=0.5: G=0.0080 closed=2.01613 iter=2.01613 (n=5) PASS
+   x=0.8: G=0.0200 closed=5.10204 iter=5.10204 (n=7) PASS
+dT0=5 alpha=0.0: x_run=1-alpha*dT0=1.0000
+   x=0: G=0.0000 closed=5.00000 iter=5.00000 (n=0) PASS
+   x=0.2: G=0.0000 closed=6.25000 iter=6.25000 (n=1) PASS
+   x=0.5: G=0.0000 closed=10.00000 iter=10.00000 (n=1) PASS
+   x=0.8: G=0.0000 closed=25.00000 iter=25.00000 (n=1) PASS
+dT0=5 alpha=0.0039: x_run=1-alpha*dT0=0.9805
+   x=0: G=0.0195 closed=5.09944 iter=5.09944 (n=6) PASS
+   x=0.2: G=0.0244 closed=6.40615 iter=6.40615 (n=7) PASS
+   x=0.5: G=0.0390 closed=10.40583 iter=10.40583 (n=8) PASS
+   x=0.8: G=0.0975 closed=27.70083 iter=27.70083 (n=12) PASS
+dT0=5 alpha=0.004: x_run=1-alpha*dT0=0.9800
+   x=0: G=0.0200 closed=5.10204 iter=5.10204 (n=6) PASS
+   x=0.2: G=0.0250 closed=6.41026 iter=6.41026 (n=7) PASS
+   x=0.5: G=0.0400 closed=10.41667 iter=10.41667 (n=8) PASS
+   x=0.8: G=0.1000 closed=27.77778 iter=27.77778 (n=12) PASS
+dT0=20 alpha=0.0: x_run=1-alpha*dT0=1.0000
+   x=0: G=0.0000 closed=20.00000 iter=20.00000 (n=0) PASS
+   x=0.2: G=0.0000 closed=25.00000 iter=25.00000 (n=1) PASS
+   x=0.5: G=0.0000 closed=40.00000 iter=40.00000 (n=1) PASS
+   x=0.8: G=0.0000 closed=100.00000 iter=100.00000 (n=1) PASS
+dT0=20 alpha=0.0039: x_run=1-alpha*dT0=0.9220
+   x=0: G=0.0780 closed=21.69197 iter=21.69197 (n=10) PASS
+   x=0.2: G=0.0975 closed=27.70083 iter=27.70083 (n=11) PASS
+   x=0.5: G=0.1560 closed=47.39336 iter=47.39336 (n=15) PASS
+   x=0.8: G=0.3900 closed=163.93443 iter=163.93443 (n=30) PASS
+dT0=20 alpha=0.004: x_run=1-alpha*dT0=0.9200
+   x=0: G=0.0800 closed=21.73913 iter=21.73913 (n=10) PASS
+   x=0.2: G=0.1000 closed=27.77778 iter=27.77778 (n=11) PASS
+   x=0.5: G=0.1600 closed=47.61905 iter=47.61905 (n=15) PASS
+   x=0.8: G=0.4000 closed=166.66667 iter=166.66667 (n=31) PASS
+dT0=50 alpha=0.0: x_run=1-alpha*dT0=1.0000
+   x=0: G=0.0000 closed=50.00000 iter=50.00000 (n=0) PASS
+   x=0.2: G=0.0000 closed=62.50000 iter=62.50000 (n=1) PASS
+   x=0.5: G=0.0000 closed=100.00000 iter=100.00000 (n=1) PASS
+   x=0.8: G=0.0000 closed=250.00000 iter=250.00000 (n=1) PASS
+dT0=50 alpha=0.0039: x_run=1-alpha*dT0=0.8050
+   x=0: G=0.1950 closed=62.11180 iter=62.11180 (n=16) PASS
+   x=0.2: G=0.2437 closed=82.64463 iter=82.64463 (n=19) PASS
+   x=0.5: G=0.3900 closed=163.93443 iter=163.93443 (n=29) PASS
+   x=0.8: G=0.9750 closed=10000.00000 iter=10000.00000 (n=1128) (0.9<=G<1, not in tolerance scope) rel=3.8e-13
+dT0=50 alpha=0.004: x_run=1-alpha*dT0=0.8000
+   x=0: G=0.2000 closed=62.50000 iter=62.50000 (n=16) PASS
+   x=0.2: G=0.2500 closed=83.33333 iter=83.33333 (n=19) PASS
+   x=0.5: G=0.4000 closed=166.66667 iter=166.66667 (n=30) PASS
+   x=0.8: G=1.0000 closed=inf iter=50000050.00099 (n=200000) G>=1: iteration maxit; closed form infinite/negative
+dT0=100 alpha=0.0: x_run=1-alpha*dT0=1.0000
+   x=0: G=0.0000 closed=100.00000 iter=100.00000 (n=0) PASS
+   x=0.2: G=0.0000 closed=125.00000 iter=125.00000 (n=1) PASS
+   x=0.5: G=0.0000 closed=200.00000 iter=200.00000 (n=1) PASS
+   x=0.8: G=0.0000 closed=500.00000 iter=500.00000 (n=1) PASS
+dT0=100 alpha=0.0039: x_run=1-alpha*dT0=0.6100
+   x=0: G=0.3900 closed=163.93443 iter=163.93443 (n=29) PASS
+   x=0.2: G=0.4875 closed=243.90244 iter=243.90244 (n=39) PASS
+   x=0.5: G=0.7800 closed=909.09091 iter=909.09091 (n=114) PASS
+   x=0.8: G=1.9500 closed=inf iter=inf (n=21) G>=1: iteration diverged; closed form infinite/negative
+dT0=100 alpha=0.004: x_run=1-alpha*dT0=0.6000
+   x=0: G=0.4000 closed=166.66667 iter=166.66667 (n=30) PASS
+   x=0.2: G=0.5000 closed=250.00000 iter=250.00000 (n=40) PASS
+   x=0.5: G=0.8000 closed=1000.00000 iter=1000.00000 (n=127) PASS
+   x=0.8: G=2.0000 closed=inf iter=inf (n=20) G>=1: iteration diverged; closed form infinite/negative
+A7 max rel diff closed vs iteration over G<0.9 (56 cases) = 3.75e-13 PASS
+A7 G>=1 cases never converge: PASS
+A7 hand x_run dT0=50 alpha=0.004: hand 0.8 calc 0.800 PASS
+A7 hand x_run dT0=100 alpha=0.004: hand 0.6 calc 0.600 PASS
+A7 hand dT0=5 x=0.5 alpha=0.004: hand 10.42 calc 10.4167 PASS
+
+=== A8 ===
+alpha=0.0 dT0= 0: (a) Simpson ratio=1.00000 (n=128) | (b) RK4 ratio=1.00000 steps tried (h,t)=[(200, 0.5), (400, 0.5)] | rel diff a/b=0.00e+00 PASS | isothermal-at-dT0=1.0000 | x_run=1.000 > x_a
+alpha=0.0 dT0= 1: (a) Simpson ratio=0.91209 (n=128) | (b) RK4 ratio=0.91209 steps tried (h,t)=[(200, 0.456046), (400, 0.456046)] | rel diff a/b=1.22e-11 PASS | isothermal-at-dT0=0.9356 | x_run=1.000 > x_a
+alpha=0.0 dT0= 5: (a) Simpson ratio=0.63867 (n=128) | (b) RK4 ratio=0.63867 steps tried (h,t)=[(200, 0.319333), (400, 0.319333)] | rel diff a/b=7.40e-12 PASS | isothermal-at-dT0=0.7199 | x_run=1.000 > x_a
+alpha=0.0 dT0=20: (a) Simpson ratio=0.19305 (n=128) | (b) RK4 ratio=0.19305 steps tried (h,t)=[(200, 0.096526), (400, 0.096526)] | rel diff a/b=6.79e-08 PASS | isothermal-at-dT0=0.2857 | x_run=1.000 > x_a
+alpha=0.004 dT0= 0: (a) Simpson ratio=1.00000 (n=128) | (b) RK4 ratio=1.00000 steps tried (h,t)=[(200, 0.5), (400, 0.5)] | rel diff a/b=0.00e+00 PASS | isothermal-at-dT0=1.0000 | x_run=1.000 > x_a
+alpha=0.004 dT0= 1: (a) Simpson ratio=0.91161 (n=128) | (b) RK4 ratio=0.91161 steps tried (h,t)=[(200, 0.455805), (400, 0.455805)] | rel diff a/b=1.26e-11 PASS | isothermal-at-dT0=0.9356 | x_run=0.996 > x_a
+alpha=0.004 dT0= 5: (a) Simpson ratio=0.63065 (n=128) | (b) RK4 ratio=0.63065 steps tried (h,t)=[(200, 0.315324), (400, 0.315324)] | rel diff a/b=4.61e-12 PASS | isothermal-at-dT0=0.7199 | x_run=0.980 > x_a
+alpha=0.004 dT0=20: (a) Simpson ratio=0.16220 (n=128) | (b) RK4 ratio=0.16220 steps tried (h,t)=[(200, 0.081098), (400, 0.081098)] | rel diff a/b=4.48e-07 PASS | isothermal-at-dT0=0.2857 | x_run=0.920 > x_a
+A8 hand alpha=0 dT0=0: hand 1.0 calc 1.0000 rel=0.000 PASS
+A8 hand alpha=0 dT0=1: hand 0.91 calc 0.9121 rel=0.002 PASS
+A8 hand alpha=0 dT0=5: hand 0.64 calc 0.6387 rel=0.002 PASS
+A8 hand alpha=0 dT0=20: hand 0.19 calc 0.1931 rel=0.016 PASS
+A8 hand isothermal at dT0=5 K: hand 0.72 calc 0.7199 PASS
+A8 x_run check alpha=0.004 dT0=20: x_run=0.920 (hand 0.92) > x_a=0.5: PASS
+A8 note: null case alpha=0, dT0=0 gives exactly 1.000 in both (a),(b); (b) integrates the same separable ODE as (a) (a) is a quadrature of 1/f, (b) an RK4 of f: independent numerics, same model.

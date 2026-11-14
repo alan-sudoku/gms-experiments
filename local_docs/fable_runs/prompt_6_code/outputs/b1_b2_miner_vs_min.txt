@@ -1,0 +1,35 @@
+sigma_a0 (C1) = 108.7032 MPa, m = 9.80392
+=== B1 ===
+phi=10: g ends=(-11.289,5.601) bracketed=True s*=0.79068 (phi^(-1/m)=0.79068) R(s*)=2.000000 [identity: R=2 at s* by construction]
+   1<=R<=2 at all 231 grid points: min R=1.000013 max R=1.991617 PASS
+   lower edge: end values h=(-0.1000,0.9000) bracketed=True root=0.62517
+   upper edge: end values h=(0.9000,-0.0963) bracketed=True root=1.00000
+   edges s/s* = 0.7907, 1.2647 (hand 0.791, 1.265); inside sweep [0.25,1.4]: True; PASS
+   s* hand check: PASS
+phi=100: g ends=(-8.986,7.904) bracketed=True s*=0.62517 (phi^(-1/m)=0.62517) R(s*)=2.000000 [identity: R=2 at s* by construction]
+   1<=R<=2 at all 231 grid points: min R=1.000125 max R=1.997295 PASS
+   lower edge: end values h=(-0.0999,0.9000) bracketed=True root=0.49431
+   upper edge: end values h=(0.9000,-0.0996) bracketed=True root=0.79068
+   edges s/s* = 0.7907, 1.2647 (hand 0.791, 1.265); inside sweep [0.25,1.4]: True; PASS
+   s* hand check: PASS
+phi=1000: g ends=(-6.683,10.207) bracketed=True s*=0.49431 (phi^(-1/m)=0.49431) R(s*)=2.000000 [identity: R=2 at s* by construction]
+   1<=R<=2 at all 231 grid points: min R=1.000037 max R=1.986431 PASS
+   lower edge: end values h=(-0.0987,0.9000) bracketed=True root=0.39084
+   upper edge: end values h=(0.9000,-0.1000) bracketed=True root=0.62517
+   edges s/s* = 0.7907, 1.2647 (hand 0.791, 1.265); inside sweep [0.25,1.4]: True; PASS
+   s* hand check: PASS
+
+=== B2 ===
+L= 2 w=0.05: median=1.7514 p95=1.9757 mean=1.7405 min=1.3766 max=2.0000 1<=R<=L PASS | SE(mean)/mean=2.91e-04 SE(median)/median=4.43e-04 PASS
+L= 2 w=0.1: median=1.5647 p95=1.9507 mean=1.5736 min=1.1417 max=2.0000 1<=R<=L PASS | SE(mean)/mean=4.67e-04 SE(median)/median=8.39e-04 PASS
+L= 2 w=0.2: median=1.3163 p95=1.9052 mean=1.3822 min=1.0200 max=1.9999 1<=R<=L PASS | SE(mean)/mean=6.31e-04 SE(median)/median=1.09e-03 PASS
+L= 5 w=0.05: median=3.7355 p95=4.3426 mean=3.7390 min=2.6169 max=4.9441 1<=R<=L PASS | SE(mean)/mean=3.08e-04 SE(median)/median=4.00e-04 PASS
+L= 5 w=0.1: median=2.9679 p95=3.8530 mean=2.9856 min=1.6393 max=4.8370 1<=R<=L PASS | SE(mean)/mean=5.34e-04 SE(median)/median=7.43e-04 PASS
+   B2 plausibility L=5,w=0.1: median 2.968 in [1.5,3]: PASS
+L= 5 w=0.2: median=2.1559 p95=3.2053 mean=2.2082 min=1.1011 max=4.6910 1<=R<=L PASS | SE(mean)/mean=7.94e-04 SE(median)/median=9.97e-04 PASS
+L=10 w=0.05: median=6.9547 p95=7.8855 mean=6.9617 min=4.9169 max=9.3849 1<=R<=L PASS | SE(mean)/mean=2.51e-04 SE(median)/median=3.33e-04 PASS
+L=10 w=0.1: median=5.1916 p95=6.4792 mean=5.2107 min=2.7014 max=8.3786 1<=R<=L PASS | SE(mean)/mean=4.54e-04 SE(median)/median=5.39e-04 PASS
+L=10 w=0.2: median=3.4122 p95=4.8690 mean=3.4664 min=1.3803 max=7.5270 1<=R<=L PASS | SE(mean)/mean=7.33e-04 SE(median)/median=9.72e-04 PASS
+L=20 w=0.05: median=13.3461 p95=14.6618 mean=13.3526 min=10.2378 max=17.4749 1<=R<=L PASS | SE(mean)/mean=1.87e-04 SE(median)/median=2.69e-04 PASS
+L=20 w=0.1: median=9.5870 p95=11.4145 mean=9.6089 min=5.2064 max=14.1651 1<=R<=L PASS | SE(mean)/mean=3.53e-04 SE(median)/median=4.38e-04 PASS
+L=20 w=0.2: median=5.9248 p95=7.9451 mean=5.9765 min=2.2287 max=11.2211 1<=R<=L PASS | SE(mean)/mean=6.02e-04 SE(median)/median=8.24e-04 PASS

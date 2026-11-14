@@ -1,0 +1,37 @@
+E4: g = strut 0.3 mm, p=2, q=19.6078, r=10 um/yr, nu=1 Hz
+  t_c = 15.000 yr, tau0 = 15.8440 yr, rho = 1.05627, tau_c = 2.2526 yr, x_e = 0.15017, F_cur = 7.0336
+  C8 root x*: bracket (0,1), f(0) = -1.05627 (= -rho), f(1) = 1.0 -> bracketed; x* = 0.109263 (44 bisections), residual -3.9e-14
+  tau_LB = x* t_c = 1.6389 yr (hand 1.64, x* 0.109); tau_LB/tau_c = 0.7276 (<= 1: True)
+  reduced (M26): rho' = 0.3 rho = 0.31688, ends -0.31688 / 1.0 bracketed, x*' = 0.072477, tau_LB' = 1.0872 yr (hand about 1.09)
+
+c_U/c_model and required margin 1/(c_U/c_model); columns: standard | reduced sum (numerator tau0) | reduced alt reading (numerator 0.3 tau0)
+w_emb w_ox  p_r  |      cU/c   margin |     cU/c'  margin' |    cU/c'' margin''
+0.1   0     1    |    2.0258   0.4936 |    2.5164   0.3974 |    1.4963   0.6683
+0.1   0     2    |    2.2129   0.4519 |    2.7036   0.3699 |    1.6834   0.5940
+0.1   0.1   1    |    2.2190   0.4507 |    2.7805   0.3596 |    1.5877   0.6298
+0.1   0.1   2    |    2.3854   0.4192 |    2.9469   0.3393 |    1.7540   0.5701
+0.5   0     1    |    5.4220   0.1844 |    7.8753   0.1270 |    2.7744   0.3604
+0.5   0     2    |    5.5259   0.1810 |    7.9792   0.1253 |    2.8784   0.3474
+0.5   0.1   1    |    5.6152   0.1781 |    8.1393   0.1229 |    2.8659   0.3489
+0.5   0.1   2    |    5.6984   0.1755 |    8.2225   0.1216 |    2.9490   0.3391
+0.9   0     1    |    8.8182   0.1134 |   13.2341   0.0756 |    4.0526   0.2468
+0.9   0     2    |    8.8390   0.1131 |   13.2549   0.0754 |    4.0734   0.2455
+0.9   0.1   1    |    9.0114   0.1110 |   13.4982   0.0741 |    4.1440   0.2413
+0.9   0.1   2    |    9.0114   0.1110 |   13.4982   0.0741 |    4.1440   0.2413
+
+Hand check w_emb=0.5, w_lin=0.5, p_r=2:
+  c_U/c_model     calc 5.5259 hand 5.5 dev +0.47 % (tol 5 %) -> PASS
+  margin          calc 0.1810 hand 0.18 accept 0.15..0.25 -> PASS
+  tau_LB          calc 1.6389 hand 1.64 dev -0.06 % (tol 5 %) -> PASS
+  tau_LB reduced  calc 1.0872 hand 1.09 dev -0.26 % (tol 5 %) -> PASS
+  margin reduced  calc 0.1253 hand 0.125 dev +0.26 % (tol 5 %) -> PASS
+  alt reading (numerator 0.3 tau0 also): margin 0.3474 (does not match the planner's 0.125)
+
+Bound check (independent of the formula: bound vs the exact modelled c_true/c_model from E1 with C4 F_cur and exact M_lin)
+  c_U/c_model >= c_true/c_model (F_cur, M_lin via Simpson) in all 12 cases: PASS
+  w_emb=0.5, w_ox=0, p_r=2: c_true/c_model = 4.1052 <= c_U/c_model = 5.5259; bound width ratio 1.35
+  note: the end-value check of the bound uses (1-x_e)^(-p_r) >= M_lin; the Simpson route is independent of that inequality.
+  IDENTITY: the w_emb term tau0/tau_LB vs F_cur = tau0/tau_c is bounded by tau_LB <= tau_c, which C8 verified (ratio 0.73 minimum); not re-checked independently here beyond the single g case above.
+
+Required modelled-ratio margin (c_g/c_s must be below): standard 0.181 (accept 0.15-0.25), reduced sum 0.125
+Status E4: PASS (hand values within tolerance; root bracketed by construction, ends printed)

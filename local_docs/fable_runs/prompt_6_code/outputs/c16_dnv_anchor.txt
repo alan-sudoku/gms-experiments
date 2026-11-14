@@ -1,0 +1,12 @@
+Branch consistency at knee 52.63 MPa: 10^log a1/knee^3 = 1.00069e+07, 10^log a2/knee^5 = 9.99616e+06 (target 1e7)
+   m=3 branch: 1.0007e+07, diff from 1e7 +0.069 % -> PASS
+   m=5 branch: 9.9962e+06, diff from 1e7 -0.038 % -> PASS
+Factor N_air/N_fc (= 10^(12.164-11.687) = 2.9992 above knee):
+   Ds=100    N_air=1.4588e+06 N_fc=4.8641e+05 factor=2.999 expected 3.0 diff -0.03% PASS
+   Ds=80     N_air=2.8492e+06 N_fc=9.5001e+05 factor=2.999 expected 3.0 diff -0.03% PASS
+   Ds=52.63  N_air=1.0007e+07 N_fc=3.3366e+06 factor=2.999 expected 3.0 diff -0.03% PASS
+   Ds=40     N_air=3.9418e+07 N_fc=7.6001e+06 factor=5.187 expected 5.2 diff -0.26% PASS
+   Ds=30     N_air=1.6611e+08 N_fc=1.8015e+07 factor=9.221 expected 9.2 diff +0.22% PASS
+   Ds=20     N_air=1.2614e+09 N_fc=6.0801e+07 factor=20.746 expected 20.7 diff +0.22% PASS
+Note: 'factor 3.0 at and above the knee' is the constant 10^(delta log a); it is the same two tabulated numbers, an arithmetic identity of the lookup, not an independent check. Branch consistency at the knee is the real check.
+Note: the knee in the table is 'fatigue limit at 1e7 cycles' = 52.63 MPa in a branch-consistent sense only; free-corrosion curve has no knee.
