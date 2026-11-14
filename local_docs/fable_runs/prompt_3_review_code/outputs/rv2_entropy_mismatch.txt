@@ -1,0 +1,72 @@
+=== 1 S(sigma_a) = nu*dS*min(N_f/nu, tau_s), brute-force log grid (20001 points, 0.01..30 MPa) ===
+  C100     nu=1 Hz tau=30 y sw7=60 b=-0.095: grid max 3.4168e+04 J/K at sigma_a 2.5962 MPa; S4 closed form 3.4180e+04; rel diff -3.49e-04
+  B(Timo)  nu=1 Hz tau=30 y sw7=60 b=-0.095: grid max 2.9718e+03 J/K at sigma_a 0.2933 MPa; S4 closed form 2.9730e+03; rel diff -3.90e-04
+  C100     nu=1.16e-05 Hz tau=30 y sw7=60 b=-0.1517: grid max 7.4258e+00 J/K at sigma_a 11.2506 MPa; S4 closed form 7.4290e+00; rel diff -4.36e-04
+  A        nu=1 Hz tau=20 y sw7=60 b=-0.1434: grid max 6.5875e+02 J/K at sigma_a 0.5924 MPa; S4 closed form 6.5913e+02; rel diff -5.65e-04
+
+=== 2 frequency above 1 Hz: S_max = S(1e7)*(nu tau_s/1e7)^(1+2b), K_n = 1, sigma_w7 = 60 MPa, 30 y (extrapolated Basquin, UNSURE) ===
+  S(1e7, r^2 = 1) = 857.14 J/K; comparators: melt floor 1.625e+03, LPBF 50 8.900e+04, LPBF 600 1.068e+06, primary Al 200 3.560e+05
+  b=-0.095 nu=    1 Hz N=9.47e+08 strut amplitude 38.9 MPa | C100 pin r2=1: 3.42e+04 (38.4 % LPBF50); C100 rigid r2=3.95: 8.65e+03 (9.7 % LPBF50); B r2=11.5: 2.97e+03 (3.3 % LPBF50); A r2=25: 1.37e+03 (1.5 % LPBF50)
+  b=-0.095 nu=   10 Hz N=9.47e+09 strut amplitude 31.3 MPa | C100 pin r2=1: 2.21e+05 (248.0 % LPBF50); C100 rigid r2=3.95: 5.58e+04 (62.7 % LPBF50); B r2=11.5: 1.92e+04 (21.6 % LPBF50); A r2=25: 8.83e+03 (9.9 % LPBF50)
+  b=-0.095 nu=  100 Hz N=9.47e+10 strut amplitude 25.1 MPa | C100 pin r2=1: 1.42e+06 (1601.1 % LPBF50); C100 rigid r2=3.95: 3.60e+05 (405.0 % LPBF50); B r2=11.5: 1.24e+05 (139.3 % LPBF50); A r2=25: 5.70e+04 (64.0 % LPBF50)
+  b=-0.1517 nu=    1 Hz N=9.47e+08 strut amplitude 30.1 MPa | C100 pin r2=1: 2.04e+04 (22.9 % LPBF50); C100 rigid r2=3.95: 5.16e+03 (5.8 % LPBF50); B r2=11.5: 1.77e+03 (2.0 % LPBF50); A r2=25: 8.16e+02 (0.9 % LPBF50)
+  b=-0.1517 nu=   10 Hz N=9.47e+09 strut amplitude 21.2 MPa | C100 pin r2=1: 1.01e+05 (114.0 % LPBF50); C100 rigid r2=3.95: 2.57e+04 (28.8 % LPBF50); B r2=11.5: 8.82e+03 (9.9 % LPBF50); A r2=25: 4.06e+03 (4.6 % LPBF50)
+  b=-0.1517 nu=  100 Hz N=9.47e+10 strut amplitude 15.0 MPa | C100 pin r2=1: 5.05e+05 (566.9 % LPBF50); C100 rigid r2=3.95: 1.28e+05 (143.4 % LPBF50); B r2=11.5: 4.39e+04 (49.3 % LPBF50); A r2=25: 2.02e+04 (22.7 % LPBF50)
+
+=== 3 thermoelastic damping ===
+  alpha_s=21e-6: Delta_E = 3.8539e-03; D = 5.4099e-05 m^2/s
+   (a) intra-strut, reed (S2/S4) vs round section (f_Z,round = 1.8412^2*D/(2 pi R^2) = 2.158 D/d^2, weight 0.97):
+       t=d=0.5 mm: f_Z reed   339.9 Hz, round   467.0 Hz; psi_TE(1 Hz) reed 7.124e-05 (0.014 x psi), round 5.120e-05 (0.010 x psi)
+       t=d=1.0 mm: f_Z reed    85.0 Hz, round   116.8 Hz; psi_TE(1 Hz) reed 2.849e-04 (0.057 x psi), round 2.048e-04 (0.041 x psi)
+       t=d=2.0 mm: f_Z reed    21.2 Hz, round    29.2 Hz; psi_TE(1 Hz) reed 1.137e-03 (0.227 x psi), round 8.182e-04 (0.164 x psi)
+       t=d=5.0 mm: f_Z reed     3.4 Hz, round     4.7 Hz; psi_TE(1 Hz) reed 6.556e-03 (1.311 x psi), round 4.895e-03 (0.979 x psi)
+   (b) inter-strut, octet [100] pin: variance fraction of strut stress = 0.889 (relaxes at cell scale; mean part relaxes only at envelope scale)
+       cell  3.0 mm, strut length 2.12 mm: f_1 =  18.88 Hz; psi_inter(1 Hz) = 9.349e-04 (0.19 x psi); psi_inter(1/day) = 1.1e-08
+       cell  5.0 mm, strut length 3.54 mm: f_1 =   6.80 Hz; psi_inter(1 Hz) = 2.550e-03 (0.51 x psi); psi_inter(1/day) = 3.0e-08
+       cell  7.0 mm, strut length 4.95 mm: f_1 =   3.47 Hz; psi_inter(1 Hz) = 4.718e-03 (0.94 x psi); psi_inter(1/day) = 5.9e-08
+       cell 10.0 mm, strut length 7.07 mm: f_1 =   1.70 Hz; psi_inter(1 Hz) = 7.776e-03 (1.56 x psi); psi_inter(1/day) = 1.2e-07
+   (b) inter-strut, octet [110] pin: variance fraction of strut stress = 0.833 (relaxes at cell scale; mean part relaxes only at envelope scale)
+   (b) inter-strut, octet [111] pin: variance fraction of strut stress = 0.800 (relaxes at cell scale; mean part relaxes only at envelope scale)
+  alpha_s=27e-6: Delta_E = 6.3708e-03; D = 5.4099e-05 m^2/s
+   (a) intra-strut, reed (S2/S4) vs round section (f_Z,round = 1.8412^2*D/(2 pi R^2) = 2.158 D/d^2, weight 0.97):
+       t=d=0.5 mm: f_Z reed   339.9 Hz, round   467.0 Hz; psi_TE(1 Hz) reed 1.178e-04 (0.024 x psi), round 8.463e-05 (0.017 x psi)
+       t=d=1.0 mm: f_Z reed    85.0 Hz, round   116.8 Hz; psi_TE(1 Hz) reed 4.710e-04 (0.094 x psi), round 3.385e-04 (0.068 x psi)
+       t=d=2.0 mm: f_Z reed    21.2 Hz, round    29.2 Hz; psi_TE(1 Hz) reed 1.880e-03 (0.376 x psi), round 1.353e-03 (0.271 x psi)
+       t=d=5.0 mm: f_Z reed     3.4 Hz, round     4.7 Hz; psi_TE(1 Hz) reed 1.084e-02 (2.168 x psi), round 8.092e-03 (1.618 x psi)
+   (b) inter-strut, octet [100] pin: variance fraction of strut stress = 0.889 (relaxes at cell scale; mean part relaxes only at envelope scale)
+       cell  3.0 mm, strut length 2.12 mm: f_1 =  18.88 Hz; psi_inter(1 Hz) = 1.545e-03 (0.31 x psi); psi_inter(1/day) = 1.8e-08
+       cell  5.0 mm, strut length 3.54 mm: f_1 =   6.80 Hz; psi_inter(1 Hz) = 4.215e-03 (0.84 x psi); psi_inter(1/day) = 5.0e-08
+       cell  7.0 mm, strut length 4.95 mm: f_1 =   3.47 Hz; psi_inter(1 Hz) = 7.799e-03 (1.56 x psi); psi_inter(1/day) = 9.8e-08
+       cell 10.0 mm, strut length 7.07 mm: f_1 =   1.70 Hz; psi_inter(1 Hz) = 1.285e-02 (2.57 x psi); psi_inter(1/day) = 2.0e-07
+   (b) inter-strut, octet [110] pin: variance fraction of strut stress = 0.833 (relaxes at cell scale; mean part relaxes only at envelope scale)
+   (b) inter-strut, octet [111] pin: variance fraction of strut stress = 0.800 (relaxes at cell scale; mean part relaxes only at envelope scale)
+  (b) is a 1D estimate: node heat capacity, convection and the bending of rigid joints are ignored (UNSURE); FE or a frequency sweep is needed.
+
+=== 4 bilayer plate, Timoshenko (1925) closed-form curvature with biaxial moduli ===
+  equal layers (bimetal check): interface, mid, top = 0.500000 0.125000 -0.250000 (S4: 0.5, 0.125, -0.25)
+  octet rho 0.2 on Ti-6Al-4V, H_L/H_2=1.0: interface 0.9203, mid 0.8522, top 0.7840
+  octet rho 0.2 on Ti-6Al-4V, H_L/H_2=10.0: interface 0.9020, mid 0.2215, top -0.4590
+  A rho 0.4 on Ti-6Al-4V, H_L/H_2=1.0: interface 0.7150, mid 0.4739, top 0.2329
+  A rho 0.4 on Ti-6Al-4V, H_L/H_2=10.0: interface 0.7729, mid 0.1812, top -0.4105
+  S4 [4M] section 1: octet Ti h=1: 0.9203, 0.8522, 0.7840; A rho 0.4 Ti h=1: 0.7150, 0.4739, 0.2329
+
+=== 5 diurnal mismatch life (1 per day, 50 K, octet S at H_L = H_2) ===
+  c = 1, no mean (S4): lives below 30 y: K_n=1: 0 of 60, K_n=2: 4 of 60, K_n=3: 10 of 60
+  c = 1/(1-nu_s) = 1.49, no mean: lives below 30 y: K_n=1: 1 of 60, K_n=2: 10 of 60, K_n=3: 24 of 60
+  c = 1, Goodman sigma_m = min(sigma_y, E_s dalpha 300 K), sigma_u 460: lives below 30 y: K_n=1: 4 of 60, K_n=2: 22 of 60, K_n=3: 35 of 60
+  Ti-6Al-4V, plan inputs (alpha 21e-6, sigma_w7 60), K_n=3, c=1, 50 K, b=-0.1434: life 1.7e+04 y without mean; 18.2 y with Goodman sigma_m = sigma_y, sigma_u = 400 (g = 2.67)
+  Ti-6Al-4V, plan inputs (alpha 21e-6, sigma_w7 60), K_n=3, c=1, 50 K, b=-0.095: life 1.34e+04 y without mean; 0.438 y with Goodman sigma_m = sigma_y, sigma_u = 400 (g = 2.67)
+  Ti-6Al-4V, plan inputs (alpha 21e-6, sigma_w7 60), K_n=3, c=1, 50 K, b=-0.1434: life 1.7e+04 y without mean; 71.8 y with Goodman sigma_m = sigma_y, sigma_u = 460 (g = 2.19)
+  Ti-6Al-4V, plan inputs (alpha 21e-6, sigma_w7 60), K_n=3, c=1, 50 K, b=-0.095: life 1.34e+04 y without mean; 3.48 y with Goodman sigma_m = sigma_y, sigma_u = 460 (g = 2.19)
+  validity check of the Q5 mismatch default (nominal range + mean < sigma_y) at dT_ref = 300 K, 50 K swing, c = 1, alpha_s 21e-6:
+    Ti-6Al-4V: mean E_s dalpha dT_ref = 260 MPa; range c E_s dalpha 50 K = 43.4 MPa; mean + range = 304 MPa vs sigma_y 250
+    Invar: mean E_s dalpha dT_ref = 414 MPa; range c E_s dalpha 50 K = 68.9 MPa; mean + range = 483 MPa vs sigma_y 250
+    steel: mean E_s dalpha dT_ref = 189 MPa; range c E_s dalpha 50 K = 31.5 MPa; mean + range = 220 MPa vs sigma_y 250
+
+=== 6 Q3 over-prediction decades log10((K_n k_peak)^(-1/b)), K_n = 1, rho = 0.2 ===
+  C100 pin           k_peak=  15.00: b=-0.095  12.4 decades; b=-0.1434   8.2
+  C100 rigid (rv1)   k_peak=  28.97: b=-0.095  15.4 decades; b=-0.1434  10.2
+  A                  k_peak=  55.90: b=-0.095  18.4 decades; b=-0.1434  12.2
+  B                  k_peak= 132.77: b=-0.095  22.3 decades; b=-0.1434  14.8
+  headline ratios (claim 1): 3.418e+04/LPBF 50 = 0.384; 3.418e+04/LPBF 600 = 0.032; 3.418e+04/melt floor = 21; 2.973e+03/LPBF 50 = 0.0334; 7.429e+00/melt floor = 0.00457
+  part mass 0.5340 kg; melt floor c_p 900: 1.6246e+03 J/K

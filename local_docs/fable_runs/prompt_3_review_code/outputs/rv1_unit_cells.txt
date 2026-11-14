@@ -1,0 +1,70 @@
+=== 1 octet, pin-jointed (rho = 1 normalisation; S2 values: E 1/9, 1/6, 1/5; r^2 1, 6, 1.8) ===
+  [100]: E/(rho E_s) = 0.111111111; k_peak*rho = 3.000000000; r^2 = 1.000000000; energy check W vs 0.5 sigma.eps: 4.500000000e+00 4.500000000e+00
+  [110]: E/(rho E_s) = 0.166666667; k_peak*rho = 6.000000000; r^2 = 6.000000000; energy check W vs 0.5 sigma.eps: 3.000000000e+00 3.000000000e+00
+  [111]: E/(rho E_s) = 0.200000000; k_peak*rho = 3.000000000; r^2 = 1.800000000; energy check W vs 0.5 sigma.eps: 2.500000000e+00 2.500000000e+00
+  C11 = 0.166666667 (1/6), C12 = 0.083333333 (1/12), C44 = 0.083333333 (1/12)
+  equibiaxial, free normal: eps_zz/eps_m = -1.000000000 (S2: -1); c = 1.000000000 (S2: 1); biaxial modulus/(rho E_s) = 0.166666667 (S2: 1/6)
+  hydrostatic: max axial = 1.000000000 (S2: 1)
+
+=== 2 BCC, beam model, checks against S2 (R6, R7, R9) ===
+  Euler-Bernoulli
+    rho=0.02: C1=E/(E_s rho^2)=0.09172  k_peak=4090.321  k_peak*rho^1.5=11.5692  r^2=12.2763  c_equibiaxial=0.30214  eps_z/eps_m=-1.9781  hydro (axial, bend)=(1.0000000000000002, 4.038510608118429e-17)
+    rho=0.10: C1=E/(E_s rho^2)=0.09105  k_peak=371.377  k_peak*rho^1.5=11.7440  r^2=12.5579  c_equibiaxial=0.67603  eps_z/eps_m=-1.8936  hydro (axial, bend)=(1.0000000000000002, 9.030384247606822e-17)
+    rho=0.20: C1=E/(E_s rho^2)=0.09023  k_peak=132.766  k_peak*rho^1.5=11.8750  r^2=12.7238  c_equibiaxial=0.94338  eps_z/eps_m=-1.7946  hydro (axial, bend)=(1.0000000000000002, 1.2770891876405926e-16)
+    rho=0.30: C1=E/(E_s rho^2)=0.08942  k_peak=72.880  k_peak*rho^1.5=11.9755  r^2=12.8243  c_equibiaxial=1.13537  eps_z/eps_m=-1.7021  hydro (axial, bend)=(1.0000000000000002, 1.5641084328724663e-16)
+    rho=0.40: C1=E/(E_s rho^2)=0.08863  k_peak=47.672  k_peak*rho^1.5=12.0602  r^2=12.8912  c_equibiaxial=1.28618  eps_z/eps_m=-1.6155  hydro (axial, bend)=(1.0000000000000002, 1.8060768495213644e-16)
+  Timoshenko
+    rho=0.02: C1=E/(E_s rho^2)=0.09074  k_peak=4090.321  k_peak*rho^1.5=11.5692  r^2=12.1446  c_equibiaxial=0.29891  eps_z/eps_m=-1.9783  hydro (axial, bend)=(1.0000000000000002, 3.995110835400228e-17)
+    rho=0.10: C1=E/(E_s rho^2)=0.08640  k_peak=371.377  k_peak*rho^1.5=11.7440  r^2=11.9166  c_equibiaxial=0.64238  eps_z/eps_m=-1.8989  hydro (axial, bend)=(1.0000000000000002, 8.56515820660649e-17)
+    rho=0.20: C1=E/(E_s rho^2)=0.08153  k_peak=132.766  k_peak*rho^1.5=11.8750  r^2=11.4973  c_equibiaxial=0.85669  eps_z/eps_m=-1.8134  hydro (axial, bend)=(1.0000000000000002, 1.1519502805640868e-16)
+    rho=0.30: C1=E/(E_s rho^2)=0.07718  k_peak=72.880  k_peak*rho^1.5=11.9755  r^2=11.0690  c_equibiaxial=0.99007  eps_z/eps_m=-1.7402  hydro (axial, bend)=(1.0000000000000002, 1.344950939512921e-16)
+    rho=0.40: C1=E/(E_s rho^2)=0.07327  k_peak=47.672  k_peak*rho^1.5=12.0602  r^2=10.6577  c_equibiaxial=1.08135  eps_z/eps_m=-1.6767  hydro (axial, bend)=(1.0000000000000002, 1.4837177641531878e-16)
+  crossover c = 1: EB 0.2267 (S2 0.2267); Timoshenko 0.3093 (S2 0.3093)
+
+=== 3 BCC, rigid node zones (sensitivity, UNSURE): a_r = eta*d at each strut end, lam = 1 - 2 eta d/l ===
+  eta = 0.87 is the distance (d/2)/sin(35.26 deg) at which two struts at 70.5 deg stop overlapping; 0.25 and 0.5 are milder.
+  rho  eta   lam    | EB: C1    k_peak   r^2    c_eq   | Timo: C1  k_peak   r^2    c_eq  | E_s rho^2/E_eff (EB..Timo)
+  0.1  0.00  1.000  | 0.0911   371.38   12.56  0.676  | 0.0864   371.38   11.92  0.642 | 10.98..11.57
+  0.1  0.25  0.922  | 0.1161   343.09   13.66  0.794  | 0.1092   343.09   12.85  0.748 | 8.61..9.16
+  0.1  0.50  0.843  | 0.1512   314.81   14.98  0.946  | 0.1406   314.81   13.93  0.882 | 6.61..7.11
+  0.1  0.87  0.728  | 0.2345   272.95   17.47  1.262  | 0.2130   272.95   15.87  1.152 | 4.27..4.70
+  0.2  0.00  1.000  | 0.0902   132.77   12.72  0.943  | 0.0815   132.77   11.50  0.857 | 11.08..12.27
+  0.2  0.25  0.889  | 0.1277   118.62   14.37  1.182  | 0.1126   118.62   12.67  1.050 | 7.83..8.88
+  0.2  0.50  0.779  | 0.1889   104.48   16.50  1.521  | 0.1609   104.48   14.06  1.311 | 5.29..6.21
+  0.2  0.87  0.615  | 0.3771    83.55   21.06  2.345  | 0.2960    83.55   16.53  1.890 | 2.65..3.38
+  0.3  0.00  1.000  | 0.0894    72.88   12.82  1.135  | 0.0772    72.88   11.07  0.990 | 11.18..12.96
+  0.3  0.25  0.864  | 0.1372    63.45   14.91  1.490  | 0.1134    63.45   12.32  1.252 | 7.29..8.82
+  0.3  0.50  0.729  | 0.2256    54.02   17.78  2.029  | 0.1747    54.02   13.76  1.618 | 4.43..5.73
+  0.3  0.87  0.528  | 0.5674    40.07   24.60  3.491  | 0.3705    40.07   16.06  2.461 | 1.76..2.70
+  0.4  0.00  1.000  | 0.0886    47.67   12.89  1.286  | 0.0733    47.67   10.66  1.081 | 11.28..13.65
+  0.4  0.25  0.843  | 0.1456    40.60   15.36  1.750  | 0.1128    40.60   11.90  1.397 | 6.87..8.86
+  0.4  0.50  0.687  | 0.2630    33.53   18.92  2.492  | 0.1843    33.53   13.26  1.844 | 3.80..5.43
+  0.4  0.87  0.455  | 0.8272    23.06   28.16  4.661  | 0.4376    23.06   14.90  2.889 | 1.21..2.29
+  crossover c = 1 with eta=0.25: EB 0.1495; Timoshenko 0.18
+  crossover c = 1 with eta=0.5: EB 0.1087; Timoshenko 0.124
+  crossover c = 1 with eta=0.87: EB 0.075; Timoshenko 0.0821
+
+=== 4 octet with rigid joints (monolithic AM), affine, Euler-Bernoulli and Timoshenko ===
+  S2/S4 use the pin-jointed octet: k_peak*rho = 3 [100], 6 [110]; r^2 = 1 [100], 6 [110].
+  rho=0.1 d/l=0.1225 EB   eta=0.0: [100] E/(rho Es)=0.0114 k*rho=5.068 (max axial*rho 2.935) r^2=2.939; [110] E/(rho Es)=0.0169 k*rho=5.901 (max axial*rho 5.901) r^2=5.901; [111] E/(rho Es)=0.0202 k*rho=4.006 (max axial*rho 2.978) r^2=3.238; equibiaxial c=1.000 (axial 1.000, max bending 0.363)
+  rho=0.1 d/l=0.1225 EB   eta=0.5: [100] E/(rho Es)=0.0132 k*rho=5.323 (max axial*rho 2.916) r^2=3.727; [110] E/(rho Es)=0.0194 k*rho=5.873 (max axial*rho 5.873) r^2=6.693; [111] E/(rho Es)=0.0231 k*rho=4.139 (max axial*rho 2.971) r^2=3.949; equibiaxial c=1.140 (axial 1.140, max bending 0.470)
+  rho=0.1 d/l=0.1225 Timo eta=0.0: [100] E/(rho Es)=0.0114 k*rho=5.003 (max axial*rho 2.937) r^2=2.862; [110] E/(rho Es)=0.0169 k*rho=5.904 (max axial*rho 5.904) r^2=5.904; [111] E/(rho Es)=0.0202 k*rho=3.974 (max axial*rho 2.978) r^2=3.185; equibiaxial c=1.000 (axial 1.000, max bending 0.352)
+  rho=0.1 d/l=0.1225 Timo eta=0.5: [100] E/(rho Es)=0.0131 k*rho=5.231 (max axial*rho 2.919) r^2=3.593; [110] E/(rho Es)=0.0194 k*rho=5.878 (max axial*rho 5.878) r^2=6.698; [111] E/(rho Es)=0.0230 k*rho=4.092 (max axial*rho 2.972) r^2=3.859; equibiaxial c=1.140 (axial 1.140, max bending 0.451)
+  rho=0.2 d/l=0.1732 EB   eta=0.0: [100] E/(rho Es)=0.0235 k*rho=5.794 (max axial*rho 2.873) r^2=3.953; [110] E/(rho Es)=0.0344 k*rho=5.807 (max axial*rho 5.807) r^2=5.807; [111] E/(rho Es)=0.0407 k*rho=4.394 (max axial*rho 2.956) r^2=3.930; equibiaxial c=1.000 (axial 1.000, max bending 0.508)
+  rho=0.2 d/l=0.1732 EB   eta=0.5: [100] E/(rho Es)=0.0292 k*rho=6.253 (max axial*rho 2.820) r^2=5.711; [110] E/(rho Es)=0.0423 k*rho=5.725 (max axial*rho 5.725) r^2=6.924; [111] E/(rho Es)=0.0496 k*rho=4.658 (max axial*rho 2.936) r^2=5.385; equibiaxial c=1.210 (axial 1.210, max bending 0.736)
+  rho=0.2 d/l=0.1732 Timo eta=0.0: [100] E/(rho Es)=0.0235 k*rho=5.631 (max axial*rho 2.881) r^2=3.719; [110] E/(rho Es)=0.0344 k*rho=5.819 (max axial*rho 5.819) r^2=5.819; [111] E/(rho Es)=0.0407 k*rho=4.308 (max axial*rho 2.959) r^2=3.775; equibiaxial c=1.000 (axial 1.000, max bending 0.477)
+  rho=0.2 d/l=0.1732 Timo eta=0.5: [100] E/(rho Es)=0.0290 k*rho=5.988 (max axial*rho 2.835) r^2=5.201; [110] E/(rho Es)=0.0421 k*rho=5.747 (max axial*rho 5.747) r^2=6.952; [111] E/(rho Es)=0.0495 k*rho=4.515 (max axial*rho 2.942) r^2=5.049; equibiaxial c=1.210 (axial 1.210, max bending 0.673)
+  rho=0.3 d/l=0.2122 EB   eta=0.0: [100] E/(rho Es)=0.0363 k*rho=6.284 (max axial*rho 2.816) r^2=4.778; [110] E/(rho Es)=0.0525 k*rho=5.718 (max axial*rho 5.718) r^2=5.718; [111] E/(rho Es)=0.0616 k*rho=4.676 (max axial*rho 2.935) r^2=4.491; equibiaxial c=1.000 (axial 1.000, max bending 0.616)
+  rho=0.3 d/l=0.2122 EB   eta=0.5: [100] E/(rho Es)=0.0483 k*rho=6.887 (max axial*rho 2.719) r^2=7.642; [110] E/(rho Es)=0.0684 k*rho=5.565 (max axial*rho 5.565) r^2=7.063; [111] E/(rho Es)=0.0794 k*rho=5.064 (max axial*rho 2.897) r^2=6.791; equibiaxial c=1.269 (axial 1.269, max bending 0.973)
+  rho=0.3 d/l=0.2122 Timo eta=0.0: [100] E/(rho Es)=0.0360 k*rho=6.011 (max axial*rho 2.831) r^2=4.340; [110] E/(rho Es)=0.0522 k*rho=5.742 (max axial*rho 5.742) r^2=5.742; [111] E/(rho Es)=0.0615 k*rho=4.529 (max axial*rho 2.940) r^2=4.202; equibiaxial c=1.000 (axial 1.000, max bending 0.562)
+  rho=0.3 d/l=0.2122 Timo eta=0.5: [100] E/(rho Es)=0.0475 k*rho=6.415 (max axial*rho 2.753) r^2=6.518; [110] E/(rho Es)=0.0678 k*rho=5.619 (max axial*rho 5.619) r^2=7.132; [111] E/(rho Es)=0.0790 k*rho=4.791 (max axial*rho 2.910) r^2=6.044; equibiaxial c=1.269 (axial 1.269, max bending 0.844)
+  rho=0.4 d/l=0.2450 EB   eta=0.0: [100] E/(rho Es)=0.0497 k*rho=6.647 (max axial*rho 2.762) r^2=5.490; [110] E/(rho Es)=0.0710 k*rho=5.633 (max axial*rho 5.633) r^2=5.633; [111] E/(rho Es)=0.0829 k*rho=4.903 (max axial*rho 2.914) r^2=4.980; equibiaxial c=1.000 (axial 1.000, max bending 0.703)
+  rho=0.4 d/l=0.2450 EB   eta=0.5: [100] E/(rho Es)=0.0709 k*rho=7.339 (max axial*rho 2.617) r^2=9.553; [110] E/(rho Es)=0.0982 k*rho=5.397 (max axial*rho 5.397) r^2=7.149; [111] E/(rho Es)=0.1125 k*rho=5.405 (max axial*rho 2.854) r^2=8.221; equibiaxial c=1.324 (axial 1.324, max bending 1.195)
+  rho=0.4 d/l=0.2450 Timo eta=0.0: [100] E/(rho Es)=0.0491 k*rho=6.265 (max axial*rho 2.787) r^2=4.816; [110] E/(rho Es)=0.0705 k*rho=5.672 (max axial*rho 5.672) r^2=5.672; [111] E/(rho Es)=0.0825 k*rho=4.688 (max axial*rho 2.924) r^2=4.534; equibiaxial c=1.000 (axial 1.000, max bending 0.624)
+  rho=0.4 d/l=0.2450 Timo eta=0.5: [100] E/(rho Es)=0.0687 k*rho=6.650 (max axial*rho 2.678) r^2=7.597; [110] E/(rho Es)=0.0964 k*rho=5.497 (max axial*rho 5.497) r^2=7.281; [111] E/(rho Es)=0.1113 k*rho=4.978 (max axial*rho 2.880) r^2=6.895; equibiaxial c=1.324 (axial 1.324, max bending 0.982)
+
+=== 5 consequence for the Q4 life-entropy bound (S proportional to 1/(K_n^2 r^2), same sigma_w) ===
+  octet [100], rho 0.2, EB, eta=0.0: r^2 = 3.953; S_max(rigid)/S_max(pin) = 0.253; S4's 3.418e4 J/K (1 Hz, 30 y, sigma_w7 60, b -0.095, K_n 1) becomes 8.647e+03 J/K; fatigue-limited sigma_a at 1e7 = 60/k_peak = 2.071 MPa (S2: 4.000)
+  octet [100], rho 0.2, EB, eta=0.5: r^2 = 5.711; S_max(rigid)/S_max(pin) = 0.175; S4's 3.418e4 J/K (1 Hz, 30 y, sigma_w7 60, b -0.095, K_n 1) becomes 5.986e+03 J/K; fatigue-limited sigma_a at 1e7 = 60/k_peak = 1.919 MPa (S2: 4.000)
+  octet [100], rho 0.2, Timo, eta=0.0: r^2 = 3.719; S_max(rigid)/S_max(pin) = 0.269; S4's 3.418e4 J/K (1 Hz, 30 y, sigma_w7 60, b -0.095, K_n 1) becomes 9.190e+03 J/K; fatigue-limited sigma_a at 1e7 = 60/k_peak = 2.131 MPa (S2: 4.000)
+  octet [100], rho 0.2, Timo, eta=0.5: r^2 = 5.201; S_max(rigid)/S_max(pin) = 0.192; S4's 3.418e4 J/K (1 Hz, 30 y, sigma_w7 60, b -0.095, K_n 1) becomes 6.573e+03 J/K; fatigue-limited sigma_a at 1e7 = 60/k_peak = 2.004 MPa (S2: 4.000)
