@@ -1,0 +1,14 @@
+central: E_c=6 Wh/kg P_c=10 kW/kg ; E_b=200 Wh/kg P_b=1.5 kW/kg
+  t*(A)=14.400 s, analytic E_c/P_b=14.400 s ; t*(B)=12.619 s
+  CHECK A: t* = E_c/P_b: PASS 
+  CHECK A vs B within factor 2: PASS ratio 1.141
+  CHECK t* inside 1-1000 s (central): PASS 
+limits: t=0.1 s capacitor ahead? True ; t=1e4 battery/capacitor energy ratio 33.333333333333336 vs E_b/E_c 33.333333333333336
+  CHECK limit t=1e4: ratio = E_b/E_c: PASS 
+range corners (E_c,P_c,E_b,P_b), all 16 corners:
+  t*(A) range 4.80 .. 96.00 s ; A/B ratio range 0.97..2.46
+  CHECK sweep [0.1,1e4] s brackets t* at all corners: PASS 
+  CHECK all corners A/B within factor 2: FAIL 
+  CHECK all corner t* within 1-1000 s: PASS 
+note: CHECK 'A: t*=E_c/P_b' compares a root with the closed form of the same model (consistency of root finder, not independent evidence).
+FAILS: ['all corners A/B within factor 2']

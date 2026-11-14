@@ -1,0 +1,33 @@
+film cases (NOT A LOOKUP):
+  best: rho=1.00e-06 t=200 nm T=0.9 R_s=5.00 Ohm/sq FoM=0.0697 1/Ohm  In mass=1.057 g/m2
+  mid: rho=1.50e-06 t=150 nm T=0.875 R_s=10.00 Ohm/sq FoM=0.0263 1/Ohm  In mass=0.793 g/m2
+  worst: rho=2.00e-06 t=100 nm T=0.85 R_s=20.00 Ohm/sq FoM=0.0098 1/Ohm  In mass=0.528 g/m2
+  film FoM range 0.0098 .. 0.0697 (best film combination of best-corner values)
+Cu w/p=0.025 t=0.5 um: R_s=1.379 Ohm/sq T=0.9506 (expected ~1.4 and ~0.95)
+  CHECK Cu example R_s ~1.4 within 2%: PASS 1.379
+  CHECK Cu example T ~0.95 within 2%: PASS 0.9506
+  CHECK limit w/p->1: R_s=1/(sigma t): PASS  (identity: same formula)
+Cu: FoM over sweep min 0.013 max 2.082; fraction of sweep above best film FoM: 0.970; above worst film: 1.000
+   t=0.09999999999999999 um: f*=0.04762 (analytic 1/21=0.04762) FoM*=0.104
+   t=0.5 um: f*=0.04762 (analytic 1/21=0.04762) FoM*=0.520
+   t=2.0 um: f*=0.04762 (analytic 1/21=0.04762) FoM*=2.082
+  CHECK Cu some swept mesh exceeds best film FoM: PASS 
+  CHECK Cu f* = 1/21 (bracket [0.005,0.2] contains it): PASS 
+Al: FoM over sweep min 0.008 max 1.271; fraction of sweep above best film FoM: 0.925; above worst film: 1.000
+   t=0.09999999999999999 um: f*=0.04762 (analytic 1/21=0.04762) FoM*=0.064
+   t=0.5 um: f*=0.04762 (analytic 1/21=0.04762) FoM*=0.318
+   t=2.0 um: f*=0.04762 (analytic 1/21=0.04762) FoM*=1.271
+  CHECK Al some swept mesh exceeds best film FoM: PASS 
+  CHECK Al f* = 1/21 (bracket [0.005,0.2] contains it): PASS 
+note: FoM grows linearly with t at fixed f (no interior optimum in t; the sweep's upper edge t=2 um is the maximum, limited by process aspect ratio, not by the formula).
+note: T=(1-f)^2 neglects diffraction, haze and edge shadowing; T^10/R_s is Haacke's definition for continuous films; applying it to a mesh is a spec choice.
+Mesh/film comparison, masses per m2 (mesh solid area fraction 2f-f^2):
+  Cu f=0.0250 t=0.5 um: R_s=1.379 T=0.9506 FoM=0.437 mass=0.221 g/m2
+  Cu f=0.0476 t=0.5 um: R_s=0.724 T=0.9070 FoM=0.520 mass=0.417 g/m2
+  Al f=0.0250 t=0.5 um: R_s=2.260 T=0.9506 FoM=0.267 mass=0.067 g/m2
+  Al f=0.0476 t=0.5 um: R_s=1.186 T=0.9070 FoM=0.318 mass=0.126 g/m2
+Equal-R_s and equal-T mesh thickness to mid film (R_s=10, T=0.875):
+  Cu: f=0.0646 needs t=26.7 nm, mass=0.0299 g/m2 vs In in film 0.793 g/m2 (In)
+  Al: f=0.0646 needs t=43.7 nm, mass=0.0148 g/m2 vs In in film 0.793 g/m2 (In)
+Minimum line width (process input, not provided): for f=0.025, a 5 um line (UNSURE, example only) implies pitch 200 um; a 1 um line pitch 40 um. Not computed by spec.
+FAILS: []

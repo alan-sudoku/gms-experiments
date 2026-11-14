@@ -1,0 +1,12 @@
+  Sm2Fe17N3 + FeCo(2.43): f_h=0.0979  (BH)max=1091.4 kJ/m3  wall width=2.57 nm  single-phase ceiling=478.0 kJ/m3  hard-phase volume per unit (BH): 0.043 of single-phase
+  CHECK Sm pair (BH)max vs published 1090 (unverified) within 3%: PASS 1091.4
+  CHECK Sm pair f_h ~ 9% (spec 9-10%): PASS 0.0979
+  Nd2Fe14B + FeCo(2.43): f_h=0.2397  (BH)max=984.7 kJ/m3  wall width=4.01 nm  single-phase ceiling=515.7 kJ/m3  hard-phase volume per unit (BH): 0.126 of single-phase
+  CHECK Nd pair f_h ~0.24 within 3%: PASS 0.2397
+  CHECK Nd pair (BH)max ~985 within 3%: PASS 984.7
+  CHECK Nd pair wall ~4 nm within 10%: PASS 4.01
+  Sm2Fe17N3 + FeCo(2.45): f_h=0.0995  (BH)max=1106.9 kJ/m3  wall width=2.57 nm  single-phase ceiling=478.0 kJ/m3  hard-phase volume per unit (BH): 0.043 of single-phase
+  Nd2Fe14B + FeCo(2.45): f_h=0.2437  (BH)max=994.6 kJ/m3  wall width=4.01 nm  single-phase ceiling=515.7 kJ/m3  hard-phase volume per unit (BH): 0.126 of single-phase
+note: 'hard-phase volume' stands in for rare-earth volume: the rare-earth atom share inside the hard phase is not modelled.
+note: (BH)max with Ms=Mh gives the pure ceiling mu0 Ms^2/4, exceeding the single-phase hard ceiling when soft Ms > Mh (this is the Skomski-Coey result as remembered).
+FAILS: []
