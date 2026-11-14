@@ -19,11 +19,14 @@ SOCl2={'S':1,'O':1,'Cl':2}
 cells=[
  ('4Li+2SOCl2',4,3.65,{'Li':4,'S':2,'O':2,'Cl':4},12),
  ('Zn+2MnO2',2,1.5,{'Zn':1,'Mn':2,'O':4},7),
- ('LiCoO2+3C (0.5 Li)',0.5,3.7,{'Li':1,'Co':1,'O':2,'C':3},6),
+ ('LiCoO2+3C (0.5 Li)',0.5,3.7,{'Li':1,'Co':1,'O':2,'C':3},7),  # was 6 (S5 finding 5, fixed 2026-11-14)
  ('LiFePO4+6C',1,3.3,{'Li':1,'Fe':1,'P':1,'O':4,'C':6},13),
  ('Pb+PbO2+2H2SO4',2,2.05,{'Pb':2,'O':2+8,'H':4,'S':2},18),
 ]
 res={}
+# Regression check (S5 finding 5): N_at must equal the atom count of the reactant formula.
+for name,_,_,form,nat in cells:
+    assert nat==sum(form.values()), f"{name}: N_at={nat} but formula has {sum(form.values())} atoms"
 for name,n,V,form,nat in cells:
     m=M(form)
     e_kg=n*F*V/m

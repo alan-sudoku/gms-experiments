@@ -300,7 +300,7 @@ Order as in the prompt: (2) photons, (1) neutrons, (3) storage, (4) magnets.
 |---|---|
 | 4Li + 2SOCl₂, 3.65 V | 1.217 |
 | Zn + 2MnO₂, 1.5 V | 0.429 |
-| LiCoO₂ + 3C at 0.5 Li, 3.7 V | 0.308 |
+| LiCoO₂ + 3C at 0.5 Li, 3.7 V | 0.264 (orchestrator erratum 2026-11-15: was 0.308, a 6-atom count in the script; S5 finding 5) |
 | LiFePO₄ + 6C, 3.3 V | 0.254 |
 | Pb + PbO₂ + 2H₂SO₄, 2.05 V | 0.228 |
 | Double layer, 100 F/g, 1.0 V | 0.00156 |
@@ -507,7 +507,7 @@ Numbers updated, claim unchanged:
 17. G3.3: the photoelectric ratio W/C at 100 keV is 4 028, against "order 10³" [f4].
 18. G3.4: buildup penalty 1.14 to 1.16 at 1 MeV (inside the plan's 1.1 to 1.4); 1.88 to 1.96 at 0.5 MeV is new [f6].
 19. G3.8: water against Cd 38 times the areal mass and 333 times the thickness, against "about 40" and "about 300" [n5].
-20. G3.10: redox range 0.23 to 1.22 eV/atom (plan 0.26 to 1.2); gap 22 to 780 in practice and 4.1 to 19 at the 2.7 V ceiling (plan 20 to 800 and 4 to 20) [h12].
+20. G3.10: redox range 0.23 to 1.22 eV/atom (plan 0.26 to 1.2); gap 22 to 780 in practice and 4.1 to 19 at the 2.7 V ceiling (plan 20 to 800 and 4 to 20) [h12]. Orchestrator erratum (2026-11-15): the LiCoO₂ + 3C cell is 0.264 eV/atom, not 0.308 (script fixed with an atom-count assert; S5 finding 5); the plan's 0.26 was right and the range is unchanged.
 21. G3.12: Fe₆₅Co₃₅ read as 2.45 T, giving 398 kJ/m³ for the shape ceiling (plan 390) [m3]; κ_h of Fe 0.114 (plan 0.12) [m12].
 
 Status of sources changed in this stage (search results, secondary):
