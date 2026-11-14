@@ -58,6 +58,8 @@ Data (user question, 2026-11-14): the open AM fatigue compilation "Fatigue datab
 
 ## Decisions for the user
 
+**Decided 2026-11-14: the user accepted the recommendation (a) for D1–D4. D5 and D6 were taken at (a) with no objection from the user.** Recorded as E20–E23 (drafting notes §A, plan §4), plan V13 and Q2 (narrowed), and in `orchestrator_state.md`: OQ-2 narrowed, next step 0 (the GMS-220 fix pass before r2), and a §4 note (Q4 scope, D6 data pull).
+
 | # | Decision | Options | Recommendation |
 |---|---|---|---|
 | D1 | c_con for a strut of a strut lattice (U15, section 2 table) | (a) scenario input (unit-cell FE or measured), with 1 kept as the reference value for slender struts in a pin-jointed or beam model and a validity note that node zones can raise it to about 2.4 (`derived`); the energy evaluation (σ_rms at c_con = 1) unchanged; (b) keep 1, add an Open item that it can be non-conservative by about 2; (c) fixed screening value 2.5 | (a): consistent with U13 (E_eff a scenario input) and the review's F2 |
