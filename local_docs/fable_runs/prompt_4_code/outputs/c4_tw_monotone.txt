@@ -1,0 +1,24 @@
+(1) dh/ds on constant m = -K_g*m/(2*sqrt(-m*s + tau)) + K_g*m/(2*sqrt(s))
+    dh/ds - Kg m/2 (1/sqrt(s) - 1/sqrt(r)) = 0 [algebra]
+    m = floor(tau/s) => 0 <= r = tau - m s < s => 1/sqrt(r) > 1/sqrt(s) => dh/ds < 0 for m>=1, Kg>0 (proof, not numeric)
+    h at s=tau/k using m=k: K_g*sqrt(k)*sqrt(tau) ; using m=k-1: K_g*sqrt(k)*sqrt(tau) ; difference: 0  -> h continuous across the change of m
+    m R jumps DOWN by R when s increases through tau/k (m: k -> k-1) -> m R non-increasing, left-continuous in s.
+    s>=tau: m=0 or 1,r=0 -> h = Kg sqrt(tau) constant (so 'strictly decreasing' holds on (0,tau] only; weakly on (0,inf)).
+(2a) hypothesis h(s1) >= h(s2), m non-increasing, exact floor (3000 examples)
+  coverage h:Kg=0: 1346
+  coverage h:tie s=tau/k: 1880
+  coverage h:m>=1000: 2099
+  coverage h:strict gap > 1e-30 rel: 1051
+(2b) hypothesis: h is continuous at s = tau/k at 1e-30 relative offsets; m(tau/k) = k, m(just above) = k-1 (3000 examples)
+(2c) hypothesis: f(tau; s1) >= f(tau; s2) for s1 < s2, any tau, including s2 > tau (3000 examples)
+  coverage f:s2>tau (tau<tw branch): 696
+  coverage f:tie: 1297
+  coverage f:R=0: 1595
+  coverage f:Kg=0: 1386
+(3) float64 hazard: m = floor(tau/s) when tau is the FLOAT product j*s (intended tie), float vs exact floor of the double values
+    over 200000 random (s, j): float floor(j*s/s) != j in 10825 cases; exact floor of the double values != j in 100295 cases
+    first case with exact floor != j: s=0.0367344509464381, j=960439, tau=j*s=35281.199332546064; float floor=960439, exact floor=960438
+      effect of a wrong m (j vs j-1): m*R differs by exactly R = 7.0; Kg*[m sqrt(tw)+sqrt(dt)] changes continuously (no jump)
+      (f jumps by R at a tie; a one-ulp error in tau=j*s therefore flips the verdict side by R_g -> solver must not rely on exact ties.)
+    dt = tau - m*tw cancellation: tau one ulp below 1e10 with tw=1e9: dt_float = 999999999.9999981 (exact dt = tw - 1.9e-6)
+    tau one ulp above 1e10: dt_float = 1.9073486328125e-06 -> Kg*sqrt(dt) = Kg*0.001381 where exact sqrt(1.9e-6)=1.38e-3 is the ulp-scale noise floor

@@ -1,0 +1,15 @@
+(1) SymPy f(t_m-) - f(t_m) = -R  [identity by construction of d_m']
+(2) hypothesis C2 passed (2500 examples, tolerance 1e-10 relative on a sqrt(eps)-type term)
+  coverage Kg=0: 1166
+  coverage a=0: 1620
+  coverage R=0: 1149
+  coverage Ks=0: 1250
+  coverage m>=1e6: 512
+  coverage tw>=1e3: 897
+(3) float64 behaviour near t_m (exact value via f_mp):
+   tw=1e+09 m=10000000 t_m: float=948733298051 exact=948733298050.514 diff=-5.654e-06
+   tw=1e+09 m=10000000 nextbelow: float=948733298046 exact=948733298045.514 diff=-3.286e-05
+   tw=1000 m=1000000 t_m: float=99868329.8051 exact=99868329.8050514 diff=-8.505e-09
+   tw=1000 m=1000000 nextbelow: float=99868324.8051 exact=99868324.8050514 diff=-2.850e-09
+   tw=0.1 m=3 t_m: float=17.8460498942 exact=17.8460499099566 diff=-1.581e-08
+   tw=0.1 m=3 nextbelow: float=12.8460498942 exact=12.8460498941515 diff=-2.641e-16

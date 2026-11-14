@@ -1,0 +1,45 @@
+(1) f'' = -K_g/(4*x**(3/2)) + K_s/(4*(t_m + x)**(3/2))
+    f'' - phi/(4 x^(3/2) (t_m+x)^(3/2)) = 0  (phi := Ks x^(3/2) - Kg (t_m+x)^(3/2); same sign as f'')
+    (x*/(t_m+x*))^(3/2) - Kg/Ks = 0  (zero of f'' at x* = t_m/(rho-1) confirmed)
+    Monotonic argument: psi(x)=x/(t_m+x) is strictly increasing for t_m>0 => psi^(3/2)=Kg/Ks has <= 1 solution on x>0;
+    f''<0 for x<x* (Kg term dominates), f''>0 for x>x* => f concave-then-convex, f'(0+)=+inf (Kg>0),
+    f' decreasing then increasing => <= 2 zeros of f' => f has <= 3 monotone pieces => <= 3 roots (if f not identically 0).
+(2) search over 60000 random (m,a,Kg,Ks<=316 Kg) with level in the 3-root window:
+    grid root-count histogram over examples with two f' zeros in (0,1): {3: 6}
+    max roots found per segment: 3
+    number of 3-root examples: 6
+    chosen example (tw=1): m=1 a=0.27462901204136775 Kg=0.06913552752653546 Ks=0.8205556354592521 d'=0.5436108308140535  level-window width=3.127e-03
+    max roots with generic random d' over 60000 draws incl. edge classes (excluding f==const): 2
+(4) mp-60 sign pattern of f at x = 0, x_max, x_min, 1-1e-12 (tw=1): ['-0.00231579', '0.00702195', '-0.00156347', '0.00156347'] signs: [-1, 1, -1, 1]
+    critical points x_max, x_min = [0.08369473000033423, 0.6798047735367991]  (f'' zero x* = m/(rho-1) = 0.23791353080787392 )
+    roots in (0,1) found by mp.findroot bracket: ['0.0012990843334213434082', '0.45843123476155969005', '0.904736521823163779'] count = 3
+    variant f(0)=0: m=2 a=0.3343930682806595 Kg=0.011893402175123942 Ks=1.0611111269210844; mp signs at 0,x_max,x_min,1-1e-12: [0, 1, -1, 1] -> roots at x=0, in (x_max,x_min), in (x_min,1): 3 roots in [0,1)
+(3a) hypothesis f'' zero property passed (3000 examples)
+  coverage fpp:free: 1079
+  coverage fpp:eqKg: 582
+  coverage fpp:Ks0: 487
+  coverage fpp:Kg0: 435
+  coverage fpp:both0: 417
+  coverage fpp:m=0: 315
+  coverage fpp:m>=1: 2685
+  coverage fpp:Ks>Kg>0: 624
+  coverage fpp:zero inside (0,tw): 162
+  coverage fpp:zero beyond tw: 396
+(3b) hypothesis root-count property (<=3 per segment) passed (3000 examples)
+  coverage roots:free: 707
+  coverage roots:eqKg: 400
+  coverage roots:Ks0: 296
+  coverage roots:Kg0: 341
+  coverage roots:a0: 329
+  coverage roots:m=0: 140
+  coverage roots:2 crit pts: 927
+  coverage roots:count=3: 37
+  coverage roots:count=2: 126
+  coverage roots:m=0,Ks=Kg (f linear): 27
+  coverage roots:tuned: 927
+  (informational) float artefact count: 8
+(5) degenerate cases (exact, SymPy):
+    m=0, Ks=Kg, a=0, d'=0: f(dt) = 0 -> identically 0, infinitely many roots (claim silent; fails literally)
+    m=0, Ks=Kg: f''=0 identically, so 'f'' has at most one zero' is false (zero set = whole interval);
+    Ks=Kg, m>=1: rho=1, formula divides by zero, f''<0 on (0,tw) (no zero) -> consistent with the 'only when Ks>Kg' clause;
+    Kg=0: rho=infinity, x*=0 not in (0,tw); f''>0 (Ks>0) -> f convex, <=2 roots; formula undefined (division by Kg=0).
