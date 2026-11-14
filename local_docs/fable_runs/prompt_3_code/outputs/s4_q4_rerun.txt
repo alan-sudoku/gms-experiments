@@ -1,0 +1,228 @@
+=== 0 regression of the S2 central values ===
+  REGRESSION vs S2 k_peak B (R13): here=132.766 S2=132.766 err=1.28e-06 -> OK
+  REGRESSION vs S2 fatigue limit A at 1e7 [MPa] (R14): here=1.07331 S2=1.07331 err=2.45e-06 -> OK
+  REGRESSION vs S2 fatigue limit B at 1e7 [MPa] (R14): here=0.451922 S2=0.451922 err=7.80e-07 -> OK
+  REGRESSION vs S2 r^2 B (R9): here=12.7238 S2=12.724 err=1.92e-05 -> OK
+  REGRESSION vs S2 r^2 A (R17): here=25 S2=25 err=0.00e+00 -> OK
+  REGRESSION vs S2 r^2 C110 (R2): here=6 S2=6 err=0.00e+00 -> OK
+  r^2: A=25.0000 B(EB)=12.7238 B(Timo)=11.4969 C100=1.0000 C110=6.0000
+  E_eff [GPa]: A=2.8000 B(EB)=0.2526 B(Timo)=0.2283 C100=1.5556 C110=2.3333
+  E_s rho^2 / E_BCC: EB 11.08, Timoshenko 12.27
+
+=== 1 Basquin anchors: sigma_f' = 1.67 sigma_u; b = ln(sigma_w7/sigma_f')/ln(2e7) ===
+  sigma_u [MPa]  sigma_f' [MPa]  machined sigma_w7 (b=-0.095) [MPa] | as-built b for sigma_w7 = 30, 40, 60, 100 MPa
+     400         668.0           135.3                         | -0.1846  -0.1675  -0.1434  -0.1130
+     430         718.1           145.4                         | -0.1889  -0.1718  -0.1477  -0.1173
+     460         768.2           155.6                         | -0.1929  -0.1758  -0.1517  -0.1213
+  as-built / machined ratio implied by sigma_w7 = 30, 60 against 110, 125, 130 MPa (S3 machined values):
+    sigma_w7=30: 0.27, 0.24, 0.23
+    sigma_w7=60: 0.55, 0.48, 0.46
+  Aboulkhair 2016 lower bound read as a stress range at R = 0.1 (basis UNSURE): range 63 MPa -> amplitude 31.5 MPa, sigma_max 70.0 MPa, mean 38.5 MPa
+
+=== 2 limits on sigma_a at N = 1e7, rho = 0.2, R = -1 [MPa] ===
+  first yield / collapse: A 4.472 / 6.708; B(EB) 1.883 / 3.322; C100 16.667 / 16.667; C110 8.333 / 8.333
+  sigma_w7  K_n |   A      B      C100   C110   (fatigue-limited sigma_a; binding limit)
+     30    1   |  0.537(fat)  0.226(fat)  2.000(fat)  1.000(fat)
+     30    2   |  0.268(fat)  0.113(fat)  1.000(fat)  0.500(fat)
+     40    1   |  0.716(fat)  0.301(fat)  2.667(fat)  1.333(fat)
+     40    2   |  0.358(fat)  0.151(fat)  1.333(fat)  0.667(fat)
+     60    1   |  1.073(fat)  0.452(fat)  4.000(fat)  2.000(fat)
+     60    2   |  0.537(fat)  0.226(fat)  2.000(fat)  1.000(fat)
+    100    1   |  1.789(fat)  0.753(fat)  6.667(fat)  3.333(fat)
+    100    2   |  0.894(fat)  0.377(fat)  3.333(fat)  1.667(fat)
+
+=== 3 crossover N_x = 1e7 (K_n sigma_y/sigma_w7)^(1/b): fatigue binds for N > N_x (closed form) ===
+  rows b; columns sigma_w7 = 30, 40, 60, 100 MPa at K_n = 1
+   b=-0.0700: 7.01e-07  4.27e-05  0.014  20.7
+   b=-0.0950: 0.00203  0.0419  2.99  647
+   b=-0.1434: 3.79  28.2  476  1.68e+04
+   b=-0.2000: 249  1.05e+03  7.96e+03  1.02e+05
+  80 combinations (4 b x 4 sigma_w7 x 5 K_n): N_x < 1e2 for 64; inside 1e2..1e10 for 16; > 1e10 for 0
+  largest N_x = 1.02e+05 (b=-0.2, sigma_w7=100, K_n=1)
+  S2 grid only (sigma_w7 40, 60, 100): N_x < 1e2 for 45 of 60 (S2 reported 45 of 60 outside the grid)
+  implied sigma_f' = sigma_w7 (2e7)^(-b) below sigma_y = 250 MPa (curve never reaches yield at N >= 1):
+   b=-0.0700: sw7=30: 97 MPa  sw7=40: 130 MPa  sw7=60: 195 MPa  sw7=100: 324 MPa
+   b=-0.0950: sw7=30: 148 MPa  sw7=40: 198 MPa  sw7=60: 296 MPa  sw7=100: 494 MPa
+   b=-0.1434: sw7=30: 334 MPa  sw7=40: 446 MPa  sw7=60: 669 MPa  sw7=100: 1114 MPa
+   b=-0.2000: sw7=30: 866 MPa  sw7=40: 1154 MPa  sw7=60: 1731 MPa  sw7=100: 2885 MPa
+
+=== 4 Delta S per cycle, Sdot and total over life at the fatigue-limited sigma_a (N = 1e7, K_n = 1) ===
+  Delta S = psi V sigma_a^2/(2 E_eff T0); Sdot = nu Delta S; total = 1e7 Delta S; tau = 1e7/nu = 0.3169 y at 1 Hz, 27379 y at 1 per day
+  sigma_w7 = 60 MPa
+    topology   sigma_a [MPa]  dS/cycle [J/K]  Sdot 1 Hz [W/K]  Sdot 1/day [W/K]  total over 1e7 cycles [J/K]  total 30 y at 1/day (10958 cycles) [J/K]
+    A            1.0733      3.4286e-06     3.4286e-06      3.9683e-11           34.29                    3.7570e-02
+    B(EB)        0.4519      6.7366e-06     6.7366e-06      7.7969e-11           67.37                    7.3819e-02
+    B(Timo)      0.4519      7.4554e-06     7.4554e-06      8.6289e-11           74.55                    8.1696e-02
+    C100         4.0000      8.5714e-05     8.5714e-05      9.9206e-10          857.14                    9.3926e-01
+    C110         2.0000      1.4286e-05     1.4286e-05      1.6534e-10          142.86                    1.5654e-01
+  sigma_w7 = 30 MPa
+    topology   sigma_a [MPa]  dS/cycle [J/K]  Sdot 1 Hz [W/K]  Sdot 1/day [W/K]  total over 1e7 cycles [J/K]  total 30 y at 1/day (10958 cycles) [J/K]
+    A            0.5367      8.5714e-07     8.5714e-07      9.9206e-12            8.57                    9.3926e-03
+    B(EB)        0.2260      1.6841e-06     1.6841e-06      1.9492e-11           16.84                    1.8455e-02
+    B(Timo)      0.2260      1.8638e-06     1.8638e-06      2.1572e-11           18.64                    2.0424e-02
+    C100         2.0000      2.1429e-05     2.1429e-05      2.4802e-10          214.29                    2.3481e-01
+    C110         1.0000      3.5714e-06     3.5714e-06      4.1336e-11           35.71                    3.9136e-02
+  prompt's literal cross: fixed sigma_a with both moduli (E_s rho^2 = 2.8 GPa; rho E_s/9 = 1.5556 GPa)
+    sigma_a [MPa]  modulus      dS/cycle [J/K]  Sdot 1 Hz [W/K]  Sdot 1/day [W/K] | N_f and total over life [J/K] for sigma_w7 = 60 (b=-0.1434) and 30 (b=-0.1846)
+     1.0           E_s rho^2    2.9762e-06     2.9762e-06      3.4447e-11  | N_f=1.638e+07, S=4.875e+01 ; N_f=3.432e+05, S=1.022e+00
+                                 strut peak 55.9 MPa; total with a 30 y cap instead of N_f: 1 Hz 2.818e+03 J/K (N = 9.467e+08); 1/day 3.261e-02 J/K (N = 10958); N_f/nu at 1 Hz for sw7 = 60: 0.519 y
+     1.0           rho E_s/9    5.3571e-06     5.3571e-06      6.2004e-11  | N_f=1.579e+11, S=8.461e+05 ; N_f=4.274e+08, S=2.290e+03
+                                 strut peak 15.0 MPa; total with a 30 y cap instead of N_f: 1 Hz 5.072e+03 J/K (N = 9.467e+08); 1/day 5.870e-02 J/K (N = 10958); N_f/nu at 1 Hz for sw7 = 60: 5e+03 y
+     2.0           E_s rho^2    1.1905e-05     1.1905e-05      1.3779e-10  | N_f=1.303e+05, S=1.552e+00 ; N_f=8.031e+03, S=9.560e-02
+                                 strut peak 111.8 MPa; total with a 30 y cap instead of N_f: 1 Hz 1.127e+04 J/K (N = 9.467e+08); 1/day 1.304e-01 J/K (N = 10958); N_f/nu at 1 Hz for sw7 = 60: 0.00413 y
+     2.0           rho E_s/9    2.1429e-05     2.1429e-05      2.4802e-10  | N_f=1.257e+09, S=2.693e+04 ; N_f=1.000e+07, S=2.143e+02
+                                 strut peak 30.0 MPa; total with a 30 y cap instead of N_f: 1 Hz 2.029e+04 J/K (N = 9.467e+08); 1/day 2.348e-01 J/K (N = 10958); N_f/nu at 1 Hz for sw7 = 60: 39.8 y
+  ratio of the two moduli at fixed sigma_a = 9 rho = 1.80
+  self-consistent pairs, ratio of Delta S: C100/A = 25.00; C100/B(EB) = 12.72; B(Timo)/B(EB) = 1.1067
+
+=== 5 maximum life-integrated entropy with a service cap tau_s (closed form) ===
+  S_max = N* psi rho V s_loc^2/(2 E_s T0 r^2), N* = nu tau_s, s_loc = min(sigma_w(N*)/K_n, sigma_y); sigma_a* = s_loc/k_peak
+  S(1e7) for C100, K_n = 1: sigma_w7 = 60 -> 857.14 J/K; 30 -> 214.29 J/K
+  REGRESSION vs S2 S_max C100 1 Hz 20 y b=-0.1434 (R19 analytic): here=16478.2 S2=16478 err=9.80e-06 -> OK
+  REGRESSION vs S2 S_max C100 1 Hz 30 y b=-0.095 (R19 analytic): here=34181.9 S2=34182 err=4.21e-06 -> OK
+  REGRESSION vs S2 S_max C100 1/day 30 y b=-0.1434 (R19 analytic): here=6.634 S2=6.634 err=6.85e-08 -> OK
+  REGRESSION vs S2 S_max A 1 Hz 20 y b=-0.1434 (R19 analytic): here=659.126 S2=659.126 err=6.92e-07 -> OK
+  REGRESSION vs S2 S_max B 1 Hz 30 y b=-0.095 (R19 analytic): here=2686.46 S2=2686.46 err=1.33e-07 -> OK
+  nu = 1 Hz
+    sigma_w7  b        K_n  tau_s[y]   N*         |  S_max [J/K] (sigma_a* [MPa]):  A            B(Timo)        C110           C100
+      60      -0.0950  1    10      3.156e+08  |  5.615e+02 ( 0.773)  1.221e+03 ( 0.326)  2.340e+03 ( 1.441)  1.404e+04 ( 2.882)
+      60      -0.0950  1    30      9.467e+08  |  1.367e+03 ( 0.697)  2.973e+03 ( 0.293)  5.697e+03 ( 1.298)  3.418e+04 ( 2.596)
+      60      -0.0950  2    10      3.156e+08  |  1.404e+02 ( 0.387)  3.053e+02 ( 0.163)  5.849e+02 ( 0.720)  3.510e+03 ( 1.441)
+      60      -0.0950  2    30      9.467e+08  |  3.418e+02 ( 0.348)  7.433e+02 ( 0.147)  1.424e+03 ( 0.649)  8.545e+03 ( 1.298)
+      60      -0.1434  1    10      3.156e+08  |  4.020e+02 ( 0.654)  8.742e+02 ( 0.275)  1.675e+03 ( 1.219)  1.005e+04 ( 2.438)
+      60      -0.1434  1    30      9.467e+08  |  8.802e+02 ( 0.559)  1.914e+03 ( 0.235)  3.667e+03 ( 1.041)  2.200e+04 ( 2.083)
+      60      -0.1434  2    10      3.156e+08  |  1.005e+02 ( 0.327)  2.186e+02 ( 0.138)  4.188e+02 ( 0.610)  2.513e+03 ( 1.219)
+      60      -0.1434  2    30      9.467e+08  |  2.200e+02 ( 0.279)  4.785e+02 ( 0.118)  9.168e+02 ( 0.521)  5.501e+03 ( 1.041)
+      60      -0.1517  1    10      3.156e+08  |  3.797e+02 ( 0.636)  8.256e+02 ( 0.268)  1.582e+03 ( 1.185)  9.491e+03 ( 2.369)
+      60      -0.1517  1    30      9.467e+08  |  8.161e+02 ( 0.538)  1.775e+03 ( 0.227)  3.400e+03 ( 1.003)  2.040e+04 ( 2.006)
+      60      -0.1517  2    10      3.156e+08  |  9.491e+01 ( 0.318)  2.064e+02 ( 0.134)  3.955e+02 ( 0.592)  2.373e+03 ( 1.185)
+      60      -0.1517  2    30      9.467e+08  |  2.040e+02 ( 0.269)  4.437e+02 ( 0.113)  8.501e+02 ( 0.501)  5.101e+03 ( 1.003)
+      30      -0.0950  1    10      3.156e+08  |  1.404e+02 ( 0.387)  3.053e+02 ( 0.163)  5.849e+02 ( 0.720)  3.510e+03 ( 1.441)
+      30      -0.0950  1    30      9.467e+08  |  3.418e+02 ( 0.348)  7.433e+02 ( 0.147)  1.424e+03 ( 0.649)  8.545e+03 ( 1.298)
+      30      -0.0950  2    10      3.156e+08  |  3.510e+01 ( 0.193)  7.632e+01 ( 0.081)  1.462e+02 ( 0.360)  8.774e+02 ( 0.720)
+      30      -0.0950  2    30      9.467e+08  |  8.545e+01 ( 0.174)  1.858e+02 ( 0.073)  3.561e+02 ( 0.325)  2.136e+03 ( 0.649)
+      30      -0.1434  1    10      3.156e+08  |  1.005e+02 ( 0.327)  2.186e+02 ( 0.138)  4.188e+02 ( 0.610)  2.513e+03 ( 1.219)
+      30      -0.1434  1    30      9.467e+08  |  2.200e+02 ( 0.279)  4.785e+02 ( 0.118)  9.168e+02 ( 0.521)  5.501e+03 ( 1.041)
+      30      -0.1434  2    10      3.156e+08  |  2.513e+01 ( 0.164)  5.464e+01 ( 0.069)  1.047e+02 ( 0.305)  6.282e+02 ( 0.610)
+      30      -0.1434  2    30      9.467e+08  |  5.501e+01 ( 0.140)  1.196e+02 ( 0.059)  2.292e+02 ( 0.260)  1.375e+03 ( 0.521)
+      30      -0.1929  1    10      3.156e+08  |  7.142e+01 ( 0.276)  1.553e+02 ( 0.116)  2.976e+02 ( 0.514)  1.785e+03 ( 1.028)
+      30      -0.1929  1    30      9.467e+08  |  1.402e+02 ( 0.223)  3.049e+02 ( 0.094)  5.843e+02 ( 0.416)  3.506e+03 ( 0.831)
+      30      -0.1929  2    10      3.156e+08  |  1.785e+01 ( 0.138)  3.882e+01 ( 0.058)  7.439e+01 ( 0.257)  4.464e+02 ( 0.514)
+      30      -0.1929  2    30      9.467e+08  |  3.506e+01 ( 0.112)  7.623e+01 ( 0.047)  1.461e+02 ( 0.208)  8.765e+02 ( 0.416)
+  nu = 1/day
+    sigma_w7  b        K_n  tau_s[y]   N*         |  S_max [J/K] (sigma_a* [MPa]):  A            B(Timo)        C110           C100
+      60      -0.0950  1    10      3.652e+03  |  5.634e-02 ( 2.277)  1.225e-01 ( 0.959)  2.347e-01 ( 4.242)  1.408e+00 ( 8.484)
+      60      -0.0950  1    30      1.096e+04  |  1.372e-01 ( 2.051)  2.983e-01 ( 0.864)  5.716e-01 ( 3.822)  3.429e+00 ( 7.643)
+      60      -0.0950  2    10      3.652e+03  |  1.408e-02 ( 1.138)  3.063e-02 ( 0.479)  5.869e-02 ( 2.121)  3.521e-01 ( 4.242)
+      60      -0.0950  2    30      1.096e+04  |  3.429e-02 ( 1.025)  7.457e-02 ( 0.432)  1.429e-01 ( 1.911)  8.574e-01 ( 3.822)
+      60      -0.1434  1    10      3.652e+03  |  1.212e-01 ( 3.339)  2.636e-01 ( 1.406)  5.051e-01 ( 6.222)  3.030e+00 (12.445)
+      60      -0.1434  1    30      1.096e+04  |  2.654e-01 ( 2.853)  5.770e-01 ( 1.201)  1.106e+00 ( 5.315)  6.634e+00 (10.631)
+      60      -0.1434  2    10      3.652e+03  |  3.030e-02 ( 1.670)  6.589e-02 ( 0.703)  1.263e-01 ( 3.111)  7.576e-01 ( 6.222)
+      60      -0.1434  2    30      1.096e+04  |  6.634e-02 ( 1.426)  1.443e-01 ( 0.601)  2.764e-01 ( 2.658)  1.658e+00 ( 5.315)
+      60      -0.1517  1    10      3.652e+03  |  1.382e-01 ( 3.566)  3.006e-01 ( 1.501)  5.760e-01 ( 6.645)  3.456e+00 (13.290)
+      60      -0.1517  1    30      1.096e+04  |  2.972e-01 ( 3.019)  6.462e-01 ( 1.271)  1.238e+00 ( 5.625)  7.429e+00 (11.250)
+      60      -0.1517  2    10      3.652e+03  |  3.456e-02 ( 1.783)  7.515e-02 ( 0.751)  1.440e-01 ( 3.322)  8.640e-01 ( 6.645)
+      60      -0.1517  2    30      1.096e+04  |  7.429e-02 ( 1.509)  1.615e-01 ( 0.635)  3.095e-01 ( 2.812)  1.857e+00 ( 5.625)
+      30      -0.0950  1    10      3.652e+03  |  1.408e-02 ( 1.138)  3.063e-02 ( 0.479)  5.869e-02 ( 2.121)  3.521e-01 ( 4.242)
+      30      -0.0950  1    30      1.096e+04  |  3.429e-02 ( 1.025)  7.457e-02 ( 0.432)  1.429e-01 ( 1.911)  8.574e-01 ( 3.822)
+      30      -0.0950  2    10      3.652e+03  |  3.521e-03 ( 0.569)  7.657e-03 ( 0.240)  1.467e-02 ( 1.061)  8.803e-02 ( 2.121)
+      30      -0.0950  2    30      1.096e+04  |  8.574e-03 ( 0.513)  1.864e-02 ( 0.216)  3.572e-02 ( 0.955)  2.143e-01 ( 1.911)
+      30      -0.1434  1    10      3.652e+03  |  3.030e-02 ( 1.670)  6.589e-02 ( 0.703)  1.263e-01 ( 3.111)  7.576e-01 ( 6.222)
+      30      -0.1434  1    30      1.096e+04  |  6.634e-02 ( 1.426)  1.443e-01 ( 0.601)  2.764e-01 ( 2.658)  1.658e+00 ( 5.315)
+      30      -0.1434  2    10      3.652e+03  |  7.576e-03 ( 0.835)  1.647e-02 ( 0.352)  3.157e-02 ( 1.556)  1.894e-01 ( 3.111)
+      30      -0.1434  2    30      1.096e+04  |  1.658e-02 ( 0.713)  3.606e-02 ( 0.300)  6.910e-02 ( 1.329)  4.146e-01 ( 2.658)
+      30      -0.1929  1    10      3.652e+03  |  6.634e-02 ( 2.470)  1.443e-01 ( 1.040)  2.764e-01 ( 4.603)  1.659e+00 ( 9.207)
+      30      -0.1929  1    30      1.096e+04  |  1.303e-01 ( 1.999)  2.833e-01 ( 0.842)  5.428e-01 ( 3.724)  3.257e+00 ( 7.449)
+      30      -0.1929  2    10      3.652e+03  |  1.659e-02 ( 1.235)  3.607e-02 ( 0.520)  6.911e-02 ( 2.302)  4.146e-01 ( 4.603)
+      30      -0.1929  2    30      1.096e+04  |  3.257e-02 ( 0.999)  7.082e-02 ( 0.421)  1.357e-01 ( 1.862)  8.142e-01 ( 3.724)
+    'Y' after sigma_a* = first yield, not fatigue, sets the amplitude at that N*
+  1 Hz, bending (A, B): min 1.785e+01 J/K (A, sw7=30, b=-0.1929, K_n=2, 10 y); max 2.973e+03 J/K (B(Timo), sw7=60, b=-0.095, K_n=1, 30 y)
+  1 Hz, stretch (C100, C110): min 7.439e+01 J/K (C110, sw7=30, b=-0.1929, K_n=2, 10 y); max 3.418e+04 J/K (C100, sw7=60, b=-0.095, K_n=1, 30 y)
+  1/day, bending (A, B): min 3.521e-03 J/K (A, sw7=30, b=-0.095, K_n=2, 10 y); max 6.462e-01 J/K (B(Timo), sw7=60, b=-0.1517, K_n=1, 30 y)
+  1/day, stretch (C100, C110): min 1.467e-02 J/K (C110, sw7=30, b=-0.095, K_n=2, 10 y); max 7.429e+00 J/K (C100, sw7=60, b=-0.1517, K_n=1, 30 y)
+  design factor on the allowable stress: 0.8 -> S x 0.64; 0.6 -> S x 0.36 (S scales as stress squared)
+  psi range of the prompt (1e-3 to 1e-2) scales every S by 0.2 to 2
+
+=== 6 comparators (m = rho_s rho V) and ratios ===
+  m = 0.534 kg
+    melt floor c_p=739         1.4604e+03 J/K
+    melt floor c_p=900         1.6246e+03 J/K
+    melt floor c_p=922         1.6470e+03 J/K
+    LPBF 50 MJ/kg              8.9000e+04 J/K
+    LPBF 148 MJ/kg             2.6344e+05 J/K
+    LPBF 200 MJ/kg             3.5600e+05 J/K
+    LPBF 300 MJ/kg             5.3400e+05 J/K
+    LPBF 500 MJ/kg             8.9000e+05 J/K
+    LPBF 600 MJ/kg             1.0680e+06 J/K
+    primary Al 150 MJ/kg       2.6700e+05 J/K
+    primary Al 200 MJ/kg       3.5600e+05 J/K
+    primary Al 220 MJ/kg       3.9160e+05 J/K
+    primary Al 260 MJ/kg       4.6280e+05 J/K
+    prompt low 1e3             1.0000e+03 J/K
+    prompt high 1e5            1.0000e+05 J/K
+  ratios S/comparator: melt floor c_p=900 | LPBF 50 MJ/kg | LPBF 600 MJ/kg | primary Al 200 MJ/kg | prompt low 1e3 | prompt high 1e5 | (LPBF 50 + primary 200)
+    diurnal, any cell, largest (C100, sw7 60, b -0.1434, K_n 1, 30 y) S=6.634e+00: 4.08e-03 7.45e-05 6.21e-06 1.86e-05 6.63e-03 6.63e-05 1.49e-05
+    1 Hz, bending, largest (B(Timo), sw7 60, b -0.095, K_n 1, 30 y) S=2.973e+03: 1.83e+00 3.34e-02 2.78e-03 8.35e-03 2.97e+00 2.97e-02 6.68e-03
+    1 Hz, C100, sw7 60, b -0.095, K_n 1, 30 y (largest of all)     S=3.418e+04: 2.10e+01 3.84e-01 3.20e-02 9.60e-02 3.42e+01 3.42e-01 7.68e-02
+    1 Hz, C100, sw7 60, b -0.1434, K_n 1, 30 y                     S=2.200e+04: 1.35e+01 2.47e-01 2.06e-02 6.18e-02 2.20e+01 2.20e-01 4.94e-02
+    1 Hz, C100, sw7 30, b -0.095, K_n 1, 30 y                      S=8.545e+03: 5.26e+00 9.60e-02 8.00e-03 2.40e-02 8.55e+00 8.55e-02 1.92e-02
+    1 Hz, C100, sw7 30, b -0.1929, K_n 1, 30 y                     S=3.506e+03: 2.16e+00 3.94e-02 3.28e-03 9.85e-03 3.51e+00 3.51e-02 7.88e-03
+    1 Hz, C100, sw7 30, b -0.1929, K_n 2, 30 y                     S=8.765e+02: 5.39e-01 9.85e-03 8.21e-04 2.46e-03 8.76e-01 8.76e-03 1.97e-03
+    1 Hz, C100 at the 1e7 fatigue limit, sw7 60 (0.317 y life)     S=8.571e+02: 5.28e-01 9.63e-03 8.03e-04 2.41e-03 8.57e-01 8.57e-03 1.93e-03
+    1 Hz, A at the 1e7 fatigue limit, sw7 60 (0.317 y life)        S=3.429e+01: 2.11e-02 3.85e-04 3.21e-05 9.63e-05 3.43e-02 3.43e-04 7.70e-05
+
+=== 7 damping conventions: psi = Delta U/U = 2 pi eta = 4 pi zeta (small damping) ===
+    eta = 4.0e-04 (dural loss factor low): psi = 2.513e-03; psi/5e-3 = 0.50
+    eta = 1.0e-03 (dural loss factor high): psi = 6.283e-03; psi/5e-3 = 1.26
+    eta = 2.0e-05 (pure Al low): psi = 1.257e-04; psi/5e-3 = 0.03
+    eta = 2.0e-03 (pure Al high): psi = 1.257e-02; psi/5e-3 = 2.51
+    zeta = 1.3000e-04 (LPBF AlSi10Mg modal, low): psi = 1.634e-03; psi/5e-3 = 0.33
+    zeta = 3.1100e-03 (LPBF AlSi10Mg modal, high): psi = 3.908e-02; psi/5e-3 = 7.82
+    zeta = 1.0348e-02 (LPBF AlSi10Mg modal, max of another study): psi = 1.300e-01; psi/5e-3 = 26.01
+    if the prompt's 5e-3 were a loss factor eta: psi = 3.142e-02 (x 6.28); if a damping ratio zeta: psi = 6.283e-02 (x 12.57)
+
+=== 8 factor on Sdot from amplitude-dependent psi, kappa(n_d) (sigma_rms/sigma_ref)^(n_d-2), n_d = 4 added ===
+  sigma_rms at the sigma_w7 = 60 MPa limit [MPa]: A=12.000, B(EB)=16.821, C100=60.000
+  A: rows n_d; columns sigma_ref = 5, 20, 60 MPa
+    n_d=2.3:    1.5111     0.9970     0.7170
+    n_d=2.5:    2.0108     1.0054     0.5805
+    n_d=3.0:    4.2342     1.0586     0.3529
+    n_d=4.0:   20.7360     1.2960     0.1440
+  B(EB): rows n_d; columns sigma_ref = 5, 20, 60 MPa
+    n_d=2.3:    1.6722     1.1033     0.7935
+    n_d=2.5:    2.3807     1.1903     0.6872
+    n_d=3.0:    5.9352     1.4838     0.4946
+    n_d=4.0:   40.7427     2.5464     0.2829
+  C100: rows n_d; columns sigma_ref = 5, 20, 60 MPa
+    n_d=2.3:    2.1074     1.3904     1.0000
+    n_d=2.5:    3.4641     1.7321     1.0000
+    n_d=3.0:   12.0000     3.0000     1.0000
+    n_d=4.0:  144.0000     9.0000     1.0000
+  range for n_d 2.3..3 (S2 R22): 0.353 to 12.000; n_d = 2.3 only: A: 0.72-1.51, B(EB): 0.79-1.67, C100: 1.00-2.11
+
+=== 9 thermoelastic damping with alpha_s = 21, 23, 27e-6 /K (k = 130 W/(m K), c_p = 900) ===
+  alpha_s=21e-6: Delta_E=3.8539e-03; psi_TE,max = pi Delta_E = 1.2107e-02 (2.42 x 5e-3); psi_TE(1 Hz) (ratio to 5e-3): t=0.5 mm: 7.124e-05 (0.014); t=1.0 mm: 2.849e-04 (0.057); t=2.0 mm: 1.137e-03 (0.227); t=5.0 mm: 6.556e-03 (1.311)
+  alpha_s=23e-6: Delta_E=4.6230e-03; psi_TE,max = pi Delta_E = 1.4523e-02 (2.90 x 5e-3); psi_TE(1 Hz) (ratio to 5e-3): t=0.5 mm: 8.545e-05 (0.017); t=1.0 mm: 3.418e-04 (0.068); t=2.0 mm: 1.364e-03 (0.273); t=5.0 mm: 7.865e-03 (1.573)
+  alpha_s=27e-6: Delta_E=6.3708e-03; psi_TE,max = pi Delta_E = 2.0014e-02 (4.00 x 5e-3); psi_TE(1 Hz) (ratio to 5e-3): t=0.5 mm: 1.178e-04 (0.024); t=1.0 mm: 4.710e-04 (0.094); t=2.0 mm: 1.880e-03 (0.376); t=5.0 mm: 1.084e-02 (2.168)
+  f_Z [Hz] for t = 0.5, 1, 2, 5 mm: 339.9, 85.0, 21.2, 3.4
+
+=== 10 local entropy density s(N) = N psi sigma_w(N)^2/(2 E_s T0) against 4 MJ/(m^3 K) ===
+  sigma_w7  b        | s(N)/4e6 at N = 1e6, 1e7, 1e8, 1e9
+    60      -0.0950 | 0.1659  1.071  6.918  44.66
+    60      -0.1434 | 0.2074  1.071  5.536  28.6
+    30      -0.0950 | 0.04149  0.2679  1.729  11.17
+    30      -0.1846 | 0.06267  0.2679  1.145  4.893
+  a constant accumulated entropy at failure needs dissipation per cycle ~ sigma^(-1/b): exponent 14.29 (b=-0.07), 10.53 (b=-0.095), 6.97 (b=-0.1434), 5.00 (b=-0.2)
+
+=== 11 normalised endurance ratio: model against the values S3 found ===
+  model amplitude/lattice yield = sigma_w/(f K_n sigma_y) bending (f = 1.5), sigma_w/(K_n sigma_y) stretch, K_n = 1;
+  as sigma_max at R = 0.1: x 2/(1-R) = 2.2222; reported values taken as sigma_max over lattice yield at R = 0.1 (basis UNSURE)
+  Ti-6Al-4V sigma_w=150: amplitude ratio bend 0.105, stretch 0.158; sigma_max basis bend 0.234, stretch 0.351; model(bend)/reported (0.15, 0.2, 0.25, 0.6): 1.56, 1.17, 0.94, 0.39; model(stretch)/reported: 2.34, 1.75, 1.40, 0.58
+  Ti-6Al-4V sigma_w=200: amplitude ratio bend 0.140, stretch 0.211; sigma_max basis bend 0.312, stretch 0.468; model(bend)/reported (0.15, 0.2, 0.25, 0.6): 2.08, 1.56, 1.25, 0.52; model(stretch)/reported: 3.12, 2.34, 1.87, 0.78
+  Ti-6Al-4V sigma_w=300: amplitude ratio bend 0.211, stretch 0.316; sigma_max basis bend 0.468, stretch 0.702; model(bend)/reported (0.15, 0.2, 0.25, 0.6): 3.12, 2.34, 1.87, 0.78; model(stretch)/reported: 4.68, 3.51, 2.81, 1.17
+  AlSi10Mg sigma_w=30: amplitude ratio bend 0.080, stretch 0.120; sigma_max basis bend 0.178, stretch 0.267; model(bend)/reported (0.15, 0.2, 0.25, 0.6): 1.19, 0.89, 0.71, 0.30; model(stretch)/reported: 1.78, 1.33, 1.07, 0.44
+  AlSi10Mg sigma_w=60: amplitude ratio bend 0.160, stretch 0.240; sigma_max basis bend 0.356, stretch 0.533; model(bend)/reported (0.15, 0.2, 0.25, 0.6): 2.37, 1.78, 1.42, 0.59; model(stretch)/reported: 3.56, 2.67, 2.13, 0.89
+  the ratio model/reported is also the K_n that would make the model match; quoting it as K_n would be a fit, not a result
+
+==== SUMMARY ====
+  regression mismatches against S2: none

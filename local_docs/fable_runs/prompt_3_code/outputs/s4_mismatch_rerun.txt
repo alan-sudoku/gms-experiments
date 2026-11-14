@@ -1,0 +1,239 @@
+=== 1 bilayer plate: exact solution with bending against 1/(1+S) ===
+  layer L (lattice): modulus M_L, thickness H_L, free strain eps_m; layer 2 (partner): M_2, H_2, free strain 0
+  unknowns: interface strain e0 and curvature kappa; equations: zero net force and zero net moment
+  phi(z) = -(elastic strain in L)/eps_m = strut-stress factor that replaces 1/(1+S)
+  bimetal check (equal modulus, equal thickness, uniaxial): interface stress/(E eps) = 0.500000 (expect 0.5); mean (force) part = 0.125000 (expect 1/8); bending part = 0.375000 (expect 3/8); far surface = -0.250000 (expect -0.25)
+  case                                   h=H_L/H_2   S        1/(1+S)   free to bend: phi(interface)  phi(mid)   phi(top)   first order 1-(4+3h)S
+  octet rho 0.2 on Ti-6Al-4V               0.1     0.00135  0.9987    0.9942                       0.9938     0.9933     0.9942
+  octet rho 0.2 on Ti-6Al-4V               0.5     0.00675  0.9933    0.9647                       0.9503     0.9359     0.9629
+  octet rho 0.2 on Ti-6Al-4V               1.0     0.01351  0.9867    0.9203                       0.8522     0.7840     0.9054
+  octet rho 0.2 on Ti-6Al-4V               2.0     0.02702  0.9737    0.8538                       0.5934     0.3329     0.7298
+  octet rho 0.2 on Ti-6Al-4V              10.0     0.13509  0.8810    0.9020                       0.2215     -0.4590     -3.5930
+  octet rho 0.2 on steel                   0.1     0.00082  0.9992    0.9965                       0.9962     0.9960     0.9965
+  octet rho 0.2 on steel                   0.5     0.00408  0.9959    0.9782                       0.9694     0.9605     0.9775
+  octet rho 0.2 on steel                   1.0     0.00817  0.9919    0.9486                       0.9047     0.8607     0.9428
+  octet rho 0.2 on steel                   2.0     0.01633  0.9839    0.8921                       0.6992     0.5062     0.8367
+  octet rho 0.2 on steel                  10.0     0.08167  0.9245    0.9130                       0.2317     -0.4495     -1.7767
+  A rho 0.4 on Ti-6Al-4V                   0.1     0.00926  0.9908    0.9618                       0.9589     0.9559     0.9602
+  A rho 0.4 on Ti-6Al-4V                   0.5     0.04632  0.9557    0.8138                       0.7378     0.6618     0.7453
+  A rho 0.4 on Ti-6Al-4V                   1.0     0.09263  0.9152    0.7150                       0.4739     0.2329     0.3516
+  A rho 0.4 on Ti-6Al-4V                   2.0     0.18526  0.8437    0.7184                       0.2464     -0.2256     -0.8526
+  A rho 0.4 on Ti-6Al-4V                  10.0     0.92632  0.5191    0.7729                       0.1812     -0.4105     -30.4947
+  BCC rho 0.2 on Ti-6Al-4V                 0.1     0.00028  0.9997    0.9988                       0.9987     0.9986     0.9988
+  BCC rho 0.2 on Ti-6Al-4V                 0.5     0.00139  0.9986    0.9925                       0.9894     0.9863     0.9924
+  BCC rho 0.2 on Ti-6Al-4V                 1.0     0.00277  0.9972    0.9813                       0.9653     0.9492     0.9806
+  BCC rho 0.2 on Ti-6Al-4V                 2.0     0.00555  0.9945    0.9528                       0.8680     0.7831     0.9445
+  BCC rho 0.2 on Ti-6Al-4V                10.0     0.02775  0.9730    0.9269                       0.2706     -0.3858     0.0565
+  REGRESSION vs S2 S octet rho 0.2, Ti, h = 1 (R29): here=0.0135088 S2=0.0135088 err=2.08e-06 -> OK
+  REGRESSION vs S2 S A rho 0.4, Ti, h = 1 (R29): here=0.0926316 S2=0.0926316 err=2.27e-07 -> OK
+
+=== 2 local amplitude and life at diurnal Delta T (octet S at H_L = H_2, c = 1, no mean stress) ===
+  REGRESSION vs S2 sigma_a,loc Ti 50 K K_n=3 with S [MPa] (R28): here=64.2323 S2=64.2323 err=7.82e-09 -> OK
+  REGRESSION vs S2 N(50 K) Ti K_n=3 b=-0.1434 S=0 (R30): here=5.66149e+06 S2=5.66149e+06 err=1.12e-07 -> OK
+  REGRESSION vs S2 N(50 K) Ti K_n=3 b=-0.1434 with S (R30): here=6.21683e+06 S2=6.21683e+06 err=3.17e-07 -> OK
+  REGRESSION vs S2 dT_x Ti K_n=3 b=-0.1434 S=0 [K] (R30): here=122.474 S2=122.474 err=2.54e-06 -> OK
+  REGRESSION vs S2 dT_x Ti K_n=3 b=-0.1434 with S [K] (R30): here=124.128 S2=124.128 err=1.27e-06 -> OK
+  REGRESSION vs S2 dT_x Ti K_n=3 Goodman sigma_m=250, sigma_u=400, S=0 [K] (R30): here=45.9276 S2=45.93 err=5.15e-05 -> OK
+  REGRESSION vs S2 dT_x Invar K_n=3 b=-0.095 S=0 [K] (R30): here=55.427 S2=55.4 err=4.87e-04 -> OK
+  effect of S on the Ti, 50 K, K_n = 3 case: stress x 0.9867; life x 1.0981 (b = -0.1434), x 1.1517 (b = -0.095)
+  effect of sigma_w7 60 -> 30 MPa at fixed b on life: x 0.00796 (b = -0.1434), x 0.000678 (b = -0.095)
+  years to failure at 1 cycle per day; '>cap' means N > 1e7 cycles (27 379 y, outside the fitted range); '*' = below 30 y
+  columns: Delta T = 20 K and 50 K, each for K_n = 1, 2, 3
+  alpha_s=21e-6  sigma_w7=60 MPa  b=-0.095
+    Ti-6Al-4V  dalpha= 12.4e-6  sigma_a,loc(50 K, K_n=1)= 21.41 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap    >cap 1.34e+04 
+    steel      dalpha=  9.0e-6  sigma_a,loc(50 K, K_n=1)= 15.62 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap    >cap    >cap
+    316L       dalpha=  5.0e-6  sigma_a,loc(50 K, K_n=1)=  8.68 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap    >cap    >cap
+    Cu         dalpha=  4.5e-6  sigma_a,loc(50 K, K_n=1)=  7.78 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap    >cap    >cap
+    Invar      dalpha= 19.7e-6  sigma_a,loc(50 K, K_n=1)= 34.07 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap 7.16e+03      100 
+  alpha_s=21e-6  sigma_w7=60 MPa  b=-0.1434
+    Ti-6Al-4V  dalpha= 12.4e-6  sigma_a,loc(50 K, K_n=1)= 21.41 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap    >cap 1.7e+04 
+    steel      dalpha=  9.0e-6  sigma_a,loc(50 K, K_n=1)= 15.62 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap    >cap    >cap
+    316L       dalpha=  5.0e-6  sigma_a,loc(50 K, K_n=1)=  8.68 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap    >cap    >cap
+    Cu         dalpha=  4.5e-6  sigma_a,loc(50 K, K_n=1)=  7.78 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap    >cap    >cap
+    Invar      dalpha= 19.7e-6  sigma_a,loc(50 K, K_n=1)= 34.07 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap 1.13e+04      666 
+  alpha_s=21e-6  sigma_w7=30 MPa  b=-0.095
+    Ti-6Al-4V  dalpha= 12.4e-6  sigma_a,loc(50 K, K_n=1)= 21.41 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap     647     9.06*
+    steel      dalpha=  9.0e-6  sigma_a,loc(50 K, K_n=1)= 15.62 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap 1.78e+04      250 
+    316L       dalpha=  5.0e-6  sigma_a,loc(50 K, K_n=1)=  8.68 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap    >cap    >cap
+    Cu         dalpha=  4.5e-6  sigma_a,loc(50 K, K_n=1)=  7.78 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap    >cap    >cap
+    Invar      dalpha= 19.7e-6  sigma_a,loc(50 K, K_n=1)= 34.07 MPa | 20 K:    >cap    >cap 1.05e+03  | 50 K: 7.16e+03     4.86*  0.0681*
+  alpha_s=21e-6  sigma_w7=30 MPa  b=-0.1846
+    Ti-6Al-4V  dalpha= 12.4e-6  sigma_a,loc(50 K, K_n=1)= 21.41 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap 3.98e+03      443 
+    steel      dalpha=  9.0e-6  sigma_a,loc(50 K, K_n=1)= 15.62 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap 2.2e+04  2.44e+03 
+    316L       dalpha=  5.0e-6  sigma_a,loc(50 K, K_n=1)=  8.68 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap    >cap    >cap
+    Cu         dalpha=  4.5e-6  sigma_a,loc(50 K, K_n=1)=  7.78 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap    >cap    >cap
+    Invar      dalpha= 19.7e-6  sigma_a,loc(50 K, K_n=1)= 34.07 MPa | 20 K:    >cap    >cap 5.12e+03  | 50 K: 1.37e+04      321     35.7 
+  alpha_s=23e-6  sigma_w7=60 MPa  b=-0.095
+    Ti-6Al-4V  dalpha= 14.4e-6  sigma_a,loc(50 K, K_n=1)= 24.86 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap    >cap 2.77e+03 
+    steel      dalpha= 11.0e-6  sigma_a,loc(50 K, K_n=1)= 19.09 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap    >cap    >cap
+    316L       dalpha=  7.0e-6  sigma_a,loc(50 K, K_n=1)= 12.15 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap    >cap    >cap
+    Cu         dalpha=  6.5e-6  sigma_a,loc(50 K, K_n=1)= 11.23 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap    >cap    >cap
+    Invar      dalpha= 21.7e-6  sigma_a,loc(50 K, K_n=1)= 37.53 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap 2.59e+03     36.3 
+  alpha_s=23e-6  sigma_w7=60 MPa  b=-0.1434
+    Ti-6Al-4V  dalpha= 14.4e-6  sigma_a,loc(50 K, K_n=1)= 24.86 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap    >cap   6e+03 
+    steel      dalpha= 11.0e-6  sigma_a,loc(50 K, K_n=1)= 19.09 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap    >cap    >cap
+    316L       dalpha=  7.0e-6  sigma_a,loc(50 K, K_n=1)= 12.15 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap    >cap    >cap
+    Cu         dalpha=  6.5e-6  sigma_a,loc(50 K, K_n=1)= 11.23 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap    >cap    >cap
+    Invar      dalpha= 21.7e-6  sigma_a,loc(50 K, K_n=1)= 37.53 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap 5.74e+03      340 
+  alpha_s=23e-6  sigma_w7=30 MPa  b=-0.095
+    Ti-6Al-4V  dalpha= 14.4e-6  sigma_a,loc(50 K, K_n=1)= 24.86 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap     134     1.88*
+    steel      dalpha= 11.0e-6  sigma_a,loc(50 K, K_n=1)= 19.09 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap 2.16e+03     30.2 
+    316L       dalpha=  7.0e-6  sigma_a,loc(50 K, K_n=1)= 12.15 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap    >cap 3.53e+03 
+    Cu         dalpha=  6.5e-6  sigma_a,loc(50 K, K_n=1)= 11.23 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap    >cap 8.07e+03 
+    Invar      dalpha= 21.7e-6  sigma_a,loc(50 K, K_n=1)= 37.53 MPa | 20 K:    >cap 2.71e+04      380  | 50 K: 2.59e+03     1.76*  0.0246*
+  alpha_s=23e-6  sigma_w7=30 MPa  b=-0.1846
+    Ti-6Al-4V  dalpha= 14.4e-6  sigma_a,loc(50 K, K_n=1)= 24.86 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap 1.77e+03      197 
+    steel      dalpha= 11.0e-6  sigma_a,loc(50 K, K_n=1)= 19.09 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap 7.41e+03      824 
+    316L       dalpha=  7.0e-6  sigma_a,loc(50 K, K_n=1)= 12.15 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap    >cap 9.55e+03 
+    Cu         dalpha=  6.5e-6  sigma_a,loc(50 K, K_n=1)= 11.23 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap    >cap 1.46e+04 
+    Invar      dalpha= 21.7e-6  sigma_a,loc(50 K, K_n=1)= 37.53 MPa | 20 K:    >cap 2.72e+04  3.03e+03  | 50 K: 8.13e+03      190     21.2*
+  alpha_s=27e-6  sigma_w7=60 MPa  b=-0.095
+    Ti-6Al-4V  dalpha= 18.4e-6  sigma_a,loc(50 K, K_n=1)= 31.77 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap 1.5e+04      210 
+    steel      dalpha= 15.0e-6  sigma_a,loc(50 K, K_n=1)= 26.04 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap    >cap 1.7e+03 
+    316L       dalpha= 11.0e-6  sigma_a,loc(50 K, K_n=1)= 19.09 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap    >cap    >cap
+    Cu         dalpha= 10.5e-6  sigma_a,loc(50 K, K_n=1)= 18.14 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap    >cap    >cap
+    Invar      dalpha= 25.7e-6  sigma_a,loc(50 K, K_n=1)= 44.45 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap     436     6.11*
+  alpha_s=27e-6  sigma_w7=60 MPa  b=-0.1434
+    Ti-6Al-4V  dalpha= 18.4e-6  sigma_a,loc(50 K, K_n=1)= 31.77 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap 1.84e+04  1.09e+03 
+    steel      dalpha= 15.0e-6  sigma_a,loc(50 K, K_n=1)= 26.04 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap    >cap 4.35e+03 
+    316L       dalpha= 11.0e-6  sigma_a,loc(50 K, K_n=1)= 19.09 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap    >cap    >cap
+    Cu         dalpha= 10.5e-6  sigma_a,loc(50 K, K_n=1)= 18.14 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap    >cap    >cap
+    Invar      dalpha= 25.7e-6  sigma_a,loc(50 K, K_n=1)= 44.45 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap 1.76e+03      104 
+  alpha_s=27e-6  sigma_w7=30 MPa  b=-0.095
+    Ti-6Al-4V  dalpha= 18.4e-6  sigma_a,loc(50 K, K_n=1)= 31.77 MPa | 20 K:    >cap    >cap 2.2e+03  | 50 K: 1.5e+04     10.2*   0.142*
+    steel      dalpha= 15.0e-6  sigma_a,loc(50 K, K_n=1)= 26.04 MPa | 20 K:    >cap    >cap 1.78e+04  | 50 K:    >cap    82.5     1.16*
+    316L       dalpha= 11.0e-6  sigma_a,loc(50 K, K_n=1)= 19.09 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap 2.17e+03     30.3 
+    Cu         dalpha= 10.5e-6  sigma_a,loc(50 K, K_n=1)= 18.14 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap 3.7e+03     51.8 
+    Invar      dalpha= 25.7e-6  sigma_a,loc(50 K, K_n=1)= 44.45 MPa | 20 K:    >cap 4.57e+03       64  | 50 K:     436    0.296* 0.00414*
+  alpha_s=27e-6  sigma_w7=30 MPa  b=-0.1846
+    Ti-6Al-4V  dalpha= 18.4e-6  sigma_a,loc(50 K, K_n=1)= 31.77 MPa | 20 K:    >cap    >cap 7.47e+03  | 50 K: 2.01e+04      470     52.2 
+    steel      dalpha= 15.0e-6  sigma_a,loc(50 K, K_n=1)= 26.04 MPa | 20 K:    >cap    >cap 2.2e+04  | 50 K:    >cap 1.38e+03      153 
+    316L       dalpha= 11.0e-6  sigma_a,loc(50 K, K_n=1)= 19.09 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap 7.42e+03      825 
+    Cu         dalpha= 10.5e-6  sigma_a,loc(50 K, K_n=1)= 18.14 MPa | 20 K:    >cap    >cap    >cap | 50 K:    >cap 9.77e+03  1.09e+03 
+    Invar      dalpha= 25.7e-6  sigma_a,loc(50 K, K_n=1)= 44.45 MPa | 20 K:    >cap 1.09e+04  1.21e+03  | 50 K: 3.25e+03     76.1     8.47*
+  count of (partner, alpha_s, sigma_w7, b) cases at 50 K with life below 30 years, by K_n:
+    K_n=1: 0 of 60
+    K_n=2: 4 of 60; shortest 0.296 y (Invar, alpha_s=27e-6, sigma_w7=30, b=-0.095)
+    K_n=3: 10 of 60; shortest 0.00414 y (Invar, alpha_s=27e-6, sigma_w7=30, b=-0.095)
+  same count restricted to the plan inputs (alpha_s = 21e-6, sigma_w7 = 60 MPa):
+    K_n=1: 0 of 10; shortest life 1.42e+06 y (Invar, b=-0.1434)
+    K_n=2: 0 of 10; shortest life 7.16e+03 y (Invar, b=-0.095)
+    K_n=3: 0 of 10; shortest life 100 y (Invar, b=-0.095)
+  same count for sigma_w7 = 30 MPa with alpha_s = 21e-6 (only the fatigue input changed):
+    K_n=1: 0 of 10; shortest life 7.16e+03 y (Invar, b=-0.095)
+    K_n=2: 1 of 10; shortest life 4.86 y (Invar, b=-0.095)
+    K_n=3: 2 of 10; shortest life 0.0681 y (Invar, b=-0.095)
+
+=== 3 Delta T_x [K] at N = 10958 cycles, closed form (no bracket needed) ===
+  flags at Delta T_x: n = notch-root range K_n c E_s eps_m/(1+S) above sigma_y (S2's criterion, here with S);
+                      Y = nominal strut range c E_s eps_m/(1+S) above sigma_y; T = Delta T_x above 500 K (outside any service range)
+  local amplitude allowed at N = 10958 [MPa]: sw7=60, b=-0.095: 114.7; sw7=60, b=-0.1434: 159.5; sw7=30, b=-0.095: 57.3; sw7=30, b=-0.1846: 105.6
+  alpha_s=21e-6  sigma_w7=60 MPa  b=-0.095:  K_n = 1, 2, 3 (c = 1) | K_n = 3, c = 1.49
+    Ti-6Al-4V    267.7      133.9       89.2    |    59.9   
+    steel        366.9      183.5      122.3    |    82.1   
+    316L         660.7T     330.3      220.2    |   147.8   
+    Cu           737.3T     368.6      245.8    |   164.9   
+    Invar        168.2       84.1       56.1    |    37.6   
+  alpha_s=21e-6  sigma_w7=60 MPa  b=-0.1434:  K_n = 1, 2, 3 (c = 1) | K_n = 3, c = 1.49
+    Ti-6Al-4V    372.4nY    186.2n     124.1n   |    83.3n  
+    steel        510.4nYT   255.2n     170.1n   |   114.2n  
+    316L         918.9nYT   459.5n     306.3n   |   205.6n  
+    Cu          1025.4nYT   512.7nT    341.8n   |   229.4n  
+    Invar        234.0nY    117.0n      78.0n   |    52.3n  
+  alpha_s=21e-6  sigma_w7=30 MPa  b=-0.095:  K_n = 1, 2, 3 (c = 1) | K_n = 3, c = 1.49
+    Ti-6Al-4V    133.9       66.9       44.6    |    29.9   
+    steel        183.5       91.7       61.2    |    41.0   
+    316L         330.3      165.2      110.1    |    73.9   
+    Cu           368.6      184.3      122.9    |    82.5   
+    Invar         84.1       42.1       28.0    |    18.8   
+  alpha_s=21e-6  sigma_w7=30 MPa  b=-0.1846:  K_n = 1, 2, 3 (c = 1) | K_n = 3, c = 1.49
+    Ti-6Al-4V    246.6      123.3       82.2    |    55.2   
+    steel        337.9      169.0      112.6    |    75.6   
+    316L         608.4T     304.2      202.8    |   136.1   
+    Cu           679.0T     339.5      226.3    |   151.9   
+    Invar        154.9       77.5       51.6    |    34.7   
+  alpha_s=23e-6  sigma_w7=60 MPa  b=-0.095:  K_n = 1, 2, 3 (c = 1) | K_n = 3, c = 1.49
+    Ti-6Al-4V    230.6      115.3       76.9    |    51.6   
+    steel        300.2      150.1      100.1    |    67.2   
+    316L         471.9      236.0      157.3    |   105.6   
+    Cu           510.4T     255.2      170.1    |   114.2   
+    Invar        152.7       76.4       50.9    |    34.2   
+  alpha_s=23e-6  sigma_w7=60 MPa  b=-0.1434:  K_n = 1, 2, 3 (c = 1) | K_n = 3, c = 1.49
+    Ti-6Al-4V    320.7nY    160.3n     106.9n   |    71.7n  
+    steel        417.6nY    208.8n     139.2n   |    93.4n  
+    316L         656.4nYT   328.2n     218.8n   |   146.8n  
+    Cu           709.9nYT   355.0n     236.6n   |   158.8n  
+    Invar        212.4nY    106.2n      70.8n   |    47.5n  
+  alpha_s=23e-6  sigma_w7=30 MPa  b=-0.095:  K_n = 1, 2, 3 (c = 1) | K_n = 3, c = 1.49
+    Ti-6Al-4V    115.3       57.6       38.4    |    25.8   
+    steel        150.1       75.1       50.0    |    33.6   
+    316L         236.0      118.0       78.7    |    52.8   
+    Cu           255.2      127.6       85.1    |    57.1   
+    Invar         76.4       38.2       25.5    |    17.1   
+  alpha_s=23e-6  sigma_w7=30 MPa  b=-0.1846:  K_n = 1, 2, 3 (c = 1) | K_n = 3, c = 1.49
+    Ti-6Al-4V    212.3      106.2       70.8    |    47.5   
+    steel        276.5      138.2       92.2    |    61.9   
+    316L         434.6      217.3      144.9    |    97.2   
+    Cu           470.0      235.0      156.7    |   105.2   
+    Invar        140.6       70.3       46.9    |    31.5   
+  alpha_s=27e-6  sigma_w7=60 MPa  b=-0.095:  K_n = 1, 2, 3 (c = 1) | K_n = 3, c = 1.49
+    Ti-6Al-4V    180.4       90.2       60.1    |    40.4   
+    steel        220.2      110.1       73.4    |    49.3   
+    316L         300.3      150.2      100.1    |    67.2   
+    Cu           316.0      158.0      105.3    |    70.7   
+    Invar        129.0       64.5       43.0    |    28.8   
+  alpha_s=27e-6  sigma_w7=60 MPa  b=-0.1434:  K_n = 1, 2, 3 (c = 1) | K_n = 3, c = 1.49
+    Ti-6Al-4V    251.0nY    125.5n      83.7n   |    56.1n  
+    steel        306.2nY    153.1n     102.1n   |    68.5n  
+    316L         417.7nY    208.8n     139.2n   |    93.4n  
+    Cu           439.5nY    219.7n     146.5n   |    98.3n  
+    Invar        179.4nY     89.7n      59.8n   |    40.1n  
+  alpha_s=27e-6  sigma_w7=30 MPa  b=-0.095:  K_n = 1, 2, 3 (c = 1) | K_n = 3, c = 1.49
+    Ti-6Al-4V     90.2       45.1       30.1    |    20.2   
+    steel        110.1       55.0       36.7    |    24.6   
+    316L         150.2       75.1       50.1    |    33.6   
+    Cu           158.0       79.0       52.7    |    35.3   
+    Invar         64.5       32.2       21.5    |    14.4   
+  alpha_s=27e-6  sigma_w7=30 MPa  b=-0.1846:  K_n = 1, 2, 3 (c = 1) | K_n = 3, c = 1.49
+    Ti-6Al-4V    166.2       83.1       55.4    |    37.2   
+    steel        202.7      101.4       67.6    |    45.4   
+    316L         276.6      138.3       92.2    |    61.9   
+    Cu           291.0      145.5       97.0    |    65.1   
+    Invar        118.8       59.4       39.6    |    26.6   
+  mean stress from cool-down (Ti-6Al-4V and Invar, K_n = 3, c = 1, octet S): bound pair
+    lower bound on Delta T_x: Goodman, sigma_m = min(sigma_y, E_s dalpha dT_ref), dT_ref = 300 K; upper bound: no mean-stress effect
+    sigma_u=400 alpha_s=21e-6 sigma_w7=60 b=-0.1434: Ti-6Al-4V: sigma_m=250 MPa, g=2.667, dT_x 46.5 to 124.1 K; Invar: sigma_m=250 MPa, g=2.667, dT_x 29.2 to 78.0 K
+    sigma_u=400 alpha_s=21e-6 sigma_w7=30 b=-0.1846: Ti-6Al-4V: sigma_m=250 MPa, g=2.667, dT_x 30.8 to 82.2 K; Invar: sigma_m=250 MPa, g=2.667, dT_x 19.4 to 51.6 K
+    sigma_u=400 alpha_s=27e-6 sigma_w7=60 b=-0.1434: Ti-6Al-4V: sigma_m=250 MPa, g=2.667, dT_x 31.4 to 83.7 K; Invar: sigma_m=250 MPa, g=2.667, dT_x 22.4 to 59.8 K
+    sigma_u=400 alpha_s=27e-6 sigma_w7=30 b=-0.1846: Ti-6Al-4V: sigma_m=250 MPa, g=2.667, dT_x 20.8 to 55.4 K; Invar: sigma_m=250 MPa, g=2.667, dT_x 14.8 to 39.6 K
+    sigma_u=460 alpha_s=21e-6 sigma_w7=60 b=-0.1434: Ti-6Al-4V: sigma_m=250 MPa, g=2.190, dT_x 56.7 to 124.1 K; Invar: sigma_m=250 MPa, g=2.190, dT_x 35.6 to 78.0 K
+    sigma_u=460 alpha_s=21e-6 sigma_w7=30 b=-0.1846: Ti-6Al-4V: sigma_m=250 MPa, g=2.190, dT_x 37.5 to 82.2 K; Invar: sigma_m=250 MPa, g=2.190, dT_x 23.6 to 51.6 K
+    sigma_u=460 alpha_s=27e-6 sigma_w7=60 b=-0.1434: Ti-6Al-4V: sigma_m=250 MPa, g=2.190, dT_x 38.2 to 83.7 K; Invar: sigma_m=250 MPa, g=2.190, dT_x 27.3 to 59.8 K
+    sigma_u=460 alpha_s=27e-6 sigma_w7=30 b=-0.1846: Ti-6Al-4V: sigma_m=250 MPa, g=2.190, dT_x 25.3 to 55.4 K; Invar: sigma_m=250 MPa, g=2.190, dT_x 18.1 to 39.6 K
+  dT_ref at which E_s dalpha dT_ref = sigma_y: Ti 288 K (alpha_s 21e-6), 194 K (alpha_s 27e-6); Invar 181 K, 139 K
+
+=== 4 BCC constant c = sigma_peak/(E_s eps_m), equibiaxial strain (S2 R7 values) ===
+  rho    c (Euler-Bernoulli)  c (Timoshenko)  1/c EB   1/c Timo   (1/c is the margin of the c = 1 screen; below 1 = non-conservative)
+  0.1    0.6760               0.6424          1.479    1.557
+  0.2    0.9434               0.8567          1.060    1.167
+  0.3    1.1354               0.9901          0.881    1.010
+  0.4    1.2862               1.0814          0.777    0.925
+  0.5    1.4097               1.1467          0.709    0.872
+  crossover c = 1 (S2 R7): rho = 0.2267 (Euler-Bernoulli), 0.3093 (Timoshenko)
+  original formula E_s rho^2 eps_m as a local stress, rho = 0.2: low by c/rho^2 = 23.6 (BCC, EB), 21.4 (BCC, Timoshenko), 25.0 (octet)
+
+=== 5 dissipation under strain control, Delta S = psi V M_L eps_a^2/T0, 10958 cycles, Delta T = 50 K, Ti-6Al-4V ===
+  REGRESSION vs S2 octet total, alpha_s 21e-6, with S (R31): here=0.0398674 S2=0.039868 err=1.50e-05 -> OK
+  alpha_s=21e-6: total over 30 y [J/K] octet: 3.9868e-02; BCC: 8.3657e-03; A: 6.7062e-02
+  alpha_s=23e-6: total over 30 y [J/K] octet: 5.3765e-02; BCC: 1.1282e-02; A: 9.0440e-02
+  alpha_s=27e-6: total over 30 y [J/K] octet: 8.7783e-02; BCC: 1.8420e-02; A: 1.4766e-01
+  largest listed case (Invar, alpha_s 27e-6, lattice A): 2.8978e-01 J/K
+
+=== 6 thermal lag E_s alpha_s dT_lag against the mismatch term E_s dalpha dT (dT = 50 K) ===
+  alpha_s=21e-6 Ti-6Al-4V : lag 10 K = 14.7 MPa; mismatch = 43.4 MPa; break-even dT_lag/dT = dalpha/alpha_s = 0.590
+  alpha_s=21e-6 316L      : lag 10 K = 14.7 MPa; mismatch = 17.5 MPa; break-even dT_lag/dT = dalpha/alpha_s = 0.238
+  alpha_s=27e-6 Ti-6Al-4V : lag 10 K = 18.9 MPa; mismatch = 64.4 MPa; break-even dT_lag/dT = dalpha/alpha_s = 0.681
+  alpha_s=27e-6 316L      : lag 10 K = 18.9 MPa; mismatch = 38.5 MPa; break-even dT_lag/dT = dalpha/alpha_s = 0.407
+
+==== SUMMARY ====
+  regression mismatches against S2: none
