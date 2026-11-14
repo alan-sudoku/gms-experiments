@@ -1,0 +1,372 @@
+J1 gate test matrix. Level: derived (unverified). Gate = plan section 5 (PROVISIONAL), applied literally.
+Rules used (see outputs/issues.md, Row J1):
+ R1 slack = cap / incumbent usage. 'free' in the case text = slack inf. A cap the case does not state = slack not supplied.
+ R2 slack >= 1 always (the incumbent fits its own cap), so a price kappa^n <= 1 passes step 3 without a stated slack.
+ R3 step 2 checks the thresholds the case names; a named threshold with no datum in any row is 'unavailable' and blocks step 2.
+ R4 'out of scope' needs step 1 to fail; an unstated envelope is NOT read as a step 1 failure (alternate reading listed per case).
+
+==============================================================================================================
+CASE 1: Photon attenuation, 100 keV, mass capped at 3x incumbent (C against W)
+Inputs and sources:
+  - mu/rho W, C at 0.1 MeV (cm2/g): 4.437, 0.1514
+      source: outputs/f1_mass_attenuation.txt [text found: W/C=29.31 | XCOM total(w/coh)=4.437 | XCOM total(w/coh)=0.1514]
+  - g = C, s = W (case text 'C against W'): 
+      source: case text
+  - n = 1 (narrow-beam attenuation, bulk-limited linear): 1
+      source: plan G1.1 / section 5 step 3
+  - slack = mass cap 3x / incumbent usage 1: 3
+      source: case text
+  kappa = 29.306, n = 1, price kappa^n = 29.306; slack = 3
+Gate trace:
+  step 1: requirement, envelope and coefficient stated, a solid coefficient enters, same environment -> pass
+  step 3: price kappa^n = 29.31 > slack 3 -> Class I
+RESULT: outcome = Class I; deciding step = 3
+EXPECTED: Class I (step 3, kappa ~ 29)
+=> MATCH
+==============================================================================================================
+CASE 2: Photon attenuation, 1 MeV, mass capped at 3x, thickness free
+Inputs and sources:
+  - mu/rho W, C at 1 MeV (cm2/g): 0.06618, 0.06362
+      source: outputs/f1_mass_attenuation.txt [text found: XCOM total(w/coh)=0.06618 | XCOM total(w/coh)=0.06362 | W/C=1.04]
+  - buildup-corrected x_C/x_W at 1 MeV (T_E 1e-2, 1e-3), broad beam: (1.1629, 1.1436)
+      source: outputs/f6_buildup_mc.txt [text found: x_C/x_W = 1.1629 | x_C/x_W = 1.1436]
+  - slack = mass cap 3x; thickness free: 3 (mass), inf (thickness)
+      source: case text
+  kappa = 1.0402, n = 1, price kappa^n = 1.0402; slack = 3
+  alt kappa (buildup, F6) = 1.1629 / 1.1436: also <= 3, same outcome
+Gate trace:
+  step 1: requirement, envelope and coefficient stated, a solid coefficient enters, same environment -> pass
+  step 3: price kappa^n = 1.04 <= slack 3 -> pass
+  step 4: fair comparator s' defined by the Sigma comparison stage (not numerically evaluated here; changes no class)
+  step 5: Class II (pass g, s', D to the Sigma comparison; no statement about the winner)
+RESULT: outcome = Class II; deciding step = 5 (after step 3 pass)
+EXPECTED: Class II
+=> MATCH
+==============================================================================================================
+CASE 3: Photon attenuation, 1 MeV, thickness capped at 3x
+Inputs and sources:
+  - thickness-basis ratio W/C at 1 MeV, rho_C = 1.70 / 2.26 g/cm3: 11.81 / 8.883
+      source: outputs/f3_thickness_ratio.txt [text found: at 1 MeV 11.81 | at 1 MeV 8.883]
+  - slack = thickness cap 3x: 3
+      source: case text
+  kappa = 11.81, n = 1, price kappa^n = 11.81; slack = 3
+Gate trace:
+  step 1: requirement, envelope and coefficient stated, a solid coefficient enters, same environment -> pass
+  step 3: price kappa^n = 11.81 > slack 3 -> Class I
+  AMBIGUITY: rho_C is not stated in the case; F3 gives 11.81 (1.70) and 8.883 (2.26), both > 3
+      other reading: none (same class)
+RESULT: outcome = Class I; deciding step = 3
+EXPECTED: Class I (step 3, kappa ~ 9-11)
+=> MATCH
+==============================================================================================================
+CASE 4: Thermal-neutron absorption in a thin sheet (Al or C against Cd or B)
+Inputs and sources:
+  - sigma_a (b, Sears 1992): nat Cd, nat B, B-10, Al, C: 2520.0, 767.0, 3835.0, 0.231, 0.0035
+      source: outputs/n1_values.csv (columns sigma_sears_b), outputs/n1_thermal_ri.txt [text found: nat Cd | 2520 | 767]
+  - kappa per atom, all four pairs and enriched B-10: Cd/Al=1.09e+04, Cd/C=7.2e+05, nat B/Al=3.32e+03, nat B/C=2.19e+05, B-10/Al=1.66e+04, B-10/C=1.1e+06
+      source: computed from the sigma_a above
+  kappa = 10909, n = 1, price kappa^n = 10909; slack = not supplied
+  kappa shown for Cd/Al (the pair that sets the case's 'kappa >= 1e4' threshold): nat B/Al = 3.3e3 is BELOW 1e4
+  INPUT NOT AVAILABLE: envelope slack (cap/usage) for a thin sheet and the binding basis (per atom, mass, area); blocks step 3
+Gate trace:
+  step 1: requirement, envelope and coefficient stated, a solid coefficient enters, same environment -> pass
+  step 3: price kappa^n = 1.091e+04; slack NOT supplied by the case text -> cannot compare
+  conditional: with slack inf (no cap): Class II
+  conditional: with slack 1 (incumbent at its cap): Class I
+  AMBIGUITY: case names no cap, so slack is not supplied
+      other reading: if no cap = uncapped (slack inf): Class II; if slack = 1 (incumbent at its cap): Class I for every pair; Class I whenever slack < kappa
+  AMBIGUITY: n for a thin sheet: bulk-limited n = 1 chosen; a black sheet (tau >= 3, n = 0) would make kappa^n = 1 and Class II
+      other reading: Class II if the sheet is black for g too
+RESULT: outcome = undecided; deciding step = 3 (blocked)
+EXPECTED: Class I (step 3, kappa >= 1e4)
+=> MISMATCH
+==============================================================================================================
+CASE 5: Bulk neutron shield, fast source, thickness free (water or concrete against absorber-loaded)
+Inputs and sources:
+  - water/Cd thickness and areal-mass ratios (thermal attenuation 1e-3): 332.8, 38.4
+      source: outputs/n5_water_vs_cd.txt [text found: ratio areal mass water/Cd = 38.40 | ratio thickness water/Cd = 332.8]
+  - slack: 'thickness free': inf
+      source: case text
+  kappa = 332.8, n = 1, price kappa^n = 332.8; slack = inf (free)
+Gate trace:
+  step 1: requirement, envelope and coefficient stated, a solid coefficient enters, same environment -> pass
+  step 3: price kappa^n = 332.8 <= slack inf -> pass
+  step 4: fair comparator s' defined by the Sigma comparison stage (not numerically evaluated here; changes no class)
+  step 5: Class II (pass g, s', D to the Sigma comparison; no statement about the winner)
+  AMBIGUITY: only thickness is stated free; an areal-mass cap is not mentioned; read as no binding cap
+      other reading: if a mass cap equal to the incumbent's usage (slack 1) were binding: price 38.4 > 1 -> Class I
+  AMBIGUITY: N5 is an order-of-magnitude row for a thermal flux and a Cd sheet; the 'fast source' needs the N4 moderation step first (18-25 collisions for H, D)
+      other reading: no change in class
+RESULT: outcome = Class II; deciding step = 5 (after step 3 pass)
+EXPECTED: Class II
+=> MATCH
+==============================================================================================================
+CASE 6: Black control absorber (natural B4C against Ag-In-Cd or Hf), tau >= 3 for both
+Inputs and sources:
+  - tau of a 1 mm sheet: Cd, natural B4C (premise 'tau >= 3 for both' is the case's own): {'Cd': 11.7, 'B4C': 8.4}
+      source: outputs/n3_self_shielding.txt [text found: 1 mm Cd tau = 11.7 | 1 mm B4C tau = 8.4]
+  - tau of Ag-In-Cd and Hf: not available
+      source: no row computed it; the case premise supplies tau >= 3
+  - n = 0 (saturated absorber): 0
+      source: plan section 5 step 3
+  kappa: not needed (n = 0); kappa not computed: n = 0, price = kappa^0 = 1 for any kappa
+Gate trace:
+  step 1: requirement, envelope and coefficient stated, a solid coefficient enters, same environment -> pass
+  step 3: price kappa^n = 1; slack not supplied but any slack >= 1 (cap >= incumbent usage) -> price within slack
+  step 4: fair comparator s' defined by the Sigma comparison stage (not numerically evaluated here; changes no class)
+  step 5: Class II (pass g, s', D to the Sigma comparison; no statement about the winner)
+  AMBIGUITY: slack not supplied; since n = 0 the price is 1 and slack >= 1 by definition (incumbent fits its own cap)
+      other reading: none
+  AMBIGUITY: N3 tau values are thermal (2200 m/s); at epithermal energies B4C (1/v) falls below tau = 3 while Ag-In-Cd resonances do not; the case does not state the spectrum
+      other reading: if the spectrum were epithermal and tau(B4C) < 3: n = 1 and the outcome would need a slack
+RESULT: outcome = Class II; deciding step = 5 (after step 3 pass)
+EXPECTED: Class II (n = 0)
+=> MATCH
+==============================================================================================================
+CASE 7: Energy storage, 1 h discharge, mass capped at 2x (double layer against Li-ion)
+Inputs and sources:
+  - Li-ion cell specific energy E_b, double-layer cell E_c (Wh/kg, MEMORY UNSURE): 200.0, 6.0
+      source: outputs/h3_ragone_crossover.txt [text found: central: E_c=6 Wh/kg | E_b=200 Wh/kg]
+  - double-layer geometric ceiling C_sp (F/g), carbon only, electrolyte excluded: 551.6
+      source: outputs/h1_h2_redox_dl_energy.txt [text found: C_sp ceiling = 21 uF/cm2 * SSA = 551.6 F/g]
+  - ceiling energy 0.5*(C_sp/4)*V^2 at 2.7 V and 4.0 V (Wh/kg): 139.6, 306.4
+      source: computed here from C_sp (H2 gives it per atom: 0.06257 and 0.13733 eV/atom)
+  - LiFePO4+6C theoretical (Wh/kg, reactant basis): 385.0
+      source: outputs/h1_h2_redox_dl_energy.txt [text found: LiFePO4+6C: n=1 V=3.3 M=229.82 g/mol N_at=13  E=385 Wh/kg]
+  - slack = mass cap 2x: 2
+      source: case text
+  kappa = 33.333, n = 1, price kappa^n = 33.333; slack = 2
+  kappa = E_b/E_c = 33.3 (practical, H3 central)
+Gate trace:
+  step 1: requirement, envelope and coefficient stated, a solid coefficient enters, same environment -> pass
+  step 2 [required specific energy vs stoichiometric bound of g]: pass: required = E_b/slack = 100 Wh/kg; g bound (ceiling, 2.7 V, carbon only) = 139.6 Wh/kg. The bound excludes electrolyte, separator, collectors, so a pass is not conclusive
+  step 3: price kappa^n = 33.33 > slack 2 -> Class I
+  AMBIGUITY: expected text says 'step 3; stoichiometric bound' but the gate puts the stoichiometric bound in step 2
+      other reading: the gate as written decides at step 3 on practical values; step 2 does not fail (140 >= 100 Wh/kg)
+  AMBIGUITY: which c_g to use in step 3: practical 6 Wh/kg (used) or geometric ceiling
+      other reading: ceiling 2.7 V: kappa = 2.76 (theoretical LiFePO4 / ceiling) > 2 -> Class I; ceiling 4.0 V: kappa = 1.26 <= 2 -> Class II
+  AMBIGUITY: required specific energy taken as the incumbent's delivered 200 Wh/kg / 2; if taken as theoretical 385/2 = 192.5
+      other reading: 192.5 > 139.6: Class I at step 2 (2.7 V); passes at 4.0 V (306)
+RESULT: outcome = Class I; deciding step = 3
+EXPECTED: Class I (step 3; stoichiometric bound)
+=> MATCH
+==============================================================================================================
+CASE 8: Energy storage, 5 s pulses, 1e6 cycles
+Inputs and sources:
+  - H3 central: E_c, P_c, E_b, P_b: {'Ec': 6.0, 'Pc': 10.0, 'Eb': 200.0, 'Pb': 1.5}
+      source: outputs/h3_ragone_crossover.txt [text found: central: E_c=6 Wh/kg P_c=10 kW/kg ; E_b=200 Wh/kg P_b=1.5 kW/kg]
+  - t* range over the 16 corners (s): 4.80 .. 96.00 (central 14.4)
+      source: outputs/h3_ragone_crossover.txt [text found: t*(A) range 4.80 .. 96.00 s]
+  - deliverable specific energy at 5 s: capacitor, battery (Wh/kg): 6.000, 2.083
+      source: computed here: min(E, P*t)
+  - assignment g = double layer, s = Li-ion: assumed
+      source: NOT in the case text; inherited from case 7
+  kappa = 0.34722, n = 1, price kappa^n = 0.34722; slack = not supplied
+  kappa = c_s/c_g = 0.347 (central); over the 16 corners 0.052 .. 1.042
+  INPUT NOT AVAILABLE: cycle life of g at 1e6 cycles (and which of the pair is g); blocks step 2
+Gate trace:
+  step 1: requirement, envelope and coefficient stated, a solid coefficient enters, same environment -> pass
+  step 2 [1e6-cycle life of g]: unavailable: stated in the case, but no row produced a cycle-life datum for the double-layer cell or the Li-ion cell
+  step 3: price kappa^n = 0.3472; slack not supplied but any slack >= 1 (cap >= incumbent usage) -> price within slack
+  step 2 item '1e6-cycle life of g' unavailable: step 2 cannot be completed
+  conditional: with slack inf (no cap): undecided (step 2 still open)
+  conditional: with slack 1 (incumbent at its cap): undecided (step 2 still open)
+  AMBIGUITY: case does not say which device is g
+      other reading: if g = Li-ion: kappa = c_s/c_g = 2.88 > 1, slack not supplied -> undecided at step 3 and the Li-ion cycle-life datum at step 2 is equally unavailable
+  AMBIGUITY: no cap stated; with kappa^n < 1 the price passes for any slack >= 1, but at the corner t* = 4.8 s kappa is 1.042 > 1
+      other reading: central case passes, one corner does not
+RESULT: outcome = undecided; deciding step = 2 (blocked)
+EXPECTED: Class II
+=> MISMATCH
+==============================================================================================================
+CASE 9: Primary (non-rechargeable, charged as made) cell against a double-layer capacitor
+Inputs and sources:
+  - energy stored by g (capacitor) as manufactured: 0 (no stored energy)
+      source: case text ('charged as made' for the primary cell only); plan G3.11
+Gate trace:
+  step 1: requirement, envelope and coefficient stated, a solid coefficient enters, same environment -> pass
+  step 2 [required specific energy vs stoichiometric bound of g]: fail: required = the primary cell's specific energy > 0; bound of g as manufactured = 0 (it holds no energy until charged)
+  AMBIGUITY: step 1 clause 3 ('cannot operate in the same environment and the function cannot be restated') does not trigger: same environment, and G3.11 restates the function as 'deliver E in time t'
+      other reading: if the restated function is judged impossible without charging: out of scope at step 1
+  AMBIGUITY: 'stoichiometric bound of g' for a capacitor is undefined; read as stored energy in the as-made state = 0
+      other reading: if read as the charged-state ceiling 1/2*C*V^2 (about 140 Wh/kg at 2.7 V) step 2 passes; step 3 then has c_g = 0, kappa = inf -> Class I at step 3
+RESULT: outcome = Class I; deciding step = 2
+EXPECTED: Class I at step 2, or out of scope at step 1
+=> MATCH
+==============================================================================================================
+CASE 10: Permanent-magnet excitation, volume capped at 2x (ferrite against NdFeB)
+Inputs and sources:
+  - BH_max NdFeB, ferrite (kJ/m3); volume ratio: 345.3, 31.8; 10.84
+      source: outputs/m5_magnet_circuit.txt [text found: BHmax=345.3 | BHmax=31.8 | volume ratio ferrite/NdFeB=10.84]
+  - operating |H_m| of ferrite vs H_cJ (kA/m, H_cJ MEMORY UNSURE 250-400): 155.4 vs >= 250.0
+      source: outputs/m5_magnet_circuit.txt [text found: Hm=-155.4 kA/m | HcJ(UNSURE)=250-400]
+  - slack = volume cap 2x: 2
+      source: case text
+  kappa = 10.84, n = 1, price kappa^n = 10.84; slack = 2
+Gate trace:
+  step 1: requirement, envelope and coefficient stated, a solid coefficient enters, same environment -> pass
+  step 2 [demagnetising field vs H_cJ of ferrite]: pass: |H_m| = 155.4 kA/m < H_cJ low end 250.0 kA/m (UNSURE input)
+  step 2 [T_op vs Curie of ferrite]: pass: not stated in the case; not checked (regime variable absent)
+  step 3: price kappa^n = 10.84 > slack 2 -> Class I
+RESULT: outcome = Class I; deciding step = 3
+EXPECTED: Class I (step 3, kappa ~ 11)
+=> MATCH
+==============================================================================================================
+CASE 11: Permanent-magnet excitation, volume free, demagnetising field below H_cJ of ferrite
+Inputs and sources:
+  - volume ratio ferrite/NdFeB; |H_m| vs H_cJ: 10.84; 155.4 vs >= 250.0 kA/m
+      source: outputs/m5_magnet_circuit.txt [text found: volume ratio ferrite/NdFeB=10.84 | Hm=-155.4 kA/m]
+  - slack: volume free: inf
+      source: case text
+  kappa = 10.84, n = 1, price kappa^n = 10.84; slack = inf (free)
+Gate trace:
+  step 1: requirement, envelope and coefficient stated, a solid coefficient enters, same environment -> pass
+  step 2 [demagnetising field vs H_cJ of ferrite]: pass: premise of the case and M5 agree (155.4 < 250 kA/m, H_cJ UNSURE)
+  step 3: price kappa^n = 10.84 <= slack inf -> pass
+  step 4: fair comparator s' defined by the Sigma comparison stage (not numerically evaluated here; changes no class)
+  step 5: Class II (pass g, s', D to the Sigma comparison; no statement about the winner)
+  AMBIGUITY: only volume is stated free; mass (ferrite 7.08x heavier, M5) not mentioned; read as no binding cap
+      other reading: with a mass cap at the incumbent's usage (slack 1): Class I
+RESULT: outcome = Class II; deciding step = 5 (after step 3 pass)
+EXPECTED: Class II
+=> MATCH
+==============================================================================================================
+CASE 12: Permanent magnet, T_op above the candidate's Curie temperature
+Inputs and sources:
+  - Curie temperature of the candidate and T_op: not numeric
+      source: case premise states the comparison; M1 output has no Curie temperature (it prints mu0*Ms only)
+Gate trace:
+  step 1: requirement, envelope and coefficient stated, a solid coefficient enters, same environment -> pass
+  step 2 [T_op vs Curie of g]: fail: case premise: T_op above the candidate's Curie temperature
+  AMBIGUITY: the threshold failure is the case premise itself, so the case tests nothing numeric
+      other reading: none
+RESULT: outcome = Class I; deciding step = 2
+EXPECTED: Class I (step 2)
+=> MATCH
+==============================================================================================================
+CASE 13: DC busbar, cross-section free (Al against Cu)
+Inputs and sources:
+  - area ratio A_Al/A_Cu = sigma_Cu/sigma_Al: 1.63842
+      source: outputs/a1_conductor_area_mass.txt [text found: area ratio A_Al/A_Cu = 1.63842]
+  - slack: cross-section free: inf
+      source: case text
+  kappa = 1.6384, n = 1, price kappa^n = 1.6384; slack = inf (free)
+Gate trace:
+  step 1: requirement, envelope and coefficient stated, a solid coefficient enters, same environment -> pass
+  step 3: price kappa^n = 1.638 <= slack inf -> pass
+  step 4: fair comparator s' defined by the Sigma comparison stage (not numerically evaluated here; changes no class)
+  step 5: Class II (pass g, s', D to the Sigma comparison; no statement about the winner)
+RESULT: outcome = Class II; deciding step = 5 (after step 3 pass)
+EXPECTED: Class II
+=> MATCH
+==============================================================================================================
+CASE 14: Slot-limited winding, requirement 'carry I within the temperature limit' (Al against Cu)
+Inputs and sources:
+  - loss ratio at equal area = sigma_Cu/sigma_Al: 1.63842
+      source: outputs/a1_conductor_area_mass.txt [text found: area ratio A_Al/A_Cu = 1.63842]
+  - incumbent's thermal margin (T_limit - T_ambient)/(operating rise): not available
+      source: no row and not in the case text; A4 is a step-5 comparison and supplies no margin
+  kappa = 1.6384, n = 1, price kappa^n = 1.6384; slack = not supplied
+  INPUT NOT AVAILABLE: incumbent's temperature-rise margin (slack in the 'within the temperature limit' requirement); blocks step 3
+Gate trace:
+  step 1: requirement, envelope and coefficient stated, a solid coefficient enters, same environment -> pass
+  step 3: price kappa^n = 1.638; slack NOT supplied by the case text -> cannot compare
+  conditional: with slack inf (no cap): Class II
+  conditional: with slack 1 (incumbent at its cap): Class I
+  AMBIGUITY: 'slot-limited' fixes the area (area slack 1) but the requirement is a temperature, so the slack is the thermal margin, not the area slack
+      other reading: if the area slack 1 were the slack: price 1.638 > 1 -> Class I; Class II iff the incumbent's rise is below 1/1.638 = 61% of the limit
+  AMBIGUITY: no cap = uncapped reading
+      other reading: slack inf -> Class II (matches expected)
+RESULT: outcome = undecided; deciding step = 3 (blocked)
+EXPECTED: Class II (g expected to lose at high duty)
+=> MISMATCH
+==============================================================================================================
+CASE 15: Same as 14 with requirement 'loss <= incumbent's loss'
+Inputs and sources:
+  - loss ratio at equal area: 1.63842
+      source: outputs/a1_conductor_area_mass.txt [text found: area ratio A_Al/A_Cu = 1.63842]
+  - slack: loss cap = incumbent's loss: 1
+      source: case text (requirement itself)
+  kappa = 1.6384, n = 1, price kappa^n = 1.6384; slack = 1
+Gate trace:
+  step 1: requirement, envelope and coefficient stated, a solid coefficient enters, same environment -> pass
+  step 3: price kappa^n = 1.638 > slack 1 -> Class I
+RESULT: outcome = Class I; deciding step = 3
+EXPECTED: Class I (step 3, kappa = 1.64, no slack)
+=> MATCH
+==============================================================================================================
+CASE 16: Air-cooled heat sink, short fins (Al against Cu)
+Inputs and sources:
+  - fin efficiency ratio Al(k=200)/Cu at h=50, L=30 mm, t=1 mm: 0.93734 (same-geometry price 1/ratio = 1.0668)
+      source: outputs/c1_fin_efficiency.txt [text found: ratio Al(200)/Cu: 0.93734]
+  - k_Cu, k_Al (W/mK, MEMORY inputs of C1): 400.0, 200.0
+      source: outputs/c1_fin_efficiency.txt [text found: k_Cu=400 | 200 wrought 6063]
+  kappa = 2, n = 0.5, price kappa^n = 1.4142; slack = not supplied
+  kappa = 2.00; n = 1/2 gives 1.4142 (thick-fin bound); C1 same-geometry price 1.0668
+  INPUT NOT AVAILABLE: envelope slack (allowed rise of base-to-air resistance or fin mass/height cap); blocks step 3
+Gate trace:
+  step 1: requirement, envelope and coefficient stated, a solid coefficient enters, same environment -> pass
+  step 3: price kappa^n = 1.414; slack NOT supplied by the case text -> cannot compare
+  conditional: with slack inf (no cap): Class II
+  conditional: with slack 1 (incumbent at its cap): Class I
+  AMBIGUITY: n: step 3 gives n = 1/2 for 'thick against fin length'; a short fin (mL ~ 0.5) is not thick, so the rule does not say which n applies
+      other reading: n = 1/2 gives 1.414 (upper bound); the C1 price 1.067 is the exact same-geometry value; both > 1, so slack is still needed
+  AMBIGUITY: no cap stated
+      other reading: uncapped reading: Class II (matches expected); slack 1: Class I
+RESULT: outcome = undecided; deciding step = 3 (blocked)
+EXPECTED: Class II
+=> MISMATCH
+==============================================================================================================
+CASE 17: Oxygen evolution in an acidic membrane cell (Ni-Fe against Ir oxide)
+Inputs and sources:
+  - stability of Ni-Fe oxide at OER potential in acid (Pourbaix): not available
+      source: no row produced it ('Inputs from: -' in Note J1; the plan lists a Pourbaix LOOKUP with no row)
+  INPUT NOT AVAILABLE: Pourbaix stability window of Ni-Fe oxide in acid at the OER potential; blocks step 2 (and the environment clause of step 1)
+Gate trace:
+  step 1: requirement, envelope and coefficient stated, a solid coefficient enters, same environment -> pass
+  step 2 [chemical stability window of g (Ni-Fe in acid)]: unavailable: no Pourbaix datum in any row
+  step 3: kappa or n not available
+  AMBIGUITY: step 1 clause 3 ('g and s cannot operate in the same environment') and step 2 ('chemical stability window') overlap
+      other reading: if Ni-Fe is unstable in the acid the literal order exits at step 1 as out of scope, not Class I at step 2
+RESULT: outcome = undecided; deciding step = 2 (blocked)
+EXPECTED: Class I (step 2, stability window; Pourbaix LOOKUP)
+=> MISMATCH
+==============================================================================================================
+CASE 18: Flow manifold, viscous loss
+Inputs and sources:
+  - governing equation: Hagen-Poiseuille, no solid coefficient
+      source: plan G1.6 (analytic; no row computed it)
+Gate trace:
+  step 1: no coefficient of the solid enters the governing equation (Hagen-Poiseuille P = 128*mu*L*Q^2/(pi*D^4) holds only fluid properties and D) -> out of scope
+  AMBIGUITY: decided from the plan's equation only; no-slip walls assumed
+      other reading: slip coatings, roughness set by process or wall strength limiting D would put a solid coefficient into the problem (G1.6 falsifier)
+RESULT: outcome = out of scope; deciding step = 1
+EXPECTED: Out of scope (step 1, no x-dependent coefficient)
+=> MATCH
+==============================================================================================================
+
+SUMMARY TABLE
+ # | outcome      | deciding step          | match    | expected
+ 1 | Class I      | 3                      | MATCH    | Class I (step 3, kappa ~ 29)
+ 2 | Class II     | 5 (after step 3 pass)  | MATCH    | Class II
+ 3 | Class I      | 3                      | MATCH    | Class I (step 3, kappa ~ 9-11)
+ 4 | undecided    | 3 (blocked)            | MISMATCH | Class I (step 3, kappa >= 1e4)
+ 5 | Class II     | 5 (after step 3 pass)  | MATCH    | Class II
+ 6 | Class II     | 5 (after step 3 pass)  | MATCH    | Class II (n = 0)
+ 7 | Class I      | 3                      | MATCH    | Class I (step 3; stoichiometric bound)
+ 8 | undecided    | 2 (blocked)            | MISMATCH | Class II
+ 9 | Class I      | 2                      | MATCH    | Class I at step 2, or out of scope at step 1
+10 | Class I      | 3                      | MATCH    | Class I (step 3, kappa ~ 11)
+11 | Class II     | 5 (after step 3 pass)  | MATCH    | Class II
+12 | Class I      | 2                      | MATCH    | Class I (step 2)
+13 | Class II     | 5 (after step 3 pass)  | MATCH    | Class II
+14 | undecided    | 3 (blocked)            | MISMATCH | Class II (g expected to lose at high duty)
+15 | Class I      | 3                      | MATCH    | Class I (step 3, kappa = 1.64, no slack)
+16 | undecided    | 3 (blocked)            | MISMATCH | Class II
+17 | undecided    | 2 (blocked)            | MISMATCH | Class I (step 2, stability window; Pourbaix LOOKUP)
+18 | out of scope | 1                      | MATCH    | Out of scope (step 1, no x-dependent coefficient)
+
+MATCH count: 13 of 18
+MISMATCH cases: 4, 8, 14, 16, 17
+Undecided cases (missing input): 4, 8, 14, 16, 17
+Level of all results: derived (unverified). Inputs marked MEMORY UNSURE in the source rows remain so.
