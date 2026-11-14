@@ -1,0 +1,35 @@
+B1 INPUTS: mu0=1.25663706e-6, sigma_Cu=5.80e7, sigma_Al=3.54e7 (MEMORY)
+   f [Hz]    delta_Cu [mm]  delta_Al [mm]  ratio
+       50        9.3459       11.9628   1.2800
+CHECK delta_Al/delta_Cu at 50 Hz: 1.28 vs 1.28 tol=2% -> PASS
+CHECK Cu 50 Hz 9.35 mm (plan; not confirmed from source): 9.3459 vs 9.35 tol=2% -> PASS
+CHECK Al 50 Hz 12.0 mm (plan): 11.963 vs 12.0 tol=2% -> PASS
+       60        8.5316       10.9205   1.2800
+CHECK delta_Al/delta_Cu at 60 Hz: 1.28 vs 1.28 tol=2% -> PASS
+CHECK Cu 60 Hz 8.5 mm (plan): 8.5316 vs 8.5 tol=2% -> PASS
+      400        3.3043        4.2295   1.2800
+CHECK delta_Al/delta_Cu at 400 Hz: 1.28 vs 1.28 tol=2% -> PASS
+    10000        0.6609        0.8459   1.2800
+CHECK delta_Al/delta_Cu at 10000 Hz: 1.28 vs 1.28 tol=2% -> PASS
+   100000        0.2090        0.2675   1.2800
+CHECK delta_Al/delta_Cu at 100000 Hz: 1.28 vs 1.28 tol=2% -> PASS
+  1000000        0.0661        0.0846   1.2800
+CHECK delta_Al/delta_Cu at 1e+06 Hz: 1.28 vs 1.28 tol=2% -> PASS
+   (the ratio sqrt(sigma_Cu/sigma_Al)=1.2800 is the same expression at every f: those 6 ratio checks are IDENTITY-like in f; they test the sigma inputs only.)
+
+B2
+F/xi at ends of bracket: G(0.1)=10.0001, G(10)=1.000000 (the interval contains the global minimum 0.917 near pi/2, but F/xi is NOT unimodal on it)
+plain bounded minimisation on [0.1,10] returned xi=7.853982, F/xi=1.000000: a LOCAL minimum (F/xi oscillates about 1 for large xi, so it is not unimodal); the global minimum is found by bracketing with a coarse scan then refining
+scan bracket [1.560,1.580] used only to bracket; the minimum is the refined value
+minimum of F/xi: xi = 1.570796 (pi/2 = 1.570796), F/xi = 0.917152
+  note: the refined minimiser lands on pi/2 to 1e-6 (dG/dxi vanishes at pi/2 analytically)
+CHECK xi_min vs pi/2: 1.5708 vs 1.5707963267948966 tol=0.5% -> PASS
+CHECK min F/xi vs 0.917: 0.91715 vs 0.917 tol=0.5% -> PASS
+CHECK F/xi at xi=pi/2 (analytic point): 0.91715 vs 0.917 tol=0.5% -> PASS
+series fit F-1 = c xi^4 on [0.05,0.3] (least squares through origin): c = 0.08887; 4/45 = 0.08889
+CHECK series coefficient vs 0.0889: 0.088869 vs 0.0889 tol=0.5% -> PASS
+  (linear fit of F-1 on xi^4 with intercept: slope 0.08887, intercept 1.36e-08; limit xi->0 slope 4/45 = 0.08889; slope on this range is shifted slightly by the xi^8 term)
+F/xi at xi=10: 1.000000
+CHECK F/xi -> 1 at xi=10: 1 vs 1.0 tol=0.5% -> PASS
+IDENTITY CHECKS: 'F/xi at pi/2' is an evaluation of the same formula the minimiser uses; kept as a value check only.
+OVERALL PASS

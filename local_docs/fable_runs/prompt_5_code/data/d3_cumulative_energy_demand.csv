@@ -1,0 +1,13 @@
+# LOOKUP data for row D3: cumulative energy demand of Pt and Ir, MJ-eq/kg.
+# Source: Nuss P., Eckelman M.J., 2014, Life cycle assessment of metals: a scientific synthesis, PLoS ONE 9(7) e101298, Supporting Information S1, Table S38, column "CED [MJ/kg]" (rows "Pt TOTAL", "Ir TOTAL", and sub-rows).
+# URL https://journals.plos.org/plosone/article/file?type=supplementary&id=10.1371/journal.pone.0101298.s001 (raw copy data/raw/nuss/s1.bin, extracted text s1.txt)
+# access date: 2026-11-14. Edition: PLoS ONE 2014 SI S1 as served 2026-11-14.
+# note: planner's UNSURE expected: Pt 1e5-3e5 MJ/kg, Ir same order. CED is cumulative energy demand (all primary energy), not exergy destroyed (see issues).
+metal,form,CED_MJ_per_kg,low_2.5,high_97.5
+Pt,TOTAL (supply weighted),243000,178000,326000
+Pt,primary South Africa (63%),308000,219000,414000
+Pt,primary Russia (14%),327000,245000,430000
+Pt,secondary,11900,8290,16900
+Ir,TOTAL (supply weighted),169000,128000,219000
+Ir,primary South Africa,165000,118000,220000
+Ir,primary Russia,175000,130000,224000

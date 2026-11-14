@@ -1,0 +1,32 @@
+INPUTS: N=32, void conductivity 1e-9, solid 1; strut widths w (voxels); no lookup
+full solid: sigma_eff = 1.000000000 (in), 1.000000000 (out), 1.000000000 (mid)
+CHECK full solid = 1.000 -> PASS
+plates parallel to z, w=4: phi=0.12500, sigma_eff=0.125000001, expected phi + (1-phi)*1e-9 = 0.125000001
+CHECK plates sigma_eff = phi (1e-6) -> PASS
+plates parallel to z, w=8: phi=0.25000, sigma_eff=0.250000001, expected phi + (1-phi)*1e-9 = 0.250000001
+CHECK plates sigma_eff = phi (1e-6) -> PASS
+
+strut lattice: w, phi, sigma_eff, HS=2phi/(3-phi), Wiener=phi, phi/3, sigma_eff/(phi/3), utilisation sigma_eff/phi, conservation |Iin-Iout|/Iin
+  1  0.00287   0.000977   0.001914  0.00287  0.000956   1.0213   0.3404  1.17e-12
+  2  0.01123   0.003959   0.007515  0.01123  0.003743   1.0574   0.3525  1.46e-12
+  3  0.02472   0.009039   0.016616  0.02472  0.008240   1.0970   0.3657  1.05e-12
+  4  0.04297   0.016310   0.029062  0.04297  0.014323   1.1387   0.3796  9.37e-13
+  6  0.09229   0.037810   0.063476  0.09229  0.030762   1.2291   0.4097  6.92e-13
+  8  0.15625   0.069289   0.109890  0.15625  0.052083   1.3303   0.4434  5.34e-13
+ 12  0.31641   0.165899   0.235808  0.31641  0.105469   1.5730   0.5243  3.64e-13
+ 16  0.50000   0.312858   0.400000  0.50000  0.166667   1.8771   0.6257  2.48e-13
+ 20  0.68359   0.508694   0.590219  0.68359  0.227865   2.2324   0.7441  1.41e-13
+ 24  0.84375   0.729382   0.782609  0.84375  0.281250   2.5934   0.8645  9.39e-14
+ 28  0.95703   0.918223   0.936902  0.95703  0.319010   2.8783   0.9594  6.20e-14
+ 30  0.98877   0.976650   0.983248  0.98877  0.329590   2.9632   0.9877  5.34e-14
+ 32  1.00000   1.000000   1.000000  1.00000  0.333333   3.0000   1.0000  3.57e-14
+max(sigma_eff - HS bound) = 2.309e-14 (negative = no violation); max(sigma_eff - phi) = 2.309e-14
+CHECK no HS / Wiener violation beyond 1e-6 -> PASS
+CHECK specific utilisation sigma_eff/(phi sigma_s) <= 1 everywhere -> PASS
+phi<=0.05 points 4: max |sigma_eff/(phi/3) - 1| = 13.87% ; spec tolerance 15%
+CHECK phi/3 limit within 15% -> PASS
+CHECK current conservation (first/last/middle plane) < 1e-8 -> PASS (max 1.46e-12)
+phi values: 13; range 0.0029..1.00; spec asks phi in [0.02,1] with >= 8 values: 11 values >= 0.02
+note: HS is an upper bound for isotropic composites; the strut lattice is cubic-symmetric so its effective conductivity is isotropic (tensor reduces to a scalar), so the HS bound applies.
+IDENTITY CHECKS: none (voxel solve vs analytic bounds). Full-solid and plate checks are exactness tests of the discretisation.
+OVERALL PASS

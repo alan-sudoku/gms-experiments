@@ -1,0 +1,35 @@
+INPUTS: F=96485.332, R=8.314462, T0=298.15; sweep as in docstring. No lookup.
+b(alpha=0.5, 298.15 K) = 118.34 mV/dec (spec 118.3); 2.303RT/F = 59.17 mV (published 59.16)
+  b(alpha=0.5, 298.15 K) = 118.3 mV/dec
+  b(alpha=1.0, 298.15 K) = 59.2 mV/dec
+  b(alpha=1.5, 298.15 K) = 39.4 mV/dec
+  b(alpha=2.0, 298.15 K) = 29.6 mV/dec
+CHECK b values -> PASS
+6400 (T, alpha, j, j0_s, r, kappa) cases; eta_s > 100 mV in 5700 of them
+max |full - Tafel| for eta_s > 100 mV: 104.108 mV
+   restricted to those with Tafel price > 0 (kappa_eff > 1): 0.641 mV (4104 cases)
+CHECK (spec literal) |Delta eta_full - b log10 kappa_eff| < 2 mV for eta_s > 100 mV -> FAIL
+also requiring eta_g > 100 mV as well (both overpotentials in the Tafel regime): 5398 cases, max |full - Tafel| = 2.351 mV -> FAIL (diagnostic: the spec condition eta_s>100 mV alone lets in cases where the candidate's overpotential is below 100 mV because R_f ratio > kappa)
+worst case with both > 100 mV: T=353.15, alpha=0.5, j=5000, j0_s=10, r=100, kappa=1, eta_s=378.2 mV, eta_g=100.3 mV, deviation 2.35 mV
+for eta_s <= 100 mV: 700 cases; max deviation 31.43 mV; fraction above 2 mV: 10.7%
+   alpha=0.5: eta_s in (100,9900] mV: n= 1600, max dev  104.11 mV
+   alpha=1.0: eta_s in (100,9900] mV: n= 1600, max dev   54.41 mV
+   alpha=1.5: eta_s in (50,100] mV: n=  100, max dev   31.43 mV
+   alpha=1.5: eta_s in (100,9900] mV: n= 1500, max dev   37.22 mV
+   alpha=2.0: eta_s in (50,100] mV: n=  600, max dev   28.23 mV
+   alpha=2.0: eta_s in (100,9900] mV: n= 1000, max dev   14.18 mV
+
+example rows, T=353.15 K, alpha=0.5, j=1e4 A/m2, j0_s=1e-3 A/m2, R_f ratio 1  (kappa, eta_s [V], Delta eta full [mV], Tafel [mV], power penalty j*Deta/T0 [W/K/m2]):
+            1   0.9810       0.00       0.00         0.00
+           10   0.9810     140.15     140.17         4.70
+          100   0.9810     280.29     280.34         9.40
+        1e+03   0.9810     420.44     420.51        14.10
+        1e+04   0.9810     560.58     560.68        18.80
+        1e+05   0.9810     700.73     700.85        23.50
+        1e+06   0.9810     840.87     841.02        28.20
+
+range of the Delta-eta needed to compensate kappa in [1,1e6] at alpha=0.5, 298.15 K: 0 .. 710 mV (Tafel)
+with R_f,g/R_f,s = r, the price b log10(kappa/r) is negative when r > kappa: area compensates (kappa_eff<1). That is the R_f route of G1.7.
+sweep bracketing: kappa 1..1e6 covers 0 to 6 decades; the |dev|>2 mV region (small eta_s) is covered by the j0_s=1e1 / j=2e3 low-overpotential cases: yes, eta_s reaches below 100 mV in 700 cases
+IDENTITY CHECKS: none (full Butler-Volmer root vs Tafel asymptote).
+OVERALL FAIL (1)

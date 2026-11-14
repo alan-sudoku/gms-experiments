@@ -1,0 +1,8 @@
+# LOOKUP data for row C4: air at 300 K, 1 atm.
+# Source: Incropera F.P., DeWitt D.P., Bergman T.L., Lavine A.S., Fundamentals of Heat and Mass Transfer, Wiley, Appendix A, Table A.4 "Thermophysical Properties of Gases at Atmospheric Pressure", row Air 300 K. The copy read is a scanned appendix with page number 911 (edition not printed in the extract; the plan cites the 6th ed., 2007: UNSURE which edition the copy is).
+# URL: https://www.mohsin-sies.com/sktn3224/notes/Appendix.Incropera%20DeWitt%20-%20Fundamentals%20of%20Heat%20and%20Mass%20Transfer.pdf (raw copy data/raw/incropera/appendix2.pdf, extracted a.txt line 668)
+# access date: 2026-11-14
+# columns as printed: T K, rho kg/m3, cp kJ/(kg K), mu*1e7 N s/m2, nu*1e6 m2/s, k*1e3 W/(m K), alpha*1e6 m2/s, Pr
+# plan MEMORY value rho = 1.177 differs from the table (1.1614); mu, k, cp, Pr agree.
+T_K,rho,cp_kJ_per_kgK,mu_e7,nu_e6,k_e3,alpha_e6,Pr
+300,1.1614,1.007,184.6,15.89,26.3,22.5,0.707

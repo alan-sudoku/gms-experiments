@@ -1,0 +1,22 @@
+# LOOKUP data for row A3 (and D3 for Pt, Ir in data/d3_cumulative_energy_demand.csv). Units MJ/kg (cumulative energy demand / embodied energy, as defined by each source; NOT exergy, see issues_a.md).
+# Source 1: Hammond G.P., Jones C.I., 2011, Inventory of Carbon and Energy (ICE) Version 2.0 Summary Tables, Univ. of Bath, January 2011, table "ICE Summary", rows Aluminium (General/Virgin/Recycled, rolled+extruded+cast mix), Copper (EU Tube & Sheet / Virgin / Recycled). URL https://kps.fsv.cvut.cz/upload/files/icev2.0summarytables.pdf (raw copy data/raw/ice2/). Edition: ICE v2.0, Jan 2011.
+# Source 2: Nuss P., Eckelman M.J., 2014, Life cycle assessment of metals: a scientific synthesis, PLoS ONE 9(7) e101298, Supporting Information S1 (doi 10.1371/journal.pone.0101298.s001), Table S38 "Summary table of metal environmental implications", column "CED [MJ/kg]" (95% interval columns as CED-2.5% and CED-97.5%). The main-text Figure 3A is an image; the numbers come from Table S38. URL https://journals.plos.org/plosone/article/file?type=supplementary&id=10.1371/journal.pone.0101298.s001 (raw copy data/raw/nuss/s1.bin and s1.txt).
+# access date: 2026-11-14
+# note: planner's UNSURE ranges: primary Al 150-220, secondary Al 10-30, primary Cu 35-75, secondary Cu 10-20 MJ/kg.
+source,metal,form,e_MJ_per_kg,low,high,in_planner_range
+ICE_v2.0,Al,general (33% recycled),155,,,primary-range yes (150-220)
+ICE_v2.0,Al,virgin (rolled/extruded/cast mix),218,,,yes (150-220)
+ICE_v2.0,Al,recycled,29.0,,,yes (10-30)
+ICE_v2.0,Al,cast products virgin,226,,,no (above 220)
+ICE_v2.0,Al,cast products recycled,25.0,,,yes (10-30)
+ICE_v2.0,Cu,EU tube and sheet (37% recycled),42.00,,,yes (35-75)
+ICE_v2.0,Cu,virgin,57.00,,,yes (35-75)
+ICE_v2.0,Cu,recycled,16.50,,,yes (10-20)
+NussEckelman2014_TableS38,Al,primary (ecoinvent at plant RER; 64% of supply),194,158,246,yes (150-220)
+NussEckelman2014_TableS38,Al,secondary from new scrap,8.3,6.6,10.7,no (below 10)
+NussEckelman2014_TableS38,Al,secondary from old scrap,23.8,18.6,31.1,yes (10-30)
+NussEckelman2014_TableS38,Al,supply-weighted TOTAL,131,97.4,172,n/a
+NussEckelman2014_TableS38,Cu,primary (from Mo co-mining; 77% of supply),59.3,49.7,70.8,yes (35-75)
+NussEckelman2014_TableS38,Cu,secondary (refinery RER),28.1,23.6,33.7,no (above 20)
+NussEckelman2014_TableS38,Cu,secondary (electronic scrap SE),1.8,0.8,4.1,no (below 10)
+NussEckelman2014_TableS38,Cu,supply-weighted TOTAL,53.7,42.1,68.6,n/a

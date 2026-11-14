@@ -1,0 +1,26 @@
+INPUTS: sigma_Cu=5.80e7, sigma_Al=3.54e7 S/m; rho_Cu=8960, rho_Al=2700 kg/m3 (MEMORY); T0=298.15 K
+LOOKUP sources for e: see a3 (ICE v2.0 2011; Nuss and Eckelman 2014 SI Table S38). Central e_Al=200, e_Cu=55 MJ/kg are MEMORY.
+central case e_Al=200, e_Cu=55 MJ/kg over 18 (I,L,tau) combinations:
+  max |A_num/A_closed-1| = 3.131e-08 ; max |S_num/S_closed-1| = 6.661e-16 ; max |embodied/operating-1| = 6.262e-08
+CHECK Sigma* numeric vs closed form < 1e-6 relative -> PASS
+CHECK A* numeric vs closed form < 1e-6 relative (spec tolerance applies to closed-form agreement) -> PASS  (value 3.13e-08)
+CHECK embodied term = operating term at optimum (ratio 1) within 1e-6 -> PASS  (value 6.26e-08)
+  ratio Sigma*_Al/Sigma*_Cu: mean 1.339905, spread (max-min)/mean 9.94e-16; closed-form independent value 1.339905
+CHECK ratio independent of I, L, tau (spread < 1e-6) -> PASS
+  note: the closed-form A*, Sigma* are the analytic stationary point of the same Sigma(A); 'numeric vs closed form' is a real check (minimiser vs algebra), 'terms equal' follows from the same stationarity: label IDENTITY-ADJACENT (it verifies the minimiser, not the physics)
+swept e_Al in [10,300], e_Cu in [10,150] MJ/kg (7x6 grid, 3 load cases each):
+  e_Al e_Cu  ratio(num)  ratio(closed)   (first load case)
+     10   10    0.70265    0.70265
+     10  150    0.18142    0.18142
+     58  122    0.48587    0.48587
+    107   94    0.74850    0.74850
+    155   66    1.07680    1.07680
+    203   38    1.62537    1.62537
+    252   10    3.52495    3.52495
+    252  150    0.91014    0.91014
+    300  122    1.10185    1.10185
+CHECK swept ratio equals closed form and is load-independent, max deviation 2.09e-15 (<1e-6) -> PASS
+J* = I/A* for Cu at e=55 MJ/kg, tau=6.31e8 s: 0.213 A/mm2 (closed form 0.213); spec expected ~0.21 (range 0.05-1)
+CHECK J* within planner range 0.05-1 A/mm2 -> PASS (computed J* is 1.0x the plan's 0.21; hand check: J*^2*tau = sigma*rho*e = 2.858e+19 A2 s/m4 -> J* = sqrt of that / sqrt(tau) = 0.21 A/mm2)
+minimiser hit the spec bracket [1e-7,1] m2 in 19 runs (reran on widened bracket)
+OVERALL PASS

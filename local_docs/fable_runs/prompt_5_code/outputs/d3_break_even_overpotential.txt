@@ -1,0 +1,25 @@
+LOOKUP SOURCE: Nuss and Eckelman 2014, PLoS ONE 9(7) e101298, SI S1 Table S38 column 'CED [MJ/kg]', https://journals.plos.org/plosone/article/file?type=supplementary&id=10.1371/journal.pone.0101298.s001, accessed 2026-11-14
+   Pt TOTAL (supply weighted): CED 243000 MJ/kg (95%: 178000-326000)
+   Pt primary South Africa (63%): CED 308000 MJ/kg (95%: 219000-414000)
+   Pt primary Russia (14%): CED 327000 MJ/kg (95%: 245000-430000)
+   Pt secondary: CED 11900 MJ/kg (95%: 8290-16900)
+   Ir TOTAL (supply weighted): CED 169000 MJ/kg (95%: 128000-219000)
+   Ir primary South Africa: CED 165000 MJ/kg (95%: 118000-220000)
+   Ir primary Russia: CED 175000 MJ/kg (95%: 130000-224000)
+Pt total 243000 MJ/kg: planner UNSURE range 1e5-3e5 -> inside; Ir total 169000: 'same order' -> ratio Ir/Pt = 0.70
+central case (m''=5e-3 kg/m2, e=2.4e5 MJ/kg MEMORY, j=5e3 A/m2, tau=2.88e8 s): 0.8333 mV (spec ~0.8)
+CHECK central ~0.8 mV (exact arithmetic; plan value is rounded): 0.83333 vs 0.8 tol=5% -> PASS
+  Pt (Table S38 total): central case with LOOKUP e = 0.8438 mV
+  Ir (Table S38 total): central case with LOOKUP e = 0.5868 mV
+sweep 21^4 points: d_eta_be from 0.0926 uV to 13.9 V; brackets 30-360 mV range: True
+fraction with d_eta_be > 30 mV: 13.76% ; > 360 mV: 2.19%
+region d_eta_be > 30 mV (min / max over the region):  m'' [mg/cm2] 0.0136..5 ; e_x 1e+04..1e+06 MJ/kg ; j 1e+03..3e+04 A/m2 ; tau 3.6e+06..3.6e+08 s
+   condition for > 30 mV: m'' e_x/(j tau) > 0.03 -> m'' > 0.03 j tau/(e_x*1e6); at e=2.4e5 MJ/kg, j=5e3, tau=2.88e8: m'' > 0.18 kg/m2 (18.0 mg/cm2)
+   i.e. the loading would have to exceed 0.18 kg/m2 (18 mg/cm2) at the central duty: above the 5 mg/cm2 sweep ceiling, so the > 30 mV region needs lower j, shorter tau or higher e_x than the central case
+bookkeeping: 2FV/M_H2 at V=1.481: 141.769 MJ/kg = 39.380 kWh/kg
+bookkeeping: 2FV/M_H2 at V=1.8: 172.305 MJ/kg = 47.863 kWh/kg
+CHECK 2F*1.481/M_H2 vs HHV 141.8 MJ/kg: 141.77 vs 141.8 tol=1% -> PASS
+CHECK 2F*1.8/M_H2 vs 47.9 kWh/kg: 47.863 vs 47.9 tol=1% -> PASS
+IDENTITY CHECKS: the bookkeeping check compares 2FV/M with a published constant: not an identity. d_eta_be itself is exact arithmetic (no independent route).
+NOTE: e_x is cumulative energy demand, not exergy destroyed; the framework definition of Sigma_init is UNSURE (plan section header).
+OVERALL PASS
