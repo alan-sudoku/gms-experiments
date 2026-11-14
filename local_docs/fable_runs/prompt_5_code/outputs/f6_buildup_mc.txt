@@ -1,0 +1,157 @@
+F6 run: N=1000000 histories per case, seed=20261114, mu*x = 0.5..12 step 0.5, cut-off 20 keV
+NEGLECTED: coherent scattering, fluorescence, bremsstrahlung, electron transport (recoil/photo-electron energy deposited locally).
+LOOKUP: photoelectric from data/xcom_z006.csv (C) and data/xcom_z074.csv (W), NIST XCOM web, access 2026-11-14; Z/A from data/nist_tab1_za.csv
+  [PASS] Compton sampler: mean scattered-photon fraction at 0.5 MeV vs numerical KN integral (4 sigma): MC 0.65855 +- 0.00015, quad 0.65863
+  [PASS] Compton sampler: mean scattered-photon fraction at 1 MeV vs numerical KN integral (4 sigma): MC 0.56014 +- 0.00017, quad 0.55996
+
+mu (cm2/g, no coherent) at E0 and XCOM total without coherent:
+  C 0.5 MeV: mu = tau 6.839e-06 + KN 0.08699 = 0.086997; XCOM total w/o coherent 0.087 (diff -0.00%; XCOM total includes pair/triplet = 0 here)
+    [info, not a spec check] free-electron KN differs from XCOM (which includes binding via the scattering function) by -0.00%; the spec prescribes free-electron KN and this mu is used throughout
+  C 1.0 MeV: mu = tau 1.333e-06 + KN 0.063538 = 0.063539; XCOM total w/o coherent 0.06358 (diff -0.06%; XCOM total includes pair/triplet = 0 here)
+    [info, not a spec check] free-electron KN differs from XCOM (which includes binding via the scattering function) by -0.06%; the spec prescribes free-electron KN and this mu is used throughout
+  W 0.5 MeV: mu = tau 0.05962 + KN 0.070091 = 0.12971; XCOM total w/o coherent 0.1283 (diff +1.10%; XCOM total includes pair/triplet = 0 here)
+    [info, not a spec check] free-electron KN differs from XCOM (which includes binding via the scattering function) by +1.10%; the spec prescribes free-electron KN and this mu is used throughout
+  W 1.0 MeV: mu = tau 0.01283 + KN 0.051195 = 0.064025; XCOM total w/o coherent 0.0637 (diff +0.51%; XCOM total includes pair/triplet = 0 here)
+    [info, not a spec check] free-electron KN differs from XCOM (which includes binding via the scattering function) by +0.51%; the spec prescribes free-electron KN and this mu is used throughout
+  done C 0.5 MeV (elapsed 30 s)
+  done C 1.0 MeV (elapsed 66 s)
+  done W 0.5 MeV (elapsed 70 s)
+  done W 1.0 MeV (elapsed 77 s)
+
+=== Results: T_E (transmitted energy fraction), B_E = T_E/exp(-mu x), R (reflected), A (absorbed), balance T+R+A ===
+
+C 0.5 MeV  (mu = 0.086997 cm2/g)
+   mu*x    T_E          +-         B_E      +-        R         A        T+R+A-1
+    0.5  7.75747e-01  3.7e-04    1.2790  6.0e-04  0.04776  0.17650  +0.0e+00
+    1.0  5.86809e-01  4.3e-04    1.5951  1.2e-03  0.07424  0.33895  -2.2e-16
+    1.5  4.33848e-01  4.3e-04    1.9444  1.9e-03  0.08848  0.47767  +0.0e+00
+    2.0  3.17325e-01  4.0e-04    2.3447  2.9e-03  0.09508  0.58759  -2.2e-16
+    2.5  2.27809e-01  3.6e-04    2.7753  4.3e-03  0.09798  0.67421  -5.6e-16
+    3.0  1.62043e-01  3.1e-04    3.2547  6.2e-03  0.09932  0.73864  +0.0e+00
+    3.5  1.14479e-01  2.7e-04    3.7910  8.8e-03  0.09986  0.78566  +4.4e-16
+    4.0  7.94834e-02  2.2e-04    4.3396  1.2e-02  0.10031  0.82020  +0.0e+00
+    4.5  5.49260e-02  1.9e-04    4.9443  1.7e-02  0.10026  0.84481  +0.0e+00
+    5.0  3.76426e-02  1.5e-04    5.5867  2.3e-02  0.10033  0.86202  +4.4e-16
+    5.5  2.58878e-02  1.3e-04    6.3345  3.1e-02  0.10033  0.87378  +0.0e+00
+    6.0  1.74804e-02  1.0e-04    7.0521  4.2e-02  0.10029  0.88223  -2.2e-16
+    6.5  1.17235e-02  8.4e-05    7.7978  5.6e-02  0.10067  0.88761  +6.7e-16
+    7.0  8.11837e-03  7.0e-05    8.9029  7.7e-02  0.10022  0.89166  -1.1e-16
+    7.5  5.31718e-03  5.6e-05    9.6137  1.0e-01  0.10029  0.89439  +2.2e-16
+    8.0  3.56324e-03  4.5e-05   10.6219  1.4e-01  0.10028  0.89615  +2.2e-16
+    8.5  2.39025e-03  3.7e-05   11.7475  1.8e-01  0.10043  0.89718  -2.2e-16
+    9.0  1.54039e-03  2.9e-05   12.4819  2.4e-01  0.10072  0.89774  +8.9e-16
+    9.5  9.88657e-04  2.3e-05   13.2082  3.1e-01  0.10052  0.89849  +4.4e-16
+   10.0  7.10944e-04  2.0e-05   15.6596  4.4e-01  0.10027  0.89902  +2.2e-16
+   10.5  4.19730e-04  1.5e-05   15.2427  5.4e-01  0.10023  0.89935  +4.4e-16
+   11.0  2.83529e-04  1.2e-05   16.9761  7.2e-01  0.10049  0.89923  -4.4e-16
+   11.5  1.80775e-04  9.8e-06   17.8454  9.7e-01  0.10049  0.89933  +0.0e+00
+   12.0  1.25391e-04  8.0e-06   20.4080  1.3e+00  0.10026  0.89961  +0.0e+00
+
+C 1.0 MeV  (mu = 0.063539 cm2/g)
+   mu*x    T_E          +-         B_E      +-        R         A        T+R+A-1
+    0.5  7.59337e-01  3.7e-04    1.2519  6.1e-04  0.02503  0.21563  +0.0e+00
+    1.0  5.59810e-01  4.3e-04    1.5217  1.2e-03  0.03791  0.40228  +2.2e-16
+    1.5  4.04850e-01  4.3e-04    1.8144  1.9e-03  0.04338  0.55177  -2.2e-16
+    2.0  2.88033e-01  3.9e-04    2.1283  2.9e-03  0.04565  0.66632  +2.2e-16
+    2.5  2.01038e-01  3.4e-04    2.4491  4.2e-03  0.04669  0.75227  -5.6e-16
+    3.0  1.39383e-01  3.0e-04    2.7996  5.9e-03  0.04691  0.81371  +2.2e-16
+    3.5  9.56929e-02  2.5e-04    3.1689  8.3e-03  0.04709  0.85722  +6.7e-16
+    4.0  6.48959e-02  2.1e-04    3.5432  1.1e-02  0.04715  0.88796  -3.3e-16
+    4.5  4.36578e-02  1.7e-04    3.9300  1.5e-02  0.04708  0.90926  +2.2e-16
+    5.0  2.92267e-02  1.4e-04    4.3376  2.1e-02  0.04721  0.92356  -2.2e-16
+    5.5  1.95250e-02  1.1e-04    4.7776  2.8e-02  0.04728  0.93320  -1.1e-16
+    6.0  1.30409e-02  9.3e-05    5.2611  3.7e-02  0.04712  0.93984  +8.9e-16
+    6.5  8.60945e-03  7.5e-05    5.7265  5.0e-02  0.04725  0.94414  -3.3e-16
+    7.0  5.63754e-03  6.0e-05    6.1823  6.6e-02  0.04713  0.94724  +2.2e-16
+    7.5  3.63557e-03  4.8e-05    6.5733  8.7e-02  0.04706  0.94930  +0.0e+00
+    8.0  2.40942e-03  3.9e-05    7.1824  1.2e-01  0.04699  0.95060  -3.3e-16
+    8.5  1.59903e-03  3.2e-05    7.8589  1.6e-01  0.04711  0.95129  -3.3e-16
+    9.0  1.01234e-03  2.5e-05    8.2031  2.0e-01  0.04704  0.95194  +2.2e-16
+    9.5  6.60091e-04  2.0e-05    8.8186  2.7e-01  0.04710  0.95224  -2.2e-16
+   10.0  4.29527e-04  1.6e-05    9.4610  3.6e-01  0.04695  0.95262  +2.2e-16
+   10.5  2.63804e-04  1.3e-05    9.5802  4.6e-01  0.04712  0.95261  +0.0e+00
+   11.0  1.86329e-04  1.1e-05   11.1563  6.3e-01  0.04707  0.95274  -3.3e-16
+   11.5  1.05460e-04  7.9e-06   10.4106  7.8e-01  0.04728  0.95261  -1.1e-16
+   12.0  6.52556e-05  6.3e-06   10.6207  1.0e+00  0.04718  0.95275  -1.1e-16
+
+W 0.5 MeV  (mu = 0.12971 cm2/g)
+   mu*x    T_E          +-         B_E      +-        R         A        T+R+A-1
+    0.5  6.74044e-01  4.6e-04    1.1113  7.5e-04  0.00548  0.32047  +0.0e+00
+    1.0  4.40827e-01  4.9e-04    1.1983  1.3e-03  0.00545  0.55372  +0.0e+00
+    1.5  2.85179e-01  4.4e-04    1.2781  2.0e-03  0.00549  0.70933  -2.2e-16
+    2.0  1.82348e-01  3.8e-04    1.3474  2.8e-03  0.00545  0.81220  +0.0e+00
+    2.5  1.15809e-01  3.1e-04    1.4108  3.8e-03  0.00549  0.87870  -2.2e-16
+    3.0  7.31066e-02  2.5e-04    1.4684  5.1e-03  0.00549  0.92140  -1.1e-16
+    3.5  4.57258e-02  2.0e-04    1.5142  6.8e-03  0.00547  0.94881  -2.2e-16
+    4.0  2.87524e-02  1.6e-04    1.5698  8.9e-03  0.00550  0.96574  -2.2e-16
+    4.5  1.78449e-02  1.3e-04    1.6063  1.2e-02  0.00542  0.97674  +0.0e+00
+    5.0  1.12412e-02  1.0e-04    1.6683  1.5e-02  0.00554  0.98322  +2.2e-16
+    5.5  6.91078e-03  8.1e-05    1.6910  2.0e-02  0.00544  0.98765  +0.0e+00
+    6.0  4.31902e-03  6.4e-05    1.7424  2.6e-02  0.00536  0.99032  -1.1e-16
+    6.5  2.65307e-03  5.0e-05    1.7647  3.3e-02  0.00544  0.99191  +0.0e+00
+    7.0  1.63059e-03  3.9e-05    1.7882  4.3e-02  0.00548  0.99289  -2.2e-16
+    7.5  1.00266e-03  3.1e-05    1.8128  5.6e-02  0.00547  0.99353  -3.3e-16
+    8.0  6.30312e-04  2.4e-05    1.8789  7.3e-02  0.00551  0.99386  +0.0e+00
+    8.5  4.26553e-04  2.0e-05    2.0964  9.9e-02  0.00544  0.99413  +2.2e-16
+    9.0  2.50890e-04  1.5e-05    2.0330  1.3e-01  0.00548  0.99427  +0.0e+00
+    9.5  1.34258e-04  1.1e-05    1.7937  1.5e-01  0.00539  0.99448  +0.0e+00
+   10.0  1.07579e-04  1.0e-05    2.3696  2.2e-01  0.00549  0.99440  +2.2e-16
+   10.5  6.88372e-05  8.0e-06    2.4999  2.9e-01  0.00547  0.99446  +0.0e+00
+   11.0  2.58135e-05  5.0e-06    1.5456  3.0e-01  0.00551  0.99446  -1.1e-16
+   11.5  1.88647e-05  4.2e-06    1.8622  4.2e-01  0.00541  0.99457  +0.0e+00
+   12.0  1.50188e-05  3.7e-06    2.4444  6.0e-01  0.00548  0.99451  +0.0e+00
+
+W 1.0 MeV  (mu = 0.064025 cm2/g)
+   mu*x    T_E          +-         B_E      +-        R         A        T+R+A-1
+    0.5  7.07720e-01  4.3e-04    1.1668  7.1e-04  0.00390  0.28838  +0.0e+00
+    1.0  4.83493e-01  4.7e-04    1.3143  1.3e-03  0.00396  0.51254  +0.0e+00
+    1.5  3.23926e-01  4.4e-04    1.4517  2.0e-03  0.00394  0.67213  +0.0e+00
+    2.0  2.14483e-01  3.9e-04    1.5848  2.9e-03  0.00387  0.78164  +0.0e+00
+    2.5  1.40090e-01  3.3e-04    1.7066  4.0e-03  0.00398  0.85593  +0.0e+00
+    3.0  9.08652e-02  2.7e-04    1.8251  5.5e-03  0.00398  0.90515  +0.0e+00
+    3.5  5.85152e-02  2.2e-04    1.9378  7.4e-03  0.00395  0.93754  +0.0e+00
+    4.0  3.74345e-02  1.8e-04    2.0439  9.8e-03  0.00397  0.95860  +2.2e-16
+    4.5  2.40553e-02  1.4e-04    2.1654  1.3e-02  0.00402  0.97193  +0.0e+00
+    5.0  1.52240e-02  1.2e-04    2.2594  1.7e-02  0.00396  0.98082  -1.1e-16
+    5.5  9.80259e-03  9.3e-05    2.3986  2.3e-02  0.00397  0.98623  -2.2e-16
+    6.0  6.33321e-03  7.4e-05    2.5550  3.0e-02  0.00390  0.98977  -2.2e-16
+    6.5  3.83654e-03  5.8e-05    2.5518  3.9e-02  0.00396  0.99220  +2.2e-16
+    7.0  2.49562e-03  4.7e-05    2.7368  5.1e-02  0.00396  0.99354  +2.2e-16
+    7.5  1.51420e-03  3.6e-05    2.7377  6.6e-02  0.00394  0.99454  +2.2e-16
+    8.0  9.45206e-04  2.9e-05    2.8176  8.6e-02  0.00393  0.99513  +0.0e+00
+    8.5  5.59150e-04  2.2e-05    2.7481  1.1e-01  0.00401  0.99543  -1.1e-16
+    9.0  3.85075e-04  1.8e-05    3.1203  1.5e-01  0.00392  0.99570  -1.1e-16
+    9.5  2.64643e-04  1.5e-05    3.5356  2.0e-01  0.00398  0.99575  +0.0e+00
+   10.0  1.46073e-04  1.1e-05    3.2175  2.5e-01  0.00399  0.99586  +2.2e-16
+   10.5  8.77691e-05  8.8e-06    3.1874  3.2e-01  0.00400  0.99591  +0.0e+00
+   11.0  5.93360e-05  7.2e-06    3.5527  4.3e-01  0.00391  0.99603  -4.4e-16
+   11.5  4.18979e-05  6.0e-06    4.1360  5.9e-01  0.00400  0.99596  -2.2e-16
+   12.0  2.84740e-05  4.9e-06    4.6343  8.0e-01  0.00398  0.99599  -2.2e-16
+
+--- Checks ---
+  [PASS] (ii) energy balance T+R+A = 1 to 1e-9 in all 4 cases [bookkeeping check (identity-like): A is summed from deposits, T and R from exits; it fails only if photons are lost or duplicated]: max |T+R+A-1| = 8.88e-16
+  (i) scattering replaced by absorption: T_E vs exp(-mu x): 96 cases, 0 outside 3 sigma (chance expectation 0.26), max |z| = 2.21
+  [PASS] (i) T_E = exp(-mu x) within 3 sigma (<= 1 chance excursion allowed): 0/96
+  [PASS] (iii) B_C > B_W at every mu x (both energies): violations []; differences within 3 sigma of zero at []
+
+--- Areal densities for T_E = 1e-2 and 1e-3 (PCHIP of ln T_E vs mu*x, brentq; +-1 sigma by shifting T_E data) ---
+  C 0.5 MeV  T_E=0.01: mu*x = 6.7172 +- 0.0120 (bracketed by sweep: True); areal density x = 77.2124 g/cm2
+  C 0.5 MeV  T_E=0.001: mu*x = 9.4851 +- 0.0305 (bracketed by sweep: True); areal density x = 109.0279 g/cm2
+  C 1.0 MeV  T_E=0.01: mu*x = 6.3210 +- 0.0105 (bracketed by sweep: True); areal density x = 99.4824 g/cm2
+  C 1.0 MeV  T_E=0.001: mu*x = 9.0139 +- 0.0349 (bracketed by sweep: True); areal density x = 141.8642 g/cm2
+  W 0.5 MeV  T_E=0.01: mu*x = 5.1217 +- 0.0120 (bracketed by sweep: True); areal density x = 39.4850 g/cm2
+  W 0.5 MeV  T_E=0.001: mu*x = 7.5028 +- 0.0408 (bracketed by sweep: True); areal density x = 57.8422 g/cm2
+  W 1.0 MeV  T_E=0.01: mu*x = 5.4773 +- 0.0108 (bracketed by sweep: True); areal density x = 85.5488 g/cm2
+  W 1.0 MeV  T_E=0.001: mu*x = 7.9425 +- 0.0314 (bracketed by sweep: True); areal density x = 124.0527 g/cm2
+
+--- Areal-density ratio x_C/x_W for equal transmitted energy ---
+  E=0.5 MeV T_E=0.01: x_C/x_W = 1.9555 +- 0.0058   (narrow-beam ratio mu_W/mu_C = 1.4910)
+  E=0.5 MeV T_E=0.001: x_C/x_W = 1.8849 +- 0.0119   (narrow-beam ratio mu_W/mu_C = 1.4910)
+  E=1.0 MeV T_E=0.01: x_C/x_W = 1.1629 +- 0.0030   (narrow-beam ratio mu_W/mu_C = 1.0076)
+  [PASS] x_C/x_W at 1 MeV, T_E=0.01 in UNSURE range 1.1-1.4: 1.1629
+  E=1.0 MeV T_E=0.001: x_C/x_W = 1.1436 +- 0.0063   (narrow-beam ratio mu_W/mu_C = 1.0076)
+  [PASS] x_C/x_W at 1 MeV, T_E=0.001 in UNSURE range 1.1-1.4: 1.1436
+
+(iv) LOOKUP of exposure buildup factors (ANSI/ANS-6.4.3-1991 via Shultis and Faw 2000): NOT RUN here, see outputs/issues_b.md (source not reachable / not recorded).
+Total runtime 82 s. Sweep brackets: all four (material, E) sweeps bracket both targets
+FAILED CHECKS: none

@@ -1,0 +1,45 @@
+N2: 1/v factor 2*sqrt(0.0253/0.5) = 0.449889; numerical integral of sqrt(E0/E) dE/E from 0.5 eV to 1e12 eV = 0.449889
+  [PASS] factor 0.450: 0.449889 / 0.449889
+LOOKUP inputs: outputs/n1_values.csv <- Sears 1992 (sigma0), ENDF/B-VII.1 NNDC Sigma (RI), access 2026-11-14
+
+entry     sigma0 (b) 0.45*sigma0 RI abs 20MeV    ratio  RI abs 100keV    ratio   class
+H (1H)        0.3326     0.14963      0.14982    1.001         0.1496    1.000   1/v-like
+Li-6             940       422.9       425.95    1.007         423.27    1.001   1/v-like
+B-10            3835      1725.3       1733.1    1.004         1729.9    1.003   1/v-like
+nat B            767      345.06       346.64    1.005         345.98    1.003   1/v-like
+C (nat)       0.0035   0.0015746     0.092441   58.707      0.0017697    1.124   RI >> 1/v
+Al             0.231     0.10392      0.31332    3.015        0.12818    1.233   RI >> 1/v
+nat Fe          2.56      1.1517       1.5021    1.304         1.3302    1.155   intermediate
+nat Ag          63.3      28.478       764.99   26.863         764.32   26.839   RI >> 1/v
+Cd-113         20600      9267.7       386.65    0.042         386.09    0.042   RI << 1/v
+nat Cd          2520      1133.7       65.115    0.057         64.737    0.057   RI << 1/v
+nat In         193.8      87.188       3101.4   35.572         3100.6   35.562   RI >> 1/v
+nat Sm          5922      2664.2       1425.4    0.535         1424.8    0.535   RI << 1/v
+nat Eu          4530        2038       2320.6    1.139         2318.6    1.138   intermediate
+Gd-155         61100       27488       1540.6    0.056         1539.1    0.056   RI << 1/v
+Gd-157      2.59e+05  1.1652e+05       761.16    0.007         760.42    0.007   RI << 1/v
+nat Gd         49700       22359        394.1    0.018         393.52    0.018   RI << 1/v
+nat Dy           994      447.19       1403.9    3.139         1403.4    3.138   RI >> 1/v
+nat Hf         104.1      46.833       1969.5   42.052           1969   42.042   RI >> 1/v
+
+Checks (plan):
+  [PASS] B-10 ratio within 0.95-1.05 (outside would falsify G3.6): 1.0045
+  [FAIL] B-10 RI in UNSURE range 1720-1730 b: 1733.1 b
+  [PASS] Li-6 ratio about 1.0 (0.95-1.05): 1.0072
+  [PASS] nat Cd ratio << 1 (< 0.3): 0.0574
+  [PASS] nat Gd ratio << 1 (< 0.3): 0.0176
+  [PASS] nat Hf ratio >> 1 (> 3): 42.0522
+  [PASS] nat In ratio >> 1 (> 3): 35.5716
+  [PASS] nat Ag ratio >> 1 (> 3): 26.8625
+
+RI values against the planner's UNSURE ranges (b):
+  B-10    RI = 1733.1  range [1720, 1730]: OUTSIDE (above)
+  nat Cd  RI = 65.115  range [50, 100]: inside
+  nat Gd  RI = 394.1  range [380, 410]: inside
+  nat Hf  RI = 1969.5  range [1900, 2000]: inside
+  nat In  RI = 3101.4  range [3100, 3300]: inside
+  nat Ag  RI = 764.99  range [740, 770]: inside
+
+Notes: (1) Cd-113 RI/(0.45 s0) = 0.042 and Gd-155/157 = 0.056, 0.007: single-isotope ratios are even further below 1/v for Gd-157 (thermal resonance below the cut).
+(2) The ratio for B-10 compares RI from ENDF/B-VII.1 with sigma0 from Sears 1992: two sources, so it is a genuine consistency test, not an identity.
+FAILED CHECKS: ['B-10 RI in UNSURE range 1720-1730 b']

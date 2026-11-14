@@ -1,0 +1,43 @@
+F1 inputs: E = [0.1, 0.5, 1.0, 5.0] MeV. Constants: N_A=6.02214076e+23 r_e=2.8179403e-13 cm m_e c2=0.51099895 MeV
+LOOKUP source: data/xcom_z006.csv, data/xcom_z074.csv (NIST XCOM web, Method=Elem, access 2026-11-14, version not printed by page, UNSURE 3.1);
+  cross-check data/nist_eltab_z06.csv, z74 (NISTIR 5632 Table 3 HTML, same date); Z/A: data/nist_tab1_za.csv (Table 1).
+
+Z=6  Z/A=0.49954
+  E= 0.10 MeV  XCOM total(w/coh)=0.1514  NISTIR5632 Table3=0.1514  UNSURE range [0.148, 0.155]: inside
+  [PASS] XCOM vs Table 3 transcription Z=6 E=0.1 (two downloads of the same NIST data, not independent physics): 0.1514 vs 0.1514
+  E= 0.50 MeV  XCOM total(w/coh)=0.08715  NISTIR5632 Table3=0.08715  UNSURE range [0.086, 0.088]: inside
+  [PASS] XCOM vs Table 3 transcription Z=6 E=0.5 (two downloads of the same NIST data, not independent physics): 0.08715 vs 0.08715
+  E= 1.00 MeV  XCOM total(w/coh)=0.06362  NISTIR5632 Table3=0.06361  UNSURE range [0.063, 0.064]: inside
+  [PASS] XCOM vs Table 3 transcription Z=6 E=1 (two downloads of the same NIST data, not independent physics): 0.06362 vs 0.06361
+  E= 5.00 MeV  XCOM total(w/coh)=0.02708  NISTIR5632 Table3=0.02708  UNSURE range [0.0265, 0.0275]: inside
+  [PASS] XCOM vs Table 3 transcription Z=6 E=5 (two downloads of the same NIST data, not independent physics): 0.02708 vs 0.02708
+
+Z=74  Z/A=0.40250
+  E= 0.10 MeV  XCOM total(w/coh)=4.437  NISTIR5632 Table3=4.438  UNSURE range [4.3, 4.6]: inside
+  [PASS] XCOM vs Table 3 transcription Z=74 E=0.1 (two downloads of the same NIST data, not independent physics): 4.437 vs 4.438
+  E= 0.50 MeV  XCOM total(w/coh)=0.1378  NISTIR5632 Table3=0.1378  UNSURE range [0.135, 0.141]: inside
+  [PASS] XCOM vs Table 3 transcription Z=74 E=0.5 (two downloads of the same NIST data, not independent physics): 0.1378 vs 0.1378
+  E= 1.00 MeV  XCOM total(w/coh)=0.06618  NISTIR5632 Table3=0.06618  UNSURE range [0.065, 0.067]: inside
+  [PASS] XCOM vs Table 3 transcription Z=74 E=1 (two downloads of the same NIST data, not independent physics): 0.06618 vs 0.06618
+  E= 5.00 MeV  XCOM total(w/coh)=0.04103  NISTIR5632 Table3=0.04103  UNSURE range [0.04, 0.042]: inside
+  [PASS] XCOM vs Table 3 transcription Z=74 E=5 (two downloads of the same NIST data, not independent physics): 0.04103 vs 0.04103
+
+Ratios W/C (mass basis):
+  E= 0.10 MeV  W/C=29.31   planner approx 29
+  E= 0.50 MeV  W/C=1.581   planner approx 1.6
+  E= 1.00 MeV  W/C=1.04   planner approx 1.04
+  E= 5.00 MeV  W/C=1.515   planner approx 1.5
+
+Independent route: N_A*(Z/A)*sigma_KN vs carbon tabulated total (with coherent) [2% tolerance]
+  sigma_KN(k->0) = 8 pi r_e^2/3 = 0.66525 b (expected 0.6652)
+  [PASS] sigma_KN(k->0): 
+  sigma_KN(1 MeV) = 0.21121 b (expected ~0.2112)
+  [PASS] sigma_KN(1 MeV): 0.21121
+  E= 0.1 MeV: N_A(Z/A)sigma_KN=0.14823  tabulated total=0.1514 (dev -2.09%)  XCOM incoherent=0.1466 (dev +1.11%)
+  E= 0.5 MeV: N_A(Z/A)sigma_KN=0.08699  tabulated total=0.08715 (dev -0.18%)  XCOM incoherent=0.08699 (dev -0.00%)
+  [PASS] KN vs carbon total at 0.5 MeV (2%): -0.18%
+  E= 1.0 MeV: N_A(Z/A)sigma_KN=0.063538  tabulated total=0.06362 (dev -0.13%)  XCOM incoherent=0.06358 (dev -0.07%)
+  [PASS] KN vs carbon total at 1 MeV (2%): -0.13%
+  E= 5.0 MeV: N_A(Z/A)sigma_KN=0.024928  tabulated total=0.02708 (dev -7.95%)  XCOM incoherent=0.02499 (dev -0.25%)
+
+FAILED CHECKS: none

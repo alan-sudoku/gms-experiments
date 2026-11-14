@@ -1,0 +1,26 @@
+N4 inputs: E0 = 0.0253 eV; E in {1 eV, 1 keV, 100 keV, 1 MeV}; A in {1, 2, 12, 56}; E1 = 2 MeV
+
+(1) 1/v gain (sigma(E0)/sigma(E) = sqrt(E/E0)); plan expects 6.3, 199, 1990, 6290
+  E=1        eV: sigma/sigma0 = 1.5906e-01, gain = 6.2869  (plan 6.3, dev -0.21%)
+  [PASS] gain at 1 eV matches plan to 1%: 6.2869 vs 6.3
+  E=1000     eV: sigma/sigma0 = 5.0299e-03, gain = 198.81  (plan 199, dev -0.10%)
+  [PASS] gain at 1000 eV matches plan to 1%: 198.81 vs 199
+  E=100000   eV: sigma/sigma0 = 5.0299e-04, gain = 1988.1  (plan 1990, dev -0.10%)
+  [PASS] gain at 100000 eV matches plan to 1%: 1988.1 vs 1990
+  E=1e+06    eV: sigma/sigma0 = 1.5906e-04, gain = 6286.9  (plan 6290, dev -0.05%)
+  [PASS] gain at 1e+06 eV matches plan to 1%: 6286.9 vs 6290
+
+(2) xi and collisions from 2 MeV to 0.0253 eV: ln(E1/E2) = 18.1856
+  A=1   xi = 1.00000  collisions = 18.19   published 18, diff +0.19
+  [PASS] collisions A=1 within +-1 of 18: 18.19
+  A=2   xi = 0.72535  collisions = 25.07   published 25, diff +0.07
+  [PASS] collisions A=2 within +-1 of 25: 25.07
+  A=12  xi = 0.15777  collisions = 115.27   published 115, diff +0.27
+  [PASS] collisions A=12 within +-1 of 115: 115.27
+  A=56  xi = 0.03529  collisions = 515.28
+  limit check xi(A -> 1+): A = 1+1e-6 gives 1.000000 (should tend to 1)
+  large-A check: xi(56) vs 2/(A+2/3) = 0.03529 vs 0.03529
+  [PASS] xi(56) within 1% of the large-A approximation 2/(A+2/3): 
+  Energy at which sigma/sigma0 = 1e-3.. (extra): sqrt(E0/E) = 1e-3 at E = 2.53e+04 eV
+  note: the 1/v gain is a property of the cross-section law for a 1/v absorber only; resonance absorbers (Cd, Gd) are not 1/v above their resonances, see N2.
+FAILED CHECKS: none

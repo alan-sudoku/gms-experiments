@@ -1,0 +1,33 @@
+F5 inputs: seed=20261114, N=1000000 samples per (case, a); a grid: 202 points in [0.1, 10]
+
+(a) uniform on [0, 2 xbar]
+  [PASS] analytic vs quad to 1e-9 over the sweep (independent: closed form vs numerical integral): max |diff| = 3.33e-16
+  MC vs analytic outside 3 sigma at 0 of 202 sweep points (expected by chance ~0.27% -> 0.5)
+  [PASS] MC agrees with analytic within 3 sigma at (nearly) all points (allow at most 2 chance excursions): 0 excursions
+  [PASS] ratio >= 1 at every a: min ratio = 1.001668
+  at a=5: E = 0.10000, exp(-a) = 6.73795e-03, ratio = 14.841 (plan: 0.100, 6.7e-3, ~15)
+  [PASS] a=5 values 0.100 and 6.7e-3: 0.10000, 6.738e-03
+  MC at a=5: 0.10008 +- 0.00020
+
+(b) two-level q=0.50 (x = xbar/q on fraction q, open elsewhere)
+  MC vs formula outside 3 sigma at 0 of 202 points (chance ~0.5)
+  [PASS] q=0.50 MC agrees (<=2 chance excursions): 0
+  [PASS] q=0.50 ratio >= 1 at every a: min ratio = 1.005004 (at a=0.1 the minimum of the sweep)
+  at a=5: E=5.00023e-01, ratio=74.21
+
+(b) two-level q=0.80 (x = xbar/q on fraction q, open elsewhere)
+  MC vs formula outside 3 sigma at 0 of 202 points (chance ~0.5)
+  [PASS] q=0.80 MC agrees (<=2 chance excursions): 0
+  [PASS] q=0.80 ratio >= 1 at every a: min ratio = 1.001282 (at a=0.1 the minimum of the sweep)
+  at a=5: E=2.01544e-01, ratio=29.91
+
+(b) two-level q=0.95 (x = xbar/q on fraction q, open elsewhere)
+  MC vs formula outside 3 sigma at 0 of 202 points (chance ~0.5)
+  [PASS] q=0.95 MC agrees (<=2 chance excursions): 0
+  [PASS] q=0.95 ratio >= 1 at every a: min ratio = 1.000272 (at a=0.1 the minimum of the sweep)
+  at a=5: E=5.49200e-02, ratio=8.151
+
+Notes: (1) the ratio >= 1 outcome is Jensen's inequality; the check is numerical (Monte Carlo and quadrature are independent of the closed forms), not an identity.
+(3) The same sample set is reused across the a-grid, so the excursion counts are correlated; the count is a rough guide only.
+(2) For two-level at fixed q the MC sample mean of exp(-mu x) uses the exact two values, so MC variance reflects only the coverage Bernoulli draw.
+FAILED CHECKS: none

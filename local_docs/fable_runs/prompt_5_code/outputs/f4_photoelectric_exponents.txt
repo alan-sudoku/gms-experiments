@@ -1,0 +1,38 @@
+F4 LOOKUP: XCOM partial tables data/xcom_z006.csv ... z082.csv (photoelectric column), E = 0.1 MeV (grid point), access 2026-11-14
+  Z   Z/A      A=Z/(Z/A)  tau/rho (cm2/g) at 100 keV
+   6  0.49954    12.011   0.001031
+  13  0.48181    26.982   0.0184
+  26  0.46556    55.847   0.2045
+  29  0.45636    63.546   0.2878
+  50  0.42120   118.708   1.467
+  74  0.40250   183.851   4.153
+  82  0.39575   207.202   5.237
+
+Fit all 7 elements: Z exponent per mass = 3.250 (rms residual in ln 0.240), per atom = 4.342
+  UNSURE expected: 2.8-3.6 per mass, 3.8-4.6 per atom. A per-mass exponent >= 3.9 would falsify G3.3.
+  [PASS] Z exponent per mass in 2.8-3.6: 3.250
+  [PASS] Z exponent per atom in 3.8-4.6: 4.342
+  [PASS] per-mass exponent < 3.9 (G3.3 stands): 3.250
+  Sensitivity (extra, not a spec check): leave-one-out per-mass exponents
+    without Z= 6: 3.044
+    without Z=13: 3.269
+    without Z=26: 3.256
+    without Z=29: 3.251
+    without Z=50: 3.239
+    without Z=74: 3.286
+    without Z=82: 3.321
+  two-point C to W slope (extra): 3.304 -> ratio tau_W/tau_C = 4028
+  [note] the fitted line is a least-squares summary over a range where the local slope varies; the K-edge position relative to 100 keV changes the apparent exponent.
+
+W photoelectric energy exponent, 100-500 keV on 6 tabulated points [np.float64(0.1), np.float64(0.15), np.float64(0.2), np.float64(0.3), np.float64(0.4), np.float64(0.5)] MeV:
+  least-squares slope = -2.645; two-point 100->500 keV = -2.637 (UNSURE expected -2.6 to -3.1)
+  [PASS] energy exponent in -3.1..-2.6 (lsq): -2.645
+  [PASS] energy exponent in -3.1..-2.6 (two-point): -2.637
+  no W K-edge inside 100-500 keV (69.5 keV is below); local slopes between points: ['-2.69', '-2.71', '-2.67', '-2.57', '-2.46']
+
+Carbon at 100 keV (cm2/g): coherent=0.003719 incoherent=0.1466 photoelectric=0.001031 total(w/coh)=0.1514 total(w/o coh)=0.1476
+  Compton (incoherent) fraction of total with coherent = 0.9683; of total without coherent = 0.9932 (UNSURE expected >= 0.85)
+  [PASS] carbon incoherent fraction >= 0.85 (with coherent total): 0.9683
+  [PASS] carbon incoherent fraction >= 0.85 (without coherent): 0.9932
+  ratio of photoelectric parts W/C at 100 keV = 4028; if the Z^4/E^3 law were the whole story with Z^3 per mass, (74/6)^3 = 1876
+FAILED CHECKS: none
