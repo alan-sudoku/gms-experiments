@@ -1,0 +1,183 @@
+=== R1 octet elastic constants (normalised, rho=1, Es=1) ===
+  [R1] INFO nu for load [110], transverse [001] = 0.500000000
+  [R1] INFO nu for load [111], transverse [1-10] = 0.200000000
+  [R1] CHECK E_100/(rho Es): computed=0.111111 expected=0.111111 err=3.75e-16 tol=1e-09 -> PASS
+  [R1] CHECK E_110/(rho Es): computed=0.166667 expected=0.166667 err=0 tol=1e-09 -> PASS
+  [R1] CHECK E_111/(rho Es): computed=0.2 expected=0.2 err=9.71e-16 tol=1e-09 -> PASS
+  [R1] CHECK nu ([100], transverse [010]): computed=0.333333 expected=0.333333 err=0 tol=1e-09 -> PASS
+  [R1] CHECK G/(rho Es): computed=0.0833333 expected=0.0833333 err=3.33e-16 tol=1e-09 -> PASS
+  [R1] CHECK bulk/(rho Es): computed=0.111111 expected=0.111111 err=3.75e-16 tol=1e-09 -> PASS
+  [R1] INFO S11=9.000000000 S12=-3.000000000 S44=12.000000000  (D2: 9, -3, 12)
+
+=== R2 octet strut stress / sigma_a (report x rho_bar; rho=1 and 0.2) ===
+  rho=1.0 [100] strut stress x rho/sigma_a = [3.0, 3.0, 3.0, 3.0, -3.0, -3.0] peak=3.000000000 rms=3.000000000 r2=1.000000000
+  [R2] CHECK [100] rho=1.0 all |s|=3:  -> PASS
+  [R2] CHECK [100] rho=1.0 r2: computed=1 expected=1 err=0 tol=1e-09 -> PASS
+  rho=1.0 [110] strut stress x rho/sigma_a = [6.0, 0.0, 0.0, 0.0, 0.0, 0.0] peak=6.000000000 rms=2.449489743 r2=6.000000000
+  [R2] CHECK [110] rho=1.0 sorted values: [0.0, 0.0, 0.0, 0.0, 0.0, 6.0] -> PASS
+  [R2] CHECK [110] rho=1.0 r2: computed=6 expected=6 err=1.48e-16 tol=1e-09 -> PASS
+  rho=1.0 [111] strut stress x rho/sigma_a = [3.0, -1.0, 3.0, -1.0, 3.0, -1.0] peak=3.000000000 rms=2.236067977 r2=1.800000000
+  [R2] CHECK [111] rho=1.0 sorted values: [-1.0, -1.0, -1.0, 3.0, 3.0, 3.0] -> PASS
+  [R2] CHECK [111] rho=1.0 r2: computed=1.8 expected=1.8 err=2.47e-16 tol=1e-09 -> PASS
+  rho=0.2 [100] strut stress x rho/sigma_a = [3.0, 3.0, 3.0, 3.0, -3.0, -3.0] peak=3.000000000 rms=3.000000000 r2=1.000000000
+  [R2] CHECK [100] rho=0.2 all |s|=3:  -> PASS
+  [R2] CHECK [100] rho=0.2 r2: computed=1 expected=1 err=0 tol=1e-09 -> PASS
+  rho=0.2 [110] strut stress x rho/sigma_a = [6.0, 0.0, 0.0, 0.0, 0.0, 0.0] peak=6.000000000 rms=2.449489743 r2=6.000000000
+  [R2] CHECK [110] rho=0.2 sorted values: [0.0, 0.0, 0.0, 0.0, 0.0, 6.0] -> PASS
+  [R2] CHECK [110] rho=0.2 r2: computed=6 expected=6 err=0 tol=1e-09 -> PASS
+  rho=0.2 [111] strut stress x rho/sigma_a = [3.0, -1.0, 3.0, -1.0, 3.0, -1.0] peak=3.000000000 rms=2.236067977 r2=1.800000000
+  [R2] CHECK [111] rho=0.2 sorted values: [-1.0, -1.0, -1.0, 3.0, 3.0, 3.0] -> PASS
+  [R2] CHECK [111] rho=0.2 r2: computed=1.8 expected=1.8 err=3.7e-16 tol=1e-09 -> PASS
+
+=== R3 octet energy: sigma_a^2/(2 E_d) vs rho*mean(s_k^2)/(2 Es) ===
+  [R3] CHECK rho=1.0 [100] U_macro vs U_strut: computed=4.5 expected=4.5 err=1.97e-16 tol=1e-09 -> PASS
+  [R3] CHECK rho=1.0 [110] U_macro vs U_strut: computed=3 expected=3 err=0 tol=1e-09 -> PASS
+  [R3] CHECK rho=1.0 [111] U_macro vs U_strut: computed=2.5 expected=2.5 err=1.78e-16 tol=1e-09 -> PASS
+  [R3] CHECK rho=0.2 [100] U_macro vs U_strut: computed=22.5 expected=22.5 err=1.58e-16 tol=1e-09 -> PASS
+  [R3] CHECK rho=0.2 [110] U_macro vs U_strut: computed=15 expected=15 err=3.55e-16 tol=1e-09 -> PASS
+  [R3] CHECK rho=0.2 [111] U_macro vs U_strut: computed=12.5 expected=12.5 err=2.84e-16 tol=1e-09 -> PASS
+  [R3] INFO two routes (C inversion vs strut stresses) test Clapeyron + implementation, not the pin-jointed assumption
+
+=== R4 octet under mismatch strain (eps_m = 1, rho = 1, Es = 1) ===
+  [R4] CHECK eps_zz/eps_m: computed=-1 expected=-1 err=0 tol=1e-09 -> PASS
+  [R4] CHECK in-plane struts at Es*eps_m, others 0: [1.0, 1.0, 0.0, 0.0, 0.0, 0.0] -> PASS
+  [R4] CHECK sigma_xx/(rho Es eps_m): computed=0.166667 expected=0.166667 err=5e-16 tol=1e-09 -> PASS
+  [R4] CHECK max strut strain <= eps_m:  -> PASS
+  [R4] CHECK all struts at Es*eps_m: [0.9999999999999998, 0.9999999999999998, 0.9999999999999998, 0.9999999999999998, 0.9999999999999998, 0.9999999999999998] -> PASS
+  [R4] CHECK hydrostatic sigma/(rho Es eps_m): computed=0.333333 expected=0.333333 err=3.33e-16 tol=1e-09 -> PASS
+  [R4] CHECK max strut strain <= eps_m:  -> PASS
+
+=== R5 beam integrals (midpoint quadrature) ===
+  [R5] CHECK <sigma^2>/sigma_peak^2 rect: computed=0.111111 expected=0.111111 err=1.25e-07 tol=0.001 -> PASS
+  [R5] CHECK <sigma^2>/sigma_peak^2 circ: computed=0.0833336 expected=0.0833333 err=3.61e-06 tol=0.001 -> PASS
+  [R5] IDENTITY (true by construction, not a check) kappa(2)=1 rect: value 1.000000
+  [R5] INFO kappa(2.3) rect = 1.14908
+  [R5] INFO kappa(2.5) rect = 1.27253
+  [R5] CHECK kappa(3) rect vs spec value (quoted to 3 s.f.): computed=1.6875 expected=1.69 err=0.00148 tol=0.001 -> FAIL
+  [R5] CHECK kappa(4) rect vs spec value (quoted to 3 s.f.): computed=3.24 expected=3.24 err=1.67e-07 tol=0.001 -> PASS
+  [R5] IDENTITY (true by construction, not a check) kappa(2)=1 circ: value 1.000000
+  [R5] INFO kappa(2.3) circ = 1.16207
+  [R5] INFO kappa(2.5) circ = 1.29797
+  [R5] CHECK kappa(3) circ vs spec value (quoted to 3 s.f.): computed=1.76425 expected=1.76 err=0.00242 tol=0.001 -> FAIL
+  [R5] CHECK kappa(4) circ vs spec value (quoted to 3 s.f.): computed=3.6 expected=3.6 err=1.14e-06 tol=0.001 -> PASS
+
+=== R6 BCC single strut, uniaxial (L=1, Es=1, nu_s=0.33) ===
+  rho    | EB: C1      nu     Csig_b  Csig_ax  Cb_b   k_peak | Timo: C1      nu     k_peak  dC1%
+  0.0200 |    0.09172  0.4972  11.428  11.569  1.0481  4090.32 |    0.09074  0.4973  4090.32  -1.1
+  [R6] CHECK rho=0.02 C1 vs closed form sqrt3/(6 pi): computed=0.0917196 expected=0.0918881 err=0.00183 tol=0.01 -> PASS
+  [R6] CHECK rho=0.02 C1 vs 0.0919: computed=0.0917196 expected=0.0919 err=0.00196 tol=0.01 -> PASS
+  [R6] CHECK rho=0.02 C1 low by <0.5% vs closed form: low by 0.183 % -> PASS
+  [R6] CHECK rho=0.02 C_sigma bending: computed=11.4278 expected=11.43 err=0.000197 tol=0.01 -> PASS
+  [R6] CHECK rho=0.02 C_b bending: computed=1.04815 expected=1.05 err=0.00176 tol=0.01 -> PASS
+  [R6] CHECK rho=0.02 Poisson ratio -> 0.5: computed=0.497248 expected=0.5 err=0.0055 tol=0.01 -> PASS
+  0.0500 |    0.09147  0.4931  11.428  11.651  1.0453  1042.13 |    0.08906  0.4933  1042.13  -2.6
+  0.1000 |    0.09105  0.4863  11.428  11.744  1.0405  371.38 |    0.08640  0.4870  371.38  -5.1
+  0.1111 |    0.09096  0.4848  11.428  11.761  1.0395  317.55 |    0.08583  0.4857  317.55  -5.6
+  0.1500 |    0.09064  0.4796  11.428  11.815  1.0358  203.38 |    0.08390  0.4811  203.38  -7.4
+  0.2000 |    0.09023  0.4729  11.428  11.875  1.0311  132.77 |    0.08153  0.4755  132.77  -9.6
+  [R6] CHECK rho=0.2 C1 ~ 0.0902: computed=0.0902299 expected=0.0902 err=0.000332 tol=0.01 -> PASS
+  [R6] CHECK rho=0.2 k_peak ~ 132.8: computed=132.766 expected=132.8 err=0.000255 tol=0.01 -> PASS
+  0.2500 |    0.08982  0.4663  11.428  11.928  1.0265  95.42 |    0.07930  0.4703  95.42  -11.7
+  0.3000 |    0.08942  0.4598  11.428  11.975  1.0219  72.88 |    0.07718  0.4653  72.88  -13.7
+  0.4000 |    0.08863  0.4468  11.428  12.060  1.0128  47.67 |    0.07327  0.4560  47.67  -17.3
+  0.5000 |    0.08785  0.4341  11.428  12.135  1.0039  34.32 |    0.06974  0.4477  34.32  -20.6
+  -- axial-force trap check at rho=0.02: inextensible limit (k_a x 1e8) and 'axial force dropped'
+  [R6] INFO k_a x1e8: C1=0.09189 (closed form 0.091888); axial strain a=1.592e-11; axial stress N/A over sbar=1.00000 (expect 1.0 = sigma/rho)
+  [R6] INFO axial force dropped (F=k_t*Delta only): C1=0.06126; correct/dropped = 1.5000 (planner: dropping gives modulus low by 1.5)
+  [R6] CHECK trap ratio correct/dropped = 1.5: computed=1.5 expected=1.5 err=1.1e-06 tol=0.01 -> PASS
+
+=== R7 BCC equibiaxial (eps_x=eps_y=eps_m=1, sigma_zz=0) ===
+  rho    | ez/em   peak/(Es em) [EB]  formula   M/(Es rho^2)  E*/(1-nu)/(Es rho^2) | Timo: peak  M/(Es rho^2)
+  0.0200 | -1.9781  0.30214           0.30434  0.18244      0.18244               | 0.29891  0.18049
+  [R7] CHECK rho=0.0200 biaxial modulus = E*/(1-nu) (two routes): computed=7.29741e-05 expected=7.29741e-05 err=1.34e-14 tol=1e-06 -> PASS
+  [R7] CHECK rho=0.02 ez/em -> -2: computed=-1.97811 expected=-2 err=0.0109 tol=0.02 -> PASS
+  [R7] CHECK rho=0.02 peak vs 2.100 r^.5+0.368 r: computed=0.302136 expected=0.304345 err=0.00726 tol=0.02 -> PASS
+  [R7] CHECK rho=0.02 biaxial modulus vs 0.1838 rho^2: computed=0.182435 expected=0.1838 err=0.00743 tol=0.02 -> PASS
+  0.0500 | -1.9459  0.47918           0.48797  0.18046      0.18046               | 0.46673  0.17577
+  [R7] CHECK rho=0.0500 biaxial modulus = E*/(1-nu) (two routes): computed=0.00045115 expected=0.00045115 err=2.76e-15 tol=1e-06 -> PASS
+  0.1000 | -1.8936  0.67603           0.70088  0.17726      0.17726               | 0.64238  0.16844
+  [R7] CHECK rho=0.1000 biaxial modulus = E*/(1-nu) (two routes): computed=0.00177261 expected=0.00177261 err=4.89e-16 tol=1e-06 -> PASS
+  0.1111 | -1.8823  0.71182           0.74089  0.17657      0.17657               | 0.67281  0.16689
+  [R7] CHECK rho=0.1111 biaxial modulus = E*/(1-nu) (two routes): computed=0.00217982 expected=0.00217982 err=1.19e-15 tol=1e-06 -> PASS
+  0.1500 | -1.8432  0.82314           0.86853  0.17417      0.17417               | 0.76413  0.16169
+  [R7] CHECK rho=0.1500 biaxial modulus = E*/(1-nu) (two routes): computed=0.00391891 expected=0.00391891 err=1.11e-15 tol=1e-06 -> PASS
+  0.2000 | -1.7946  0.94338           1.01275  0.17119      0.17119               | 0.85669  0.15546
+  [R7] CHECK rho=0.2000 biaxial modulus = E*/(1-nu) (two routes): computed=0.00684768 expected=0.00684768 err=1.65e-15 tol=1e-06 -> PASS
+  0.2500 | -1.7475  1.04586           1.14200  0.16831      0.16831               | 0.93018  0.14969
+  [R7] CHECK rho=0.2500 biaxial modulus = E*/(1-nu) (two routes): computed=0.0105194 expected=0.0105194 err=9.89e-16 tol=1e-06 -> PASS
+  0.3000 | -1.7021  1.13537           1.26062  0.16552      0.16552               | 0.99007  0.14434
+  [R7] CHECK rho=0.3000 biaxial modulus = E*/(1-nu) (two routes): computed=0.0148972 expected=0.0148972 err=1.51e-15 tol=1e-06 -> PASS
+  0.4000 | -1.6155  1.28618           1.47536  0.16022      0.16022               | 1.08135  0.13471
+  [R7] CHECK rho=0.4000 biaxial modulus = E*/(1-nu) (two routes): computed=0.0256353 expected=0.0256353 err=2.71e-16 tol=1e-06 -> PASS
+  0.5000 | -1.5343  1.40973           1.66892  0.15525      0.15525               | 1.14667  0.12628
+  [R7] CHECK rho=0.5000 biaxial modulus = E*/(1-nu) (two routes): computed=0.0388114 expected=0.0388114 err=5.36e-16 tol=1e-06 -> PASS
+  bisection bracket: f(0.02)=-0.6979  f(0.6)=0.5135
+  [R7] INFO crossover rho (sigma_peak = Es eps_m), EB model: 0.2267 (reported, not pass/fail; spec expects 0.19-0.23)
+  [R7] INFO crossover inside the spec range 0.19-0.23
+  [R7] INFO crossover rho, Timoshenko: 0.3093
+  hydrostatic strain:
+  [R7] CHECK hydrostatic rho=0.02 strut stress = Es eps_m: computed=1 expected=1 err=4.44e-16 tol=1e-09 -> PASS
+  [R7] CHECK hydrostatic rho=0.02 zero bending: bend=0.00e+00 -> PASS
+  [R7] CHECK hydrostatic rho=0.2 strut stress = Es eps_m: computed=1 expected=1 err=6.66e-16 tol=1e-09 -> PASS
+  [R7] CHECK hydrostatic rho=0.2 zero bending: bend=0.00e+00 -> PASS
+  [R7] CHECK hydrostatic rho=0.4 strut stress = Es eps_m: computed=1 expected=1 err=4.44e-16 tol=1e-09 -> PASS
+  [R7] CHECK hydrostatic rho=0.4 zero bending: bend=0.00e+00 -> PASS
+
+=== R8 BCC collapse and first yield (sigma_y = 250 MPa) ===
+  rho    d/L     collapse[MPa]  first yield[MPa] (EB, with axial)  collapse/bend-only-yield
+  0.0200 0.0606     0.1050         0.0611                    1.69765
+  [R8] CHECK rho=0.02 numeric ratio collapse/bending-only yield vs 16/(3 pi) (stiffness route vs closed form): computed=1.69765 expected=1.69765 err=5.23e-15 tol=0.01 -> PASS
+  0.0500 0.0959     0.4152         0.2399                    1.69765
+  0.1000 0.1356     1.1744         0.6732                    1.69765
+  0.1111 0.1429     1.3755         0.7873                    1.69765
+  0.1500 0.1660     2.1576         1.2293                    1.69765
+  0.2000 0.1917     3.3218         1.8830                    1.69765
+  [R8] CHECK rho=0.2 collapse 3.32 MPa: computed=3.3218 expected=3.32 err=0.000541 tol=0.01 -> PASS
+  [R8] CHECK rho=0.2 first yield 1.88 MPa: computed=1.88301 expected=1.88 err=0.0016 tol=0.01 -> PASS
+  0.2500 0.2143     4.6424         2.6199                    1.69765
+  0.3000 0.2348     6.1025         3.4303                    1.69765
+  0.4000 0.2711     9.3955         5.2442                    1.69765
+  0.5000 0.3031    13.1306         7.2838                    1.69765
+  [R8] IDENTITY (true by construction, not a check) collapse / bending-only first yield = 16/(3 pi): closed-form algebra (4 sqrt2/3)*(2 sqrt2/pi) = 1.697653 vs 16/(3pi) = 1.697653 (algebra, not physics)
+
+=== R9 BCC energy identity and r (EB) ===
+  rho    U_macro=sbar^2/(2E*)  U_strut(quadrature)   rel diff     r(bend only)  r(with axial)
+  0.0200 1.834392e-05        1.834392e-05       2.50e-09     3.46092       3.50375
+  [R9] CHECK rho=0.0200 energy two routes: computed=1.83439e-05 expected=1.83439e-05 err=2.5e-09 tol=1e-06 -> PASS
+  [R9] CHECK rho=0.02 r (bending only) -> 2 sqrt3: computed=3.46092 expected=3.4641 err=0.000918 tol=0.01 -> PASS
+  0.0500 1.143349e-04        1.143349e-04       2.49e-09     3.45617       3.52380
+  [R9] CHECK rho=0.0500 energy two routes: computed=0.000114335 expected=0.000114335 err=2.49e-09 tol=1e-06 -> PASS
+  0.1000 4.552575e-04        4.552575e-04       2.48e-09     3.44829       3.54372
+  [R9] CHECK rho=0.1000 energy two routes: computed=0.000455257 expected=0.000455257 err=2.48e-09 tol=1e-06 -> PASS
+  0.1111 5.614782e-04        5.614782e-04       2.47e-09     3.44655       3.54708
+  [R9] CHECK rho=0.1111 energy two routes: computed=0.000561478 expected=0.000561478 err=2.47e-09 tol=1e-06 -> PASS
+  0.1500 1.019687e-03        1.019687e-03       2.47e-09     3.44047       3.55707
+  [R9] CHECK rho=0.1500 energy two routes: computed=0.00101969 expected=0.00101969 err=2.47e-09 tol=1e-06 -> PASS
+  0.2000 1.804599e-03        1.804599e-03       2.45e-09     3.43270       3.56704
+  [R9] CHECK rho=0.2000 energy two routes: computed=0.0018046 expected=0.0018046 err=2.45e-09 tol=1e-06 -> PASS
+  [R9] CHECK rho=0.2 r with axial ~ 3.57: computed=3.56704 expected=3.57 err=0.00083 tol=0.01 -> PASS
+  [R9] INFO rho=0.2 r^2 with axial = 12.724 (D3: about 12.7)
+  0.2500 2.807022e-03        2.807022e-03       2.44e-09     3.42499       3.57484
+  [R9] CHECK rho=0.2500 energy two routes: computed=0.00280702 expected=0.00280702 err=2.44e-09 tol=1e-06 -> PASS
+  0.3000 4.024038e-03        4.024038e-03       2.43e-09     3.41732       3.58111
+  [R9] CHECK rho=0.3000 energy two routes: computed=0.00402404 expected=0.00402404 err=2.43e-09 tol=1e-06 -> PASS
+  0.4000 7.090441e-03        7.090441e-03       2.41e-09     3.40214       3.59043
+  [R9] CHECK rho=0.4000 energy two routes: computed=0.00709044 expected=0.00709044 err=2.41e-09 tol=1e-06 -> PASS
+  0.5000 1.098148e-02        1.098148e-02       2.39e-09     3.38717       3.59675
+  [R9] CHECK rho=0.5000 energy two routes: computed=0.0109815 expected=0.0109815 err=2.39e-09 tol=1e-06 -> PASS
+
+==== SUMMARY (this script) ====
+  R1: PASS=6 FAIL=0 IDENTITY=0 FLAG=0
+  R2: PASS=12 FAIL=0 IDENTITY=0 FLAG=0
+  R3: PASS=6 FAIL=0 IDENTITY=0 FLAG=0
+  R4: PASS=7 FAIL=0 IDENTITY=0 FLAG=0
+  R5: PASS=4 FAIL=2 IDENTITY=2 FLAG=0
+      IDENTITY: kappa(2)=1 rect
+      FAIL: kappa(3) rect vs spec value (quoted to 3 s.f.)
+      IDENTITY: kappa(2)=1 circ
+      FAIL: kappa(3) circ vs spec value (quoted to 3 s.f.)
+  R6: PASS=9 FAIL=0 IDENTITY=0 FLAG=0
+  R7: PASS=19 FAIL=0 IDENTITY=0 FLAG=0
+  R8: PASS=3 FAIL=0 IDENTITY=1 FLAG=0
+      IDENTITY: collapse / bending-only first yield = 16/(3 pi)
+  R9: PASS=12 FAIL=0 IDENTITY=0 FLAG=0

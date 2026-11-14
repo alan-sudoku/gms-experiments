@@ -1,0 +1,195 @@
+=== R22 factor on Sdot from amplitude-dependent psi: kappa(n_d) (sigma_rms/sigma_ref)^(n_d-2) ===
+  sigma_rms at central amplitudes [MPa]: A=12.000, B=16.821, C100=60.000
+  [R22] CHECK sigma_rms A ~12.0 MPa: computed=12 expected=12 err=0 tol=0.01 -> PASS
+  [R22] CHECK sigma_rms B ~16.8 MPa: computed=16.8207 expected=16.8 err=0.00123 tol=0.01 -> PASS
+  [R22] CHECK sigma_rms C100 = 60 MPa: computed=60 expected=60 err=0 tol=0.01 -> PASS
+  kappa (circular) = n_d=2.0: 1.0000, n_d=2.3: 1.1621, n_d=2.5: 1.2980, n_d=3.0: 1.7643; C[100] kappa = 1
+  A: rows n_d, columns sigma_ref = 5, 20, 60 MPa
+    n_d=2.0:    1.0000     1.0000     1.0000
+    n_d=2.3:    1.5111     0.9970     0.7170
+    n_d=2.5:    2.0108     1.0054     0.5805
+    n_d=3.0:    4.2342     1.0586     0.3529
+  B: rows n_d, columns sigma_ref = 5, 20, 60 MPa
+    n_d=2.0:    1.0000     1.0000     1.0000
+    n_d=2.3:    1.6722     1.1033     0.7935
+    n_d=2.5:    2.3807     1.1903     0.6872
+    n_d=3.0:    5.9352     1.4838     0.4946
+  C100: rows n_d, columns sigma_ref = 5, 20, 60 MPa
+    n_d=2.0:    1.0000     1.0000     1.0000
+    n_d=2.3:    2.1074     1.3904     1.0000
+    n_d=2.5:    3.4641     1.7321     1.0000
+    n_d=3.0:   12.0000     3.0000     1.0000
+  [R22] IDENTITY (true by construction, not a check) A n_d=2 factor = 1: [1.0, 1.0, 1.0]
+  [R22] IDENTITY (true by construction, not a check) B n_d=2 factor = 1: [1.0, 1.0, 1.0]
+  [R22] IDENTITY (true by construction, not a check) C100 n_d=2 factor = 1: [1.0, 1.0, 1.0]
+  over n_d in 2.3..3 (n_d=2 excluded): min=0.3529 max=12.0000
+    A: min=0.3529 max=4.2342
+    B: min=0.4946 max=5.9352
+    C100: min=1.0000 max=12.0000
+  [R22] INFO overall min=0.3529 (incl. n_d=2 -> 1), max=12.0000; spec expects about 0.2-6
+  [R22] FLAG range 0.353-12.000 differs from the spec expectation "about 0.2-6"
+
+=== R23 thermoelastic damping (reed formula applied to round struts) ===
+  D = 5.4099e-05 m^2/s, Delta_E = 3.8539e-03, pi*Delta_E = 1.2107e-02
+  [R23] CHECK Delta_E ~ 3.85e-3: computed=0.00385393 expected=0.00385 err=0.00102 tol=0.02 -> PASS
+  [R23] CHECK max psi_TE (x scan) ~ 1.21e-2: computed=0.0121075 expected=0.0121 err=0.000619 tol=0.02 -> PASS
+  k = 100 W/(m K): psi_TE(f) for t = 0.2, 0.5, 1, 2, 5 mm   [f_Z in Hz]
+    f [Hz]        t=0.2 mm      t=0.5 mm      t=1   mm      t=2   mm      t=5   mm      
+    1.157e-05     1.715e-10  1.072e-09  4.287e-09  1.715e-08  1.072e-07
+    1             1.482e-05  9.261e-05  3.704e-04  1.476e-03  8.079e-03
+    10            1.482e-04  9.247e-04  3.620e-03  1.078e-02  5.926e-03
+    100           1.476e-03  8.079e-03  1.109e-02  3.854e-03  6.327e-04
+    1000          1.078e-02  5.926e-03  1.576e-03  3.956e-04  6.332e-05
+    f_Z [Hz]      1.634e+03  2.615e+02  6.537e+01  1.634e+01  2.615e+00
+    psi_TE/5e-3 at 1 Hz  2.964e-03  1.852e-02  7.407e-02  2.952e-01  1.616e+00
+    psi_TE/5e-3 max over f 2.421
+  k = 130 W/(m K): psi_TE(f) for t = 0.2, 0.5, 1, 2, 5 mm   [f_Z in Hz]
+    f [Hz]        t=0.2 mm      t=0.5 mm      t=1   mm      t=2   mm      t=5   mm      
+    1.157e-05     1.319e-10  8.245e-10  3.298e-09  1.319e-08  8.245e-08
+    1             1.140e-05  7.124e-05  2.849e-04  1.137e-03  6.556e-03
+    10            1.140e-04  7.118e-04  2.811e-03  9.331e-03  7.378e-03
+    100           1.137e-03  6.556e-03  1.195e-02  4.922e-03  8.222e-04
+    1000          9.331e-03  7.378e-03  2.043e-03  5.142e-04  8.231e-05
+    f_Z [Hz]      2.124e+03  3.399e+02  8.498e+01  2.124e+01  3.399e+00
+    psi_TE/5e-3 at 1 Hz  2.280e-03  1.425e-02  5.698e-02  2.275e-01  1.311e+00
+    psi_TE/5e-3 max over f 2.421
+  k = 170 W/(m K): psi_TE(f) for t = 0.2, 0.5, 1, 2, 5 mm   [f_Z in Hz]
+    f [Hz]        t=0.2 mm      t=0.5 mm      t=1   mm      t=2   mm      t=5   mm      
+    1.157e-05     1.009e-10  6.305e-10  2.522e-09  1.009e-08  6.305e-08
+    1             8.716e-06  5.448e-05  2.179e-04  8.705e-04  5.185e-03
+    10            8.716e-05  5.445e-04  2.162e-03  7.716e-03  8.988e-03
+    100           8.705e-04  5.185e-03  1.204e-02  6.245e-03  1.074e-03
+    1000          7.716e-03  8.988e-03  2.658e-03  6.722e-04  1.076e-04
+    f_Z [Hz]      2.778e+03  4.445e+02  1.111e+02  2.778e+01  4.445e+00
+    psi_TE/5e-3 at 1 Hz  1.743e-03  1.090e-02  4.358e-02  1.741e-01  1.037e+00
+    psi_TE/5e-3 max over f 2.421
+  [R23] CHECK t=0.5 mm f_Z ~ 340 Hz: computed=339.914 expected=340 err=0.000252 tol=0.02 -> PASS
+  [R23] CHECK t=0.5 mm psi_TE(1 Hz) ~ 7.1e-5: computed=7.12378e-05 expected=7.1e-05 err=0.00335 tol=0.02 -> PASS
+  [R23] CHECK t=2 mm f_Z ~ 21 Hz: computed=21.2446 expected=21 err=0.0116 tol=0.02 -> PASS
+  [R23] CHECK t=2 mm psi_TE(1 Hz) ~ 1.1e-3: computed=0.0011373 expected=0.0011 err=0.0339 tol=0.02 -> FAIL
+  [R23] INFO psi_TE/5e-3 at 1 Hz: t=0.5 mm 0.0142; t=2 mm 0.2275; max over f is 2.421 x 5e-3
+  [R23] INFO at 1/86400 Hz psi_TE < 1e-8 for all t (see table), i.e. negligible against 5e-3
+
+=== R24 one-at-a-time sensitivity ===
+  topology A: central sigma_a,max(1e7) = 1.0733 MPa; S_max(1 Hz, 20 y) = 6.5913e+02 J/K
+    ranked by effect on S_max (ln ratio):  input | sigma_a,max [MPa] lo, hi | S_max lo, hi | S ratio hi/lo | cap by yield/collapse?
+      kn   |   1.0733   0.2683 | 6.5913e+02 4.1195e+01 |   0.0625 | no
+      psi  |   1.0733   1.0733 | 1.3183e+02 1.3183e+03 |  10.0000 | no
+      sw7  |   0.7155   1.7889 | 2.9295e+02 1.8309e+03 |   6.2500 | no
+      b    |   1.0733   1.0733 | 1.2112e+03 4.1228e+02 |   0.3404 | no
+      f    |   1.0733   0.9483 | 6.5913e+02 5.1458e+02 |   0.7807 | no
+      Es   |   1.0733   1.0733 | 7.0983e+02 6.1518e+02 |   0.8667 | no
+      sy   |   1.0733   1.0733 | 6.5913e+02 6.5913e+02 |   1.0000 | no
+    ranked by effect on sigma_a,max:
+      kn   |   1.0733   0.2683 | ratio hi/lo   0.2500
+      sw7  |   0.7155   1.7889 | ratio hi/lo   2.5000
+      f    |   1.0733   0.9483 | ratio hi/lo   0.8836
+      sy   |   1.0733   1.0733 | ratio hi/lo   1.0000
+      Es   |   1.0733   1.0733 | ratio hi/lo   1.0000
+      psi  |   1.0733   1.0733 | ratio hi/lo   1.0000
+      b    |   1.0733   1.0733 | ratio hi/lo   1.0000
+  [R24] IDENTITY (true by construction, not a check) A: S ~ psi^1 (range ends ratio 10 = predicted 10): analytic scaling
+  [R24] IDENTITY (true by construction, not a check) A: S ~ sw7^2 (range ends ratio 6.25 = predicted 6.25): analytic scaling
+  [R24] IDENTITY (true by construction, not a check) A: S ~ kn^-2 (range ends ratio 0.0625 = predicted 0.0625): analytic scaling
+  [R24] IDENTITY (true by construction, not a check) A: S ~ Es^-1 (range ends ratio 0.86667 = predicted 0.86667): analytic scaling
+  [R24] INFO A: b dependence (not an identity): S(b=-0.07)/S(b=-0.20) = 2.938
+  [R24] INFO A: f 1.5 -> 1.698 changes S_max by factor 0.7807 (= (1.5/1.698)^2 = 0.7807)
+  topology B: central sigma_a,max(1e7) = 0.4519 MPa; S_max(1 Hz, 20 y) = 1.2951e+03 J/K
+    ranked by effect on S_max (ln ratio):  input | sigma_a,max [MPa] lo, hi | S_max lo, hi | S ratio hi/lo | cap by yield/collapse?
+      kn   |   0.4519   0.1130 | 1.2951e+03 8.0942e+01 |   0.0625 | no
+      psi  |   0.4519   0.4519 | 2.5901e+02 2.5901e+03 |  10.0000 | no
+      sw7  |   0.3013   0.7532 | 5.7559e+02 3.5974e+03 |   6.2500 | no
+      b    |   0.4519   0.4519 | 2.3799e+03 8.1006e+02 |   0.3404 | no
+      Es   |   0.4519   0.4519 | 1.3947e+03 1.2087e+03 |   0.8667 | no
+      sy   |   0.4519   0.4519 | 1.2951e+03 1.2951e+03 |   1.0000 | no
+    ranked by effect on sigma_a,max:
+      kn   |   0.4519   0.1130 | ratio hi/lo   0.2500
+      sw7  |   0.3013   0.7532 | ratio hi/lo   2.5000
+      sy   |   0.4519   0.4519 | ratio hi/lo   1.0000
+      Es   |   0.4519   0.4519 | ratio hi/lo   1.0000
+      psi  |   0.4519   0.4519 | ratio hi/lo   1.0000
+      b    |   0.4519   0.4519 | ratio hi/lo   1.0000
+  [R24] IDENTITY (true by construction, not a check) B: S ~ psi^1 (range ends ratio 10 = predicted 10): analytic scaling
+  [R24] IDENTITY (true by construction, not a check) B: S ~ sw7^2 (range ends ratio 6.25 = predicted 6.25): analytic scaling
+  [R24] IDENTITY (true by construction, not a check) B: S ~ kn^-2 (range ends ratio 0.0625 = predicted 0.0625): analytic scaling
+  [R24] IDENTITY (true by construction, not a check) B: S ~ Es^-1 (range ends ratio 0.86667 = predicted 0.86667): analytic scaling
+  [R24] INFO B: b dependence (not an identity): S(b=-0.07)/S(b=-0.20) = 2.938
+  topology C100: central sigma_a,max(1e7) = 4.0000 MPa; S_max(1 Hz, 20 y) = 1.6478e+04 J/K
+    ranked by effect on S_max (ln ratio):  input | sigma_a,max [MPa] lo, hi | S_max lo, hi | S ratio hi/lo | cap by yield/collapse?
+      kn   |   4.0000   1.0000 | 1.6478e+04 1.0299e+03 |   0.0625 | no
+      psi  |   4.0000   4.0000 | 3.2956e+03 3.2956e+04 |  10.0000 | no
+      sw7  |   2.6667   6.6667 | 7.3236e+03 4.5773e+04 |   6.2500 | no
+      b    |   4.0000   4.0000 | 3.0281e+04 1.0307e+04 |   0.3404 | no
+      Es   |   4.0000   4.0000 | 1.7746e+04 1.5380e+04 |   0.8667 | no
+      sy   |   4.0000   4.0000 | 1.6478e+04 1.6478e+04 |   1.0000 | no
+    ranked by effect on sigma_a,max:
+      kn   |   4.0000   1.0000 | ratio hi/lo   0.2500
+      sw7  |   2.6667   6.6667 | ratio hi/lo   2.5000
+      sy   |   4.0000   4.0000 | ratio hi/lo   1.0000
+      Es   |   4.0000   4.0000 | ratio hi/lo   1.0000
+      psi  |   4.0000   4.0000 | ratio hi/lo   1.0000
+      b    |   4.0000   4.0000 | ratio hi/lo   1.0000
+  [R24] IDENTITY (true by construction, not a check) C100: S ~ psi^1 (range ends ratio 10 = predicted 10): analytic scaling
+  [R24] IDENTITY (true by construction, not a check) C100: S ~ sw7^2 (range ends ratio 6.25 = predicted 6.25): analytic scaling
+  [R24] IDENTITY (true by construction, not a check) C100: S ~ kn^-2 (range ends ratio 0.0625 = predicted 0.0625): analytic scaling
+  [R24] IDENTITY (true by construction, not a check) C100: S ~ Es^-1 (range ends ratio 0.86667 = predicted 0.86667): analytic scaling
+  [R24] INFO C100: b dependence (not an identity): S(b=-0.07)/S(b=-0.20) = 2.938
+
+=== R25 stress-ratio effects (sigma_u = 400 MPa, sigma_f' = 668 MPa) ===
+  mean/amplitude m=(1+R)/(1-R); sigma_max/sigma_a = 2/(1-R)
+  R=-1.0: m=0.0000, sigma_max/sigma_a = 1.0000
+     local amplitude allowed: no mean 60.00; Goodman 60.00; Morrow 60.00 MPa
+     macroscopic sigma_a limits [MPa] (K_n=1, N=1e7): topology | fatigue(no mean) Goodman Morrow | first yield (on sigma_max) collapse (on sigma_max) | binding (Goodman)
+       A     |   1.073   1.073   1.073 |   4.472   6.708 | fatigue(Goodman)
+       B     |   0.452   0.452   0.452 |   1.883   3.322 | fatigue(Goodman)
+       C100  |   4.000   4.000   4.000 |  16.667  16.667 | fatigue(Goodman)
+       C110  |   2.000   2.000   2.000 |   8.333   8.333 | fatigue(Goodman)
+  [R25] IDENTITY (true by construction, not a check) R=-1 returns the R14 central limits (m=0, no mean-stress factor, sigma_max=2 sigma_a... collapse limit unchanged): Goodman allowable 60.000 MPa = sigma_w7 60.000
+  R=0.0: m=1.0000, sigma_max/sigma_a = 2.0000
+     local amplitude allowed: no mean 60.00; Goodman 52.17; Morrow 55.05 MPa
+     macroscopic sigma_a limits [MPa] (K_n=1, N=1e7): topology | fatigue(no mean) Goodman Morrow | first yield (on sigma_max) collapse (on sigma_max) | binding (Goodman)
+       A     |   1.073   0.933   0.985 |   2.236   3.354 | fatigue(Goodman)
+       B     |   0.452   0.393   0.415 |   0.942   1.661 | fatigue(Goodman)
+       C100  |   4.000   3.478   3.670 |   8.333   8.333 | fatigue(Goodman)
+       C110  |   2.000   1.739   1.835 |   4.167   4.167 | fatigue(Goodman)
+  R=0.1: m=1.2222, sigma_max/sigma_a = 2.2222
+     local amplitude allowed: no mean 60.00; Goodman 50.70; Morrow 54.06 MPa
+     macroscopic sigma_a limits [MPa] (K_n=1, N=1e7): topology | fatigue(no mean) Goodman Morrow | first yield (on sigma_max) collapse (on sigma_max) | binding (Goodman)
+       A     |   1.073   0.907   0.967 |   2.012   3.019 | fatigue(Goodman)
+       B     |   0.452   0.382   0.407 |   0.847   1.495 | fatigue(Goodman)
+       C100  |   4.000   3.380   3.604 |   7.500   7.500 | fatigue(Goodman)
+       C110  |   2.000   1.690   1.802 |   3.750   3.750 | fatigue(Goodman)
+  [R25] CHECK R=0.1 Goodman allowable local amplitude [MPa]: computed=50.7042 expected=50.7 err=8.33e-05 tol=0.01 -> PASS
+  [R25] CHECK R=0.1 mean/amplitude 1.222: computed=1.22222 expected=1.222 err=0.000182 tol=0.01 -> PASS
+  R=10.0: compression-compression; no mean-stress factor applied (fatigue amplitude limit = R14 value)
+       A     fatigue(no mean factor)   1.073 MPa; first yield on |sigma_min|   2.012; collapse on |sigma_min|   3.019
+       B     fatigue(no mean factor)   0.452 MPa; first yield on |sigma_min|   0.847; collapse on |sigma_min|   1.495
+       C100  fatigue(no mean factor)   4.000 MPa; first yield on |sigma_min|   7.500; collapse on |sigma_min|   7.500
+       C110  fatigue(no mean factor)   2.000 MPa; first yield on |sigma_min|   3.750; collapse on |sigma_min|   3.750
+  [R25] FLAG R=10 compression-compression: reported without a mean-stress factor (compressive mean not credited); buckling/collapse in compression governs the peak
+  [R25] CHECK Goodman round trip: sigma_ar(allowable) = sigma_w7: computed=6e+07 expected=6e+07 err=0 tol=1e-09 -> PASS
+
+==== SUMMARY (this script) ====
+  R22: PASS=3 FAIL=0 IDENTITY=3 FLAG=1
+      IDENTITY: A n_d=2 factor = 1
+      IDENTITY: B n_d=2 factor = 1
+      IDENTITY: C100 n_d=2 factor = 1
+      FLAG: range 0.353-12.000 differs from the spec expectation "about 0.2-6"
+  R23: PASS=5 FAIL=1 IDENTITY=0 FLAG=0
+      FAIL: t=2 mm psi_TE(1 Hz) ~ 1.1e-3
+  R24: PASS=0 FAIL=0 IDENTITY=12 FLAG=0
+      IDENTITY: A: S ~ psi^1 (range ends ratio 10 = predicted 10)
+      IDENTITY: A: S ~ sw7^2 (range ends ratio 6.25 = predicted 6.25)
+      IDENTITY: A: S ~ kn^-2 (range ends ratio 0.0625 = predicted 0.0625)
+      IDENTITY: A: S ~ Es^-1 (range ends ratio 0.86667 = predicted 0.86667)
+      IDENTITY: B: S ~ psi^1 (range ends ratio 10 = predicted 10)
+      IDENTITY: B: S ~ sw7^2 (range ends ratio 6.25 = predicted 6.25)
+      IDENTITY: B: S ~ kn^-2 (range ends ratio 0.0625 = predicted 0.0625)
+      IDENTITY: B: S ~ Es^-1 (range ends ratio 0.86667 = predicted 0.86667)
+      IDENTITY: C100: S ~ psi^1 (range ends ratio 10 = predicted 10)
+      IDENTITY: C100: S ~ sw7^2 (range ends ratio 6.25 = predicted 6.25)
+      IDENTITY: C100: S ~ kn^-2 (range ends ratio 0.0625 = predicted 0.0625)
+      IDENTITY: C100: S ~ Es^-1 (range ends ratio 0.86667 = predicted 0.86667)
+  R25: PASS=3 FAIL=0 IDENTITY=1 FLAG=1
+      IDENTITY: R=-1 returns the R14 central limits (m=0, no mean-stress factor, sigma_max=2 sigma_a... collapse limit unchanged)
+      FLAG: R=10 compression-compression: reported without a mean-stress factor (compressive mean not credited); buckling/collapse in compression governs the peak

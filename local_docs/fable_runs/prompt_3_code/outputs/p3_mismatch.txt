@@ -1,0 +1,244 @@
+=== R29 stiffness ratio S = M_L H_L/(M_2 H_2) ===
+  M_2 [GPa]: Ti-6Al-4V=172.7, steel=285.7, 316L=275.7, Cu=181.8, Invar=198.6
+  H_L/H_2 = 0.1
+    lattice rho     Ti-6Al-4V       steel        316L          Cu       Invar
+    octet  0.1      0.00068     0.00041     0.00042     0.00064     0.00059
+    octet  0.2      0.00135     0.00082     0.00085     0.00128     0.00117
+    octet  0.4      0.00270     0.00163     0.00169     0.00257     0.00235
+    BCC    0.1      0.00007     0.00004     0.00005     0.00007     0.00006
+    BCC    0.2      0.00028     0.00017     0.00017     0.00026     0.00024
+    BCC    0.4      0.00104     0.00063     0.00065     0.00099     0.00090
+    A      0.1      0.00058     0.00035     0.00036     0.00055     0.00050
+    A      0.2      0.00232     0.00140     0.00145     0.00220     0.00201
+    A      0.4      0.00926     0.00560     0.00580     0.00880     0.00806
+  H_L/H_2 = 1.0
+    lattice rho     Ti-6Al-4V       steel        316L          Cu       Invar
+    octet  0.1      0.00675     0.00408     0.00423     0.00642     0.00587
+    octet  0.2      0.01351     0.00817     0.00846     0.01283     0.01175
+    octet  0.4      0.02702     0.01633     0.01693     0.02567     0.02350
+    BCC    0.1      0.00072     0.00043     0.00045     0.00068     0.00062
+    BCC    0.2      0.00278     0.00168     0.00174     0.00264     0.00241
+    BCC    0.4      0.01039     0.00628     0.00651     0.00987     0.00904
+    A      0.1      0.00579     0.00350     0.00363     0.00550     0.00504
+    A      0.2      0.02316     0.01400     0.01451     0.02200     0.02014
+    A      0.4      0.09263     0.05600     0.05803     0.08800     0.08057
+  H_L/H_2 = 10.0
+    lattice rho     Ti-6Al-4V       steel        316L          Cu       Invar
+    octet  0.1      0.06754     0.04083     0.04231     0.06417     0.05875
+    octet  0.2      0.13509     0.08167     0.08463     0.12833     0.11749
+    octet  0.4      0.27018     0.16333     0.16926     0.25667     0.23499
+    BCC    0.1      0.00718     0.00434     0.00450     0.00682     0.00625
+    BCC    0.2      0.02775     0.01678     0.01739     0.02636     0.02414
+    BCC    0.4      0.10389     0.06281     0.06508     0.09870     0.09036
+    A      0.1      0.05789     0.03500     0.03627     0.05500     0.05035
+    A      0.2      0.23158     0.14000     0.14508     0.22000     0.20142
+    A      0.4      0.92632     0.56000     0.58031     0.88000     0.80567
+  [R29] INFO H_L=H_2: min S = 0.00043 (BCC, rho=0.1, steel); max S = 0.09263 (A, rho=0.4, Ti-6Al-4V)
+  [R29] CHECK min S is BCC, rho=0.1, steel; max S is A, rho=0.4, Ti:  -> PASS
+  [R29] CHECK min S about 0.0005 (spec tolerance 2 %): computed=0.00043429 expected=0.0005 err=0.131 tol=0.02 -> FAIL
+  [R29] CHECK max S about 0.09 (spec tolerance 2 %): computed=0.0926316 expected=0.09 err=0.0292 tol=0.02 -> FAIL
+  [R29] CHECK octet rho=0.2 Ti S ~ 0.0135: computed=0.0135088 expected=0.0135 err=0.00065 tol=0.02 -> PASS
+  [R29] CHECK 1/(1+S) >= 0.91 at H_L=H_2: min 1/(1+S) = 0.9152 -> PASS
+
+=== R28 mismatch strain and local amplitude ===
+  c values: 1; 1/(1-nu_s)=1.4925; c_BCC(rho)=sigma_peak/(Es eps_m) from R7: rho=0.1: 0.6760, rho=0.2: 0.9434, rho=0.4: 1.2862
+  Ti-6Al-4V, rho=0.2, octet S (H_L=H_2) = 0.01351
+  sigma_a,loc [MPa] (with S) by dT and K_n, c=1; '*' = not elastic (K_n c Es eps_m > sigma_y)
+   partner Ti-6Al-4V (dalpha=12.40e-6, eps_m(50K)=6.200e-04)
+     dT [K]        Kn=1:c=1       Kn=2:c=1       Kn=3:c=1
+        10           4.28           8.56          12.85  
+        20           8.56          17.13          25.69  
+        30          12.85          25.69          38.54  
+        50          21.41          42.82          64.23  
+       100          42.82          85.64         128.46* 
+       200          85.64         171.29*        256.93* 
+       300         128.46*        256.93*        385.39* 
+       500         214.11*        428.22*        642.32* 
+   partner steel (dalpha=9.00e-6, eps_m(50K)=4.500e-04)
+     dT [K]        Kn=1:c=1       Kn=2:c=1       Kn=3:c=1
+        10           3.12           6.25           9.37  
+        20           6.25          12.50          18.75  
+        30           9.37          18.75          28.12  
+        50          15.62          31.24          46.87  
+       100          31.24          62.49          93.73  
+       200          62.49         124.98*        187.47* 
+       300          93.73         187.47*        281.20* 
+       500         156.22*        312.45*        468.67* 
+   partner 316L (dalpha=5.00e-6, eps_m(50K)=2.500e-04)
+     dT [K]        Kn=1:c=1       Kn=2:c=1       Kn=3:c=1
+        10           1.74           3.47           5.21  
+        20           3.47           6.94          10.41  
+        30           5.21          10.41          15.62  
+        50           8.68          17.35          26.03  
+       100          17.35          34.71          52.06  
+       200          34.71          69.41         104.12  
+       300          52.06         104.12         156.18* 
+       500          86.77         173.53*        260.30* 
+   partner Cu (dalpha=4.50e-6, eps_m(50K)=2.250e-04)
+     dT [K]        Kn=1:c=1       Kn=2:c=1       Kn=3:c=1
+        10           1.56           3.11           4.67  
+        20           3.11           6.22           9.33  
+        30           4.67           9.33          14.00  
+        50           7.78          15.55          23.33  
+       100          15.55          31.10          46.65  
+       200          31.10          62.20          93.30  
+       300          46.65          93.30         139.95* 
+       500          77.75         155.50*        233.26* 
+   partner Invar (dalpha=19.70e-6, eps_m(50K)=9.850e-04)
+     dT [K]        Kn=1:c=1       Kn=2:c=1       Kn=3:c=1
+        10           6.81          13.63          20.44  
+        20          13.63          27.26          40.89  
+        30          20.44          40.89          61.33  
+        50          34.07          68.15         102.22  
+       100          68.15         136.30*        204.45* 
+       200         136.30*        272.60*        408.90* 
+       300         204.45*        408.90*        613.34* 
+       500         340.75*        681.49*       1022.24* 
+  Ti-6Al-4V, 50 K: sigma_a,loc for c options and lattices (K_n=1,2,3), with own S:
+    octet  rho=0.1: S=0.00675  c=1: 21.55/43.11/64.66; c=1/(1-nu): 32.17/64.34/96.51; c=c_BCC: 14.57/29.14/43.71
+    octet  rho=0.2: S=0.01351  c=1: 21.41/42.82/64.23; c=1/(1-nu): 31.96/63.91/95.87; c=c_BCC: 20.20/40.40/60.60
+    octet  rho=0.4: S=0.02702  c=1: 21.13/42.26/63.39; c=1/(1-nu): 31.54/63.07/94.61; c=c_BCC: 27.18/54.35/81.53
+    BCC    rho=0.1: S=0.00072  c=1: 21.68/43.37/65.05; c=1/(1-nu): 32.36/64.73/97.09; c=c_BCC: 14.66/29.32/43.98
+    BCC    rho=0.2: S=0.00278  c=1: 21.64/43.28/64.92; c=1/(1-nu): 32.30/64.60/96.90; c=c_BCC: 20.41/40.83/61.24
+    BCC    rho=0.4: S=0.01039  c=1: 21.48/42.95/64.43; c=1/(1-nu): 32.06/64.11/96.17; c=c_BCC: 27.62/55.25/82.87
+    A      rho=0.1: S=0.00579  c=1: 21.58/43.15/64.73; c=1/(1-nu): 32.20/64.40/96.60; c=c_BCC: 14.59/29.17/43.76
+    A      rho=0.2: S=0.02316  c=1: 21.21/42.42/63.63; c=1/(1-nu): 31.65/63.31/94.96; c=c_BCC: 20.01/40.02/60.02
+    A      rho=0.4: S=0.09263  c=1: 19.86/39.72/59.58; c=1/(1-nu): 29.64/59.28/88.93; c=c_BCC: 25.54/51.09/76.63
+  [R28] INFO 106 of 360 cells flagged not elastic (K_n c Es eps_m > sigma_y = 250 MPa)
+  [R28] CHECK Ti 50 K eps_m: computed=0.00062 expected=0.00062 err=1.75e-16 tol=0.01 -> PASS
+  [R28] CHECK Ti 50 K Es*eps_m [MPa]: computed=43.4 expected=43.4 err=1.64e-16 tol=0.01 -> PASS
+  [R28] CHECK Ti 50 K sigma_a,loc K_n=c=1 [MPa], S=0 (spec value): computed=21.7 expected=21.7 err=1.64e-16 tol=0.01 -> PASS
+  [R28] CHECK Ti 50 K sigma_a,loc K_n=3,c=1 [MPa], S=0 (spec value): computed=65.1 expected=65 err=0.00154 tol=0.01 -> PASS
+  [R28] CHECK Ti 50 K sigma_a,loc K_n=c=1 [MPa] with octet S (rho=0.2): computed=21.4108 expected=21.7 err=0.0133 tol=0.01 -> FAIL
+  [R28] CHECK Ti 50 K sigma_a,loc K_n=3,c=1 [MPa] with octet S (rho=0.2): computed=64.2323 expected=65 err=0.0118 tol=0.01 -> FAIL
+
+=== R30 mismatch life and Delta T at which N = 10958 ===
+  Ti-6Al-4V, N(50 K) and dT_x [K]; columns S=0 | octet S (rho=0.2)
+    b=-0.095 Kn=1 c=1    dTref=  0 | N(50)=4.461e+11 dT_x=264.2 | N(50)=5.137e+11 dT_x=267.7
+    b=-0.095 Kn=1 c=1    dTref=100 | N(50)=3.397e+10 dT_x=206.8 | N(50)=3.912e+10 dT_x=209.6
+    b=-0.095 Kn=1 c=1    dTref=200 | N(50)=1.115e+09 dT_x=149.5 | N(50)=1.285e+09 dT_x=151.5
+    b=-0.095 Kn=1 c=1    dTref=300 | N(50)=1.464e+07 dT_x=99.1 | N(50)=1.686e+07 dT_x=100.4
+    b=-0.095 Kn=1 c=1.49 dTref=  0 | N(50)=6.705e+09 dT_x=177.3 | N(50)=7.722e+09 dT_x=179.7
+    b=-0.095 Kn=1 c=1.49 dTref=100 | N(50)=5.106e+08 dT_x=138.8 | N(50)=5.881e+08 dT_x=140.7
+    b=-0.095 Kn=1 c=1.49 dTref=200 | N(50)=1.677e+07 dT_x=100.3 | N(50)=1.931e+07 dT_x=101.7
+    b=-0.095 Kn=1 c=1.49 dTref=300 | N(50)=2.200e+05 dT_x=66.5 | N(50)=2.534e+05 dT_x=67.4
+    b=-0.095 Kn=2 c=1    dTref=  0 | N(50)=3.024e+08 dT_x=132.1 | N(50)=3.483e+08 dT_x=133.9
+    b=-0.095 Kn=2 c=1    dTref=100 | N(50)=2.303e+07 dT_x=103.4 | N(50)=2.653e+07 dT_x=104.8
+    b=-0.095 Kn=2 c=1    dTref=200 | N(50)=7.563e+05 dT_x=74.8 | N(50)=8.711e+05 dT_x=75.8
+    b=-0.095 Kn=2 c=1    dTref=300 | N(50)=9.926e+03 dT_x=49.5 | N(50)=1.143e+04 dT_x=50.2
+    b=-0.095 Kn=2 c=1.49 dTref=  0 | N(50)=4.546e+06 dT_x=88.6 | N(50)=5.236e+06 dT_x=89.8
+    b=-0.095 Kn=2 c=1.49 dTref=100 | N(50)=3.462e+05 dT_x=69.4 | N(50)=3.987e+05 dT_x=70.3
+    b=-0.095 Kn=2 c=1.49 dTref=200 | N(50)=1.137e+04 dT_x=50.2 | N(50)=1.309e+04 dT_x=50.9
+    b=-0.095 Kn=2 c=1.49 dTref=300 | N(50)=1.492e+02 dT_x=33.2 | N(50)=1.718e+02 dT_x=33.7
+    b=-0.095 Kn=3 c=1    dTref=  0 | N(50)=4.237e+06 dT_x=88.1 | N(50)=4.880e+06 dT_x=89.2
+    b=-0.095 Kn=3 c=1    dTref=100 | N(50)=3.227e+05 dT_x=68.9 | N(50)=3.716e+05 dT_x=69.9
+    b=-0.095 Kn=3 c=1    dTref=200 | N(50)=1.060e+04 dT_x=49.8 | N(50)=1.220e+04 dT_x=50.5
+    b=-0.095 Kn=3 c=1    dTref=300 | N(50)=1.391e+02 dT_x=33.0 | N(50)=1.601e+02 dT_x=33.5
+    b=-0.095 Kn=3 c=1.49 dTref=  0 | N(50)=6.369e+04 dT_x=59.1 | N(50)=7.335e+04 dT_x=59.9
+    b=-0.095 Kn=3 c=1.49 dTref=100 | N(50)=4.850e+03 dT_x=46.3 | N(50)=5.586e+03 dT_x=46.9
+    b=-0.095 Kn=3 c=1.49 dTref=200 | N(50)=1.593e+02 dT_x=33.4 | N(50)=1.834e+02 dT_x=33.9
+    b=-0.095 Kn=3 c=1.49 dTref=300 | N(50)=2.090e+00 dT_x=22.2 | N(50)=2.407e+00 dT_x=22.5
+    b=-0.1434 Kn=1 c=1    dTref=  0 | N(50)=1.203e+10 dT_x=367.4 NOT-ELASTIC | N(50)=1.321e+10 dT_x=372.4 NOT-ELASTIC
+    b=-0.1434 Kn=1 c=1    dTref=100 | N(50)=2.184e+09 dT_x=287.7 | N(50)=2.398e+09 dT_x=291.6 NOT-ELASTIC
+    b=-0.1434 Kn=1 c=1    dTref=200 | N(50)=2.272e+08 dT_x=208.0 | N(50)=2.495e+08 dT_x=210.8
+    b=-0.1434 Kn=1 c=1    dTref=300 | N(50)=1.287e+07 dT_x=137.8 | N(50)=1.413e+07 dT_x=139.6
+    b=-0.1434 Kn=1 c=1.49 dTref=  0 | N(50)=7.455e+08 dT_x=246.6 NOT-ELASTIC | N(50)=8.186e+08 dT_x=249.9 NOT-ELASTIC
+    b=-0.1434 Kn=1 c=1.49 dTref=100 | N(50)=1.354e+08 dT_x=193.1 | N(50)=1.487e+08 dT_x=195.7 NOT-ELASTIC
+    b=-0.1434 Kn=1 c=1.49 dTref=200 | N(50)=1.408e+07 dT_x=139.6 | N(50)=1.546e+07 dT_x=141.5
+    b=-0.1434 Kn=1 c=1.49 dTref=300 | N(50)=7.979e+05 dT_x=92.5 | N(50)=8.761e+05 dT_x=93.7
+    b=-0.1434 Kn=2 c=1    dTref=  0 | N(50)=9.570e+07 dT_x=183.7 NOT-ELASTIC | N(50)=1.051e+08 dT_x=186.2 NOT-ELASTIC
+    b=-0.1434 Kn=2 c=1    dTref=100 | N(50)=1.738e+07 dT_x=143.8 | N(50)=1.908e+07 dT_x=145.8 NOT-ELASTIC
+    b=-0.1434 Kn=2 c=1    dTref=200 | N(50)=1.808e+06 dT_x=104.0 | N(50)=1.985e+06 dT_x=105.4
+    b=-0.1434 Kn=2 c=1    dTref=300 | N(50)=1.024e+05 dT_x=68.9 | N(50)=1.125e+05 dT_x=69.8
+    b=-0.1434 Kn=2 c=1.49 dTref=  0 | N(50)=5.932e+06 dT_x=123.3 NOT-ELASTIC | N(50)=6.514e+06 dT_x=125.0 NOT-ELASTIC
+    b=-0.1434 Kn=2 c=1.49 dTref=100 | N(50)=1.077e+06 dT_x=96.5 | N(50)=1.183e+06 dT_x=97.8 NOT-ELASTIC
+    b=-0.1434 Kn=2 c=1.49 dTref=200 | N(50)=1.121e+05 dT_x=69.8 | N(50)=1.231e+05 dT_x=70.7
+    b=-0.1434 Kn=2 c=1.49 dTref=300 | N(50)=6.349e+03 dT_x=46.2 | N(50)=6.972e+03 dT_x=46.9
+    b=-0.1434 Kn=3 c=1    dTref=  0 | N(50)=5.661e+06 dT_x=122.5 NOT-ELASTIC | N(50)=6.217e+06 dT_x=124.1 NOT-ELASTIC
+    b=-0.1434 Kn=3 c=1    dTref=100 | N(50)=1.028e+06 dT_x=95.9 | N(50)=1.129e+06 dT_x=97.2 NOT-ELASTIC
+    b=-0.1434 Kn=3 c=1    dTref=200 | N(50)=1.070e+05 dT_x=69.3 | N(50)=1.174e+05 dT_x=70.3
+    b=-0.1434 Kn=3 c=1    dTref=300 | N(50)=6.060e+03 dT_x=45.9 | N(50)=6.654e+03 dT_x=46.5
+    b=-0.1434 Kn=3 c=1.49 dTref=  0 | N(50)=3.509e+05 dT_x=82.2 NOT-ELASTIC | N(50)=3.853e+05 dT_x=83.3 NOT-ELASTIC
+    b=-0.1434 Kn=3 c=1.49 dTref=100 | N(50)=6.373e+04 dT_x=64.4 | N(50)=6.998e+04 dT_x=65.2 NOT-ELASTIC
+    b=-0.1434 Kn=3 c=1.49 dTref=200 | N(50)=6.630e+03 dT_x=46.5 | N(50)=7.280e+03 dT_x=47.2
+    b=-0.1434 Kn=3 c=1.49 dTref=300 | N(50)=3.756e+02 dT_x=30.8 | N(50)=4.124e+02 dT_x=31.2
+  [R30] CHECK Ti, c=1, K_n=3, no mean, b=-0.1434, S=0: N(50 K) ~ 5.7e6: computed=5.66149e+06 expected=5.7e+06 err=0.00676 tol=0.03 -> PASS
+  [R30] CHECK same: dT_x ~ 122 K: computed=122.474 expected=122 err=0.00388 tol=0.03 -> PASS
+  [R30] CHECK K_n=1: dT_x ~ 367 K: computed=367.421 expected=367 err=0.00115 tol=0.03 -> PASS
+  [R30] CHECK K_n=1 dT_x is outside the elastic range (flag): K_n c Es eps_m at dT_x = 318.9 MPa > 250 -> PASS
+  [R30] FLAG K_n=1, Ti, no mean, b=-0.1434: dT_x=367 K gives K_n c Es eps_m = 319 MPa > sigma_y (not elastic)
+  [R30] INFO with octet S: N(50 K) = 6.217e+06 (+9.1 % vs spec 5.7e6); dT_x = 124.1 K (+1.7 % vs spec 122)
+  [R30] CHECK with octet S: N(50 K) vs spec 5.7e6 (3 %): computed=6.21683e+06 expected=5.7e+06 err=0.0907 tol=0.03 -> FAIL
+  [R30] CHECK with octet S: dT_x vs spec 122 (3 %): computed=124.128 expected=122 err=0.0174 tol=0.03 -> PASS
+  [R30] INFO Ti K_n=3, c=1, b=-0.1434, sigma_m=min(sigma_y, Es dalpha dT_ref=300 K)=250 MPa (Goodman): dT_x = 45.93 K (< 50 K)
+  [R30] CHECK dT_x > 50 K without mean stress; < 50 K with sigma_m = sigma_y (spec expectation "possibly"): no mean 122.5 K; with sigma_y mean 45.93 K -> PASS
+  dT_x [K] for all partners, K_n=3, c=1, no mean, S=0 / octet S (b=-0.095 | -0.1434); also K_n=1
+    Ti-6Al-4V  K_n=3,b=-0.095: 88.1/89.2  b=-0.1434: 122.5/124.1   K_n=1,b=-0.095: 264.2/267.7  b=-0.1434: 367.4/372.4
+    steel      K_n=3,b=-0.095: 121.3/122.3  b=-0.1434: 168.7/170.1   K_n=1,b=-0.095: 364.0/366.9  b=-0.1434: >500/>500
+    316L       K_n=3,b=-0.095: 218.4/220.2  b=-0.1434: 303.7/306.3   K_n=1,b=-0.095: >500/>500  b=-0.1434: >500/>500
+    Cu         K_n=3,b=-0.095: 242.6/245.8  b=-0.1434: 337.5/341.8   K_n=1,b=-0.095: >500/>500  b=-0.1434: >500/>500
+    Invar      K_n=3,b=-0.095: 55.4/56.1  b=-0.1434: 77.1/78.0   K_n=1,b=-0.095: 166.3/168.2  b=-0.1434: 231.3/234.0
+
+=== R31 mismatch dissipation under strain control (Ti-6Al-4V, rho=0.2) ===
+  dT= 10 K octet  S= 0.00000: eps_a=6.2000e-05 dS/cycle=1.4949e-07 J/K; total over 10958 cycles = 1.6381e-03 J/K; M_L=2.3333 GPa
+  dT= 10 K octet  S= 0.01351: eps_a=6.1174e-05 dS/cycle=1.4553e-07 J/K; total over 10958 cycles = 1.5947e-03 J/K; M_L=2.3333 GPa
+  dT= 10 K BCC    S= 0.00000: eps_a=6.2000e-05 dS/cycle=3.0710e-08 J/K; total over 10958 cycles = 3.3652e-04 J/K; M_L=0.4793 GPa
+  dT= 10 K BCC    S= 0.00278: eps_a=6.1828e-05 dS/cycle=3.0540e-08 J/K; total over 10958 cycles = 3.3466e-04 J/K; M_L=0.4793 GPa
+  dT= 10 K A      S= 0.00000: eps_a=6.2000e-05 dS/cycle=2.5627e-07 J/K; total over 10958 cycles = 2.8082e-03 J/K; M_L=4.0000 GPa
+  dT= 10 K A      S= 0.02316: eps_a=6.0597e-05 dS/cycle=2.4480e-07 J/K; total over 10958 cycles = 2.6825e-03 J/K; M_L=4.0000 GPa
+  dT= 50 K octet  S= 0.00000: eps_a=3.1000e-04 dS/cycle=3.7372e-06 J/K; total over 10958 cycles = 4.0952e-02 J/K; M_L=2.3333 GPa
+  dT= 50 K octet  S= 0.01351: eps_a=3.0587e-04 dS/cycle=3.6383e-06 J/K; total over 10958 cycles = 3.9868e-02 J/K; M_L=2.3333 GPa
+  dT= 50 K BCC    S= 0.00000: eps_a=3.1000e-04 dS/cycle=7.6774e-07 J/K; total over 10958 cycles = 8.4129e-03 J/K; M_L=0.4793 GPa
+  dT= 50 K BCC    S= 0.00278: eps_a=3.0914e-04 dS/cycle=7.6350e-07 J/K; total over 10958 cycles = 8.3664e-03 J/K; M_L=0.4793 GPa
+  dT= 50 K A      S= 0.00000: eps_a=3.1000e-04 dS/cycle=6.4067e-06 J/K; total over 10958 cycles = 7.0204e-02 J/K; M_L=4.0000 GPa
+  dT= 50 K A      S= 0.02316: eps_a=3.0298e-04 dS/cycle=6.1199e-06 J/K; total over 10958 cycles = 6.7062e-02 J/K; M_L=4.0000 GPa
+  [R31] CHECK octet 50 K dS per cycle, S=0 (spec value) ~3.7e-6: computed=3.73722e-06 expected=3.7e-06 err=0.0101 tol=0.02 -> PASS
+  [R31] CHECK octet 50 K total over 10958 cycles, S=0 ~0.041: computed=0.0409525 expected=0.041 err=0.00116 tol=0.02 -> PASS
+  [R31] CHECK octet 50 K dS per cycle, with S ~3.7e-6: computed=3.63826e-06 expected=3.7e-06 err=0.0167 tol=0.02 -> PASS
+  [R31] CHECK octet 50 K total over 10958 cycles, with S ~0.041: computed=0.0398681 expected=0.041 err=0.0276 tol=0.02 -> FAIL
+  [R31] CHECK ratio A/octet, S=0: 6 rho/0.7 = 1.714: computed=1.71429 expected=1.71429 err=1.3e-16 tol=0.02 -> PASS
+  [R31] CHECK ratio A/octet, with S: 6 rho/0.7 = 1.714: computed=1.6821 expected=1.71429 err=0.0188 tol=0.02 -> PASS
+  [R31] INFO A/octet ratio 1.7143 (S=0) / 1.6821 (with S): A dissipates more under strain control; R16 at fixed stress gives octet/A = 1.8 (octet dissipates more): opposite directions
+  [R31] CHECK direction opposite to R16 (A/octet > 1 here, octet/A = 9 rho = 1.8 > 1 in R16):  -> PASS
+
+=== R32 interlayer shear and thermal-lag magnitudes ===
+  L/H_L:  gamma/eps_m = L/(2 H_L)
+    L/H_L= 1: 0.50  (< 2)
+    L/H_L= 2: 1.00  (< 2)
+    L/H_L= 4: 2.00  (= 2)
+    L/H_L= 8: 4.00  (> 2)
+    L/H_L=16: 8.00  (> 2)
+  [R32] IDENTITY (true by construction, not a check) gamma/eps_m = L/(2 H_L) > 2 for L/H_L > 4: magnitude table only; equals 2 exactly at L/H_L = 4
+  thermal lag: E_s alpha_s dT_lag vs E_s dalpha dT (dT = 50 K)
+    Ti-6Al-4V  dT_lag= 1 K: lag stress   1.47 MPa; mismatch  43.40 MPa; ratio 0.034
+    Ti-6Al-4V  dT_lag= 5 K: lag stress   7.35 MPa; mismatch  43.40 MPa; ratio 0.169
+    Ti-6Al-4V  dT_lag=10 K: lag stress  14.70 MPa; mismatch  43.40 MPa; ratio 0.339
+    316L       dT_lag= 1 K: lag stress   1.47 MPa; mismatch  17.50 MPa; ratio 0.084
+    316L       dT_lag= 5 K: lag stress   7.35 MPa; mismatch  17.50 MPa; ratio 0.420
+    316L       dT_lag=10 K: lag stress  14.70 MPa; mismatch  17.50 MPa; ratio 0.840
+  [R32] CHECK lag stress 10 K [MPa]: computed=14.7 expected=14.7 err=0 tol=0.01 -> PASS
+  [R32] CHECK Ti mismatch stress 50 K [MPa]: computed=43.4 expected=43.4 err=1.64e-16 tol=0.01 -> PASS
+  [R32] CHECK 316L mismatch stress 50 K [MPa]: computed=17.5 expected=17.5 err=2.03e-16 tol=0.01 -> PASS
+  [R32] CHECK 316L dalpha = 5.0e-6: computed=5e-06 expected=5e-06 err=1.69e-16 tol=0.01 -> PASS
+  [R32] INFO break-even dT_lag/dT = dalpha/alpha_s: Ti 0.590, 316L 0.238 (D10: 0.59, 0.24)
+
+==== SUMMARY (this script) ====
+  R28: PASS=4 FAIL=2 IDENTITY=0 FLAG=1
+      FLAG: 106 cells not elastic (listed with * in the table for c=1; all-c count here)
+      FAIL: Ti 50 K sigma_a,loc K_n=c=1 [MPa] with octet S (rho=0.2)
+      FAIL: Ti 50 K sigma_a,loc K_n=3,c=1 [MPa] with octet S (rho=0.2)
+  R29: PASS=3 FAIL=2 IDENTITY=0 FLAG=0
+      FAIL: min S about 0.0005 (spec tolerance 2 %)
+      FAIL: max S about 0.09 (spec tolerance 2 %)
+  R30: PASS=6 FAIL=1 IDENTITY=0 FLAG=6
+      FLAG: K_n=1, Ti, no mean, b=-0.1434: dT_x=367 K gives K_n c Es eps_m = 319 MPa > sigma_y (not elastic)
+      FAIL: with octet S: N(50 K) vs spec 5.7e6 (3 %)
+      FLAG: steel K_n=1 b=-0.1434: dT_x >500 (outside 1-500 K sweep)
+      FLAG: 316L K_n=1 b=-0.095: dT_x >500 (outside 1-500 K sweep)
+      FLAG: 316L K_n=1 b=-0.1434: dT_x >500 (outside 1-500 K sweep)
+      FLAG: Cu K_n=1 b=-0.095: dT_x >500 (outside 1-500 K sweep)
+      FLAG: Cu K_n=1 b=-0.1434: dT_x >500 (outside 1-500 K sweep)
+  R31: PASS=6 FAIL=1 IDENTITY=0 FLAG=0
+      FAIL: octet 50 K total over 10958 cycles, with S ~0.041
+  R32: PASS=4 FAIL=0 IDENTITY=1 FLAG=0
+      IDENTITY: gamma/eps_m = L/(2 H_L) > 2 for L/H_L > 4
