@@ -1,0 +1,8 @@
+X3 C4/C5 corner bounds via differential_evolution; boxes: 300 modes: {'below': 60, 'tie_lo': 60, 'tie_hi': 60, 'tie_mid': 60, 'generic': 60}
+boxes where tw interval straddles a segment change at fixed tau: 207
+float-only excess beyond 1e-9 relative scale: 0
+EXACT violations (Fraction m, mp-50 f): max>pessimistic or min<optimistic: 0
+tightness of DE max vs pessimistic corner (fraction of the corner-to-corner range reached by DE max): median 1.0000, min 0.3595, boxes >= 0.9: 286/300
+tightness of DE min vs optimistic corner (range fraction): median 1.0000, min 0.9995, boxes >= 0.9: 300/300
+NOTE: DE reaching close to the corner value (tightness near 1) shows the corners are attained and nothing beats them;
+      it is evidence, not proof (DE is a heuristic).  Tightness is capped at <=1 up to the exact check above.

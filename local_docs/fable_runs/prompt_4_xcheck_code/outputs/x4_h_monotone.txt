@@ -1,0 +1,9 @@
+X4 h(s) monotone; random tau count: 300  Kg>0 random
+(a) float sample steps: 2524200  steps with increase > 8 eps*h: 0  max relative increase: 0
+(e) m non-increasing: violations 0
+(b) exact adjacent ulp pairs around tau/k: 11700  of which m changes across the pair: 5700  pairs not strictly decreasing: 0
+(c) exact left/right limit at s=tau/k: points 2400  max relative gap 4.84e-51 (50-digit)
+    float h just below vs just above tau/k: max relative gap 1.05e-08
+    (this gap is real, not an artefact: on the m=k side sqrt(tau - k s) has infinite slope at s -> tau/k, so one ulp moves h by ~sqrt(ulp) relative)
+(d) dh/ds sign on constant-m pieces: points 18000  non-negative (outside rounding 1e-12): 0
+FLAG: (d) restates the algebraic proof; it is a sanity check of the sign identity, not independent evidence.

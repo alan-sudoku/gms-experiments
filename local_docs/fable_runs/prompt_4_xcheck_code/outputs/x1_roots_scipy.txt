@@ -1,0 +1,42 @@
+X1 roots per segment (SciPy brentq route A vs numpy polyroots route B)
+(i) reference tw=1 m=1: A roots [0.0012990843334213958, 0.4584312347615673, 0.9047365218231579] B roots [np.float64(0.001299084333421474), np.float64(0.4584312347615529), np.float64(0.9047365218231704)]
+    route A: count=3, max rel diff vs reference = 4.039413285055653e-14 -> agree
+    route B: count=3, max rel diff vs reference = 1.0065149631770904e-13 -> agree
+    mp-50 truth count: 3
+(ii) window cases generated: 1100 (tries 1100)
+(ii) window+generic: cases=2600 identically-zero f=0
+    root-count histogram A: {0: 374, 1: 1105, 2: 43, 3: 1078}  B: {0: 395, 1: 1093, 2: 28, 3: 1084}
+    max roots found: A 3  B 3
+    count agreement A vs B: 2556 of 2600 ; agreeing counts with root values differing >1e-6 rel: 269
+    count disagreements: 44
+    adjudication (right route) by tag class: {('window', 'A'): 6, ('window', 'B'): 14, ('window', 'neither'): 5, ('generic', 'A'): 19}
+    adjudication by m for window cases: {('window_m100000', 'A'): 2, ('window_m1000000', 'B'): 14, ('window_m1000000', 'A'): 4, ('window_m1000000', 'neither'): 5}
+      e.g. window_m100000 (100000.0, 1.0, 2638.8326571609277, 0.046337611769442844, 1668967.290697872, 263890532.15986767) A 3 B 1 mp50 truth 3 -> right route: A
+      e.g. window_m1000000 (1000000.0, 1.0, 154518.2008803925, 0.18540657402658708, 309036735.96732014, 154518535086.87076) A 2 B 3 mp50 truth 3 -> right route: B
+      e.g. window_m1000000 (1000000.0, 1.0, 1908994.0349569567, 0.666574147022605, 3817990337.640255, 1908996302683.2886) A 2 B 3 mp50 truth 3 -> right route: B
+      e.g. window_m1000000 (1000000.0, 1.0, 15943690.069076624, 0.38470452784156756, 31887388616.16961, 15943698547092.984) A 3 B 2 mp50 truth 3 -> right route: A
+      e.g. window_m1000000 (1000000.0, 1.0, 957471.4278140048, 0.8519787914655396, 1914944551.3025982, 957473123488.3568) A 3 B 1 mp50 truth 3 -> right route: A
+      e.g. window_m100000 (100000.0, 1.0, 2748.804066694905, 0.017338532122221875, 1738510.4848611818, 274884880.1531677) A 3 B 1 mp50 truth 3 -> right route: A
+      e.g. window_m1000000 (1000000.0, 1.0, 20725.558320208977, 0.03361878832820514, 41451170.885066666, 20725612564.846016) A 2 B 1 mp50 truth 1 -> right route: B
+      e.g. window_m1000000 (1000000.0, 1.0, 66964715.05414833, 2.204422358105166, 133929450590.59656, 66964735536448.234) A 3 B 2 mp50 truth 2 -> right route: B
+      e.g. window_m1000000 (1000000.0, 1.0, 2639674.619635149, 2.607715431083902, 5279354216.63366, 2639679596997.7485) A 2 B 1 mp50 truth 1 -> right route: B
+      e.g. window_m1000000 (1000000.0, 1.0, 1379195.3593938267, 2.3969048476062653, 2758394487.5902295, 1379199128195.5457) A 2 B 0 mp50 truth 1 -> right route: neither
+      e.g. window_m1000000 (1000000.0, 1.0, 742326.6289710749, 0.03274696089089443, 1484653437.9363968, 742326808965.3186) A 1 B 3 mp50 truth 1 -> right route: A
+      e.g. window_m1000000 (1000000.0, 1.0, 3767.931470786926, 0.004468102167685779, 7535871.084967439, 3767939614.179176) A 2 B 1 mp50 truth 3 -> right route: neither
+    route A matches mp50 truth in 25 of 44 ; B in 14 ; neither 5
+(iii) m=0 / Ks<=Kg: cases=601 identically-zero f=1
+    root-count histogram A: {0: 41, 1: 546, 2: 13}  B: {0: 44, 1: 543, 2: 13}
+    max roots found: A 2  B 2
+    count agreement A vs B: 597 of 600 ; agreeing counts with root values differing >1e-6 rel: 0
+    count disagreements: 3
+    adjudication (right route) by tag class: {('m0_or_Ks_le_Kg', 'A'): 3}
+    adjudication by m for window cases: {}
+      e.g. m0_or_Ks_le_Kg (0.2995296759682361, 0.006965806417865955, 0.0, 0.008991734269310488, 4.73432716288123e-12, -0.0007060576506367877) A 1 B 0 mp50 truth 1 -> right route: A
+      e.g. m0_or_Ks_le_Kg (4618.370980898046, 100.39936914995752, 0.27558205765344895, 0.011769516715071827, 7.813744635707092e-07, -1294.2466028114393) A 1 B 0 mp50 truth 1 -> right route: A
+      e.g. m0_or_Ks_le_Kg (0.0, 77.30785492866461, -0.08587663687206437, 3.3262951391772275, 2.141623571814258e-05, -17.209101491079316) A 1 B 0 mp50 truth 1 -> right route: A
+    route A matches mp50 truth in 3 of 3 ; B in 0 ; neither 0
+
+Note: 3-root count in (ii) is the A=3 entry of the histogram above (window cases are tagged window_m*).
+Tags (ii): {'window_m1': 100, 'window_m2': 100, 'window_m3': 100, 'window_m5': 100, 'window_m10': 100, 'window_m30': 100, 'window_m100': 100, 'window_m1000': 100, 'window_m10000': 100, 'window_m100000': 100, 'window_m1000000': 100, 'generic': 1500}
+3-root counts per tag [route A, route B] (of 100 each for window tags): {'window_m1': [100, 100], 'window_m2': [100, 100], 'window_m3': [100, 100], 'window_m5': [99, 99], 'window_m10': [100, 100], 'window_m30': [100, 100], 'window_m100': [100, 100], 'window_m1000': [100, 100], 'window_m10000': [100, 100], 'window_m100000': [100, 98], 'window_m1000000': [79, 87], 'generic': [0, 0]}
+window cases with >=1 of A,B finding 3 roots: see above; window cases total 1100

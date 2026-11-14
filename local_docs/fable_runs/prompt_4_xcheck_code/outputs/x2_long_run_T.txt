@@ -1,0 +1,10 @@
+X2 C3 T (brentq vs closed form) and sign beyond T; 3000 cases
+kinds: abar>0 1000, abar<0 1000, abar=0 with Ks>0 500, abar=0 with Ks=0 500
+T agreement brentq vs closed form (rel 1e-6): ok 2500  bad 0 (of 2500 non-periodic)
+float cancellation: the textbook form (-Ks+sqrt(Ks^2+4|abar|c2))/(2|abar|) differs from the stable form 2 c2/(Ks+sqrt(..)) by >1e-6 rel in 2 cases (the stable form is used above; the naive form loses digits when 4|abar|c2 << Ks^2)
+sign of f beyond T checked at 34200 points (50-digit): violations 0
+bounds L < f <= U checked at 50000 points: violations 0
+abar=0, Ks=0: f periodic (tau vs tau+7 tw) in 500 of 500 cases; sign mix over one period: {'both': 56, 'win_only': 234, 'lose_only': 210, 'zero': 0} (so neither 'always wins' nor 'always loses' in general)
+violations / disagreements listed: 0
+FLAG: the brentq-vs-closed-form comparison uses the same bound function on both sides (true up to algebra);
+      the substantive checks are the sign check beyond T and the bounds L<f<=U at 50 digits.
