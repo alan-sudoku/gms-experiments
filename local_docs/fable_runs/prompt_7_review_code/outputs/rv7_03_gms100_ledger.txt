@@ -1,0 +1,26 @@
+== (a) answer's (A) vs GMS-100 currency, one dead state T0 = T0,op ==
+  T0=150: GMS-100 D1 6.7333e+06, D2 6.6667e+06 J/K; identical to answer's (A): True
+  T0=200: GMS-100 D1 5.0500e+06, D2 5.0000e+06 J/K; identical to answer's (A): True
+  T0=290: GMS-100 D1 3.4828e+06, D2 3.4483e+06 J/K; identical to answer's (A): True
+== (b) claim 8: is T0,eval a pure scale factor in GMS-100? ==
+  heat-transfer S_gen per 1e9 J across 400->300 K: 8.3333e+05 J/K (independent of T0)
+  heat-transfer loss, T0=150: dSigma(D2-D1) = -3.3333e+04 J/K -> prefers D2
+  heat-transfer loss, T0=200: dSigma(D2-D1) = +5.0000e+04 J/K -> prefers D1
+  heat-transfer loss, T0=290: dSigma(D2-D1) = +1.2759e+05 J/K -> prefers D1
+  dissipated work,    T0=150: dSigma(D2-D1) = +6.6667e+04 J/K -> prefers D1
+  dissipated work,    T0=200: dSigma(D2-D1) = +5.0000e+04 J/K -> prefers D1
+  dissipated work,    T0=290: dSigma(D2-D1) = +3.4483e+04 J/K -> prefers D1
+  -> with T0-dependent lost work the GMS-100 ranking changes with T0; claim 8's falsifier
+     ('any rank change means the code re-references losses') would misdiagnose this.
+== (c) claim 3 under DEF-DEAD-STATE (one T0 for both phases) ==
+  T0=150: GMS-100 Sigma D1 0.6667, D2 0.4000 J/K -> prefers D2
+  T0=220: GMS-100 Sigma D1 0.4545, D2 0.2727 J/K -> prefers D2
+  T0=290: GMS-100 Sigma D1 0.3448, D2 0.2069 J/K -> prefers D2
+  per-phase T0 (currency B) needs two dead states in one evaluation, which DEF-DEAD-STATE forbids.
+== (d) claim 6 in the GMS-100 ledger (per mol of x; placeholder numbers) ==
+  R_rec=0.0: init 10558.0, horizon EOL 4442.0, init+EOL 15000.0 J/(mol K); CExC/T0 = 15000.0; retired-unit EOL 15000.0
+  R_rec=0.5: init 10558.0, horizon EOL 2971.0, init+EOL 13529.0 J/(mol K); CExC/T0 = 15000.0; retired-unit EOL 8250.0
+  R_rec=1.0: init 10558.0, horizon EOL 1500.0, init+EOL 12058.0 J/(mol K); CExC/T0 = 15000.0; retired-unit EOL 1500.0
+  -> init uses CExC - b_ch (claim 6's quantity); with R_rec = 0 init + EOL = CExC/T0 exactly,
+     so CExC over the life is not an overstatement once dispersal is counted.
+  claim 6's 'overstatement' b_ch/T_ref for this placeholder: 2979.7 J/(mol K) (= the dispersal charge, moved in time and place)

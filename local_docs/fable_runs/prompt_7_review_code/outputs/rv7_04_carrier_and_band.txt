@@ -1,0 +1,31 @@
+== (a) c for a heat resource at T_h used in an environment at T0 ==
+  T_h[K]  T0[K]   c_E(energy)  c_X0(exergy@T0)  c_Xref(exergy@T_ref)  (B) T_ref/T0
+     400    150       1.6000           1.0000                0.4074       1.9877
+     400    200       2.0000           1.0000                0.5093       1.4907
+     400    290       3.6364           1.0000                0.9259       1.0281
+     600    150       1.3333           1.0000                0.6708       1.9877
+     600    200       1.5000           1.0000                0.7546       1.4907
+     600    290       1.9355           1.0000                0.9737       1.0281
+    1000    150       1.1765           1.0000                0.8257       1.9877
+    1000    200       1.2500           1.0000                0.8773       1.4907
+    1000    290       1.4085           1.0000                0.9885       1.0281
+  -> c_E >= 1 always, but it is an energy ratio; on an exergy basis valued at T_ref, c < 1
+     whenever T0 < T_ref (a cold environment lets the same stock deliver more work), so the
+     claim 'c_k >= 1, c_k = 1 is a physical limit' does not hold across environments.
+  with a second-law efficiency 0.5: c_Xref(600 K, 150 K) = 1.3416
+  free flux (sunlight) at the margin: c = 0 per J (no stock drawn; hardware already in CExC)
+== (b) does the band (1, r) protect against claim 4's failure mode? ==
+  claim 4       : c* = 1.250, r = 1.988, band flags undecided: True; (A) D2, (B) D1, true at c_op=3.0: D1
+  c*=2.5, c_op=3: c* = 2.500, r = 1.988, band flags undecided: False; (A) D2, (B) D2, true at c_op=3.0: D1
+  c*=0.8, c_op=.5: c* = 0.800, r = 1.988, band flags undecided: False; (A) D2, (B) D2, true at c_op=0.5: D1
+  Rules compared (true c_op drawn inside the declared range):
+   verdict rule : decide by sign(A) unless c* in (1, r), then 'undecided'
+   range rule   : decide by sign(dU + c dO) for c in [lo, hi] unless c* in (lo, hi), then 'undecided'
+  c_op ~ U(1.0,4.0): (A) alone wrong 11.68 % | verdict rule: decided-but-wrong  2.74 %, undecided 10.38 % | range rule: decided-but-wrong  0.00 %, undecided 17.17 %
+  c_op ~ U(2.0,3.0): (A) alone wrong 12.90 % | verdict rule: decided-but-wrong  2.52 %, undecided 10.38 % | range rule: decided-but-wrong  0.00 %, undecided  4.38 %
+  c_op ~ U(0.0,1.0): (A) alone wrong 11.13 % | verdict rule: decided-but-wrong 11.13 %, undecided 10.38 % | range rule: decided-but-wrong  0.00 %, undecided 24.99 %
+  c_op ~ U(1.0,1.5): (A) alone wrong  3.55 % | verdict rule: decided-but-wrong  0.00 %, undecided 10.38 % | range rule: decided-but-wrong  0.00 %, undecided  6.50 %
+== (c) several operational environments ==
+  claim 3 as a two-environment case: dU = 0, dO_k = [100.0, -60.0] J; sign A +1, sign B -1 -> disagree with no upstream trade-off; claim 5's ratio |dU|/|dO| = 0.0, outside (1, r)
+  MC, upstream + phases at 290 and 150 K: A/B disagree 10.80 %; claim-5 band on aggregated dO with r = max r_k catches 46.0 % of them; flags 8.88 % of all cases
+  box test c_k in [1, r_k]: catches 100.0 % of A/B disagreements (100 % by construction), flags 11.39 % of all cases

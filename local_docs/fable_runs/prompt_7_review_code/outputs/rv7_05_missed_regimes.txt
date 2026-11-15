@@ -1,0 +1,20 @@
+== (a) deep-space dead state ==
+  T0 = 290.000 K: r =    1.028, (A)/(B) disagree  0.46 % (equal scales, rv02 shapes)
+  T0 = 150.000 K: r =    1.988, (A)/(B) disagree 10.44 % (equal scales, rv02 shapes)
+  T0 =  50.000 K: r =    5.963, (A)/(B) disagree 19.79 % (equal scales, rv02 shapes)
+  T0 =   2.725 K: r =  109.413, (A)/(B) disagree 24.82 % (equal scales, rv02 shapes)
+== (b) 1 J of dissipated work rejected by a radiator to a 2.725 K sink ==
+  T_rad = 290 K: S_gen to radiator 3.4483e-03, incl. emitted radiation 4.5977e-03, incl. absorption at sink 3.6697e-01 J/K (span x106)
+     consistent pairs: T_rad*S_surf = 1.000 J, T_CMB*S_sink = 1.000 J; inconsistent 150 K * S_surf = 0.517 J, 290 K * S_sink = 106.4 J
+  T_rad = 150 K: S_gen to radiator 6.6667e-03, incl. emitted radiation 8.8889e-03, incl. absorption at sink 3.6697e-01 J/K (span x55)
+     consistent pairs: T_rad*S_surf = 1.000 J, T_CMB*S_sink = 1.000 J; inconsistent 150 K * S_surf = 1.000 J, 290 K * S_sink = 106.4 J
+== (c) heat-transfer loss: 1 J from 400 K to a 290 K radiator ==
+  S_gen = 9.4828e-04 J/K (fixed by the process)
+  T0 = 290.000 K: lost work T0*S_gen = 2.7500e-01 J
+  T0 = 150.000 K: lost work T0*S_gen = 1.4224e-01 J
+  T0 =   2.725 K: lost work T0*S_gen = 2.5841e-03 J
+  -> for heat-transfer losses the lost work in (A) moves by x106 between a 290 K and a 2.725 K dead state; dissipated work does not move.
+== (d) upstream site ambient vs T_ref ==
+  T_site = 273.15 K: W/T_site over W/T_ref = 1.0915
+  T_site = 288.15 K: W/T_site over W/T_ref = 1.0347
+  T_site = 313.15 K: W/T_site over W/T_ref = 0.9521

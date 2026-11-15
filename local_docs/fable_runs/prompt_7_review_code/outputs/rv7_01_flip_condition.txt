@@ -1,0 +1,53 @@
+== 1. rv02 reproduction ==
+rv02 disagreement fraction: 5.06 %  (5057 of 100000)
+zero signs: A==0 0, B==0 0, dO==0 0, dU==0 0
+flip via (A,B) form == rv02 flip on every case: True
+== 2. claim 5 'if and only if' on rv02 cases ==
+flipped cases: 5057, cases meeting the inequality: 5057
+flipped but inequality false (counterexamples to 'only if'): 0
+inequality true but not flipped (counterexamples to 'if'):    0
+margin bound |dU+dO| < (r-1)|dO| holds on 5057 of 5057 flipped cases
+break-even c* = -dU/dO on flipped cases: min 1.0001, max 1.9623 (must lie in (1, r<=1.988))
+|A margin| / |dU| on flipped cases: median 0.169, max 0.490
+== 2b. boundary cases (exact) ==
+  c*=1 (A tie)  : sign A +0, sign B +1, np.sign-style 'disagree' = True, strict-opposite = False
+  c*=r (B tie)  : sign A -1, sign B +0, np.sign-style 'disagree' = True, strict-opposite = False
+  dO=0          : sign A +1, sign B +1, np.sign-style 'disagree' = False, strict-opposite = False
+  dU=0          : sign A +1, sign B +1, np.sign-style 'disagree' = False, strict-opposite = False
+== 4a. rv02 flip fraction per T0 bin (same cases) ==
+  T0 in [150,170) K: r in [1.754,1.988], flip 10.29 %
+  T0 in [170,190) K: r in [1.569,1.754], flip  7.97 %
+  T0 in [190,210) K: r in [1.420,1.569], flip  6.34 %
+  T0 in [210,230) K: r in [1.296,1.420], flip  4.77 %
+  T0 in [230,250) K: r in [1.193,1.296], flip  3.13 %
+  T0 in [250,270) K: r in [1.104,1.193], flip  1.91 %
+  T0 in [270,290) K: r in [1.028,1.104], flip  0.95 %
+rv02 flip fraction conditional on a trade-off (dU*dO<0): 10.11 % (trade-off share 50.0 %)
+rv02 implicit scale ratio k = 2e6/(T0*1e4): 0.690 .. 1.333
+== 4b. flip fraction vs scale ratio k (upstream/operational), rv02 shapes ==
+  k     T0=150  T0=200  T0=250  T0=290
+  0.01    0.16%    0.11%    0.06%    0.01%
+  0.1     1.60%    1.05%    0.50%    0.08%
+  0.3     4.35%    2.82%    1.35%    0.22%
+  0.5     6.68%    4.34%    2.03%    0.33%
+  0.7     8.58%    5.45%    2.60%    0.44%
+  1      10.39%    6.41%    2.91%    0.45%
+  1.4    11.13%    6.49%    2.78%    0.42%
+  2      10.37%    5.66%    2.33%    0.33%
+  3       8.23%    4.28%    1.74%    0.26%
+  10      3.03%    1.54%    0.63%    0.09%
+  100     0.34%    0.17%    0.07%    0.01%
+  max over k at T0=150 K: 10.99 % at k = 1.31
+== 4c. other magnitude distributions, k = 1 ==
+  rv02    : T0=150: 10.39%  T0=200:  6.41%  T0=290:  0.45%
+  normal  : T0=150: 10.22%  T0=200:  6.23%  T0=290:  0.45%
+  logmag4 : T0=150:  3.59%  T0=200:  2.12%  T0=290:  0.15%
+== 4d. illustration (not a bound): trade-off cases whose |dU|/|dO| is log-uniform over one decade centred on 1 ==
+  T0=150: P(1<ratio<r) = 0.298  -> flip share of trade-offs 29.8 %
+  T0=200: P(1<ratio<r) = 0.173  -> flip share of trade-offs 17.3 %
+  T0=290: P(1<ratio<r) = 0.012  -> flip share of trade-offs 1.2 %
+== 4e. close calls in rv02: flip share among cases whose (A) margin is small ==
+  trade-off and |dU+dO| < 0.05|dU|:  1553 cases, flipped  49.5 %
+  trade-off and |dU+dO| < 0.10|dU|:  3139 cases, flipped  49.3 %
+  trade-off and |dU+dO| < 0.25|dU|:  8099 cases, flipped  43.9 %
+  trade-off and |dU+dO| < 0.50|dU|: 16383 cases, flipped  30.9 %

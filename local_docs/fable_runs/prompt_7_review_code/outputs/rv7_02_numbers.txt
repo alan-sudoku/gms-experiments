@@ -1,0 +1,22 @@
+== claim 5 / verdict: r = T_ref/T0 ==
+  r(150 K) = 1.9877
+  r(290 K) = 1.0281
+== claim 2: resistors dissipating 1 J ==
+  S_gen at 150 K = 6.667e-03 J/K
+  S_gen at 300 K = 3.333e-03 J/K
+== claim 3: dissipated work, one battery ==
+  design 1: 100 J at 290 K -> 0.3448 J/K; design 2: 60 J at 150 K -> 0.4000 J/K
+  (B) prefers design 1; battery draw ratio 100/60 = 1.6667 (answer: 67 % more)
+== claim 4: T0,op = 150 K ==
+  (A) totals: D1 1010 MJ, D2 1000 MJ -> prefers D2
+  c_op = 3: D1 1030 MJ, D2 1100 MJ -> true best D1
+  break-even c* = -dU/dO = 1.2500
+  (B): D1 3.4207 MJ/K, D2 3.5196 MJ/K -> prefers D1
+  (B) implicit rate on operation relative to upstream = T_ref/150 = 1.9877
+== claim 6: Al chemical exergy ==
+  33 MJ/kg / T_ref = 0.1107 MJ/(kg K)  (+-10 %: 0.0996 .. 0.1218)
+  reviewer recall (UNSURE): 888.4 kJ/mol / 26.98 g/mol = 32.93 MJ/kg
+  revised value (search snippet, UNSURE): 795.7 kJ/mol / 26.98 g/mol = 29.49 MJ/kg -> 0.0989 MJ/(kg K); offset from 33 MJ/kg: -10.6 %
+  revised value (search snippet, UNSURE): 796.1 kJ/mol / 26.98 g/mol = 29.51 MJ/kg -> 0.0990 MJ/(kg K); offset from 33 MJ/kg: -10.6 %
+== claim 7: dissipated work, T0 convention 150 vs 290 K ==
+  S_gen ratio = 290/150 = 1.9333
