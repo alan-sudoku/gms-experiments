@@ -429,3 +429,24 @@ Count: 23 of 34 claims changed; 11 unchanged.
 **Rows affected by b but not recomputed** (direction and rough size): C7 maxima (lower by about 10 %); C9 parabolic factors (lower; rough size as C6, about 10 to 15 %); C11 full grid (higher by up to about 25 % at 0.01 Hz, a few per cent at 1 Hz); C13 other PF and r cases and the cube-root variant (pit-fatigue lives longer by up to about 2; perforation unchanged); C14 (smaller q, so a gain no larger than 8 %); C15 lives (longer; threshold given); B1 equal-life points s* (lower by up to about 10 % at φ = 1000); B2 medians (somewhat higher, since the curve is less steep); B5 rainflow ratios (closer to 1); E1 (independent of b); E5 thermal numbers (independent of b).
 
 **Work list coverage.** 1: section 2 and M2.5, M2.7, M2.9, M3.3, M3.6 (verdict and defaults unchanged). 2: M1.8 and section 2. 3: M2.7, M3.6. 4: M1.6. 5: M2.5, M2.7. 6: M2.9. 7: M2.10. 8: M1.12. 9: M3.6. 10: evidence classes in the header and in each claim. 11: M4.3.
+
+---
+
+## Errata (S5)
+
+Added by the orchestrator on 2026-11-15 (user decision D7, `prompt_6_synthesis.md`). The text above is unchanged; these corrections from `prompt_6_review.md` take precedence. Numbers are at b = −0.102 / −0.124 unless stated.
+
+1. **Verdict 2, third bullet; M2.3; M3.2 row 6 (review #1).** "(1 + s)^m = 894 / 268 at s = 1" is the slow case alone, not the error of the minimum rule. At s = 1 the minimum rule overstates life by 100 (φ = 9), 28 (33), 7.9 (129) and 1.87 (1025) at b = −0.102 (30.6 down to 1.26 at b = −0.124); Miner over separate cases by 90 to 1.9. The worst case over s is about 318 / 97 near s ≈ 0.8 (φ = 9). (1 + s)^m approximates the error only where the slow case dominates (s below about φ^(−1/m)). `[b4]`, `prompt_6_review_code/rv01_core_independent.py` [conc].
+2. **Verdict 2, fifth bullet; M2.5; M2.7; M4.2 (review #2).** "At most 4.38 / 3.91 (wall) and 6.77 / 5.96 (round strut)" covers linear recession under axial or membrane load only. Round member in bending or torsion (p = 3): 8.91 `[c6]`. Parabolic recession: 11.7 (wall) and 25.5 (strut) at their maxima (ρ = 1); 42.2 / 33.0 with p = 3. "F_env stays above the section-loss maximum at every point of the range" holds only for linear recession with p ≤ 2. M4.2's "worst-case error 1.84 to 4.38" becomes 1.84 to 8.91 (linear) and up to 42.2 (parabolic). `[rv01]` [sec], [env].
+3. **M4.2 Rule W (review #3).** Rule W has no pit-initiated-fatigue term. For a 3 mm wall with PF = 3 at 10 µm/yr, Rule W gives 12.7 yr against 2.86 yr from the M2.9 pit model (4.45 times non-conservative; 2.42 at b = −0.124). Perforation is an upper bound on life, not a conservative cap. Decision D3: a pitting alloy without a declared pit-fatigue life returns undetermined; a declared one enters the minimum. `[rv01]` [pit].
+4. **Verdict 5 (review #4).** b changes numbers by up to 84 % (pit life factor, ratio 0.163), 70 % ((1 + s)^m at s = 1), 57 % (fatigue share) and +54 % (E4 margin with the environment curve on g), not "about 40 %". No default and no ranking changes. `[s4b]`.
+5. **Provenance (review #5).** The S4 scripts make 33 comparison lines with S2 (25 + 8), not 37; all 33 reproduce.
+6. **M1.6 (review #6).** The upper bound reaches 32.7 times the rainflow value, not 42.5 (42.5 is upper bound over separate sum). `prompt_6_review_code/rv02_rainflow_a11.py`.
+7. **M2.10, C14 null case (review #8).** With q = 0, recession still ends the part at t_c, so the null life is min(τ₀, t_c), and τ/τ₀ = 1/ρ for ρ ≥ 1. The script was right; the null test's expected value was wrong for ρ ≥ 1.
+8. **Rows not recomputed (review #9).** C15: lives get shorter, not longer (τ/τ₀ 1.053 → 1.043 at ρ = 0.01; 1.388 → 1.289 at 0.05). C9: 8 to 21 % lower (18 to 21 % at the ρ = 1 maxima), not 10 to 15 %. B1 s*: up to 14 % at φ = 1000, not 10 %. `prompt_6_review_code/rv03_not_recomputed_rows.py`.
+9. **M3.4, M2.11 (review #10).** The E4 bound check is an identity, not evidence (class A). M2.11's lower bound x_c ≥ x* is proved (class P): the integrand is increasing, so ρ ≤ x_c(1 − x_c)^(−q).
+10. **M2.10 (i) (review #11).** σ ∝ (1 − x)^(+1) holds for imposed curvature or deflection in bending only; under imposed axial displacement p = 0 and there is no gain over τ₀.
+11. **M2.9 (review #12).** a₀ uses the full range at R = −1 with a ΔK_th quoted near R = 0.1. With the tensile part only, a₀ = 477 / 1187 µm, the 100 µm pit life factor falls to 2.5 / 1.4, and perforation governs for both b.
+12. **M4.3 (review #13).** The Rule R flag band for concurrent hysteresis (0.7 to 1.1) is in-sample; a phase sweep at φ = 3 gives 0.33 to 1.33 (n = 2) and 0.27 to 2.12 (n = 3).
+13. **Verdict 2, fourth bullet (review #14).** "Pitting at least 10" equals the input pitting factor PF = 10 by construction; it is not a computed effect.
+14. **M3.6 (review #17).** The 0.181 margin uses τ_LB; with the exact τ_c it is 0.244 / 0.271.

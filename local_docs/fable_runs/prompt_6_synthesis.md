@@ -43,3 +43,13 @@ Minor findings that matter downstream: the Rule R flag band for concurrent hyste
 - **D5, GMS-410 brief note.** M3's bounds feed `BoundedPair` (upper for g, lower for s). Errors common to both sides (same alloy, same environment) are bounded jointly. No new verdict class; INDETERMINATE covers "undetermined".
 - **D6, plan change V16.** Record the outcome; Phase 6 open items, none blocking 0.1: the aluminium air and saline S–N pair (decisive), Dowling b, pre-pitted data with the ΔK convention, Lazan n(σ), the Opila–Hann conversion, alumina film constants, an out-of-sample test of Rule R and Rule W. OQ-20 resolved by D1.
 - **D7, housekeeping.** Add an "Errata (S5)" section to `prompt_6_answer.md` with the corrected values of #1, #2, #4 and the minor numeric findings (#5, #6, #8, #9 C15 direction, #10, #14, #17), pointing to `prompt_6_review.md`. No Fable S4b: three MAJORs are magnitudes S5 already recomputed, and the fourth is the D3 choice.
+
+## Decisions recorded (user, 2026-11-15)
+
+D1 (a), D3 (a), and D2, D4–D7 accepted as proposed. Recorded:
+
+- D1, D3, D4 → `drafting_notes_0.1.md` §A, E26 (new document GMS-240 owns Rule R, Rule W with the pitting rule, and the reject list); `orchestrator_state.md` §2 (GMS-240 row, W2a, after GMS-220 r2), §3 (OQ-20 resolved) and §4 (GMS-240 brief items (a)–(j)).
+- D2 → `drafting_notes_0.1.md` §A, E25 (GMS-220: Miner over load cases, concurrency and cycle counting, environment-valid S–N constants); `orchestrator_state.md` §1 next step 0 (the pending GMS-220 fix pass applies E20–E23 and E25; r2 fidelity rows include E25).
+- D5 → `orchestrator_state.md` §4, GMS-410 brief note (undetermined through `BoundedPair`, common errors bounded jointly).
+- D6 → `plan_v2.md` V16, §3 document map (GMS-240 row; GMS-500 depends on 240) and the folder tree.
+- D7 → "Errata (S5)" section at the end of `prompt_6_answer.md`; no Fable S4b.
