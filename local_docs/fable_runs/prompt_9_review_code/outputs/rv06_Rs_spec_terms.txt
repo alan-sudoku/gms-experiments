@@ -1,0 +1,24 @@
+(a) R_s under the answer's rule, read with the spec's terms
+  recurring stages of Sigma_s,init applied to restored stock: transport only, M_s b_tr / T0 (restored stock is already extracted; virgin make-up of the unrecovered fraction sits in Sigma_EOL^ret, as w_conv,i excludes w_lost,ext,i in R_g)
+  R_s = (M_s*b_tr - n*(CExC*(R_rec - 1) - R_rec*w_rm))/T_0
+
+(b) life-cycle flow count on side s with m_s replacements (coefficients of n/T0 per flow)
+  virgin extraction w_ext   : -n*(R_rec*m - m - 1)
+  dispersal b_ch            : -n*(R_rec - 1)*(m + 1)
+  remelt w_rm               : R_rec*n*(m + 1)
+  transport b_tr            : M_s*(m + 1)
+  -> extraction n (1 + m (1 - R_rec)) times, dispersal of the unrecovered fraction m + 1 times, remelt m + 1 times, transport m + 1 units: each physical flow once, same counting as GMS-100 section 5 for g
+
+(c) misreadings and their excess per replacement (placeholder numbers)
+  misreading A (extraction recurring): excess = n*(CExC - b_ch)/T_0  = n w_ext / T0
+  block literal list: excess = n*(-CExC*R_rec + CExC + R_rec*w_rm)/T_0  = Sigma_EOL^ret counted twice
+  placeholders: n = 1000 mol, CExC = 4.0e5 J/mol, b_ch = 1.3e5 J/mol, w_rm = 2.0e4 J/mol, R_rec = 0.6, M_s = 60 kg, b_tr = 1.0e6 J/kg, T0 = 298.15 K, m_s = 2
+  R_s (rule) = 7.7813e+05 J/K; Sigma_s,init = 1.1068e+06 J/K; Sigma_s,EOL = 2.1466e+05 J/K
+  excess A per replacement = 9.0558e+05 J/K; over m_s = 2: 1.8112e+06 J/K
+  excess block per replacement = 5.7689e+05 J/K; over m_s = 2: 1.1538e+06 J/K
+  both raise Sigma_s, lower f, favour g: the unsafe direction for 'g wins'
+
+(d) omitted stages under the asymmetric boundary (against R_g's stage list)
+  omega_init = Sigma_s_comp + Sigma_s_mfg + Sigma_s_tool + n*w_conv_x/T_0
+  omega_rep  = Sigma_s_mfg + n*w_conv_x/T_0
+  omega_init - omega_rep = Sigma_s_comp + Sigma_s_tool >= 0: the stages differ, so omega* = f/(m_s+1) is a per-unit mean; the exact break-even is omega_init + m_s omega_rep = f

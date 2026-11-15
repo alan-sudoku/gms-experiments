@@ -1,0 +1,29 @@
+(a) symbolic sign of f''
+  f'' = -K_g/(4*(-a + tau)**(3/2)) + K_s/(4*(-b + tau)**(3/2))
+  f'' * alpha^(3/2) beta^(3/2) * 4 = -K_g*beta**(3/2) + K_s*alpha**(3/2)
+  so sign f'' = sign(D), D = Ks^2 alpha^3 - Kg^2 beta^3 (Kg, Ks >= 0)
+  d/dtau [(tau-a)/(tau-b)] = (a - b)/(b - tau)**2  -> strictly monotone iff a != b
+  zero of f'': (tau-a)/(tau-b) = (Kg/Ks)^(2/3) (answer's form); at most one zero when a != b
+  a = b: f'' = (Ks - Kg)/(4 (tau-a)^(3/2)), no zero unless Kg = Ks, then f is linear (f == 0 possible)
+  Kg = 0: f'' > 0 (convex, <= 2 roots); Ks = 0: f'' < 0 (concave, <= 2 roots)
+
+(b) generalised inflection test and reduction to the plan's test
+  D at left end (alpha -> 0+, beta = m tw): -K_g**2*m**3*tau_w**3  < 0
+  D at right end (alpha = tw, beta = (m+1) tw): -tau_w**3*(K_g**2*m**3 + 3*K_g**2*m**2 + 3*K_g**2*m + K_g**2 - K_s**2)  > 0 iff Ks^2 > Kg^2 (m+1)^3 (plan step 1)
+  General test: interior inflection iff sign D(L+) != sign D(U-), with alpha, beta the two ages at the segment ends; ages at the ends are differences of integer multiples, so the test can be made exact
+
+(c)-(d) random search for > 3 roots and three-root examples (exact method; grid only to confirm examples)
+  max exact root count over 1500 random segments: 3
+  three-root example, a < b: a=0.0000, b=0.7413, segment (0.7413,2.7020), Kg=4.5056, Ks=1.1467, c1=-1.07898, c0=-2.910667: exact roots 3, float grid sign changes 3, f'(L+) = -4.083e+14
+
+(e) end-point limits of f' and jumps
+  just after an s restart (beta -> 0+, alpha > 0): f' ~ -Ks/(2 sqrt beta) -> -inf (answer correct)
+  just after a g restart: f' -> +inf; coincident restart: f' ~ (Kg - Ks)/(2 sqrt dt), sign of Kg - Ks, finite (c1) if Kg = Ks -> plan step 2 ('sign at the left end is +1') must be generalised
+  at tau = i tau_w,s: Ks term continuous (Ks sqrt(tau_w,s) + Ks sqrt(0+)); only -R_s jumps; f(i tau_w,s) is the left value, so a sign change across the jump has no root (answer correct)
+
+(f) segment count on [0, tau_max]
+  tau_w,g = 6, tau_w,s = 4, tau_max = 20: g breakpoints [6, 12, 18], s breakpoints [4, 8, 12, 16], coincident [12]; segments = 7 = m_g + m_s + 1 - coincidences = 3 + 4 + 1 - 1
+
+(g) if an age-linear rate term (beta_k a, restarting clock) were added to the profile
+  f''' = 3*K_g/(8*(-a + tau)**(5/2)) - 3*K_s/(8*(-b + tau)**(5/2))  -> same ratio argument: at most one zero of f''' (a != b),
+  so f'' has at most 2 zeros and f at most 4 roots per segment: the argument no longer gives 3 (whether 4 occur: UNSURE)
