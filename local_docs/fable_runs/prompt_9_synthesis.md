@@ -51,6 +51,8 @@ Reviewer counts: 0 BLOCKER, 5 MAJOR, 8 MINOR. All 7 review scripts reproduce byt
 
 ## Decisions for the user
 
+**Decided 2026-11-15: the user accepted the recommendation for D1–D4.** Recorded as E29 in drafting notes §A (applied to GMS-100 the same day: incumbent evaluated unreplaced, "candidate wins" kept when τ_wearout,s < τ, R_s Open item; lint 0 issues, 64 tests pass); OQ-3 narrowed and brief notes in `orchestrator_state.md` §3 and §4; plan V19 and Q4 row.
+
 | # | Decision | Options | Recommendation |
 |---|---|---|---|
 | D1 | Incumbent with a finite life (review finding 5) | (a) New correction E29 (GMS-100): replace the "τ_wearout,s < ∞ → no outcome" row with: τ_wearout,s ≥ τ → evaluate with m_s = 0; τ_wearout,s < τ → evaluate with m_s = 0, the candidate wins if f < 0, otherwise no outcome. Add the reason (f ≤ f_∞ when Σ̇_s is constant, K_ox,s ≥ 0, R_s ≥ 0). Apply the same restriction to REQ-LIFECYCLE-SHARED-INFRASTRUCTURE-VERDICT's "incumbent wins" row. DEF-LIFECYCLE-SIDE-PROFILE and the validity of EQ-LIFECYCLE-PARITY-FUNCTION follow. (b) The answer's verdict (evaluate with m_s > 0): unsafe in regimes A and C. (c) Leave as is | (a). It returns a determinate, safe verdict that is lost today, with no new symbol, no R_s and no solver change |
