@@ -1,0 +1,91 @@
+rv01: independent recomputation (ODE+event, brentq, bounded optimisation). Level derived.
+
+==========================================================================================
+b = -0.102  m = 9.8039  sigma_a0 = 108.7032 MPa  tau0 = 15.8440 yr
+[sec] wall, membrane (p=1)                     q=  9.804  linear: max F_min = 4.3782 at rho = 1.0000 | parabolic: max F_min = 11.6596 at rho = 1.0000
+[sec] round strut axial / wall bending (p=2)   q= 19.608  linear: max F_min = 6.7661 at rho = 1.0000 | parabolic: max F_min = 25.5122 at rho = 1.0000
+[sec] round strut bending or torsion (p=3)     q= 29.412  linear: max F_min = 8.9123 at rho = 1.0000 | parabolic: max F_min = 42.2430 at rho = 1.0000
+[sec] parabolic, q = m, F_min at rho = 0.01, 0.1, 1, 10: 1.703, 3.533, 11.660, 5.599
+[pair] g: x_e = 0.15017 F_cur = 7.0336 ; s: x_e = 0.04244 F_cur = 1.2443 ; verdict error w=1/0.5/0.1: 5.6526 / 3.5795 / 1.5651
+[E4] x* = 0.109263 tau_LB = 1.6389 yr ; c_U/c_model = 5.5259 -> margin 0.1810 ; exact c_true/c_model = 4.1052 -> margin with exact life 0.2436
+[env] F_env(0.9, 0.4) = 154.106 ; continuous planner box k5 in [0.8,1], k8 in [0.25,0.6]: 35.86 to 459.18
+[env] k8 (k5 = 0.9) at which F_env equals linear strut p=2       6.766: k8 = 0.8194 ; planner-box low end 35.86 above it
+[env] k8 (k5 = 0.9) at which F_env equals linear strut p=3       8.912: k8 = 0.7915 ; planner-box low end 35.86 above it
+[env] k8 (k5 = 0.9) at which F_env equals parabolic strut p=2    25.512: k8 = 0.6704 ; planner-box low end 35.86 above it
+[env] k8 (k5 = 0.9) at which F_env equals parabolic wall p=1     11.660: k8 = 0.7628 ; planner-box low end 35.86 above it
+[conc] factor by which separate treatment overstates life, relative to the block (envelope) life:
+    s=0.1 phi=    9: (1+s)^m =     2.55  slow-case/block =     2.55  min-rule/block =     2.55  Miner/block =     2.55
+    s=0.1 phi=   33: (1+s)^m =     2.55  slow-case/block =     2.55  min-rule/block =     2.55  Miner/block =     2.55
+    s=0.1 phi=  129: (1+s)^m =     2.55  slow-case/block =     2.55  min-rule/block =     2.55  Miner/block =     2.55
+    s=0.1 phi= 1025: (1+s)^m =     2.55  slow-case/block =     2.55  min-rule/block =     2.55  Miner/block =     2.55
+    s=1.0 phi=    9: (1+s)^m =   893.87  slow-case/block =   901.87  min-rule/block =   100.21  Miner/block =    90.19
+    s=1.0 phi=   33: (1+s)^m =   893.87  slow-case/block =   925.87  min-rule/block =    28.06  Miner/block =    27.23
+    s=1.0 phi=  129: (1+s)^m =   893.87  slow-case/block =  1021.87  min-rule/block =     7.92  Miner/block =     7.86
+    s=1.0 phi= 1025: (1+s)^m =   893.87  slow-case/block =  1917.87  min-rule/block =     1.87  Miner/block =     1.87
+    phi=    9: max over s of min-rule/block =   317.72 at s = 0.7992 ; of Miner/block =   159.91 at s = 0.7796
+    phi=   33: max over s of min-rule/block =   182.67 at s = 0.7000 ; of Miner/block =    92.84 at s = 0.6730
+    phi=  129: max over s of min-rule/block =   107.02 at s = 0.6091 ; of Miner/block =    55.16 at s = 0.5770
+    phi= 1025: max over s of min-rule/block =    51.89 at s = 0.4931 ; of Miner/block =    27.47 at s = 0.4569
+[pit] full range 2 sigma_a (S2)                  a0 =   119.22 um ; life factor at 100 um =  19.802 ; thin wall PF10 r10: pit-fatigue 1.310 yr vs t_perf 1.500 yr
+[pit] Rule W check, 3 mm wall, one side, PF = 3, r = 10: Rule W = min(tau_c 12.733, t_perf 100.0) = 12.733 yr ; pit-initiated fatigue 2.860 yr ; Rule W / pit = 4.45
+[pit] positive part sigma_a (E647 R<0 practice)  a0 =   476.88 um ; life factor at 100 um =   2.543 ; thin wall PF10 r10: pit-fatigue 3.194 yr vs t_perf 1.500 yr
+[disp] rho* (D(t_c) = 1 under sigma ~ (1-u)^+1) = 0.09256
+
+==========================================================================================
+b = -0.124  m = 8.0645  sigma_a0 = 68.9037 MPa  tau0 = 15.8440 yr
+[sec] wall, membrane (p=1)                     q=  8.065  linear: max F_min = 3.9088 at rho = 1.0000 | parabolic: max F_min = 9.5386 at rho = 1.0000
+[sec] round strut axial / wall bending (p=2)   q= 16.129  linear: max F_min = 5.9562 at rho = 1.0000 | parabolic: max F_min = 20.2455 at rho = 1.0000
+[sec] round strut bending or torsion (p=3)     q= 24.194  linear: max F_min = 7.7911 at rho = 1.0000 | parabolic: max F_min = 33.0028 at rho = 1.0000
+[sec] parabolic, q = m, F_min at rho = 0.01, 0.1, 1, 10: 1.575, 3.052, 9.539, 4.486
+[pair] g: x_e = 0.17072 F_cur = 6.1873 ; s: x_e = 0.04389 F_cur = 1.2033 ; verdict error w=1/0.5/0.1: 5.1419 / 3.2620 / 1.4885
+[E4] x* = 0.124261 tau_LB = 1.8639 yr ; c_U/c_model = 4.9773 -> margin 0.2009 ; exact c_true/c_model = 3.6966 -> margin with exact life 0.2705
+[env] F_env(0.9, 0.4) = 97.371 ; continuous planner box k5 in [0.8,1], k8 in [0.25,0.6]: 24.09 to 289.52
+[env] k8 (k5 = 0.9) at which F_env equals linear strut p=2       5.956: k8 = 0.7991 ; planner-box low end 24.09 above it
+[env] k8 (k5 = 0.9) at which F_env equals linear strut p=3       7.791: k8 = 0.7674 ; planner-box low end 24.09 above it
+[env] k8 (k5 = 0.9) at which F_env equals parabolic strut p=2    20.245: k8 = 0.6434 ; planner-box low end 24.09 above it
+[env] k8 (k5 = 0.9) at which F_env equals parabolic wall p=1     9.539: k8 = 0.7426 ; planner-box low end 24.09 above it
+[conc] factor by which separate treatment overstates life, relative to the block (envelope) life:
+    s=0.1 phi=    9: (1+s)^m =     2.16  slow-case/block =     2.16  min-rule/block =     2.16  Miner/block =     2.16
+    s=0.1 phi=   33: (1+s)^m =     2.16  slow-case/block =     2.16  min-rule/block =     2.16  Miner/block =     2.16
+    s=0.1 phi=  129: (1+s)^m =     2.16  slow-case/block =     2.16  min-rule/block =     2.16  Miner/block =     2.16
+    s=0.1 phi= 1025: (1+s)^m =     2.16  slow-case/block =     2.16  min-rule/block =     2.16  Miner/block =     2.16
+    s=1.0 phi=    9: (1+s)^m =   267.71  slow-case/block =   275.71  min-rule/block =    30.63  Miner/block =    27.57
+    s=1.0 phi=   33: (1+s)^m =   267.71  slow-case/block =   299.71  min-rule/block =     9.08  Miner/block =     8.81
+    s=1.0 phi=  129: (1+s)^m =   267.71  slow-case/block =   395.71  min-rule/block =     3.07  Miner/block =     3.04
+    s=1.0 phi= 1025: (1+s)^m =   267.71  slow-case/block =  1291.71  min-rule/block =     1.26  Miner/block =     1.26
+    phi=    9: max over s of min-rule/block =    97.04 at s = 0.7615 ; of Miner/block =    48.96 at s = 0.7346
+    phi=   33: max over s of min-rule/block =    57.21 at s = 0.6482 ; of Miner/block =    29.24 at s = 0.6125
+    phi=  129: max over s of min-rule/block =    34.80 at s = 0.5474 ; of Miner/block =    18.10 at s = 0.5066
+    phi= 1025: max over s of min-rule/block =    18.23 at s = 0.4233 ; of Miner/block =     9.76 at s = 0.3806
+[pit] full range 2 sigma_a (S2)                  a0 =   296.72 um ; life factor at 100 um =   3.226 ; thin wall PF10 r10: pit-fatigue 2.781 yr vs t_perf 1.500 yr
+[pit] Rule W check, 3 mm wall, one side, PF = 3, r = 10: Rule W = min(tau_c 13.167, t_perf 100.0) = 13.167 yr ; pit-initiated fatigue 5.436 yr ; Rule W / pit = 2.42
+[pit] positive part sigma_a (E647 R<0 practice)  a0 =  1186.89 um ; life factor at 100 um =   1.386 ; thin wall PF10 r10: pit-fatigue 5.945 yr vs t_perf 1.500 yr
+[disp] rho* (D(t_c) = 1 under sigma ~ (1-u)^+1) = 0.11032
+
+==========================================================================================
+Sensitivity to b: ratio (b=-0.124)/(b=-0.102) of headline quantities (answer verdict item 5 says 'up to about 40 %')
+    sig           108.7       68.9  ratio 0.634  change -37 %
+    lin1          4.378      3.909  ratio 0.893  change -11 %
+    lin2          6.766      5.956  ratio 0.880  change -12 %
+    par2          25.51      20.25  ratio 0.794  change -21 %
+    Fg            7.034      6.187  ratio 0.880  change -12 %
+    ve1           5.653      5.142  ratio 0.910  change -9 %
+    margin        0.181     0.2009  ratio 1.110  change +11 %
+    fe            154.1      97.37  ratio 0.632  change -37 %
+    felo          35.86      24.09  ratio 0.672  change -33 %
+    lf             19.8      3.226  ratio 0.163  change -84 %
+    (1+s)^m at s=0.5 ratio 0.494 change -51 %
+    (1+s)^m at s=1.0 ratio 0.299 change -70 %
+
+[tedmon] dy/dtheta = 1/y - 1, y(0)=0 (start from series y = sqrt(2 th) at th = 1e-8)
+    violations L <= m <= U: 0 ; max U/m = 1.3693 at theta = 3.327 ; max m/L = 1.4733 at theta = 2.002
+
+[D5] delta_c (G_c = 5, dT = 200 K): 7e-6: 5.035 um ; 14.7e-6: 1.142 um ; ratio 0.2268 ; time ratio 0.0514
+[D5] mismatch stress dT = 200 K: 0.709 / 1.490 GPa
+[D6] b=-0.102 eps_a = 1.4891e-03 ; c_x(K_Ic=1) = 0.793 um ; dT(eps_th = eps_a) Al = 101.3 K ; c_x at dT=100 K = 0.201 um
+[D6] b=-0.124 eps_a = 9.4389e-04 ; c_x(K_Ic=1) = 1.972 um ; dT(eps_th = eps_a) Al = 64.2 K ; c_x at dT=100 K = 0.302 um
+
+[C14 null] q = 0: life = min(tau0, t_c) in the model with recession; tau/tau0 = 1.000, 1.000, 1.000, 0.100 for rho = 0.01, 0.1, 1, 10
+    so for rho >= 1 the expected null value is 1/rho (recession governs), not 1.
+
+All values level `derived`.

@@ -1,0 +1,134 @@
+Prompt 6 S4 script 1: headline numbers for b = -0.102 and b = -0.124 (level derived; neither b confirmed)
+Fixed: sigma_f' = 900 MPa, N0 = 5e8 cycles, nu = 1 Hz, r = 10 um/yr; g = round strut d0 = 0.3 mm (p = 2);
+       s = wall h0 = 3 mm, one side attacked (p = 1). tau0 = N0/nu does not depend on b, so rho does not either.
+
+====================================================================================================
+b = -0.102   m = -1/b = 9.8039
+====================================================================================================
+[C1] sigma_a0 = sigma_f' (2 N0)^b = 108.7032 MPa; tau0(1 Hz) = 15.8440 yr; eps_a = sigma_a0/E = 1.4891e-03
+[C2] L07 curve (2024-T3 sheet) at R = -1, S_max = sigma_a0: S_eq = 23.2434 ksi, N = 4.3557e+07, N/N0 = 0.0871
+[C2] stress amplitude at which L07 gives N0 = 5e8 (R = -1): 92.72 MPa (does not depend on b); sigma_a0/that = 1.172
+    S2 check sigma_a0                           s4 = 108.703      S2 = 108.703      reproduced
+    S2 check N (L07)                            s4 = 4.35571e+07  S2 = 4.3557e+07   reproduced
+[B6/M2.2] 10^(1/m) = 1.2647  -> Miner-vs-min window s/s* in [0.7907, 1.2647]
+[B4/M2.3] (1+s)^m: s=0.1: 2.546  s=0.2: 5.974  s=0.5: 53.26  s=1: 893.9
+[C15/M2.10] displacement control threshold rho* = 1/(m+1) = 0.09256
+[C6] worst F_min over rho (at rho = 1): wall q = m = 9.8039: 4.3782 ; strut q = 2m = 19.6078: 6.7661
+    S2 check F_min,max wall                     s4 = 4.37825      S2 = 4.37827      reproduced
+    S2 check F_min,max strut                    s4 = 6.76611      S2 = 6.76614      reproduced
+[C4/E2] g: t_c = 15.000 yr rho = 1.05627 q = 19.6078 tau_c = 2.2526 yr x_e = 0.15017 F_cur = 7.0336 F_min = 6.6589
+[C4/E2] s: t_c = 300.000 yr rho = 0.05281 q = 9.8039 tau_c = 12.7331 yr x_e = 0.04244 F_cur = 1.2443
+[E2] verdict error [w F_g + (1-w)]/[w F_s + (1-w)]: w_emb = 0.1: 1.5651 ; 0.5: 3.5795 ; 1.0: 5.6526
+    S2 check F_g                                s4 = 7.0336       S2 = 7.0336       reproduced
+    S2 check F_s                                s4 = 1.24432      S2 = 1.2443       reproduced
+    S2 check tau_c(g)                           s4 = 2.25262      S2 = 2.2526       reproduced
+    S2 check verdict error w=1                  s4 = 5.65256      S2 = 5.6526       reproduced
+    S2 check verdict error w=0.5                s4 = 3.57952      S2 = 3.5795       reproduced
+    S2 check verdict error w=0.1                s4 = 1.56512      S2 = 1.5651       reproduced
+[C8/E4] x* = 0.109263 tau_LB = 1.6389 yr (tau_LB/tau_c = 0.7276); reduced sum (rho' = 0.3 rho): x*' = 0.072477 tau_LB' = 1.0872 yr
+[E4] w_emb = 0.5, w_lin = 0.5, p_r = 2: c_U/c_model = 5.5259 -> margin = 0.1810
+[E4]   reduced damage sum, reading A (rho' = 0.3 rho, numerator tau0):    c_U/c_model = 7.9792 -> margin = 0.1253
+[E4]   reduced damage sum, reading B (numerator 0.3 tau0 as well):       c_U/c_model = 2.8784 -> margin = 0.3474
+[E4]   standard margin over the share grid (w_emb 0.1/0.5/0.9, w_ox 0/0.1, p_r 1/2): 0.1110 to 0.4936
+[E4]   exact modelled c_true/c_model (w_emb = 0.5, p = 2) = 4.1052 ; bound/exact = 1.346
+    S2 check x*                                 s4 = 0.109263     S2 = 0.109263     reproduced
+    S2 check margin                             s4 = 0.180965     S2 = 0.181        reproduced
+    S2 check margin reduced (A)                 s4 = 0.125325     S2 = 0.1253       reproduced
+    S2 check margin reduced (B)                 s4 = 0.347415     S2 = 0.3474       reproduced
+[C10] baseline (k5, k8) = (0.9, 0.4): b_env = -0.21939 N_env = 3.2445e+06 F_env = 154.106   (k5, k8 are the planner's UNSURE range, not data)
+[C10] k5 = 0.9: k8=0.25: 351.2  k8=0.30: 268.5  k8=0.40: 154.1  k8=0.50: 84.5  k8=0.60: 43.2  k8=0.80: 8.2
+[C10] planner range k5 in {0.8, 0.9, 1.0}, k8 in {0.25 .. 0.6}: F_env from 35.9 (k5=1.0, k8=0.60) to 459.2 (k5=0.8, k8=0.25)
+[C10] k8 at which F_env (k5 = 0.9) falls to F_min,max strut = 6.766: k8 = 0.8194 (bracket [0.4, 1.0], sign change confirmed)
+[C10] k8 at which F_env (k5 = 0.9) falls to F_min,max wall = 4.378: k8 = 0.8609 (bracket [0.4, 1.0], sign change confirmed)
+    S2 check F_env baseline                     s4 = 154.106      S2 = 154.106      reproduced
+[C11] wall 0.3 mm, n_s = 2, r = 10: F_sec,env at 0.01 / 0.1 / 1 Hz = 2.3370 / 1.1521 / 1.0156 (q_env = 4.5580)
+    S2 check F_sec,env 0.01 Hz                  s4 = 2.33701      S2 = 2.337        reproduced
+    S2 check F_sec,env 0.1 Hz                   s4 = 1.15213      S2 = 1.1521       reproduced
+    S2 check F_sec,env 1 Hz                     s4 = 1.01558      S2 = 1.0156       reproduced
+[E4-env, new] g upper bound with the environment curve (baseline k): tau_LB,env = 0.0969 yr, c_U/c_model = 82.25 -> margin = 0.01216
+[E4-env, new]   at (k5, k8) = (1.0, 0.60), F_env = 35.9: c_U/c_model = 23.80 -> margin = 0.04201
+[E4-env, new]   at (k5, k8) = (0.8, 0.25), F_env = 459.2: c_U/c_model = 233.97 -> margin = 0.00427
+[C12] a0 (dK_th = 3) = 119.22 um ; K(100 um) = 0.7375 ; life factor K^-m = 19.802
+[C13a] PF = 10, r = 10: tau = 1.3098 yr (F = 12.097) ; t_perf = 1.500 yr ; governing: fatigue from the pit ; life = 1.3098 yr
+    S2 check a0                                 s4 = 119.221      S2 = 119.22       reproduced
+    S2 check life factor 100 um                 s4 = 19.8023      S2 = 19.802       reproduced
+    S2 check tau pit PF10 r10                   s4 = 1.30975      S2 = 1.30975      reproduced
+[E3] rates fat / corr / emb = 1.1513e-10 / 2.4638e-10 / 7.9090e-10 W/K ; shares = 0.0999 / 0.2138 / 0.6863
+[A10] total effect of damage-dependent hysteresis, beta = 5, gamma = 1: 1 + w_fat*2.5 = 1.2498
+[E5] weighted sum, S2 implementer's reading (w_corr x rate error p=2 + w_emb x life error): 4.1787
+[E5] weighted sum, S4 definition c_true/c_model - 1 = w_emb (F_cur-1) + w_fat (M_lin(x_e,2)-1) + w_corr (M_lin(x_e,-1)-1): 4.1425
+     (terms: embodied 4.1409, hysteresis +0.0177, corrosion -0.0161; corrosion rate of a round strut goes as its area, p = -1)
+[E2] verdict error at the E3 embodied share 0.6863: 4.4027
+    S2 check w_fat                              s4 = 0.0999018    S2 = 0.0999       reproduced
+    S2 check w_corr                             s4 = 0.213795     S2 = 0.2138       reproduced
+    S2 check w_emb                              s4 = 0.686303     S2 = 0.6863       reproduced
+    S2 check weighted sum (S2 reading)          s4 = 4.17866      S2 = 4.1787       reproduced
+
+====================================================================================================
+b = -0.124   m = -1/b = 8.0645
+====================================================================================================
+[C1] sigma_a0 = sigma_f' (2 N0)^b = 68.9037 MPa; tau0(1 Hz) = 15.8440 yr; eps_a = sigma_a0/E = 9.4389e-04
+[C2] L07 curve (2024-T3 sheet) at R = -1, S_max = sigma_a0: S_eq = 14.7333 ksi < 15.8 ksi asymptote: L07 gives no finite life (N/N0 = inf)
+[C2] stress amplitude at which L07 gives N0 = 5e8 (R = -1): 92.72 MPa (does not depend on b); sigma_a0/that = 0.743
+[B6/M2.2] 10^(1/m) = 1.3305  -> Miner-vs-min window s/s* in [0.7516, 1.3305]
+[B4/M2.3] (1+s)^m: s=0.1: 2.157  s=0.2: 4.351  s=0.5: 26.31  s=1: 267.7
+[C15/M2.10] displacement control threshold rho* = 1/(m+1) = 0.11032
+[C6] worst F_min over rho (at rho = 1): wall q = m = 8.0645: 3.9088 ; strut q = 2m = 16.1290: 5.9562
+[C4/E2] g: t_c = 15.000 yr rho = 1.05627 q = 16.1290 tau_c = 2.5608 yr x_e = 0.17072 F_cur = 6.1873 F_min = 5.8577
+[C4/E2] s: t_c = 300.000 yr rho = 0.05281 q = 8.0645 tau_c = 13.1670 yr x_e = 0.04389 F_cur = 1.2033
+[E2] verdict error [w F_g + (1-w)]/[w F_s + (1-w)]: w_emb = 0.1: 1.4885 ; 0.5: 3.2620 ; 1.0: 5.1419
+[C8/E4] x* = 0.124261 tau_LB = 1.8639 yr (tau_LB/tau_c = 0.7279); reduced sum (rho' = 0.3 rho): x*' = 0.081056 tau_LB' = 1.2158 yr
+[E4] w_emb = 0.5, w_lin = 0.5, p_r = 2: c_U/c_model = 4.9773 -> margin = 0.2009
+[E4]   reduced damage sum, reading A (rho' = 0.3 rho, numerator tau0):    c_U/c_model = 7.2427 -> margin = 0.1381
+[E4]   reduced damage sum, reading B (numerator 0.3 tau0 as well):       c_U/c_model = 2.6818 -> margin = 0.3729
+[E4]   standard margin over the share grid (w_emb 0.1/0.5/0.9, w_ox 0/0.1, p_r 1/2): 0.1259 to 0.5167
+[E4]   exact modelled c_true/c_model (w_emb = 0.5, p = 2) = 3.6966 ; bound/exact = 1.346
+[C10] baseline (k5, k8) = (0.9, 0.4): b_env = -0.24139 N_env = 5.1350e+06 F_env = 97.371   (k5, k8 are the planner's UNSURE range, not data)
+[C10] k5 = 0.9: k8=0.25: 231.5  k8=0.30: 173.8  k8=0.40: 97.4  k8=0.50: 53.0  k8=0.60: 27.5  k8=0.80: 5.9
+[C10] planner range k5 in {0.8, 0.9, 1.0}, k8 in {0.25 .. 0.6}: F_env from 24.1 (k5=1.0, k8=0.60) to 289.5 (k5=0.8, k8=0.25)
+[C10] k8 at which F_env (k5 = 0.9) falls to F_min,max strut = 5.956: k8 = 0.7991 (bracket [0.4, 1.0], sign change confirmed)
+[C10] k8 at which F_env (k5 = 0.9) falls to F_min,max wall = 3.909: k8 = 0.8463 (bracket [0.4, 1.0], sign change confirmed)
+[C11] wall 0.3 mm, n_s = 2, r = 10: F_sec,env at 0.01 / 0.1 / 1 Hz = 2.8827 / 1.2172 / 1.0224 (q_env = 4.1426)
+[E4-env, new] g upper bound with the environment curve (baseline k): tau_LB,env = 0.1497 yr, c_U/c_model = 53.42 -> margin = 0.01872
+[E4-env, new]   at (k5, k8) = (1.0, 0.60), F_env = 24.1: c_U/c_model = 17.21 -> margin = 0.05810
+[E4-env, new]   at (k5, k8) = (0.8, 0.25), F_env = 289.5: c_U/c_model = 148.84 -> margin = 0.00672
+[C12] a0 (dK_th = 3) = 296.72 um ; K(100 um) = 0.8648 ; life factor K^-m = 3.226
+[C13a] PF = 10, r = 10: tau = 2.7809 yr (F = 5.697) ; t_perf = 1.500 yr ; governing: perforation ; life = 1.5000 yr
+[E3] rates fat / corr / emb = 4.6257e-11 / 2.4638e-10 / 7.9090e-10 W/K ; shares = 0.0427 / 0.2274 / 0.7299
+[A10] total effect of damage-dependent hysteresis, beta = 5, gamma = 1: 1 + w_fat*2.5 = 1.1067
+[E5] weighted sum, S2 implementer's reading (w_corr x rate error p=2 + w_emb x life error): 3.8331
+[E5] weighted sum, S4 definition c_true/c_model - 1 = w_emb (F_cur-1) + w_fat (M_lin(x_e,2)-1) + w_corr (M_lin(x_e,-1)-1): 3.7757
+     (terms: embodied 3.7863, hysteresis +0.0088, corrosion -0.0194; corrosion rate of a round strut goes as its area, p = -1)
+[E2] verdict error at the E3 embodied share 0.7299: 4.1678
+
+====================================================================================================
+Summary: headline number, b = -0.102, b = -0.124, ratio (second/first)
+====================================================================================================
+  sigma_a0 [MPa]                                  108.7       68.904   x 0.634
+  m                                              9.8039       8.0645   x 0.823
+  F_min,max wall (C6)                            4.3782       3.9088   x 0.893
+  F_min,max strut (C6)                           6.7661       5.9562   x 0.880
+  F_cur g (C4)                                   7.0336       6.1873   x 0.880
+  F_min g (C4)                                   6.6589       5.8577   x 0.880
+  F_cur s (C4)                                   1.2443       1.2033   x 0.967
+  tau_c g [yr]                                   2.2526       2.5608   x 1.137
+  tau_LB g [yr] (C8)                             1.6389       1.8639   x 1.137
+  verdict error w_emb=1 (E2)                     5.6526       5.1419   x 0.910
+  verdict error w_emb=0.5                        3.5795        3.262   x 0.911
+  verdict error w_emb=0.1                        1.5651       1.4885   x 0.951
+  E4 margin (standard)                          0.18096      0.20091   x 1.110
+  E4 margin reduced sum, reading A              0.12533      0.13807   x 1.102
+  E4 margin reduced sum, reading B              0.34742      0.37289   x 1.073
+  E4 margin with env curve on g (new)          0.012158     0.018721   x 1.540
+  F_env baseline (C10)                           154.11       97.371   x 0.632
+  F_env low end of planner range                 35.862       24.091   x 0.672
+  F_env high end of planner range                459.18       289.52   x 0.631
+  pit life factor at 100 um (C12)                19.802       3.2256   x 0.163
+  pit life PF=10 r=10 [yr] (C13a)                1.3098       2.7809   x 2.123
+  w_fat (E3)                                   0.099902     0.042691   x 0.427
+  w_emb (E3)                                     0.6863      0.72992   x 1.064
+
+Ordering test (does the ranking of defects change between the two b values?)
+  b = -0.102: F_env low end 35.9 > F_min,max strut 6.77 > F_min,max wall 4.38 : True
+  b = -0.124: F_env low end 24.1 > F_min,max strut 5.96 > F_min,max wall 3.91 : True
+All values level `derived`. b is not confirmed either way; k5, k8 are the planner's range, not data.

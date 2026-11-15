@@ -281,3 +281,41 @@ OUTPUT FORMAT (strict, keep it short)
 - No literature review. If you lean on a known result (Gouy–Stodola, Szargut's cumulative exergy), name it in one line and mark it UNSURE if you are not certain of the exact form. Do not invent references.
 - End with "Open points": at most 3 lines on what this answer could not settle.
 ```
+
+---
+
+## Prompt 8 (narrow): infrastructure credit shared by several products (OQ-14)
+
+Written 2026-11-15; approved by the user the same day. Low-budget run (`fable_delegation_plan.md` §5.1 style: one `fable` agent with no tools, block passed verbatim). Background: E16 (GMS-100) keeps U2's average share and applies λ_ℰ only when x leaves every product that shares B_infra(x); OQ-14 keeps the multi-product veto open. The example numbers are from `fable_runs/prompt_2_review_code/rv03_ledger_and_misc.py` D1–D3 (made-up inputs).
+
+```text
+Answer one narrow lifecycle-accounting question. Work from first principles. Do not use web search, code execution or any other tool. Treat every formula below as unverified, and be adversarial toward it.
+
+SETTING
+A lifecycle comparison decides, per product, whether a candidate design g should replace an incumbent design s. The incumbent uses a scarce element x; the candidate does not. Costs are total irreversibility per component position, in J/K. The candidate is preferred if
+   Σ_g < Σ_s + λ,
+where λ is a one-off credit per position for the supply infrastructure of x (mines, refineries) that would no longer be needed if x were no longer used.
+
+CURRENT RULE (unverified)
+ λ = B_infra/(T_ref·N_alloc): the infrastructure's cumulative exergy B_infra (J) shared equally over the N_alloc positions that use x, T_ref = 298.15 K.
+ λ applies only if x leaves every product that shares the infrastructure (all-or-nothing). Whenever λ > 0, the cumulative exergy of x itself must exclude capital goods, so the infrastructure is not counted twice.
+
+THE PROBLEM
+ Two products share the infrastructure. B_infra = F + v·N with fixed part F = 4e13 J and variable part v = 2e4 J per position; N = N1 + N2, N1 = 9e8, N2 = 1e8 positions. Then λ = (F + v·N)/(T_ref·N) = 201.24 J/K per position. The per-position penalty of switching, d_k = Σ_g − Σ_s, is d1 = 150 J/K for product 1 and d2 = 400 J/K for product 2.
+ Per-product test: product 1 passes (150 < 201.24), product 2 fails (400 > 201.24). So x stays in product 2, the infrastructure stays, and the credit given to product 1 is not earned.
+ System test (both switch): N1·d1 + N2·d2 = 1.75e11 J/K < B_infra/T_ref = 2.01e11 J/K, so switching both is worth it.
+ Marginal alternative: λ = v/T_ref = 67.08 J/K, which under-credits by 134.16 J/K per position when both switch.
+
+QUESTION
+ 1. What is the right decision object when products share infrastructure: a per-product test, a system test over all products, or a test over subsets of products that switch together? Is this a cooperative cost-allocation problem, and does any per-product λ exist that makes every per-product test agree with the system test? If so, under what conditions; if not, why not?
+ 2. A per-product specification can only use inputs an analyst of one product can know. Give a per-product rule and its validity condition, or show that none exists and say what the specification must report instead (for example a bracket between λ = v/T_ref and the average share, or a verdict conditional on the other products switching).
+ 3. Which of these change the answer, and how: F only partly avoidable; infrastructure in discrete capacity steps; x also used by products outside the comparison; the products switching at different times.
+ 4. One-line verdict: the rule for a first edition, its validity range, and when it is wrong by enough to flip a verdict.
+
+OUTPUT FORMAT (strict, keep it short)
+- At most 8 numbered claims, most important first, so that a cut-off reply is still useful. Total reply under 1,200 words.
+- Each claim: statement; equation in plain text with SI units; confidence (high / medium / low); one test or computation that would falsify it.
+- Derivations: only the steps needed to check each claim, no general survey.
+- No literature review. If you lean on a known result (for example Shapley value, the core of a cost game), name it in one line and mark it UNSURE if you are not certain of the exact form. Do not invent references.
+- End with "Open points": at most 3 lines on what this answer could not settle.
+```
