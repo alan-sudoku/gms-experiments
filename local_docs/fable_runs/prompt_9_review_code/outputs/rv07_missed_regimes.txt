@@ -1,0 +1,24 @@
+Regime A: incumbent loss rate sigma0 + beta a, beta = 0.1e6 J/K/yr^2, R_s = 1.0e6 J/K, tau = 20 yr, t_perf = 10 yr (performance limit, a given life); everything else in f lumped as A = 9.5e6 J/K
+  truth (optimal, n = 4)                          : ageing+replacement =   8.000e6 J/K, f =  +1.500e6 J/K -> g loses; error vs truth  +0.000e6 J/K
+  (i) tau_w,s = inf                               : ageing+replacement =  20.000e6 J/K, f = -10.500e6 J/K -> g wins; error vs truth -12.000e6 J/K
+  (iii) given life t_perf, m_s = 1                : ageing+replacement =  11.000e6 J/K, f =  -1.500e6 J/K -> g wins; error vs truth  -3.000e6 J/K
+  claims 4-5 with T* = 4.472 yr but spec schedule : ageing+replacement =   8.223e6 J/K, f =  +1.277e6 J/K -> g loses; error vs truth  -0.223e6 J/K
+  (ii): t_perf < tau gives tau_w,s < inf -> no outcome, although the truth is determinate (g loses)
+
+Regime B: block example; truth = symmetric inventory, incumbent manufacturing 1.5e6 J/K per unit
+  truth: f = -2.100e6 J/K -> g wins
+  (i) f_inf = +4.400e6 J/K -> g loses; error +6.500e6 J/K
+  (ii) no outcome
+  (iii) f = +2.400e6 J/K -> g loses (one-sided, omega* = 0.800e6 J/K < 1.5e6); error +4.500e6 J/K
+
+Regime C: GMS-230 combined case on side s; reduced paralinear scale d(y^2)/dt = 1 - c y, c = 1 yr^-1/2 (steady y = 1 yr^1/2); K_s = 1.0e6 J/(K yr^1/2); R_s = 0.5e6 J/K; tau = 20 yr; tau_w,s = 8 yr; everything else in f lumped as B = 4.2e6 J/K
+  y(8) = 0.9932, y(4) = 0.9475, y(20) = 1.0000 (bound sqrt: 2.8284, 2.0000, 4.4721)
+  truth (finite life, paralinear): s-part = 3.9340e6, f = +0.2660e6 J/K -> g loses
+  (i) tau_w,s = inf, bound              : s-part = 4.4721e6, f = -0.2721e6 J/K -> g wins; error -0.5382e6 J/K
+  (iii) m_s = 2, bound on every unit    : s-part = 8.6569e6, f = -4.4569e6 J/K -> g wins; error -4.7229e6 J/K
+  bound excess over truth: m_s = 0: 3.4722e6 J/K; m_s = 2: 4.7229e6 J/K (excess grows with m_s because sum sqrt(t_i) > sqrt(tau))
+  (ii): no outcome
+
+Regime D: GMS-230 consumed metal on side s with retired units (placeholder values)
+  make-up undercharge bound = m_s R_rec CExC n_cons / T0 = 8.0496e+04 J/K (n_cons = 50 mol/unit, R_rec = 0.6, CExC = 4.0e5 J/mol, m_s = 2): model Sigma_s too low, f too high, favours s (safe for 'g wins')
+  a case with 0 < f_model < under is 'g loses' under (i) and (iii) and 'g wins' in truth: wrong but in the direction the boundary already labels one-sided

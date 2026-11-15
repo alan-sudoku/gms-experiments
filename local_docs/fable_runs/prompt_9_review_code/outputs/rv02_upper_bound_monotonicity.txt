@@ -1,0 +1,29 @@
+(a) symbolic proof
+  dO/dtau_w at fixed m = -K*m/(2*sqrt(-m*tau_w + tau)) + K*m/(2*sqrt(tau_w))
+  = (K m / 2) (1/sqrt(tau_w) - 1/sqrt(r)) <= 0 because 0 < r <= tau_w
+  O just above tau/j - O just below tau/j = 0
+  (sqrt a + sqrt b)^2 - (a+b) = 2*sqrt(a)*sqrt(b) >= 0
+  so Delta_s = m R_s + K (m sqrt(tw) + sqrt(r) - sqrt(tau)) >= 0 when R_s >= 0, K >= 0
+
+(b) exact-rational scan (supplement, not a proof)
+  pairs checked: 17715; violations of monotonicity or of Sigma_s >= Sigma_s(inf): 0
+  m_s at tau = 3*tau_w (exact) = 2 (left-continuous convention, unit not replaced)
+
+(c1) age-increasing loss rate sigma_s(a) = sigma0 + beta a (outside the spec profile)
+  tau_w,s =   1.00: ageing part of Sigma_s =  20.000
+  tau_w,s =   2.00: ageing part of Sigma_s =  11.000
+  tau_w,s =   4.00: ageing part of Sigma_s =   8.000
+  tau_w,s =   5.00: ageing part of Sigma_s =   8.000
+  tau_w,s =   6.67: ageing part of Sigma_s =   8.667
+  tau_w,s =  10.00: ageing part of Sigma_s =  11.000
+  tau_w,s =  20.00: ageing part of Sigma_s =  20.000
+  tau_w,s =  40.00: ageing part of Sigma_s =  20.000
+  Sigma_s is U-shaped in tau_w,s: a shorter tau_w,s (10 -> 5) LOWERS Sigma_s, so it RAISES f; f_inf is no longer an upper bound; f_inf < 0 => 'g wins' is UNSAFE
+
+(c2) R_s < 0 (needs a credit term that the spec's R_s terms do not contain)
+  R_s = -0.5, K = 0, tau = 20, tau_w,s = 8 (m_s = 2): Delta_s = m_s R_s = -1.0 < 0 => f = f_inf + 1.0 > f_inf; 'f_inf < 0 => g wins' UNSAFE
+  Spec terms for R_s: M_s b_transport/T0 >= 0; Sigma_EOL^ret = n/T0 [R_rec w_remelt + (1-R_rec) CExC] >= 0 given w_lost,remelt >= 0 (exergy destroyed) and CExC >= b_ch >= 0 (REQ-LIFECYCLE-EXTRACTION-WORK-NONNEGATIVE; b_ch >= 0 is not stated as a REQ: UNSURE)
+
+(d) GMS-230 consumed-metal convention with retired units on side s
+  lower bound(true Sigma_s, finite) - lower bound(true Sigma_s, inf) = K*R_rec*S - K*R_rec*sqrt_tau + R_s*m
+  = m R_s + R_rec K (S - sqrt(tau)) >= 0: the finite case is never worse for 'g wins' than the 0.1 inf case; the make-up undercharge on side s lowers the modelled Sigma_s (favours s, safe for 'g wins')

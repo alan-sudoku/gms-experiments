@@ -1,0 +1,17 @@
+m_g = 3, m_s = 2
+Sigma_g = 9.2e+06 J/K; Sigma_s(inf) = 4.3e+06 J/K
+f_inf = 4.4e+06 J/K  (answer: 4.4e6)
+f(R_s) = 4.4e+06 - 2*R_s
+flip at R_s = f_inf/m_s = 2.2e+06 J/K  (answer: 2.2e6)
+f(R_s=1.0e6) = 2.4e+06 J/K  (block: 2.4e6)
+f(R_s=2.5e6) = -6e+05 J/K  (block: -0.6e6)
+omega_rep threshold (replacement only, m_s units) = 1.2e+06 J/K  (answer: 1.2e6)
+omega threshold (first unit too, m_s+1 units) = 8e+05 J/K  (answer: 0.8e6)
+f(R_s=2.5e6, Sigma_s,init + 1.5e6) = -2.1e+06 J/K  (answer: -2.1e6)
+same via 2.4e6 - 3*1.5e6 = -2.1e+06 J/K
+
+-- omega* = f/(m_s+1) when omega_init != omega_rep --
+omega_init=8e+05, omega_rep=8e+05: Omega=2.4e+06, true flip=False; 'max(omega) > omega*'=False; 'mean omega > omega*'=False
+omega_init=2e+06, omega_rep=3e+05: Omega=2.6e+06, true flip=True; 'max(omega) > omega*'=True; 'mean omega > omega*'=True
+omega_init=1e+05, omega_rep=1.1e+06: Omega=2.3e+06, true flip=False; 'max(omega) > omega*'=True; 'mean omega > omega*'=False
+omega* is exact only as the per-unit mean of the omitted total Omega = omega_init + m_s*omega_rep; the break-even quantity is Omega* = f (J/K) itself.

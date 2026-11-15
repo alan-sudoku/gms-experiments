@@ -1,0 +1,13 @@
+(a) ties with exact rationals (K = 0, Sigma_dot equal, d0 chosen so f(0+) = -0.5)
+  tau = 4: f(tau-) = -0.500, f(tau) = -0.500, f(tau+) = -3.500; jump = -3.000
+  tau = 6: f(tau-) = -3.500, f(tau) = -3.500, f(tau+) = -1.500; jump = +2.000
+  tau = 8: f(tau-) = -1.500, f(tau) = -1.500, f(tau+) = -4.500; jump = -3.000
+  tau = 12: f(tau-) = -4.500, f(tau) = -4.500, f(tau+) = -5.500; jump = -1.000
+  f(tau) equals the left limit at every breakpoint: left-continuous. At tau = 12 (both sides) the jump is R_g - R_s = -1.0
+  g-wins set {f < 0}: at a g breakpoint (jump up) an interval ends closed (tau = 6 is in, 6+ may not be); at an s breakpoint (jump down) an interval starts open (tau = 4 is not in if f(4) >= 0, 4+ is)
+
+(b) float64 ceil(tau/tau_w) at exact integer ratios, decimal-year inputs converted to seconds
+  integer-ratio cases: 3248; float m too high (spurious replacement): 50; float m too low: 0
+  first too-high example (tau yr, tau_w yr, m float, m exact): ('161/10', '7/10', 23, 22)
+  first too-low example: None
+  on side s a too-high m adds a spurious -R_s (f too low: favours g, unsafe); on side g a spurious +R_g (safe). A too-low m on side s drops a real -R_s at a horizon just above the tie (f too high, safe).

@@ -1,0 +1,61 @@
+(a) symbolic
+  T^2 dc/dT = -R + T*sigma(T) - Integral(sigma(a), (a, 0, T))  -> zero iff T sigma(T) - int sigma = R = int_0^T a sigma'(a) da (by parts)
+  linear sigma: int a sigma' = T**2*beta/2 ; T* = [sqrt(2)*sqrt(R)/sqrt(beta)]
+  K sqrt(a) loss (sigma = K/(2 sqrt a)): int a sigma' = -K*sqrt(T)/2 < 0, never replace voluntarily
+  mixed: int a sigma' = -K*sqrt(T)/2 + T**2*beta/2 = R
+  finite horizon, linear: L(tau) - [R + 2 L(tau/2)] = -R + beta*tau**2/4 > 0 iff R < beta tau^2/4
+  gain of n equal units over 1 unit: -(n - 1)*(2*R*n - beta*tau**2)/(2*n) ; per extra replacement the break-even R is beta tau^2/(2n), largest at n = 2, so 'replacing at all pays iff R < beta tau^2/4' holds
+
+(b) brute force
+
+  case linear (convex): R = 1.0, tau = 20.0, t_max = None
+    n=1: equal split   40.0000; best split   40.0000; lengths [20.]
+    n=2: equal split   31.0000; best split   31.0000; lengths [10. 10.]
+    n=3: equal split   28.6667; best split   28.6667; lengths [6.667 6.667 6.667]
+    n=4: equal split   28.0000; best split   28.0000; lengths [5. 5. 5. 5.]
+    n=5: equal split   28.0000; best split   28.0000; lengths [4. 4. 4. 4. 4.]
+    n=6: equal split   28.3333; best split   28.3333; lengths [3.333 3.333 3.333 3.333 3.333 3.333]
+    n=7: equal split   28.8571; best split   28.8571; lengths [2.857 2.857 2.857 2.857 2.857 2.857 2.857]
+    n=8: equal split   29.5000; best split   29.5000; lengths [2.5 2.5 2.5 2.5 2.5 2.5 2.5 2.5]
+    optimum n = 4, cost 28.0000; equal split optimal at that n: True
+    T* = sqrt(2R/beta) = 4.4721; tau/T* = 4.472
+    beta tau^2/4 = 10.0: with R = 12 (> 10) one replacement does not pay:
+
+  case linear, R=12: R = 12.0, tau = 20.0, t_max = None
+    n=1: equal split   40.0000; best split   40.0000; lengths [20.]
+    n=2: equal split   42.0000; best split   42.0000; lengths [10. 10.]
+    n=3: equal split   50.6667; best split   50.6667; lengths [6.667 6.667 6.667]
+    optimum n = 1, cost 40.0000; equal split optimal at that n: True
+
+  case K sqrt(a) with given life t_max = 6 (concave): R = 1.0, tau = 20.0, t_max = 6.0
+    n=4: equal split   29.8328; best split   29.2880; lengths [2. 6. 6. 6.]
+    n=5: equal split   34.0000; best split   30.2881; lengths [0. 2. 6. 6. 6.]
+    n=6: equal split   37.8634; best split   31.6807; lengths [0.    0.    3.581 4.419 6.    6.   ]
+    optimum n = 4, cost 29.2880; equal split optimal at that n: False
+    spec schedule (3 full lives of 6 + remainder 2): cost 29.2880
+
+  case mixed sigma0 + beta a + K sqrt a, no limit: R = 1.0, tau = 20.0, t_max = None
+    n=1: equal split   59.7771; best split   59.7771; lengths [20.]
+    n=2: equal split   73.5964; best split   60.7773; lengths [ 0. 20.]
+    n=3: equal split   85.3011; best split   61.7776; lengths [ 0.  0. 20.]
+    n=4: equal split   95.5542; best split   75.0699; lengths [ 0.     0.     6.603 13.397]
+    n=5: equal split  104.8000; best split   84.3048; lengths [ 0.     0.379  0.564  3.871 15.187]
+    optimum n = 1, cost 59.7771; equal split optimal at that n: True
+
+  case mixed, strong sqrt (K=30), beta=0.05, R=0.5: R = 0.5, tau = 20.0, t_max = None
+    n=1: equal split  164.1641; best split  164.1641; lengths [20.]
+    n=2: equal split  215.2367; best split  164.6650; lengths [ 0. 20.]
+    n=3: equal split  256.7123; best split  165.1660; lengths [ 0.  0. 20.]
+    n=4: equal split  292.3282; best split  212.4878; lengths [ 0.     0.755  0.858 18.387]
+    n=5: equal split  324.0000; best split  193.2917; lengths [ 0.     0.     0.     1.145 18.855]
+    optimum n = 1, cost 164.1641; equal split optimal at that n: True
+
+(c) equal split versus 'full lives plus remainder' at a chosen interval (linear case)
+  T* = 4.4721: full lives + remainder (4 x T* + 2.111) cost 28.2229; equal split n=5: 28.0000
+
+(d) mixed L = t + beta t^2/2 + K sqrt(t): does any unequal split beat the best equal split? (grid, supplement)
+  grid cases: 27; cases where an unequal split beats the best equal split: 0
+
+(e) claim 4's 'tau_w = min(tau_fail, T*)' fed to the spec's full-lives-plus-remainder count, finite horizon
+  R = 12.0: T* = 15.492 < tau = 20.0 so the rule replaces (m = 1); cost 45.0161; finite-horizon optimum n = 1 cost 40.0000; overstatement 5.0161 (R > beta tau^2/4 = 10.0)
+  R = 15.0: T* = 17.321 < tau = 20.0 so the rule replaces (m = 1); cost 50.3590; finite-horizon optimum n = 1 cost 40.0000; overstatement 10.3590 (R > beta tau^2/4 = 10.0)
