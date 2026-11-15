@@ -148,3 +148,14 @@ b_infra/CExC = 0.008 / 0.085 / 0.29. α is the avoidable fraction of the fixed p
 - Ir ERC not readable. Omitted side-s stages not bounded from a source. Side-g manufacturing bound (50 MJ/m²), precursor factor (3×), w_lost,remelt proxy, c, a_cap, α_x, fixed fractions: all MEMORY.
 - Part B cannot say how much of a CED row is capital goods or fixed flows; the configuration is argued from how the inventory is built, not from a published split.
 - The single input whose change would most move the classes: the CExC (or CED) magnitude of the incumbent catalyst relative to j·τ. It would have to rise 25 times (Ir 2 mg/cm²) or 68 times (Pt 0.5 mg/cm²) to reach "priced" at the central case; no input read is that uncertain (Buchspies vs Nuss differ by 2×; allocation rules by 1.7× for Ir except the mass rule, which lowers it). The only input that changes a class by itself is the duty (j·τ at the low-duty corner), or a scarcity term of ERC's size (Pt).
+
+## Errata (orchestrator, 2026-11-15, from `oq_22_review.md`)
+
+Added after the review; the text above is unchanged. User decision D7 (`oq_22_synthesis.md`).
+
+- **Sign of the mass-allocation verdict (review finding 1).** `outputs/issues.md` item 11 and the A5 footnote of `oq22_part_a.txt` say that Δη_be < 0 means the candidate wins for any Δη ≥ 0. It is the reverse: with Δη_be < 0, f > 0 at Δη = 0 and the incumbent wins. The candidate would need to be more active than the incumbent to win. With g_low the same rows have Δη_be > 0, so the sign depends on the side-g bound, not on Ir.
+- **Part B configuration (finding 6).** "A mix of B and C. Not A" overstates the evidence. Both the SI and the main article are silent on capital goods, so B is unsupported. The C share counts production ventilation, cooling and holding as "maintaining" flows, which are not the loop flows of B_infra. Defensible reading: undetermined between C and B+C; A is excluded only by inference.
+- **α (finding 7).** α = 0.84 to 0.95 follows from counting all fixed operating flows in the fixed part. With the fixed part read as loop capital only, α = 0.20 to 0.70. Prompt 8's flip value of 0.804 lies between the two readings.
+- **Shared loop (finding 2).** The Pt and Ir loops are shared, so GMS-100's verdict uses f₀ and f_max (REQ-LIFECYCLE-SHARED-INFRASTRUCTURE-VERDICT), not the λ_ℰ column. Between about 1 mV and Δη_be(f_max) the outcome is "conditional", not "incumbent wins".
+- **Scope of the E18 conclusion (findings 3 to 5).** "Nearly free" holds for the central set only. Ir at 1 to 2 mg/cm² leaves it under a current-price reallocation, at renewable-coupled throughput, or with an ERC-type term. E18's own case (NiFe in alkaline; PEM against AEM at cell level) is decided by Σ̇ in either direction.
+- **Numbers (findings 8, 9).** For Pt 0.1 mg/cm², j·τ must fall by 453 (A6), not 340. The transport term runs from 3.35 J/K per m² (Pt 0.1), not 7, and its Ir share is 5.92e-6, above the stated 5e-6. No class changes.
