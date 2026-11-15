@@ -1,0 +1,14 @@
+T3 enumerated 20000 random profiles (n = 2..6; 4507 with exact tie F/T = sum excess):
+T3 optimum != max(W(S_m), W(all)): 0 cases; switching-condition violations: 0 cases
+
+T2a band for product 1 (N1=9e8, N=1e9): (67.0803, 216.1477) J/K
+T2a d1 =    60.0000: product-1 membership in optimum, profile A (d2 = v/T-1): [True], profile B (d2 = 1e6): [True] -> own data decide: True
+T2a d1 =    67.0803: product-1 membership in optimum, profile A (d2 = v/T-1): [True], profile B (d2 = 1e6): [False] -> own data decide: False
+T2a d1 =   100.0000: product-1 membership in optimum, profile A (d2 = v/T-1): [True], profile B (d2 = 1e6): [False] -> own data decide: False
+T2a d1 =   150.0000: product-1 membership in optimum, profile A (d2 = v/T-1): [True], profile B (d2 = 1e6): [False] -> own data decide: False
+T2a d1 =   216.0000: product-1 membership in optimum, profile A (d2 = v/T-1): [True], profile B (d2 = 1e6): [False] -> own data decide: False
+T2a d1 =   216.1487: product-1 membership in optimum, profile A (d2 = v/T-1): [False], profile B (d2 = 1e6): [False] -> own data decide: True
+T2a d1 =   300.0000: product-1 membership in optimum, profile A (d2 = v/T-1): [False], profile B (d2 = 1e6): [False] -> own data decide: True
+T2a sole user (N = N_k): d1 = 150, W(all) = +5.9533e+10 J/K -> own data decide (no impossibility)
+
+T2b answer's three-way rule over 80251 product verdicts: wrong unconditional verdicts = 0; conditional = 33879 (42.2 %)

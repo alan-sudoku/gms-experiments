@@ -1,0 +1,22 @@
+== (iv) staggered switching ==
+sum phi (F_av = F) = 0.80441; all-exit worth it iff F_av(t_last) > sum phi * F, i.e. t_last < H (1 - sum phi) = 5.868 yr
+dates (2.0, 4.0): F_av = 3.4667e+13 J, W(all, committed) = +8.3529e+09 J/K, lambda_hi of last mover = 1229.81 J/K; myopic sequential outcome: [] (W = 0)
+dates (2.0, 8.0): F_av = 2.9333e+13 J, W(all, committed) = -9.5352e+09 J/K, lambda_hi of last mover = 1050.93 J/K; myopic sequential outcome: [] (W = 0)
+dates (0.0, 0.0): F_av = 4.0000e+13 J, W(all, committed) = +2.6241e+10 J/K, lambda_hi of last mover = 216.15 J/K; myopic sequential outcome: [] (W = 0)
+E16 average share ignores dates: lambda = 201.24 J/K at any t_last
+
+== (vi) uncertainty in d_k, rv03 case, decision 'all switch' on the means ==
+system-verdict edges: d1* = 179.157 J/K (mean 150), d2* = 662.410 J/K (mean 400)
+sd =    5 % of each d: P(all-switch is not the ex-post optimum) = 0.0001, E[regret] = 1.762e+05 J/K, E[W(all)] = +2.624e+10 J/K
+sd =   10 % of each d: P(all-switch is not the ex-post optimum) = 0.0312, E[regret] = 1.717e+08 J/K, E[W(all)] = +2.625e+10 J/K
+sd =   20 % of each d: P(all-switch is not the ex-post optimum) = 0.1760, E[regret] = 2.668e+09 J/K, E[W(all)] = +2.623e+10 J/K
+sd =   30 % of each d: P(all-switch is not the ex-post optimum) = 0.2674, E[regret] = 6.897e+09 J/K, E[W(all)] = +2.620e+10 J/K
+
+-- 'unconditional pass' label near the lower edge v/T (product with N = 1e8, sd = 10 J/K) --
+mean d = 40.0 J/K: label 'unconditional pass' (mean < 67.08); P(true d > v/T) = 0.0034
+mean d = 55.0 J/K: label 'unconditional pass' (mean < 67.08); P(true d > v/T) = 0.1137
+mean d = 60.0 J/K: label 'unconditional pass' (mean < 67.08); P(true d > v/T) = 0.2398
+mean d = 65.0 J/K: label 'unconditional pass' (mean < 67.08); P(true d > v/T) = 0.4180
+
+-- F_av uncertainty: alpha margin --
+verdict flips at alpha = sum phi = 0.8044; margin 0.1956 of F

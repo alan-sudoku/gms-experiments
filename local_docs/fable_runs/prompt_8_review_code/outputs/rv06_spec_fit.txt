@@ -1,0 +1,34 @@
+== rv03 d0=(150,400): optimum W = +2.6241e+10 J/K at [[1, 2]]
+  config A: E16 -> [] (gate shut, lambda = 0), loss 2.6241e+10 J/K | answer (v located) -> [1, 2], loss 0.0000e+00 | answer (v not located) -> [1, 2], loss 0.0000e+00
+  config B: E16 -> [1] (gate shut, lambda = 0), loss 1.0087e+11 J/K | answer (v located) -> [1, 2], loss 0.0000e+00 | answer (v not located) -> [1, 2], loss 0.0000e+00
+  config C: E16 -> [] (gate shut, lambda = 0), loss 2.6241e+10 J/K | answer (v located) -> [1, 2], loss 0.0000e+00 | answer (v not located) -> [1, 2], loss 0.0000e+00
+== claim 5 d0=(50,400): optimum W = +1.1624e+11 J/K at [[1, 2]]
+  config A: E16 -> [] (gate shut, lambda = 0), loss 1.1624e+11 J/K | answer (v located) -> [1, 2], loss 0.0000e+00 | answer (v not located) -> [1, 2], loss 0.0000e+00
+  config B: E16 -> [1] (gate shut, lambda = 0), loss 1.0087e+11 J/K | answer (v located) -> [1, 2], loss 0.0000e+00 | answer (v not located) -> [1, 2], loss 0.0000e+00
+  config C: E16 -> [1] (gate shut, lambda = 0), loss 1.0087e+11 J/K | answer (v located) -> [1, 2], loss 0.0000e+00 | answer (v not located) -> [1, 2], loss 0.0000e+00
+== d0=(150,190): optimum W = +4.7241e+10 J/K at [[1, 2]]
+  config A: E16 -> [1, 2] (gate open, lambda = avg), loss 0.0000e+00 J/K | answer (v located) -> [1, 2], loss 0.0000e+00 | answer (v not located) -> [1, 2], loss 0.0000e+00
+  config B: E16 -> [1, 2] (gate open, lambda = avg), loss 0.0000e+00 J/K | answer (v located) -> [1, 2], loss 0.0000e+00 | answer (v not located) -> [1, 2], loss 0.0000e+00
+  config C: E16 -> [1, 2] (gate open, lambda = avg), loss 0.0000e+00 J/K | answer (v located) -> [1, 2], loss 0.0000e+00 | answer (v not located) -> [1, 2], loss 0.0000e+00
+== d0=(30,400): optimum W = +1.3424e+11 J/K at [[1, 2]]
+  config A: E16 -> [] (gate shut, lambda = 0), loss 1.3424e+11 J/K | answer (v located) -> [1, 2], loss 0.0000e+00 | answer (v not located) -> [1, 2], loss 0.0000e+00
+  config B: E16 -> [1] (gate shut, lambda = 0), loss 1.0087e+11 J/K | answer (v located) -> [1, 2], loss 0.0000e+00 | answer (v not located) -> [1, 2], loss 0.0000e+00
+  config C: E16 -> [1] (gate shut, lambda = 0), loss 1.0087e+11 J/K | answer (v located) -> [1, 2], loss 0.0000e+00 | answer (v not located) -> [1, 2], loss 0.0000e+00
+== d0=(230,230): optimum W = +0.0000e+00 J/K at [[]]
+  config A: E16 -> [] (gate shut, lambda = 0), loss 0.0000e+00 J/K | answer (v located) -> [], loss 0.0000e+00 | answer (v not located) -> [], loss 0.0000e+00
+  config B: E16 -> [] (gate shut, lambda = 0), loss 0.0000e+00 J/K | answer (v located) -> [], loss 0.0000e+00 | answer (v not located) -> [], loss 0.0000e+00
+  config C: E16 -> [1, 2] (gate open, lambda = avg), loss 2.8759e+10 J/K | answer (v located) -> [], loss 0.0000e+00 | answer (v not located) -> [1, 2], loss 2.8759e+10
+config C, gate open: credit per position = c_in + lambda = 268.3213 J/K vs true saving 201.2410 J/K -> double count 67.0803 J/K per position = 6.7080e+10 J/K over N
+
+== (a) T0 != T_ref ==
+T0 = 298.15: all lost work T0-independent -> phi (consistent T0) = [0.55626 0.24815], sum 0.80441; lambda_lo with T_ref but d at T0 -> sum 0.80441; edge v/T0 = 67.080 vs v/T_ref = 67.080 J/K
+T0 = 250.0: all lost work T0-independent -> phi (consistent T0) = [0.55626 0.24815], sum 0.80441; lambda_lo with T_ref but d at T0 -> sum 0.88515; edge v/T0 = 80.000 vs v/T_ref = 67.080 J/K
+T0 = 200.0: all lost work T0-independent -> phi (consistent T0) = [0.55626 0.24815], sum 0.80441; lambda_lo with T_ref but d at T0 -> sum 0.96900; edge v/T0 = 100.000 vs v/T_ref = 67.080 J/K
+T0 = 298.15: split s_op = [250. 300.], u = [-29815.  29815.] J -> d = [150. 400.], sum phi = 0.8044, W(all) = +2.6241e+10 J/K
+T0 = 250.0: split s_op = [250. 300.], u = [-29815.  29815.] J -> d = [130.74 419.26], sum phi = 0.4975, W(all) = +8.0408e+10 J/K
+T0 = 200.0: split s_op = [250. 300.], u = [-29815.  29815.] J -> d = [100.93 449.08], sum phi = 0.1787, W(all) = +1.6426e+11 J/K
+
+== reviewer's spec-symbol bracket (R5 of rv04) on the rv03 case: [0, B_infra,av/(T0 N_k)] ==
+product 1: bracket (0, 223.6011) J/K; d = 150.0; psi_k = N_k T0 d_k / B = 0.6708
+product 2: bracket (0, 2012.4099) J/K; d = 400.0; psi_k = N_k T0 d_k / B = 0.1988
+all-exit system test sum psi_k = 0.8696 (< 1: all switch); answer's band for comparison: (67.0803, 216.1477) and (67.0803, 1408.6869)
