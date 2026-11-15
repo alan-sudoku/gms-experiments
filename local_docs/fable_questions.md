@@ -19,6 +19,8 @@ Picked for: real uncertainty in the project, a high cost if we are wrong, a need
 | 5 | Is the Class I / Class II demarcation sound and decidable? | The framework's central claim, and the gate decides which scenarios reach the solver. Prompts 1a and 1b found no Class II case where geometry beats the incumbent under the fairness rule (E19). Class I examples look regime-dependent (photon attenuation in the Compton regime; shape anisotropy in magnets). GMS-300 is not drafted | W2b GMS-300 brief, GMS-500, every scenario |
 | 6 | How do several degradation mechanisms combine (OQ-20)? | Rates are summed and τ_wearout is the minimum over fatigue load cases with no Miner summation (GMS-220); interacting mechanisms (corrosion fatigue, scale cracking, section loss) may make both non-conservative, and the error direction differs per side | GMS-400 and GMS-500 briefs, OQ-20 owner |
 | 7 | (narrow) Which entropy currency across environments (OQ-13)? | E15 uses one evaluation T₀; the alternative divides each loss by its own T₀. They disagree in about 5 % of random cases; a choice of currency that computation cannot settle | GMS-100 revision if OQ-13 flips, any off-Earth scenario |
+| 8 | (narrow) Infrastructure credit shared by several products (OQ-14) | E16's all-or-nothing gate lets one product's choice veto another's credit; a per-product rule may not exist | GMS-100 revision if OQ-14 is settled |
+| 9 | (narrow) Incumbent wearout (OQ-3, plan Q4) | τ_wearout,s = ∞ and "no outcome" for a finite incumbent life; R_s, the costing boundary and the solver's segment bounds all depend on it | GMS-400 brief; GMS-100 revision if the profile changes |
 
 Not worth the window: drafting the 11 documents, writing lints or test boilerplate (the `AI_value_work.md` items 1, 4 and 5). Our own pipeline already does these, and `spec_lint` exists.
 
@@ -317,5 +319,48 @@ OUTPUT FORMAT (strict, keep it short)
 - Each claim: statement; equation in plain text with SI units; confidence (high / medium / low); one test or computation that would falsify it.
 - Derivations: only the steps needed to check each claim, no general survey.
 - No literature review. If you lean on a known result (for example Shapley value, the core of a cost game), name it in one line and mark it UNSURE if you are not certain of the exact form. Do not invent references.
+- End with "Open points": at most 3 lines on what this answer could not settle.
+```
+
+## Prompt 9 (narrow): incumbent wearout (OQ-3, plan Q4)
+
+Written 2026-11-15; awaiting user approval. Low-budget run (`fable_delegation_plan.md` §5.1 style: one `fable` agent with no tools, block passed verbatim). Background: GMS-100 DEF-LIFECYCLE-SIDE-PROFILE sets τ_wearout,s = ∞ and leaves R_s unspecified, and its decision rule returns no outcome when τ_wearout,s < ∞; GMS-220 and GMS-230 follow that. OQ-3 (plan Q4) keeps incumbent wearout open; OQ-9 (costing boundary asymmetry) and OQ-19 (consumed-metal accounting) interact with it. The block states the spec construction itself, because a no-tools run cannot read the spec (Prompt 7 lesson). The example numbers are made up. Feeds the GMS-400 brief.
+
+```text
+Answer one narrow lifecycle-accounting question. Work from first principles. Do not use web search, code execution or any other tool. Treat every formula below as unverified, and be adversarial toward it.
+
+SETTING
+A lifecycle comparison decides whether a candidate design g should replace an incumbent design s in one component position (one unit in service at a time, replaced at wearout, same function over the horizon τ). Costs are total irreversibility per position, in J/K: lost work divided by the dead-state temperature T₀ of the evaluation. Side k ∈ {g, s} has a profile: Σ_k,init (first unit), R_k (one wearout replacement), Σ_k,EOL (end of life of the unit in service at τ), Σ̇_k (constant rate, W/K), K_k (parabolic scale-growth coefficient, J/(K·s^½), clock restarts at each replacement), τ_w,k (life to wearout).
+   m_k(τ) = max(0, ceil(τ/τ_w,k) − 1)   (a unit reaching τ_w,k exactly at τ is not replaced)
+   Σ_k(τ) = Σ_k,init + Σ̇_k·τ + m_k·[R_k + K_k·√τ_w,k] + K_k·√(τ − m_k·τ_w,k) + Σ_k,EOL
+   f(τ) = Σ_g(τ) − Σ_s(τ) − λ;  g wins iff f(τ) < 0; λ ≥ 0 is a one-off credit for removing the scarce element x, independent of τ.
+ End of life is allocated so that side k carries exactly m_k + 1 end-of-life charges: each retired unit's EOL (remelt of the recovered fraction R_rec; dispersal plus virgin make-up of the unrecovered fraction) sits inside R_k, and Σ_k,EOL is charged once at τ.
+ Costing boundary (a declared convention): the incumbent is charged extraction of x and transport only; the candidate is also charged precursor production, manufacturing (with yield scrap), tooling and design computation. Because the omitted incumbent stages are non-negative, "g wins" is robust and "g loses" is one-sided.
+ R_g = (precursor conversion of restored stock + transport)/T₀ + manufacturing + retired-unit EOL; tooling and design computation are one-off and not in R_g.
+
+CURRENT RULE (unverified)
+ The incumbent never wears out in this edition: τ_w,s = ∞, m_s = 0, R_s unspecified. If an analysis gives τ_w,s < ∞, the decision rule returns "no outcome".
+ Solver facts that rely on it: f is piecewise in τ with jumps of +R_g at τ = j·τ_w,g. Within one segment, in local time Δt = τ − m_g·τ_w,g, f″(Δt) = ¼[K_s·τ^(−3/2) − K_g·Δt^(−3/2)] has at most one zero, so f has at most three roots per segment. A shorter τ_w,g never lowers Σ_g (the oxidation part strictly decreases in τ_w,g when K_g > 0 and τ ≥ τ_w,g; m_g·R_g is a non-increasing step).
+
+THE PROBLEM
+ Example (made up): τ = 20 yr; all K = 0; Σ̇_g = Σ̇_s.
+ g: Σ_g,init = 3.0e6, R_g = 2.0e6, Σ_g,EOL = 0.2e6 J/K, τ_w,g = 6 yr, so m_g = 3.
+ s: Σ_s,init = 4.0e6, Σ_s,EOL = 0.3e6 J/K, λ = 0.5e6 J/K; a degradation analysis gives τ_w,s = 8 yr, so m_s = 2.
+ Rule as written: no outcome. With τ_w,s forced to ∞: f = 4.4e6 J/K, s wins.
+ R_s under the incumbent's boundary (make-up of unrecovered x, remelt, transport, retired-unit EOL; no manufacturing): R_s = 1.0e6 J/K gives f = 2.4e6, s wins. R_s including the incumbent's manufacturing: R_s = 2.5e6 J/K gives f = −0.6e6, g wins.
+ Some incumbents lose performance gradually rather than failing (for example a catalyst whose overpotential rises with age, so Σ̇_s grows with the age of the unit); for them a replacement time is a choice, not a given.
+
+QUESTION
+ 1. Fairness: is τ_w,s = ∞ a fair default for a comparison at equal function over τ, and in which direction does it bias the verdict when the real incumbent life is finite? Is "no outcome" the right response, or should the specification evaluate f with m_s > 0?
+ 2. R_s: which convention keeps the comparison fair: the incumbent's asymmetric boundary, the same stages as R_g, or something else? Does the boundary asymmetry, whose bias is one-sided when the incumbent is never replaced, stop being one-sided once both sides are replaced (show with the example)? State the minimal consistent rule.
+ 3. Wearout time: when losses grow with unit age (Σ̇_k(a) increasing, or K_k·√a), should τ_w,k be a given life (failure), or the replacement interval that minimizes lifetime irreversibility over τ? Give the condition under which they differ, and whether the same rule must apply to both sides.
+ 4. Solver consequences with both sides replaced: breakpoints become the union of j·τ_w,g and i·τ_w,s (+R_g and −R_s jumps; coincident breakpoints). Does the "at most three roots per segment" bound survive when both clocks restart (two local ages)? Does monotonicity survive (a shorter τ_w,s never raises f)? What changes in the tie convention?
+ 5. One-line verdict: the rule for a first edition, its validity range, and when the current rule (τ_w,s = ∞ or "no outcome") is wrong by enough to flip a verdict.
+
+OUTPUT FORMAT (strict, keep it short)
+- At most 8 numbered claims, most important first, so that a cut-off reply is still useful. Total reply under 1,200 words.
+- Each claim: statement; equation in plain text with SI units; confidence (high / medium / low); one test or computation that would falsify it.
+- Derivations: only the steps needed to check each claim, no general survey.
+- No literature review. If you lean on a known result (for example renewal-reward or optimal replacement theory), name it in one line and mark it UNSURE if you are not certain of the exact form. Do not invent references.
 - End with "Open points": at most 3 lines on what this answer could not settle.
 ```
