@@ -55,6 +55,8 @@ Reviewer counts: 0 BLOCKER, 7 MAJOR, 7 MINOR. All 6 review scripts reproduce byt
 
 ## Decisions for the user
 
+**Decided 2026-11-15: the user accepted the recommendation for D1–D5.** Recorded as E28 in drafting notes §A (applied to GMS-100 the same day: REQ-LIFECYCLE-CEXC-SOURCE items 4 and 6, B_infra as the avoidable part over τ_infra, new EQ-LIFECYCLE-INFRASTRUCTURE-SHARE and REQ-LIFECYCLE-SHARED-INFRASTRUCTURE-VERDICT; lint 0 issues, 64 tests pass); OQ-14 narrowed, OQ-22 data task extended, GMS-400 and GMS-410 brief notes in `orchestrator_state.md` §3 and §4; plan V18.
+
 | # | Decision | Options | Recommendation |
 |---|---|---|---|
 | D1 | CExC source conditions (findings 1, 2) | (a) Amend REQ-LIFECYCLE-CEXC-SOURCE. Item 4: "it excludes capital goods of the supply chain of x whenever B_infra(x) is part of the evaluation". New item 6: "no upstream flow is counted in both CExC(x) and B_infra(x); the source declares which monitoring, assaying and maintaining flows of the loop it contains". (b) Leave as is | (a). It closes a 1.01e11 J/K bypass and a double count with no new symbol. Under-crediting the candidate is the conservative direction the spec already uses |
