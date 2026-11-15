@@ -1,0 +1,7 @@
+# LOOKUP. Exergy replacement cost (ERC) and 'mining and metallurgical costs' (M&M), GJ/t = MJ/kg.
+# Pt: Valero A., Valero A. et al., chapter "Accounting for Mineral Depletion Under the UN-SEEA Framework", IntechOpen (open access), https://www.intechopen.com/chapters/62189, Table 1 (values from the chapter's ref [16]); access 2026-11-15 (raw/intechopen/c.html). Pt row: ERC 4,491,688; M&M 291,667. Palladium and 'PGM average' rows also in that table. NO Ir row exists.
+# Ni (sulphides, pentlandite) and Fe (hematite): Torres C., Valero A., Valero A., Naredo J.M. 2026, Ecol. Econ. 240:108817 replication dataset, Zenodo 10.5281/zenodo.17521019 (CC BY 4.0), file ExergyCosts_dataset_converted.csv, columns 'Exergy Replacement Cost (GJ/t)', 'Mining and Concentration', 'Smelting and Refining'; access 2026-11-15. The dataset contains NO Pt and NO Ir rows.
+element,ERC_MJ_per_kg,MM_mining_conc_MJ_per_kg,MM_smelt_refine_MJ_per_kg,MM_total_MJ_per_kg
+Pt,4491688,,,291667
+Ni,761.0347373,15.4974237,100,115.4974237
+Fe,17.7508157,0.69942,13.428864,14.128284

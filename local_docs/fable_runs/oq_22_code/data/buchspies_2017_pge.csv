@@ -1,0 +1,16 @@
+# LOOKUP. Buchspies B., Thormann L., Mbohwa C., Kaltschmitt M., 2017, "PGE Production in Southern Africa, Part II: Environmental Aspects", Minerals 7(11), 225, https://doi.org/10.3390/min7110225. Read from the PDF mirror https://pdfs.semanticscholar.org/52c5/e4fdc45a701502cfe84921a4e76fe6d3e109.pdf (raw/mdpi_pge2/p.pdf), access 2026-11-15. Section 4.1.
+# Data: company sustainability-report energy consumption (operating energy only), reference year 2015, Southern Africa, per kg 6E PGE (Pt+Pd+Rh+Ru+Ir+Au).
+quantity,value,unit,where
+share_energy_mine,0.34,-,text sec 4.1 (Fig 7a)
+share_energy_concentrator,0.26,-,text sec 4.1
+share_energy_smelter_converter,0.28,-,text sec 4.1
+share_energy_refinery,0.12,-,text sec 4.1
+share_electricity_of_total_energy,0.75,-,text sec 4.1
+share_coal_of_total_energy,0.07,-,text sec 4.1
+electricity_total_2015,44.9,PJ,text sec 4.1
+electricity_per_kg_6E,0.15,TJ/kg,text sec 4.1
+electricity_per_1000t_ore,0.55,TJ,text sec 4.1
+CEDfossil_total_2015,177,PJ,text sec 4.1 (CED fossil)
+CEDfossil_per_kg_6E,0.60,TJ/kg,abstract and sec 4.1
+CEDfossil_per_1000t_ore,2.26,TJ,text sec 4.1
+liquid_fuel_2015,157,million L,text sec 4.1
