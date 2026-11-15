@@ -1,0 +1,35 @@
+rv02: independent rainflow of sin(2 pi t) + s sin(2 pi phi t + ph), ratio to separate sum. Level derived.
+n=2 phi= 1 s=0.1000: rainflow/separate = 1.1980  UB/rainflow =   1.000  full cycles = 1
+n=2 phi= 1 s=0.3333: rainflow/separate = 1.6000  UB/rainflow =   1.000  full cycles = 1
+n=2 phi= 1 s=1.0000: rainflow/separate = 2.0000  UB/rainflow =   1.000  full cycles = 1
+n=2 phi= 3 s=0.1000: rainflow/separate = 0.7864  UB/rainflow =   4.481  full cycles = 1
+n=2 phi= 3 s=0.3333: rainflow/separate = 0.6953  UB/rainflow =   5.753  full cycles = 3
+n=2 phi= 3 s=1.0000: rainflow/separate = 0.8889  UB/rainflow =   3.375  full cycles = 3
+n=2 phi= 9 s=0.1000: rainflow/separate = 1.1133  UB/rainflow =   8.974  full cycles = 5
+n=2 phi= 9 s=0.3333: rainflow/separate = 1.0847  UB/rainflow =   7.376  full cycles = 9
+n=2 phi= 9 s=1.0000: rainflow/separate = 1.0184  UB/rainflow =   3.535  full cycles = 9
+n=2 phi=33 s=0.1000: rainflow/separate = 1.0351  UB/rainflow =  29.004  full cycles = 33
+n=2 phi=33 s=0.3333: rainflow/separate = 1.0109  UB/rainflow =  12.436  full cycles = 33
+n=2 phi=33 s=1.0000: rainflow/separate = 1.0015  UB/rainflow =   3.876  full cycles = 33
+n=3 phi= 1 s=0.1000: rainflow/separate = 1.3297  UB/rainflow =   1.000  full cycles = 1
+n=3 phi= 1 s=0.3333: rainflow/separate = 2.2857  UB/rainflow =   1.000  full cycles = 1
+n=3 phi= 1 s=1.0000: rainflow/separate = 4.0000  UB/rainflow =   1.000  full cycles = 1
+n=3 phi= 3 s=0.1000: rainflow/separate = 0.7268  UB/rainflow =   5.477  full cycles = 1
+n=3 phi= 3 s=0.3333: rainflow/separate = 0.7590  UB/rainflow =   8.432  full cycles = 3
+n=3 phi= 3 s=1.0000: rainflow/separate = 1.1404  UB/rainflow =   5.261  full cycles = 3
+n=3 phi= 9 s=0.1000: rainflow/separate = 1.3192  UB/rainflow =   8.999  full cycles = 5
+n=3 phi= 9 s=0.3333: rainflow/separate = 1.8448  UB/rainflow =   8.673  full cycles = 9
+n=3 phi= 9 s=1.0000: rainflow/separate = 1.3451  UB/rainflow =   5.353  full cycles = 9
+n=3 phi=33 s=0.1000: rainflow/separate = 1.3007  UB/rainflow =  32.691  full cycles = 33
+n=3 phi=33 s=0.3333: rainflow/separate = 1.4688  UB/rainflow =  23.965  full cycles = 33
+n=3 phi=33 s=1.0000: rainflow/separate = 1.0921  UB/rainflow =   7.110  full cycles = 33
+range of rainflow/separate over the 24 cases: 0.6953 to 4.0000 ; max UB/rainflow = 32.691 ; min UB/rainflow = 1.0000
+  (answer M1.6 says 'up to 42.5 times the rainflow value'; 42.52 is the UB/separate ratio at n=3, phi=33, s=0.1)
+
+Phase sweep of the fast component (ph in degrees), ratio rainflow/separate:
+  n=2 phi=3 s=0.333: min 0.3333 (ph=180) max 1.3276 (ph=165)
+  n=2 phi=3 s=1.000: min 0.8889 (ph=0) max 1.1481 (ph=180)
+  n=3 phi=3 s=0.333: min 0.2667 (ph=180) max 2.1197 (ph=165)
+  n=2 phi=9 s=0.333: min 1.0263 (ph=180) max 1.0847 (ph=0)
+  n=3 phi=9 s=0.333: min 1.6339 (ph=180) max 1.8448 (ph=0)
+All values level `derived`.
