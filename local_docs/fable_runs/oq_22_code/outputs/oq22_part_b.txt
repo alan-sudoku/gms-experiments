@@ -1,0 +1,102 @@
+
+====================================================================================================
+B1 SOURCE CONDITIONS, REQ-LIFECYCLE-CEXC-SOURCE items 1 to 6 (met / not met / not stated, with evidence)
+====================================================================================================
+S1 Nuss and Eckelman 2014 CED (ecoinvent 2.2 reallocated)
+   1. NOT MET: CED counts primary energy carriers; the ore itself is not an energy resource (CED, not exergy; no 'metals' category)
+   2. NOT MET: CED has no reference environment; b_ch (Szargut 2005) is from another environment than any CExC
+   3. MET: revenue (2006-2010 prices) for PGMs, Cu, Ni; ecoinvent had price 1993-2002; mass only for ore-to-metal within PGM (SI Pt entry, Table S30)
+   4. NOT STATED: the SI text contains no statement on infrastructure or capital goods; ecoinvent 2.x unit processes usually include infrastructure (MEMORY UNSURE) -> likely not excluded
+   5. MET for Pt, Ir as metal 'at refinery'; NOT MET for IrO2 (anode form) and for Pt/C
+   6. NOT STATED: no list of monitoring, assaying or maintaining flows
+S2 Bosch et al. 2007 CExD (ecoinvent categories)
+   1. MET by definition: category 'non-renewable material resources, metals' (ESU report Table 1) counts the exergy of the metal ore
+   2. PARTLY: ESU report says reference environment 298.15 K and cites Szargut 1988/2005; the exact b_ch table per element not read
+   3. NOT STATED in the ESU report; revenue allocation inherited from ecoinvent (UNSURE)
+   4. NOT STATED (same ecoinvent datasets as S1)
+   5. NOT STATED for Pt, Ir (factors not read: Bosch SI table not obtained)
+   6. NOT STATED
+S3 Thanatia 'mining and metallurgical cost' of Pt, 291667 MJ/kg (IntechOpen ch. 62189 Table 1)
+   1. NOT STATED: cost of mining and metallurgy; whether it contains ore exergy is not said
+   2. STATED: Szargut reference environment 'with some improvements' (chapter text); Ir b_ch not used
+   3. NOT STATED for Pt
+   4. NOT STATED
+   5. ELEMENT only ('Platinum')
+   6. NOT STATED
+S4 Buchspies et al. 2017 (company-reported energy, 2015)
+   1. NOT APPLICABLE: operating energy of the industry, no CExC
+   2. NOT APPLICABLE
+   3. NOT MET: energy per kg of 6E PGE total (no split); price allocation to single PGEs in its Table S1, not read
+   4. MET (by omission): consumption data of energy carriers only, no capital goods
+   5. 6E PGE mixture, not a form
+   6. PARTLY: all consumed energy of mine, concentrator, smelter, refinery is included, i.e. includes ventilation, cooling, pumping, utilities
+
+====================================================================================================
+B2 DECOMPOSITION OF THE SOURCE'S SUPPLY-CHAIN ENERGY (Pt supply mix, CED 243000 MJ/kg) BY STAGE (assumption: CED stage split = delivered-energy split)
+====================================================================================================
+  mine                 34 percent ->     82620 MJ/kg Pt
+  concentrator         26 percent ->     63180 MJ/kg Pt
+  smelter_converter    28 percent ->     68040 MJ/kg Pt
+  refinery             12 percent ->     29160 MJ/kg Pt
+CHECK stage shares sum to 1 (LOOKUP, read from text: 34+26+28+12): PASS 
+  Capital (fixed, and proportional to throughput): NOT split by the source (S1 gives CED per kg only, no process list read; S4 contains no capital).
+  Operating split fixed / variable per stage: NOT in any source read. Bracket from STAGE_FIXED (MEMORY UNSURE):
+    mine               fixed fraction of operating energy 0.30 / 0.45 / 0.60 (lo/mid/hi)
+    concentrator       fixed fraction of operating energy 0.05 / 0.10 / 0.15 (lo/mid/hi)
+    smelter_converter  fixed fraction of operating energy 0.15 / 0.25 / 0.40 (lo/mid/hi)
+    refinery           fixed fraction of operating energy 0.10 / 0.20 / 0.30 (lo/mid/hi)
+  fixed fraction of the operating energy f_op: 0.169 / 0.273 / 0.391
+  Maintenance: no source read separates maintenance energy or sustaining capital. Not split.
+
+====================================================================================================
+B3 INDEPENDENT CONSISTENCY CHECK: Nuss/ecoinvent Pt burden vs Buchspies 2015 company data (per kg of PGM, different basis; not true by construction)
+====================================================================================================
+  Nuss ZA: total burden per kg Pt (all co-products) 5.28e+05 MJ; per kg PGM incl. base-metal share 3.22e+05 MJ; PGM share only 2.81e+05 MJ per kg PGM (S28 1970-92 production mix)
+  Buchspies 2015: CED fossil 6e+05 MJ per kg 6E PGE (all burden of the PGE operations, no base-metal split)
+  ratio Buchspies / Nuss (per kg PGM incl. base metals) = 1.86; vs PGM share only = 2.13
+  Buchspies states <20 percent agreement with ecoinvent on its own basis (Figure 13, not read); here the simple per-kg comparison differs by about a factor 2 (ore-grade decline since the ecoinvent data, basis differences). The CED row may therefore UNDERSTATE the 2015 supply chain by up to ~2x (UNSURE).
+  upstream multiplier CED fossil / delivered energy (Buchspies) = 3.08 (coal-power dominated)
+CHECK Buchspies/Nuss within a factor 3 (loose independent check): PASS ratio 1.86
+
+====================================================================================================
+B4 B_infra(Pt): sunk / avoidable-fixed / variable split, per kg Pt through the loop (supply-mix CED 243000 MJ/kg as e_tot). ALL INPUTS MEMORY (UNSURE). Corners: lo/mid/hi change all inputs together
+====================================================================================================
+quantity                                                       lo          mid           hi   (MJ per kg Pt unless stated)
+capital-goods share c (of source energy)                     0.01         0.05          0.3
+operating energy (1-c) e                                2.406e+05    2.308e+05    1.701e+05
+  operating, variable (proportional to throughput)      1.999e+05    1.678e+05    1.036e+05
+  operating, fixed (ventilation, cooling, holding, utilities)    4.066e+04    6.302e+04    6.651e+04
+loop capital goods inside source (c e)                       2430    1.215e+04     7.29e+04
+  of which sunk (establishing existing loop)                 1944         6683    2.187e+04
+  of which avoidable (sustaining + re-establishing within tau_infra)          486         5468    5.103e+04
+fixed part F = op_fixed + capital                       4.309e+04    7.517e+04    1.394e+05
+avoidable-fixed part                                    4.114e+04    6.849e+04    1.175e+05
+alpha = avoidable-fixed / F  (brief: avoidable fraction of the fixed part)       0.9549       0.9111       0.8431
+alpha_x: share of avoidable-fixed that leaves with Pt         0.05          0.3          0.6
+b_infra = alpha_x x avoidable-fixed                          2057    2.055e+04    7.052e+04
+b_infra in J/kg                                         2.057e+09    2.055e+10    7.052e+10
+b_infra / e_tot                                          0.008466      0.08456       0.2902
+  bracket of b_infra: 2.06e+09 to 7.05e+10 J/kg (34 x spread), mid 2.05e+10 J/kg = 20547 MJ/kg
+  Cannot be estimated from the sources read: the true fixed fraction of operating energy; the loop capital (no capital inventory read); the recycling loop; the sunk fraction; alpha_x (needs a model of what stops when Pt leaves every product while Pd, Rh, Ni and Cu still use the Bushveld loop).
+  Note on definitions: B_infra counts destroyed exergy of monitoring, assaying and maintaining; here 'avoidable fixed operating energy' is used as its proxy, which includes ventilation and cooling (maintaining the loop).
+CHECK avoidable-fixed + sunk + variable = e_tot (BY CONSTRUCTION of the split): PASS 
+
+====================================================================================================
+B5 CONFIGURATION (A: loop outside CExC; B: capital goods inside; C: loop operating flows inside) and what the source fails
+====================================================================================================
+  lo: inside the CED row: capital goods 1.0 percent (config B part, UNSURE whether included), fixed operating flows 16.7 percent (config C part); avoidable-fixed 16.9 percent; b_infra 0.8 percent
+  mid: inside the CED row: capital goods 5.0 percent (config B part, UNSURE whether included), fixed operating flows 25.9 percent (config C part); avoidable-fixed 28.2 percent; b_infra 8.5 percent
+  hi: inside the CED row: capital goods 30.0 percent (config B part, UNSURE whether included), fixed operating flows 27.4 percent (config C part); avoidable-fixed 48.4 percent; b_infra 29.0 percent
+  Evidence (inference, not a statement of the source): (i) the CED row comes from mine, concentrator, smelter and refinery operating data (ecoinvent from company data; Buchspies company data agree in kind), which contain every energy flow of the sites including ventilation, cooling, pumping, utilities: config C is in the data by construction of how such inventories are built, independent of any number above;
+            (ii) capital goods: ecoinvent unit processes normally carry infrastructure (MEMORY UNSURE), the SI does not say: config B likely, not shown;
+            (iii) no stage or fixed/variable split is published, so A cannot be told from C inside the data, which is the problem named in prompt_8_review.
+  Configuration for this source: MIX of B (probable) and C (certain in kind). Not A.
+  Fails as published: condition 4 (capital goods not declared, probably included) and condition 6 (no declaration of which loop flows are contained; fixed operating flows are contained). Also 1, 2 (CED is not an exergy table) and 5 (metal, not IrO2/Pt-C).
+  What an evaluation would have to remove from CExC(Pt) to meet 4 and 6: capital goods c e = 2430 to 72900 MJ/kg (mid 12150), plus the avoidable-fixed operating flows counted in B_infra: alpha_x x op_fixed = 2033 to 39905 MJ/kg (mid 18907).
+  Effect on the OQ-22 number: if the avoidable flows sit inside CExC, adding lambda double counts them (Part A 'lambda' rows are then an upper bound); moving them out of CExC and into lambda leaves Delta_eta_be unchanged. Delta_eta_be (Pt central) is unchanged to within the b_infra fraction: +0.8 / +8.5 / +29.0 percent (lo/mid/hi) of the extraction term.
+  Under config B with lambda = 0, CExC returns an average share of the whole loop capital to the incumbent: the bypass named in REQ-LIFECYCLE-CEXC-SOURCE item 4; size c e = 1.0 to 30.0 percent of Sigma_s,init for this source.
+
+====================================================================================================
+B6 OVERALL
+====================================================================================================
+OVERALL PASS

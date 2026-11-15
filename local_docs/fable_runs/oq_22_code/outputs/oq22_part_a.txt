@@ -1,0 +1,299 @@
+
+====================================================================================================
+A0 INPUTS (value, unit, status, source)
+====================================================================================================
+T0 = 298.15 K (convention 1)
+kappa (CED -> CExC) = 1.00  MEMORY (UNSURE): assumed because CED counts primary energy carriers (exergy/energy of fuels ~1, electricity 1); swept 0.8..1.5 in A6
+  CED Pt TOTAL (supply mix)         243000.0 MJ/kg  LOOKUP Nuss and Eckelman 2014 SI S1 Table S38 (data/ced_nuss_eckelman_2014.csv)
+  CED Pt primary South Africa       308000.0 MJ/kg  LOOKUP Nuss and Eckelman 2014 SI S1 Table S38 (data/ced_nuss_eckelman_2014.csv)
+  CED Pt primary Russia             327000.0 MJ/kg  LOOKUP Nuss and Eckelman 2014 SI S1 Table S38 (data/ced_nuss_eckelman_2014.csv)
+  CED Pt secondary                   11900.0 MJ/kg  LOOKUP Nuss and Eckelman 2014 SI S1 Table S38 (data/ced_nuss_eckelman_2014.csv)
+  CED Ir TOTAL (supply mix)         169000.0 MJ/kg  LOOKUP Nuss and Eckelman 2014 SI S1 Table S38 (data/ced_nuss_eckelman_2014.csv)
+  CED Ir primary South Africa       165000.0 MJ/kg  LOOKUP Nuss and Eckelman 2014 SI S1 Table S38 (data/ced_nuss_eckelman_2014.csv)
+  CED Ir primary Russia             175000.0 MJ/kg  LOOKUP Nuss and Eckelman 2014 SI S1 Table S38 (data/ced_nuss_eckelman_2014.csv)
+  CED Ni TOTAL (supply mix)            111.0 MJ/kg  LOOKUP Nuss and Eckelman 2014 SI S1 Table S38 (data/ced_nuss_eckelman_2014.csv)
+  CED Fe TOTAL (pig iron)               23.1 MJ/kg  LOOKUP Nuss and Eckelman 2014 SI S1 Table S38 (data/ced_nuss_eckelman_2014.csv)
+  b_ch Pt: 140.97 kJ/mol = 0.7226 MJ/kg   LOOKUP Szargut et al. 2005 (Exergoecology Portal Table 1); molar mass 195.084 g/mol MEMORY (UNSURE)
+  b_ch Ir: 256.56 kJ/mol = 1.3347 MJ/kg   LOOKUP Szargut et al. 2005 (Exergoecology Portal Table 1); molar mass 192.217 g/mol MEMORY (UNSURE)
+  b_ch Ni: 232.71 kJ/mol = 3.9649 MJ/kg   LOOKUP Szargut et al. 2005 (Exergoecology Portal Table 1); molar mass 58.693 g/mol MEMORY (UNSURE)
+  b_ch Fe: 376.99 kJ/mol = 6.7506 MJ/kg   LOOKUP Szargut et al. 2005 (Exergoecology Portal Table 1); molar mass 55.845 g/mol MEMORY (UNSURE)
+  Thanatia: Pt ERC 4491688 MJ/kg, Pt M&M 291667 MJ/kg (IntechOpen ch. 62189 Table 1, LOOKUP); Ni ERC 761.0, Fe ERC 17.75 MJ/kg (Torres et al. 2026 dataset, LOOKUP); Ir: no value readable
+  b_transport = 1.0e+06 J/kg  (inside the spec range 0.5e6 to 1.5e6; scenario value, not a source)
+  R_rec central = 0.9, set [0.0, 0.5, 0.9, 0.95]; w_lost,remelt proxy = 0.0490 x CExC (ratio of Pt secondary CED 11900 to Pt supply-mix CED 243000, LOOKUP ratio, proxy use UNSURE)
+  side g: NiFe oxyhydroxide, Ni:Fe = 3:1 molar -> mass fractions Ni 0.759, Fe 0.241 (derived from molar masses); loading is metal mass
+    g_low: loading 1 mg/cm2 metal, w_lost,prec = 1 x (CExC - b_ch), B_mfg = 0 MJ/m2 (MEMORY UNSURE bounds), tooling = computation = 0, R_rec(Ni) = R_rec(Fe) = 0
+    g_high: loading 5 mg/cm2 metal, w_lost,prec = 3 x (CExC - b_ch), B_mfg = 50 MJ/m2 (MEMORY UNSURE bounds), tooling = computation = 0, R_rec(Ni) = R_rec(Fe) = 0
+  lambda estimate: b_infra/CExC = 0.0085 (lo) / 0.0846 (mid) / 0.2902 (hi), from Part B bracket (MEMORY UNSURE). For Ir the same fraction is assumed (same loop, UNSURE).
+  lambda = b_infra m''/T0 assumes every position has the same loading m'' and N_alloc = (mass of x through the loop over tau_infra)/m''.
+  Replacement: tau_wearout = inf both sides. A candidate replacement would add R_g to side g and could only lower Delta_eta_be.
+
+====================================================================================================
+A1 G2.6 REPRODUCTION (Pt 0.5 mg/cm2, 0.5 A/cm2, 8e4 h) from its own formula d_eta = e m'' / (j tau)
+====================================================================================================
+  supply mix   e =   243000 MJ/kg -> 0.844 mV
+  primary ZA   e =   308000 MJ/kg -> 1.069 mV
+  primary RU   e =   327000 MJ/kg -> 1.135 mV
+  upper bound (97.5% of the RU row, 430000 MJ/kg) -> 1.493 mV
+CHECK G2.6 values 0.84, 1.07, 1.13, 1.5 mV (ARITHMETIC REPRODUCTION, same formula as the claim, not an independent check): PASS 
+  GMS-100 terms at the same point (g-high / g-low, R_rec = 0.9, lambda = 0 and lambda = estimate):
+    lambda=0 g_high: 0.8371 mV   [S_s,init 4.075e+06, S_s,EOL 1.796e+05, lam 0, S_g,init 2.108e+05, S_g,EOL 777.4 J/K per m2]
+    lambda=0 g_low: 0.8803 mV   [S_s,init 4.075e+06, S_s,EOL 1.796e+05, lam 0, S_g,init 2913, S_g,EOL 155.5 J/K per m2]
+    lambda=mid g_high: 0.9085 mV   [S_s,init 4.075e+06, S_s,EOL 1.796e+05, lam 3.446e+05, S_g,init 2.108e+05, S_g,EOL 777.4 J/K per m2]
+    lambda=mid g_low: 0.9516 mV   [S_s,init 4.075e+06, S_s,EOL 1.796e+05, lam 3.446e+05, S_g,init 2913, S_g,EOL 155.5 J/K per m2]
+  what GMS-100 changes relative to G2.6: (1) -b_ch: b_ch/CExC(Pt mix) = 2.974e-06, effect on S_s,init -0.00030 percent;
+    (2) transport term share of S_s,init: 4.115e-06;  (3) EOL term at R_rec=0.9 adds 4.41 percent of S_s,init (remelt proxy, UNSURE);
+    at R_rec=0 the EOL term is only b_ch: 2.97e-04 percent of S_s,init; (4) side g subtracts 5.17 percent (g_high) of S_s,init; (5) lambda: see A3.
+
+====================================================================================================
+A2 TERM TABLE per loading (J/K per m2), central duty j = 1 A/cm2, tau = 8e4 h, R_rec = 0.9, supply-mix row
+====================================================================================================
+x    mg/cm2    S_s,init       (ext)   (transp)     S_s,EOL     lam_mid     lam_lo     lam_hi S_g,init hi S_g,EOL hi S_g,init lo
+Ir      0.2   1.134e+06   1.134e+06       6.71   4.997e+04   9.586e+04    9.6e+03   3.29e+05   2.108e+05        777        2913
+Ir      1.0   5.668e+06   5.668e+06       33.5   2.498e+05   4.793e+05    4.8e+04   1.65e+06   2.108e+05        777        2913
+Ir      2.0   1.134e+07   1.134e+07       67.1   4.997e+05   9.586e+05    9.6e+04   3.29e+06   2.108e+05        777        2913
+Pt      0.1    8.15e+05    8.15e+05       3.35   3.592e+04   6.891e+04    6.9e+03   2.37e+05   2.108e+05        777        2913
+Pt      0.5   4.075e+06   4.075e+06       16.8   1.796e+05   3.446e+05   3.45e+04   1.18e+06   2.108e+05        777        2913
+side g (high) parts: precursor 4.286e+04, transport 280, manufacturing 1.677e+05, EOL 777.4 J/K per m2  -> upper bound on S_g,init = 2.108e+05 J/K per m2 = 62.9 MJ/m2
+side g (low): S_g,init = 2913 J/K per m2 = 0.869 MJ/m2
+g side share of S_s,init (g_high / g_low), supply-mix row:
+  Ir  0.2 mg/cm2:  18.60 percent /  0.257 percent
+  Ir  1.0 mg/cm2:   3.72 percent /  0.051 percent
+  Ir  2.0 mg/cm2:   1.86 percent /  0.026 percent
+  Pt  0.1 mg/cm2:  25.87 percent /  0.357 percent
+  Pt  0.5 mg/cm2:   5.17 percent /  0.071 percent
+  -> the g side is NOT negligible for the lowest loadings (Pt 0.1, Ir 0.2) at the stated upper bound (it is dominated by the 50 MJ/m2 manufacturing bound); g_high and g_low are both reported.
+
+====================================================================================================
+A3 CENTRAL CASE (j = 1 A/cm2, tau = 8e4 h, r_el = 1, R_rec = 0.9): Delta_eta_be in mV and class (nearly free < 10, priced > 30, between otherwise)
+====================================================================================================
+x   mg/cm2          row |  lam=0 g_high       class |  lam=0 g_low       class | lam_mid g_high       class | lam_hi g_low       class
+Ir     0.2          mix |        0.1006 nearly free |       0.1222 nearly free |         0.1105 nearly free |       0.1563 nearly free
+Ir     0.2           ZA |        0.0977 nearly free |       0.1193 nearly free |         0.1074 nearly free |       0.1526 nearly free
+Ir     0.2           RU |        0.1050 nearly free |       0.1266 nearly free |         0.1153 nearly free |       0.1618 nearly free
+Ir     1.0          mix |        0.5908 nearly free |       0.6124 nearly free |         0.6404 nearly free |       0.7827 nearly free
+Ir     1.0           ZA |        0.5763 nearly free |       0.5978 nearly free |         0.6247 nearly free |       0.7641 nearly free
+Ir     1.0           RU |        0.6125 nearly free |       0.6341 nearly free |         0.6639 nearly free |       0.8105 nearly free
+Ir     2.0          mix |        1.2034 nearly free |       1.2250 nearly free |         1.3027 nearly free |       1.5656 nearly free
+Ir     2.0           ZA |        1.1744 nearly free |       1.1960 nearly free |         1.2713 nearly free |       1.5286 nearly free
+Ir     2.0           RU |        1.2469 nearly free |       1.2685 nearly free |         1.3497 nearly free |       1.6212 nearly free
+Pt     0.1          mix |        0.0662 nearly free |       0.0878 nearly free |         0.0733 nearly free |       0.1123 nearly free
+Pt     0.1           ZA |        0.0898 nearly free |       0.1113 nearly free |         0.0988 nearly free |       0.1424 nearly free
+Pt     0.1           RU |        0.0966 nearly free |       0.1182 nearly free |         0.1062 nearly free |       0.1512 nearly free
+Pt     0.1  ThanatiaMM* |        0.0838 nearly free |       0.1054 nearly free |         0.0924 nearly free |       0.1348 nearly free
+Pt     0.5          mix |        0.4186 nearly free |       0.4402 nearly free |         0.4542 nearly free |       0.5626 nearly free
+Pt     0.5           ZA |        0.5364 nearly free |       0.5580 nearly free |         0.5816 nearly free |       0.7132 nearly free
+Pt     0.5           RU |        0.5708 nearly free |       0.5924 nearly free |         0.6188 nearly free |       0.7572 nearly free
+Pt     0.5  ThanatiaMM* |        0.5068 nearly free |       0.5284 nearly free |         0.5496 nearly free |       0.6753 nearly free
+  * Thanatia 'mining and metallurgical cost' of Pt (exergy, MJ/kg 291667), not a CED row. lam_mid uses the mid b_infra fraction, lam_hi the high one (Part B bracket).
+  range over all central rows: 0.0662 to 1.6212 mV ; classes present: ['nearly free']
+  Ir: 0.0977 to 1.6212 mV
+  Pt: 0.0662 to 0.7572 mV
+  Ir 0.2 mg/cm2: 0.0977 to 0.1618 mV, class ['nearly free']
+  Ir 1.0 mg/cm2: 0.5763 to 0.8105 mV, class ['nearly free']
+  Ir 2.0 mg/cm2: 1.1744 to 1.6212 mV, class ['nearly free']
+  Pt 0.1 mg/cm2: 0.0662 to 0.1512 mV, class ['nearly free']
+  Pt 0.5 mg/cm2: 0.4186 to 0.7572 mV, class ['nearly free']
+
+====================================================================================================
+A4 DUTY GRID: Delta_eta_be in mV (rows j, columns tau). R_rec = 0.9, r_el = 1. Shown: supply-mix row, side g = g_high (lowest) and g_low (highest); lambda = 0 and lambda_mid / lambda_hi
+====================================================================================================
+--- Ir 0.2 mg/cm2, row mix, g_high, lambda=0
+   j\tau[h]       2e+04       4e+04       8e+04
+     0.2          2.0125      1.0063      0.5031
+     0.5          0.8050      0.4025      0.2013
+     1.0          0.4025      0.2013      0.1006
+     2.0          0.2013      0.1006      0.0503
+--- Ir 1.0 mg/cm2, row mix, g_high, lambda=0
+   j\tau[h]       2e+04       4e+04       8e+04
+     0.2         11.8152      5.9076      2.9538
+     0.5          4.7261      2.3630      1.1815
+     1.0          2.3630      1.1815      0.5908
+     2.0          1.1815      0.5908      0.2954
+--- Ir 2.0 mg/cm2, row mix, g_high, lambda=0
+   j\tau[h]       2e+04       4e+04       8e+04
+     0.2         24.0686     12.0343      6.0171
+     0.5          9.6274      4.8137      2.4069
+     1.0          4.8137      2.4069      1.2034
+     2.0          2.4069      1.2034      0.6017
+--- Pt 0.1 mg/cm2, row mix, g_high, lambda=0
+   j\tau[h]       2e+04       4e+04       8e+04
+     0.2          1.3237      0.6619      0.3309
+     0.5          0.5295      0.2647      0.1324
+     1.0          0.2647      0.1324      0.0662
+     2.0          0.1324      0.0662      0.0331
+--- Pt 0.5 mg/cm2, row mix, g_high, lambda=0
+   j\tau[h]       2e+04       4e+04       8e+04
+     0.2          8.3712      4.1856      2.0928
+     0.5          3.3485      1.6742      0.8371
+     1.0          1.6742      0.8371      0.4186
+     2.0          0.8371      0.4186      0.2093
+--- Ir 0.2 mg/cm2, row mix, g_low, lambda=hi
+   j\tau[h]       2e+04       4e+04       8e+04
+     0.2          3.1255      1.5628      0.7814
+     0.5          1.2502      0.6251      0.3126
+     1.0          0.6251      0.3126      0.1563
+     2.0          0.3126      0.1563      0.0781
+--- Ir 1.0 mg/cm2, row mix, g_low, lambda=hi
+   j\tau[h]       2e+04       4e+04       8e+04
+     0.2         15.6531      7.8265      3.9133
+     0.5          6.2612      3.1306      1.5653
+     1.0          3.1306      1.5653      0.7827
+     2.0          1.5653      0.7827      0.3913
+--- Ir 2.0 mg/cm2, row mix, g_low, lambda=hi
+   j\tau[h]       2e+04       4e+04       8e+04
+     0.2         31.3125     15.6562      7.8281
+     0.5         12.5250      6.2625      3.1312
+     1.0          6.2625      3.1312      1.5656
+     2.0          3.1312      1.5656      0.7828
+--- Pt 0.1 mg/cm2, row mix, g_low, lambda=hi
+   j\tau[h]       2e+04       4e+04       8e+04
+     0.2          2.2453      1.1226      0.5613
+     0.5          0.8981      0.4491      0.2245
+     1.0          0.4491      0.2245      0.1123
+     2.0          0.2245      0.1123      0.0561
+--- Pt 0.5 mg/cm2, row mix, g_low, lambda=hi
+   j\tau[h]       2e+04       4e+04       8e+04
+     0.2         11.2518      5.6259      2.8129
+     0.5          4.5007      2.2504      1.1252
+     1.0          2.2504      1.1252      0.5626
+     2.0          1.1252      0.5626      0.2813
+
+Extremes over the whole grid, all rows, g cases, lambda in {0, hi}: 
+  Ir  0.2 mg/cm2: min   0.0489  max   3.2367 mV; points < 10 mV: 72/72; > 30 mV: 0/72
+  Ir  1.0 mg/cm2: min   0.2881  max  16.2090 mV; points < 10 mV: 66/72; > 30 mV: 0/72
+  Ir  2.0 mg/cm2: min   0.5872  max  32.4244 mV; points < 10 mV: 57/72; > 30 mV: 3/72
+  Pt  0.1 mg/cm2: min   0.0331  max   3.0236 mV; points < 10 mV: 72/72; > 30 mV: 0/72
+  Pt  0.5 mg/cm2: min   0.2093  max  15.1435 mV; points < 10 mV: 67/72; > 30 mV: 0/72
+  10 mV is reached inside the grid by Ir 1 and 2 mg/cm2 and Pt 0.5 mg/cm2 (low j, short tau); never by Ir 0.2 and Pt 0.1. 30 mV is reached only by Ir 2 mg/cm2 with lambda_hi and g_low at j = 0.2 A/cm2, tau = 2e4 h; for the other loadings the grid cannot bracket 30 mV (A6 gives the factors).
+
+G2.6 point (j = 0.5 A/cm2, tau = 8e4 h), supply-mix row, lambda = 0 / lambda_mid, g_high / g_low (mV):
+  Ir  0.2: lam0 0.2013 / 0.2444 ; lam_mid 0.2211 / 0.2643
+  Ir  1.0: lam0 1.1815 / 1.2247 ; lam_mid 1.2808 / 1.3239
+  Ir  2.0: lam0 2.4069 / 2.4500 ; lam_mid 2.6053 / 2.6485
+  Pt  0.1: lam0 0.1324 / 0.1756 ; lam_mid 0.1466 / 0.1898
+  Pt  0.5: lam0 0.8371 / 0.8803 ; lam_mid 0.9085 / 0.9516
+
+====================================================================================================
+A5 BY-PRODUCT ALLOCATION RULE (convention 7): central case, lambda = 0, g_high (mV); factor = per-kg burden under the rule / published revenue burden (derived from SI S28, S30)
+====================================================================================================
+x   mg/cm2  row                     rule    factor   CED MJ/kg   d_eta mV        class
+Ir     2.0   ZA                  revenue         1    165000.0     1.1744  nearly free
+Ir     2.0   ZA    pgm_revenue_then_mass     1.723    284212.6     2.0388  nearly free
+Ir     2.0   ZA                 mass_all  0.005877       969.8    -0.0149  nearly free
+Ir     2.0   RU                  revenue         1    175000.0     1.2469  nearly free
+Ir     2.0   RU    pgm_revenue_then_mass    0.8753    153184.0     1.0888  nearly free
+Ir     2.0   RU                 mass_all 0.0006297       110.2    -0.0211  nearly free
+Ir     0.2   ZA                  revenue         1    165000.0     0.0977  nearly free
+Ir     0.2   ZA    pgm_revenue_then_mass     1.723    284212.6     0.1842  nearly free
+Ir     0.2   ZA                 mass_all  0.005877       969.8    -0.0212  nearly free
+Ir     0.2   RU                  revenue         1    175000.0     0.1050  nearly free
+Ir     0.2   RU    pgm_revenue_then_mass    0.8753    153184.0     0.0892  nearly free
+Ir     0.2   RU                 mass_all 0.0006297       110.2    -0.0218  nearly free
+Pt     0.5   ZA                  revenue         1    308000.0     0.5364  nearly free
+Pt     0.5   ZA    pgm_revenue_then_mass    0.9125    281054.9     0.4875  nearly free
+Pt     0.5   ZA                 mass_all  0.003114       959.0    -0.0202  nearly free
+Pt     0.5   RU                  revenue         1    327000.0     0.5708  nearly free
+Pt     0.5   RU    pgm_revenue_then_mass    0.4911    160580.1     0.2692  nearly free
+Pt     0.5   RU                 mass_all 0.0003533       115.5    -0.0217  nearly free
+Pt     0.1   ZA                  revenue         1    308000.0     0.0898  nearly free
+Pt     0.1   ZA    pgm_revenue_then_mass    0.9125    281054.9     0.0800  nearly free
+Pt     0.1   ZA                 mass_all  0.003114       959.0    -0.0216  nearly free
+Pt     0.1   RU                  revenue         1    327000.0     0.0966  nearly free
+Pt     0.1   RU    pgm_revenue_then_mass    0.4911    160580.1     0.0363  nearly free
+Pt     0.1   RU                 mass_all 0.0003533       115.5    -0.0219  nearly free
+  Revenue = the rule of Nuss and Eckelman Table S38 as published. 'mass_all' spreads the ore burden per kg over PGM, Cu and Ni alike; Ir then costs about as much per kg as Ni. Both are derived here from S28/S30 shares, not published rows. Negative values: Sigma_s,init is below Sigma_g (g_high) at zero penalty, so the candidate wins for any Delta_eta >= 0; a mass rule makes the scarce catalyst nearly free by construction of the rule (it prices Ir like Ni).
+CHECK S28-derived Ir ZA mass share vs S30 printed 0.003 percent (independent derivation from period sums; S30 is rounded): PASS derived 0.00253 percent
+CHECK S30 revenue shares ZA sum (PGM_sum 0.872 + Cu .0155 + Ni .1125 = 1): PASS 
+
+====================================================================================================
+A6 LEVER FACTORS: factor by which one input must change for Delta_eta_be to reach 30 mV (central, supply-mix row, lambda = 0, g_high, R_rec = 0.9); others fixed
+====================================================================================================
+Ir 2.0 mg/cm2 (mix): base 1.2034 mV
+    CExC: x24.5 (kappa would need to be 24.5 instead of 1.0); loading: x24.5 (49.0 mg/cm2); j*tau: divided by 24.9 (j*tau = 3.21e+03 A h/cm2 instead of 8e+04; i.e. 3.21e+03 h at 1 A/cm2)
+    lambda: b_infra needed 4.147e+12 J/kg = 4.147e+06 MJ/kg = 24.5 x CExC (mid estimate is 0.085 x, hi 0.290 x); factor on the mid estimate x290
+    R_rec 0, 0.5, 0.9, 0.95, 1.0 -> 1.1517, 1.1804, 1.2034, 1.2063, 1.2092 mV: R_rec cannot reach 30 mV (the remelt term is at most 4.9 percent of CExC by the proxy; see Not settled)
+Ir 1.0 mg/cm2 (mix): base 0.5908 mV
+    CExC: x49.0 (kappa would need to be 49.0 instead of 1.0); loading: x49.0 (49.0 mg/cm2); j*tau: divided by 50.8 (j*tau = 1.58e+03 A h/cm2 instead of 8e+04; i.e. 1.58e+03 h at 1 A/cm2)
+    lambda: b_infra needed 8.47e+12 J/kg = 8.47e+06 MJ/kg = 50.1 x CExC (mid estimate is 0.085 x, hi 0.290 x); factor on the mid estimate x593
+    R_rec 0, 0.5, 0.9, 0.95, 1.0 -> 0.5649, 0.5793, 0.5908, 0.5922, 0.5936 mV: R_rec cannot reach 30 mV (the remelt term is at most 4.9 percent of CExC by the proxy; see Not settled)
+Ir 0.2 mg/cm2 (mix): base 0.1006 mV
+    CExC: x245.0 (kappa would need to be 245.0 instead of 1.0); loading: x245.0 (49.0 mg/cm2); j*tau: divided by 298.1 (j*tau = 268 A h/cm2 instead of 8e+04; i.e. 268 h at 1 A/cm2)
+    lambda: b_infra needed 4.306e+13 J/kg = 4.306e+07 MJ/kg = 254.8 x CExC (mid estimate is 0.085 x, hi 0.290 x); factor on the mid estimate x3013
+    R_rec 0, 0.5, 0.9, 0.95, 1.0 -> 0.0955, 0.0983, 0.1006, 0.1009, 0.1012 mV: R_rec cannot reach 30 mV (the remelt term is at most 4.9 percent of CExC by the proxy; see Not settled)
+Pt 0.5 mg/cm2 (mix): base 0.4186 mV
+    CExC: x68.2 (kappa would need to be 68.2 instead of 1.0); loading: x68.2 (34.1 mg/cm2); j*tau: divided by 71.7 (j*tau = 1.12e+03 A h/cm2 instead of 8e+04; i.e. 1.12e+03 h at 1 A/cm2)
+    lambda: b_infra needed 1.704e+13 J/kg = 1.704e+07 MJ/kg = 70.1 x CExC (mid estimate is 0.085 x, hi 0.290 x); factor on the mid estimate x829
+    R_rec 0, 0.5, 0.9, 0.95, 1.0 -> 0.4000, 0.4103, 0.4186, 0.4196, 0.4206 mV: R_rec cannot reach 30 mV (the remelt term is at most 4.9 percent of CExC by the proxy; see Not settled)
+Pt 0.1 mg/cm2 (mix): base 0.0662 mV
+    CExC: x340.8 (kappa would need to be 340.8 instead of 1.0); loading: x340.8 (34.1 mg/cm2); j*tau: divided by 453.3 (j*tau = 176 A h/cm2 instead of 8e+04; i.e. 176 h at 1 A/cm2)
+    lambda: b_infra needed 8.621e+13 J/kg = 8.621e+07 MJ/kg = 354.8 x CExC (mid estimate is 0.085 x, hi 0.290 x); factor on the mid estimate x4196
+    R_rec 0, 0.5, 0.9, 0.95, 1.0 -> 0.0625, 0.0645, 0.0662, 0.0664, 0.0666 mV: R_rec cannot reach 30 mV (the remelt term is at most 4.9 percent of CExC by the proxy; see Not settled)
+
+  Sweep over the CExC multiplier f (central Pt 0.5 and Ir 2 mg/cm2, lambda = 0, g_high): where Delta_eta_be crosses 10 and 30 mV
+    Pt 0.5: 10 mV at f = 22.8, 30 mV at f = 68.2; kappa sweep 0.8..1.5 -> 0.3305 .. 0.6388 mV
+    Ir 2.0: 10 mV at f = 8.2, 30 mV at f = 24.5; kappa sweep 0.8..1.5 -> 0.9584 .. 1.8161 mV
+CHECK 30 mV lever solutions reproduce 30 mV (TRUE BY CONSTRUCTION of the root finder, not a physical check): PASS 
+
+====================================================================================================
+A7 DIAGNOSTICS
+====================================================================================================
+(a) r_el = 2.5 on the operating term (OQ-15), diagnostic only: Delta_eta_be / 2.5 (central, supply-mix row, lambda = 0, g_high):
+    Ir  0.2: r_el=1 0.1006 (nearly free) -> r_el=2.5 0.0403 (nearly free)   [g_low: 0.1222 -> 0.0489 (nearly free)]
+    Ir  1.0: r_el=1 0.5908 (nearly free) -> r_el=2.5 0.2363 (nearly free)   [g_low: 0.6124 -> 0.2449 (nearly free)]
+    Ir  2.0: r_el=1 1.2034 (nearly free) -> r_el=2.5 0.4814 (nearly free)   [g_low: 1.2250 -> 0.4900 (nearly free)]
+    Pt  0.1: r_el=1 0.0662 (nearly free) -> r_el=2.5 0.0265 (nearly free)   [g_low: 0.0878 -> 0.0351 (nearly free)]
+    Pt  0.5: r_el=1 0.4186 (nearly free) -> r_el=2.5 0.1674 (nearly free)   [g_low: 0.4402 -> 0.1761 (nearly free)]
+    r_el = 2.5 moves every central value down by 2.5; the classes do not move toward 'priced'.
+
+(b) Exergy replacement cost, NOT A GMS-100 TERM: CExC replaced by CExC + ERC (Pt ERC 4491688 MJ/kg, LOOKUP; Ni, Fe ERC LOOKUP; Ir: no readable value, not computed)
+x   mg/cm2 | GMS-100 (mV) |  +ERC (mV)        class | +ERC j=.5 8e4h | +ERC j=.2 2e4h      class
+Pt     0.1 |       0.0662 |     1.5955  nearly free |         3.1910 |        31.9097     priced
+Pt     0.5 |       0.4186 |     8.1863  nearly free |        16.3726 |       163.7263     priced
+    ERC/CED of the Pt supply-mix row = 18.5; ERC/(M&M of Pt) = 15.4. With an ERC term Pt stays 'nearly free' at the central case (8.2 mV at 0.5 mg/cm2, just under 10), is 'between' at the G2.6 point for 0.5 mg/cm2 (16 mV) and 'priced' at the low-duty corner.
+    (the ERC is also added to Ni and Fe on side g, which lowers the value slightly). Ir ERC: not readable in any source reached; not estimated.
+
+(c) Omitted side-s stages (synthesis, ink, coating): OUTSIDE GMS-100's BOUNDARY. No source bound found. Illustration: omitted stages = omega x extraction work (omega MEMORY UNSURE, 0.5 and 1.0), lambda = 0, g_high:
+    Ir  0.2: 0.1006 / 0.1593 / 0.2180 mV (nearly free at omega=1)
+    Ir  1.0: 0.5908 / 0.8842 / 1.1776 mV (nearly free at omega=1)
+    Ir  2.0: 1.2034 / 1.7902 / 2.3770 mV (nearly free at omega=1)
+    Pt  0.1: 0.0662 / 0.1084 / 0.1506 mV (nearly free at omega=1)
+    Pt  0.5: 0.4186 / 0.6295 / 0.8404 mV (nearly free at omega=1)
+    Omitting these stages lowers Delta_eta_be; the stated value is a lower bound under GMS-100's boundary. A multiplier of 1 does not change any class.
+
+(d) b_ch share of CExC (condition 2 of REQ-LIFECYCLE-CEXC-SOURCE not met: b_ch is Szargut's, CExC is a CED stand-in):
+    Pt: b_ch = 0.723 MJ/kg, CED = 243000.0 MJ/kg, share 0.0002974 percent
+    Ir: b_ch = 1.335 MJ/kg, CED = 169000.0 MJ/kg, share 0.0007898 percent
+    Ni: b_ch = 3.965 MJ/kg, CED = 111.0 MJ/kg, share 3.572 percent
+    Fe: b_ch = 6.751 MJ/kg, CED = 23.1 MJ/kg, share 29.22 percent
+    Dispersal at low R_rec on side s adds only b_ch(x) (not CExC): Pt 0.72 MJ per kg (= 12 J/K per m2 at 0.5 mg/cm2 and R_rec=0), Ir 1.33 MJ per kg (= 90 J/K per m2 at 2 mg/cm2).
+    Versus the extraction term this is a factor of ~3e-06 smaller.
+
+(e) R_rec set (supply-mix row, central duty, lambda = 0, g_high), mV:
+    Ir  0.2: R=0.0: 0.0955  R=0.5: 0.0983  R=0.9: 0.1006  R=0.95: 0.1009
+    Ir  1.0: R=0.0: 0.5649  R=0.5: 0.5793  R=0.9: 0.5908  R=0.95: 0.5922
+    Ir  2.0: R=0.0: 1.1517  R=0.5: 1.1804  R=0.9: 1.2034  R=0.95: 1.2063
+    Pt  0.1: R=0.0: 0.0625  R=0.5: 0.0645  R=0.9: 0.0662  R=0.95: 0.0664
+    Pt  0.5: R=0.0: 0.4000  R=0.5: 0.4103  R=0.9: 0.4186  R=0.95: 0.4196
+    With the proxy, w_lost,remelt is 4.9 percent of CExC, so R_rec raises Delta_eta_be by at most ~5 percent (a remelt cost on side s is a credit for the candidate). UNSURE: if remelt of CCM catalyst is ten times the proxy the effect is 50 percent.
+
+====================================================================================================
+A8 CHECKS
+====================================================================================================
+CHECK REQ-LIFECYCLE-EXTRACTION-WORK-NONNEGATIVE: CExC >= b_ch for Pt, Ir, Ni, Fe (stand-in values; not an identity but trivially satisfied: b_ch/CED <= 1e-4 for Pt, Ir): PASS 
+CHECK Thanatia Pt M&M cost vs Nuss CED supply mix within 25 percent (independent sources, different method; ratio printed): PASS ratio 1.200
+CHECK Thanatia Ni M&M cost (115.5 MJ/kg) vs Nuss Ni CED total (111) within 10 percent: PASS ratio 1.041
+CHECK Szargut 2005 b_ch of Ni vs Szargut 2007 table (MIT appendix, 232.7 kJ/mol) within 0.1 percent: PASS 
+CHECK Szargut 2005 b_ch of Fe vs Szargut 2007 table (MIT appendix, 374.3 kJ/mol) within 1 percent (editions differ: 376.99 vs 374.3): PASS ratio 1.0072
+CHECK Delta_eta_be from J/K terms equals direct J/m2 form (SAME FORMULA REWRITTEN: true by construction, not counted as a pass): PASS 
+CHECK g-side per-element masses sum to loading (BY CONSTRUCTION): PASS 
+
+====================================================================================================
+A9 CENTRAL-CASE SUMMARY (R_rec = 0.9, j = 1 A/cm2, tau = 8e4 h, r_el = 1): range over rows and g cases, lambda = 0
+====================================================================================================
+  Ir  0.2 mg/cm2: lambda=0: 0.098 to 0.127 mV (nearly free / nearly free);  with lambda (mid..hi): 0.107 to 0.162 mV (nearly free / nearly free)
+  Ir  1.0 mg/cm2: lambda=0: 0.576 to 0.634 mV (nearly free / nearly free);  with lambda (mid..hi): 0.625 to 0.810 mV (nearly free / nearly free)
+  Ir  2.0 mg/cm2: lambda=0: 1.174 to 1.269 mV (nearly free / nearly free);  with lambda (mid..hi): 1.271 to 1.621 mV (nearly free / nearly free)
+  Pt  0.1 mg/cm2: lambda=0: 0.066 to 0.118 mV (nearly free / nearly free);  with lambda (mid..hi): 0.073 to 0.151 mV (nearly free / nearly free)
+  Pt  0.5 mg/cm2: lambda=0: 0.419 to 0.592 mV (nearly free / nearly free);  with lambda (mid..hi): 0.454 to 0.757 mV (nearly free / nearly free)
+
+OVERALL PASS

@@ -1,0 +1,12 @@
+# LOOKUP. Nuss P., Eckelman M.J., 2014, PLoS ONE 9(7) e101298, Supporting Information S1, Table S38, column "CED [MJ/kg]" (+ 2.5% / 97.5% columns). Rows read from the document text of the re-downloaded S1 (raw/nuss/s1.bin), access 2026-11-15.
+# Values are cumulative energy demand (all primary energy), NOT exergy. 'allocation' = rule of S38 as published (revenue, 2006-2010 price average, SI Table S30 "Used in this study").
+metal,row,CED_MJ_per_kg,low_2.5,high_97.5,share_of_supply,note
+Pt,TOTAL (supply mix),243000,178000,326000,100%,includes 23% secondary
+Pt,primary South Africa,308000,219000,414000,63%,"Pt (ZA), process '_Platinum, primary, at refinery/ZA U, reallocated', ecoinvent 2.2"
+Pt,primary Russia,327000,245000,430000,14%,Pt (RU)
+Pt,secondary,11900,8290,16900,23%,"Pt (secondary), from catalysts; ecoinvent 'Platinum, secondary, at refinery/RER U reallocated'"
+Ir,TOTAL (supply mix),169000,128000,219000,100%,no secondary route
+Ir,primary South Africa,165000,118000,220000,61%,"Ir (ZA), 'Own assessment' (ecoinvent has no Ir)"
+Ir,primary Russia,175000,130000,224000,40%,Ir (RU)
+Ni,TOTAL (supply mix),111,96.4,129,100%,Ni TOTAL
+Fe,TOTAL (pig iron),23.1,20.9,25.5,100%,Fe TOTAL = Pig iron at plant/GLO U; only pig iron
