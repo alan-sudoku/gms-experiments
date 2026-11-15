@@ -324,7 +324,7 @@ OUTPUT FORMAT (strict, keep it short)
 
 ## Prompt 9 (narrow): incumbent wearout (OQ-3, plan Q4)
 
-Written 2026-11-15; awaiting user approval. Low-budget run (`fable_delegation_plan.md` §5.1 style: one `fable` agent with no tools, block passed verbatim). Background: GMS-100 DEF-LIFECYCLE-SIDE-PROFILE sets τ_wearout,s = ∞ and leaves R_s unspecified, and its decision rule returns no outcome when τ_wearout,s < ∞; GMS-220 and GMS-230 follow that. OQ-3 (plan Q4) keeps incumbent wearout open; OQ-9 (costing boundary asymmetry) and OQ-19 (consumed-metal accounting) interact with it. The block states the spec construction itself, because a no-tools run cannot read the spec (Prompt 7 lesson). The example numbers are made up. Feeds the GMS-400 brief.
+Written 2026-11-15; approved by the user the same day. Low-budget run (`fable_delegation_plan.md` §5.1 style: one `fable` agent with no tools, block passed verbatim). Background: GMS-100 DEF-LIFECYCLE-SIDE-PROFILE sets τ_wearout,s = ∞ and leaves R_s unspecified, and its decision rule returns no outcome when τ_wearout,s < ∞; GMS-220 and GMS-230 follow that. OQ-3 (plan Q4) keeps incumbent wearout open; OQ-9 (costing boundary asymmetry) and OQ-19 (consumed-metal accounting) interact with it. The block states the spec construction itself, because a no-tools run cannot read the spec (Prompt 7 lesson). The example numbers are made up. Feeds the GMS-400 brief.
 
 ```text
 Answer one narrow lifecycle-accounting question. Work from first principles. Do not use web search, code execution or any other tool. Treat every formula below as unverified, and be adversarial toward it.
