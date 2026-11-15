@@ -42,6 +42,8 @@ Reviewer counts: 0 BLOCKER, 5 MAJOR, 9 MINOR. All 5 review scripts reproduce (or
 
 ## Decisions for the user
 
+**Decided 2026-11-15: the user accepted the recommendation for D1–D6.** Recorded as E27 in drafting notes §A (applied to GMS-100 the same day, lint 0 issues, 64 tests pass); OQ-13 closed, new OQ-23, OQ-15 extended and the GMS-410 and data-task notes in `orchestrator_state.md` §3 and §4; plan V17.
+
 | # | Decision | Options | Recommendation |
 |---|---|---|---|
 | D1 | OQ-13 (currency) | (a) Close OQ-13: (A) stays (E15); (B) is not adopted for three reasons (it misranks dissipated work, it cannot be computed from tables, it needs two dead states). Rewrite GMS-100's currency Open item to give the reasons. Correct "about 5 %" to the exact condition c* ∈ (1, T_ref/T₀). (b) Keep OQ-13 open | (a). The remaining disagreement is OQ-15's c_op, not a currency choice |
