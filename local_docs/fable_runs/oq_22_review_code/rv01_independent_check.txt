@@ -1,0 +1,159 @@
+
+================================================================================================
+R1 DERIVATION CHECK: root of f(tau) in d_eta (bisection) vs closed form; sign of f just below / above the root
+================================================================================================
+  Ir 0.2: root 0.1006 mV, closed 0.1006 mV, |diff| 0.0e+00 V; f(root-0.1mV) -9.660e+05 (<0: candidate wins), f(root+0.1mV) +9.660e+05
+  Ir 1.0: root 0.5908 mV, closed 0.5908 mV, |diff| 0.0e+00 V; f(root-0.1mV) -9.660e+05 (<0: candidate wins), f(root+0.1mV) +9.660e+05
+  Ir 2.0: root 1.2034 mV, closed 1.2034 mV, |diff| 2.2e-19 V; f(root-0.1mV) -9.660e+05 (<0: candidate wins), f(root+0.1mV) +9.660e+05
+  Pt 0.1: root 0.0662 mV, closed 0.0662 mV, |diff| 2.7e-20 V; f(root-0.1mV) -9.660e+05 (<0: candidate wins), f(root+0.1mV) +9.660e+05
+  Pt 0.5: root 0.4186 mV, closed 0.4186 mV, |diff| 0.0e+00 V; f(root-0.1mV) -9.660e+05 (<0: candidate wins), f(root+0.1mV) +9.660e+05
+  units: n [mol/m2] x (CExC - b_ch) [J/mol] / T0 [K] = J/(K m2);  j [A/m2] x d_eta [V] x tau [s] / T0 = J/(K m2). Consistent.
+
+================================================================================================
+R2 REPRODUCTION of the answer's central set (j = 1 A/cm2, tau = 8e4 h, R_rec = 0.9), reviewer's own code
+================================================================================================
+  Ir 0.2 mix: reviewer 0.1006 / 0.1222 / 0.1105 / 0.1563   answer 0.1006 / 0.1222 / 0.1105 / 0.1563   max |dev| 0.0000 mV
+  Ir 1.0 mix: reviewer 0.5908 / 0.6124 / 0.6404 / 0.7826   answer 0.5908 / 0.6124 / 0.6404 / 0.7827   max |dev| 0.0001 mV
+  Ir 2.0 mix: reviewer 1.2034 / 1.2250 / 1.3027 / 1.5656   answer 1.2034 / 1.2250 / 1.3027 / 1.5656   max |dev| 0.0000 mV
+  Pt 0.1 mix: reviewer 0.0662 / 0.0878 / 0.0733 / 0.1123   answer 0.0662 / 0.0878 / 0.0733 / 0.1123   max |dev| 0.0000 mV
+  Pt 0.5 mix: reviewer 0.4186 / 0.4402 / 0.4542 / 0.5626   answer 0.4186 / 0.4402 / 0.4542 / 0.5626   max |dev| 0.0000 mV
+  Ir 2.0 RU : reviewer 1.2469 / 1.2685 / 1.3497 / 1.6212   answer 1.2469 / 1.2685 / 1.3497 / 1.6212   max |dev| 0.0000 mV
+  Pt 0.5 RU : reviewer 0.5708 / 0.5924 / 0.6188 / 0.7572   answer 0.5708 / 0.5924 / 0.6188 / 0.7572   max |dev| 0.0000 mV
+  largest deviation over the rows compared: 0.0001 mV (answer printed 4 decimals)
+  Note: the reproduction uses the answer's own scenario inputs (side g, b_transport, remelt proxy, rho); it checks arithmetic and term
+  assembly, not the inputs.
+
+================================================================================================
+R3 TEXT-vs-OUTPUT checks the answer's prose depends on
+================================================================================================
+  transport term Ir 0.2: 6.71 J/K per m2, share of Sigma_s,init 5.92e-06
+  transport term Ir 1.0: 33.5 J/K per m2, share of Sigma_s,init 5.92e-06
+  transport term Ir 2.0: 67.1 J/K per m2, share of Sigma_s,init 5.92e-06
+  transport term Pt 0.1: 3.35 J/K per m2, share of Sigma_s,init 4.12e-06
+  transport term Pt 0.5: 16.8 J/K per m2, share of Sigma_s,init 4.12e-06
+  j*tau lever Ir 2.0: base 1.2034 mV -> j*tau must fall by x24.9 for 30 mV (Delta_eta_be ~ 1/(j tau) exactly)
+  j*tau lever Pt 0.1: base 0.0662 mV -> j*tau must fall by x453.3 for 30 mV (Delta_eta_be ~ 1/(j tau) exactly)
+
+================================================================================================
+R4 MASS ALLOCATION (answer A5 'mass_all'): sign and meaning of a negative d_eta_be
+================================================================================================
+  Ir 2.0 CED  969.8 MJ/kg g_high: d_eta_be -0.0149 mV; f at d_eta = 0: +1.437e+05 J/K per m2 -> INCUMBENT wins (f > 0)
+  Ir 2.0 CED  969.8 MJ/kg g_low: d_eta_be +0.0067 mV; f at d_eta = 0: -6.484e+04 J/K per m2 -> candidate wins
+  Ir 0.2 CED  969.8 MJ/kg g_high: d_eta_be -0.0212 mV; f at d_eta = 0: +2.048e+05 J/K per m2 -> INCUMBENT wins (f > 0)
+  Ir 0.2 CED  969.8 MJ/kg g_low: d_eta_be +0.0004 mV; f at d_eta = 0: -3722 J/K per m2 -> candidate wins
+  Ir 2.0 CED  110.2 MJ/kg g_high: d_eta_be -0.0211 mV; f at d_eta = 0: +2.039e+05 J/K per m2 -> INCUMBENT wins (f > 0)
+  Ir 2.0 CED  110.2 MJ/kg g_low: d_eta_be +0.0005 mV; f at d_eta = 0: -4636 J/K per m2 -> candidate wins
+  A negative d_eta_be means the candidate must be MORE active than the incumbent to win; at zero penalty the incumbent wins.
+
+================================================================================================
+R5 WHAT GMS-100 CHARGES FOR DISPERSING 1 kg (R_rec = 0, horizon unit): b_ch per kg, against CED and ERC
+================================================================================================
+  Pt: b_ch   0.723 MJ/kg; CED   243000.0 MJ/kg; ERC 4491688 MJ/kg
+  Ir: b_ch   1.335 MJ/kg; CED   169000.0 MJ/kg
+  Ni: b_ch   3.965 MJ/kg; CED      111.0 MJ/kg
+  Fe: b_ch   6.751 MJ/kg; CED       23.1 MJ/kg
+  ratio b_ch(Fe)/b_ch(Pt) per kg = 9.34: dispersing a kg of Fe costs more in GMS-100 than a kg of Pt.
+
+================================================================================================
+R6 THROUGHPUT (duty) REGIME: d_eta_be is exactly proportional to 1/(j tau). Throughput Q = j*tau in A h/cm2
+================================================================================================
+  Ir 0.2: central 0.1006 mV; Q for 10 mV      805, for 30 mV      268 A h/cm2   [lam_hi,g_low: 10 mV at    1250, 30 mV at     417]
+  Ir 1.0: central 0.5908 mV; Q for 10 mV     4726, for 30 mV     1575 A h/cm2   [lam_hi,g_low: 10 mV at    6261, 30 mV at    2087]
+  Ir 2.0: central 1.2034 mV; Q for 10 mV     9627, for 30 mV     3209 A h/cm2   [lam_hi,g_low: 10 mV at   12525, 30 mV at    4175]
+  Pt 0.1: central 0.0662 mV; Q for 10 mV      529, for 30 mV      176 A h/cm2   [lam_hi,g_low: 10 mV at     898, 30 mV at     299]
+  Pt 0.5: central 0.4186 mV; Q for 10 mV     3348, for 30 mV     1116 A h/cm2   [lam_hi,g_low: 10 mV at    4501, 30 mV at    1500]
+  Renewable-coupled scenarios (MEMORY, UNSURE): Q = j_avg x CF x 8760 h x years of stack life
+  grid baseload (central)                Q =   79979 A h/cm2 | Ir0.2:   0.10 nearly  | Ir1.0:   0.59 nearly  | Ir2.0:   1.20 nearly  | Pt0.1:   0.07 nearly  | Pt0.5:   0.42 nearly 
+  wind+PV hybrid                         Q =   39420 A h/cm2 | Ir0.2:   0.20 nearly  | Ir1.0:   1.20 nearly  | Ir2.0:   2.44 nearly  | Pt0.1:   0.13 nearly  | Pt0.5:   0.85 nearly 
+  PV only, long life                     Q =   19272 A h/cm2 | Ir0.2:   0.42 nearly  | Ir1.0:   2.45 nearly  | Ir2.0:   5.00 nearly  | Pt0.1:   0.27 nearly  | Pt0.5:   1.74 nearly 
+  PV only, part load, 7 y                Q =    6132 A h/cm2 | Ir0.2:   1.31 nearly  | Ir1.0:   7.71 nearly  | Ir2.0:  15.70 between | Pt0.1:   0.86 nearly  | Pt0.5:   5.46 nearly 
+  off-grid PV, start-stop limited, 5 y   Q =    3285 A h/cm2 | Ir0.2:   2.45 nearly  | Ir1.0:  14.39 between | Ir2.0:  29.31 between | Pt0.1:   1.61 nearly  | Pt0.5:  10.19 between
+
+================================================================================================
+R7 REPLACEMENT REGIMES (horizon H = 8e4 h at 1 A/cm2)
+================================================================================================
+  (a) incumbent replaced every L h, GMS-100 Open-item form R_s = M_s b_tr/T0 + Sigma_s,EOL^ret (EQ-LIFECYCLE-RETIRED-UNIT-EOL, k = s);
+      NOT evaluable in GMS-100 0.1 (m_s = 0 always; f >= 0 with tau_wearout,s < tau gives 'no outcome'). Shown as a diagnostic.
+      Ir 2.0 R_rec=0.0: L=8e+04:  1.152  L=4e+04:  2.325  L=2e+04:  4.673  L=1e+04:  9.367 mV
+      Ir 2.0 R_rec=0.5: L=8e+04:  1.180  L=4e+04:  1.796  L=2e+04:  3.027  L=1e+04:  5.489 mV
+      Ir 2.0 R_rec=0.9: L=8e+04:  1.203  L=4e+04:  1.373  L=2e+04:  1.711  L=1e+04:  2.387 mV
+      Pt 0.5 R_rec=0.0: L=8e+04:  0.400  L=4e+04:  0.822  L=2e+04:  1.666  L=1e+04:  3.353 mV
+      Pt 0.5 R_rec=0.5: L=8e+04:  0.410  L=4e+04:  0.632  L=2e+04:  1.074  L=1e+04:  1.959 mV
+      Pt 0.5 R_rec=0.9: L=8e+04:  0.419  L=4e+04:  0.479  L=2e+04:  0.601  L=1e+04:  0.844 mV
+  (b) candidate (NiFe, g_high) replaced every L_g h (EQ-LIFECYCLE-GEOMETRY-REPLACEMENT-COST; w_conv = (psi-1) w_ext; R_rec = 0 -> CExC):
+      Ir 0.2: L_g=8e+04:  +0.101  L_g=2e+04:  +0.035  L_g=1e+04:  -0.053  L_g=5e+03:  -0.228 mV
+      Ir 2.0: L_g=8e+04:  +1.203  L_g=2e+04:  +1.138  L_g=1e+04:  +1.050  L_g=5e+03:  +0.875 mV
+      Pt 0.1: L_g=8e+04:  +0.066  L_g=2e+04:  +0.000  L_g=1e+04:  -0.087  L_g=5e+03:  -0.262 mV
+      Pt 0.5: L_g=8e+04:  +0.419  L_g=2e+04:  +0.353  L_g=1e+04:  +0.265  L_g=5e+03:  +0.090 mV
+
+================================================================================================
+R8 CELL-LEVEL AND ACTIVITY REGIMES: the d_eta the comparison actually faces (SNIPPET values, UNSURE)
+================================================================================================
+  largest d_eta_be of the central set (any row, lam_hi, g_low): 1.621 mV
+  alkaline half-cell, NiFe LDH vs IrOx (247 vs 281 mV at 10 mA/cm2)  d_eta =   -34 mV -> moot: candidate wins on Sigma_dot alone
+  alkaline half-cell, NiFe LDH vs IrO2 (270 vs 318 mV)               d_eta =   -48 mV -> moot: candidate wins on Sigma_dot alone
+  cell: AEM NiFe2O4 in KOH 1.61 V vs best PEM 1.56 V (1 A/cm2)       d_eta =   +50 mV -> d_eta / d_eta_be(max) = 31: decided by Sigma_dot
+  cell: AEM NiFe-LDH/NiMo 1.90 V vs best PEM 1.56 V                  d_eta =  +340 mV -> d_eta / d_eta_be(max) = 210: decided by Sigma_dot
+  cell: AEM pure water round robin 2.72 V vs best PEM 1.56 V         d_eta = +1160 mV -> d_eta / d_eta_be(max) = 716: decided by Sigma_dot
+  Cell-level material change (PEM -> AEM) on side g, e.g. a Ni porous transport layer of 0.35 kg/m2 (MEMORY, UNSURE), psi = 1:
+    lowers d_eta_be by 0.0131 mV at the central duty
+
+================================================================================================
+R9 DRIFT (incumbent or candidate loss rising with age): drift-rate difference that equals d_eta_be
+================================================================================================
+  If d_eta(t) = d_eta0 + dr*t, the time-average over tau is d_eta0 + dr*tau/2; with d_eta0 = 0 the break-even drift is dr_be = 2 d_eta_be / tau.
+  Ir 0.2: dr_be = 0.0025 uV/h (central), 0.0040 uV/h (largest row)
+  Ir 1.0: dr_be = 0.0148 uV/h (central), 0.0203 uV/h (largest row)
+  Ir 2.0: dr_be = 0.0301 uV/h (central), 0.0405 uV/h (largest row)
+  Pt 0.1: dr_be = 0.0017 uV/h (central), 0.0038 uV/h (largest row)
+  Pt 0.5: dr_be = 0.0105 uV/h (central), 0.0189 uV/h (largest row)
+  Reported drift (SNIPPET, UNSURE): PEM 1.5-35 uV/h; NiFe AEM 0.7-84 uV/h. A drift DIFFERENCE of 0.03 uV/h equals the whole
+  material term of Ir 2 mg/cm2; GMS-100's profile cannot represent a rising rate (Open items), and a constant-rate fit absorbs it into Sigma_dot.
+
+================================================================================================
+R10 CExC WELL ABOVE CED, and scarcity terms (central duty, lam = 0, g_high)
+================================================================================================
+  Ir 0.2: kappa=1:  0.101  kappa=2:  0.218  kappa=3:  0.336  kappa=5:  0.572 mV; kappa for 10 mV ~ 99.4 (side g held fixed)
+  Ir 1.0: kappa=1:  0.591  kappa=2:  1.199  kappa=3:  1.807  kappa=5:  3.023 mV; kappa for 10 mV ~ 16.9 (side g held fixed)
+  Ir 2.0: kappa=1:  1.203  kappa=2:  2.424  kappa=3:  3.645  kappa=5:  6.086 mV; kappa for 10 mV ~ 8.3 (side g held fixed)
+  Pt 0.1: kappa=1:  0.066  kappa=2:  0.150  kappa=3:  0.233  kappa=5:  0.400 mV; kappa for 10 mV ~ 151.1 (side g held fixed)
+  Pt 0.5: kappa=1:  0.419  kappa=2:  0.854  kappa=3:  1.290  kappa=5:  2.162 mV; kappa for 10 mV ~ 23.9 (side g held fixed)
+  ERC added (NOT a GMS-100 term). Ir has no ERC row; the 'PGM average' row of the same table is used as a labelled proxy (UNSURE):
+    Pt 0.1 (+ERC Pt): j=1.0 tau=8e+04:     1.63 nearly free | j=0.5 tau=8e+04:     3.25 nearly free | j=0.2 tau=2e+04:    32.52 priced
+    Pt 0.5 (+ERC Pt): j=1.0 tau=8e+04:     8.22 nearly free | j=0.5 tau=8e+04:    16.43 between | j=0.2 tau=2e+04:   164.33 priced
+    Ir 0.2 (+ERC PGMavg): j=1.0 tau=8e+04:     1.97 nearly free | j=0.5 tau=8e+04:     3.94 nearly free | j=0.2 tau=2e+04:    39.44 priced
+    Ir 1.0 (+ERC PGMavg): j=1.0 tau=8e+04:     9.95 nearly free | j=0.5 tau=8e+04:    19.90 between | j=0.2 tau=2e+04:   198.97 priced
+    Ir 2.0 (+ERC PGMavg): j=1.0 tau=8e+04:    19.92 between | j=0.5 tau=8e+04:    39.84 priced | j=0.2 tau=2e+04:   398.38 priced
+  Revenue allocation at a later price basis (Table S38 used 2006-10 prices: Ir 15,919.87 $/kg = 495 $/oz; Pt 1357 $/oz).
+    2024 avg 4762 $/oz (SNIPPET), basket revenue factor r = 1.3 (MEMORY): Ir CED x  7.4 -> Ir 0.2:   0.88 nearly free | Ir 1.0:   4.51 nearly free | Ir 2.0:   9.04 nearly free
+    2024 avg 4762 $/oz (SNIPPET), basket revenue factor r = 1.0 (MEMORY): Ir CED x  9.6 -> Ir 0.2:   1.16 nearly free | Ir 1.0:   5.87 nearly free | Ir 2.0:  11.76 between
+    2024 avg 4762 $/oz (SNIPPET), basket revenue factor r = 0.8 (MEMORY): Ir CED x 12.0 -> Ir 0.2:   1.45 nearly free | Ir 1.0:   7.34 nearly free | Ir 2.0:  14.71 between
+    Aug 2026 7850 $/oz (SNIPPET), basket revenue factor r = 1.3 (MEMORY): Ir CED x 12.2 -> Ir 0.2:   1.47 nearly free | Ir 1.0:   7.45 nearly free | Ir 2.0:  14.92 between
+    Aug 2026 7850 $/oz (SNIPPET), basket revenue factor r = 1.0 (MEMORY): Ir CED x 15.9 -> Ir 0.2:   1.92 nearly free | Ir 1.0:   9.69 nearly free | Ir 2.0:  19.40 between
+    Aug 2026 7850 $/oz (SNIPPET), basket revenue factor r = 0.8 (MEMORY): Ir CED x 19.8 -> Ir 0.2:   2.41 nearly free | Ir 1.0:  12.12 between | Ir 2.0:  24.26 between
+  (revenue allocation: per-kg burden of Ir = B_total x p_Ir / sum p_j m_j; factor = (p_new/p_old)/r; ore inventory held fixed.)
+
+================================================================================================
+R11 SHARED LOOP: GMS-100's actual verdict for Pt and Ir is REQ-LIFECYCLE-SHARED-INFRASTRUCTURE-VERDICT (N_share < N_alloc)
+================================================================================================
+  f0 uses lambda = 0; f_max credits B_infra/(T0 N_share) = b_infra m''/(T0 s), s = product's share of the loop's mass throughput.
+  Band: candidate wins unconditionally if d_eta < d_be(f0); incumbent wins unconditionally if d_eta >= d_be(f_max); otherwise 'conditional'.
+  Ir 2.0: d_be(f0) = 1.203 mV; d_be(f_max): s=1,mid:    1.30  s=1,hi:    1.54  s=0.1,mid:    2.20  s=0.1,hi:    4.61  s=0.01,mid:   11.13  s=0.01,hi:   35.26  s=0.001,mid:  100.44  s=0.001,hi:  341.79
+  Ir 0.2: d_be(f0) = 0.101 mV; d_be(f_max): s=1,mid:    0.11  s=1,hi:    0.13  s=0.1,mid:    0.20  s=0.1,hi:    0.44  s=0.01,mid:    1.09  s=0.01,hi:    3.51  s=0.001,mid:   10.02  s=0.001,hi:   34.16
+  Pt 0.5: d_be(f0) = 0.419 mV; d_be(f_max): s=1,mid:    0.45  s=1,hi:    0.54  s=0.1,mid:    0.78  s=0.1,hi:    1.64  s=0.01,mid:    3.99  s=0.01,hi:   12.66  s=0.001,mid:   36.09  s=0.001,hi:  122.85
+  Pt 0.1: d_be(f0) = 0.066 mV; d_be(f_max): s=1,mid:    0.07  s=1,hi:    0.09  s=0.1,mid:    0.14  s=0.1,hi:    0.31  s=0.01,mid:    0.78  s=0.01,hi:    2.51  s=0.001,mid:    7.20  s=0.001,hi:   24.55
+  Ir 2.0: s at which d_be(f_max) = 10 mV: mid 0.0113, hi 0.0387; = 30 mV: mid 0.0034, hi 0.0118
+  Pt 0.5: s at which d_be(f_max) = 10 mV: mid 0.0037, hi 0.0128; = 30 mV: mid 0.0012, hi 0.0041
+
+================================================================================================
+R12 PART B: alpha under the two readings of 'fixed part'
+================================================================================================
+  lo: alpha (answer: fixed = fixed operating + capital) = 0.955;  alpha (fixed = loop capital only, the 'establishing' part) = 0.20
+  mid: alpha (answer: fixed = fixed operating + capital) = 0.911;  alpha (fixed = loop capital only, the 'establishing' part) = 0.45
+  hi: alpha (answer: fixed = fixed operating + capital) = 0.843;  alpha (fixed = loop capital only, the 'establishing' part) = 0.70
+  Prompt 8's rv03 joint verdict flips at alpha = 0.804: the first reading lies above it, the second below it, for every corner.
+
+================================================================================================
+R13 IDENTITY CHECKS (true by construction; not counted as passes)
+================================================================================================
+  R1 root-vs-closed agreement is algebra of the same terms; R2 reuses the answer's scenario inputs; R12 recomputes the answer's alpha.
