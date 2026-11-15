@@ -1,0 +1,95 @@
+== base: rv03 case (linear) ==
+  [base] optimum W = +2.6241e+10 J/K at [[1, 2]]; lambda_avg = 201.24, v_seen/T = 67.08 J/K
+    R1: S = [], W = +0.0000e+00, loss = 2.6241e+10 J/K WRONG
+    R2: S = [1], W = -7.4628e+10, loss = 1.0087e+11 J/K WRONG
+    R3: S = [], W = +0.0000e+00, loss = 2.6241e+10 J/K WRONG
+    R4: S = [1, 2], W = +2.6241e+10, loss = 0.0000e+00 J/K ok
+    R5: S = [1, 2], W = +2.6241e+10, loss = 0.0000e+00 J/K ok
+    R4 unconditional verdicts {1: 'cond', 2: 'cond'}; wrong unconditional: []
+    R5 unconditional verdicts {1: 'cond', 2: 'cond'}; wrong unconditional: []
+    every alternative R1-R4 wrong: False
+
+== (i) F partly avoidable, alpha sweep (d = 150, 400) and (d = 150, 190) ==
+  alpha=1.0: W(all) = +2.6241e+10 J/K; R4 -> [1, 2]; R1 -> []
+  alpha=0.9: W(all) = +1.2825e+10 J/K; R4 -> [1, 2]; R1 -> []
+  alpha=0.81: W(all) = +7.5046e+08 J/K; R4 -> [1, 2]; R1 -> []
+  alpha=0.8: W(all) = -5.9115e+08 J/K; R4 -> []; R1 -> []
+  alpha=0.5: W(all) = -4.0839e+10 J/K; R4 -> []; R1 -> []
+  alpha=0.0: W(all) = -1.0792e+11 J/K; R4 -> []; R1 -> []
+  [(i) alpha=0.5, d=(150,190): E16 credits sunk F] optimum W = +0.0000e+00 J/K at [[]]; lambda_avg = 201.24, v_seen/T = 67.08 J/K
+    R1: S = [1, 2], W = -1.9839e+10, loss = 1.9839e+10 J/K WRONG
+    R2: S = [1, 2], W = -1.9839e+10, loss = 1.9839e+10 J/K WRONG
+    R3: S = [], W = +0.0000e+00, loss = 0.0000e+00 J/K ok
+    R4: S = [], W = +0.0000e+00, loss = 0.0000e+00 J/K ok
+    R5: S = [], W = +0.0000e+00, loss = 0.0000e+00 J/K ok
+    R4 unconditional verdicts {1: 'fail', 2: 'cond'}; wrong unconditional: []
+    R5 unconditional verdicts {1: 'fail', 2: 'cond'}; wrong unconditional: []
+    every alternative R1-R4 wrong: False
+
+== (ii) discrete capacity steps ==
+  [(ii) partial exit of product 2 saves a step] optimum W = +1.7664e+10 J/K at [[2]]; lambda_avg = 234.78, v_seen/T = 67.08 J/K
+    R1: S = [], W = +0.0000e+00, loss = 1.7664e+10 J/K WRONG
+    R2: S = [1, 2], W = -1.9634e+09, loss = 1.9628e+10 J/K WRONG
+    R3: S = [], W = +0.0000e+00, loss = 1.7664e+10 J/K WRONG
+    R4: S = [], W = +0.0000e+00, loss = 1.7664e+10 J/K WRONG
+    R5: S = [], W = +0.0000e+00, loss = 1.7664e+10 J/K WRONG
+    R4 unconditional verdicts {1: 'cond', 2: 'cond', 3: 'cond'}; wrong unconditional: []
+    R5 unconditional verdicts {1: 'cond', 2: 'cond', 3: 'cond'}; wrong unconditional: []
+    every alternative R1-R4 wrong: True
+  (ii) min over S,k of [saving of adding k]/(v N_k) = 1.0000 (>= 1 means v/T is a lower bound)
+
+== (iii) outside users that stay, with market rebound rho ==
+  rho=0.0: true lone-exit saving per position = 67.08 J/K (v/T = 67.08)
+  rho=0.5: true lone-exit saving per position = 33.54 J/K (v/T = 67.08)
+  rho=1.0: true lone-exit saving per position = 0.00 J/K (v/T = 67.08)
+  [(iii) rho=0.5, d=(50,20)] optimum W = +1.3540e+09 J/K at [[2]]; lambda_avg = 201.24, v_seen/T = 67.08 J/K
+    R1: S = [], W = +0.0000e+00, loss = 1.3540e+09 J/K WRONG
+    R2: S = [1, 2], W = -5.2299e+09, loss = 6.5839e+09 J/K WRONG
+    R3: S = [1, 2], W = -5.2299e+09, loss = 6.5839e+09 J/K WRONG
+    R4: S = [1, 2], W = -5.2299e+09, loss = 6.5839e+09 J/K WRONG
+    R5: S = [], W = +0.0000e+00, loss = 1.3540e+09 J/K WRONG
+    R4 unconditional verdicts {1: 'pass', 2: 'pass'}; wrong unconditional: [1]
+    R5 unconditional verdicts {1: 'cond', 2: 'cond'}; wrong unconditional: []
+    every alternative R1-R4 wrong: True
+  [(iii) rho=1.0, d=(50,20)] optimum W = +0.0000e+00 J/K at [[]]; lambda_avg = 201.24, v_seen/T = 67.08 J/K
+    R1: S = [], W = +0.0000e+00, loss = 0.0000e+00 J/K ok
+    R2: S = [1, 2], W = -2.2000e+10, loss = 2.2000e+10 J/K WRONG
+    R3: S = [1, 2], W = -2.2000e+10, loss = 2.2000e+10 J/K WRONG
+    R4: S = [1, 2], W = -2.2000e+10, loss = 2.2000e+10 J/K WRONG
+    R5: S = [], W = +0.0000e+00, loss = 0.0000e+00 J/K ok
+    R4 unconditional verdicts {1: 'pass', 2: 'pass'}; wrong unconditional: [1, 2]
+    R5 unconditional verdicts {1: 'cond', 2: 'cond'}; wrong unconditional: []
+    every alternative R1-R4 wrong: False
+
+== (v) convex B_infra(N) = F0 + a N + b N^2 (a = 5e3, b = 7.5e-6 J, B'(N=1e9) = 2e4 J) ==
+  lone exit of product 1: true saving per position = 44.4407 J/K; v_seen/T = B'(N)/T = 67.0803 J/K
+  [(v) d=(55,5000)] optimum W = +0.0000e+00 J/K at [[]]; lambda_avg = 176.09, v_seen/T = 67.08 J/K
+    R1: S = [], W = +0.0000e+00, loss = 0.0000e+00 J/K ok
+    R2: S = [1], W = -9.5034e+09, loss = 9.5034e+09 J/K WRONG
+    R3: S = [1], W = -9.5034e+09, loss = 9.5034e+09 J/K WRONG
+    R4: S = [1], W = -9.5034e+09, loss = 9.5034e+09 J/K WRONG
+    R5: S = [], W = +0.0000e+00, loss = 0.0000e+00 J/K ok
+    R4 unconditional verdicts {1: 'pass', 2: 'fail'}; wrong unconditional: [1]
+    R5 unconditional verdicts {1: 'cond', 2: 'fail'}; wrong unconditional: []
+    every alternative R1-R4 wrong: False
+  [(v) 3 products d=(55,20,5000)] optimum W = +1.1860e+10 J/K at [[2]]; lambda_avg = 176.09, v_seen/T = 67.08 J/K
+    R1: S = [], W = +0.0000e+00, loss = 1.1860e+10 J/K WRONG
+    R2: S = [1, 2], W = +9.9665e+08, loss = 1.0863e+10 J/K WRONG
+    R3: S = [1, 2], W = +9.9665e+08, loss = 1.0863e+10 J/K WRONG
+    R4: S = [1, 2], W = +9.9665e+08, loss = 1.0863e+10 J/K WRONG
+    R5: S = [], W = +0.0000e+00, loss = 1.1860e+10 J/K WRONG
+    R4 unconditional verdicts {1: 'pass', 2: 'pass', 3: 'fail'}; wrong unconditional: [1]
+    R5 unconditional verdicts {1: 'cond', 2: 'cond', 3: 'fail'}; wrong unconditional: []
+    every alternative R1-R4 wrong: True
+
+== random search (3 products, 4000 profiles per regime) ==
+  linear  : wrong-verdict share R1 0.277, R2 0.301, R3 0.587, R4 0.000, R5 0.071; wrong unconditional R4 0.000, R5 0.000; all of R1-R4 wrong 0.000
+            max loss J/K: R1 3.453e+11, R2 3.078e+11, R3 3.265e+11, R4 0.000e+00, R5 1.085e+11
+  alpha   : wrong-verdict share R1 0.272, R2 0.352, R3 0.370, R4 0.000, R5 0.155; wrong unconditional R4 0.000, R5 0.000; all of R1-R4 wrong 0.000
+            max loss J/K: R1 2.558e+11, R2 2.525e+11, R3 3.034e+11, R4 0.000e+00, R5 1.216e+11
+  steps   : wrong-verdict share R1 0.281, R2 0.287, R3 0.712, R4 0.069, R5 0.099; wrong unconditional R4 0.000, R5 0.000; all of R1-R4 wrong 0.021
+            max loss J/K: R1 1.017e+12, R2 5.135e+11, R3 1.307e+12, R4 2.388e+11, R5 2.388e+11
+  outside : wrong-verdict share R1 0.419, R2 0.707, R3 0.352, R4 0.352, R5 0.419; wrong unconditional R4 0.352, R5 0.000; all of R1-R4 wrong 0.119
+            max loss J/K: R1 2.021e+11, R2 1.889e+11, R3 1.388e+11, R4 1.388e+11, R5 2.021e+11
+  convex  : wrong-verdict share R1 0.308, R2 0.264, R3 0.448, R4 0.080, R5 0.136; wrong unconditional R4 0.078, R5 0.000; all of R1-R4 wrong 0.045
+            max loss J/K: R1 4.236e+11, R2 3.116e+11, R3 3.244e+11, R4 2.542e+11, R5 2.542e+11

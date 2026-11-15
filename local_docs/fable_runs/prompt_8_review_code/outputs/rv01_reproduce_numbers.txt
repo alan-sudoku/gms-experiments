@@ -1,0 +1,41 @@
+== rv03 D1-D3 recomputed independently ==
+lambda_avg = (F + v N)/(T N) = 201.2410 J/K
+v/T = 67.0803 J/K ; under-credit when both switch = 134.1607 J/K
+N1 d1 + N2 d2 = 1.7500e+11 J/K ; B_infra/T = 2.01241e+11 J/K
+
+== claim 1 ==
+F/T = 1.34161e+11 J/K ; N1(d1-v/T) = 7.4628e+10 ; N2(d2-v/T) = 3.3292e+10 ; sum = 1.07920e+11
+W([]) = +0.0000e+00 J/K
+W([1]) = -7.4628e+10 J/K
+W([2]) = -3.3292e+10 J/K
+W([1, 2]) = +2.6241e+10 J/K
+
+== claim 2 ==
+d2=700: N1 d1 + N2 d2 = 2.0500e+11 J/K vs B/T = 2.01241e+11
+  W([]) at d2=700 = +0.0000e+00 J/K
+  W([1]) at d2=700 = -7.4628e+10 J/K
+  W([2]) at d2=700 = -6.3292e+10 J/K
+  W([1, 2]) at d2=700 = -3.7590e+09 J/K
+flip d2* = ((F+vN)/T - N1 d1)/N2 = 662.4099 J/K
+
+== claim 3 ==
+phi1 = 0.55626, phi2 = 0.24815, sum = 0.80441
+supporting interval f1/F in (0.5563, 0.7519)
+per-position split f1/F = N1/N = 0.900 -> lambda = 201.2410 J/K for both
+Shapley (products as players, F/2 each): lambda1 = 141.6140, lambda2 = 737.8836 J/K
+uniform-lambda condition: max d_k = 400.0 < B/(T N) = 201.2410: False
+
+== claim 4 ==
+lambda_hi,1 = 216.1477 J/K ; lambda_hi,2 = 1408.6869 J/K
+
+== claim 5 ==
+d1=50: W({1}) = +1.5372e+10 J/K ; W(all) at d1=50,d2=400 = +1.1624e+11 J/K ; W(none) = 0
+
+== claim 6 (alpha) ==
+alpha = 0.80000: W(all) = -5.9115e+08 J/K
+alpha = 0.80441: W(all) = -1.5259e-05 J/K
+
+== claim 7 ==
+bracket widths F/(T N1) = 149.0674 J/K, F/(T N2) = 1341.6066 J/K
+optimum W = 2.6241e+10 J/K at S = [1, 2]; marginal-only picks S_m = [] (W=0) -> forgoes 2.6241e+10
+average rule, product 1 alone: W({1}) = -7.4628e+10 J/K (vs none); loss vs optimum = 1.0087e+11 J/K

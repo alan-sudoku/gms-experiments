@@ -1,0 +1,8 @@
+G1 linear game: submodularity violations over 300 random games: 0
+G2 core equals {v N_k <= y_k <= v N_k + F, sum = c(N)} in 300/300 games
+G3 grid: splits f1/F where both per-product tests pass: [0.5563, 0.7519]
+G4 products as players: f1/F = 0.5000, lambda1 = 141.6140, lambda2 = 737.8836 J/K
+G4 equal blocks of 1e8 positions as players: f1/F = 0.9000, lambda1 = 201.2410, lambda2 = 201.2410 J/K (= per-position average share)
+G5 uniform lambda condition is the definition itself (lambda in (max d_k, B/(T N)]); tautology check mismatches: 0
+G6 steps (F0=1.0, F_step=3.0, Q=10.0, N_k=4,4,4): c(i)=6.00, c(ij)=8.00, c(N)=13.00; core EMPTY
+G6 steps with F_step=0.5 <= F0: core non-empty
